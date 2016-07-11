@@ -60,8 +60,7 @@ class TopicsController extends Controller implements CreatorListener
         $topic->increment('view_count', 1);
 
         $banners  = Banner::allByPosition();
-        $show_crx_hint = session(self::SESSION_KEY) == $id ? 'yes' : 'no';
-        return view('topics.show', compact('topic', 'replies', 'categoryTopics', 'category', 'banners', 'show_crx_hint'));
+        return view('topics.show', compact('topic', 'replies', 'categoryTopics', 'category', 'banners'));
     }
 
     public function edit($id)
@@ -242,7 +241,7 @@ class TopicsController extends Controller implements CreatorListener
     public function creatorSucceed($topic)
     {
         Flash::success(lang('Operation succeeded.'));
-        session()->flash(self::SESSION_KEY, $topic->id);
+        show_crx_hint();
 
         return redirect(route('topics.show', array($topic->id)));
     }
