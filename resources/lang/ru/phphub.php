@@ -91,7 +91,7 @@ return [
     'Recent Replies' => 'Последние ответы',
     'Recent Topics' => 'Последние темы',
     'site_intro' => 'PHPHub это форум PHP & Laravel разработчиков, больше информации <a href="about">смотрите здесь</a>.',
-    'contributing' => 'Этот проект находится в стадии разработки, пожалуйста, не стесняйтесь <i class="fa fa-github" style="font-size:15px"></i> <a href="https://github.com/summerblue/phphub" target="_blank">вносить изменения в код</a> или <a href="https://github.com/summerblue/phphub/issues" target="_blank">отправлять проблемы</a>.',
+    'contributing' => 'Этот проект находится в стадии разработки, пожалуйста, не стесняйтесь <i class="fa fa-github" style="font-size:15px"></i> <a href="https://github.com/summerblue/phphub5" target="_blank">вносить изменения в код</a> или <a href="https://github.com/summerblue/phphub5/issues" target="_blank">отправлять проблемы</a>.',
     'be_nice' => 'Это публичное место, ведите себя хорошо. ;-)',
     'publish_typography' => 'Пожалуйста, будьте осторожны с китайским и английским оформлением <a href="https://github.com/sparanoid/chinese-copywriting-guidelines">take refrence</a>',
     'publish_markdown' => 'Поддержка формата Markdown, <strong>**Жирный**</strong>, ~~Зачёркнутый текст~~, <code>`Программный код`</code>',
