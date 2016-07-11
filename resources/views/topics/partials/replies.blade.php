@@ -38,12 +38,12 @@
           @endif
 
           @if ($currentUser && ($currentUser->can("manage_topics") || $currentUser->id == $reply->user_id) )
-            <a id="reply-delete-{{ $reply->id }}" data-ajax="delete"  href="javascript:void(0);" data-url="{{ route('replies.destroy', [$reply->id]) }}" title="{{ lang('Delete') }}">
+            <a id="reply-delete-{{ $reply->id }}" data-ajax="delete"  href="javascript:void(0);" data-url="{{route('replies.destroy', [$reply->id])}}" title="{{lang('Delete')}}">
                 <i class="fa fa-trash-o"></i>
             </a>
             <span> •  </span>
           @endif
-          <a class="fa fa-reply" href="javascript:void(0)" onclick="replyOne('{{{ $reply->user->name }}}');" title="回复 {{{ $reply->user->name }}}"></a>
+          <a class="fa fa-reply" href="javascript:void(0)" onclick="replyOne('{{{$reply->user->name}}}');" title="回复 {{{$reply->user->name}}}"></a>
         </span>
 
         <div class="meta">
