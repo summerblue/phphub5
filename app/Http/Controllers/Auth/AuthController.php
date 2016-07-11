@@ -146,6 +146,7 @@ class AuthController extends Controller implements UserCreatorListener
         Session::forget('userGithubData');
 
         Flash::success(lang('Login Successfully.'));
+        show_crx_hint();
 
         return redirect()->intended('/');
     }

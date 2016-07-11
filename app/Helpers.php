@@ -53,3 +53,13 @@ function isAdmin()
 
     return false;
 }
+
+function show_crx_hint()
+{
+    \Session::flash('show_crx_hint', 'yes');
+}
+
+function check_show_crx_hint()
+{
+    return \Session::get('show_crx_hint') ? true : false;
+}
