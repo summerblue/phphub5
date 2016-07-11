@@ -108,7 +108,6 @@ return [
                 'yes' => '是',
                 'no'  => '否',
             ],
-            'value' => 'no',
         ],
         'body_original' => [
             'title'    => '回复内容',
