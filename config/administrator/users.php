@@ -12,8 +12,8 @@ return [
         'id' => [
             'title' => 'ID',
         ],
-        'avatar' => [
-            'title' => '头像',
+        'image_url' => [
+            'title'  => '头像',
             'output' => function ($value) {
                 return empty($value) ? 'N/A' : <<<EOD
     <img src="$value" width="80">
@@ -22,11 +22,11 @@ EOD;
             'sortable' => false,
         ],
         'name' => [
-            'title' => '用户名',
+            'title'    => '用户名',
             'sortable' => false,
         ],
         'real_name' => [
-            'title' => '真实姓名',
+            'title'    => '真实姓名',
             'sortable' => false,
         ],
         'github_name' => [
@@ -66,7 +66,7 @@ EOD;
             'title' => 'Github URL'
         ],
         'is_banned' => [
-            'title' => '是否被屏蔽',
+            'title'    => '是否被屏蔽',
             'type'     => 'enum',
             'options'  => [
                 'yes' => '是',
@@ -101,8 +101,8 @@ EOD;
             'title' => '头像 URL'
         ],
         'roles' => array(
-            'type' => 'relationship',
-            'title' => '用户组',
+            'type'       => 'relationship',
+            'title'      => '用户组',
             'name_field' => 'display_name',
         ),
     ],
@@ -123,12 +123,12 @@ EOD;
             'title' => '邮箱',
         ],
         'roles' => [
-            'type' => 'relationship',
-            'title' => '用户组',
+            'type'       => 'relationship',
+            'title'      => '用户组',
             'name_field' => 'display_name',
         ],
         'is_banned' => [
-            'title' => '是否被屏蔽',
+            'title'    => '是否被屏蔽',
             'type'     => 'enum',
             'options'  => [
                 'yes' => '是',
