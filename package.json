@@ -1,0 +1,24 @@
+{
+  "devDependencies": {
+    "gulp": "^3.8.7",
+    "laravel-elixir": "^4.0.0",
+    "laravel-elixir-compress": "^1.0.2",
+    "laravel-elixir-livereload": "^1.1.4"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.2.0",
+    "font-awesome": "^4.1.0",
+    "bootstrap-tagsinput": "^0.7.1",
+    "typeahead.js": "^0.11.1"
+  },
+  "name": "phphub5",
+  "description": "* 产品名称：PHPHub5 * 项目代码：PHPHub5 * 官方地址：https://phphub.org/",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git@git.coding.net:zhengjinghua/phphub5.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
