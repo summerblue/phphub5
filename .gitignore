@@ -5,8 +5,6 @@ Homestead.json
 .env
 .DS_Store
 
-/public/build
-/public/rev-manifest.json
 /storage/administrator_settings
 
 .DS_Store
