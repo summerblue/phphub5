@@ -17,8 +17,8 @@
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "git@git.coding.net:zhengjinghua/phphub5.git"
+    "url": "https://github.com/summerblue/phphub5.git"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "CJ",
+  "license": "MIT"
 }
