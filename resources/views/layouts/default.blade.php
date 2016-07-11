@@ -74,7 +74,7 @@ PHPHub  - PHP & Laravel的中文社区
 	  <div id="footer" class="footer">
 	    <div class="container small">
 	      <p class="pull-left">
-	      	<i class="fa fa-heart-o"></i> Made With Love By <a href="http://est-group.org/" style="color:#989898;">The EST Group</a>. <br>
+	      	<i class="fa fa-heart-o"></i> Made With Love By <a href="http://estgroupe.com/" style="color:#989898;">The EST Group</a>. <br>
 			&nbsp;<i class="fa fa-lightbulb-o"></i> Inspired by v2ex & ruby-china.
 	      </p>
 

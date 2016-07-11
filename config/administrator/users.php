@@ -56,9 +56,6 @@ EOD;
         'email' => [
             'title' => '邮箱',
         ],
-        'password' => [
-            'title' => '密码',
-        ],
         'github_id' => [
             'title' => 'Github ID'
         ],
