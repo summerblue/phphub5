@@ -46,7 +46,7 @@ PHPHub  - PHP & Laravel的中文社区
                     'upload_image' : '{{ route('upload_image') }}'
                 },
                 'token': '{{ csrf_token() }}',
-				'is_admin': '{{isAdmin() ? 'yes' : 'no'}}'
+				'is_admin': '{{is_admin() ? 'yes' : 'no'}}'
             };
 
 			var ShowCrxHint = '{{isset($show_crx_hint) ? $show_crx_hint : 'no'}}';

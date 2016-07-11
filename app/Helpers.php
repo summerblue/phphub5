@@ -41,7 +41,7 @@ function admin_url($path, $id = '')
     return env('APP_URL') . "/admin/$path" . ($id ? '/'.$id : '');
 }
 
-function isAdmin()
+function is_admin()
 {
     if (!\Auth::check()) {
         return false;
