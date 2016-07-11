@@ -23,7 +23,7 @@
 
 <p>名字的灵感来自伟大的 Github, <b>hub</b> 有 "中心", "集线器" 的意思, 意味着 PHPer 们齐聚一堂, 互相交换着信息流. </p>
 
-<p>本项目基于 MIT Licence 开源, <a href="https://github.com/summerblue/phphub">源代码在此 at Github</a>, 欢迎贡献代码, Feature Request 和 Bug Report <a href="https://github.com/summerblue/phphub/issues">请到此发表</a>.</p>
+<p>本项目基于 MIT Licence 开源, <a href="https://github.com/summerblue/phphub5">源代码在此 at Github</a>, 欢迎贡献代码, Feature Request 和 Bug Report <a href="https://github.com/summerblue/phphub5/issues">请到此发表</a>.</p>
 
 <h2 id="toc_2">关于新手问题</h2>
 
