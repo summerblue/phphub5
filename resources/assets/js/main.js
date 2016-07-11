@@ -421,6 +421,7 @@
                 var tpl = '';
                 var delTpl = '';
                 var voteTpl = '';
+                var introTpl = '';
                 var total = $('.replies .total b');
 
                 count = replies.find('li').length + 1;
@@ -442,6 +443,10 @@
                                 delTpl = '<a class="" id="reply-delete-' + data.reply.id + '" data-ajax="delete" href="javascript:void(0);" data-url="/replies/delete/' + data.reply.id + '" title="删除"><i class="fa fa-trash-o"></i></a><span> •  </span>';
                             }
 
+                            if (data.reply.user.introduction) {
+                                introTpl = '，' + data.reply.user.introduction;
+                            }
+
                             tpl = '<li class="list-group-item media" style="margin-top: 0px;">\
                                 <div class="avatar pull-left">\
                                     <a href="/users/' + data.reply.user_id + '"><img class="media-object img-thumbnail avatar" alt="' + data.reply.user.name + '" src="' + data.reply.user.image_url + '" style="width:68px;height:68px;"></a>\
@@ -449,7 +454,7 @@
                                 <div class="infos">\
                                     <div class="media-heading">\
                                         <a href="/users/' + data.reply.user_id + '" title="' + data.reply.user.name + '" class="remove-padding-left author">' + data.reply.user.name + '</a>\
-                                        <span>，' + data.reply.user.introduction + '</span>\
+                                        <span>' + introTpl + '</span>\
                                         <span class="operate pull-right">' + delTpl + '<a class="fa fa-reply" href="javascript:void(0)" onclick="replyOne(\'' + data.reply.user.name + '\');" title="回复 ' + data.reply.user.name + '"></a>\
                                         </span>\
                                         <div class="meta">\
