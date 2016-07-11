@@ -74,6 +74,7 @@ return array(
             'banners',
             'links',
             'tips',
+            'site_statuses',
         ],
     ],
 
