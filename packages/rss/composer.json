@@ -1,0 +1,21 @@
+{
+    "name": "thujohn/rss",
+    "description": "RSS builder for Laravel 4",
+    "keywords": ["rss", "laravel", "laravel4"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "thujohn",
+            "email": "jonathan.thuau@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.*|5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Thujohn\\Rss\\": "src/Thujohn/Rss/"
+        }
+    }
+}

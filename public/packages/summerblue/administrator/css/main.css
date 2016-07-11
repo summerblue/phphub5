@@ -1,0 +1,1334 @@
+.verdana {
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.arial {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.centuryGothic {
+  font-family: 'century gothic', verdana, arial, helvetica, sans-serif;
+}
+.noBorderRadius {
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.noBoxShadow {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.noTransition {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.simpleTable th,
+.simpleTable td,
+.simpleTable tr,
+.simpleTable tbody {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+.noSelect {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.select {
+  -moz-user-select: auto;
+  -webkit-user-select: auto;
+  user-select: auto;
+}
+.overflowEllipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+@font-face {
+  font-family: 'Oxygen';
+  src: url('../fonts/Oxygen/oxygen-regular-webfont.eot');
+  src: url('../fonts/Oxygen/oxygen-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Oxygen/oxygen-regular-webfont.woff') format('woff'), url('../fonts/Oxygen/oxygen-regular-webfont.ttf') format('truetype'), url('../fonts/Oxygen/oxygen-regular-webfont.svg#oxygenregular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Oxygen';
+  src: url('../fonts/Oxygen/oxygen-bold-webfont.eot');
+  src: url('../fonts/Oxygen/oxygen-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Oxygen/oxygen-bold-webfont.woff') format('woff'), url('../fonts/Oxygen/oxygen-bold-webfont.ttf') format('truetype'), url('../fonts/Oxygen/oxygen-bold-webfont.svg#oxygenbold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+.oxygen {
+  font-family: 'Oxygen', sans-serif;
+}
+.greyButton {
+  padding: 7px 13px;
+  margin: 0;
+  border: none;
+  background: #818181;
+  background: -moz-linear-gradient(top,#818181 0%,#646464 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#646464),color-stop(100%,#646464));
+  background: -webkit-linear-gradient(top,#818181 0%,#646464 100%);
+  background: -o-linear-gradient(top,#818181 0%,#646464 100%);
+  background: -ms-linear-gradient(top,#818181 0%,#646464 100%);
+  background: linear-gradient(top,#818181 0%,#646464 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#818181',endColorstr='#646464',GradientType=0);
+  -moz-box-shadow: 0 1px 5px #444;
+  -webkit-box-shadow: 0 1px 5px #444;
+  box-shadow: 0 1px 5px #444;
+  color: #fff;
+  font-size: 13px;
+  font-weight: normal;
+  cursor: pointer;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  background-clip: padding-box;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.greyButton:hover,
+.greyButton:focus {
+  background: #929292;
+  background: -moz-linear-gradient(top,#929292 0%,#646464 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#646464),color-stop(100%,#646464));
+  background: -webkit-linear-gradient(top,#929292 0%,#646464 100%);
+  background: -o-linear-gradient(top,#929292 0%,#646464 100%);
+  background: -ms-linear-gradient(top,#929292 0%,#646464 100%);
+  background: linear-gradient(top,#929292 0%,#646464 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#929292',endColorstr='#646464',GradientType=0);
+}
+.greyButton:active {
+  -moz-box-shadow: inset 0 5px 7px 1px #666, 0 1px 2px #777;
+  -webkit-box-shadow: inset 0 5px 7px 1px #666, 0 1px 2px #777;
+  box-shadow: inset 0 5px 7px 1px #666, 0 1px 2px #777;
+}
+.headerButtonPadding {
+  padding: 9px 12px 8px;
+}
+.headerButton {
+  display: inline-block;
+  padding: 9px 12px 8px;
+}
+.headerButton:hover,
+.headerButton.current {
+  background: #444;
+  background: -moz-linear-gradient(top,#444 0%,#333 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#333),color-stop(100%,#333));
+  background: -webkit-linear-gradient(top,#444 0%,#333 100%);
+  background: -o-linear-gradient(top,#444 0%,#333 100%);
+  background: -ms-linear-gradient(top,#444 0%,#333 100%);
+  background: linear-gradient(top,#444 0%,#333 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444',endColorstr='#333333',GradientType=0);
+}
+.editForm {
+  color: #444;
+  text-shadow: white 0 1px 0;
+}
+.editForm a.item_link {
+  position: absolute;
+  top: 38px;
+  right: 41px;
+}
+.editForm > div {
+  margin-bottom: 15px;
+  position: relative;
+}
+.editForm > div div.loader {
+  position: absolute;
+  top: 26px;
+  left: -21px;
+  width: 16px;
+  height: 16px;
+  background: url(../img/loader.gif) no-repeat;
+  zoom: 1;
+  filter: alpha(opacity=30);
+  opacity: 0.3;
+}
+.editForm > div p.description {
+  width: 90%;
+  margin: 0 0 7px 2px;
+}
+.editForm > div p.description_below {
+  width: 90%;
+  margin: 2px 0 0 2px;
+}
+.editForm > div select,
+.editForm > div textarea,
+.editForm > div input {
+  margin-bottom: 0;
+  vertical-align: top;
+}
+.editForm > div textarea {
+  width: 98%;
+}
+.editForm > div select,
+.editForm > div input[type=hidden],
+.editForm > div .select2-container {
+  width: 226px;
+}
+.editForm > div div.characters_left {
+  position: absolute;
+  top: 1px;
+  right: 40px;
+  font-size: 11px;
+}
+.editForm > div.number span.symbol {
+  position: absolute;
+  top: 27px;
+  left: -15px;
+}
+.editForm > div.key label,
+.editForm > div.bool label {
+  display: inline-block;
+}
+.editForm > div div.uneditable {
+  margin-right: 32px;
+}
+.editForm > div div.uneditable p {
+  margin-bottom: 7px;
+}
+.editForm > div.markdown {
+  padding-bottom: 10px;
+}
+.editForm > div.markdown div.markdown_container {
+  position: relative;
+}
+.editForm > div.markdown div.markdown_container div.preview {
+  display: inline-block;
+  margin-left: 10px;
+  height: 100%;
+  vertical-align: top;
+  overflow-y: auto;
+  padding: 4px 0 5px;
+}
+.editForm > div.markdown div.markdown_container div.preview p {
+  margin-bottom: 7px;
+}
+.editForm > div.markdown div.markdown_container textarea {
+  height: 100%;
+}
+.editForm > div.image div.upload_container,
+.editForm > div.file div.upload_container {
+  padding: 4px 0;
+}
+div.upload_container input {
+  cursor: pointer;
+}
+.editForm > div.image div.upload_container div.uploader,
+.editForm > div.file div.upload_container div.uploader {
+  background: url(../img/upload.png) no-repeat;
+  padding-left: 25px;
+}
+.editForm > div.image div.upload_container div.plupload,
+.editForm > div.file div.upload_container div.plupload {
+  width: 100% !important;
+}
+.editForm > div.image div.image_container,
+.editForm > div.file div.image_container {
+  position: relative;
+}
+.editForm > div.image div.image_container input[type=button],
+.editForm > div.file div.image_container input[type=button] {
+  position: absolute;
+  top: 5px;
+  right: -5px;
+}
+.editForm > div.image div.file_container a,
+.editForm > div.image div.file_container input,
+.editForm > div.file div.file_container a,
+.editForm > div.file div.file_container input {
+  vertical-align: middle;
+}
+.editForm > div.image div.file_container a,
+.editForm > div.file div.file_container a {
+  display: inline-block;
+  max-width: 83%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.editForm > div.color div.color_preview {
+  height: 8px;
+  margin: 0 33px 0 1px;
+  -moz-box-shadow: 0px 1px 2px #aaa;
+  -webkit-box-shadow: 0px 1px 2px #aaa;
+  box-shadow: 0px 1px 2px #aaa;
+}
+.editForm div.control_buttons {
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+.editForm div.control_buttons span.message {
+  display: block;
+  margin: 10px 30px 0 3px;
+}
+.full_screen_fields {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 30px;
+  margin-right: 30px;
+}
+.full_screen_fields.control_buttons,
+.full_screen_fields.image,
+.full_screen_fields.wysiwyg,
+.full_screen_fields.markdown,
+.full_screen_fields.textarea {
+  display: block;
+  margin-right: 0;
+}
+.full_screen_fields.custom_buttons {
+  display: block;
+}
+.full_screen_fields div.characters_left {
+  right: 3px;
+}
+.full_screen_fields select {
+  width: 226px;
+}
+#settings_page {
+  padding: 60px 30px 0;
+}
+#settings_page h2 {
+  color: #444;
+  text-shadow: #DDD 0 1px 0;
+  margin-bottom: 15px;
+}
+#settings_page form.settings_form {
+  color: #444;
+  text-shadow: white 0 1px 0;
+}
+#settings_page form.settings_form a.item_link {
+  position: absolute;
+  top: 38px;
+  right: 41px;
+}
+#settings_page form.settings_form > div {
+  margin-bottom: 15px;
+  position: relative;
+}
+#settings_page form.settings_form > div div.loader {
+  position: absolute;
+  top: 26px;
+  left: -21px;
+  width: 16px;
+  height: 16px;
+  background: url(../img/loader.gif) no-repeat;
+  zoom: 1;
+  filter: alpha(opacity=30);
+  opacity: 0.3;
+}
+#settings_page form.settings_form > div p.description {
+  width: 90%;
+  margin: 0 0 7px 2px;
+}
+#settings_page form.settings_form > div p.description_below {
+  width: 90%;
+  margin: 2px 0 0 2px;
+}
+#settings_page form.settings_form > div select,
+#settings_page form.settings_form > div textarea,
+#settings_page form.settings_form > div input {
+  margin-bottom: 0;
+  vertical-align: top;
+}
+#settings_page form.settings_form > div textarea {
+  width: 98%;
+}
+#settings_page form.settings_form > div select,
+#settings_page form.settings_form > div input[type=hidden],
+#settings_page form.settings_form > div .select2-container {
+  width: 226px;
+}
+#settings_page form.settings_form > div div.characters_left {
+  position: absolute;
+  top: 1px;
+  right: 40px;
+  font-size: 11px;
+}
+#settings_page form.settings_form > div.number span.symbol {
+  position: absolute;
+  top: 27px;
+  left: -15px;
+}
+#settings_page form.settings_form > div.key label,
+#settings_page form.settings_form > div.bool label {
+  display: inline-block;
+}
+#settings_page form.settings_form > div div.uneditable {
+  margin-right: 32px;
+}
+#settings_page form.settings_form > div div.uneditable p {
+  margin-bottom: 7px;
+}
+#settings_page form.settings_form > div.markdown {
+  padding-bottom: 10px;
+}
+#settings_page form.settings_form > div.markdown div.markdown_container {
+  position: relative;
+}
+#settings_page form.settings_form > div.markdown div.markdown_container div.preview {
+  display: inline-block;
+  margin-left: 10px;
+  height: 100%;
+  vertical-align: top;
+  overflow-y: auto;
+  padding: 4px 0 5px;
+}
+#settings_page form.settings_form > div.markdown div.markdown_container div.preview p {
+  margin-bottom: 7px;
+}
+#settings_page form.settings_form > div.markdown div.markdown_container textarea {
+  height: 100%;
+}
+#settings_page form.settings_form > div.image div.upload_container,
+#settings_page form.settings_form > div.file div.upload_container {
+  padding: 4px 0;
+}
+#settings_page form.settings_form > div.image div.upload_container div.uploader,
+#settings_page form.settings_form > div.file div.upload_container div.uploader {
+  background: url(../img/upload.png) no-repeat;
+  padding-left: 25px;
+}
+#settings_page form.settings_form > div.image div.upload_container div.plupload,
+#settings_page form.settings_form > div.file div.upload_container div.plupload {
+  width: 100% !important;
+}
+#settings_page form.settings_form > div.image div.image_container,
+#settings_page form.settings_form > div.file div.image_container {
+  position: relative;
+}
+#settings_page form.settings_form > div.image div.image_container input[type=button],
+#settings_page form.settings_form > div.file div.image_container input[type=button] {
+  position: absolute;
+  top: 5px;
+  right: -5px;
+}
+#settings_page form.settings_form > div.image div.file_container a,
+#settings_page form.settings_form > div.image div.file_container input,
+#settings_page form.settings_form > div.file div.file_container a,
+#settings_page form.settings_form > div.file div.file_container input {
+  vertical-align: middle;
+}
+#settings_page form.settings_form > div.image div.file_container a,
+#settings_page form.settings_form > div.file div.file_container a {
+  display: inline-block;
+  max-width: 83%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#settings_page form.settings_form > div.color div.color_preview {
+  height: 8px;
+  margin: 0 33px 0 1px;
+  -moz-box-shadow: 0px 1px 2px #aaa;
+  -webkit-box-shadow: 0px 1px 2px #aaa;
+  box-shadow: 0px 1px 2px #aaa;
+}
+#settings_page form.settings_form div.control_buttons {
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+#settings_page form.settings_form div.control_buttons span.message {
+  display: block;
+  margin: 10px 30px 0 3px;
+}
+#settings_page form.settings_form > div {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 30px;
+  margin-right: 30px;
+}
+#settings_page form.settings_form > div.control_buttons,
+#settings_page form.settings_form > div.image,
+#settings_page form.settings_form > div.wysiwyg,
+#settings_page form.settings_form > div.markdown,
+#settings_page form.settings_form > div.textarea {
+  display: block;
+  margin-right: 0;
+}
+#settings_page form.settings_form > div.custom_buttons {
+  display: block;
+}
+#settings_page form.settings_form > div div.characters_left {
+  right: 3px;
+}
+#settings_page form.settings_form > div select {
+  width: 226px;
+}
+#settings_page form.settings_form div.image_container {
+  display: inline-block;
+}
+#settings_page form.settings_form div.image_container img {
+  max-width: 100%;
+}
+#settings_page form.settings_form div.image_container input[type=button] {
+  right: -30px !important;
+}
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+q,
+small,
+strong,
+sub,
+sup,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+article,
+aside,
+figure,
+figure img,
+figcaption,
+hgroup,
+footer,
+header,
+nav,
+section,
+video,
+object {
+  display: block;
+}
+a img {
+  border: 0;
+}
+figure {
+  position: relative;
+}
+figure img {
+  width: 100%;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+#wrapper {
+  font-family: 'Oxygen', sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+}
+#wrapper h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+#wrapper label {
+  display: block;
+  margin-bottom: 5px;
+}
+#wrapper header {
+  background: #5a6064;
+  text-shadow: black 0 1px 0;
+  height: 34px;
+  overflow: visible;
+  position: relative;
+  z-index: 900;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+#wrapper header h1 {
+  float: left;
+  margin: 0;
+  border-right: 1px solid #334352;
+}
+#wrapper header h1 a {
+  display: inline-block;
+  padding: 9px 12px 8px;
+  padding: 8px 15px 9px;
+  font-size: 19px;
+  border-right: 1px solid #555;
+}
+#wrapper header h1 a:hover,
+#wrapper header h1 a.current {
+  background: #2F4050;
+}
+#wrapper header h1 a:hover {
+  background: #2F4050;
+}
+#wrapper header a,
+#wrapper header span {
+  color: #fff;
+  display: inline-block;
+  cursor: pointer;
+}
+#wrapper header .iconButton {
+  display: inline-block;
+  padding: 9px 12px 8px;
+  padding: 0;
+  display: none;
+}
+#wrapper header .iconButton:hover,
+#wrapper header .iconButton.current {
+  background: #444;
+  background: -moz-linear-gradient(top,#444 0%,#333 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#333),color-stop(100%,#333));
+  background: -webkit-linear-gradient(top,#444 0%,#333 100%);
+  background: -o-linear-gradient(top,#444 0%,#333 100%);
+  background: -ms-linear-gradient(top,#444 0%,#333 100%);
+  background: linear-gradient(top,#444 0%,#333 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444',endColorstr='#333333',GradientType=0);
+}
+#wrapper header .iconButton > div {
+  height: 35px;
+}
+#wrapper header a#menu_button {
+  display: inline-block;
+  padding: 9px 12px 8px;
+  padding: 0;
+  display: none;
+}
+#wrapper header a#menu_button:hover,
+#wrapper header a#menu_button.current {
+  background: #444;
+  background: -moz-linear-gradient(top,#444 0%,#333 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#333),color-stop(100%,#333));
+  background: -webkit-linear-gradient(top,#444 0%,#333 100%);
+  background: -o-linear-gradient(top,#444 0%,#333 100%);
+  background: -ms-linear-gradient(top,#444 0%,#333 100%);
+  background: linear-gradient(top,#444 0%,#333 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444',endColorstr='#333333',GradientType=0);
+}
+#wrapper header a#menu_button > div {
+  height: 35px;
+}
+#wrapper header a#menu_button > div {
+  width: 45px;
+  background: url(../img/menu-icon.png) no-repeat center center;
+}
+#wrapper header a#filter_button {
+  display: inline-block;
+  padding: 9px 12px 8px;
+  padding: 0;
+  display: none;
+  margin-left: -3px;
+}
+#wrapper header a#filter_button:hover,
+#wrapper header a#filter_button.current {
+  background: #444;
+  background: -moz-linear-gradient(top,#444 0%,#333 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#333),color-stop(100%,#333));
+  background: -webkit-linear-gradient(top,#444 0%,#333 100%);
+  background: -o-linear-gradient(top,#444 0%,#333 100%);
+  background: -ms-linear-gradient(top,#444 0%,#333 100%);
+  background: linear-gradient(top,#444 0%,#333 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444',endColorstr='#333333',GradientType=0);
+}
+#wrapper header a#filter_button > div {
+  height: 35px;
+}
+#wrapper header a#filter_button.hidden {
+  display: none !important;
+}
+#wrapper header a#filter_button > div {
+  width: 41px;
+  background: url(../img/filter-icon.png) no-repeat center center;
+}
+#wrapper header #mobile_menu_wrapper {
+  display: none;
+  position: fixed;
+  top: 36px;
+  bottom: 0;
+  left: 0;
+  min-width: 300px;
+}
+#wrapper header #mobile_menu_wrapper .mobileMenuPadding {
+  padding: 12px 14px;
+}
+#wrapper header #mobile_menu_wrapper ul#mobile_menu {
+  background: #333;
+  background: -moz-linear-gradient(top,#333 0%,#444 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#444),color-stop(100%,#444));
+  background: -webkit-linear-gradient(top,#333 0%,#444 100%);
+  background: -o-linear-gradient(top,#333 0%,#444 100%);
+  background: -ms-linear-gradient(top,#333 0%,#444 100%);
+  background: linear-gradient(top,#333 0%,#444 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333',endColorstr='#444444',GradientType=0);
+  min-width: 300px;
+  min-height: 100%;
+}
+#wrapper header #mobile_menu_wrapper ul#mobile_menu li {
+  border-bottom: 1px solid #44484b;
+}
+#wrapper header #mobile_menu_wrapper ul#mobile_menu li.menu > span {
+  display: block;
+  padding: 12px 14px;
+}
+#wrapper header #mobile_menu_wrapper ul#mobile_menu li.menu ul {
+  display: none;
+  border-left: 20px solid #222;
+}
+#wrapper header #mobile_menu_wrapper a {
+  padding: 12px 14px;
+  display: block;
+}
+#wrapper header ul#menu,
+#wrapper header ul#lang_menu {
+  display: inline-block;
+}
+#wrapper header ul#menu > li,
+#wrapper header ul#lang_menu > li {
+  display: inline-block;
+  position: relative;
+  background: #2F4050;
+  margin-left: -3px;
+}
+#wrapper header ul#menu > li a,
+#wrapper header ul#menu > li span,
+#wrapper header ul#lang_menu > li a,
+#wrapper header ul#lang_menu > li span {
+  padding: 9px 12px 8px;
+}
+#wrapper header ul#menu > li ul,
+#wrapper header ul#lang_menu > li ul {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  display: none;
+  background: #2F4050;
+  -moz-border-bottom-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -moz-border-bottom-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+  background-clip: padding-box;
+}
+#wrapper header ul#menu > li ul a,
+#wrapper header ul#lang_menu > li ul a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-bottom: 1px solid #293846;
+}
+#wrapper header ul#menu > li ul a:hover,
+#wrapper header ul#lang_menu > li ul a:hover {
+  color: #fff;
+}
+#wrapper header ul#menu > li ul li:last-child a,
+#wrapper header ul#lang_menu > li ul li:last-child a {
+  border-bottom: none;
+}
+#wrapper header ul#menu > li ul li.menu,
+#wrapper header ul#lang_menu > li ul li.menu {
+  position: relative;
+}
+#wrapper header ul#menu > li ul li.menu.current,
+#wrapper header ul#lang_menu > li ul li.menu.current {
+  background: #2F4050;
+}
+#wrapper header ul#menu > li ul li.menu ul,
+#wrapper header ul#lang_menu > li ul li.menu ul {
+  top: 0;
+  left: 100%;
+  z-index: -1;
+}
+#wrapper header ul#menu > li.current,
+#wrapper header ul#menu > li:hover,
+#wrapper header ul#lang_menu > li.current,
+#wrapper header ul#lang_menu > li:hover {
+  background: #2F4050;
+}
+#wrapper header ul#menu > li:first-child,
+#wrapper header ul#lang_menu > li:first-child {
+  margin-left: 0;
+}
+#wrapper header div#right_nav {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#wrapper header div#right_nav ul#lang_menu {
+  display: inline-block;
+  border-right: 1px solid #999999;
+}
+#wrapper header div#right_nav a#back_to_site {
+  display: inline-block;
+  padding: 9px 12px 8px;
+  margin-left: -3px;
+}
+#wrapper header div#right_nav a#back_to_site:hover,
+#wrapper header div#right_nav a#back_to_site.current {
+  background: #444;
+  background: -moz-linear-gradient(top,#444 0%,#333 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#333),color-stop(100%,#333));
+  background: -webkit-linear-gradient(top,#444 0%,#333 100%);
+  background: -o-linear-gradient(top,#444 0%,#333 100%);
+  background: -ms-linear-gradient(top,#444 0%,#333 100%);
+  background: linear-gradient(top,#444 0%,#333 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444',endColorstr='#333333',GradientType=0);
+}
+#wrapper header div#right_nav a#logout {
+  display: inline-block;
+  padding: 9px 12px 8px;
+  margin-left: -3px;
+}
+#wrapper header div#right_nav a#logout:hover,
+#wrapper header div#right_nav a#logout.current {
+  background: #444;
+  background: -moz-linear-gradient(top,#444 0%,#333 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#333),color-stop(100%,#333));
+  background: -webkit-linear-gradient(top,#444 0%,#333 100%);
+  background: -o-linear-gradient(top,#444 0%,#333 100%);
+  background: -ms-linear-gradient(top,#444 0%,#333 100%);
+  background: linear-gradient(top,#444 0%,#333 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444',endColorstr='#333333',GradientType=0);
+}
+#admin_page {
+  position: relative;
+}
+#admin_page label {
+  margin-bottom: 3px;
+  font-weight: bold;
+}
+#admin_page div#sidebar {
+  float: right;
+  margin-right: 13px;
+  margin-top: 60px;
+  width: 245px;
+}
+#admin_page div#sidebar h2 {
+  color: #444;
+  text-shadow: #DDD 0 1px 0;
+  margin-bottom: 15px;
+}
+#admin_page div#sidebar div.filters > div {
+  margin-bottom: 10px;
+  position: relative;
+}
+#admin_page div#sidebar div.filters > div select,
+#admin_page div#sidebar div.filters > div input[type=hidden] {
+  width: 225px;
+}
+#admin_page div#sidebar div.filters > div div.loader {
+  position: absolute;
+  top: 26px;
+  left: -21px;
+  width: 16px;
+  height: 16px;
+  background: url(../img/loader.gif) no-repeat;
+  zoom: 1;
+  filter: alpha(opacity=30);
+  opacity: 0.3;
+}
+#admin_page div#sidebar div.filters > div p.description {
+  width: 90%;
+  margin: 0 0 7px 2px;
+}
+#admin_page div#sidebar div.filters > div p.description_below {
+  width: 90%;
+  margin: 2px 0 0 2px;
+}
+#admin_page div#sidebar div.filters > div.min_max input[type=text] {
+  width: 87px;
+}
+#admin_page div#sidebar div.filters > div.min_max span.symbol {
+  position: absolute;
+  top: 27px;
+  left: -15px;
+}
+#admin_page div#sidebar div.filters > div.min_max.datetime input[type=text] {
+  font-size: 11px;
+}
+#admin_page div#sidebar div.filters > div.color div.color_preview {
+  height: 8px;
+  margin: 0 33px 0 1px;
+  -moz-box-shadow: 0px 1px 2px #aaa;
+  -webkit-box-shadow: 0px 1px 2px #aaa;
+  box-shadow: 0px 1px 2px #aaa;
+}
+#admin_page #content {
+  padding-top: 35px;
+}
+#admin_page #content div.table_container {
+  position: relative;
+}
+#admin_page #content div.table_container div.results_header h2 {
+  padding: 0 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+#admin_page #content div.table_container div.results_header div.actions {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+}
+
+#admin_page #content div.table_container div.results_header div.action_message {
+  text-align: right;
+  margin-left: 500px;
+  padding-bottom: 10px;
+  margin-right: 12px;
+}
+#admin_page #content div.table_container div.page_container {
+  background: #F3F3F4;
+  background: -moz-linear-gradient(top,#F3F3F4 0%,rgba(255, 255, 255, 0.79) 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(255, 255, 255, 0.79)),color-stop(100%,rgba(255, 255, 255, 0.79)));
+  background: -webkit-linear-gradient(top,#F3F3F4 0%,rgba(255, 255, 255, 0.79) 100%);
+  background: -o-linear-gradient(top,#F3F3F4 0%,rgba(255, 255, 255, 0.79) 100%);
+  background: -ms-linear-gradient(top,#F3F3F4 0%,rgba(255, 255, 255, 0.79) 100%);
+  background: linear-gradient(top,#F3F3F4 0%,rgba(255, 255, 255, 0.79) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F3F3F4',endColorstr='rgba(255, 255, 255, 0.79)',GradientType=0);
+  -moz-box-shadow: 0 1px 1px rgba(38, 103, 89, 0.32);
+  -webkit-box-shadow: 0 1px 1px rgba(38, 103, 89, 0.32);
+  box-shadow: 0 1px 1px rgba(38, 103, 89, 0.32);
+  text-shadow: white 0 1px 0;
+  border: solid 1px #d4d4d4;
+  border-top-color: #e6e6e6;
+  border-bottom-color: #EEE;
+  font-size: 1.0em;
+  font-weight: bold;
+  line-height: 18px;
+  color: #5e6469;
+  position: relative;
+  z-index: 801;
+  margin-bottom: 3px;
+  padding: 5px 0;
+}
+#admin_page #content div.table_container div.page_container div.paginator {
+  display: inline-block;
+  margin-left: 15px;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+#admin_page #content div.table_container div.page_container div.paginator input {
+  display: inline-block;
+  vertical-align: baseline;
+  margin-bottom: 0;
+}
+#admin_page #content div.table_container div.page_container div.paginator input[type=text] {
+  width: 30px;
+}
+#admin_page #content div.table_container div.page_container div.per_page {
+  vertical-align: middle;
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  overflow: hidden;
+}
+#admin_page #content div.table_container div.page_container div.per_page input {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+  border: none;
+}
+#admin_page #content div.table_container div.page_container div.per_page input[type=hidden] {
+  width: 70px;
+}
+#admin_page #content div.table_container div.table_scrollable {
+  width: 100%;
+  overflow-x: auto;
+}
+#admin_page #content div.table_container table.results th.sortable div {
+  background: url("../img/orderable.png") no-repeat 0 4px;
+  padding-left: 13px;
+  cursor: pointer;
+}
+#admin_page #content div.table_container div.loading_rows {
+  position: absolute;
+  top: 95px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0.50;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+  filter: alpha(opacity=50);
+  text-align: center;
+}
+#admin_page #content div.table_container div.loading_rows > div {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  right: 0;
+  color: #fff;
+  font-size: 35px;
+  text-shadow: #000 1px 1px 1px;
+}
+#admin_page #content div.table_container div.no_results {
+  position: absolute;
+  top: 240px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+#admin_page #content div.table_container div.no_results > div {
+  color: #444;
+  font-size: 28px;
+  text-shadow: #ddd 1px 1px 1px;
+}
+#admin_page #content div.item_edit_container {
+  position: absolute;
+  top: 35px;
+  bottom: 0;
+  right: 0;
+  width: 285px;
+  overflow: hidden;
+}
+#admin_page #content div.item_edit_container h2 {
+  margin-bottom: 15px;
+}
+#admin_page #content div.item_edit_container div.item_edit {
+  position: relative;
+  padding-top: 25px;
+  padding-left: 27px;
+  background: #D9E4EC;
+  min-height: 430px;
+  width: 258px;
+  -moz-box-shadow: -1px 1px 2px rgba(0,0,0,0.4);
+  -webkit-box-shadow: -1px 1px 2px rgba(0,0,0,0.4);
+  box-shadow: -1px 1px 2px rgba(0,0,0,0.4);
+  margin-left: 2px;
+  margin-bottom: 2px;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form {
+  color: #444;
+  text-shadow: white 0 1px 0;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form a.item_link {
+  position: absolute;
+  top: 38px;
+  right: 41px;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div {
+  margin-bottom: 15px;
+  position: relative;
+  width: 225px;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div div.loader {
+  position: absolute;
+  top: 26px;
+  left: -21px;
+  width: 16px;
+  height: 16px;
+  background: url(../img/loader.gif) no-repeat;
+  zoom: 1;
+  filter: alpha(opacity=30);
+  opacity: 0.3;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div p.description {
+  width: 90%;
+  margin: 0 0 7px 2px;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div p.description_below {
+  width: 90%;
+  margin: 2px 0 0 2px;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div select,
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div textarea,
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div input {
+  margin-bottom: 0;
+  vertical-align: top;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div textarea {
+  width: 98%;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div select,
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div input[type=hidden],
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div .select2-container {
+  width: 226px;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div div.characters_left {
+  position: absolute;
+  top: 1px;
+  right: 40px;
+  font-size: 11px;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.number span.symbol {
+  position: absolute;
+  top: 27px;
+  left: -15px;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.key label,
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.bool label {
+  display: inline-block;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div div.uneditable {
+  margin-right: 32px;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div div.uneditable p {
+  margin-bottom: 7px;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.markdown {
+  padding-bottom: 10px;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.markdown div.markdown_container {
+  position: relative;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.markdown div.markdown_container div.preview {
+  display: inline-block;
+  margin-left: 10px;
+  height: 100%;
+  vertical-align: top;
+  overflow-y: auto;
+  padding: 4px 0 5px;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.markdown div.markdown_container div.preview p {
+  margin-bottom: 7px;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.markdown div.markdown_container textarea {
+  height: 100%;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.image div.upload_container,
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.file div.upload_container {
+  padding: 4px 0;
+  padding-left: 7px;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.image div.upload_container div.uploader,
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.file div.upload_container div.uploader {
+  background: url(../img/upload.png) no-repeat;
+  padding-left: 25px;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.image div.upload_container div.plupload,
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.file div.upload_container div.plupload {
+  width: 100% !important;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.image div.image_container,
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.file div.image_container {
+  position: relative;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.image div.image_container input[type=button],
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.file div.image_container input[type=button] {
+  position: absolute;
+  top: 5px;
+  right: -5px;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.image div.file_container a,
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.image div.file_container input,
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.file div.file_container a,
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.file div.file_container input {
+  vertical-align: middle;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.image div.file_container a,
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.file div.file_container a {
+  display: inline-block;
+  max-width: 83%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form > div.color div.color_preview {
+  height: 8px;
+  margin: 0 33px 0 1px;
+  -moz-box-shadow: 0px 1px 2px #aaa;
+  -webkit-box-shadow: 0px 1px 2px #aaa;
+  box-shadow: 0px 1px 2px #aaa;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form div.control_buttons {
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+#admin_page #content div.item_edit_container div.item_edit form.edit_form div.control_buttons span.message {
+  display: block;
+  margin: 10px 30px 0 3px;
+}
+#admin_page #content div.item_edit_container div.item_edit div.loading {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  font-size: 20px;
+  margin-left: -36px;
+}
+.lw-colorpicker {
+  z-index: 807;
+}
+.select2-search input {
+  width: 100% !important;
+}
+@media only screen and (max-width: 949px) {
+  #wrapper header a#menu_button,
+  #wrapper header a#filter_button {
+    display: inline-block;
+  }
+  #wrapper header ul#menu {
+    display: none;
+  }
+  #wrapper div#sidebar {
+    display: none;
+    position: absolute;
+    background: #fff;
+    z-index: 830;
+    margin: 0;
+    top: 36px;
+    left: 0;
+    right: 0;
+    width: auto;
+    padding-top: 25px;
+    padding-left: 27px;
+  }
+  #wrapper div#sidebar.shown {
+    display: block;
+  }
+  #wrapper #content.hidden {
+    display: none;
+  }
+  #wrapper #content div.table_container {
+    margin-right: 0 !important;
+  }
+  #wrapper #content div.item_edit_container {
+    left: 0;
+    width: 100% !important;
+    z-index: 805;
+  }
+  #wrapper #content div.item_edit_container div.item_edit {
+    width: 100% !important;
+    height: 96%;
+  }
+  #wrapper #content div.item_edit_container div.item_edit form.edit_form > div {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 30px;
+    margin-right: 30px;
+  }
+  #wrapper #content div.item_edit_container div.item_edit form.edit_form > div.control_buttons,
+  #wrapper #content div.item_edit_container div.item_edit form.edit_form > div.image,
+  #wrapper #content div.item_edit_container div.item_edit form.edit_form > div.wysiwyg,
+  #wrapper #content div.item_edit_container div.item_edit form.edit_form > div.markdown,
+  #wrapper #content div.item_edit_container div.item_edit form.edit_form > div.textarea {
+    display: block;
+    margin-right: 0;
+  }
+  #wrapper #content div.item_edit_container div.item_edit form.edit_form > div.custom_buttons {
+    display: block;
+  }
+  #wrapper #content div.item_edit_container div.item_edit form.edit_form > div div.characters_left {
+    right: 3px;
+  }
+  #wrapper #content div.item_edit_container div.item_edit form.edit_form > div select {
+    width: 226px;
+  }
+  #wrapper #content div.item_edit_container div.item_edit form.edit_form > div.image {
+    display: block;
+  }
+  #wrapper #content div.item_edit_container div.item_edit form.edit_form > div.image div.image_container {
+    max-width: 100%;
+  }
+  #wrapper #content div.item_edit_container div.item_edit form.edit_form > div.image div.image_container img {
+    max-width: 88% !important;
+    max-height: 600px;
+  }
+  #wrapper #content div.item_edit_container div.item_edit form.edit_form > div.bool {
+    display: block;
+  }
+}
+@media only screen and (max-width: 529px) {
+  body:after {
+    content: 'mobile';
+    display: none;
+  }
+  #wrapper header #mobile_menu_wrapper {
+    right: 0;
+  }
+  #wrapper header #mobile_menu_wrapper ul#mobile_menu {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  body:after {
+    content: 'tablet';
+    display: none;
+  }
+}
+@media only screen and (min-width: 950px) {
+  #wrapper header #mobile_menu_wrapper {
+    display: none !important;
+  }
+}
+
+/*
+    Weibo Users
+ */
+.wb-tags label {
+    cursor: pointer;
+}
+
+
+/*
+    超级自定义 by CJ
+ */
+
+#admin_page #content div.table_container table.results tr.result {
+      cursor: text;
+}
+
+/*
+    自动换行
+ */
+.table>thead>tr>th>*, .table>tbody>tr>th>*, .table>tfoot>tr>th>*, .table>thead>tr>td>*, .table>tbody>tr>td>*, .table>tfoot>tr>td>* { word-break: break-all;}
+
+.mt5 { margin-top: 5px;}
+.mt10 { margin-top: 10px;}
+.mt15 { margin-top: 15px;}
+.mt20 { margin-top: 20px;}
+
+#admin_page #content div.table_container div.page_container div.paginator { margin-left: 8px;}
+#admin_page #content div.table_container div.page_container div.paginator .btn { margin-right: 5px;text-shadow: none;}

@@ -1,0 +1,50 @@
+body.dragging {
+	user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+}
+.customscroll {
+	overflow: hidden;
+	position: relative;
+}
+.customscroll > .wrapper {
+	overflow-y: auto;
+	width: 107%;
+	height: 100% !important;
+}
+.customscroll > .wrapper > div.content {
+	height: 100% !important;
+	width: auto !important;
+}
+.customscroll > .placeholder {
+	background-color: transparent;
+	display: block;
+	position: absolute;
+	right: 2px;
+	width: 12px;
+}
+.customscroll > .placeholder > .track {
+	bottom: 0;
+	display: none;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 6px;
+}
+.customscroll > .placeholder > .track.hover {
+	background-color: #e6e6e6;
+	background-color: rgba(0, 0, 0, .1);
+}
+.customscroll > .placeholder > .track > .grip {
+	background-color: #999999;
+	height: 12px;
+	-moz-user-select:none;
+	-webkit-user-select:none;
+	user-select:none;
+}
+.customscroll > .placeholder > .track, .customscroll > .placeholder > .track > .grip {
+	border-radius: 10px;
+}

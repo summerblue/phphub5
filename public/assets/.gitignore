@@ -1,0 +1,5 @@
+*
+!.gitignore
+!images
+!images/**
+.DS_Store

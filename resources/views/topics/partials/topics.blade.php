@@ -1,0 +1,78 @@
+
+
+@if (count($topics))
+
+<ul class="list-group row topic-list">
+    @foreach ($topics as $topic)
+     <li class="list-group-item media {{ !$column ?:'col-sm-6' }}" style="margin-top: 0px;">
+
+         <a class="reply_last_time" href="{{route('topics.show', [$topic->id])}}">
+             @if ($topic->reply_count > 0 && count($topic->lastReplyUser))
+             <img class="user_small_avatar" src="{{ $topic->lastReplyUser->present()->gravatar }}">
+             @else
+             <img class="user_small_avatar" src="{{ $topic->user->present()->gravatar }}">
+             @endif
+
+             <span class="timeago">{{ $topic->updated_at }}</span>
+          </a>
+
+
+        <div class="avatar pull-left">
+            <a href="{{ route('users.show', [$topic->user_id]) }}">
+                <img class="media-object img-thumbnail avatar avatar-middle" alt="{{{ $topic->user->name }}}" src="{{ $topic->user->present()->gravatar }}"/>
+            </a>
+        </div>
+
+        <span class="reply_count_area" >
+            <span class="count_of_replies" title="回复数">
+              {{ $topic->reply_count }}
+            </span>
+            <span class="count_seperator">/</span>
+            <span class="count_of_visits" title="查看数">
+              {{ $topic->view_count }}
+            </span>
+      </span>
+
+        <div class="infos">
+
+          <div class="media-heading">
+
+            @if ($topic->order > 0 && !Input::get('filter') && Route::currentRouteName() != 'home' )
+                <span class="label label-warning">{{ lang('Stick') }}</span>
+            @elseif ($topic->is_excellent == 'yes' && !Input::get('filter') && Route::currentRouteName() != 'home' )
+                <span class="label label-primary">{{ lang('Recommended') }}</span>
+            @endif
+
+            <a href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
+                {{{ $topic->title }}}
+            </a>
+          </div>
+          <div class="media-body meta">
+
+            @if ($topic->vote_count > 0)
+                <a href="{{ route('topics.show', [$topic->id]) }}" class="remove-padding-left" id="pin-{{ $topic->id }}">
+                    <span class="fa fa-thumbs-o-up"> {{ $topic->vote_count }} </span>
+                </a>
+                <span> •  </span>
+            @endif
+
+            <a href="{{ route('categories.show', [$topic->category->id]) }}" title="{{{ $topic->category->name }}}" {{ $topic->vote_count == 0 || 'class="remove-padding-left"'}}>
+                {{{ $topic->category->name }}}
+            </a>
+
+            <span> • </span>
+            <a href="{{ route('users.show', [$topic->user_id]) }}" title="{{{ $topic->user->name }}}">
+                {{{ $topic->user->name }}}
+            </a>
+            <span> • </span>
+            <span class="timeago">{{ $topic->created_at }}</span>
+          </div>
+        </div>
+
+    </li>
+    @endforeach
+</ul>
+
+@else
+   <div class="empty-block">{{ lang('Dont have any data Yet') }}~~</div>
+@endif

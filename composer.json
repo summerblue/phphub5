@@ -1,0 +1,85 @@
+{
+    "name": "laravel/laravel",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=5.5.9",
+        "laravel/framework": "5.1.*",
+        "league/html-to-markdown": "^4.2",
+        "erusev/parsedown": "^1.6",
+        "mews/purifier": "~2.0",
+        "naux/auto-correct": "^1.0",
+        "intervention/image": "^2.3",
+        "roumen/sitemap": "^2.6",
+        "summerblue/turbo": "^0.3.2",
+        "laracasts/flash": "^2.0",
+        "barryvdh/laravel-debugbar": "^2.2",
+        "rap2hpoutre/laravel-log-viewer": "^0.7.0",
+        "zizaco/entrust": "^1.7",
+        "infyomlabs/laravel-generator": "dev-master",
+        "laravelcollective/html": "5.1.*",
+        "infyomlabs/core-templates": "dev-master",
+        "devster/ubench": "^1.2",
+        "orangehill/iseed": "^2.1",
+        "predis/predis": "^1.1",
+        "estgroupe/laravel-taggable": "5.1.*",
+        "summerblue/administrator": "^1.0",
+        "laravel/socialite": "^2.0",
+        "laracasts/presenter": "^0.2.1",
+        "simplesoftwareio/simple-qrcode": "^1.4",
+        "thujohn/rss": "*@dev",
+        "spatie/laravel-backup": "^3.8"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~4.0",
+        "phpspec/phpspec": "~2.1",
+        "laracasts/generators": "^1.1",
+        "laralib/l5scaffold": "1.0"
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "App\\": "app/",
+            "Phphub\\": "app/Phphub/"
+        },
+        "files": [
+            "app/Helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ],
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "php artisan optimize"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "php artisan optimize"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/rss"
+        }
+    ]
+}
