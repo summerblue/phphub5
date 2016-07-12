@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Topic;
 use App\Models\Link;
+use App\Models\Banner;
 
 class CategoriesController extends Controller
 {
@@ -18,7 +19,7 @@ class CategoriesController extends Controller
         $filter   = $topic->present()->getTopicFilter();
         $topics   = $topic->getCategoryTopicsWithFilter($filter, $id);
         $links    = Link::allFromCache();
-
-        return view('topics.index', compact('topics', 'category', 'links'));
+        $banners = Banner::allByPosition();
+        return view('topics.index', compact('topics', 'category', 'links', 'banners'));
     }
 }

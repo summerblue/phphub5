@@ -19,8 +19,6 @@ use Image;
 
 class TopicsController extends Controller implements CreatorListener
 {
-    const SESSION_KEY = 'create_topic_success';
-
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
