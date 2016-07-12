@@ -11,20 +11,12 @@ use Purifier;
 
 class PagesController extends Controller
 {
-
-    protected $topic;
-
-    public function __construct(Topic $topic)
-    {
-        $this->topic = $topic;
-    }
-
     /**
      * The home page
      */
-    public function home()
+    public function home(Topic $topic)
     {
-        $topics = $this->topic->getTopicsWithFilter('excellent');
+        $topics = $topic->getTopicsWithFilter('excellent');
         $banners = Banner::allByPosition();
         return view('pages.home', compact('topics', 'banners'));
     }
