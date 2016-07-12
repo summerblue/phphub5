@@ -1,6 +1,6 @@
 <div style="text-align: center;">
   <a href="">
-    <img src="{{ $user->present()->gravatar(180) }}" class="img-thumbnail users-show-avatar" style="width: 206px;margin: 4px 4px 15px;min-height:190px">
+    <img src="{{ $user->present()->gravatar(380) }}" class="img-thumbnail users-show-avatar" style="width:100%;margin: 4px 0px 15px;min-height:190px">
   </a>
 </div>
 
