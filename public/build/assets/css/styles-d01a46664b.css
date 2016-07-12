@@ -9973,6 +9973,12 @@ div#preview-box {
 .users-show .user-info-nav {
   border-bottom: 1px solid #ddd; }
 
+.users-show .dl-horizontal dt, .users-show .dl-horizontal dd {
+  padding-top: 5px; }
+
+.users-show .dl-horizontal .label {
+  position: static; }
+
 .banner-container .item {
   position: relative;
   top: 0;
