@@ -21,7 +21,7 @@ class CategoriesTableSeeder extends Seeder
                 'parent_id'   => 0,
                 'post_count'  => 0,
                 'weight'      => 100,
-                'name'        => '酷工作',
+                'name'        => '招聘',
                 'slug'        => 'zhao-pin',
                 'description' => '这里有高质量的 PHPer, 记得认真填写你的需求, 薪资待遇是必须写的哦.',
                 'created_at'  => '2016-07-03 10:00:00',
