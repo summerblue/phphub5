@@ -4,23 +4,24 @@ require('laravel-elixir-compress');
 
 var production = elixir.config.production;
 var basejs = [
-    'vendor/jquery.min.js',
-    'vendor/bootstrap.min.js',
-    'vendor/moment.min.js',
-    'vendor/zh-cn.min.js',
-    'vendor/emojify.min.js',
-    'vendor/jquery.scrollUp.js',
-    'vendor/jquery.pjax.js',
-    'vendor/nprogress.js',
-    'vendor/jquery.autosize.min.js',
-    'vendor/prism.js',
-    'vendor/jquery.textcomplete.js',
-    'vendor/emoji.js',
-    'vendor/marked.min.js',
-    'vendor/ekko-lightbox.js',
-    'vendor/localforage.min.js',
-    'vendor/jquery.inline-attach.min.js',
-    'vendor/snowfall.jquery.min.js',
+    'resources/assets/js/vendor/jquery.min.js',
+    'resources/assets/js/vendor/bootstrap.min.js',
+    'resources/assets/js/vendor/moment.min.js',
+    'resources/assets/js/vendor/zh-cn.min.js',
+    'resources/assets/js/vendor/emojify.min.js',
+    'resources/assets/js/vendor/jquery.scrollUp.js',
+    'resources/assets/js/vendor/jquery.pjax.js',
+    'resources/assets/js/vendor/nprogress.js',
+    'resources/assets/js/vendor/jquery.autosize.min.js',
+    'resources/assets/js/vendor/prism.js',
+    'resources/assets/js/vendor/jquery.textcomplete.js',
+    'resources/assets/js/vendor/emoji.js',
+    'resources/assets/js/vendor/marked.min.js',
+    'resources/assets/js/vendor/ekko-lightbox.js',
+    'resources/assets/js/vendor/localforage.min.js',
+    'resources/assets/js/vendor/jquery.inline-attach.min.js',
+    'resources/assets/js/vendor/snowfall.jquery.min.js',
+    'node_modules/sweetalert/dist/sweetalert.min.js',
 ];
 
 elixir(function(mix) {
@@ -39,8 +40,8 @@ elixir(function(mix) {
         ], 'public/assets/css/styles.css')
 
         .scripts(basejs.concat([
-            'main.js',
-        ]), 'public/assets/js/scripts.js')
+            'resources/assets/js/main.js',
+        ]), 'public/assets/js/scripts.js', './')
 
         .version([
             'assets/css/styles.css',
