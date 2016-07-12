@@ -25,7 +25,7 @@ class Banner extends Model
     public static function allByPosition()
     {
         $return = [];
-        $data   = Banner::orderBy('position', 'desc')
+        $data   = Banner::orderBy('position', 'DESC')
                         ->orderBy('order', 'ASC')
                         ->get();
 

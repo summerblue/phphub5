@@ -8,6 +8,12 @@ return [
     'single'  => 'Banner',
     'model'   => Banner::class,
 
+    'query_filter' => function ($query) {
+        if (!Input::get('sortOptions')) {
+            $query->orderBy('order', 'ASC');
+        }
+    },
+
     'columns' => [
         'id' => [
             'title' => 'ID',
@@ -19,6 +25,12 @@ return [
             'title'  => '标题',
             'output' => function ($value, $model) {
                 return $model->link ? "<a href='{$model->link}' target='_blank'>{$value}</a>" : $value;
+            },
+        ],
+        'target' => [
+            'title'  => '打开方式',
+            'output' => function ($value) {
+                return $value == '_blank' ? '新窗口打开' : '本站打开';
             },
         ],
         'image_url' => [
@@ -53,6 +65,15 @@ return [
         ],
         'title' => [
             'title' => '标题',
+        ],
+        'target' => [
+            'title'    => '打开方式',
+            'type'     => 'enum',
+            'options'  => [
+                '_blank' => '新窗口打开',
+                '_self'  => '本站打开',
+            ],
+            'value' => '_blank',
         ],
         'link' => [
             'title' => '链接地址',
