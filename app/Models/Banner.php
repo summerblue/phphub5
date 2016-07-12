@@ -26,7 +26,7 @@ class Banner extends Model
     {
         $return = [];
         $data   = Banner::orderBy('position', 'desc')
-                        ->orderBy('order', 'desc')
+                        ->orderBy('order', 'ASC')
                         ->get();
 
         foreach ($data as $banner) {
