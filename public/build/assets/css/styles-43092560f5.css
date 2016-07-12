@@ -8597,7 +8597,7 @@ body {
   color: #555; }
 
 .topic-list .list-group-item {
-  height: 71px; }
+  height: 58px; }
 
 .topic-list .media-heading {
   white-space: nowrap;
@@ -8783,7 +8783,7 @@ ul.list {
 .list-group {
   margin-bottom: 0px; }
   .list-group .list-group-item {
-    padding: 7px 15px 10px;
+    padding: 0px 15px;
     border: none;
     margin-bottom: 0px;
     border-bottom: 1px solid #f2f2f2; }
@@ -9353,7 +9353,7 @@ div#preview-box {
     width: 1400px; } }
 
 .list-group-item.media .infos {
-  margin-top: 8px;
+  margin-top: 16px;
   margin-left: 66px; }
 
 .navbar-default {
@@ -9493,6 +9493,10 @@ div#preview-box {
   background-color: #f9fff3; }
 
 .topics-index .topic-list .media-heading {
-  font-size: 1.1em; }
+  font-size: 16px; }
+
+.label-default {
+  background-color: #e5e5e5;
+  color: #999; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -40,33 +40,16 @@
             @if ($topic->order > 0 && !Input::get('filter') && Route::currentRouteName() != 'home' )
                 <span class="label label-warning">{{ lang('Stick') }}</span>
             @elseif ($topic->is_excellent == 'yes' && !Input::get('filter') && Route::currentRouteName() != 'home' )
-                <span class="label label-primary">{{ lang('Recommended') }}</span>
+                <span class="label label-success">{{ lang('Recommended') }}</span>
+            @else
+                <span class="label label-default">{{{ $topic->category->name }}}</span>
             @endif
 
             <a href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
                 {{{ $topic->title }}}
             </a>
           </div>
-          <div class="media-body meta">
 
-            @if ($topic->vote_count > 0)
-                <a href="{{ route('topics.show', [$topic->id]) }}" class="remove-padding-left" id="pin-{{ $topic->id }}">
-                    <span class="fa fa-thumbs-o-up"> {{ $topic->vote_count }} </span>
-                </a>
-                <span> •  </span>
-            @endif
-
-            <a href="{{ route('categories.show', [$topic->category->id]) }}" title="{{{ $topic->category->name }}}" {{ $topic->vote_count == 0 || 'class="remove-padding-left"'}}>
-                {{{ $topic->category->name }}}
-            </a>
-
-            <span> • </span>
-            <a href="{{ route('users.show', [$topic->user_id]) }}" title="{{{ $topic->user->name }}}">
-                {{{ $topic->user->name }}}
-            </a>
-            <span> • </span>
-            <span class="timeago">{{ $topic->created_at }}</span>
-          </div>
         </div>
 
     </li>
