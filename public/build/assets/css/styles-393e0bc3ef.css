@@ -9979,6 +9979,9 @@ div#preview-box {
 .users-show .dl-horizontal .label {
   position: static; }
 
+.replies-index .list-group-item.media {
+  padding-bottom: 6px; }
+
 .banner-container .item {
   position: relative;
   top: 0;
@@ -10068,7 +10071,11 @@ div#preview-box {
   ul.topic-list .list-group-item .avatar {
     margin-top: -2px; }
   div.topics-index .topic-list .media-heading {
-    font-size: 14px; } }
+    font-size: 14px; }
+  .replies-index .list-group-item.media {
+    padding-bottom: 10px; }
+  .replies-index .list-group-item.media .infos, div.replies-index .list-group-item.media .avatar img {
+    margin-top: 6px; } }
 
 .avatar-middle {
   width: 50px; }
