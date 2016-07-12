@@ -16,7 +16,7 @@ return [
             'title' => '位置',
         ],
         'title' => [
-            'title' => '标题',
+            'title'  => '标题',
             'output' => function ($value, $model) {
                 return $model->link ? "<a href='{$model->link}' target='_blank'>{$value}</a>" : $value;
             },
@@ -25,7 +25,7 @@ return [
             'title'    => '图片',
             'sortable' => false,
             'output'   => function ($value, $model) {
-                return $value ? "<img src='$value' width='200' height='200'>" : 'N/A';
+                return $value ? "<img src='$value' width='200' height='100'>" : 'N/A';
             },
         ],
         'description' => [
@@ -58,12 +58,12 @@ return [
             'title' => '链接地址',
         ],
         'image_url' => [
-            'title' => '封面',
-            'type' => 'image',
-            'location' => public_path() . '/uploads/banners/',
-            'naming' => 'random',
-            'length' => 20,
-            'size_limit' => 2,
+            'title'             => '封面',
+            'type'              => 'image',
+            'location'          => public_path() . '/uploads/banners/',
+            'naming'            => 'random',
+            'length'            => 20,
+            'size_limit'        => 2,
             'display_raw_value' => false,
         ],
         'description' => [
