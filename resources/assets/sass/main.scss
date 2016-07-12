@@ -951,6 +951,7 @@ div#preview-box {
 .users-show .dl-horizontal dt, .users-show .dl-horizontal dd { padding-top: 5px;}
 .users-show .dl-horizontal .label { position: static;}
 .replies-index .list-group-item.media { padding-bottom: 6px;}
+.topic-list .media-heading .label { position: relative; top: -1px;}
 
 // banner
 .banner-container .item { position: relative; top: 0; margin-bottom: 20px; padding-top: 50%; padding-bottom: 30px; border: solid 1px #f5f5f5; border-radius: 4px; overflow: hidden; background: #fff; transition: all .3s ease;}
