@@ -10,7 +10,7 @@ class RepliesController extends Controller implements CreatorListener
 {
     public function __construct()
     {
-        $this->beforeFilter('auth');
+        $this->middleware('auth');
     }
 
     public function store(StoreReplyRequest $request)
