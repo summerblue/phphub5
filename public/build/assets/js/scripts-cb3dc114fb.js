@@ -3585,12 +3585,10 @@ Date.now||(Date.now=function(){return(new Date).getTime()}),function(){"use stri
         },
 
         showPluginDownload: function() {
-            if (Config.is_admin !== 'yes' && !!window.chrome && !!window.chrome.webstore) {
-                this.showMsg('下载 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">PHPHub Chrome 插件</a> 实时接收消息提醒', {
-                    type: 'success',
-                    timer: 5000
-                });
-            }
+            this.showMsg('Chrome 浏览器下可使用 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">PHPHub 插件</a> 实时接收提醒', {
+                type: 'success',
+                timer: 8000
+            });
         },
 
         initLogin: function() {
