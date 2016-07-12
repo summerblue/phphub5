@@ -6,7 +6,7 @@
     @foreach ($topics as $topic)
      <li class="list-group-item media {{ !$column ?:'col-sm-6' }}" style="margin-top: 0px;">
 
-         <a class="reply_last_time" href="{{route('topics.show', [$topic->id])}}">
+         <a class="reply_last_time hidden-xs" href="{{route('topics.show', [$topic->id])}}">
              @if ($topic->reply_count > 0 && count($topic->lastReplyUser))
              <img class="user_small_avatar" src="{{ $topic->lastReplyUser->present()->gravatar }}">
              @else
@@ -23,7 +23,7 @@
             </a>
         </div>
 
-        <span class="reply_count_area" >
+        <span class="reply_count_area hidden-xs" >
             <span class="count_of_replies" title="回复数">
               {{ $topic->reply_count }}
             </span>
@@ -38,9 +38,9 @@
           <div class="media-heading">
 
             @if ($topic->order > 0 && !Input::get('filter') && Route::currentRouteName() != 'home' )
-                <span class="label label-warning">{{ lang('Stick') }}</span>
+                <span class="hidden-xs label label-warning">{{ lang('Stick') }}</span>
             @else
-                <span class="label label-{{ ($topic->is_excellent == 'yes' && Route::currentRouteName() != 'home') ? 'success' : 'default' }}">{{{ $topic->category->name }}}</span>
+                <span class="hidden-xs label label-{{ ($topic->is_excellent == 'yes' && Route::currentRouteName() != 'home') ? 'success' : 'default' }}">{{{ $topic->category->name }}}</span>
             @endif
 
             <a href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">

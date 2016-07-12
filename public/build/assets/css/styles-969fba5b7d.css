@@ -10055,7 +10055,13 @@ div#preview-box {
     padding-left: 5px;
     padding-right: 5px; }
   .banner-container .item {
-    margin-bottom: 10px; } }
+    margin-bottom: 10px; }
+  .topic-list .list-group-item.media .infos {
+    margin-top: 10px; }
+  ul.topic-list .list-group-item .avatar {
+    margin-top: -2px; }
+  div.topics-index .topic-list .media-heading {
+    font-size: 14px; } }
 
 .avatar-middle {
   width: 50px; }
