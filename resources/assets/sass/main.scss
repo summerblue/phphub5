@@ -948,6 +948,8 @@ div#preview-box {
 .rbs.row div[class*="col-"] { padding-left: 10px; padding-right: 10px;}
 .main-col, .side-bar { margin-bottom: 20px;}
 .users-show .user-info-nav { border-bottom: 1px solid #ddd;}
+.users-show .dl-horizontal dt, .users-show .dl-horizontal dd { padding-top: 5px;}
+.users-show .dl-horizontal .label { position: static;}
 
 // banner
 .banner-container .item { position: relative; top: 0; margin-bottom: 20px; padding-top: 50%; padding-bottom: 30px; border: solid 1px #f5f5f5; border-radius: 4px; overflow: hidden; background: #fff; transition: all .3s ease;}
