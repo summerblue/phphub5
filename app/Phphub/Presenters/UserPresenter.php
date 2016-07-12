@@ -12,7 +12,7 @@ class UserPresenter extends Presenter
      */
     public function gravatar($size = 100)
     {
-        if (config('app.url_static')) {
+        if (config('app.url_static') && $this->avatar) {
             //Using Qiniu image processing service.
             return cdn('uploads/avatars/'.$this->avatar)."?imageView2/1/w/{$size}/h/{$size}";
         }
