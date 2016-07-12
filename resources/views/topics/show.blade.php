@@ -26,7 +26,7 @@
       <div class="votes">
 
         <a data-ajax="post" href="javascript:void(0);" data-url="{{ route('topics.upvote', $topic->id) }}" title="{{ lang('Up Vote') }}" id="up-vote" class="vote {{ $currentUser && $topic->votes()->ByWhom(Auth::id())->WithType('upvote')->count() ? 'active' :'' }}">
-            <li class="fa fa-chevron-up"></li> <span id="vote-count">{{ $topic->vote_count }}</span>
+            <li class="fa fa-chevron-up"></li> <span id="vote-count"> {{ $topic->vote_count }}</span>
         </a>
          &nbsp;
         <a data-ajax="post" href="javascript:void(0);" data-url="{{ route('topics.downvote', $topic->id) }}" title="{{ lang('Down Vote') }}" id="down-vote" class="vote {{ $currentUser && $topic->votes()->ByWhom(Auth::id())->WithType('downvote')->count() ? 'active' :'' }}">
