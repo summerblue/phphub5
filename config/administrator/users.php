@@ -30,13 +30,13 @@ EOD;
             'sortable' => false,
         ],
         'github_name' => [
-            'title' => 'Github 用户名'
+            'title' => 'GitHub 用户名'
         ],
         'email' => [
             'title' => '邮箱',
         ],
         'github_id' => [
-            'title' => 'Github Id',
+            'title' => 'GitHub Id',
         ],
         'is_banned' => [
             'title' => '是否被屏蔽',
@@ -57,10 +57,10 @@ EOD;
             'title' => '邮箱',
         ],
         'github_id' => [
-            'title' => 'Github ID'
+            'title' => 'GitHub ID'
         ],
         'github_url' => [
-            'title' => 'Github URL'
+            'title' => 'GitHub URL'
         ],
         'is_banned' => [
             'title'    => '是否被屏蔽',
@@ -71,7 +71,7 @@ EOD;
             ],
         ],
         'image_url' => [
-            'title' => 'Github 头像 URL'
+            'title' => 'GitHub 头像 URL'
         ],
         'city' => [
             'title' => '所处城市'
@@ -89,7 +89,7 @@ EOD;
             'title' => '个人简介'
         ],
         'github_name' => [
-            'title' => 'Github 用户名'
+            'title' => 'GitHub 用户名'
         ],
         'real_name' => [
             'title' => '真实姓名'
@@ -111,7 +111,7 @@ EOD;
             'title' => '姓名',
         ],
         'github_name' => [
-            'title' => 'Github 用户名'
+            'title' => 'GitHub 用户名'
         ],
         'real_name' => [
             'title' => '真实姓名'

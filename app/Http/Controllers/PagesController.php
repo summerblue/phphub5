@@ -46,8 +46,8 @@ class PagesController extends Controller
         $topics = Topic::excellent()->recent()->limit(20)->get();
 
         $channel =[
-            'title'       => 'PHPhub - PHP & Laravel的中文社区',
-            'description' => 'PHPhub是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。',
+            'title'       => 'PHPHub - PHP & Laravel的中文社区',
+            'description' => 'PHPHub是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。',
             'link'        => url(route('feed')),
         ];
 
