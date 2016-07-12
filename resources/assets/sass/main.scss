@@ -1113,3 +1113,29 @@ div#preview-box {
     background-color: #00c4bc;
     border-color: #00c4bc;
 }
+
+.alert-success {
+    border:none;
+    box-shadow: 0 0 0 1px #8ABC1E inset,0 0 0 0 transparent;
+    background-color: #FBFDEF;
+    color: #8ABC1E;
+}
+
+.alert-info {
+    border:none;
+    background-color: #e9ffff;
+    color: #10a3a3;
+}
+
+.alert-warning {
+    border:none;
+    box-shadow: 0px 0px 0px 1px #d9caab inset, 0px 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.alert-danger {
+    border:none;
+}
+
+.alert {
+    box-shadow: 0px 0px 0px 1px rgba(39, 41, 43, 0.15) inset, 0px 0px 0px 0px transparent;
+}
