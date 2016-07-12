@@ -45,9 +45,6 @@ return [
         'is_excellent' => [
             'title'    => '是否是推荐',
         ],
-        'is_wiki' => [
-            'title'    => '是否是 wiki',
-        ],
         'is_blocked' => [
             'title'    => '是否被屏蔽',
         ],
@@ -109,15 +106,6 @@ return [
             ],
             'value' => 'no',
         ],
-        'is_wiki' => [
-            'title'    => '是否是 wiki',
-            'type'     => 'enum',
-            'options'  => [
-                'yes' => '是',
-                'no'  => '否',
-            ],
-            'value' => 'no',
-        ],
         'is_blocked' => [
             'title'    => '是否被屏蔽',
             'type'     => 'enum',
@@ -167,15 +155,6 @@ return [
         ],
         'is_excellent' => [
             'title'    => '是否是推荐',
-            'type'     => 'enum',
-            'options'  => [
-                'yes' => '是',
-                'no'  => '否',
-            ],
-            'value' => 'no',
-        ],
-        'is_wiki' => [
-            'title'    => '是否是 wiki',
             'type'     => 'enum',
             'options'  => [
                 'yes' => '是',

@@ -76,7 +76,6 @@ Route::group(['before' => 'auth'], function () {
 
 Route::group(['before' => 'manage_topics'], function () {
     Route::post('topics/recommend/{id}', 'TopicsController@recommend')->name('topics.recommend');
-    Route::post('topics/wiki/{id}', 'TopicsController@wiki')->name('topics.wiki');
     Route::post('topics/pin/{id}', 'TopicsController@pin')->name('topics.pin');
     Route::delete('topics/delete/{id}', 'TopicsController@destroy')->name('topics.destroy');
     Route::post('topics/sink/{id}', 'TopicsController@sink')->name('topics.sink');

@@ -26,7 +26,6 @@ class CreateTopicsTable extends Migration
             $table->integer('last_reply_user_id')->unsigned()->default(0)->index();
             $table->integer('order')->default(0)->index();
             $table->enum('is_excellent', ['yes',  'no'])->default('no')->index();
-            $table->enum('is_wiki', ['yes',  'no'])->default('no')->index();
             $table->enum('is_blocked', ['yes',  'no'])->default('no')->index();
             $table->text('body_original')->nullable();
             $table->text('excerpt')->nullable();
