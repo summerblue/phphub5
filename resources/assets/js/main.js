@@ -54,6 +54,7 @@
             self.forceImageDataType();
             self.initToolTips();
             self.initAjax();
+            self.initLogin();
         },
 
         /**
@@ -264,7 +265,7 @@
         initReplyOnPressKey: function() {
             $(document).on("keydown", "#reply_content", function(e)
             {
-                if ((e.keyCode == 10 || e.keyCode == 13) && e.ctrlKey) {
+                if ((e.keyCode == 10 || e.keyCode == 13) && e.ctrlKey && $('#reply-create-submit').is(':enabled')) {
                     $(this).parents("form").submit();
                     return false;
                 }
@@ -286,11 +287,21 @@
                 })
                 .attr('style','cursor:pointer;')
                 .click(function() {
+                    var that = $(this);
                     if ($(this).attr('data-method') == 'post') {
                         $(this).find("form").submit();
                     }
-                    if ($(this).attr('data-method') == 'delete' && confirm("Are you sure want to proceed?")) {
-                        $(this).find("form").submit();
+                    if ($(this).attr('data-method') == 'delete') {
+                        swal({
+                            title: "",
+                            text: "Are you sure want to proceed?",
+                            type: "warning",
+                            showCancelButton: true,
+                            cancelButtonText: "取消",
+                            confirmButtonText: "删除"
+                        }, function() {
+                            that.find("form").submit();
+                        });
                     }
                 });
            // attr('onclick',' if (confirm("Are you sure want to proceed?")) { $(this).find("form").submit(); };');
@@ -449,7 +460,7 @@
 
                             tpl = '<li class="list-group-item media" style="margin-top: 0px;">\
                                 <div class="avatar pull-left">\
-                                    <a href="/users/' + data.reply.user_id + '"><img class="media-object img-thumbnail avatar" alt="' + data.reply.user.name + '" src="' + data.reply.user.image_url + '" style="width:68px;height:68px;"></a>\
+                                    <a href="/users/' + data.reply.user_id + '"><img class="media-object img-thumbnail avatar" alt="' + data.reply.user.name + '" src="' + data.reply.user.image_url + '" style="width:48px;height:48px;"></a>\
                                 </div>\
                                 <div class="infos">\
                                     <div class="media-heading">\
@@ -472,6 +483,7 @@
                         total.html(parseInt(total.html()) + 1);
                         emptyBlock.addClass('hide');
                         comment.val('');
+                        localforage.removeItem('reply_content');
                         preview.html('');
                         location.href = location.href.split('#')[0] + '#reply' + count;
                         self.initTimeAgo();
@@ -560,9 +572,19 @@
                 var isCommentVote= that.is('.comment-vote');
                 var commenVoteCount= that.find('.vote-count');
                 var emptyBlock = $('#replies-empty-block');
+                var originVoteCount = voteCount.html();
+                var originUpVoteActive = upVote.is('.active');
+                var originDownVoteActive = downVote.is('.active');
 
                 if (method === 'delete') {
-                    if (confirm("Are you sure want to proceed?")) {
+                    swal({
+                        title: "",
+                        text: "Are you sure want to proceed?",
+                        type: "warning",
+                        showCancelButton: true,
+                        cancelButtonText: "取消",
+                        confirmButtonText: "删除"
+                    }, function() {
                         that.closest('.list-group-item').slideUp();
                         $.ajax({
                             method: method,
@@ -578,9 +600,85 @@
                         }).fail(function() {
                             that.closest('.list-group-item').show();
                         });
-                    }
+                    });
 
                     return;
+                }
+
+                if (that.is('.ajax-loading')) return;
+                that.addClass('ajax-loading');
+
+                if (active) {
+                    that.removeClass('active');
+
+                    if (attentText) {
+                        that.find('span').html(attentText);
+                    } else if (favoriteText) {
+                        that.find('span').html(favoriteText);
+                    }
+
+                    if (isRecomend) {
+                        excellent.hide();
+                    } else if (isWiki) {
+                        wiki.hide();
+                    }
+
+                    if (isVote) {
+                        if (isUpVote) {
+                            voteCount.html(parseInt(voteCount.html()) - 1);
+                        } else if (downVote) {
+                            voteCount.html(parseInt(voteCount.html()) + 1);
+                        }
+                    }
+                } else {
+                    that.addClass('active');
+
+                    if (cancelText) {
+                        that.find('span').html(cancelText);
+                        self.showPluginDownload();
+                    }
+
+                    if (isRecomend) {
+                        var excellentText = ribbonContainer.data('lang-excellent');
+                        if (excellent.length) {
+                            excellent.show();
+                        } else {
+                            if (ribbon.length) {
+                                ribbon.prepend('<div class="ribbon-excellent"><i class="fa fa-trophy"></i> ' + excellentText + ' </div>');
+                            } else {
+                                ribbonContainer.prepend('<div class="ribbon"><div class="ribbon-excellent"><i class="fa fa-trophy"></i> ' + excellentText + ' </div></div>');
+                            }
+                        }
+                    } else if (isWiki) {
+                        var wikiText = ribbonContainer.data('lang-wiki');
+                        if (wiki.length) {
+                            wiki.show();
+                        } else {
+                            if (ribbon.length) {
+                                ribbon.append('<div class="ribbon-wiki"><i class="fa fa-graduation-cap"></i> ' + wikiText + ' </div>');
+                            } else {
+                                ribbonContainer.append('<div class="ribbon"><div class="ribbon-wiki"><i class="fa fa-graduation-cap"></i> ' + wikiText + ' </div></div>');
+                            }
+                        }
+                    }
+
+                    if (isVote) {
+                        if (isUpVote) {
+                            if (downVote.is('.active')) {
+                                downVote.removeClass('active');
+                                voteCount.html(parseInt(voteCount.html()) + 2);
+                            } else {
+                                voteCount.html(parseInt(voteCount.html()) + 1);
+                            }
+                        } else if (downVote) {
+                            if (upVote.is('.active')) {
+                                upVote.removeClass('active');
+                                voteCount.html(parseInt(voteCount.html()) - 2);
+                            } else {
+                                voteCount.html(parseInt(voteCount.html()) - 1);
+                            }
+                        }
+                    }
                 }
 
                 $.ajax({
@@ -597,83 +695,55 @@
                             } else if (data.type === 'add') {
                                 commenVoteCount.html(num + 1);
                             }
-
-                            return;
-                        }
-
-                        if (active) {
-                            that.removeClass('active');
-
-                            if (attentText) {
-                                that.find('span').html(attentText);
-                            } else if (favoriteText) {
-                                that.find('span').html(favoriteText);
-                            }
-
-                            if (isRecomend) {
-                                excellent.hide();
-                            } else if (isWiki) {
-                                wiki.hide();
-                            }
-
-                            if (isVote) {
-                                if (isUpVote) {
-                                    voteCount.html(parseInt(voteCount.html()) - 1);
-                                } else if (downVote) {
-                                    voteCount.html(parseInt(voteCount.html()) + 1);
-                                }
-                            }
-                        } else {
-                            that.addClass('active');
-
-                            if (cancelText) {
-                                that.find('span').html(cancelText);
-                                self.showPluginDownload();
-                            }
-
-                            if (isRecomend) {
-                                var excellentText = ribbonContainer.data('lang-excellent');
-                                if (excellent.length) {
-                                    excellent.show();
-                                } else {
-                                    if (ribbon.length) {
-                                        ribbon.prepend('<div class="ribbon-excellent"><i class="fa fa-trophy"></i> ' + excellentText + ' </div>');
-                                    } else {
-                                        ribbonContainer.prepend('<div class="ribbon"><div class="ribbon-excellent"><i class="fa fa-trophy"></i> ' + excellentText + ' </div></div>');
-                                    }
-                                }
-                            } else if (isWiki) {
-                                var wikiText = ribbonContainer.data('lang-wiki');
-                                if (wiki.length) {
-                                    wiki.show();
-                                } else {
-                                    if (ribbon.length) {
-                                        ribbon.append('<div class="ribbon-wiki"><i class="fa fa-graduation-cap"></i> ' + wikiText + ' </div>');
-                                    } else {
-                                        ribbonContainer.append('<div class="ribbon"><div class="ribbon-wiki"><i class="fa fa-graduation-cap"></i> ' + wikiText + ' </div></div>');
-                                    }
-                                }
-                            }
-
-                            if (isVote) {
-                                if (isUpVote) {
-                                    if (downVote.is('.active')) {
-                                        downVote.removeClass('active');
-                                        voteCount.html(parseInt(voteCount.html()) + 2);
-                                    } else {
-                                        voteCount.html(parseInt(voteCount.html()) + 1);
-                                    }
-                                } else if (downVote) {
-                                    if (upVote.is('.active')) {
-                                        upVote.removeClass('active');
-                                        voteCount.html(parseInt(voteCount.html()) - 2);
-                                    } else {
-                                        voteCount.html(parseInt(voteCount.html()) - 1);
-                                    }
-                                }
-                            }
                         }
                     }
+                }).fail(function() {
+                    if (!active) {
+                        that.removeClass('active');
+
+                        if (attentText) {
+                            that.find('span').html(attentText);
+                        } else if (favoriteText) {
+                            that.find('span').html(favoriteText);
+                        }
+
+                        if (isRecomend) {
+                            excellent.hide();
+                        } else if (isWiki) {
+                            wiki.hide();
+                        }
+                    } else {
+                        that.addClass('active');
+
+                        if (cancelText) {
+                            that.find('span').html(cancelText);
+                        }
+
+                        if (isRecomend) {
+                            excellent.show();
+                        } else if (isWiki) {
+                            wiki.show();
+                        }
+                    }
+
+                    if (isVote) {
+                        voteCount.html(originVoteCount);
+
+                        if (originUpVoteActive) {
+                            upVote.addClass('active');
+                        } else {
+                            upVote.removeClass('active');
+                        }
+
+                        if (originDownVoteActive) {
+                            downVote.addClass('active');
+                        } else {
+                            downVote.removeClass('active');
+                        }
+                    }
+                })
+                .always(function() {
+                    that.removeClass('ajax-loading');
                 });
             });
         },
@@ -713,6 +783,26 @@
                     timer: 5000
                 });
             }
+        },
+
+        initLogin: function() {
+            $('#login-out').on('click', function(e) {
+                var langText = $(this).data('lang-loginout');
+                var href = $(this).attr('href');
+
+                swal({
+                    title: "",
+                    text: langText,
+                    type: "warning",
+                    showCancelButton: true,
+                    cancelButtonText: "取消",
+                    confirmButtonText: "退出"
+                }, function() {
+                    location.href = href;
+                });
+
+                return false;
+            });
         },
 
     };
