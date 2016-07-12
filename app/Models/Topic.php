@@ -8,11 +8,21 @@ use Naux\AutoCorrect;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
 use Illuminate\Pagination\Paginator;
+use Venturecraft\Revisionable\RevisionableTrait;
 
 class Topic extends Model
 {
     // manually maintian
     public $timestamps = false;
+
+    // For admin log
+    use RevisionableTrait;
+    protected $keepRevisionOf = [
+        'deleted_at',
+        'is_excellent',
+        'is_blocked',
+        'order',
+    ];
 
     use PresentableTrait;
     protected $presenter = 'Phphub\Presenters\TopicPresenter';
