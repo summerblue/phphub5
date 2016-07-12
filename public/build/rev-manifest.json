@@ -1,4 +1,9 @@
 {
+<<<<<<< HEAD
   "assets/css/styles.css": "assets/css/styles-add1a7d4e0.css",
   "assets/js/scripts.js": "assets/js/scripts-01b6bdd3c7.js"
+=======
+  "assets/css/styles.css": "assets/css/styles-7c6bccf35d.css",
+  "assets/js/scripts.js": "assets/js/scripts-384e17386f.js"
+>>>>>>> 324a14bf893eab69bf1a3ef37a9164095a0f6b0e
 }
