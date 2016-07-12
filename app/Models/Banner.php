@@ -9,7 +9,7 @@ class Banner extends Model
 {
     public function setImageUrlAttribute($file_name)
     {
-        if (str_contains($file_name, 'http')) {
+        if (starts_with($file_name, 'http')) {
             $parser_url = explode('/', $file_name);
             $file_name = end($parser_url);
         }
@@ -19,6 +19,10 @@ class Banner extends Model
 
     public function getImageUrlAttribute($file_name)
     {
+        if (starts_with($file_name, 'http')) {
+            return $file_name;
+        }
+
         return cdn($file_name);
     }
 
