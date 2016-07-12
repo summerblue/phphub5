@@ -89,7 +89,7 @@ php artisan est:install
 
 1). 安装 node.js
 
-    直接去官网 [https://nodejs.org/en/](https://nodejs.org/en/) 下载安装最新版本。
+直接去官网 [https://nodejs.org/en/](https://nodejs.org/en/) 下载安装最新版本。
 
 2). 安装 Gulp
 
