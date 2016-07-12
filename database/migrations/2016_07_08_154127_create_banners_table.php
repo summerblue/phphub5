@@ -22,6 +22,7 @@ class CreateBannersTable extends Migration
             $table->string('link')->nullable();
             $table->enum('target', ['_blank',  '_self'])->default('_blank')->index();
             $table->text('description')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
