@@ -41,19 +41,6 @@ function admin_url($path, $id = '')
     return env('APP_URL') . "/admin/$path" . ($id ? '/'.$id : '');
 }
 
-function is_admin()
-{
-    if (!\Auth::check()) {
-        return false;
-    }
-
-    if (\Auth::user()->may('manage_users') || \Auth::user()->may('manage_topics')) {
-        return true;
-    }
-
-    return false;
-}
-
 function show_crx_hint()
 {
     \Session::flash('show_crx_hint', 'yes');
