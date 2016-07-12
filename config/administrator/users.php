@@ -92,7 +92,7 @@ EOD;
             'title' => 'Github 用户名'
         ],
         'real_name' => [
-            'title' => '真是姓名'
+            'title' => '真实姓名'
         ],
         'avatar' => [
             'title' => '头像 URL'
@@ -114,7 +114,7 @@ EOD;
             'title' => 'Github 用户名'
         ],
         'real_name' => [
-            'title' => '真是姓名'
+            'title' => '真实姓名'
         ],
         'email' => [
             'title' => '邮箱',
