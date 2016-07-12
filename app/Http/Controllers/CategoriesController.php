@@ -12,20 +12,13 @@ use App\Models\Link;
 class CategoriesController extends Controller
 {
 
-    protected $topic;
-
-    public function __construct(Topic $topic)
-    {
-        $this->topic = $topic;
-    }
-
-    public function show($id)
+    public function show($id, Topic $topic)
     {
         $category = Category::findOrFail($id);
-        $filter   = $this->topic->present()->getTopicFilter();
-        $topics   = $this->topic->getCategoryTopicsWithFilter($filter, $id);
+        $filter   = $topic->present()->getTopicFilter();
+        $topics   = $topic->getCategoryTopicsWithFilter($filter, $id);
         $links    = Link::allFromCache();
-        
+
         return view('topics.index', compact('topics', 'category', 'links'));
     }
 }

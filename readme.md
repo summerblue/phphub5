@@ -27,7 +27,7 @@ phphub.org 升级版
 
 克隆源代码到本地：
 
-    > git clone git@git.coding.net:zhengjinghua/phphub5.git
+    > git clone git@github.com:summerblue/phphub5.git
 
 #### 2. 配置本地的 Homestead 环境
 
@@ -89,7 +89,7 @@ php artisan est:install
 
 1). 安装 node.js
 
-    直接去官网 [https://nodejs.org/en/](https://nodejs.org/en/) 下载安装最新版本。
+直接去官网 [https://nodejs.org/en/](https://nodejs.org/en/) 下载安装最新版本。
 
 2). 安装 Gulp
 
@@ -123,67 +123,3 @@ gulp watch
 在开发环境下，直接访问后台地址即可登录 1 号用户
 
 至此, 安装完成
-
-## 代码上线
-
-我们使用 [Envoy](https://laravel.com/docs/5.0/envoy) 进行代码部署。
-
-### 1. 安装 envoy
-
-```
-composer global require "laravel/envoy=~1.0"
-```
-
-> 关于 Envoy 的使用，请查阅 [文档](http://laravel-china.org/docs/5.1/envoy)。
-
-### 2. 命令列表
-
-在你获得服务器访问权限后（请资讯项目负责人），即可在 `本地项目根目录` 执行以下命令进行代码部署：
-
-```
-// 仅更新代码
-envoy run update
-
-// 更新代码, 并执行 migration
-envoy run update-with-migrate
-
-// 更新代码, 并执行 gulp build
-envoy run update-with-gulp
-
-// 更新代码, 并执行 composer
-envoy run update-with-composer-install
-```
-
-## 代码生成器日志
-
-记录这些日志目的为了方便后续开发可以借鉴。
-
-```shell
-php artisan make:scaffold WeiboStatuses --schema="mid:string:index,created_at_wb:timestamp:nullable:index,text:text:nullable,reposts_count:integer:unsigned:default(0):index,comments_count:integer:unsigned:default(0):index,attitudes_count:integer:unsigned:default(0):index,weibo_user_id:integer:index,weibo_user_idstr:string:index"
-
-php artisan make:scaffold Appends --schema="content:text,topic_id:integer:unsigned:default(0):index"
-
-php artisan make:scaffold Attentions --schema="topic_id:integer:unsigned:default(0):index,user_id:integer:unsigned:default(0):index"
-
-php artisan make:scaffold Favorites --schema="topic_id:integer:unsigned:default(0):index,user_id:integer:unsigned:default(0):index"
-
-php artisan make:scaffold Links --schema="title:string:index,link:string:index,cover:text:nullable"
-
-php artisan make:scaffold Replies --schema="topic_id:integer:unsigned:default(0):index,user_id:integer:unsigned:default(0):index,is_block:tinyInteger:unsigned:default(0):index,vote_count:integer:unsigned:default(0):index,body:text,body_original:text:nullable"
-
-php artisan make:scaffold SiteStatuses --schema="day:string:index,register_count:integer:unsigned:default(0),topic_count:tinyInteger:unsigned:default(0),reply_count:integer:unsigned:default(0),image_count:integer:unsigned:default(0)"
-
-php artisan make:scaffold Tips --schema="body:text:nullable"
-
-php artisan make:scaffold Favorites --schema="title:string:index,link:string:index,cover:text:nullable"
-
-php artisan make:scaffold Topics --schema="title:string:index,body:text,user_id:tinyInteger:unsigned:default(0),category_id:integer:unsigned:default(0),reply_count:integer:unsigned:default(0),view_count:integer:unsigned:default(0),favorite_count:integer:unsigned:default(0),vote_count:integer:unsigned:default(0),last_reply_user_id:integer:unsigned:default(0),order:integer:unsigned:default(0),is_excellent:tinyInteger:unsigned:default(0),is_wiki:tinyInteger:unsigned:default(0),is_blocked:tinyInteger:unsigned:default(0),body_original:text:nullable,excerpt:text:nullable"
-
-php artisan make:scaffold Topics --schema="user_id:integer:unsigned:default(0),votable_id:integer:unsigned:default(0),votable_type:string:index,is:string:index"
-
-php artisan make:scaffold Users --schema="github_id:integer:unsigned:default(0):index,github_url:string:index,email:string:index:index,name:string:index:index"
-
-php artisan make:scaffold Votes --schema="user_id:integer:unsigned:default(0),votable_id:integer:unsigned:default(0),votable_type:string:index,is:string:index"
-
-php artisan make:scaffold Banners --schema="position:string:index,order:integer:unsigned:default(0):index,image_url:string,title:string:index,description:text:nullable"
-```

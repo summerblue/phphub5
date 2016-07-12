@@ -22,7 +22,7 @@ return [
     'You dont have permission to proceed.' => 'You don\'t have permission to proceed.',
     'Permission Deny' => 'Permission Denied',
     'Notice' => 'Notice',
-    'Login with Github' => 'Login with Github',
+    'Login with GitHub' => 'Login with GitHub',
     'User Login Require' => 'User Login Required',
     'You need to login to proceed.' => 'You need to login to proceed.',
     'Create New Account' => 'Create a New Account',

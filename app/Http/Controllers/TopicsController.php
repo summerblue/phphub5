@@ -19,19 +19,17 @@ use Image;
 
 class TopicsController extends Controller implements CreatorListener
 {
-    protected $topic;
     const SESSION_KEY = 'create_topic_success';
 
-    public function __construct(Topic $topic)
+    public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
-        $this->topic = $topic;
     }
 
-    public function index()
+    public function index(Topic $topic)
     {
-        $filter = $this->topic->present()->getTopicFilter();
-        $topics = $this->topic->getTopicsWithFilter($filter);
+        $filter = $topic->present()->getTopicFilter();
+        $topics = $topic->getTopicsWithFilter($filter, 40);
         $links  = Link::allFromCache();
         $banners = Banner::allByPosition();
         return view('topics.index', compact('topics', 'links', 'banners'));

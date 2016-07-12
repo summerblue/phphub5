@@ -13,10 +13,9 @@ use Flash;
 
 class UsersController extends Controller
 {
-    public function __construct(Topic $topic)
+    public function __construct()
     {
         $this->middleware('auth', ['only' => ['edit', 'update', 'destroy']]);
-        $this->topic = $topic;
     }
 
     public function index()
