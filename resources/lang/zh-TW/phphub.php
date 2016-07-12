@@ -22,7 +22,7 @@ return [
     'You dont have permission to proceed.' => '很抱歉，您目前沒有權限進行此操作. <br />有什麼問題請聯絡管理員.',
     'Permission Deny' => '管理員權限提示',
     'Notice' => '提 示',
-    'Login with Github' => '使用 Github 帳號登入',
+    'Login with GitHub' => '使用 GitHub 帳號登入',
     'User Login Require' => '用戶登入提示',
     'You need to login to proceed.' => '需要登入後才能繼續操作. <br />目前只允許透過 Github 帳號登入.',
     'Create New Account' => '建立新帳號',
