@@ -21,7 +21,7 @@
               </div>
 
             @if ( ! $currentUser)
-            <input class="btn btn-lg btn-success btn-block" id="login-required-submit" type="submit" value="{{trans('Login with Github')}}">
+            <input class="btn btn-lg btn-primary btn-block" id="login-required-submit" type="submit" value="{{trans('Login with Github')}}">
             @endif
 
 
