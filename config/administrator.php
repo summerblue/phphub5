@@ -122,7 +122,7 @@ return array(
      *
      * @type string
      */
-    'home_page' => 'topics',
+    'home_page' => 'site_statuses',
 
     /*
      * The route to which the user will be taken when they click the "back to site" button
