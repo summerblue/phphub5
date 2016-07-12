@@ -75,6 +75,7 @@ return array(
             'links',
             'tips',
             'site_statuses',
+            'revisions',
         ],
     ],
 
