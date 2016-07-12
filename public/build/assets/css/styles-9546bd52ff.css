@@ -10063,7 +10063,8 @@ div#preview-box {
   .banner-container .item {
     margin-bottom: 10px; }
   .topic-list .list-group-item.media .infos {
-    margin-top: 10px; }
+    margin-top: 10px;
+    margin-left: 56px; }
   ul.topic-list .list-group-item .avatar {
     margin-top: -2px; }
   div.topics-index .topic-list .media-heading {
