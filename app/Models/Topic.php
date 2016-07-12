@@ -96,11 +96,6 @@ class Topic extends Model
         return $this->hasMany(Append::class);
     }
 
-    public function getWikiList()
-    {
-        return $this->where('is_wiki', '=', 'yes')->orderBy('created_at', 'desc')->get();
-    }
-
     public function generateLastReplyUserInfo()
     {
         $lastReply = $this->replies()->recent()->first();

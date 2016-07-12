@@ -42,10 +42,6 @@
         <i class="fa fa-trophy"></i>
         </a>
 
-        <a data-ajax="post" id="topic-wiki-button" href="javascript:void(0);" data-url="{{ route('topics.wiki', [$topic->id]) }}" class="admin {{ $topic->is_wiki == 'yes' ? 'active' : '' }}" title="{{ lang('Mark as Community Wiki') }}">
-        <i class="fa fa-graduation-cap"></i>
-        </a>
-
         @if ($topic->order >= 0)
           <a data-ajax="post" id="topic-pin-button" href="javascript:void(0);" data-url="{{ route('topics.pin', [$topic->id]) }}" class="admin {{ $topic->order > 0 ? 'active' : '' }}" title="{{ lang('Pin it on Top') }}">
             <i class="fa fa-thumb-tack"></i>

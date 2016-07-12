@@ -147,17 +147,6 @@ class TopicsController extends Controller implements CreatorListener
         return response(['status' => 200, 'message' => lang('Operation succeeded.')]);
     }
 
-    public function wiki($id)
-    {
-        $topic = Topic::findOrFail($id);
-        $this->authorize('wiki', $topic);
-        $topic->is_wiki = $topic->is_wiki == 'yes' ? 'no' : 'yes';
-        $topic->save();
-        Notification::notify('topic_mark_wiki', Auth::user(), $topic->user, $topic);
-
-        return response(['status' => 200, 'message' => lang('Operation succeeded.')]);
-    }
-
     public function pin($id)
     {
         $topic = Topic::findOrFail($id);
