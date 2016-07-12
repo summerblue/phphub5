@@ -9982,6 +9982,10 @@ div#preview-box {
 .replies-index .list-group-item.media {
   padding-bottom: 6px; }
 
+.topic-list .media-heading .label {
+  position: relative;
+  top: -1px; }
+
 .banner-container .item {
   position: relative;
   top: 0;
