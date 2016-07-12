@@ -9970,6 +9970,9 @@ div#preview-box {
 .main-col, .side-bar {
   margin-bottom: 20px; }
 
+.users-show .user-info-nav {
+  border-bottom: 1px solid #ddd; }
+
 .banner-container .item {
   position: relative;
   top: 0;
