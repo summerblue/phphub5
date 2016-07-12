@@ -21,6 +21,7 @@ class CreateRepliesTable extends Migration
             $table->integer('vote_count')->default(0)->index();
             $table->text('body');
             $table->text('body_original')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

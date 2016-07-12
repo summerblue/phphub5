@@ -3,9 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Venturecraft\Revisionable\RevisionableTrait;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Reply extends Model
 {
+    // For admin log
+    use RevisionableTrait;
+    protected $keepRevisionOf = [
+        'deleted_at'
+    ];
+    use SoftDeletes;
+
     protected $fillable = [
         'body',
         'user_id',
