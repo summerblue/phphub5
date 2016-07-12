@@ -151,7 +151,9 @@ class TopicsController extends Controller implements CreatorListener
     {
         $topic = Topic::findOrFail($id);
         $this->authorize('pin', $topic);
-        ($topic->order > 0) ? $topic->decrement('order', 1) : $topic->increment('order', 1);
+
+        $topic->order = $topic->order > 0 ? 0 : 999;
+        $topic->save();
 
         return response(['status' => 200, 'message' => lang('Operation succeeded.')]);
     }
@@ -160,7 +162,9 @@ class TopicsController extends Controller implements CreatorListener
     {
         $topic = Topic::findOrFail($id);
         $this->authorize('sink', $topic);
-        ($topic->order >= 0) ? $topic->decrement('order', 1) : $topic->increment('order', 1);
+
+        $topic->order = $topic->order >= 0 ? -1 : 0;
+        $topic->save();
 
         return response(['status' => 200, 'message' => lang('Operation succeeded.')]);
     }
