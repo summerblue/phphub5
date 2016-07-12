@@ -6,7 +6,9 @@
 
 @section('content')
 
+@if (!Input::get('filter') && !isset($category))
 @include('layouts.partials.topbanner')
+@endif
 
 <div class="col-md-9 topics-index main-col">
     <div class="panel panel-default">
