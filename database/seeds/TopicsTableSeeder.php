@@ -19,7 +19,6 @@ class TopicsTableSeeder extends Seeder
             $topic->user_id      = $faker->randomElement($users);
             $topic->category_id  = $faker->randomElement($categories);
             $topic->is_excellent = rand(0, 1) ? 'yes' : 'no';
-            $topic->is_wiki      = rand(0, 1) ? 'yes' : 'no';
         });
         Topic::insert($topics->toArray());
 
