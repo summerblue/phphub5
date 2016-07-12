@@ -36,7 +36,7 @@ return [
             },
         ],
         'order' => [
-            'title'    => '排序（按大到小排序）',
+            'title'    => '排序（按小到大排序）',
             'sortable' => false,
         ],
         'operation' => [
@@ -71,7 +71,7 @@ return [
             'type'  => 'textarea',
         ],
         'order' => [
-            'title' => '排序（按大到小排序）',
+            'title' => '排序（按小到大排序）',
             'type'  => 'number',
             'value' => 0,
         ],
@@ -87,7 +87,7 @@ return [
             'title' => '标题',
         ],
         'order' => [
-            'title' => '排序（按大到小排序）',
+            'title' => '排序（按小到大排序）',
             'type'  => 'number',
         ],
     ],
