@@ -19,7 +19,7 @@
               <div class="alert alert-warning">
                   {!! lang('You need to login to proceed.') !!}
               </div>
-              <input class="btn btn-lg btn-success btn-block" id="login-required-submit" type="submit" value="{{trans('Login with Github')}}">
+              <input class="btn btn-lg btn-primary btn-block" id="login-required-submit" type="submit" value="{{trans('Login with Github')}}">
             </fieldset>
 
         </form>
