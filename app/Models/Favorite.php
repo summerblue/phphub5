@@ -15,7 +15,7 @@ class Favorite extends Model
 
     public function user()
     {
-        return $this->belongsTo('User');
+        return $this->belongsTo(User::class);
     }
 
     public static function isUserFavoritedTopic(User $user, Topic $topic)

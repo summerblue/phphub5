@@ -10,12 +10,19 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use GuzzleHttp\Client;
 use Laracasts\Presenter\PresentableTrait;
+use Venturecraft\Revisionable\RevisionableTrait;
 
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract
 {
     use PresentableTrait;
     public $presenter = 'Phphub\Presenters\UserPresenter';
+
+    // For admin log
+    use RevisionableTrait;
+    protected $keepRevisionOf = [
+        'is_banned'
+    ];
 
     use EntrustUserTrait {
         restore as private restoreEntrust;

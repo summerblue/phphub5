@@ -30,7 +30,8 @@
         "laracasts/presenter": "^0.2.1",
         "simplesoftwareio/simple-qrcode": "^1.4",
         "thujohn/rss": "*@dev",
-        "spatie/laravel-backup": "^3.8"
+        "spatie/laravel-backup": "^3.8",
+        "VentureCraft/revisionable": "^1.27"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
