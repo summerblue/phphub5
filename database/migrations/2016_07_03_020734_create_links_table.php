@@ -18,6 +18,7 @@ class CreateLinksTable extends Migration
             $table->string('title')->index();
             $table->string('link')->index();
             $table->text('cover')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -4,9 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Cache;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Venturecraft\Revisionable\RevisionableTrait;
 
 class Banner extends Model
 {
+    // For admin log
+    use RevisionableTrait;
+    protected $keepRevisionOf = [
+        'deleted_at'
+    ];
+    use SoftDeletes;
+
+
     public function setImageUrlAttribute($file_name)
     {
         if (starts_with($file_name, 'http')) {
