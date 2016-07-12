@@ -1,5 +1,5 @@
 <div class="banner-container rbs row">
-    @if(isset($banners['website_top']))
+    @if(isset($banners['website_bottom']))
         @foreach($banners['website_bottom'] as $banner)
         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
             <div class="item">

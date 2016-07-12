@@ -33,7 +33,7 @@ body {
     color: #555;
   }
   .list-group-item {
-    height: 71px;
+    height: 58px;
   }
   .media-heading {
     white-space: nowrap;
@@ -250,7 +250,7 @@ ul.list {
 .list-group {
   margin-bottom: 0px;
   .list-group-item{
-    padding: 7px 15px 10px;
+    padding: 0px 15px;
     border: none;
     margin-bottom: 0px;
     border-bottom: 1px solid #f2f2f2;
@@ -989,7 +989,7 @@ div#preview-box {
 }
 
 .list-group-item.media .infos {
-    margin-top: 8px;
+    margin-top: 16px;
     margin-left: 66px;
 }
 
@@ -1145,5 +1145,10 @@ div#preview-box {
 }
 
 .topics-index .topic-list .media-heading {
-    font-size: 1.1em;
+    font-size: 16px;
+}
+
+.label-default {
+    background-color: #e5e5e5;
+    color: #999;
 }

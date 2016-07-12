@@ -11,20 +11,12 @@ use Purifier;
 
 class PagesController extends Controller
 {
-
-    protected $topic;
-
-    public function __construct(Topic $topic)
-    {
-        $this->topic = $topic;
-    }
-
     /**
      * The home page
      */
-    public function home()
+    public function home(Topic $topic)
     {
-        $topics = $this->topic->getTopicsWithFilter('excellent');
+        $topics = $topic->getTopicsWithFilter('excellent');
         $banners = Banner::allByPosition();
         return view('pages.home', compact('topics', 'banners'));
     }
@@ -54,8 +46,8 @@ class PagesController extends Controller
         $topics = Topic::excellent()->recent()->limit(20)->get();
 
         $channel =[
-            'title'       => 'PHPhub - PHP & Laravel的中文社区',
-            'description' => 'PHPhub是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。',
+            'title'       => 'PHPHub - PHP & Laravel的中文社区',
+            'description' => 'PHPHub是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。',
             'link'        => url(route('feed')),
         ];
 

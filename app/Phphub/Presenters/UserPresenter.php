@@ -10,7 +10,7 @@ class UserPresenter extends Presenter
     /**
      * Present a link to the user gravatar.
      */
-    public function gravatar($size = 80)
+    public function gravatar($size = 100)
     {
         if (config('app.url_static')) {
             //Using Qiniu image processing service.
