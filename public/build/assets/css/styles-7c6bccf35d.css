@@ -8591,7 +8591,8 @@ body {
 
 .topic-list .label {
   position: inherit;
-  font-size: 11px; }
+  font-size: 12px;
+  font-weight: normal; }
 
 .topic-list a, .topic-list a:focus, .topic-list a:hover {
   color: #555; }
