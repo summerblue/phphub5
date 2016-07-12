@@ -61,6 +61,16 @@ class AuthController extends Controller implements UserCreatorListener
         return redirect(route('home'));
     }
 
+    public function loginRequired()
+    {
+        return view('auth.loginrequired');
+    }
+
+    public function adminRequired()
+    {
+        return view('auth.adminrequired');
+    }
+
     /**
      * Shows a user what their new account will look like.
      */

@@ -13,16 +13,16 @@
         </div>
         <div class="panel-body">
 
-          {{ Form::open(['route'=>'login', 'method'=>'get']) }}
+          <form method="GET" action="{{route('login')}}" accept-charset="UTF-8">
 
             <fieldset>
               <div class="alert alert-warning">
-                  {{ lang('You need to login to proceed.') }}
+                  {!! lang('You need to login to proceed.') !!}
               </div>
-              {{ Form::submit(trans('Login with Github'), ['class' => 'btn btn-lg btn-success btn-block', 'id' => 'login-required-submit']) }}
+              <input class="btn btn-lg btn-success btn-block" id="login-required-submit" type="submit" value="{{trans('Login with Github')}}">
             </fieldset>
 
-          {{ Form::close() }}
+        </form>
 
         </div>
       </div>

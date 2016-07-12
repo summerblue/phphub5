@@ -24,7 +24,7 @@ class TopicsController extends Controller implements CreatorListener
 
     public function __construct(Topic $topic)
     {
-        $this->beforeFilter('auth', ['except' => ['index', 'show']]);
+        $this->middleware('auth', ['except' => ['index', 'show']]);
         $this->topic = $topic;
     }
 
