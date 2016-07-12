@@ -39,10 +39,8 @@
 
             @if ($topic->order > 0 && !Input::get('filter') && Route::currentRouteName() != 'home' )
                 <span class="label label-warning">{{ lang('Stick') }}</span>
-            @elseif ($topic->is_excellent == 'yes' && !Input::get('filter') && Route::currentRouteName() != 'home' )
-                <span class="label label-success">{{ lang('Recommended') }}</span>
             @else
-                <span class="label label-default">{{{ $topic->category->name }}}</span>
+                <span class="label label-{{ ($topic->is_excellent == 'yes' && Route::currentRouteName() != 'home') ? 'success' : 'default' }}">{{{ $topic->category->name }}}</span>
             @endif
 
             <a href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
