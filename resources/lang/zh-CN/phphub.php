@@ -119,7 +119,7 @@ return [
     'Successfully_attention' => '成功关注主题, 系统会通知你关于此主题最新的讨论.',
     'Operation succeeded.' => '操作成功!',
     'Login Successfully.' => '成功登录!',
-    'Congratulations and Welcome!' => '恭喜, 你已经成功加入 PHPHub.',
+    'Congratulations and Welcome!' => '恭喜，您已经成功加入 PHPHub，Chrome 用户可使用 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">PHPHub 插件</a> 实时接收消息提醒。',
     'Operation failed!' => '操作失败!',
     'Favorited your topic:' => '收藏了你的主题',
     'Attented your topic:' => '关注了你的主题',

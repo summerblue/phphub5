@@ -777,7 +777,7 @@
         },
 
         showPluginDownload: function() {
-            this.showMsg('Chrome 浏览器下可使用 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">PHPHub 插件</a> 实时接收提醒', {
+            this.showMsg('Chrome 用户可使用 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">PHPHub 插件</a> 实时接收消息提醒。', {
                 type: 'success',
                 timer: 8000
             });
