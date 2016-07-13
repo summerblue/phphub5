@@ -46,7 +46,7 @@ class UsersController extends Controller
         $user = User::findOrFail($id);
         $this->authorize('update', $user);
 
-        $data = $request->only('real_name', 'city', 'company', 'twitter_account', 'personal_website', 'introduction');
+        $data = $request->only('github_name', 'real_name', 'city', 'company', 'twitter_account', 'personal_website', 'introduction');
 
         $user->update($data);
 
