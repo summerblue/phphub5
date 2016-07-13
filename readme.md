@@ -123,3 +123,44 @@ gulp watch
 在开发环境下，直接访问后台地址即可登录 1 号用户
 
 至此, 安装完成
+
+## 扩展包描述
+
+| 扩展包 | 一句话描述 | 在本项目中的使用案例 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|[infyomlabs/laravel-generator](https://packagist.org/packages/infyomlabs/laravel-generator)| Laravel 代码生成器 | 开发时的 Migration、Model、Controller 都使用此扩展包生成。 |
+| [orangehill/iseed](https://github.com/orangehill/iseed) | 将数据表里的数据以 seed 的方式导出 | BannersTableSeeder, LinksTableSeeder, CategoriesTableSeeder 和 TipsTableSeeder 使用此扩展包生成。 |
+| [barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar) | 调试工具栏 | 开发时必备调试工具。 |
+|[rap2hpoutre/laravel-logviewer](https://github.com/rap2hpoutre/laravel-log-viewer)| Log 查看工具 | 生产环境下，使用此扩展包快速查看 Log。 |
+| [laracasts/presenter](https://github.com/laracasts/Presenter) | Presenter 机制 | 以下 Model: User、Topic、Notification 都使用到了 Presenter。 |
+|[league/html-to-markdown](https://github.com/thephpleague/html-to-markdown)| 将 HTML 转换成 Markdown| 用户发帖、回复帖子时使用了此扩展包。 |
+|[erusev/parsedown](https://github.com/erusev/parsedown)| 将 Mark 转换成 HTML| 用户发帖、回复帖子时使用了此扩展包。 |
+| [laravel/socialite](https://github.com/laravel/socialite) | 通用社交网站登录组件 | GitHub 登录逻辑使用了此扩展包。 |
+|[naux/auto-correct](github.com/NauxLiu/auto-correct)| 自动给中英文之间加入合理的空格，纠正专用名词大小写| 用户发帖时用此扩展包过滤标题。 |
+| [Intervention/image](https://github.com/Intervention/image) | 图片处理功能库 | 用发帖和回复帖子时，粘贴剪切板中的图片逻辑使用了此扩展包。 |
+| [zizaco/entrust](https://github.com/Zizaco/entrust.git) | 用户组权限系统 | 整站的权限系统基于此扩展包开发。 |
+| [VentureCraft/revisionable](https://github.com/VentureCraft/revisionable) | 记录 Model 的变更日志 | 以下 Model: User, Topic, Reply, Category, Banner 都用此扩展包记录删除日志。|
+| [mews/purifier](https://github.com/mewebstudio/Purifier) | Html 过滤器 | 用户发帖、回复帖子时候使用了此扩展包。 |
+|[oumen/sitemap](https://github.com/RoumenDamianoff/laravel-sitemap)| sitemap 生成工具| 本项目的 sitemap 使用此扩展包生成。 |
+|[spatie/laravel-backup](https://github.com/spatie/laravel-backup)| 数据库备份解决方案 | 本项目的数据库备份使用此扩展包完成。 |
+|[summerblue/administrator](https://github.com/summerblue/administrator)| 管理后台解决方案| 本项目的后台使用此扩展包开发。 |
+|[laracasts/flash](https://packagist.org/packages/laracasts/flash)| 简单的 flash messages | 用户登录成功、发帖成功后的提示使用此扩展包开发 |
+
+
+
+## 自定义 Artisan 命令列表
+
+| 命令 | 说明 |
+| --- | --- |
+| est:install | 安装命令，仅支持开发环境下运行，在初次安装才有必要运行。|
+| est:reinstall | 重装命令，仅支持开发环境下运行，调用此命令会重置数据库、重置用户身份。|
+
+## 计划任务
+
+此项目的计划任务都以 Laravel 的 [任务调度](http://laravel-china.org/docs/5.1/scheduling) 方式执行。
+
+| 命令 | 说明 | 调用 |
+| --- | --- | --- |
+| `backup:run --only-db` | 数据库备份，每 4 小时运行一次，属于 [spatie/laravel-backup](https://github.com/spatie/laravel-backup) 的逻辑 | php artisan backup:run --only-db|
+| `backup:clean` | 清理过期的数据库备份，每日 1:20 运行，属于 [spatie/laravel-backup](https://github.com/spatie/laravel-backup) 的逻辑 | php artisan backup:clean |
+
