@@ -28,6 +28,15 @@
                       </span>
                   </a>
               </li>
+
+                @if (Auth::user()->can('visit_admin'))
+              <li>
+                  <a href="/admin">
+                      <i class="fa fa-tachometer"></i>
+                  </a>
+              </li>
+                @endif
+
               <li>
                   <a href="{{ route('users.show', $currentUser->id) }}">
                       <i class="fa fa-user"></i> {{{ $currentUser->name }}}
