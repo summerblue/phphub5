@@ -5,7 +5,13 @@
 * 项目代码：PHPHub5
 * 官方地址：https://phphub.org/
 
-phphub.org 升级版
+PHPHub Laravel 5.1 版本。
+
+## 截屏
+
+![image](https://cloud.githubusercontent.com/assets/324764/16790393/1c8e3fc0-48e8-11e6-8a3d-f6b8c926885a.png)
+
+![image](https://cloud.githubusercontent.com/assets/324764/16790437/8a67e064-48e8-11e6-98ef-a0f951b06859.png)
 
 ## 运行环境
 
