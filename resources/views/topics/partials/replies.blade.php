@@ -23,7 +23,7 @@
             {{{ $reply->user->name }}}
         </a>
         @if($reply->user->introduction)
-        <span>
+        <span class="introduction">
              ，{{{ $reply->user->introduction }}}
         </span>
         @endif
