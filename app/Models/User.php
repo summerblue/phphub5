@@ -88,6 +88,11 @@ class User extends Model implements AuthenticatableContract,
         return $query->orderBy('created_at', 'desc');
     }
 
+    public function getIntroductionAttribute($value)
+    {
+        return str_limit($value, 68);
+    }
+
     /**
      * ----------------------------------------
      * UserInterface

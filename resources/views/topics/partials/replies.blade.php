@@ -24,7 +24,7 @@
         </a>
         @if($reply->user->introduction)
         <span class="introduction">
-             ，{{{ str_limit($reply->user->introduction, 68) }}}
+             ，{{{ $reply->user->introduction }}}
         </span>
         @endif
 
