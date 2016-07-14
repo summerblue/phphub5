@@ -39,7 +39,8 @@
 
               <li>
                   <a href="{{ route('users.show', $currentUser->id) }}">
-                      <i class="fa fa-user"></i> {{{ $currentUser->name }}}
+                      <img class="avatar-topnav" alt="Summer" src="{{ $currentUser->present()->gravatar }}">
+                       {{{ $currentUser->name }}}
                   </a>
               </li>
               <li>
