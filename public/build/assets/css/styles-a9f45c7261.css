@@ -10263,4 +10263,7 @@ div#preview-box {
   border: 1px solid white;
   border-radius: 50%; }
 
+.avatar-circle {
+  border-radius: 50% !important; }
+
 /*# sourceMappingURL=styles.css.map */
