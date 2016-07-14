@@ -10264,6 +10264,7 @@ div#preview-box {
   border-radius: 50%; }
 
 .avatar-circle {
-  border-radius: 50% !important; }
+  border-radius: 50% !important;
+  border: 1px solid #ccc; }
 
 /*# sourceMappingURL=styles.css.map */
