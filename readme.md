@@ -9,9 +9,9 @@ PHPHub Laravel 5.1 版本。
 
 ## 截屏
 
-![image](https://cloud.githubusercontent.com/assets/324764/16790393/1c8e3fc0-48e8-11e6-8a3d-f6b8c926885a.png)
+![image](https://cloud.githubusercontent.com/assets/324764/16890025/81038190-4b1d-11e6-80df-81bdb59437dc.png)
 
-![image](https://cloud.githubusercontent.com/assets/324764/16790437/8a67e064-48e8-11e6-98ef-a0f951b06859.png)
+![image](https://cloud.githubusercontent.com/assets/324764/16890045/a983a000-4b1d-11e6-98f4-790c4fc8b706.png)
 
 ## 运行环境
 
