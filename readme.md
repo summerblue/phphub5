@@ -1,15 +1,14 @@
 
+
+![macbook](https://cloud.githubusercontent.com/assets/324764/16890184/c5576a68-4b1e-11e6-85cd-5f47d099a746.png)
+
 ## 项目概述
 
 * 产品名称：PHPHub5
 * 项目代码：PHPHub5
 * 官方地址：https://phphub.org/
 
-PHPHub Laravel 5.1 版本。
-
-## 截屏
-
-![macbook](https://cloud.githubusercontent.com/assets/324764/16890184/c5576a68-4b1e-11e6-85cd-5f47d099a746.png)
+[PHPHub](https://github.com/summerblue/phphub) Laravel 5.1 版本。
 
 ## 运行环境
 
