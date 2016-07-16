@@ -45,6 +45,14 @@ class AuthController extends Controller implements UserCreatorListener
         return Socialite::driver('github')->redirect();
     }
 
+    public function wechatCallback(Request $request)
+    {
+        if ($request->input('status')) {
+            $user = Socialite::with('weixin')->user();
+            // TODO - @by monkey Wait for WeChat audit
+        }
+    }
+
     private function loginUser($user)
     {
         if ($user->is_banned == 'yes') {

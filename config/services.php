@@ -40,4 +40,11 @@ return [
         'client_secret' => env('CLIENT_SECRET'),
         'redirect'      => env('APP_URL').'login',
     ],
+
+    'weixin' => [
+        'client_id'     => env('WEIXIN_KEY'),
+        'client_secret' => env('WEIXIN_SECRET'),
+        'redirect'      => env('WEIXIN_REDIRECT_URI'),
+        'auth_base_uri' => '',
+    ],
 ];
