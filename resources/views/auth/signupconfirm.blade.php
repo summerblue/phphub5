@@ -18,7 +18,7 @@
                 <div class="form-group">
                     <label class="control-label" for="name">{{ lang('Avatar') }}</label>
                     <div class="form-group">
-                        <img src="{{ $oauthData['avatar_url'] }}" width="100%" />
+                        <img src="{{ $oauthData['image_url'] }}" width="100%" />
                     </div>
                 </div>
 
