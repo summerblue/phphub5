@@ -39,7 +39,7 @@
                   </a>
               </li>
           @else
-              <a href="{{ URL::route('login') }}" class="btn btn-info" id="login-btn">
+              <a href="{{ URL::route('auth.oauth', ['driver' => 'github']) }}" class="btn btn-info" id="login-btn">
                 <i class="fa fa-github-alt"></i>
                 {{ lang('Login') }}
               </a>

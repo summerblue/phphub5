@@ -78,14 +78,38 @@ class User extends Model implements AuthenticatableContract,
         return $this->hasMany(Notification::class)->recent()->with('topic', 'fromUser')->paginate(20);
     }
 
+    public function scopeRecent($query)
+    {
+        return $query->orderBy('created_at', 'desc');
+    }
+
+    /**
+     * ----------------------------------------
+     * For Oauth
+     * ----------------------------------------
+     */
+    public static function getByDriver($driver, $id)
+    {
+        $functionMap = [
+            'github' => 'getByGithubId',
+            'wechat' => 'getByWechatId'
+        ];
+        $function = $functionMap[$driver];
+        if (!$function) {
+            return null;
+        }
+
+        return self::$function($id);
+    }
+
     public static function getByGithubId($id)
     {
         return User::where('github_id', '=', $id)->first();
     }
 
-    public function scopeRecent($query)
+    public static function getByWechatId($id)
     {
-        return $query->orderBy('created_at', 'desc');
+        return User::where('wechat_id', '=', $id)->first();
     }
 
     /**

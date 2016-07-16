@@ -17,6 +17,8 @@ use Phphub\Listeners\UserCreatorListener;
 
 class AuthController extends Controller implements UserCreatorListener
 {
+    protected $oauthDriver = ['github', 'wechat', 'weibo'];
+
     /**
      * Create a new authentication controller instance.
      *
@@ -25,32 +27,6 @@ class AuthController extends Controller implements UserCreatorListener
     public function __construct(User $userModel)
     {
         $this->middleware('guest', ['except' => 'logout']);
-    }
-
-    public function login(Request $request)
-    {
-        // Redirect from Github
-        if ($request->input('code')) {
-            $githubUser = Socialite::driver('github')->user();
-            $user = User::getByGithubId($githubUser->id);
-
-            if ($user) {
-                return $this->loginUser($user);
-            }
-
-            return $this->userNotFound($githubUser);
-        }
-
-        // redirect to the github authentication url
-        return Socialite::driver('github')->redirect();
-    }
-
-    public function wechatCallback(Request $request)
-    {
-        if ($request->input('status')) {
-            $user = Socialite::with('weixin')->user();
-            // TODO - @by monkey Wait for WeChat audit
-        }
     }
 
     private function loginUser($user)
@@ -84,12 +60,12 @@ class AuthController extends Controller implements UserCreatorListener
      */
     public function create()
     {
-        if (! Session::has('userGithubData')) {
+        if (! Session::has('oauthData')) {
             return redirect(route('login'));
         }
 
-        $githubUser = array_merge(Session::get('userGithubData'), Session::get('_old_input', []));
-        return view('auth.signupconfirm', compact('githubUser'));
+        $oauthData = array_merge(Session::get('oauthData'), Session::get('_old_input', []));
+        return view('auth.signupconfirm', compact('oauthData'));
     }
 
     /**
@@ -97,13 +73,13 @@ class AuthController extends Controller implements UserCreatorListener
      */
     public function store(StoreUserRequest $request)
     {
-        if (! Session::has('userGithubData')) {
+        if (! Session::has('oauthData')) {
             return redirect(route('login'));
         }
-        $githubUser = array_merge(Session::get('userGithubData'), $request->only('github_id', 'name', 'github_name', 'email'));
-        $githubUser = array_only($githubUser, array_keys($request->rules()));
+        $oauthUser = array_merge(Session::get('oauthData'), $request->only('name', 'email'));
+        $oauthUser = array_only($oauthUser, array_keys($request->rules()));
 
-        return app(\Phphub\Creators\UserCreator::class)->create($this, $githubUser);
+        return app(\Phphub\Creators\UserCreator::class)->create($this, $oauthUser);
     }
 
     public function userBanned()
@@ -131,7 +107,7 @@ class AuthController extends Controller implements UserCreatorListener
     public function userCreated($user)
     {
         Auth::login($user, true);
-        Session::forget('userGithubData');
+        Session::forget('oauthData');
 
         Flash::success(lang('Congratulations and Welcome!'));
 
@@ -145,15 +121,21 @@ class AuthController extends Controller implements UserCreatorListener
      */
 
     // 数据库找不到用户, 执行新用户注册
-    public function userNotFound($githubData)
+    public function userNotFound($driver, $registerUserData)
     {
-        $userGithubData = $githubData->user;
-        $userGithubData['image_url'] = $githubData->user['avatar_url'];
-        $userGithubData['github_id'] = $githubData->user['id'];
-        $userGithubData['github_url'] = $githubData->user['url'];
-        $userGithubData['github_name'] = $githubData->nickname;
+        if ($driver == 'github') {
+            $oauthData = $registerUserData->user;
+            $oauthData['image_url'] = $registerUserData->user['avatar_url'];
+            $oauthData['github_id'] = $registerUserData->user['id'];
+            $oauthData['github_url'] = $registerUserData->user['url'];
+            $oauthData['github_name'] = $registerUserData->nickname;
+        } elseif ($driver == 'wechat') {
+            $oauthData['image_url'] = $registerUserData->avatar;
+            $oauthData['wechat_id'] = $registerUserData->id;
+        }
+        $oauthData['driver'] = $driver;
+        Session::put('oauthData', $oauthData);
 
-        Session::put('userGithubData', $userGithubData);
         return redirect(route('signup'));
     }
 
@@ -161,7 +143,7 @@ class AuthController extends Controller implements UserCreatorListener
     public function userFound($user)
     {
         Auth::loginUsingId($user->id);
-        Session::forget('userGithubData');
+        Session::forget('oauthData');
 
         Flash::success(lang('Login Successfully.'));
         show_crx_hint();
@@ -173,5 +155,38 @@ class AuthController extends Controller implements UserCreatorListener
     public function userIsBanned($user)
     {
         return redirect(route('user-banned'));
+    }
+
+    /**
+     * ----------------------------------------
+     * Oauth Login Logic
+     * ----------------------------------------
+     */
+
+    public function oauth(Request $request)
+    {
+        $driver = $request->input('driver');
+        if (in_array($driver, $this->oauthDriver)) {
+            return Socialite::driver($driver)->redirect();
+        }
+
+        return redirect()->intended('/');
+    }
+
+    public function callback(Request $request)
+    {
+        $driver = $request->input('driver');
+        if (!in_array($driver, $this->oauthDriver)) {
+            return redirect()->intended('/');
+        }
+        $oauthUser = Socialite::with($driver)->user();
+
+        $user = User::getByDriver($driver, $oauthUser->id);
+
+        if ($user) {
+            return $this->loginUser($user);
+        }
+
+        return $this->userNotFound($driver, $oauthUser);
     }
 }
