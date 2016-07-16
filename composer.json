@@ -33,7 +33,6 @@
         "spatie/laravel-backup": "^3.8",
         "VentureCraft/revisionable": "^1.27",
         "socialiteproviders/weixin": "^2.1",
-        "socialiteproviders/manager": " 2.1.2",
         "socialiteproviders/weibo": "^2.0"
     },
     "require-dev": {
