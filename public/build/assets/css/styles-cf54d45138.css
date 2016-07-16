@@ -10267,4 +10267,8 @@ div#preview-box {
   border-radius: 50% !important;
   border: 1px solid #ccc; }
 
+.panel {
+  border-radius: 0px;
+  box-shadow: none; }
+
 /*# sourceMappingURL=styles.css.map */
