@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "aaac32357981316ac1467c30db908c50",
-    "content-hash": "5aa56915fd84d9a06aae64f7b29be041",
+    "hash": "caae48f6b5884945c524dc43f046f3e9",
+    "content-hash": "f2cd5e31a41ca6f40d46e4e783f3f7d2",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2669,6 +2669,85 @@
                 "wrapper"
             ],
             "time": "2016-04-24 02:00:22"
+        },
+        {
+            "name": "socialiteproviders/manager",
+            "version": "v2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/Manager.git",
+                "reference": "1a26f0d4673bee98accd8dd1e48c62ccc2495119"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/SocialiteProviders/Manager/1a26f0d4673bee98accd8dd1e48c62ccc2495119.zip",
+                "reference": "1a26f0d4673bee98accd8dd1e48c62ccc2495119",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/socialite": "~2.0",
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\Manager\\": "src/",
+                    "SocialiteProviders\\Manager\\Test\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andy Wendt",
+                    "email": "andy@awendt.com"
+                }
+            ],
+            "description": "Easily add new or override built-in providers in Laravel Socialite.",
+            "time": "2016-05-27 11:00:00"
+        },
+        {
+            "name": "socialiteproviders/weixin",
+            "version": "v2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/Weixin.git",
+                "reference": "8ac480f9c88522bd4d110dedb5deb1982e7d3aae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/SocialiteProviders/Weixin/8ac480f9c88522bd4d110dedb5deb1982e7d3aae.zip",
+                "reference": "8ac480f9c88522bd4d110dedb5deb1982e7d3aae",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "socialiteproviders/manager": "~2.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\Weixin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "xyxu",
+                    "email": "techxu@gmail.com"
+                }
+            ],
+            "description": "Weixin OAuth2 Provider for Laravel Socialite",
+            "time": "2016-06-14 13:04:39"
         },
         {
             "name": "spatie/db-dumper",
