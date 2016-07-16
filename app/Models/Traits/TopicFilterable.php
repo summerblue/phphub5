@@ -63,7 +63,7 @@ trait TopicFilterable
 
     public function scopePinAndRecentReply($query)
     {
-        return $query->whereRaw("(`created_at` > '".Carbon::today()->subMonths(3)->toDateString()."' or (`order` > 0) )")
+        return $query->fresh()
                      ->orderBy('order', 'desc')
                      ->orderBy('updated_at', 'desc');
     }
