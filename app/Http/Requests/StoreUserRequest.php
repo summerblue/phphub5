@@ -15,8 +15,9 @@ class StoreUserRequest extends Request
     public function rules()
     {
         return [
-            'github_id'   => 'required|unique:users',
-            'github_name' => 'required',
+            'github_id'   => 'unique:users',
+            'github_name' => 'string',
+            'wechat_id'   => 'string',
             'name'        => 'alpha_num|required|unique:users',
             'email'       => 'email',
             'github_url'  => 'active_url',

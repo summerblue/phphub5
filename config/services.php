@@ -38,7 +38,7 @@ return [
     'github' => [
         'client_id'     => env('CLIENT_ID'),
         'client_secret' => env('CLIENT_SECRET'),
-        'redirect'      => env('APP_URL').'login',
+        'redirect'      => env('APP_URL').'auth/callback?driver=github',
     ],
 
     'weixin' => [
@@ -46,5 +46,11 @@ return [
         'client_secret' => env('WEIXIN_SECRET'),
         'redirect'      => env('WEIXIN_REDIRECT_URI'),
         'auth_base_uri' => '',
+    ],
+
+    'weibo' => [
+        'client_id'     => env('WEIBO_KEY'),
+        'client_secret' => env('WEIBO_SECRET'),
+        'redirect'      => env('WEIBO_REDIRECT_URI'),
     ],
 ];

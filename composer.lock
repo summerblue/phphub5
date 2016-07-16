@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "caae48f6b5884945c524dc43f046f3e9",
-    "content-hash": "f2cd5e31a41ca6f40d46e4e783f3f7d2",
+    "hash": "3fdceebe34d019c1591d5336088996c5",
+    "content-hash": "22fb2edbc100de85ab434a1e83596670",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2711,6 +2711,43 @@
             ],
             "description": "Easily add new or override built-in providers in Laravel Socialite.",
             "time": "2016-05-27 11:00:00"
+        },
+        {
+            "name": "socialiteproviders/weibo",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/Weibo.git",
+                "reference": "10ff7fd36edacfcc1513440e01b863e88c9ff05e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/SocialiteProviders/Weibo/10ff7fd36edacfcc1513440e01b863e88c9ff05e.zip",
+                "reference": "10ff7fd36edacfcc1513440e01b863e88c9ff05e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "socialiteproviders/manager": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\Weibo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "xyxu",
+                    "email": "techxu@gmail.com"
+                }
+            ],
+            "description": "weibo.com OAuth2 Provider for Laravel Socialite",
+            "time": "2016-04-01 07:00:54"
         },
         {
             "name": "socialiteproviders/weixin",
