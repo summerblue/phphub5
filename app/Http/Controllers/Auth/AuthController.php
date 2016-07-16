@@ -166,11 +166,10 @@ class AuthController extends Controller implements UserCreatorListener
     public function oauth(Request $request)
     {
         $driver = $request->input('driver');
-        if (in_array($driver, $this->oauthDriver)) {
-            return Socialite::driver($driver)->redirect();
-        }
-
-        return redirect()->intended('/');
+        $driver = !in_array($driver, $this->oauthDriver)
+                    ? $this->oauthDriver[0]
+                    : $driver;
+        return Socialite::driver($driver)->redirect();
     }
 
     public function callback(Request $request)
