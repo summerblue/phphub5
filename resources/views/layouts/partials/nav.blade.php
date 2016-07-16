@@ -28,9 +28,19 @@
                       </span>
                   </a>
               </li>
+
+                @if (Auth::user()->can('visit_admin'))
+              <li>
+                  <a href="/admin">
+                      <i class="fa fa-tachometer"></i>
+                  </a>
+              </li>
+                @endif
+
               <li>
                   <a href="{{ route('users.show', $currentUser->id) }}">
-                      <i class="fa fa-user"></i> {{{ $currentUser->name }}}
+                      <img class="avatar-topnav" alt="Summer" src="{{ $currentUser->present()->gravatar }}">
+                       {{{ $currentUser->name }}}
                   </a>
               </li>
               <li>

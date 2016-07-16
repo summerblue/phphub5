@@ -46,8 +46,9 @@ class TopicsController extends Controller implements CreatorListener
         return app('Phphub\Creators\TopicCreator')->create($this, $request->except('_token'));
     }
 
-    public function show($id)
+    public function show($id, Topic $topic)
     {
+        $topics = $topic->getTopicsWithFilter('random-excellent', 5);
         $topic = Topic::findOrFail($id);
         $replies = $topic->getRepliesWithLimit(config('phphub.replies_perpage'));
         $category = $topic->category;
@@ -56,7 +57,7 @@ class TopicsController extends Controller implements CreatorListener
         $topic->increment('view_count', 1);
 
         $banners  = Banner::allByPosition();
-        return view('topics.show', compact('topic', 'replies', 'categoryTopics', 'category', 'banners'));
+        return view('topics.show', compact('topic', 'replies', 'categoryTopics', 'category', 'banners', 'topics'));
     }
 
     public function edit($id)
