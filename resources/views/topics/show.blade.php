@@ -115,6 +115,19 @@
     </form>
   </div>
 
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        随机推荐
+      </div>
+
+      <div class="panel-body remove-padding-horizontal">
+          @include('topics.partials.topics', ['column' => false])
+      </div>
+
+  </div>
+
+
 </div>
 
 @include('layouts.partials.sidebar')
