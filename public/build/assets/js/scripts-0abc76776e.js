@@ -3273,7 +3273,7 @@ Date.now||(Date.now=function(){return(new Date).getTime()}),function(){"use stri
                                 <div class="infos">\
                                     <div class="media-heading">\
                                         <a href="/users/' + data.reply.user_id + '" title="' + data.reply.user.name + '" class="remove-padding-left author">' + data.reply.user.name + '</a>\
-                                        <span>' + introTpl + '</span>\
+                                        <span class="introduction">' + introTpl + '</span>\
                                         <span class="operate pull-right">' + delTpl + '<a class="fa fa-reply" href="javascript:void(0)" onclick="replyOne(\'' + data.reply.user.name + '\');" title="回复 ' + data.reply.user.name + '"></a>\
                                         </span>\
                                         <div class="meta">\
@@ -3585,7 +3585,7 @@ Date.now||(Date.now=function(){return(new Date).getTime()}),function(){"use stri
         },
 
         showPluginDownload: function() {
-            this.showMsg('Chrome 浏览器下可使用 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">PHPHub 插件</a> 实时接收提醒', {
+            this.showMsg('Chrome 用户可使用 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">PHPHub 插件</a> 实时接收消息提醒。', {
                 type: 'success',
                 timer: 8000
             });

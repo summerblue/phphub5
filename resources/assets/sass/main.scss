@@ -1179,3 +1179,24 @@ div#preview-box {
 .topic-list .list-group-item .avatar.avatar-middle {
     width: 44px;
 }
+
+.infos span.introduction {
+    color: #b0b0b0;
+}
+.avatar-topnav {
+    width: 26px;
+    margin-right: 5px;
+    margin-top: -3px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.avatar-circle {
+    border-radius: 50%!important;
+    border: 1px solid #ccc;
+}
+
+.panel {
+    border-radius: 0px;
+    box-shadow: none;
+}

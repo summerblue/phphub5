@@ -8,9 +8,9 @@
 
          <a class="reply_last_time hidden-xs" href="{{route('topics.show', [$topic->id])}}">
              @if ($topic->reply_count > 0 && count($topic->lastReplyUser))
-             <img class="user_small_avatar" src="{{ $topic->lastReplyUser->present()->gravatar }}">
+             <img class="user_small_avatar avatar-circle" src="{{ $topic->lastReplyUser->present()->gravatar }}">
              @else
-             <img class="user_small_avatar" src="{{ $topic->user->present()->gravatar }}">
+             <img class="user_small_avatar avatar-circle" src="{{ $topic->user->present()->gravatar }}">
              @endif
 
              <span class="timeago">{{ $topic->updated_at }}</span>

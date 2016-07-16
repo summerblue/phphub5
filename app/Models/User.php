@@ -112,6 +112,11 @@ class User extends Model implements AuthenticatableContract,
         return User::where('wechat_id', '=', $id)->first();
     }
 
+    public function getIntroductionAttribute($value)
+    {
+        return str_limit($value, 68);
+    }
+
     /**
      * ----------------------------------------
      * UserInterface
