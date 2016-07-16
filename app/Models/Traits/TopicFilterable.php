@@ -31,6 +31,9 @@ trait TopicFilterable
             case 'excellent':
                 return $this->excellent()->recent();
                 break;
+            case 'random-excellent':
+                return $this->excellent()->fresh()->random();
+                break;
             case 'recent':
                 return $this->recent();
                 break;
@@ -53,11 +56,21 @@ trait TopicFilterable
         return $query->orderBy('created_at', 'desc');
     }
 
+    public function scopeRandom($query)
+    {
+        return $query->orderByRaw("RAND()");
+    }
+
     public function scopePinAndRecentReply($query)
     {
         return $query->whereRaw("(`created_at` > '".Carbon::today()->subMonths(3)->toDateString()."' or (`order` > 0) )")
                      ->orderBy('order', 'desc')
                      ->orderBy('updated_at', 'desc');
+    }
+
+    public function scopeFresh($query)
+    {
+        return $query->whereRaw("(`created_at` > '".Carbon::today()->subMonths(3)->toDateString()."' or (`order` > 0) )");
     }
 
     public function scopeRecentReply($query)

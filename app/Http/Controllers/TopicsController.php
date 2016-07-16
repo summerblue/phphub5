@@ -48,7 +48,7 @@ class TopicsController extends Controller implements CreatorListener
 
     public function show($id, Topic $topic)
     {
-        $topics = $topic->getTopicsWithFilter('excellent', 5);
+        $topics = $topic->getTopicsWithFilter('random-excellent', 5);
         $topic = Topic::findOrFail($id);
         $replies = $topic->getRepliesWithLimit(config('phphub.replies_perpage'));
         $category = $topic->category;
