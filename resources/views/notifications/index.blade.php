@@ -20,7 +20,7 @@
                 @foreach ($notifications as $notification)
                  <li class="list-group-item media" style="margin-top: 0px;">
 
-                    @if (count($notification->topic))
+                    @if (count($notification->topic) || $notification->type=='follow')
                         <div class="avatar pull-left">
                             <a href="{{ route('users.show', [$notification->from_user_id]) }}">
                                 <img class="media-object img-thumbnail avatar" alt="{{{ $notification->fromUser->name }}}" src="{{ $notification->fromUser->present()->gravatar }}"  style="width:38px;height:38px;"/>
@@ -37,16 +37,17 @@
                              •
                             {{ $notification->present()->lableUp }}
 
+                            @if($notification->type!='follow')
                             <a href="{{ route('topics.show', [$notification->topic->id]) }}{{{ !empty($notification->reply_id) ? '#reply' . $notification->reply_id : '' }}}" title="{{{ $notification->topic->title }}}">
                                 {{{ str_limit($notification->topic->title, '100') }}}
                             </a>
-
+                            @endif
                             <span class="meta">
                                  • {{ lang('at') }} • <span class="timeago">{{ $notification->created_at }}</span>
                             </span>
                           </div>
                           <div class="media-body markdown-reply content-body">
-{!! $notification->body !!}
+                                {!! $notification->body !!}
                           </div>
 
                         </div>

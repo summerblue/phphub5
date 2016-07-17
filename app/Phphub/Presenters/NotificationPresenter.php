@@ -41,7 +41,8 @@ class NotificationPresenter extends Presenter
             case 'attention_append':
                 $lable = lang('Attented topic has new update:');
                 break;
-
+            case 'follow':
+                $lable = lang('Someone following you');
             default:
                 break;
         }
