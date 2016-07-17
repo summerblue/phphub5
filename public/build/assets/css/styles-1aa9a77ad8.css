@@ -9583,12 +9583,17 @@ embed {
 
 .side-bar ul.list {
   margin: 0;
-  padding-left: 11px; }
+  padding-left: 2px; }
   .side-bar ul.list a, .side-bar ul.list a:focus, .side-bar ul.list a:hover {
     color: #737373; }
   .side-bar ul.list li {
     margin-bottom: 4px;
-    line-height: 18px; }
+    line-height: 18px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%; }
 
 .topics-show .topic-title {
   font-size: 22px;

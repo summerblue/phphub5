@@ -29,6 +29,26 @@
       @include('topics.partials.active_users')
     </div>
   </div>
+
+<div class="panel panel-default corner-radius">
+  <div class="panel-heading text-center">
+    <h3 class="panel-title">{{ lang('Hot Topics') }}</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="list">
+
+      @foreach ($hot_topics as $hot_topic)
+        <li>
+        <a href="{{ route('topics.show', $hot_topic->id) }}" class="popover-with-html" data-content="{{{ $hot_topic->title }}}">
+          {{{ $hot_topic->title }}}
+        </a>
+        </li>
+      @endforeach
+
+    </ul>
+  </div>
+</div>
+
 @endif
 
   <div class="panel panel-default corner-radius">
