@@ -37,5 +37,7 @@ class Kernel extends ConsoleKernel
 
         $schedule->command('backup:run --only-db')->cron('0 */4 * * * *');
         $schedule->command('backup:clean')->daily()->at('00:10');
+
+        $schedule->command('phphub:calculate-active-user')->cron('0 */1 * * * *');
     }
 }
