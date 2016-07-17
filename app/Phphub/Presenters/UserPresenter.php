@@ -69,4 +69,11 @@ class UserPresenter extends Presenter
 
         return $role->name;
     }
+
+    public function followingUsersJson()
+    {
+        $users = \Auth::user()->followings()->lists('name');
+        return json_encode($users);
+    }
+
 }
