@@ -392,10 +392,15 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
       color: #737373;
     }
     margin: 0;
-    padding-left: 11px;
+    padding-left: 2px;
     li {
-      margin-bottom: 4px;
-      line-height: 18px;
+        margin-bottom: 4px;
+        line-height: 18px;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
     }
   }
 }

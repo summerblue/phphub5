@@ -155,4 +155,5 @@ return [
     'Follow' => '关注',
     'Unfollow' => '取消关注',
     'Active Users' => '活跃用户',
+    'Hot Topics' => '热门话题',
 ];
