@@ -151,4 +151,6 @@ return [
     'App Download' => 'App 下载',
     'Following User' => '关注用户',
     'Posted Topics' => '话题',
+    'Follow' => '关注',
+    'Unfollow' => '取消关注',
 ];
