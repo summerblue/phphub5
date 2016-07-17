@@ -1237,6 +1237,18 @@ div#preview-box {
     }
 }
 
+.panel-hot-topics {
+    .list-group {
+        padding: 0;
+        .list-group-item  {
+            padding:0;
+            margin-bottom: 0px;
+            padding-bottom: 3px;
+            margin-top: -2px;
+        }
+    }
+}
+
 .popover {
     color: #fff;
     background: #1b1c1d;
