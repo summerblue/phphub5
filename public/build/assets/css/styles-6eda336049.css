@@ -10283,4 +10283,17 @@ div#preview-box {
 .avatar-extral-small {
   width: 36px; }
 
+.panel-active-users .list-group .list-group-item {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  padding: 0px 2px;
+  padding-bottom: 3px;
+  margin-top: -2px;
+  color: #737373; }
+  .panel-active-users .list-group .list-group-item a {
+    color: #737373; }
+
 /*# sourceMappingURL=styles.css.map */

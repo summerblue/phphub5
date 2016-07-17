@@ -154,4 +154,5 @@ return [
     'Posted Topics' => '话题',
     'Follow' => '关注',
     'Unfollow' => '取消关注',
+    'Active Users' => '活跃用户',
 ];
