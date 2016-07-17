@@ -9,6 +9,7 @@ use Venturecraft\Revisionable\RevisionableTrait;
 
 class Link extends Model
 {
+    protected $guarded = ['id'];
     // For admin log
     use RevisionableTrait;
     protected $keepRevisionOf = [

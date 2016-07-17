@@ -22,7 +22,7 @@ return [
         ],
         'cover' => [
             'title'    => '图片',
-            'output' => function ($value) {
+            'output'   => function ($value) {
                 return empty($value) ? 'N/A' : <<<EOD
     <img src="$value" width="180">
 EOD;
@@ -55,5 +55,39 @@ EOD;
         'title' => [
             'title' => '名称',
         ],
+    ],
+    'actions' => [
+        'disable_link' => [
+            'title'    => '屏蔽',
+            'messages' => array(
+                'active'  => '正在处理...',
+                'success' => '处理成功',
+                'error'   => '处理失败，请重新尝试',
+            ),
+            'permission' => function ($model) {
+                return $model->is_enabled == 'no';
+            },
+            'action' => function ($model) {
+                $model->update(['is_enabled' => 'yes']);
+                return true;
+            }
+        ],
+        'enable_link' => [
+            'title'    => '解除屏蔽',
+            'messages' => array(
+                'active'  => '正在处理...',
+                'success' => '处理成功',
+                'error'   => '处理失败，请重新尝试',
+            ),
+            'permission' => function ($model) {
+                return $model->is_enabled == 'yes';
+            },
+            'action' => function ($model) {
+                $model->update(['is_enabled' => 'no']);
+                return true;
+            }
+        ],
+
+
     ],
 ];
