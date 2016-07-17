@@ -10,12 +10,13 @@ class ActiveUser extends Model
 
     public function user()
     {
-        return $this->belongsTo('User');
+        return $this->belongsTo(User::class);
     }
 
     public static function fetchAll($limit = 10)
     {
-        return self::orderBy('weight', 'DESC')
+        return self::with('user')
+                   ->orderBy('weight', 'DESC')
                    ->limit($limit)
                    ->get();
     }
