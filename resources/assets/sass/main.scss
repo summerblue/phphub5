@@ -1231,3 +1231,44 @@ div#preview-box {
         color: #737373;
     }
 }
+
+.popover {
+    color: #fff;
+    background: #1b1c1d;
+    /*min-width: 320px;*/
+}
+.popover-title {
+    display: none;
+}
+.popover-content {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+}
+.popover-content a {
+    color: #23c6c8;
+}
+.clockpicker-popover .popover-content {
+    font-size: 12px;
+}
+.clockpicker-popover {
+    background: #fff;
+}
+.clockpicker-popover .popover-title {
+    display: block;
+}
+.popover.fade > .arrow {
+    color: #1b1c1d;
+}
+.popover.right > .arrow:after, .popover.right > .arrow {
+    border-right-color: #1b1c1d;
+}
+.popover.top > .arrow:after, .popover.top > .arrow {
+    border-top-color: #1b1c1d;
+}
+.popover.bottom > .arrow:after, .popover.bottom > .arrow {
+    border-bottom-color: #1b1c1d;
+}
+.popover.left > .arrow:after, .popover.left > .arrow {
+    border-left-color: #1b1c1d;
+}

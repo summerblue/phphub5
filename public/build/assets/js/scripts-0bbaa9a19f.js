@@ -2851,6 +2851,7 @@ Date.now||(Date.now=function(){return(new Date).getTime()}),function(){"use stri
             self.initEmoji();
             self.initAutocompleteAtUser();
             self.initScrollToTop();
+            self.initPopup();
             self.initTextareaAutoResize();
             self.initHeightLight();
             self.initLocalStorage();
@@ -2976,6 +2977,37 @@ Date.now||(Date.now=function(){return(new Date).getTime()}),function(){"use stri
          */
         initScrollToTop: function(){
             $.scrollUp.init();
+        },
+
+        /**
+         * Scroll to top in one click.
+         */
+        initPopup: function(){
+            // Popover with html
+            $('.popover-with-html').popover({
+				 html : true,
+				//  trigger : 'click hover',
+				 trigger : 'manual',
+                 container: 'body',
+				 placement: 'top',
+				 delay: {show: 50, hide: 400},
+				 content: function () {
+				 	return $(this).attr('hint');
+				 }
+			 }).on("mouseenter", function () {
+                var _this = this;
+                $(this).popover("show");
+                $(".popover").on("mouseleave", function () {
+                    $(_this).popover('hide');
+                });
+            }).on("mouseleave", function () {
+                var _this = this;
+                setTimeout(function () {
+                    if (!$(".popover:hover").length) {
+                        $(_this).popover("hide");
+                    }
+                }, 400);
+            });
         },
 
         /**
