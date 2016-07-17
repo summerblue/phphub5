@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="box text-center">
+<div class="box text-center site-intro">
   {!! lang('site_intro') !!}
 </div>
 
