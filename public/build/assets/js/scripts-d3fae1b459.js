@@ -2936,7 +2936,7 @@ Date.now||(Date.now=function(){return(new Date).getTime()}),function(){"use stri
          * Autocomplete @user
          */
         initAutocompleteAtUser: function() {
-            var at_users = [],
+            var at_users = Config.following_users,
                   user;
             $users = $('.media-heading').find('a.author');
             for (var i = 0; i < $users.length; i++) {
