@@ -20,6 +20,8 @@ class Kernel extends ConsoleKernel
         Commands\ESTDatabaseResetCommand::class,
         Commands\ESTDatabaseNukeCommand::class,
         Commands\ESTInitRBAC::class,
+
+        Commands\CalculateActiveUser::class,
     ];
 
     /**
