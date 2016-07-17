@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ebdc96ac1d7ef61d4aed0f2d6c7943b4",
-    "content-hash": "2b46668abfb23bc05467eed9b7abe2da",
+    "hash": "6f4e6d9941f0542b333c73355d703589",
+    "content-hash": "a67bbcfa1f467c9edf8b5639f26f5a5f",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2669,6 +2669,47 @@
                 "wrapper"
             ],
             "time": "2016-04-24 02:00:22"
+        },
+        {
+            "name": "smartisan/follow",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mohd-isa/follow.git",
+                "reference": "ea6e27d294262e5817fa8d23aa5724a92a96921f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/mohd-isa/follow/ea6e27d294262e5817fa8d23aa5724a92a96921f.zip",
+                "reference": "ea6e27d294262e5817fa8d23aa5724a92a96921f",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/laravel": ">= 5.1",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "laravel/laravel": "dev-develop",
+                "phpunit/phpunit": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Smartisan\\Follow\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mohammed Isa",
+                    "email": "mohd.itcs@gmail.com"
+                }
+            ],
+            "description": "Laravel 5 User Based System",
+            "time": "2016-05-06 20:42:21"
         },
         {
             "name": "socialiteproviders/manager",

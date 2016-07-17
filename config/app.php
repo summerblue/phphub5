@@ -170,8 +170,8 @@ return [
         Roumen\Sitemap\SitemapServiceProvider::class,
         Phphub\Sitemap\SitemapServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
-        // Laravel\Socialite\SocialiteServiceProvider::class,
         \SocialiteProviders\Manager\ServiceProvider::class,
+        Smartisan\Follow\FollowServiceProvider::class
     ],
 
     /*
