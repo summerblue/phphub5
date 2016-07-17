@@ -13,11 +13,12 @@ class ActiveUser extends Model
         return $this->belongsTo(User::class);
     }
 
-    public static function fetchAll($limit = 10)
+    public static function fetchAll($limit = 8)
     {
         return self::with('user')
                    ->orderBy('weight', 'DESC')
                    ->limit($limit)
-                   ->get();
+                   ->get()
+                   ->pluck('user');
     }
 }

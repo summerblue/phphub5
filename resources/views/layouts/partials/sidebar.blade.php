@@ -21,14 +21,12 @@
   </div>
 
 @if (Route::currentRouteName() == 'topics.index')
-  <div class="panel panel-default corner-radius">
+  <div class="panel panel-default corner-radius panel-active-users">
     <div class="panel-heading text-center">
-      <h3 class="panel-title">{{ lang('App Download') }}</h3>
+      <h3 class="panel-title">{{ lang('Active Users') }}</h3>
     </div>
-    <div class="panel-body text-center" style="padding: 7px;">
-      <a href="https://phphub.org/topics/1531" target="_blank" rel="nofollow" title="">
-        <img src="https://dn-phphub.qbox.me/uploads/images/201512/08/1/cziZFHqkm8.png" style="width:240px;">
-      </a>
+    <div class="panel-body" style="padding: 7px;">
+      @include('topics.partials.active_users')
     </div>
   </div>
 @endif
@@ -78,18 +76,29 @@
   @endif
 
 @if (Route::currentRouteName() == 'topics.index')
-  <div class="panel panel-default corner-radius">
-    <div class="panel-heading text-center">
-      <h3 class="panel-title">{{ lang('Site Status') }}</h3>
-    </div>
-    <div class="panel-body">
-      <ul>
-        <li>{{ lang('Total User') }}: {{ $siteStat->user_count }} </li>
-        <li>{{ lang('Total Topic') }}: {{ $siteStat->topic_count }} </li>
-        <li>{{ lang('Total Reply') }}: {{ $siteStat->reply_count }} </li>
-      </ul>
-    </div>
+<div class="panel panel-default corner-radius">
+  <div class="panel-heading text-center">
+    <h3 class="panel-title">{{ lang('App Download') }}</h3>
   </div>
+  <div class="panel-body text-center" style="padding: 7px;">
+    <a href="https://phphub.org/topics/1531" target="_blank" rel="nofollow" title="">
+      <img src="https://dn-phphub.qbox.me/uploads/images/201512/08/1/cziZFHqkm8.png" style="width:240px;">
+    </a>
+  </div>
+</div>
+
+<div class="panel panel-default corner-radius">
+<div class="panel-heading text-center">
+  <h3 class="panel-title">{{ lang('Site Status') }}</h3>
+</div>
+<div class="panel-body">
+  <ul>
+    <li>{{ lang('Total User') }}: {{ $siteStat->user_count }} </li>
+    <li>{{ lang('Total Topic') }}: {{ $siteStat->topic_count }} </li>
+    <li>{{ lang('Total Reply') }}: {{ $siteStat->reply_count }} </li>
+  </ul>
+</div>
+</div>
 @endif
 
 </div>

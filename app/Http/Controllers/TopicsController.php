@@ -10,6 +10,7 @@ use App\Models\Notification;
 use App\Models\Append;
 use App\Models\Category;
 use App\Models\Banner;
+use App\Models\ActiveUser;
 use Phphub\Markdown\Markdown;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreTopicRequest;
@@ -30,7 +31,10 @@ class TopicsController extends Controller implements CreatorListener
         $topics = $topic->getTopicsWithFilter($filter, 40);
         $links  = Link::allFromCache();
         $banners = Banner::allByPosition();
-        return view('topics.index', compact('topics', 'links', 'banners'));
+
+        $active_users = ActiveUser::fetchAll();
+
+        return view('topics.index', compact('topics', 'links', 'banners', 'active_users'));
     }
 
     public function create(Request $request)
