@@ -15,9 +15,8 @@ class CalculateActiveUser extends Command
     protected $signature = 'phphub:calculate-active-user';
     protected $description = 'Calculate active user';
 
-    const BASE_WEIGHT = 10;
-    const POST_TOPIC_RATIO = 0.8;
-    const POST_REPLY_RATIO = 0.2;
+    const POST_TOPIC_WEIGHT = 4;
+    const POST_REPLY_WEIGHT = 1;
     const PASS_DAYS = 7;
 
     public function __construct()
@@ -70,8 +69,8 @@ class CalculateActiveUser extends Command
     {
         $active_users = ActiveUser::all();
         foreach ($active_users as $active_user) {
-            $active_user->weight = $active_user->topic_count * self::BASE_WEIGHT * self::POST_TOPIC_RATIO
-                                + $active_user->reply_count * self::BASE_WEIGHT * self::POST_REPLY_RATIO;
+            $active_user->weight = $active_user->topic_count * self::POST_TOPIC_WEIGHT
+                                 + $active_user->reply_count * self::POST_REPLY_WEIGHT;
             $active_user->save();
         }
     }
