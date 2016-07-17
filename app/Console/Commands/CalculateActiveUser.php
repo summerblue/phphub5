@@ -68,11 +68,11 @@ class CalculateActiveUser extends Command
 
     protected function calculateWeight()
     {
-        $activeUsers = ActiveUser::all();
-        foreach ($activeUsers as $activeUser) {
-            $activeUser->weight = $activeUser->topic_count * self::BASE_WEIGHT * self::POST_TOPIC_RATIO
-                                + $activeUser->reply_count * self::BASE_WEIGHT * self::POST_REPLY_RATIO;
-            $activeUser->save();
+        $active_users = ActiveUser::all();
+        foreach ($active_users as $active_user) {
+            $active_user->weight = $active_user->topic_count * self::BASE_WEIGHT * self::POST_TOPIC_RATIO
+                                + $active_user->reply_count * self::BASE_WEIGHT * self::POST_REPLY_RATIO;
+            $active_user->save();
         }
     }
 }
