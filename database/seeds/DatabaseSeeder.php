@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
         'BannersTableSeeder',
         'FollowersTableSeeder',
         'ActiveUsersTableSeeder',
-        'HeatTopicsTableSeeder'
+        'HotTopicsTableSeeder'
     ];
 
     public function run()

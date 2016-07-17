@@ -4,17 +4,17 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Models\Reply;
-use App\Models\HeatTopic;
+use App\Models\HotTopic;
 use App\Models\Favorite;
 use App\Models\Attention;
 use App\Models\Vote;
 use Carbon\Carbon;
 use DB;
 
-class CalculateHeatTopic extends Command
+class CalculateHotTopic extends Command
 {
-    protected $signature = 'phphub:calculate-heat-topic';
-    protected $description = 'Calculate heat topic';
+    protected $signature = 'phphub:calculate-hot-topic';
+    protected $description = 'Calculate hot topic';
 
     const VOTE_TOPIC_WEIGHT = 5;
     const REPLY_TOPIC_WEIGHT = 3;
@@ -28,7 +28,7 @@ class CalculateHeatTopic extends Command
 
     public function handle()
     {
-        HeatTopic::query()->delete();
+        HotTopic::query()->delete();
 
         $this->calculateVoteTopics();
         $this->calculateReplyTopics();
@@ -49,7 +49,7 @@ class CalculateHeatTopic extends Command
             $data['topic_id'] = $value->votable_id;
             $data['vote_count'] = $value->vote_count;
 
-            HeatTopic::updateOrCreate(['topic_id' => $value->topic_id], $data);
+            HotTopic::updateOrCreate(['topic_id' => $value->topic_id], $data);
         }
     }
 
@@ -65,17 +65,17 @@ class CalculateHeatTopic extends Command
             $data['topic_id'] = $value->topic_id;
             $data['reply_count'] = $value->reply_count;
 
-            HeatTopic::updateOrCreate(['topic_id' => $value->topic_id], $data);
+            HotTopic::updateOrCreate(['topic_id' => $value->topic_id], $data);
         }
     }
 
     public function calculateWeight()
     {
-        $heaet_topics = HeatTopic::all();
-        foreach ($heaet_topics as $heaet_topic) {
-            $heaet_topic->weight = $heaet_topic->vote_count * self::VOTE_TOPIC_WEIGHT
-                                 + $heaet_topic->reply_count * self::REPLY_TOPIC_WEIGHT;
-            $heaet_topic->save();
+        $hot_topics = HotTopic::all();
+        foreach ($hot_topics as $hot_topic) {
+            $hot_topic->weight = $hot_topic->vote_count * self::VOTE_TOPIC_WEIGHT
+                                 + $hot_topic->reply_count * self::REPLY_TOPIC_WEIGHT;
+            $hot_topic->save();
         }
     }
 }

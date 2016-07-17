@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HeatTopic extends Model
+class HotTopic extends Model
 {
     protected $guarded = ['id'];
 
