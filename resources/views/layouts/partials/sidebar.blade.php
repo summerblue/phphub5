@@ -21,26 +21,20 @@
   </div>
 
 @if (Route::currentRouteName() == 'topics.index')
-  <div class="panel panel-default corner-radius panel-active-users">
-    <div class="panel-heading text-center">
-      <h3 class="panel-title">{{ lang('Active Users') }}</h3>
-    </div>
-    <div class="panel-body" style="padding: 7px;">
-      @include('topics.partials.active_users')
-    </div>
-  </div>
 
-<div class="panel panel-default corner-radius">
+<div class="panel panel-default corner-radius panel-hot-topics">
   <div class="panel-heading text-center">
     <h3 class="panel-title">{{ lang('Hot Topics') }}</h3>
   </div>
   <div class="panel-body">
-    <ul class="list">
+    <ul class="list list-group ">
 
       @foreach ($hot_topics as $hot_topic)
-        <li>
+        <li class="list-group-item ">
         <a href="{{ route('topics.show', $hot_topic->id) }}" class="popover-with-html" data-content="{{{ $hot_topic->title }}}">
-          {{{ $hot_topic->title }}}
+            <img class="media-object img-thumbnail avatar avatar-small inline-block " src="{{ $hot_topic->user->present()->gravatar }}">
+
+            {{{ $hot_topic->title }}}
         </a>
         </li>
       @endforeach
@@ -107,6 +101,15 @@
   </div>
 </div>
 
+  <div class="panel panel-default corner-radius panel-active-users">
+    <div class="panel-heading text-center">
+      <h3 class="panel-title">{{ lang('Active Users') }}</h3>
+    </div>
+    <div class="panel-body">
+      @include('topics.partials.active_users')
+    </div>
+  </div>
+
 <div class="panel panel-default corner-radius">
 <div class="panel-heading text-center">
   <h3 class="panel-title">{{ lang('Site Status') }}</h3>
@@ -119,6 +122,7 @@
   </ul>
 </div>
 </div>
+
 @endif
 
 </div>

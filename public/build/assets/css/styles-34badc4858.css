@@ -10301,6 +10301,14 @@ div#preview-box {
   .panel-active-users .list-group .list-group-item a {
     color: #737373; }
 
+.panel-hot-topics .list-group {
+  padding: 0; }
+  .panel-hot-topics .list-group .list-group-item {
+    padding: 0;
+    margin-bottom: 0px;
+    padding-bottom: 3px;
+    margin-top: -2px; }
+
 .popover {
   color: #fff;
   background: #1b1c1d;
