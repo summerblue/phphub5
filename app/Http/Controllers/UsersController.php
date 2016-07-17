@@ -84,6 +84,13 @@ class UsersController extends Controller
         return view('users.favorites', compact('user', 'topics'));
     }
 
+    public function following($id)
+    {
+        $user = User::findOrFail($id);
+        $followings = $user->followings()->get();
+        // TODO @by summer Add followings view
+    }
+
     public function accessTokens($id)
     {
         if (!Auth::check() || Auth::id() != $id) {

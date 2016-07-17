@@ -13,6 +13,7 @@ Route::get('/sitemap.xml', 'PagesController@sitemap');
 Route::get('/users/{id}/replies', 'UsersController@replies')->name('users.replies');
 Route::get('/users/{id}/topics', 'UsersController@topics')->name('users.topics');
 Route::get('/users/{id}/favorites', 'UsersController@favorites')->name('users.favorites');
+Route::get('/users/{id}/following', 'UsersController@following')->name('users.following');
 Route::get('/users/{id}/refresh_cache', 'UsersController@refreshCache')->name('users.refresh_cache');
 Route::get('/users/{id}/access_tokens', 'UsersController@accessTokens')->name('users.access_tokens');
 Route::get('/access_token/{token}/revoke', 'UsersController@revokeAccessToken')->name('users.access_tokens.revoke');

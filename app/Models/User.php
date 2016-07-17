@@ -11,6 +11,7 @@ use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use GuzzleHttp\Client;
 use Laracasts\Presenter\PresentableTrait;
 use Venturecraft\Revisionable\RevisionableTrait;
+use Smartisan\Follow\FollowTrait;
 
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract
@@ -29,10 +30,10 @@ class User extends Model implements AuthenticatableContract,
         EntrustUserTrait::can as may;
     }
     use SoftDeletes { restore as private restoreSoftDelete; }
+    use FollowTrait;
     protected $dates = ['deleted_at'];
 
     protected $table      = 'users';
-    // protected $hidden     = ['github_id'];
     protected $guarded    = ['id', 'is_banned'];
 
     public static function boot()

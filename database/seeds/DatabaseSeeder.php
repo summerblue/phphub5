@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
         'TopicsTableSeeder',
         'RepliesTableSeeder',
         'BannersTableSeeder',
+        'FollowersTableSeeder',
     ];
 
     public function run()
