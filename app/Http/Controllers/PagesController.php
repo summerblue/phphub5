@@ -5,7 +5,6 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Topic;
 use App\Models\Banner;
-use App\Models\ActiveUser;
 use Illuminate\Http\Request;
 use Rss;
 use Purifier;
