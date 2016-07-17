@@ -43,7 +43,7 @@ return [
     'Excellent Topics' => '社区精华帖',
     'More Excellent Topics' => '查看更多精华帖',
     'Community Wiki' => '社区 Wiki',
-    'Dont have any data Yet' => '还未有主题',
+    'Dont have any data Yet' => '没有任何数据',
     'Recent' => '最近发表',
     'Excellent' => '精华主题',
     'Vote' => '最多投票',
@@ -149,4 +149,6 @@ return [
     'Community Promotion' => '社区推广',
     'Community Notes' => '社区公告栏',
     'App Download' => 'App 下载',
+    'Following User' => '关注用户',
+    'Posted Topics' => '话题',
 ];

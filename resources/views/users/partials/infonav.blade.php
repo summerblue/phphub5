@@ -4,11 +4,14 @@
   <li class="{{ $user->present()->userinfoNavActive('users.show') }}">
   	<a href="{{ route('users.show', $user->id) }}" >{{ lang('Basic Info') }}</a>
   </li>
-  <li class="{{ $user->present()->userinfoNavActive('users.replies') }}">
-  	<a href="{{ route('users.replies', $user->id) }}" >{{ lang('Replies') }}</a>
+  <li class="{{ $user->present()->userinfoNavActive('users.following') }}">
+  	<a href="{{ route('users.following', $user->id) }}" >{{ lang('Following User') }}</a>
   </li>
   <li class="{{ $user->present()->userinfoNavActive('users.topics') }}">
-  	<a href="{{ route('users.topics', $user->id) }}" >{{ lang('Topics') }}</a>
+  	<a href="{{ route('users.topics', $user->id) }}" >{{ lang('Posted Topics') }}</a>
+  </li>
+  <li class="{{ $user->present()->userinfoNavActive('users.replies') }}">
+  	<a href="{{ route('users.replies', $user->id) }}" >{{ lang('Replies') }}</a>
   </li>
   <li class="{{ $user->present()->userinfoNavActive('users.favorites') }}">
   	<a href="{{ route('users.favorites', $user->id) }}" >{{ lang('Favorites') }}</a>
