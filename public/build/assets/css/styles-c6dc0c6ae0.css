@@ -10271,4 +10271,10 @@ div#preview-box {
   border-radius: 0px;
   box-shadow: none; }
 
+.topnav .github-login .btn.login-btn {
+  margin-top: 7px; }
+
+.topnav .github-login .btn.weichat-login-btn {
+  margin-right: 5px; }
+
 /*# sourceMappingURL=styles.css.map */
