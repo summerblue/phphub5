@@ -21,7 +21,7 @@ class Link extends Model
         $cache_name = 'links';
 
         return Cache::remember($cache_name, $expire, function () {
-            return self::all();
+            return self::where('is_enabled', 'yes')->get();
         });
     }
 }
