@@ -65,6 +65,18 @@ class Notifier
                     $append->content);
     }
 
+    public function newFollowNotify(User $fromUser, User $toUser)
+    {
+        Notification::notify(
+                    'follow',
+                    $fromUser,
+                    $toUser,
+                    null,
+                    null,
+                    null);
+
+    }
+
     // in case of a user get a lot of the same notification
     public function removeDuplication($users)
     {

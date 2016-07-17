@@ -143,6 +143,7 @@ return [
     'Submit' => '提交',
     'Close' => '关闭',
     'Attented topic has new update:' => '关注的话题有新附言',
+    'Someone following you' => '关注了你',
     'Commented topic has new update:' => '留言的话题有新附言',
     'Document' => '文档',
     'Cloud Server Sponsored by UCloud' => '本站服务器由 UCloud 赞助',
@@ -151,4 +152,6 @@ return [
     'App Download' => 'App 下载',
     'Following User' => '关注用户',
     'Posted Topics' => '话题',
+    'Follow' => '关注',
+    'Unfollow' => '取消关注',
 ];
