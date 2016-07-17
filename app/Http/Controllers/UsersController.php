@@ -178,4 +178,18 @@ class UsersController extends Controller
 
         return redirect(route('users.show', Auth::id()));
     }
+
+    public function doFollow($id)
+    {
+        $user = User::findOrFail($id);
+
+        if (Auth::user()->isFollowing($id)) {
+            Auth::user()->unfollow($id);
+        } else {
+            Auth::user()->follow($id);
+            app('Phphub\Notification\Notifier')->newFollowNotify(Auth::user(), $user);
+        }
+
+        return redirect(route('users.show', $id));
+    }
 }

@@ -84,13 +84,13 @@ class Notification extends Model
         return $query->orderBy('created_at', 'desc');
     }
 
-    public static function notify($type, User $fromUser, User $toUser, Topic $topic, Reply $reply = null)
+    public static function notify($type, User $fromUser, User $toUser, Topic $topic = null, Reply $reply = null)
     {
         if ($fromUser->id == $toUser->id) {
             return;
         }
 
-        if (Notification::isNotified($fromUser->id, $toUser->id, $topic->id, $type)) {
+        if ($topic && Notification::isNotified($fromUser->id, $toUser->id, $topic->id, $type)) {
             return;
         }
 
@@ -100,7 +100,7 @@ class Notification extends Model
         $data = [
             'from_user_id' => $fromUser->id,
             'user_id'      => $toUser->id,
-            'topic_id'     => $topic->id,
+            'topic_id'     => $topic ? $topic->id : 0,
             'reply_id'     => $reply ? $reply->id : 0,
             'body'         => $reply ? $reply->body : '',
             'type'         => $type,
@@ -126,7 +126,7 @@ class Notification extends Model
         }
 
         $from_user_name = $notification->fromUser->name;
-        $topic_title    = $notification->topic->title;
+        $topic_title    = $notification->topic ? $notification->topic->title : '关注了你';
 
         $msg = $from_user_name
                 . ' • ' . $notification->present()->lableUp()
