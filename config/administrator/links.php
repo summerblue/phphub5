@@ -31,7 +31,7 @@ EOD;
         ],
         'is_enabled' => [
             'title'    => '是否启用',
-            'output' => function ($value) {
+            'output'   => function ($value) {
                 return adminEnumStyleOutput($value);
             },
             'sortable' => false,
@@ -65,22 +65,7 @@ EOD;
     ],
     'actions' => [
         'disable_link' => [
-            'title'    => '屏蔽',
-            'messages' => array(
-                'active'  => '正在处理...',
-                'success' => '处理成功',
-                'error'   => '处理失败，请重新尝试',
-            ),
-            'permission' => function ($model) {
-                return $model->is_enabled == 'no';
-            },
-            'action' => function ($model) {
-                $model->update(['is_enabled' => 'yes']);
-                return true;
-            }
-        ],
-        'enable_link' => [
-            'title'    => '解除屏蔽',
+            'title'    => '启用链接',
             'messages' => array(
                 'active'  => '正在处理...',
                 'success' => '处理成功',
@@ -91,6 +76,21 @@ EOD;
             },
             'action' => function ($model) {
                 $model->update(['is_enabled' => 'no']);
+                return true;
+            }
+        ],
+        'enable_link' => [
+            'title'    => '禁用链接',
+            'messages' => array(
+                'active'  => '正在处理...',
+                'success' => '处理成功',
+                'error'   => '处理失败，请重新尝试',
+            ),
+            'permission' => function ($model) {
+                return $model->is_enabled == 'no';
+            },
+            'action' => function ($model) {
+                $model->update(['is_enabled' => 'yes']);
                 return true;
             }
         ],
