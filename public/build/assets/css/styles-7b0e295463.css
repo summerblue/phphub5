@@ -9993,7 +9993,7 @@ div#preview-box {
   padding-top: 50%;
   padding-bottom: 30px;
   border: solid 1px #f5f5f5;
-  border-radius: 4px;
+  border-radius: 0px;
   overflow: hidden;
   background: #fff;
   transition: all .3s ease; }
@@ -10006,7 +10006,7 @@ div#preview-box {
   padding-bottom: 30px; }
 
 .banner-container .item img {
-  border-radius: 4px 4px 0 0; }
+  border-radius: 0; }
 
 .banner-container .item .img {
   height: 100%; }
