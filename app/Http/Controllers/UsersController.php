@@ -87,8 +87,8 @@ class UsersController extends Controller
     public function following($id)
     {
         $user = User::findOrFail($id);
-        $followings = $user->followings()->get();
-        // TODO @by summer Add followings view
+        $followingUsers = $user->followings()->orderBy('id', 'desc')->paginate(15);
+        return view('users.following', compact('user', 'followingUsers'));
     }
 
     public function accessTokens($id)
