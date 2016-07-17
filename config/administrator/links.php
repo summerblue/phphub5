@@ -29,6 +29,13 @@ EOD;
             },
             'sortable' => false,
         ],
+        'is_enabled' => [
+            'title'    => '是否启用',
+            'output' => function ($value) {
+                return adminEnumStyleOutput($value);
+            },
+            'sortable' => false,
+        ],
         'operation' => [
             'title'  => '管理',
             'output' => function ($value, $model) {

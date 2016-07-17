@@ -50,3 +50,9 @@ function check_show_crx_hint()
 {
     return \Session::get('show_crx_hint') ? true : false;
 }
+
+function adminEnumStyleOutput($value)
+{
+    $class = ($value === true || $value == 'yes' ) ? 'success' : 'danger';
+    return '<span class="label bg-'.$class.'">'.$value.'</span>';
+}
