@@ -132,7 +132,10 @@ class AuthController extends Controller implements UserCreatorListener
         } elseif ($driver == 'wechat') {
             $oauthData['image_url'] = $registerUserData->avatar;
             $oauthData['wechat_id'] = $registerUserData->id;
+            $oauthData['name'] = $registerUserData->name;
+            $oauthData['email'] = $registerUserData->email;
         }
+        
         $oauthData['driver'] = $driver;
         Session::put('oauthData', $oauthData);
 
@@ -179,7 +182,6 @@ class AuthController extends Controller implements UserCreatorListener
             return redirect()->intended('/');
         }
         $oauthUser = Socialite::with($driver)->user();
-
         $user = User::getByDriver($driver, $oauthUser->id);
 
         if ($user) {
