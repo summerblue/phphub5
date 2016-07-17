@@ -18,6 +18,7 @@ Route::get('/users/{id}/refresh_cache', 'UsersController@refreshCache')->name('u
 Route::get('/users/{id}/access_tokens', 'UsersController@accessTokens')->name('users.access_tokens');
 Route::get('/access_token/{token}/revoke', 'UsersController@revokeAccessToken')->name('users.access_tokens.revoke');
 Route::get('/users/regenerate_login_token', 'UsersController@regenerateLoginToken')->name('users.regenerate_login_token');
+Route::post('users/follow/{id}', 'UsersController@doFollow')->name('users.doFollow');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::post('/favorites/{id}', 'FavoritesController@createOrDelete')->name('favorites.createOrDelete');
