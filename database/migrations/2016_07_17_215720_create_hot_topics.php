@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHeatTopics extends Migration
+class CreateHotTopics extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateHeatTopics extends Migration
      */
     public function up()
     {
-        Schema::create('heat_topics', function (Blueprint $table) {
+        Schema::create('hot_topics', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('topic_id')->default(0)->index();
             $table->integer('vote_count')->default(0);
@@ -29,6 +29,6 @@ class CreateHeatTopics extends Migration
      */
     public function down()
     {
-        Schema::drop('heat_topics');
+        Schema::drop('hot_topics');
     }
 }

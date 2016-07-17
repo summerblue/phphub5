@@ -11,7 +11,7 @@ use App\Models\Append;
 use App\Models\Category;
 use App\Models\Banner;
 use App\Models\ActiveUser;
-use App\Models\HeatTopic;
+use App\Models\HotTopic;
 use Phphub\Markdown\Markdown;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreTopicRequest;
@@ -34,7 +34,7 @@ class TopicsController extends Controller implements CreatorListener
         $banners = Banner::allByPosition();
 
         $active_users = ActiveUser::fetchAll();
-        $hot_topics = HeatTopic::fetchAll(10);
+        $hot_topics = HotTopic::fetchAll(10);
 
         return view('topics.index', compact('topics', 'links', 'banners', 'active_users', 'hot_topics'));
     }

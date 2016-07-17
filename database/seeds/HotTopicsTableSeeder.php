@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class HeatTopicsTableSeeder extends Seeder
+class HotTopicsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class HeatTopicsTableSeeder extends Seeder
      */
     public function run()
     {
-        \Artisan::call('phphub:calculate-heat-topic', []);
+        \Artisan::call('phphub:calculate-hot-topic', []);
     }
 }
