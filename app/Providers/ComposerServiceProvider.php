@@ -12,7 +12,6 @@ class ComposerServiceProvider extends ServiceProvider
              $view->with('show_crx_hint', check_show_crx_hint() ? 'yes' : 'no');
              $view->with('currentUser', \Auth::user());
              $view->with('siteStat', app('Phphub\Stat\Stat')->getSiteStat());
-             $view->with('siteTip', \App\Models\Tip::getRandTip());
          });
     }
 

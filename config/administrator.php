@@ -73,7 +73,6 @@ return array(
         '站点管理' => [
             'banners',
             'links',
-            'tips',
             'site_statuses',
             'revisions',
         ],
