@@ -22,6 +22,7 @@ class Kernel extends ConsoleKernel
         Commands\ESTInitRBAC::class,
 
         Commands\CalculateActiveUser::class,
+        Commands\CalculateHeatTopic::class,
     ];
 
     /**
@@ -39,5 +40,6 @@ class Kernel extends ConsoleKernel
         $schedule->command('backup:clean')->daily()->at('00:10');
 
         $schedule->command('phphub:calculate-active-user')->cron('0 */1 * * * *');
+        $schedule->command('phphub:calculate-heat-topic')->cron('0 */1 * * * *');
     }
 }
