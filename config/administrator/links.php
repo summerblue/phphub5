@@ -65,7 +65,7 @@ EOD;
     ],
     'actions' => [
         'disable_link' => [
-            'title'    => '启用链接',
+            'title'    => '禁用',
             'messages' => array(
                 'active'  => '正在处理...',
                 'success' => '处理成功',
@@ -80,7 +80,7 @@ EOD;
             }
         ],
         'enable_link' => [
-            'title'    => '禁用链接',
+            'title'    => '启用',
             'messages' => array(
                 'active'  => '正在处理...',
                 'success' => '处理成功',
