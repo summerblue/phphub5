@@ -188,6 +188,8 @@ class UsersController extends Controller
         } else {
             Auth::user()->follow($id);
             app('Phphub\Notification\Notifier')->newFollowNotify(Auth::user(), $user);
+
+            show_crx_hint();
         }
 
         return redirect(route('users.show', $id));
