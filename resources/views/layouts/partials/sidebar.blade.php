@@ -77,16 +77,7 @@
     </div>
   @endif
 
-  <div class="panel panel-default corner-radius">
-    <div class="panel-heading text-center">
-      <h3 class="panel-title">{{ lang('Tips and Tricks') }}</h3>
-    </div>
-    <div class="panel-body">
-      {!! $siteTip->body !!}
-    </div>
-  </div>
-
-    @if (Route::currentRouteName() == 'topics.index')
+@if (Route::currentRouteName() == 'topics.index')
   <div class="panel panel-default corner-radius">
     <div class="panel-heading text-center">
       <h3 class="panel-title">{{ lang('Site Status') }}</h3>
@@ -99,7 +90,7 @@
       </ul>
     </div>
   </div>
+@endif
 
-    @endif
 </div>
 <div class="clearfix"></div>
