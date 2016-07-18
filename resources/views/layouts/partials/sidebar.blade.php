@@ -60,7 +60,7 @@
       </div>
       <div class="panel-body text-center" style="padding-top: 5px;">
         @foreach ($links as $link)
-            <a href="{{ $link->link }}" target="_blank" rel="nofollow" title="{{ $link->title }}">
+            <a href="{{ $link->link }}" target="_blank" rel="nofollow" title="{{ $link->title }}" style="padding: 3px;">
                 <img src="{{ $link->cover }}" style="width:150px; margin: 3px 0;">
             </a>
         @endforeach
