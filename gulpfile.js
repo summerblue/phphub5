@@ -21,6 +21,7 @@ var basejs = [
     'resources/assets/js/vendor/localforage.min.js',
     'resources/assets/js/vendor/jquery.inline-attach.min.js',
     'resources/assets/js/vendor/snowfall.jquery.min.js',
+    'resources/assets/js/vendor/upload-image.js',
     'node_modules/sweetalert/dist/sweetalert.min.js',
 ];
 

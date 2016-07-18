@@ -53,6 +53,6 @@ function check_show_crx_hint()
 
 function adminEnumStyleOutput($value)
 {
-    $class = ($value === true || $value == 'yes' ) ? 'success' : 'danger';
+    $class = ($value === true || $value == 'yes') ? 'success' : 'danger';
     return '<span class="label bg-'.$class.'">'.$value.'</span>';
 }

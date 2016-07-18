@@ -20,6 +20,16 @@ Route::get('/access_token/{token}/revoke', 'UsersController@revokeAccessToken')-
 Route::get('/users/regenerate_login_token', 'UsersController@regenerateLoginToken')->name('users.regenerate_login_token');
 Route::post('users/follow/{id}', 'UsersController@doFollow')->name('users.doFollow');
 
+Route::get('/users', 'UsersController@index')->name('users.index');
+Route::get('/users/create', 'UsersController@create')->name('users.create');
+Route::post('/users', 'UsersController@store')->name('users.store');
+Route::get('/users/{id}', 'UsersController@show')->name('users.show');
+Route::get('/users/{id}/edit', 'UsersController@edit')->name('users.edit');
+Route::patch('/users/{id}', 'UsersController@update')->name('users.update');
+Route::delete('/users/{id}', 'UsersController@destroy')->name('users.destroy');
+Route::get('/users/{id}/edit_avatar', 'UsersController@editAvatar')->name('users.edit_avatar');
+Route::patch('/users/{id}/update_avatar', 'UsersController@updateAvatar')->name('users.update_avatar');
+
 Route::group(['middleware' => 'auth'], function () {
     Route::post('/favorites/{id}', 'FavoritesController@createOrDelete')->name('favorites.createOrDelete');
     Route::get('/notifications', 'NotificationsController@index')->name('notifications.index');
@@ -45,15 +55,6 @@ Route::get('auth/callback', 'Auth\AuthController@callback')->name('auth.callback
 # ------------------ Categories ------------------------
 
 Route::get('categories/{id}', 'CategoriesController@show')->name('categories.show');
-
-# ------------------ Users ------------------------
-Route::get('/users', 'UsersController@index')->name('users.index');
-Route::get('/users/create', 'UsersController@create')->name('users.create');
-Route::post('/users', 'UsersController@store')->name('users.store');
-Route::get('/users/{id}', 'UsersController@show')->name('users.show');
-Route::get('/users/{id}/edit', 'UsersController@edit')->name('users.edit');
-Route::patch('/users/{id}', 'UsersController@update')->name('users.update');
-Route::delete('/users/{id}', 'UsersController@destroy')->name('users.destroy');
 
 # ------------------ Replies ------------------------
 
