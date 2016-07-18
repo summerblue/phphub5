@@ -35,7 +35,7 @@ class CreateUsersTable extends Migration
             $table->string('real_name')->nullable();
             $table->string('avatar');
             $table->string('login_qr');
-            $table->string('wechat_id')->nullable();
+            $table->string('wechat_openid')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
