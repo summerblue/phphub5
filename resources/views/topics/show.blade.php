@@ -122,15 +122,7 @@
 
     </form>
   </div>
-<br>
 
-  <div class="panel panel-default">
-
-      <div class="panel-body remove-padding-horizontal">
-          @include('topics.partials.topics', ['column' => false])
-      </div>
-
-  </div>
 
 </div>
 
