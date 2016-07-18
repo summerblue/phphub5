@@ -161,4 +161,5 @@ return [
     'Uploading image...' => '图片上传中...',
     'Update Avatar Success' => '成功上传头像，Chrome 用户可使用 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">PHPHub 插件</a> 实时接收消息提醒。',
     'Update Avatar Failed' => '上传头像失败',
+    'Please Choose a Photo' => '请选择图片',
 ];
