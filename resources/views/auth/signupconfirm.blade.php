@@ -28,7 +28,7 @@
                     {!! $errors->first('name', '<span class="help-block">:message</span>') !!}
                 </div>
 
-                @if(isset($oauthData['github_name']) || $oauthData['name'])
+                @if($oauthData['driver'] == 'github')
                 <div class="form-group {{{ $errors->has('github_name') ? 'has-error' : '' }}}">
                     <label class="control-label" for="github_name">Github Name</label>
                     <input class="form-control" readonly="readonly" name="github_name" type="text" value="{{ isset($oauthData['github_name']) ? $oauthData['github_name'] : $oauthData['name'] }}">
