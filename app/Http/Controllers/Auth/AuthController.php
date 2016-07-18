@@ -17,7 +17,7 @@ use Phphub\Listeners\UserCreatorListener;
 
 class AuthController extends Controller implements UserCreatorListener
 {
-    protected $oauthDriver = ['github', 'wechat', 'weibo'];
+    protected $oauthDriver = ['github', 'weixin', 'weibo'];
 
     /**
      * Create a new authentication controller instance.
@@ -129,13 +129,13 @@ class AuthController extends Controller implements UserCreatorListener
             $oauthData['github_id'] = $registerUserData->user['id'];
             $oauthData['github_url'] = $registerUserData->user['url'];
             $oauthData['github_name'] = $registerUserData->nickname;
-        } elseif ($driver == 'wechat') {
+        } elseif ($driver == 'weixin') {
             $oauthData['image_url'] = $registerUserData->avatar;
             $oauthData['wechat_id'] = $registerUserData->id;
             $oauthData['name'] = $registerUserData->name;
             $oauthData['email'] = $registerUserData->email;
         }
-        
+
         $oauthData['driver'] = $driver;
         Session::put('oauthData', $oauthData);
 
@@ -183,7 +183,6 @@ class AuthController extends Controller implements UserCreatorListener
         }
         $oauthUser = Socialite::with($driver)->user();
         $user = User::getByDriver($driver, $oauthUser->id);
-
         if ($user) {
             return $this->loginUser($user);
         }

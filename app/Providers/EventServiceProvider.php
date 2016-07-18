@@ -19,9 +19,6 @@ class EventServiceProvider extends ServiceProvider
         \SocialiteProviders\Manager\SocialiteWasCalled::class => [
             'SocialiteProviders\Weixin\WeixinExtendSocialite@handle',
         ],
-        'SocialiteProviders\Manager\SocialiteWasCalled' => [
-            'SocialiteProviders\Weibo\WeiboExtendSocialite@handle',
-        ],
     ];
 
     /**
