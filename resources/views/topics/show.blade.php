@@ -12,7 +12,7 @@
 
 <div class="col-md-9 topics-show main-col">
   <!-- Topic Detial -->
-  <div class="topic panel panel-default">
+  <div class="topic panel panel-default padding-lg">
     <div class="infos panel-heading">
 
       <div class="pull-right avatar_large">

@@ -1,4 +1,7 @@
 .markdown-body, .markdown-reply {
+
+    font-size: 16px;
+    
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   line-height: 1.4;
@@ -231,6 +234,8 @@
   pre {
     margin-top: 0;
     margin-bottom: 10px;
+
+    line-height: 30px;
   }
 
   hr {

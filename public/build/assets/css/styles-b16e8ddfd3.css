@@ -1,5 +1,6 @@
 @charset "UTF-8";
 .markdown-body, .markdown-reply {
+  font-size: 16px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   line-height: 1.4;
@@ -171,7 +172,8 @@
   .markdown-reply table,
   .markdown-reply pre {
     margin-top: 0;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    line-height: 30px; }
   .markdown-body hr, .markdown-reply hr {
     height: 4px;
     padding: 0;
