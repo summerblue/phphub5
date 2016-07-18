@@ -23,6 +23,7 @@ var basejs = [
     'resources/assets/js/vendor/snowfall.jquery.min.js',
     'resources/assets/js/vendor/upload-image.js',
     'node_modules/sweetalert/dist/sweetalert.min.js',
+    'node_modules/social-share.js/dist/js/social-share.min.js',
 ];
 
 elixir(function(mix) {
@@ -34,6 +35,15 @@ elixir(function(mix) {
         .copy([
             'node_modules/font-awesome/fonts'
         ], 'public/assets/fonts/font-awesome')
+
+        // https://github.com/overtrue/share.js
+        .copy([
+            'node_modules/social-share.js/dist/fonts'
+        ], 'public/assets/fonts/iconfont')
+
+        .copy([
+            'node_modules/social-share.js/dist/fonts'
+        ], 'public/build/assets/fonts/iconfont')
 
         .sass([
             'base.scss',

@@ -1,20 +1,5 @@
 <div class="panel-footer operate">
 
-  <div class="pull-left" style="font-size:15px;">
-    <a class="" href="http://service.weibo.com/share/share.php?url={{ urlencode(Request::url()) }}&type=3&pic=&title={{{ $topic->title }}}" target="_blank" title="{{ lang('Share on Weibo') }}">
-      <i class="fa fa-weibo"></i>
-    </a>
-    <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::url()) }}&text={{{ $topic->title }}}&via=phphub.org" class=""  target="_blank" title="{{ lang('Share on Twitter') }}">
-      <i class="fa fa-twitter"></i>
-    </a>
-    <a href="http://www.facebook.com/sharer.php?u={{ urlencode(Request::url()) }}" class=""  target="_blank" title="{{ lang('Share on Facebook') }}">
-      <i class="fa fa-facebook"></i>
-    </a>
-    <a href="https://plus.google.com/share?url={{ urlencode(Request::url()) }}" class=""  target="_blank" title="{{ lang('Share on Google Plus') }}">
-      <i class="fa fa-google-plus"></i>
-    </a>
-  </div>
-
   <div class="pull-right">
 
     @if ($currentUser && \App\Models\Attention::isUserAttentedTopic($currentUser, $topic))
