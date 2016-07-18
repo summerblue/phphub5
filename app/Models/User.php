@@ -111,7 +111,7 @@ class User extends Model implements AuthenticatableContract,
 
     public static function getByWechatId($id)
     {
-        return User::where('wechat_id', '=', $id)->first();
+        return User::where('wechat_openid', '=', $id)->first();
     }
 
     public function getIntroductionAttribute($value)
