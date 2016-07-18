@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6f4e6d9941f0542b333c73355d703589",
-    "content-hash": "a67bbcfa1f467c9edf8b5639f26f5a5f",
+    "hash": "ba1e5d2cf2160193130dc3384a00336d",
+    "content-hash": "a79a934b08929040ec405328f5c45a78",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2826,6 +2826,43 @@
             ],
             "description": "Weixin OAuth2 Provider for Laravel Socialite",
             "time": "2016-06-14 13:04:39"
+        },
+        {
+            "name": "socialiteproviders/weixin-web",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/Weixin-Web.git",
+                "reference": "30c741587e2ac6a77502f0ea8ea888a55d548108"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/SocialiteProviders/Weixin-Web/30c741587e2ac6a77502f0ea8ea888a55d548108.zip",
+                "reference": "30c741587e2ac6a77502f0ea8ea888a55d548108",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "socialiteproviders/manager": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\WeixinWeb\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "xyxu",
+                    "email": "techxu@gmail.com"
+                }
+            ],
+            "description": "Weixin-Web OAuth2 Provider for Laravel Socialite",
+            "time": "2016-03-31 05:10:48"
         },
         {
             "name": "spatie/db-dumper",

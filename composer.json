@@ -34,7 +34,9 @@
         "VentureCraft/revisionable": "^1.27",
         "socialiteproviders/weixin": "^2.1",
         "socialiteproviders/weibo": "^2.0",
-        "smartisan/follow": "^1.0"
+        "smartisan/follow": "^1.0",
+        "socialiteproviders/weixin-web": "^2.0",
+        "guzzlehttp/guzzle": "^6.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
