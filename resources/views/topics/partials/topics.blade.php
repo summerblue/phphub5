@@ -4,7 +4,7 @@
 
 <ul class="list-group row topic-list">
     @foreach ($topics as $topic)
-     <li class="list-group-item media {{ !$column ?:'col-sm-6' }}" style="margin-top: 0px;">
+     <li class="list-group-item media {{ !$column ?:'col-md-6' }}" style="margin-top: 0px;">
 
          <a class="reply_last_time hidden-xs" href="{{route('topics.show', [$topic->id])}}">
              @if ($topic->reply_count > 0 && count($topic->lastReplyUser))

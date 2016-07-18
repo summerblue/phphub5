@@ -1319,3 +1319,11 @@ a.avatar-edit {
     border: 1px solid #c8dcdb;
     border-radius: 6px;
 }
+span.timeago {
+    color: #aaa;
+}
+.home-topic-list {
+    .topic-list .media-heading .label {
+        top: 0px;
+    }
+}

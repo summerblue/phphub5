@@ -8,7 +8,7 @@
 
 @include('layouts.partials.topbanner')
 
-<div class="panel panel-default list-panel">
+<div class="panel panel-default list-panel home-topic-list">
   <div class="panel-heading">
     <h3 class="panel-title text-center">
       {{ lang('Excellent Topics') }} &nbsp;
