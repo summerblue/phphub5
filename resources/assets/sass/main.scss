@@ -1292,3 +1292,15 @@ div#preview-box {
 .site-intro {
     line-height: 26px;
 }
+
+a.avatar-edit {
+    font-size: 20px;
+    position: relative;
+    display: block;
+
+    i.fa {
+        position: absolute;
+        top: 15px;
+        right: 12px;
+    }
+}

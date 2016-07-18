@@ -1,7 +1,11 @@
 <div style="text-align: center;">
-  <a href="">
+
+    <a class="avatar-edit" href="{{ route('users.edit_avatar', $user->id) }}">
+        <i class="fa fa-pencil-square" aria-hidden="true"></i>
+    </a>
+
     <img src="{{ $user->present()->gravatar(380) }}" class="img-thumbnail users-show-avatar" style="width:100%;margin: 4px 0px 15px;min-height:190px">
-  </a>
+
 </div>
 
 <dl class="dl-horizontal">
