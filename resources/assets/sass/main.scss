@@ -1381,4 +1381,11 @@ span.timeago {
 
 .topic-author-box .img-thumbnail{
     max-width: inherit;
+
+    .list-inline {
+        margin-bottom: 0px;
+    }
+    .media-heading {
+        margin-bottom: 8px;
+    }
 }
