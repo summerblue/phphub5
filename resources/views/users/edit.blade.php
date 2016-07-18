@@ -19,7 +19,7 @@
       <div class="panel-body ">
 
         <div class="alert alert-warning">
-          {!! lang('avatar_notice') !!} {!! link_to_route('users.refresh_cache', lang('Update Cache'), $user->id) !!} .
+          请前往 <a href="{{ route('users.edit_avatar', $user->id) }}">这里</a> 修改头像
         </div>
 
         @include('layouts.partials.errors')

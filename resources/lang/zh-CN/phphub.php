@@ -92,7 +92,6 @@ return [
     'Basic Info' => '个人信息',
     'Favorites' => '收藏',
     'Replies' => '回复',
-    'avatar_notice' => '如需修改头像，请到 <a href="https://github.com/settings/profile" target="_blank">GitHub 的个人设置</a> 页面修改, 然后点击链接 ',
     'Update Cache' => '更新缓存',
     'twitter_placeholder' => '你的 Twitter 帐号, 不需要加前缀 https://twitter.com/',
     'personal_website_placebolder' => '你的个人网站, 不需要加前缀 http://',
