@@ -1,6 +1,6 @@
 <div style="text-align: center;">
 
-    @if ($currentUser && ($currentUser->id == $user->id || Entrust::can('manage_users')))
+    @if ($currentUser && $currentUser->id == $user->id)
     <a class="avatar-edit" href="{{ route('users.edit_avatar', $user->id) }}">
         <i class="fa fa-pencil-square"></i>
     </a>
