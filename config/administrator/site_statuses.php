@@ -38,6 +38,12 @@ return [
         'register_count' => [
             'title'    => '注册用户数',
         ],
+        'github_regitster_count' => [
+            'title'    => 'Github 注册数',
+        ],
+        'wechat_registered_count' => [
+            'title'    => 'WeChat 注册数',
+        ],
         'topic_count' => [
             'title'    => '话题数量',
         ],
