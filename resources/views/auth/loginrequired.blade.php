@@ -19,7 +19,8 @@
               <div class="alert alert-warning">
                   {!! lang('You need to login to proceed.') !!}
               </div>
-              <input class="btn btn-lg btn-primary btn-block" id="login-required-submit" type="submit" value="{{trans('Login with GitHub')}}">
+              <a class="btn btn-lg btn-primary btn-block" id="login-required-submit" href="{{ URL::route('auth.oauth', ['driver' => 'github']) }}"><i class="fa fa-github-alt"></i> {{lang('Login with GitHub')}}</a>
+              <a class="btn btn-lg btn-success btn-block" href="{{ URL::route('auth.oauth', ['driver' => 'weixin']) }}"><i class="fa fa-weixin" ></i> {{lang('Login with WeChat')}}</a>
             </fieldset>
 
         </form>
