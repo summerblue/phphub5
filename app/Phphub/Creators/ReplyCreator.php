@@ -47,8 +47,6 @@ class ReplyCreator
 
         app('Phphub\Notification\Notifier')->newReplyNotify(Auth::user(), $this->mentionParser, $topic, $reply);
 
-        // Robot::notify($data['body_original'], 'Reply', $topic, Auth::user());
-
         return $observer->creatorSucceed($reply);
     }
 }
