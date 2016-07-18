@@ -22,6 +22,7 @@ class StoreUserRequest extends Request
             'email'           => 'email|required|unique:users',
             'github_url'      => 'active_url',
             'image_url'       => 'active_url',
+            'wechat_unionid'  => 'string',
         ];
     }
 }
