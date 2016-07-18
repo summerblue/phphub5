@@ -19,7 +19,7 @@ class StoreUserRequest extends Request
             'github_name' => 'string',
             'wechat_id'   => 'string',
             'name'        => 'alpha_num|required|unique:users',
-            'email'       => 'email',
+            'email'       => 'email|required|unique:users',
             'github_url'  => 'active_url',
             'image_url'   => 'active_url',
         ];
