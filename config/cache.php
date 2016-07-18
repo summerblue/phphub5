@@ -74,6 +74,6 @@ return [
     |
     */
 
-    'prefix' => env('CACHE_KEY_PREFIX', 'laravel'),
+    'prefix' => env('CACHE_KEY_PREFIX', 'phphub5'),
 
 ];
