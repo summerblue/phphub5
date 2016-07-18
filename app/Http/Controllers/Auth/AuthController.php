@@ -132,7 +132,7 @@ class AuthController extends Controller implements UserCreatorListener
         } elseif ($driver == 'weixin') {
             $oauthData['image_url'] = $registerUserData->avatar;
             $oauthData['wechat_id'] = $registerUserData->id;
-            $oauthData['name'] = $registerUserData->name;
+            $oauthData['name'] = $registerUserData->nickname;
             $oauthData['email'] = $registerUserData->email;
         }
 
