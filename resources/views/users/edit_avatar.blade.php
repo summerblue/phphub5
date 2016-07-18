@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-编辑头像_@parent
+{{ lang('Photo Upload') }}_@parent
 @stop
 
 @section('content')
@@ -16,7 +16,11 @@
 
     <div class="panel panel-default">
 
-      <div class="panel-body ">
+      <div class="panel-body padding-bg">
+
+        <h2><i class="fa fa-picture-o" aria-hidden="true"></i> 图片上传</h2>
+        <hr>
+
         @include('layouts.partials.errors')
 
         <form method="POST" action="{{ route('users.update_avatar', $user->id) }}" enctype="multipart/form-data" accept-charset="UTF-8">
@@ -24,28 +28,29 @@
             {!! csrf_field() !!}
 
             <div id="image-preview-div" style="display: none">
-              <label for="exampleInputFile">Selected image:</label>
+              <label for="exampleInputFile">{{ lang('Selected image:') }}</label>
               <br>
-              <img id="preview-img" src="noimage">
+              <img id="preview-img" class="avatar-preview-img" src="noimage">
             </div>
             <div class="form-group">
               <input type="file" name="avatar" id="file" required>
             </div>
-            <button class="btn btn-lg btn-primary" id="upload-button" type="submit" disabled>Upload image</button>
+            <br>
+
+            <button class="btn btn-lg btn-primary" id="upload-button" type="submit" disabled>{{ lang('Photo Upload') }}</button>
 
             <div class="alert alert-info" id="loading" style="display: none;" role="alert">
-              Uploading image...
+              {{ lang('Uploading image...') }}
               <div class="progress">
                 <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
                 </div>
               </div>
             </div>
             <div id="message"></div>
-          </div>
       </form>
-      </div>
 
     </div>
+  </div>
   </div>
 
 

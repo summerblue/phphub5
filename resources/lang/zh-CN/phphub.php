@@ -155,4 +155,10 @@ return [
     'Unfollow' => '取消关注',
     'Active Users' => '活跃用户',
     'Hot Topics' => '热门话题',
+
+    'Photo Upload' => '上传头像',
+    'Selected image:' => '请选择图片：',
+    'Uploading image...' => '图片上传中...',
+    'Update Avatar Success' => '成功上传头像',
+    'Update Avatar Failed' => '上传头像失败',
 ];
