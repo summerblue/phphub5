@@ -111,7 +111,7 @@ class AuthController extends Controller implements UserCreatorListener
 
         Flash::success(lang('Congratulations and Welcome!'));
 
-        return redirect()->intended('/');
+        return redirect('/');
     }
 
     /**
