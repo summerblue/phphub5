@@ -93,7 +93,7 @@ class User extends Model implements AuthenticatableContract,
     {
         $functionMap = [
             'github' => 'getByGithubId',
-            'wechat' => 'getByWechatId'
+            'weixin' => 'getByWechatId'
         ];
         $function = $functionMap[$driver];
         if (!$function) {
