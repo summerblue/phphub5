@@ -1,4 +1,4 @@
-<div class="panel-footer operate rm-padding-left">
+<div class="panel-footer operate">
 
   <div class="">
 
