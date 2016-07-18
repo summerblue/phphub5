@@ -50,7 +50,7 @@
               </li>
           @else
               <a href="{{ URL::route('auth.oauth', ['driver' => 'weixin']) }}" class="btn btn-success login-btn weichat-login-btn">
-                <i class="fa fa-weichat"></i>
+                <i class="fa fa-weixin"></i>
                 {{ lang('Login') }}
               </a>
 
