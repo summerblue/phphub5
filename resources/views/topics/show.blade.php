@@ -81,12 +81,12 @@
 
             <ul class="list-inline">
 
-              @if ($topic->user->present()->hasBadge())
-                <li><span class="label label-warning" style="position:relative">{{{ $topic->user->present()->badgeName() }}}</span></li>
+              @if ($topic->user->real_name)
+                <li class="adr"><span class="org">{{{ $topic->user->real_name }}}</span></li>
               @endif
 
-              @if ($topic->user->real_name)
-                <li class="adr"><label> {{ lang('Real Name') }}:</label> <span class="org">{{{ $topic->user->real_name }}}</span></li>
+              @if ($topic->user->present()->hasBadge())
+                <li><span class="label label-warning" style="position:relative">{{{ $topic->user->present()->badgeName() }}}</span></li>
               @endif
 
               <li>
