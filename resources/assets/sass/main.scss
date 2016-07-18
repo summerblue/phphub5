@@ -72,7 +72,8 @@ a.stats:hover {
   display: inline-block;
 }
 textarea.form-control{
-  font-size: 13px;
+  font-size: 16px;
+  line-height: 30px;
 }
 ul.list {
   margin: 0;
@@ -1306,8 +1307,35 @@ a.avatar-edit {
         right: 12px;
     }
 }
-.padding-sm {
+.padding-xsm {
     padding: 5px;
+}
+.padding-top-xsm {
+    padding-top: 5px;
+}
+.padding-bottom-xsm {
+    padding-bottom: 5px;
+}
+.padding-left-xsm {
+    padding-left: 5px;
+}
+.padding-right-xsm {
+    padding-right: 5px;
+}
+.padding-sm {
+    padding: 10px;
+}
+.padding-top-sm {
+    padding-top: 10px;
+}
+.padding-bottom-sm {
+    padding-bottom: 10px;
+}
+.padding-left-sm {
+    padding-left: 10px;
+}
+.padding-right-sm {
+    padding-right: 10px;
 }
 .padding-md {
     padding: 15px;
@@ -1344,4 +1372,13 @@ span.timeago {
 .panel .panel-heading {
     border-bottom: 1px solid #eeeeee;
     background-color: transparent;
+}
+
+.helpblock.list li {
+    line-height: 30px;
+    margin-bottom: 0px;
+}
+
+.topic-author-box .img-thumbnail{
+    max-width: inherit;
 }
