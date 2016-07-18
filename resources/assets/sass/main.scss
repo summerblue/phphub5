@@ -408,12 +408,16 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
 
 .topics-show {
   .topic-title {
-    font-size: 22px;
+    font-size: 2em;
     color: #333;
     text-align: left;
     line-height: 135%;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     font-weight: bold;
+  }
+
+  .panel .panel-heading {
+      padding-bottom: 12px;
   }
 
   .ribbon {

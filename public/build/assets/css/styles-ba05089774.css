@@ -145,18 +145,18 @@
     border-bottom: 2px solid #eee; }
   .markdown-body h2, .markdown-reply h2 {
     padding-bottom: 0.3em;
-    font-size: 1.75em;
+    font-size: 1.5em;
     line-height: 1.225;
     border-bottom: 2px solid #eee; }
   .markdown-body h3, .markdown-reply h3 {
-    font-size: 1.5em;
+    font-size: 1.4em;
     line-height: 1.43; }
   .markdown-body h4, .markdown-reply h4 {
-    font-size: 1.25em; }
+    font-size: 1.3em; }
   .markdown-body h5, .markdown-reply h5 {
-    font-size: 1em; }
+    font-size: 1.2em; }
   .markdown-body h6, .markdown-reply h6 {
-    font-size: 1em;
+    font-size: 1.1em;
     color: #777; }
   .markdown-body p,
   .markdown-body blockquote,
@@ -10533,12 +10533,15 @@ embed {
     width: 100%; }
 
 .topics-show .topic-title {
-  font-size: 22px;
+  font-size: 2em;
   color: #333;
   text-align: left;
   line-height: 135%;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   font-weight: bold; }
+
+.topics-show .panel .panel-heading {
+  padding-bottom: 12px; }
 
 .topics-show .ribbon {
   margin-top: 20px;

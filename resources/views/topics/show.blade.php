@@ -12,7 +12,7 @@
 
 <div class="col-md-9 topics-show main-col">
   <!-- Topic Detial -->
-  <div class="topic panel panel-default padding-lg">
+  <div class="topic panel panel-default padding-md">
     <div class="infos panel-heading">
 
       <div class="pull-right avatar_large">
@@ -37,7 +37,7 @@
       @include('topics.partials.meta')
     </div>
 
-    <div class="content-body entry-content panel-body">
+    <div class="content-body entry-content panel-body ">
 
       @include('topics.partials.body', array('body' => $topic->body))
 
