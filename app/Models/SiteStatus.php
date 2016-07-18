@@ -7,9 +7,17 @@ use Carbon\Carbon;
 
 class SiteStatus extends Model
 {
-    public static function newUser()
+    public static function newUser($driver)
     {
         self::collect('new_user');
+        switch ($driver) {
+            case 'github':
+                self::collect('new_user_from_github');
+                break;
+            case 'weixin':
+                self::collect('new_user_from_weixin');
+                break;
+        }
     }
     public static function newTopic()
     {
@@ -51,6 +59,12 @@ class SiteStatus extends Model
                 break;
             case 'new_image':
                 $todayStatus->image_count += 1;
+                break;
+            case 'new_user_from_github':
+                $todayStatus->github_regitster_count += 1;
+                break;
+            case 'new_user_from_weixin':
+                $todayStatus->wechat_registered_count += 1;
                 break;
         }
 
