@@ -64,15 +64,15 @@
   </div>
 
 
-  <div class="replies panel panel-default list-panel replies-index">
+  <div class="replies panel panel-default padding-md">
 
     <div class="panel-body ">
-        <div class="social-share-cs padding-md rm-padding-left"></div>
+        <div class="social-share-cs "></div>
     </div>
   </div>
 
   <!-- Reply List -->
-  <div class="replies panel panel-default list-panel replies-index">
+  <div class="replies panel panel-default list-panel replies-index padding-md">
     <div class="panel-heading">
       <div class="total">{{ lang('Total Reply Count') }}: <b>{{ $replies->total() }}</b> </div>
     </div>

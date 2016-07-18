@@ -1,6 +1,6 @@
-<div class="panel-footer operate">
+<div class="panel-footer operate rm-padding-left">
 
-  <div class="pull-right">
+  <div class="">
 
     @if ($currentUser && \App\Models\Attention::isUserAttentedTopic($currentUser, $topic))
       <a class="active" data-ajax="post" data-lang-cancel={{ lang('Cancel') }} data-lang-attent={{ lang('Attent') }}  id="topic-attent-cancel-button" href="javascript:void(0);" data-url="{{ route('attentions.createOrDelete', $topic->id) }}">

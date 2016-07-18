@@ -10377,7 +10377,7 @@ ul.list {
 
 .meta, .operate {
   color: #d0d0d0;
-  font-size: 12px; }
+  font-size: 14px; }
   .meta a, .operate a {
     padding: 1px 2px;
     color: #B9BDC0;
@@ -11310,6 +11310,15 @@ a.avatar-edit {
 .rm-padding-left {
   padding-left: 0px; }
 
+.rm-padding-top {
+  padding-top: 0px; }
+
+.rm-padding-bottom {
+  padding-bottom: 0px; }
+
+.rm-padding-right {
+  padding-right: 0px; }
+
 .avatar-preview-img {
   padding: 3px;
   border: 1px solid #c8dcdb;
@@ -11320,5 +11329,9 @@ span.timeago {
 
 .home-topic-list .topic-list .media-heading .label {
   top: 0px; }
+
+.panel .panel-heading {
+  border-bottom: 1px solid #eeeeee;
+  background-color: transparent; }
 
 /*# sourceMappingURL=styles.css.map */
