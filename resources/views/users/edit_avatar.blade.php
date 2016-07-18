@@ -18,7 +18,7 @@
 
       <div class="panel-body padding-bg">
 
-        <h2><i class="fa fa-picture-o" aria-hidden="true"></i> 图片上传</h2>
+        <h2><i class="fa fa-picture-o" aria-hidden="true"></i> {{ lang('Please Choose a Photo') }}</h2>
         <hr>
 
         @include('layouts.partials.errors')
