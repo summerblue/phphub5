@@ -239,9 +239,9 @@ class UsersController extends Controller
             $user->save();
             $data['filename'] = $user->present()->gravatar;
 
-            Flash::success(lang('Update success'));
+            Flash::success(lang('Update Avatar Success'));
         } else {
-            Flash::error(lang('Update Failed'));
+            Flash::error(lang('Update Avatar Failed'));
         }
 
         return redirect(route('users.edit_avatar', $id));
