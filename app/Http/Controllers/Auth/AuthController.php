@@ -152,7 +152,7 @@ class AuthController extends Controller implements UserCreatorListener
         Flash::success(lang('Login Successfully.'));
         show_crx_hint();
 
-        return redirect()->intended('/');
+        return redirect('/');
     }
 
     // 用户屏蔽
