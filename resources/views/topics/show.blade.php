@@ -63,6 +63,14 @@
     @include('topics.partials.topic_operate')
   </div>
 
+
+  <div class="replies panel panel-default list-panel replies-index">
+
+    <div class="panel-body ">
+        <div class="social-share-cs padding-md rm-padding-left"></div>
+    </div>
+  </div>
+
   <!-- Reply List -->
   <div class="replies panel panel-default list-panel replies-index">
     <div class="panel-heading">
@@ -124,9 +132,25 @@
 
   </div>
 
-
 </div>
 
 @include('layouts.partials.sidebar')
 @include('layouts.partials.bottombanner')
+@stop
+
+@section('scripts')
+<script type="text/javascript">
+
+    $(document).ready(function()
+    {
+        var $config = {
+            title               : '{{{ $topic->title }}} from PHPHub - PHP & Laravel的中文社区 #laravel# @phphub',
+            wechatQrcodeTitle   : "微信扫一扫：分享", // 微信二维码提示文字
+            wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
+        };
+
+        socialShare('.social-share-cs', $config);
+    });
+
+</script>
 @stop
