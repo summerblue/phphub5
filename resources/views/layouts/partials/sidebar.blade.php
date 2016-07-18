@@ -68,26 +68,51 @@
     </div>
   @endif
 
-  @if (isset($categoryTopics) && count($categoryTopics))
-    <div class="panel panel-default corner-radius">
-      <div class="panel-heading text-center">
-        <h3 class="panel-title">{{ lang('Same Category Topics') }}</h3>
-      </div>
-      <div class="panel-body">
-        <ul class="list">
+@if (isset($categoryTopics) && count($categoryTopics))
+<div class="panel panel-default corner-radius">
+  <div class="panel-heading text-center">
+    <h3 class="panel-title">{{ lang('Same Category Topics') }}</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="list">
 
-          @foreach ($categoryTopics as $categoryTopic)
-            <li>
-            <a href="{{ route('topics.show', $categoryTopic->id) }}">
-              {{{ $categoryTopic->title }}}
-            </a>
-            </li>
-          @endforeach
+      @foreach ($categoryTopics as $categoryTopic)
+        <li>
+        <a href="{{ route('topics.show', $categoryTopic->id) }}">
+          {{{ $categoryTopic->title }}}
+        </a>
+        </li>
+      @endforeach
 
-        </ul>
-      </div>
-    </div>
-  @endif
+    </ul>
+  </div>
+</div>
+@endif
+
+@if (isset($randomExcellentTopics) && count($randomExcellentTopics))
+
+<div class="panel panel-default corner-radius panel-hot-topics">
+  <div class="panel-heading text-center">
+    <h3 class="panel-title">{{ lang('Recommend Topics') }}</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="list list-group ">
+
+      @foreach ($randomExcellentTopics as $randomExcellentTopic)
+        <li class="list-group-item ">
+        <a href="{{ route('topics.show', $randomExcellentTopic->id) }}" class="popover-with-html" data-content="{{{ $randomExcellentTopic->title }}}">
+            <img class="media-object img-thumbnail avatar avatar-small inline-block " src="{{ $randomExcellentTopic->user->present()->gravatar }}">
+
+            {{{ $randomExcellentTopic->title }}}
+        </a>
+        </li>
+      @endforeach
+
+    </ul>
+  </div>
+</div>
+
+@endif
 
 @if (Route::currentRouteName() == 'topics.index')
 <div class="panel panel-default corner-radius">
