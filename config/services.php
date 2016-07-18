@@ -47,10 +47,4 @@ return [
         'redirect'      => env('WEIXIN_REDIRECT_URI'),
         'auth_base_uri' => 'https://open.weixin.qq.com/connect/qrconnect',
     ],
-
-    'weibo' => [
-        'client_id'     => env('WEIBO_KEY'),
-        'client_secret' => env('WEIBO_SECRET'),
-        'redirect'      => env('WEIBO_REDIRECT_URI'),
-    ],
 ];

@@ -28,8 +28,6 @@ class TopicCreator
 
         Auth::user()->increment('topic_count', 1);
 
-        // Robot::notify($data['body_original'], 'Topic', $topic, Auth::user());
-
         return $observer->creatorSucceed($topic);
     }
 }
