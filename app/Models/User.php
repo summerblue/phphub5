@@ -40,8 +40,9 @@ class User extends Model implements AuthenticatableContract,
     {
         parent::boot();
 
-        static::created(function ($topic) {
-            SiteStatus::newUser();
+        static::created(function ($user) {
+            $driver = $user['github_id'] ? 'github' : 'weixin';
+            SiteStatus::newUser($driver);
         });
     }
 
