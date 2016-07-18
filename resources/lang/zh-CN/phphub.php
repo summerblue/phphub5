@@ -50,7 +50,7 @@ return [
     'Noreply' => '无人问津',
     'Publish' => '发 布',
     'at' => '于',
-    'Last Reply by' => '最后由',
+    'Last Reply by' => '最后回复由',
     'Reads' => '阅读',
     'Are you sure want to delete is topic?' => '确定要删除此主题吗?',
     'This topic has been mark as Excenllent Topic.' => '本帖已被设为精华帖！',
