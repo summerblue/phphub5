@@ -11920,7 +11920,6 @@ div#preview-box {
 .content-body .markdown-body {
   overflow: visible; }
   .content-body .markdown-body pre, .content-body .markdown-body pre[class*=language-] {
-    margin: 5px -15px !important;
     border-radius: 0px; }
 
 .media > .pull-left {
@@ -12421,5 +12420,8 @@ span.timeago {
 
 .text-hg {
   font-size: 2em; }
+
+.nav-edit-btn {
+  margin-top: 2px; }
 
 /*# sourceMappingURL=styles.css.map */
