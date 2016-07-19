@@ -179,5 +179,5 @@ return [
     'The mail send failed! Please try again in 60 seconds.' => '邮件发送失败，你执行此操作过于频繁，请于 :seconds 秒后重试',
     'The mail send failed! Please fill in your email address first.' => '邮箱不存在，请点击 <a href="' .url(route('users.edit', \Auth::id())). '" target="_blank">此处</a> 编辑你的邮箱！',
     'The mail sent successfully.' => '验证邮件发送成功！',
-    'Need to verify the email for commenting.' => '需要验证邮箱后才能发表评论.',
+    'You need to verify the email for commenting.' => '需要验证邮箱后才能发表评论.',
 ];

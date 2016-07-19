@@ -5,6 +5,7 @@ use Phphub\Core\CreatorListener;
 use App\Http\Requests\StoreReplyRequest;
 use App\Models\Reply;
 use Flash;
+use Auth;
 
 class RepliesController extends Controller implements CreatorListener
 {
@@ -15,6 +16,13 @@ class RepliesController extends Controller implements CreatorListener
 
     public function store(StoreReplyRequest $request)
     {
+        if(!Auth::user()->verified) {
+            return response([
+                        'status'  => 500,
+                        'message' => lang('You need to verify the email for commenting.'),
+                    ]);
+        }
+        
         return app('Phphub\Creators\ReplyCreator')->create($this, $request->except('_token'));
     }
 
