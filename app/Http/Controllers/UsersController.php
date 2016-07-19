@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use Phphub\Github\GithubUserDataReader;
 use Cache;
 use Auth;
-use Image;
 use Flash;
 
 class UsersController extends Controller
@@ -213,36 +212,7 @@ class UsersController extends Controller
         $this->authorize('update', $user);
 
         if ($file = $request->file('avatar')) {
-            $allowed_extensions = ["png", "jpg", "gif"];
-            if ($file->getClientOriginalExtension() && !in_array($file->getClientOriginalExtension(), $allowed_extensions)) {
-                return ['error' => 'You may only upload png, jpg or gif.'];
-            }
-
-            $fileName        = $file->getClientOriginalName();
-            $extension       = $file->getClientOriginalExtension() ?: 'png';
-            $folderName      = 'uploads/avatars';
-            $destinationPath = public_path() . '/' . $folderName;
-            $avatar_name     = $id . '_' . time() . '.' . $extension;
-
-            $file->move($destinationPath, $avatar_name);
-
-            // If is not gif file, we will try to reduse the file size
-            if ($file->getClientOriginalExtension() != 'gif') {
-                // open an image file
-                $img = Image::make($destinationPath . '/' . $avatar_name);
-                // prevent possible upsizing
-                $img->resize(380, 380, function ($constraint) {
-                    $constraint->aspectRatio();
-                    $constraint->upsize();
-                });
-                // finally we save the image as a new file
-                $img->save();
-            }
-
-            $user->avatar = $avatar_name;
-            $user->save();
-            $data['filename'] = $user->present()->gravatar;
-
+            $user->updateAvatar($file);
             Flash::success(lang('Update Avatar Success'));
         } else {
             Flash::error(lang('Update Avatar Failed'));
