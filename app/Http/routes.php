@@ -43,6 +43,7 @@ Route::get('/verification/{token}', 'Auth\AuthController@getVerification')->name
 
 Route::get('login', 'Auth\AuthController@oauth')->name('login');
 Route::get('login-required', 'Auth\AuthController@loginRequired')->name('login-required');
+Route::get('email-verification-required', 'Auth\AuthController@emailVerificationRequired')->name('email-verification-required');
 Route::get('admin-required', 'Auth\AuthController@adminRequired')->name('admin-required');
 Route::get('user-banned', 'Auth\AuthController@userBanned')->name('user-banned');
 Route::get('signup', 'Auth\AuthController@create')->name('signup');

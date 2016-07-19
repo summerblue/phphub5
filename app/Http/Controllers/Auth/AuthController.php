@@ -56,6 +56,11 @@ class AuthController extends Controller implements UserCreatorListener
         return view('auth.loginrequired');
     }
 
+    public function emailVerificationRequired()
+    {
+        return view('auth.emailverificationrequired');
+    }
+
     public function adminRequired()
     {
         return view('auth.adminrequired');

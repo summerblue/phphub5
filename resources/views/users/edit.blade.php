@@ -35,6 +35,10 @@
                 <input class="form-control" placeholder="{{ lang('GitHub Name') }}" name="github_name" type="text" value="{{ $user->github_name }}">
             </div>
 
+            <div class="form-group">
+                <input class="form-control" placeholder="{{ lang('Email') }}" name="email" type="text" value="{{ $user->email }}">
+            </div>
+
           <div class="form-group">
               <input class="form-control" placeholder="{{ lang('Real Name') }}" name="real_name" type="text" value="{{ $user->real_name }}">
           </div>

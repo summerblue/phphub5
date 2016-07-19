@@ -19,7 +19,7 @@ class EmailHandler
             $message->subject('请激活您的账号');
 
             $message->getSwiftMessage()->setBody(new SendCloudTemplate('template_active', [
-                'name' => $user->nickname,
+                'name' => $user->name,
                 'url'  => url('verification', $user->verification_token).'?email='.urlencode($user->email),
             ]));
             $message->to($user->email);

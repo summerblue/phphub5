@@ -10,6 +10,8 @@ use Phphub\Github\GithubUserDataReader;
 use Cache;
 use Auth;
 use Flash;
+use App\Http\Requests\UpdateUserRequest;
+use App\Jobs\SendActivateMail;
 
 class UsersController extends Controller
 {
@@ -41,20 +43,25 @@ class UsersController extends Controller
         return view('users.edit', compact('user', 'topics', 'replies'));
     }
 
-    public function update($id, Request $request)
+    public function update($id, UpdateUserRequest $request)
     {
         $user = User::findOrFail($id);
         $this->authorize('update', $user);
+        $old_email = $user->email;
 
         $data = $request->only(
                 'github_name', 'real_name', 'city',
                 'company', 'twitter_account', 'personal_website',
-                'introduction', 'weibo_name', 'weibo_id'
+                'introduction', 'weibo_name', 'weibo_id', 'email'
             );
 
         $user->update($data);
 
         Flash::success(lang('Operation succeeded.'));
+
+        if ($user->email && $user->email != $old_email) {
+            dispatch(new SendActivateMail($user));
+        }
 
         return redirect(route('users.edit', $id));
     }
