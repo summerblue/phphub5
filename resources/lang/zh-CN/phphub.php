@@ -168,5 +168,6 @@ return [
     'Weibo ID' => '微博用户ID，用来拼接 URL 的，如：5963322692',
     'Weibo' => '微博',
     'WeChat Account' => '微信订阅号',
+    'Edit Profile' => '编辑个人资料',
 
 ];
