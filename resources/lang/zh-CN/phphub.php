@@ -117,8 +117,8 @@ return [
     'publish_image' => '上传图片, 支持拖拽和剪切板黏贴上传, 格式限制 - jpg, png, gif',
     'Successfully remove attention.' => '成功取消关注',
     'Successfully_attention' => '成功关注主题, 系统会通知你关于此主题最新的讨论.',
-    'Operation succeeded.' => '操作成功!',
-    'Login Successfully.' => '成功登录!',
+    'Operation succeeded.' => '操作成功，Chrome 用户可使用 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">PHPHub 插件</a> 实时接收消息提醒。',
+    'Login Successfully.' => '成功登录，Chrome 用户可使用 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">PHPHub 插件</a> 实时接收消息提醒。',
     'Congratulations and Welcome!' => '恭喜，您已经成功加入 PHPHub，Chrome 用户可使用 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">PHPHub 插件</a> 实时接收消息提醒。',
     'Operation failed!' => '操作失败!',
     'Favorited your topic:' => '收藏了你的主题',
@@ -164,5 +164,8 @@ return [
     'Update Avatar Failed' => '上传头像失败',
     'Please Choose a Photo' => '请选择图片',
     'Recommend Topics' => '随机推荐话题',
+    'Weibo Username' => '微博用户名，如：phphub',
+    'Weibo ID' => '微博用户ID，用来拼接 URL 的，如：5963322692',
+    'Weibo' => '微博',
 
 ];

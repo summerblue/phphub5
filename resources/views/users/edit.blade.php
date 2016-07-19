@@ -45,6 +45,14 @@
           </div>
 
           <div class="form-group">
+              <input class="form-control" placeholder="{{ lang('Weibo Username') }}" name="weibo_name" type="text" value="{{ $user->weibo_name}}">
+          </div>
+
+          <div class="form-group">
+              <input class="form-control" placeholder="{{ lang('Weibo ID') }}" name="weibo_id" type="text" value="{{ $user->weibo_id}}">
+          </div>
+
+          <div class="form-group">
               <input class="form-control" placeholder="{{ lang('twitter_placeholder') }}" name="twitter_account" type="text" value="{{ $user->twitter_account}}">
           </div>
 

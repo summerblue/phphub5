@@ -41,16 +41,6 @@ function admin_url($path, $id = '')
     return env('APP_URL') . "/admin/$path" . ($id ? '/'.$id : '');
 }
 
-function show_crx_hint()
-{
-    \Session::flash('show_crx_hint', 'yes');
-}
-
-function check_show_crx_hint()
-{
-    return \Session::get('show_crx_hint') ? true : false;
-}
-
 function adminEnumStyleOutput($value)
 {
     $class = ($value === true || $value == 'yes') ? 'success' : 'danger';

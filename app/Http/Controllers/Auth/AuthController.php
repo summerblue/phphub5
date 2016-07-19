@@ -150,7 +150,6 @@ class AuthController extends Controller implements UserCreatorListener
         Session::forget('oauthData');
 
         Flash::success(lang('Login Successfully.'));
-        show_crx_hint();
 
         return redirect('/');
     }

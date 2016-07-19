@@ -89,11 +89,20 @@
                 <li><span class="label label-warning" style="position:relative">{{{ $topic->user->present()->badgeName() }}}</span></li>
               @endif
 
+              @if ($topic->user->github_name)
               <li>
                 <a href="https://github.com/{{ $topic->user->github_name }}" target="_blank">
                   <i class="fa fa-github-alt"></i> {{ $topic->user->github_name }}
                 </a>
-            </li>
+              </li>
+              @endif
+
+              @if ($topic->user->weibo_id)
+              <li>
+                <a href="http://weibo.com/u/{{ $topic->user->weibo_id }}" rel="nofollow" class="weibo" target="_blank"><i class="fa fa-weibo"></i> {{{ '@' . ($topic->user->weibo_name ?: $topic->user->weibo_id) }}}
+                </a>
+              </li>
+              @endif
 
               @if ($topic->user->company)
                 <li class="adr"><span class="org"><i class="fa fa-child"></i> {{{ $topic->user->company }}}</span></li>
@@ -102,6 +111,8 @@
               @if ($topic->user->city)
                 <li class="adr"><span class="org"><i class="fa fa-map-marker"></i> {{{ $topic->user->city }}}</span></li>
               @endif
+
+
 
               @if ($topic->user->twitter_account)
               <li>
