@@ -106,7 +106,7 @@
                 @if ($currentUser->verified)
                 <textarea class="form-control" rows="5" placeholder="{{ lang('Please using markdown.') }}" style="overflow:hidden" id="reply_content" name="body" cols="50"></textarea>
                 @else
-                <textarea class="form-control" disabled="disabled" rows="5" placeholder="{{ lang('Need to verify the email for commenting.') }}" name="body" cols="50"></textarea>
+                <textarea class="form-control" disabled="disabled" rows="5" placeholder="{{ lang('You need to verify the email for commenting.') }}" name="body" cols="50"></textarea>
                 @endif
             @else
                 <textarea class="form-control" disabled="disabled" rows="5" placeholder="{{ lang('User Login Required for commenting.') }}" name="body" cols="50"></textarea>
