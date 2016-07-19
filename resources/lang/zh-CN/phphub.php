@@ -168,5 +168,8 @@ return [
     'Weibo ID' => '微博用户ID，用来拼接 URL 的，如：5963322692',
     'Weibo' => '微博',
     'WeChat Account' => '微信订阅号',
+    'Email validation successed.' => '邮箱验证成功.',
+    'Email not found' => '邮箱验证失败：此邮箱不存在.',
+    'Token mismatch' => '邮箱验证失败：Token 已失效，请重新获取激活邮件.',
 
 ];

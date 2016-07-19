@@ -36,7 +36,9 @@
         "socialiteproviders/weibo": "^2.0",
         "smartisan/follow": "^1.0",
         "socialiteproviders/weixin-web": "^2.0",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^6.2",
+        "jrean/laravel-user-verification": "^2.2",
+        "naux/sendcloud": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

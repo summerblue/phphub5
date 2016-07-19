@@ -37,6 +37,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/attentions/{id}', 'AttentionsController@createOrDelete')->name('attentions.createOrDelete');
 });
 
+Route::get('/verification/{token}', 'Auth\AuthController@getVerification')->name('verification');
+
 # ------------------ Authentication ------------------------
 
 Route::get('login', 'Auth\AuthController@oauth')->name('login');

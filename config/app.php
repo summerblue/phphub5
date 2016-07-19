@@ -171,7 +171,9 @@ return [
         Phphub\Sitemap\SitemapServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
         \SocialiteProviders\Manager\ServiceProvider::class,
-        Smartisan\Follow\FollowServiceProvider::class
+        Smartisan\Follow\FollowServiceProvider::class,
+        Jrean\UserVerification\UserVerificationServiceProvider::class,
+        Naux\Mail\SendCloudServiceProvider::class,
     ],
 
     /*
@@ -228,11 +230,12 @@ return [
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
-        'Form'      => Collective\Html\FormFacade::class,
-        'Html'      => Collective\Html\HtmlFacade::class,
-        'Flash'     => Laracasts\Flash\Flash::class,
-        'QrCode'    => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
-        'Rss'       => Thujohn\Rss\RssFacade::class,
+        'Form'             => Collective\Html\FormFacade::class,
+        'Html'             => Collective\Html\HtmlFacade::class,
+        'Flash'            => Laracasts\Flash\Flash::class,
+        'QrCode'           => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        'Rss'              => Thujohn\Rss\RssFacade::class,
+        'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class,
     ],
 
 ];
