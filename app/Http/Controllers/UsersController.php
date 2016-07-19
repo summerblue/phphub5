@@ -17,7 +17,12 @@ class UsersController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['only' => ['edit', 'update', 'destroy', 'doFollow', 'editAvatar', 'updateAvatar']]);
+        $this->middleware('auth', [
+            'only' => [
+                'edit', 'update', 'destroy',
+                'doFollow', 'editAvatar', 'updateAvatar',
+             ]
+        ]);
     }
 
     public function index()
@@ -226,5 +231,26 @@ class UsersController extends Controller
         }
 
         return redirect(route('users.edit_avatar', $id));
+    }
+
+    public function sendVerificationMail()
+    {
+        $user = Auth::user();
+        $cache_key = 'send_activite_mail_'.$user->id;
+        if (Cache::has($cache_key)) {
+            Flash::error(lang('The mail send failed! Please try again in 60 seconds.', ['seconds' => (Cache::get($cache_key) - time())]));
+        } else {
+            if (!$user->email) {
+                Flash::error(lang('The mail send failed! Please fill in your email address first.'));
+            } else {
+                if (!$user->verified) {
+                    dispatch(new SendActivateMail($user));
+                    Flash::success(lang('The mail sent successfully.'));
+                    Cache::put($cache_key, time() + 60, 1);
+                }
+            }
+        }
+
+        return redirect()->intended('/');
     }
 }

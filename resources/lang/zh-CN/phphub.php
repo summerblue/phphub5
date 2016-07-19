@@ -170,6 +170,13 @@ return [
     'WeChat Account' => '微信订阅号',
     'Email validation successed.' => '邮箱验证成功.',
     'Email not found' => '邮箱验证失败：此邮箱不存在.',
-    'Token mismatch' => '邮箱验证失败：Token 已失效，请重新获取激活邮件.',
+    'Token mismatch' => '邮箱验证失败：Token 已失效，请重新获取验证邮件.',
     'Edit Profile' => '编辑个人资料',
+    'You need to verification email to proceed.' => '你需要验证邮箱后才能执行此操作.',
+    'Email Verification Require' => '验证邮箱提示',
+    'Email Verification' => '验证邮箱',
+    'Resend Verification Mail' => '重新发送验证邮件',
+    'The mail send failed! Please try again in 60 seconds.' => '邮件发送失败，你执行此操作过于频繁，请于 :seconds 秒后重试',
+    'The mail send failed! Please fill in your email address first.' => '邮箱不存在，请点击 <a href="' .url(route('users.edit', \Auth::id())). '" target="_blank">此处</a> 编辑你的邮箱！',
+    'The mail sent successfully.' => '验证邮件发送成功！'
 ];

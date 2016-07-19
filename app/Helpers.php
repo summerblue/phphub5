@@ -26,9 +26,9 @@ function getUserStaticDomain()
     return config('app.user_static') ?: config('app.url');
 }
 
-function lang($text)
+function lang($text, $parameters = [])
 {
-    return str_replace('phphub.', '', trans('phphub.'.$text));
+    return str_replace('phphub.', '', trans('phphub.'.$text, $parameters));
 }
 
 function admin_link($title, $path, $id = '')
