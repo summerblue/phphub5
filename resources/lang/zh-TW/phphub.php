@@ -125,4 +125,7 @@ return [
     'Can not vote your feedback' => '不能給自己的回覆點讚',
     'Follow' => '關注',
     'Unfollow' => '取消關注',
+    'Email validation successed.' => '郵箱驗證成功.',
+    'Email not found' => '郵箱驗證失敗：此郵箱不存在.',
+    'Token mismatch' => '郵箱驗證失敗：Token 已失效，請重新獲取激活郵件.',
 ];

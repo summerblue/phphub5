@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cf459c345135cbf6f3d70bfbdd4c55b1",
-    "content-hash": "d4a432d5c1b53c95ef8b2110058a0621",
+    "hash": "6d892e011a25117ab0e03345192c76a7",
+    "content-hash": "bd6d79b5bcac6c1f5346c7e95fe50603",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1167,6 +1167,52 @@
             "time": "2015-12-05 17:17:57"
         },
         {
+            "name": "jrean/laravel-user-verification",
+            "version": "v2.2.17",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jrean/laravel-user-verification.git",
+                "reference": "9e64fb55a4d3772d827f69113a5388369b89df5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/jrean/laravel-user-verification/9e64fb55a4d3772d827f69113a5388369b89df5c.zip",
+                "reference": "9e64fb55a4d3772d827f69113a5388369b89df5c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.0.*|5.1.*|5.2.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.7.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jrean\\UserVerification\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jean Ragouin",
+                    "email": "go@askjong.com"
+                }
+            ],
+            "description": "User Email Verification For Laravel 5.*",
+            "keywords": [
+                "email verification",
+                "framework",
+                "laravel",
+                "user verification"
+            ],
+            "time": "2016-07-12 09:01:38"
+        },
+        {
             "name": "laracasts/flash",
             "version": "2.0.0",
             "source": {
@@ -1974,6 +2020,43 @@
                 }
             ],
             "time": "2015-11-27 03:39:36"
+        },
+        {
+            "name": "naux/sendcloud",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NauxLiu/Laravel-SendCloud.git",
+                "reference": "d2ac795a53c39f4460fa4fe1701b16aba9cd6be2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/NauxLiu/Laravel-SendCloud/d2ac795a53c39f4460fa4fe1701b16aba9cd6be2.zip",
+                "reference": "d2ac795a53c39f4460fa4fe1701b16aba9cd6be2",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.1",
+                "illuminate/support": "^5.1",
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Naux\\Mail\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "NauxLiu",
+                    "email": "nauxliu@gmail.com"
+                }
+            ],
+            "time": "2016-05-05 02:14:29"
         },
         {
             "name": "nesbot/carbon",
@@ -2826,6 +2909,43 @@
             ],
             "description": "Weixin OAuth2 Provider for Laravel Socialite",
             "time": "2016-06-14 13:04:39"
+        },
+        {
+            "name": "socialiteproviders/weixin-web",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/Weixin-Web.git",
+                "reference": "30c741587e2ac6a77502f0ea8ea888a55d548108"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/SocialiteProviders/Weixin-Web/30c741587e2ac6a77502f0ea8ea888a55d548108.zip",
+                "reference": "30c741587e2ac6a77502f0ea8ea888a55d548108",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "socialiteproviders/manager": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\WeixinWeb\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "xyxu",
+                    "email": "techxu@gmail.com"
+                }
+            ],
+            "description": "Weixin-Web OAuth2 Provider for Laravel Socialite",
+            "time": "2016-03-31 05:10:48"
         },
         {
             "name": "spatie/db-dumper",

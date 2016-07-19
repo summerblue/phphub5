@@ -14,9 +14,15 @@ use Auth;
 use Flash;
 use App\Http\Requests\StoreUserRequest;
 use Phphub\Listeners\UserCreatorListener;
+use Jrean\UserVerification\Traits\VerifiesUsers;
+use Jrean\UserVerification\Facades\UserVerification;
+use Jrean\UserVerification\Exceptions\UserNotFoundException;
+use Jrean\UserVerification\Exceptions\UserIsVerifiedException;
+use Jrean\UserVerification\Exceptions\TokenMismatchException;
 
 class AuthController extends Controller implements UserCreatorListener
 {
+    use VerifiesUsers;
     protected $oauthDriver = ['github', 'weixin', 'weibo'];
 
     /**
@@ -26,7 +32,7 @@ class AuthController extends Controller implements UserCreatorListener
      */
     public function __construct(User $userModel)
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        $this->middleware('guest', ['except' => ['logout', 'getVerification']]);
     }
 
     private function loginUser($user)
@@ -178,6 +184,7 @@ class AuthController extends Controller implements UserCreatorListener
     public function callback(Request $request)
     {
         $driver = $request->input('driver');
+
         if (!in_array($driver, $this->oauthDriver)) {
             return redirect()->intended('/');
         }
@@ -188,5 +195,31 @@ class AuthController extends Controller implements UserCreatorListener
         }
 
         return $this->userNotFound($driver, $oauthUser);
+    }
+
+    /**
+     * ----------------------------------------
+     * Email Validation
+     * ----------------------------------------
+     */
+    public function getVerification(Request $request, $token)
+    {
+        $this->validateRequest($request);
+        try {
+            UserVerification::process($request->input('email'), $token, 'users');
+            Flash::success(lang('Email validation successed.'));
+            return redirect('/');
+        } catch (UserNotFoundException $e) {
+            Flash::error(lang('Email not found'));
+            return redirect('/');
+        } catch (UserIsVerifiedException $e) {
+            Flash::success(lang('Email validation successed.'));
+            return redirect('/');
+        } catch (TokenMismatchException $e) {
+            Flash::error(lang('Token mismatch'));
+            return redirect('/');
+        }
+
+        return redirect('/');
     }
 }

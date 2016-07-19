@@ -12,6 +12,7 @@ use GuzzleHttp\Client;
 use Laracasts\Presenter\PresentableTrait;
 use Venturecraft\Revisionable\RevisionableTrait;
 use Smartisan\Follow\FollowTrait;
+use App\Jobs\SendActivateMail;
 use Image;
 
 class User extends Model implements AuthenticatableContract,
@@ -34,8 +35,8 @@ class User extends Model implements AuthenticatableContract,
     use FollowTrait;
     protected $dates = ['deleted_at'];
 
-    protected $table      = 'users';
-    protected $guarded    = ['id', 'is_banned'];
+    protected $table   = 'users';
+    protected $guarded = ['id', 'is_banned'];
 
     public static function boot()
     {
@@ -44,6 +45,8 @@ class User extends Model implements AuthenticatableContract,
         static::created(function ($user) {
             $driver = $user['github_id'] ? 'github' : 'weixin';
             SiteStatus::newUser($driver);
+
+            dispatch(new SendActivateMail($user));
         });
     }
 
@@ -222,7 +225,7 @@ class User extends Model implements AuthenticatableContract,
 
         $this->avatar = $avatar_name;
         $this->save();
-        
+
         return true;
     }
 }

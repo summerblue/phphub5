@@ -69,7 +69,7 @@ return [
         'redis' => [
             'driver'     => 'redis',
             'connection' => 'default',
-            'queue'      => 'default',
+            'queue'      => env('QUEUE_NAME', 'phphub'),
             'expire'     => 60,
         ],
 

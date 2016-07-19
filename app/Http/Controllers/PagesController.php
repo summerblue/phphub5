@@ -8,6 +8,8 @@ use App\Models\Banner;
 use Illuminate\Http\Request;
 use Rss;
 use Purifier;
+use Phphub\Handler\EmailHandler;
+use Jrean\UserVerification\Facades\UserVerification;
 
 class PagesController extends Controller
 {
