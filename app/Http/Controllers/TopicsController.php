@@ -21,6 +21,7 @@ use Image;
 
 class TopicsController extends Controller implements CreatorListener
 {
+
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
@@ -41,6 +42,10 @@ class TopicsController extends Controller implements CreatorListener
 
     public function create(Request $request)
     {
+        if(!Auth::user()->verified) {
+            return redirect(route('email-verification-required'));
+        }
+
         $category = Category::find($request->input('category_id'));
         $categories = Category::all();
 
@@ -49,6 +54,10 @@ class TopicsController extends Controller implements CreatorListener
 
     public function store(StoreTopicRequest $request)
     {
+        if(!Auth::user()->verified) {
+            return redirect(route('email-verification-required'));
+        }
+        
         return app('Phphub\Creators\TopicCreator')->create($this, $request->except('_token'));
     }
 
