@@ -31,17 +31,17 @@
 
                 @if (Auth::user()->can('visit_admin'))
                   <li>
-                      <a href="/admin">
+                      <a href="/admin" class="text-md  ">
                           <i class="fa fa-tachometer"></i>
                       </a>
                   </li>
-                @else
-                    <li>
-                        <a class="animated rubberBand nav-edit-btn text-md" href="{{ route('users.edit', $currentUser->id) }}" data-content="{{ lang('Edit Profile') }}">
-                            <i class="fa fa-cog"></i>
-                        </a>
-                    </li>
                 @endif
+                <li>
+                    <a class="animated rubberBand nav-edit-btn text-md margin-top-2px" href="{{ route('users.edit', $currentUser->id) }}" data-content="{{ lang('Edit Profile') }}">
+                        <i class="fa fa-cog"></i>
+                    </a>
+                </li>
+
 
               <li>
                   <a href="{{ route('users.show', $currentUser->id) }}">
