@@ -29,7 +29,7 @@
                   </a>
               </li>
 
-                @if (!Auth::user()->can('visit_admin'))
+                @if (Auth::user()->can('visit_admin'))
                   <li>
                       <a href="/admin">
                           <i class="fa fa-tachometer"></i>
