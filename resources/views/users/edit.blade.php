@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-编辑个人资料_@parent
+{{ lang('Edit Profile') }}_@parent
 @stop
 
 @section('content')
@@ -14,9 +14,12 @@
 
   <div class="main-col col-md-9 left-col">
 
-    <div class="panel panel-default">
+    <div class="panel panel-default padding-md">
 
       <div class="panel-body ">
+
+        <h2><i class="fa fa-cog" aria-hidden="true"></i> {{ lang('Edit Profile') }}</h2>
+        <hr>
 
         <div class="alert alert-warning">
           请前往 <a href="{{ route('users.edit_avatar', $user->id) }}">这里</a> 修改头像
