@@ -47,13 +47,17 @@ class UsersController extends Controller
         $user = User::findOrFail($id);
         $this->authorize('update', $user);
 
-        $data = $request->only('github_name', 'real_name', 'city', 'company', 'twitter_account', 'personal_website', 'introduction');
+        $data = $request->only(
+                'github_name', 'real_name', 'city',
+                'company', 'twitter_account', 'personal_website',
+                'introduction', 'weibo_name', 'weibo_id'
+            );
 
         $user->update($data);
 
         Flash::success(lang('Operation succeeded.'));
 
-        return redirect(route('users.show', $id));
+        return redirect(route('users.edit', $id));
     }
 
     public function destroy($id)
@@ -191,7 +195,7 @@ class UsersController extends Controller
             app('Phphub\Notification\Notifier')->newFollowNotify(Auth::user(), $user);
         }
 
-        show_crx_hint();
+        Flash::success(lang('Operation succeeded.'));
         return redirect(route('users.show', $id));
     }
 

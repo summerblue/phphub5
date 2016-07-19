@@ -24,12 +24,14 @@
     <dt class="adr"><label> {{ lang('Real Name') }}:</label></dt><dd><span class="org">{{{ $user->real_name }}}</span></dd>
   @endif
 
+  @if ($user->github_name)
   <dt><label>Github:</label></dt>
   <dd>
     <a href="https://github.com/{{ $user->github_name }}" target="_blank">
       <i class="fa fa-github-alt"></i> {{ $user->github_name }}
     </a>
   </dd>
+  @endif
 
   @if ($user->company)
     <dt class="adr"><label> {{ lang('Company') }}:</label></dt><dd><span class="org">{{{ $user->company }}}</span></dd>
@@ -37,6 +39,14 @@
 
   @if ($user->city)
     <dt class="adr"><label> {{ lang('City') }}:</label></dt><dd><span class="org"><i class="fa fa-map-marker"></i> {{{ $user->city }}}</span></dd>
+  @endif
+
+  @if ($user->weibo_id)
+  <dt><label><span>{{ lang('Weibo') }}</span>:</label></dt>
+  <dd>
+    <a href="http://weibo.com/u/{{ $user->weibo_id }}" rel="nofollow" class="weibo" target="_blank"><i class="fa fa-weibo"></i> {{{ '@' . $user->weibo_name }}}
+    </a>
+  </dd>
   @endif
 
   @if ($user->twitter_account)

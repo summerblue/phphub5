@@ -238,8 +238,6 @@ class TopicsController extends Controller implements CreatorListener
     public function creatorSucceed($topic)
     {
         Flash::success(lang('Operation succeeded.'));
-        show_crx_hint();
-
         return redirect(route('topics.show', array($topic->id)));
     }
 }
