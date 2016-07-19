@@ -12,6 +12,7 @@ use GuzzleHttp\Client;
 use Laracasts\Presenter\PresentableTrait;
 use Venturecraft\Revisionable\RevisionableTrait;
 use Smartisan\Follow\FollowTrait;
+use Image;
 
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract
@@ -187,6 +188,38 @@ class User extends Model implements AuthenticatableContract,
         }
 
         //Save to database
+        $this->avatar = $avatar_name;
+        $this->save();
+    }
+
+    public function updateAvatar($file)
+    {
+        $allowed_extensions = ["png", "jpg", "gif"];
+        if ($file->getClientOriginalExtension() && !in_array($file->getClientOriginalExtension(), $allowed_extensions)) {
+            return ['error' => 'You may only upload png, jpg or gif.'];
+        }
+
+        $fileName        = $file->getClientOriginalName();
+        $extension       = $file->getClientOriginalExtension() ?: 'png';
+        $folderName      = 'uploads/avatars';
+        $destinationPath = public_path() . '/' . $folderName;
+        $avatar_name     = $this->id . '_' . time() . '.' . $extension;
+
+        $file->move($destinationPath, $avatar_name);
+
+        // If is not gif file, we will try to reduse the file size
+        if ($file->getClientOriginalExtension() != 'gif') {
+            // open an image file
+            $img = Image::make($destinationPath . '/' . $avatar_name);
+            // prevent possible upsizing
+            $img->resize(380, 380, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+            // finally we save the image as a new file
+            $img->save();
+        }
+
         $this->avatar = $avatar_name;
         $this->save();
     }
