@@ -41,6 +41,12 @@ EOD;
         'is_banned' => [
             'title' => '是否被屏蔽',
         ],
+        'verified' => [
+            'title' => '邮箱是否已验证',
+            'output' => function ($value, $model) {
+                return $value ? 'yes' : 'no';
+            },
+        ],
         'operation' => [
             'title'  => '管理',
             'output' => function ($value, $model) {
@@ -148,5 +154,71 @@ EOD;
             'title' => '个人简介'
         ],
     ],
-    'actions' => [],
+    'actions' => [
+        'banned_user' => [
+            'title'    => '禁用',
+            'messages' => array(
+                'active'  => '正在处理...',
+                'success' => '处理成功',
+                'error'   => '处理失败，请重新尝试',
+            ),
+            'permission' => function ($model) {
+                return $model->is_banned == 'no';
+            },
+            'action' => function ($model) {
+                $model->is_banned = 'yes';
+                $model->save();
+                return true;
+            }
+        ],
+        'unbanned_user' => [
+            'title'    => '启用',
+            'messages' => array(
+                'active'  => '正在处理...',
+                'success' => '处理成功',
+                'error'   => '处理失败，请重新尝试',
+            ),
+            'permission' => function ($model) {
+                return $model->is_banned == 'yes';
+            },
+            'action' => function ($model) {
+                $model->is_banned = 'no';
+                $model->save();
+                return true;
+            }
+        ],
+        'verified_email' => [
+            'title'    => '设置邮箱为已激活',
+            'messages' => array(
+                'active'  => '正在处理...',
+                'success' => '处理成功',
+                'error'   => '处理失败，请重新尝试',
+            ),
+            'permission' => function ($model) {
+                return !$model->verified;
+            },
+            'action' => function ($model) {
+                $model->verified = true;
+                $model->save();
+                return true;
+            }
+        ],
+        'unverified_email' => [
+            'title'    => '设置邮箱为未激活',
+            'messages' => array(
+                'active'  => '正在处理...',
+                'success' => '处理成功',
+                'error'   => '处理失败，请重新尝试',
+            ),
+            'permission' => function ($model) {
+                return $model->verified;
+            },
+            'action' => function ($model) {
+                $model->verified = false;
+                $model->save();
+                return true;
+            }
+        ],
+
+    ],
 ];
