@@ -196,7 +196,7 @@ class User extends Model implements AuthenticatableContract,
     {
         $allowed_extensions = ["png", "jpg", "gif"];
         if ($file->getClientOriginalExtension() && !in_array($file->getClientOriginalExtension(), $allowed_extensions)) {
-            return ['error' => 'You may only upload png, jpg or gif.'];
+            return false;
         }
 
         $fileName        = $file->getClientOriginalName();
@@ -222,5 +222,7 @@ class User extends Model implements AuthenticatableContract,
 
         $this->avatar = $avatar_name;
         $this->save();
+        
+        return true;
     }
 }
