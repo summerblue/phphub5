@@ -14,7 +14,7 @@
 
   <div class="main-col col-md-9 left-col">
 
-    <div class="panel panel-default">
+    <div class="panel panel-default padding-md">
 
       <div class="panel-body padding-bg">
 
