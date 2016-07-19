@@ -56,6 +56,7 @@
             self.initToolTips();
             self.initAjax();
             self.initLogin();
+            self.initEditBtnAnimated();
         },
 
         /**
@@ -832,6 +833,11 @@
                 });
 
                 return false;
+            });
+        },
+        initEditBtnAnimated: function() {
+            $('.topic-author-box .panel-body').hover(function() {
+                  $('.edit-btn').toggleClass('infinite');
             });
         },
 
