@@ -944,7 +944,6 @@ div#preview-box {
     overflow: visible;
 
     pre, pre[class*=language-] {
-      margin: 5px -15px!important;
       border-radius: 0px;
     }
   }
@@ -1415,4 +1414,7 @@ span.timeago {
 }
 .text-hg {
     font-size: 2em;
+}
+.nav-edit-btn {
+    margin-top: 2px;
 }

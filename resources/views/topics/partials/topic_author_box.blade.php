@@ -7,7 +7,7 @@
 
         @if ($currentUser && $currentUser->id == $topic->user->id)
         <a class="pull-right popover-with-html text-lg animated rubberBand edit-btn" href="{{ route('users.edit', $topic->user->id) }}" data-content="{{ lang('Edit Profile') }}">
-            <i class="fa fa-pencil-square"></i>
+            <i class="fa fa-cog"></i>
         </a>
         @endif
 
