@@ -171,5 +171,5 @@ return [
     'Email validation successed.' => '邮箱验证成功.',
     'Email not found' => '邮箱验证失败：此邮箱不存在.',
     'Token mismatch' => '邮箱验证失败：Token 已失效，请重新获取激活邮件.',
-
+    'Edit Profile' => '编辑个人资料',
 ];
