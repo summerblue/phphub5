@@ -11367,14 +11367,16 @@ span.timeago {
   line-height: 30px;
   margin-bottom: 0px; }
 
+.topic-author-box .list-inline {
+  margin-bottom: 0px; }
+
+.topic-author-box .media-heading {
+  margin-bottom: 8px; }
+
 .topic-author-box a {
   color: #606060; }
 
 .topic-author-box .img-thumbnail {
   max-width: inherit; }
-  .topic-author-box .img-thumbnail .list-inline {
-    margin-bottom: 0px; }
-  .topic-author-box .img-thumbnail .media-heading {
-    margin-bottom: 8px; }
 
 /*# sourceMappingURL=styles.css.map */
