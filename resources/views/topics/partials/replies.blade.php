@@ -34,14 +34,14 @@
           <a class="comment-vote" data-ajax="post" id="reply-up-vote-{{ $reply->id }}" href="javascript:void(0);" data-url="{{ route('replies.vote', $reply->id) }}" title="{{ lang('Vote Up') }}">
              <i class="fa fa-thumbs-o-up" style="font-size:14px;"></i> <span class="vote-count">{{ $reply->vote_count ?: '' }}</span>
           </a>
-          <span> •  </span>
+          <span> ⋅  </span>
           @endif
 
           @if ($currentUser && ($currentUser->can("manage_topics") || $currentUser->id == $reply->user_id) )
             <a id="reply-delete-{{ $reply->id }}" data-ajax="delete"  href="javascript:void(0);" data-url="{{route('replies.destroy', [$reply->id])}}" title="{{lang('Delete')}}">
                 <i class="fa fa-trash-o"></i>
             </a>
-            <span> •  </span>
+            <span> ⋅  </span>
           @endif
           <a class="fa fa-reply" href="javascript:void(0)" onclick="replyOne('{{{$reply->user->name}}}');" title="回复 {{{$reply->user->name}}}"></a>
         </span>
@@ -49,7 +49,7 @@
         <div class="meta">
             <a name="reply{{ $topic->present()->replyFloorFromIndex($index) }}" class="anchor" href="#reply{{ $topic->present()->replyFloorFromIndex($index) }}" aria-hidden="true">#{{ $topic->present()->replyFloorFromIndex($index) }}</a>
 
-            <span> •  </span>
+            <span> ⋅  </span>
             <abbr class="timeago" title="{{ $reply->created_at }}">{{ $reply->created_at }}</abbr>
         </div>
 

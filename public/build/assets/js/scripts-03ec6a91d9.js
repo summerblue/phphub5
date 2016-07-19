@@ -2945,6 +2945,7 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
             self.initToolTips();
             self.initAjax();
             self.initLogin();
+            self.initEditBtnAnimated();
         },
 
         /**
@@ -3721,6 +3722,11 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
                 });
 
                 return false;
+            });
+        },
+        initEditBtnAnimated: function() {
+            $('.topic-author-box .panel-body').hover(function() {
+                  $('.edit-btn').toggleClass('infinite');
             });
         },
 
