@@ -11379,4 +11379,9 @@ span.timeago {
 .topic-author-box .img-thumbnail {
   max-width: inherit; }
 
+.image-border {
+  padding: 3px;
+  border: 1px solid #ddd;
+  border-radius: 3px; }
+
 /*# sourceMappingURL=styles.css.map */
