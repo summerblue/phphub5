@@ -107,7 +107,7 @@ return [
     'Recent Topics' => '最近主题',
     'Reply' => '回复',
     'User Login Required for commenting.' => '需要登录后才能发表评论.',
-    'site_intro' => 'PHPHub 是积极向上的 PHP & Laravel 开发者社区, 更多介绍 <a href="about">见这里</a>, 源代码 <i class="fa fa-github" style="font-size:15px"></i> <a href="https://github.com/summerblue/phphub5" target="_blank">在此</a>.',
+    'site_intro' => 'PHPHub 是积极向上的 PHP & Laravel 开发者社区，更多介绍 <a href="about">见这里</a>，源代码 <i class="fa fa-github" style="font-size:15px"></i> <a href="https://github.com/summerblue/phphub5" target="_blank">在此</a>，<a href="http://weibo.com/u/5963322692" target="_blank">@PHPHub</a>。',
     'contributing' => '功能正在完善中, 欢迎 <i class="fa fa-github" style="font-size:15px"></i> <a href="https://github.com/summerblue/phphub5" target="_blank">贡献代码</a> 或 <a href="https://github.com/summerblue/phphub5/issues" target="_blank">提交 Issue</a>.',
     'be_nice' => '我们希望 PHPHub 能够成为技术氛围最好的 PHP 社区，而实现这个目标，需要我们所有人的共同努力：友善，公平，尊重知识和事实。',
     'publish_typography' => '请注意单词拼写，以及中英文排版，<a href="https://github.com/sparanoid/chinese-copywriting-guidelines">参考此页</a>',
@@ -167,5 +167,6 @@ return [
     'Weibo Username' => '微博用户名，如：phphub',
     'Weibo ID' => '微博用户ID，用来拼接 URL 的，如：5963322692',
     'Weibo' => '微博',
+    'WeChat Account' => '微信订阅号',
 
 ];
