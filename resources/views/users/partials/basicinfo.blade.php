@@ -44,7 +44,7 @@
   @if ($user->weibo_id)
   <dt><label><span>{{ lang('Weibo') }}</span>:</label></dt>
   <dd>
-    <a href="http://weibo.com/u/{{ $user->weibo_id }}" rel="nofollow" class="weibo" target="_blank"><i class="fa fa-weibo"></i> {{{ '@' . $user->weibo_name }}}
+    <a href="http://weibo.com/u/{{ $user->weibo_id }}" rel="nofollow" class="weibo" target="_blank"><i class="fa fa-weibo"></i> {{{ $user->weibo_name }}}
     </a>
   </dd>
   @endif
@@ -52,7 +52,7 @@
   @if ($user->twitter_account)
   <dt><label><span>Twitter</span>:</label></dt>
   <dd>
-    <a href="https://twitter.com/{{ $user->twitter_account }}" rel="nofollow" class="twitter" target="_blank"><i class="fa fa-twitter"></i> {{{ '@' . $user->twitter_account }}}
+    <a href="https://twitter.com/{{ $user->twitter_account }}" rel="nofollow" class="twitter" target="_blank"><i class="fa fa-twitter"></i> {{{ $user->twitter_account }}}
     </a>
   </dd>
   @endif

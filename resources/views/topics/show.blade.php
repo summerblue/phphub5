@@ -99,7 +99,7 @@
 
               @if ($topic->user->weibo_id)
               <li>
-                <a href="http://weibo.com/u/{{ $topic->user->weibo_id }}" rel="nofollow" class="weibo" target="_blank"><i class="fa fa-weibo"></i> {{{ '@' . ($topic->user->weibo_name ?: $topic->user->weibo_id) }}}
+                <a href="http://weibo.com/u/{{ $topic->user->weibo_id }}" rel="nofollow" class="weibo" target="_blank"><i class="fa fa-weibo"></i> {{{ $topic->user->weibo_name ?: $topic->user->weibo_id }}}
                 </a>
               </li>
               @endif
@@ -116,7 +116,7 @@
 
               @if ($topic->user->twitter_account)
               <li>
-                <a href="https://twitter.com/{{ $topic->user->twitter_account }}" rel="nofollow" class="twitter" target="_blank"><i class="fa fa-twitter"></i> {{{ '@' . $topic->user->twitter_account }}}
+                <a href="https://twitter.com/{{ $topic->user->twitter_account }}" rel="nofollow" class="twitter" target="_blank"><i class="fa fa-twitter"></i> {{{ $topic->user->twitter_account }}}
                 </a>
             </li>
               @endif
