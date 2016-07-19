@@ -57,7 +57,7 @@ class TopicsController extends Controller implements CreatorListener
         if(!Auth::user()->verified) {
             return redirect(route('email-verification-required'));
         }
-        
+
         return app('Phphub\Creators\TopicCreator')->create($this, $request->except('_token'));
     }
 
