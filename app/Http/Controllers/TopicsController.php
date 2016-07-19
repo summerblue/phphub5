@@ -190,32 +190,12 @@ class TopicsController extends Controller implements CreatorListener
     public function uploadImage(Request $request)
     {
         if ($file = $request->file('file')) {
-            $allowed_extensions = ["png", "jpg", "gif"];
-            if ($file->getClientOriginalExtension() && !in_array($file->getClientOriginalExtension(), $allowed_extensions)) {
-                return ['error' => 'You may only upload png, jpg or gif.'];
+            $upload_status = uploadTopicImage($file);
+
+            if ($upload_status['error']) {
+                return ['error' => $upload_status['error']];
             }
-
-            $fileName        = $file->getClientOriginalName();
-            $extension       = $file->getClientOriginalExtension() ?: 'png';
-            $folderName      = 'uploads/images/' . date("Ym", time()) .'/'.date("d", time()) .'/'. Auth::user()->id;
-            $destinationPath = public_path() . '/' . $folderName;
-            $safeName        = str_random(10).'.'.$extension;
-            $file->move($destinationPath, $safeName);
-
-            // If is not gif file, we will try to reduse the file size
-            if ($file->getClientOriginalExtension() != 'gif') {
-                // open an image file
-                $img = Image::make($destinationPath . '/' . $safeName);
-                // prevent possible upsizing
-                $img->resize(1440, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                    $constraint->upsize();
-                });
-                // finally we save the image as a new file
-                $img->save();
-            }
-
-            $data['filename'] = getUserStaticDomain() . $folderName .'/'. $safeName;
+            $data['filename'] = $upload_status['filename'];
 
             SiteStatus::newImage();
         } else {
