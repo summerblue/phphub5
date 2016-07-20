@@ -39,12 +39,22 @@ EOD;
             'title' => 'GitHub Id',
         ],
         'is_banned' => [
-            'title' => '是否被屏蔽',
+            'title'  => '是否被屏蔽',
+            'output' => function ($value) {
+                return admin_enum_style_output($value);
+            },
         ],
         'verified' => [
-            'title' => '邮箱是否已验证',
-            'output' => function ($value, $model) {
-                return $value ? 'yes' : 'no';
+            'title'  => '邮箱是否已验证',
+            'output' => function ($value) {
+                $value = $value ? 'yes' : 'no';
+                return admin_enum_style_output($value);
+            },
+        ],
+        'email_notify_enabled' => [
+            'title'  => '是否开启邮件提醒',
+            'output' => function ($value) {
+                return admin_enum_style_output($value);
             },
         ],
         'operation' => [
@@ -138,6 +148,14 @@ EOD;
                 'no'  => '否',
             ],
         ],
+        'email_notify_enabled' => [
+            'title'    => '是否开启邮件提醒',
+            'type'     => 'enum',
+            'options'  => [
+                'yes' => '是',
+                'no'  => '否',
+            ],
+        ],
         'city' => [
             'title' => '所处城市'
         ],
@@ -219,6 +237,37 @@ EOD;
                 return true;
             }
         ],
-
+        'email_notify_enabled' => [
+            'title'    => ' 开启邮件提醒',
+            'messages' => array(
+                'active'  => '正在处理...',
+                'success' => '处理成功',
+                'error'   => '处理失败，请重新尝试',
+            ),
+            'permission' => function ($model) {
+                return $model->email_notify_enabled == 'no';
+            },
+            'action' => function ($model) {
+                $model->email_notify_enabled = 'yes';
+                $model->save();
+                return true;
+            }
+        ],
+        'email_notify_disenabled' => [
+            'title'    => '关闭邮件提醒',
+            'messages' => array(
+                'active'  => '正在处理...',
+                'success' => '处理成功',
+                'error'   => '处理失败，请重新尝试',
+            ),
+            'permission' => function ($model) {
+                return $model->email_notify_enabled == 'yes';
+            },
+            'action' => function ($model) {
+                $model->email_notify_enabled = 'no';
+                $model->save();
+                return true;
+            }
+        ],
     ],
 ];

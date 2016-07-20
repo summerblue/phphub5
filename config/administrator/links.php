@@ -32,7 +32,7 @@ EOD;
         'is_enabled' => [
             'title'    => '是否启用',
             'output'   => function ($value) {
-                return adminEnumStyleOutput($value);
+                return admin_enum_style_output($value);
             },
             'sortable' => false,
         ],

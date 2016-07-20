@@ -41,7 +41,7 @@ function admin_url($path, $id = '')
     return env('APP_URL') . "/admin/$path" . ($id ? '/'.$id : '');
 }
 
-function adminEnumStyleOutput($value)
+function admin_enum_style_output($value)
 {
     $class = ($value === true || $value == 'yes') ? 'success' : 'danger';
     return '<span class="label bg-'.$class.'">'.$value.'</span>';
