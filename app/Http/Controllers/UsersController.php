@@ -21,7 +21,7 @@ class UsersController extends Controller
             'only' => [
                 'edit', 'update', 'destroy',
                 'doFollow', 'editAvatar', 'updateAvatar',
-                'updateEmailNotify'
+                'editEmailNotify','updateEmailNotify'
              ]
         ]);
     }
@@ -149,14 +149,24 @@ class UsersController extends Controller
         return redirect(route('users.show', $id));
     }
 
-    public function updateEmailNotify($id)
+    public function editEmailNotify($id)
     {
         $user = User::findOrFail($id);
         $this->authorize('update', $user);
-        $user->email_notify_enabled = $user->email_notify_enabled == 'yes' ? 'no' : 'yes';
+
+        return view('users.edit_email_notify', compact('user'));
+    }
+
+    public function updateEmailNotify($id, Request $request)
+    {
+        $user = User::findOrFail($id);
+        $this->authorize('update', $user);
+        $user->email_notify_enabled = $request->email_notify_enabled == 'on' ? 'yes' : 'no';
         $user->save();
 
-        return redirect(route('users.show', $id));
+        Flash::success(lang('Operation succeeded.'));
+
+        return redirect(route('users.edit_email_notify', $id));
     }
 
     public function githubApiProxy($username)
@@ -263,5 +273,13 @@ class UsersController extends Controller
         }
 
         return redirect()->intended('/');
+    }
+
+    public function editSocialBinding($id)
+    {
+        $user = User::findOrFail($id);
+        $this->authorize('update', $user);
+
+        return view('users.edit_social_binding', compact('user'));
     }
 }

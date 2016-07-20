@@ -18,8 +18,10 @@ Route::get('/users/{id}/refresh_cache', 'UsersController@refreshCache')->name('u
 Route::get('/users/{id}/access_tokens', 'UsersController@accessTokens')->name('users.access_tokens');
 Route::get('/access_token/{token}/revoke', 'UsersController@revokeAccessToken')->name('users.access_tokens.revoke');
 Route::get('/users/regenerate_login_token', 'UsersController@regenerateLoginToken')->name('users.regenerate_login_token');
-Route::post('users/follow/{id}', 'UsersController@doFollow')->name('users.doFollow');
-Route::post('users/{id}/update_email_notify', 'UsersController@updateEmailNotify')->name('users.update_email_notify');
+Route::post('/users/follow/{id}', 'UsersController@doFollow')->name('users.doFollow');
+Route::get('/users/{id}/edit_email_notify', 'UsersController@editEmailNotify')->name('users.edit_email_notify');
+Route::post('/users/{id}/update_email_notify', 'UsersController@updateEmailNotify')->name('users.update_email_notify');
+Route::get('/users/{id}/edit_social_binding', 'UsersController@editSocialBinding')->name('users.edit_social_binding');
 
 Route::get('/users', 'UsersController@index')->name('users.index');
 Route::get('/users/create', 'UsersController@create')->name('users.create');

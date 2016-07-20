@@ -158,6 +158,18 @@ return [
     'Hot Topics' => '热门话题',
 
     'User Role' => '用户组',
+    'Change Avatar' => '修改头像',
+    'Notification Settings' => '消息设置',
+    'Social Account Binding' => '账号绑定',
+    'Edit Email Notify' => 'Email 通知设置',
+    'Apply Changes' => '应用修改',
+    'Send email when replied' => '新回复时接收邮件？',
+    'Edit Social Binding' => '账号绑定设置',
+    'Available Bindings' => '可用的绑定',
+    'Register Binding' => '注册使用绑定',
+    'Click to bind to this account' => '点击进行账号绑定',
+    'Not allow to change register binding account' => '注册时绑定的账号不允许修改',
+    'Setup multiple Bindings allow you to login to the same account with different binding site account.' => '绑定多个第三方账号，允许你使用任意一个第三方账号登录同一个 PHPHub 账号。',
 
     'Photo Upload' => '上传头像',
     'Selected image:' => '请选择图片：',
