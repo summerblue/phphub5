@@ -13,7 +13,7 @@
           &nbsp;{{ lang('Notification Settings') }}
       </a>
       <a href="{{ route('users.edit_social_binding', $currentUser->id) }}" class="list-group-item {{ navViewActive('users.edit_social_binding') }}">
-          <i class="text-md fa fa-list-alt" aria-hidden="true"></i>
+          <i class="text-md fa fa-flask" aria-hidden="true"></i>
           &nbsp;{{ lang('Social Account Binding') }}
       </a>
     </div>

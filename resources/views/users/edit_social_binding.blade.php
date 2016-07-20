@@ -42,12 +42,13 @@
                       <i class="fa fa-weixin"></i>
                       {{ lang('WeChat') }}
                     </a>
-                    <span class="padding-sm">{{ lang('Not allow to change register binding account') }}</span>
 
-                    <a href="{{ URL::route('auth.oauth', ['driver' => 'github']) }}" class="btn btn-info login-btn hide">
+                    <a class="btn btn-info login-btn hide" role="button">
                       <i class="fa fa-github-alt"></i>
                       {{ lang('Github') }}
                     </a>
+
+                    <span class="padding-sm">{{ lang('Not allow to change register binding account') }}</span>
 
                 </div>
 
