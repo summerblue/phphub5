@@ -822,6 +822,8 @@
             $('.topic-author-box .panel-body').hover(function() {
                   $('.edit-btn').toggleClass('infinite');
             });
+
+            $(".bootstrap-switch").bootstrapSwitch();
         },
 
     };

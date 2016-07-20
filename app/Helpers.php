@@ -76,3 +76,8 @@ function upload_topic_image($file)
 
     return ['error' => '', 'filename' => get_user_static_domain() . $folderName .'/'. $safeName];
 }
+
+function navViewActive($anchor)
+{
+    return Route::currentRouteName() == $anchor ? 'active' : '';
+}

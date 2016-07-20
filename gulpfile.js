@@ -22,6 +22,7 @@ var basejs = [
     'resources/assets/js/vendor/jquery.inline-attach.min.js',
     'resources/assets/js/vendor/snowfall.jquery.min.js',
     'resources/assets/js/vendor/upload-image.js',
+    'resources/assets/js/vendor/bootstrap-switch.js',
     'node_modules/sweetalert/dist/sweetalert.min.js',
     'node_modules/social-share.js/dist/js/social-share.min.js',
 ];
