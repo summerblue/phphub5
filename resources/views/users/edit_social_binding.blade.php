@@ -81,7 +81,7 @@
                         </a>
                     @endif
 
-                    @if($currentUser->github_id > 0 || $currentUser->wechat_openid)
+                    @if($currentUser->github_id > 0 && $currentUser->wechat_openid)
                         <span class="padding-sm">{{ lang('Already binded to this account') }}</span>
                     @else
                         <span class="padding-sm">{{ lang('Click to bind to this account') }}</span>
