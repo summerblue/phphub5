@@ -19,6 +19,7 @@ Route::get('/users/{id}/access_tokens', 'UsersController@accessTokens')->name('u
 Route::get('/access_token/{token}/revoke', 'UsersController@revokeAccessToken')->name('users.access_tokens.revoke');
 Route::get('/users/regenerate_login_token', 'UsersController@regenerateLoginToken')->name('users.regenerate_login_token');
 Route::post('users/follow/{id}', 'UsersController@doFollow')->name('users.doFollow');
+Route::post('users/{id}/update_email_notify', 'UsersController@updateEmailNotify')->name('users.update_email_notify');
 
 Route::get('/users', 'UsersController@index')->name('users.index');
 Route::get('/users/create', 'UsersController@create')->name('users.create');
