@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
 use Validator;
-use Socialite;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -19,11 +18,12 @@ use Jrean\UserVerification\Facades\UserVerification;
 use Jrean\UserVerification\Exceptions\UserNotFoundException;
 use Jrean\UserVerification\Exceptions\UserIsVerifiedException;
 use Jrean\UserVerification\Exceptions\TokenMismatchException;
+use App\Http\Controllers\Traits\SocialiteHelper;
 
 class AuthController extends Controller implements UserCreatorListener
 {
-    use VerifiesUsers;
-    protected $oauthDriver = ['github', 'weixin', 'weibo'];
+    use VerifiesUsers,SocialiteHelper;
+    protected $oauthDriver = ['github', 'weixin'];
 
     /**
      * Create a new authentication controller instance.
@@ -32,7 +32,7 @@ class AuthController extends Controller implements UserCreatorListener
      */
     public function __construct(User $userModel)
     {
-        $this->middleware('guest', ['except' => ['logout', 'emailVerificationRequired']]);
+        $this->middleware('guest', ['except' => ['logout', 'emailVerificationRequired', 'oauth', 'callback']]);
         $this->middleware('auth', ['only' => ['emailVerificationRequired']]);
     }
 
@@ -132,8 +132,6 @@ class AuthController extends Controller implements UserCreatorListener
      * GithubAuthenticatorListener Delegate
      * ----------------------------------------
      */
-
-    // 数据库找不到用户, 执行新用户注册
     public function userNotFound($driver, $registerUserData)
     {
         if ($driver == 'github') {
@@ -171,37 +169,6 @@ class AuthController extends Controller implements UserCreatorListener
     public function userIsBanned($user)
     {
         return redirect(route('user-banned'));
-    }
-
-    /**
-     * ----------------------------------------
-     * Oauth Login Logic
-     * ----------------------------------------
-     */
-
-    public function oauth(Request $request)
-    {
-        $driver = $request->input('driver');
-        $driver = !in_array($driver, $this->oauthDriver)
-                    ? $this->oauthDriver[0]
-                    : $driver;
-        return Socialite::driver($driver)->redirect();
-    }
-
-    public function callback(Request $request)
-    {
-        $driver = $request->input('driver');
-
-        if (!in_array($driver, $this->oauthDriver)) {
-            return redirect()->intended('/');
-        }
-        $oauthUser = Socialite::with($driver)->user();
-        $user = User::getByDriver($driver, $oauthUser->id);
-        if ($user) {
-            return $this->loginUser($user);
-        }
-
-        return $this->userNotFound($driver, $oauthUser);
     }
 
     /**
