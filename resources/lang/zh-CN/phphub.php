@@ -180,4 +180,5 @@ return [
     'The mail send failed! Please fill in your email address first.' => '邮箱不存在，请点击 <a href="' .url(route('users.edit', \Auth::id())). '" target="_blank">此处</a> 编辑你的邮箱！',
     'The mail sent successfully.' => '验证邮件发送成功！请注意查收哦 ^_^',
     'You need to verify the email for commenting.' => '需要验证邮箱后才能发表评论.',
+    'Please verify your email address' => '请激活你的邮箱',
 ];
