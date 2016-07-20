@@ -89,9 +89,10 @@ class AuthController extends Controller implements UserCreatorListener
             return redirect(route('login'));
         }
         $oauthUser = array_merge(Session::get('oauthData'), $request->only('name', 'email'));
-        $oauthUser = array_only($oauthUser, array_keys($request->rules()));
+        $userData = array_only($oauthUser, array_keys($request->rules()));
+        $userData['register_source'] = $oauthUser['driver'];
 
-        return app(\Phphub\Creators\UserCreator::class)->create($this, $oauthUser);
+        return app(\Phphub\Creators\UserCreator::class)->create($this, $userData);
     }
 
     public function userBanned()
