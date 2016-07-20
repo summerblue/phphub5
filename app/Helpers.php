@@ -16,12 +16,12 @@ function cdn($filepath)
     }
 }
 
-function getCdnDomain()
+function get_cdn_domain()
 {
     return config('app.url_static') ?: config('app.url');
 }
 
-function getUserStaticDomain()
+function get_user_static_domain()
 {
     return config('app.user_static') ?: config('app.url');
 }
@@ -47,7 +47,7 @@ function admin_enum_style_output($value)
     return '<span class="label bg-'.$class.'">'.$value.'</span>';
 }
 
-function uploadTopicImage($file)
+function upload_topic_image($file)
 {
     $allowed_extensions = ["png", "jpg", "gif"];
     if ($file->getClientOriginalExtension() && !in_array($file->getClientOriginalExtension(), $allowed_extensions)) {
@@ -74,5 +74,5 @@ function uploadTopicImage($file)
         $img->save();
     }
 
-    return ['error' => '', 'filename' => getUserStaticDomain() . $folderName .'/'. $safeName];
+    return ['error' => '', 'filename' => get_user_static_domain() . $folderName .'/'. $safeName];
 }
