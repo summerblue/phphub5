@@ -149,6 +149,7 @@
 </div>
 </div>
 
+@endif
 
 <div class="panel panel-default corner-radius padding-bottom-sm">
   <div class="panel-heading text-center">
@@ -158,8 +159,6 @@
       <img class="image-border popover-with-html" data-content="扫码，或者搜索微信订阅号：PHPHub" src="https://dn-phphub.qbox.me/uploads/images/201607/19/1/5KAh3F8EhD.jpg" style="width:240px;">
   </div>
 </div>
-
-@endif
 
 </div>
 <div class="clearfix"></div>
