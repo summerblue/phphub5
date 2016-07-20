@@ -51,7 +51,6 @@ Route::get('/signup', 'Auth\AuthController@create')->name('signup');
 Route::post('/signup', 'Auth\AuthController@store')->name('signup');
 Route::get('/logout', 'Auth\AuthController@logout')->name('logout');
 Route::get('/oauth', 'Auth\AuthController@getOauth');
-Route::get('/wechat/callback', 'Auth\AuthController@wechatCallback')->name('wechat.callback');
 
 Route::get('/auth/oauth', 'Auth\AuthController@oauth')->name('auth.oauth');
 Route::get('/auth/callback', 'Auth\AuthController@callback')->name('auth.callback');
