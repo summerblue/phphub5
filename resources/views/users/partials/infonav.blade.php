@@ -2,7 +2,7 @@
 
 <ul class="nav nav-tabs user-info-nav" role="tablist">
   <li class="{{ navViewActive('users.show') }}">
-  	<a href="{{ route('users.show', $user->id) }}" >{{ lang('Basic Info') }}</a>
+  	<a href="{{ route('users.show', $user->id) }}" >{{ lang('GitHub Info') }}</a>
   </li>
   <li class="{{ navViewActive('users.following') }}">
   	<a href="{{ route('users.following', $user->id) }}" >{{ lang('Following User') }}</a>
