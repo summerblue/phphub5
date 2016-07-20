@@ -23,16 +23,60 @@
 
         @include('layouts.partials.errors')
 
-        <form method="POST" action="{{ route('users.update', $user->id) }}" accept-charset="UTF-8">
+        <div class="alert alert-warning">
+          {{ lang('Setup multiple Bindings allow you to login to the same account with different binding site account.') }}
+        </div>
+
+
+        <form class="form-horizontal" method="POST" action="{{ route('users.update_email_notify', $user->id) }}" accept-charset="UTF-8">
 
             {!! csrf_field() !!}
 
-          <div class="form-group status-post-submit">
-              <input class="btn btn-primary btn-lg" id="user-edit-submit" type="submit" value="{{ lang('Apply Changes') }}">
-          </div>
 
+            <div class="form-group">
+
+                <label for="inputEmail3" class="col-sm-3 control-label">{{ lang('Register Binding') }}</label>
+                <div class="col-sm-9">
+
+                    <a class="btn btn-success login-btn weichat-login-btn" role="button">
+                      <i class="fa fa-weixin"></i>
+                      {{ lang('WeChat') }}
+                    </a>
+                    <span class="padding-sm">{{ lang('Not allow to change register binding account') }}</span>
+
+                    <a href="{{ URL::route('auth.oauth', ['driver' => 'github']) }}" class="btn btn-info login-btn hide">
+                      <i class="fa fa-github-alt"></i>
+                      {{ lang('Github') }}
+                    </a>
+
+                </div>
+
+              </div>
+
+            <div class="form-group">
+
+                <label for="inputEmail3" class="col-sm-3 control-label">{{ lang('Available Bindings') }}</label>
+                <div class="col-sm-9">
+
+                    <a href="{{ URL::route('auth.oauth', ['driver' => 'weixin']) }}" class="btn btn-success login-btn weichat-login-btn hide">
+                      <i class="fa fa-weixin"></i>
+                      {{ lang('WeChat') }}
+                    </a>
+
+                    <a href="{{ URL::route('auth.oauth', ['driver' => 'github']) }}" class="btn btn-default login-btn">
+                      <i class="fa fa-github-alt"></i>
+                      {{ lang('Github') }}
+                    </a>
+
+                    <span class="padding-sm">{{ lang('Click to bind to this account') }}</span>
+                </div>
+              </div>
+<br>
+<br>
 
       </form>
+
+
       </div>
 
     </div>
