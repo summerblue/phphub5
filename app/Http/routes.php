@@ -37,7 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/attentions/{id}', 'AttentionsController@createOrDelete')->name('attentions.createOrDelete');
 });
 
-Route::post('/users/send-verification-mail', 'UsersController@sendVerificationMail')->name('users.send-verification-mail')->middleware('auth');
+Route::post('/users/send-verification-mail', 'UsersController@sendVerificationMail')->name('users.send-verification-mail');
 
 # ------------------ Authentication ------------------------
 
