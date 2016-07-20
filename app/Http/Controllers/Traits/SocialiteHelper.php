@@ -44,12 +44,12 @@ trait SocialiteHelper
                 Flash::success(lang('Bind Successfully!', ['driver' => lang($driver)]));
             }
 
-            return redirect('/');
+            return redirect(route('users.edit_social_binding', Auth::id()));
         } else {
             if ($user) {
                 return $this->loginUser($user);
             }
-            
+
             return $this->userNotFound($driver, $oauthUser);
         }
     }
