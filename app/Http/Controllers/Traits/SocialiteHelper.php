@@ -26,12 +26,11 @@ trait SocialiteHelper
     {
         $driver = $request->input('driver');
 
-        if (!in_array($driver, $this->oauthDriver)) {
+        if (
+            !in_array($driver, $this->oauthDriver)
+            || (Auth::check() && Auth::user()->register_source == $driver)
+        ) {
             return redirect()->intended('/');
-        }
-
-        if (Auth::check() && Auth::user()->register_source == $driver) {
-            return redirect('/');
         }
 
         $oauthUser = Socialite::with($driver)->user();
@@ -44,16 +43,16 @@ trait SocialiteHelper
                 $this->bindSocialiteUser($oauthUser, $driver);
                 Flash::success(lang('Bind Successfully!', ['driver' => lang($driver)]));
             }
+
             return redirect('/');
         } else {
             if ($user) {
                 return $this->loginUser($user);
             }
-
+            
             return $this->userNotFound($driver, $oauthUser);
         }
     }
-
 
     public function bindSocialiteUser($oauthUser, $driver)
     {
