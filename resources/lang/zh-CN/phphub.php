@@ -157,6 +157,7 @@ return [
     'Active Users' => '活跃用户',
     'Hot Topics' => '热门话题',
 
+    'GitHub Info' => 'GitHub 信息',
     'User Role' => '用户组',
     'Change Avatar' => '修改头像',
     'Notification Settings' => '消息设置',
