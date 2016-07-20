@@ -11,7 +11,7 @@ use App\Models\Notification;
 use Carbon\Carbon;
 use App;
 use Phphub\Markdown\Markdown;
-use Slack;
+use App\Jobs\SendReplyNotifyMail;
 
 class ReplyCreator
 {
@@ -46,6 +46,7 @@ class ReplyCreator
         Auth::user()->increment('reply_count', 1);
 
         app('Phphub\Notification\Notifier')->newReplyNotify(Auth::user(), $this->mentionParser, $topic, $reply);
+        dispatch(new SendReplyNotifyMail($reply));
 
         return $observer->creatorSucceed($reply);
     }

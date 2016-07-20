@@ -158,7 +158,7 @@ return [
     'Hot Topics' => '热门话题',
 
     'User Role' => '用户组',
-    
+
     'Photo Upload' => '上传头像',
     'Selected image:' => '请选择图片：',
     'Uploading image...' => '图片上传中...',
@@ -183,4 +183,5 @@ return [
     'The mail sent successfully.' => '验证邮件发送成功！请注意查收哦 ^_^',
     'You need to verify the email for commenting.' => '需要验证邮箱后才能发表评论.',
     'Please verify your email address' => '请激活你的邮箱',
+    'Your topic have new reply' => '你的主题有新的回复',
 ];
