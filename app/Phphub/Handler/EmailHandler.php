@@ -16,7 +16,7 @@ class EmailHandler
         $token = $user->verification_token;
 
         Mail::send('emails.fake', [], function (Message $message) use ($user, $token) {
-            $message->subject('请激活您的账号');
+            $message->subject(lang('Please verify your email address'));
 
             $message->getSwiftMessage()->setBody(new SendCloudTemplate('template_active', [
                 'name' => $user->name,
