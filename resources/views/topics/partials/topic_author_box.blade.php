@@ -32,11 +32,11 @@
         <ul class="list-inline">
 
           @if ($topic->user->real_name)
-            <li class="adr"><span class="org">{{{ $topic->user->real_name }}}</span></li>
+            <li class="adr"><span class="org"><i class="fa fa-user"></i> {{{ $topic->user->real_name }}}</span></li>
           @endif
 
           @if ($topic->user->present()->hasBadge())
-            <li><span class="label label-warning" style="position:relative">{{{ $topic->user->present()->badgeName() }}}</span></li>
+            <li><i class="fa fa-graduation-cap" aria-hidden="true"></i> {{{ $topic->user->present()->badgeName() }}}</li>
           @endif
 
           @if ($topic->user->github_name)
@@ -55,7 +55,7 @@
           @endif
 
           @if ($topic->user->company)
-            <li class="adr"><span class="org"><i class="fa fa-child"></i> {{{ $topic->user->company }}}</span></li>
+            <li class="adr"><span class="org"><i class="fa fa-users"></i> {{{ $topic->user->company }}}</span></li>
           @endif
 
           @if ($topic->user->city)
