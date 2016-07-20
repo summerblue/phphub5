@@ -41,6 +41,7 @@ class CreateUsersTable extends Migration
             $table->string('weibo_id')->nullable();
             $table->boolean('verified')->default(false)->index();
             $table->string('verification_token')->nullable();
+            $table->enum('email_notify_enabled', ['yes',  'no'])->default('yes')->index();
             $table->softDeletes();
             $table->timestamps();
         });

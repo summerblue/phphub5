@@ -46,7 +46,10 @@ class ReplyCreator
         Auth::user()->increment('reply_count', 1);
 
         app('Phphub\Notification\Notifier')->newReplyNotify(Auth::user(), $this->mentionParser, $topic, $reply);
-        dispatch(new SendReplyNotifyMail($reply));
+
+        if (Auth::user()->email_notify_enabled == 'yes') {
+            dispatch(new SendReplyNotifyMail($reply));
+        }
 
         return $observer->creatorSucceed($reply);
     }
