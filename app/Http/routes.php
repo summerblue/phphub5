@@ -21,6 +21,7 @@ Route::get('/users/regenerate_login_token', 'UsersController@regenerateLoginToke
 Route::post('/users/follow/{id}', 'UsersController@doFollow')->name('users.doFollow');
 Route::get('/users/{id}/edit_email_notify', 'UsersController@editEmailNotify')->name('users.edit_email_notify');
 Route::post('/users/{id}/update_email_notify', 'UsersController@updateEmailNotify')->name('users.update_email_notify');
+Route::get('/users/{id}/edit_social_binding', 'UsersController@editSocialBinding')->name('users.edit_social_binding');
 
 Route::get('/users', 'UsersController@index')->name('users.index');
 Route::get('/users/create', 'UsersController@create')->name('users.create');
