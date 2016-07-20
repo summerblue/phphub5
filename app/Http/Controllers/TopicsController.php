@@ -199,7 +199,7 @@ class TopicsController extends Controller implements CreatorListener
     public function uploadImage(Request $request)
     {
         if ($file = $request->file('file')) {
-            $upload_status = uploadTopicImage($file);
+            $upload_status = upload_topic_image($file);
 
             if ($upload_status['error']) {
                 return ['error' => $upload_status['error']];
