@@ -26,7 +26,7 @@
       @endif
 
       @if ($user->github_name)
-      <dt><label>Github:</label></dt>
+      <dt><label>GitHub:</label></dt>
       <dd>
         <a href="https://github.com/{{ $user->github_name }}" target="_blank">
           <i class="fa fa-github-alt"></i> {{ $user->github_name }}
