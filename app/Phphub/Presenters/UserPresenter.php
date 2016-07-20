@@ -67,7 +67,7 @@ class UserPresenter extends Presenter
         });
 
 
-        return $role->name;
+        return $role->display_name;
     }
 
     public function followingUsersJson()
