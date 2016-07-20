@@ -21,6 +21,7 @@ class UsersController extends Controller
             'only' => [
                 'edit', 'update', 'destroy',
                 'doFollow', 'editAvatar', 'updateAvatar',
+                'updateEmailNotify'
              ]
         ]);
     }
@@ -143,6 +144,16 @@ class UsersController extends Controller
     {
         $user = User::findOrFail($id);
         $user->is_banned = $user->is_banned == 'yes' ? 'no' : 'yes';
+        $user->save();
+
+        return redirect(route('users.show', $id));
+    }
+
+    public function updateEmailNotify($id)
+    {
+        $user = User::findOrFail($id);
+        $this->authorize('update', $user);
+        $user->email_notify_enabled = $user->email_notify_enabled == 'yes' ? 'no' : 'yes';
         $user->save();
 
         return redirect(route('users.show', $id));
