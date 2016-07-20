@@ -123,6 +123,11 @@ class User extends Model implements AuthenticatableContract,
         return str_limit($value, 68);
     }
 
+    public function getPersonalWebsiteAttribute($value)
+    {
+        return str_replace(['https://', 'http://'], '', $value);
+    }
+
     /**
      * ----------------------------------------
      * UserInterface

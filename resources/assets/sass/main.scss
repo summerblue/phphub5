@@ -1381,15 +1381,39 @@ span.timeago {
 .topic-author-box{
     .list-inline {
         margin-bottom: 0px;
+
+        li {
+            padding-left: 5px;
+            padding-right: 5px;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            padding: 2px 6px;
+            margin-left: 6px;
+            font-size: 0.9em;
+            color: #606060;
+        }
+        li:hover {
+            background-color: #00b5ad;
+            color: white;
+            border: 1px solid #17e8df;
+        }
     }
     .media-heading {
-        margin-bottom: 8px;
+        margin-bottom: 10px;
     }
     a {
-        color: #606060;
+        color: inherit;
+        text-decoration: none;
     }
     .img-thumbnail{
         max-width: inherit;
+    }
+    .media-body {
+        padding-top: 8px;
+    }
+
+    .edit-btn  {
+        padding-right: 2px;
     }
 }
 
