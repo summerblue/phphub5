@@ -168,6 +168,7 @@ return [
     'Available Bindings' => '可用的绑定',
     'Register Binding' => '注册使用绑定',
     'Click to bind to this account' => '点击进行账号绑定',
+    'Already binded to this account' => '已完成此账号绑定',
     'Not allow to change register binding account' => '注册时绑定的账号不允许修改',
     'Setup multiple Bindings allow you to login to the same account with different binding site account.' => '绑定多个第三方账号，允许你使用任意一个第三方账号登录同一个 PHPHub 账号。',
 
