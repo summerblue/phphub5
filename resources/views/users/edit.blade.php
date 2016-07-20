@@ -21,10 +21,6 @@
         <h2><i class="fa fa-cog" aria-hidden="true"></i> {{ lang('Edit Profile') }}</h2>
         <hr>
 
-        <div class="alert alert-warning">
-          请前往 <a href="{{ route('users.edit_avatar', $user->id) }}">这里</a> 修改头像
-        </div>
-
         @include('layouts.partials.errors')
 
         <form method="POST" action="{{ route('users.update', $user->id) }}" accept-charset="UTF-8">
