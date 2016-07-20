@@ -157,6 +157,8 @@ return [
     'Active Users' => '活跃用户',
     'Hot Topics' => '热门话题',
 
+    'User Role' => '用户组',
+    
     'Photo Upload' => '上传头像',
     'Selected image:' => '请选择图片：',
     'Uploading image...' => '图片上传中...',
