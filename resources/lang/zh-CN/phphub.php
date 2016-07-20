@@ -158,6 +158,12 @@ return [
     'Hot Topics' => '热门话题',
 
     'User Role' => '用户组',
+    'Change Avatar' => '修改头像',
+    'Notification Settings' => '消息设置',
+    'Social Account Binding' => '账号绑定',
+    'Edit Email Notify' => 'Email 通知设置',
+    'Apply Changes' => '应用修改',
+    'Send email when replied' => '新回复时接收邮件？',
 
     'Photo Upload' => '上传头像',
     'Selected image:' => '请选择图片：',
