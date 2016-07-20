@@ -3068,28 +3068,11 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
             // Popover with html
             $('.popover-with-html').popover({
 				 html : true,
-				//  trigger : 'click hover',
-				 trigger : 'manual',
+				 trigger : 'hover',
                  container: 'body',
 				 placement: 'top',
-				 delay: {show: 50, hide: 400},
-				 content: function () {
-				 	return $(this).attr('hint');
-				 }
-			 }).on("mouseenter", function () {
-                var _this = this;
-                $(this).popover("show");
-                $(".popover").on("mouseleave", function () {
-                    $(_this).popover('hide');
-                });
-            }).on("mouseleave", function () {
-                var _this = this;
-                setTimeout(function () {
-                    if (!$(".popover:hover").length) {
-                        $(_this).popover("hide");
-                    }
-                }, 400);
-            });
+				 delay: {show: 600, hide: 400}
+			 });
         },
 
         /**

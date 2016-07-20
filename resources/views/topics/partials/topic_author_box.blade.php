@@ -32,11 +32,11 @@
         <ul class="list-inline">
 
           @if ($topic->user->real_name)
-            <li class="adr"><span class="org"><i class="fa fa-user"></i> {{{ $topic->user->real_name }}}</span></li>
+            <li class="popover-with-html" data-content="{{ lang('Real Name') }}"><span class="org"><i class="fa fa-user"></i> {{{ $topic->user->real_name }}}</span></li>
           @endif
 
           @if ($topic->user->present()->hasBadge())
-            <li><i class="fa fa-graduation-cap" aria-hidden="true"></i> {{{ $topic->user->present()->badgeName() }}}</li>
+            <li class="popover-with-html" data-content="{{ lang('User Role') }}"><i class="fa fa-graduation-cap" aria-hidden="true"></i> {{{ $topic->user->present()->badgeName() }}}</li>
           @endif
 
           @if ($topic->user->github_name)
@@ -55,11 +55,11 @@
           @endif
 
           @if ($topic->user->company)
-            <li class="adr"><span class="org"><i class="fa fa-users"></i> {{{ $topic->user->company }}}</span></li>
+            <li class="popover-with-html" data-content="{{ lang('Company') }}"><i class="fa fa-users"></i> {{{ $topic->user->company }}}</li>
           @endif
 
           @if ($topic->user->city)
-            <li class="adr"><span class="org"><i class="fa fa-map-marker"></i> {{{ $topic->user->city }}}</span></li>
+            <li class="adr"><i class="fa fa-map-marker"></i> {{{ $topic->user->city }}}</li>
           @endif
 
 
