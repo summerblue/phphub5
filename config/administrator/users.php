@@ -32,11 +32,17 @@ EOD;
         'github_name' => [
             'title' => 'GitHub 用户名'
         ],
-        'email' => [
-            'title' => '邮箱',
-        ],
         'github_id' => [
             'title' => 'GitHub Id',
+        ],
+        'wechat_unionid' => [
+            'title' => '微信 unionid',
+        ],
+        'register_source' => [
+            'title'  => '注册来源',
+        ],
+        'email' => [
+            'title' => '邮箱',
         ],
         'is_banned' => [
             'title'  => '是否被屏蔽',
@@ -78,6 +84,15 @@ EOD;
         'github_url' => [
             'title' => 'GitHub URL'
         ],
+        'wechat_openid' => [
+            'title' => '微信 openid',
+        ],
+        'wechat_unionid' => [
+            'title' => '微信 unionid',
+        ],
+        'register_source' => [
+            'title'  => '注册来源',
+        ],
         'is_banned' => [
             'title'    => '是否被屏蔽',
             'type'     => 'enum',
@@ -118,6 +133,9 @@ EOD;
             'title'      => '用户组',
             'name_field' => 'display_name',
         ),
+        'register_source' => [
+            'title'  => '注册来源',
+        ],
     ],
     'filters' => [
         'id' => [
@@ -170,6 +188,9 @@ EOD;
         ],
         'introduction' => [
             'title' => '个人简介'
+        ],
+        'register_source' => [
+            'title'  => '注册来源',
         ],
     ],
     'actions' => [
