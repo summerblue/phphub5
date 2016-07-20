@@ -72,7 +72,7 @@
           </div>
 
           <div class="form-group status-post-submit">
-              <input class="btn btn-primary" id="user-edit-submit" type="submit" value="{{ lang('Publish') }}">
+              <input class="btn btn-primary btn-lg" id="user-edit-submit" type="submit" value="{{ lang('Apply Changes') }}">
           </div>
 
 

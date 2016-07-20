@@ -274,4 +274,12 @@ class UsersController extends Controller
 
         return redirect()->intended('/');
     }
+
+    public function editSocialBinding($id)
+    {
+        $user = User::findOrFail($id);
+        $this->authorize('update', $user);
+
+        return view('users.edit_social_binding', compact('user'));
+    }
 }

@@ -164,6 +164,7 @@ return [
     'Edit Email Notify' => 'Email 通知设置',
     'Apply Changes' => '应用修改',
     'Send email when replied' => '新回复时接收邮件？',
+    'Edit Social Binding' => '账号绑定设置',
 
     'Photo Upload' => '上传头像',
     'Selected image:' => '请选择图片：',
