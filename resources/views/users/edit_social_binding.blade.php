@@ -38,14 +38,14 @@
                 <label for="inputEmail3" class="col-sm-3 control-label">{{ lang('Register Binding') }}</label>
                 <div class="col-sm-9">
 
-                    <a class="btn btn-success login-btn weichat-login-btn" role="button">
+                    <a class="btn btn-success login-btn weichat-login-btn {{ $currentUser->register_source == 'weixin' ? '' : 'hide' }}" role="button">
                       <i class="fa fa-weixin"></i>
                       {{ lang('WeChat') }}
                     </a>
 
-                    <a class="btn btn-info login-btn hide" role="button">
+                    <a class="btn btn-info login-btn {{ $currentUser->register_source == 'github' ? '' : 'hide' }}" role="button">
                       <i class="fa fa-github-alt"></i>
-                      {{ lang('Github') }}
+                      {{ lang('GitHub') }}
                     </a>
 
                     <span class="padding-sm">{{ lang('Not allow to change register binding account') }}</span>
@@ -59,15 +59,27 @@
                 <label for="inputEmail3" class="col-sm-3 control-label">{{ lang('Available Bindings') }}</label>
                 <div class="col-sm-9">
 
-                    <a href="{{ URL::route('auth.oauth', ['driver' => 'weixin']) }}" class="btn btn-success login-btn weichat-login-btn hide">
+                    @if($currentUser->register_source != 'weixin')
+                    @if($currentUser->wechat_openid)
+                    <a href="javascript:void(0);" class="btn btn-success login-btn">
+                    @else
+                    <a href="{{ URL::route('auth.oauth', ['driver' => 'weixin']) }}" class="btn btn-default login-btn">
+                    @endif
                       <i class="fa fa-weixin"></i>
                       {{ lang('WeChat') }}
                     </a>
+                    @endif
 
+                    @if($currentUser->register_source != 'github')
+                    @if($currentUser->github_id > 0)
+                    <a href="javascript:void(0);" class="btn btn-info login-btn">
+                    @else
                     <a href="{{ URL::route('auth.oauth', ['driver' => 'github']) }}" class="btn btn-default login-btn">
+                    @endif
                       <i class="fa fa-github-alt"></i>
-                      {{ lang('Github') }}
+                      {{ lang('GitHub') }}
                     </a>
+                    @endif
 
                     <span class="padding-sm">{{ lang('Click to bind to this account') }}</span>
                 </div>
