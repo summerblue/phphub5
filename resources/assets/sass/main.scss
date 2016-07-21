@@ -992,10 +992,12 @@ div#preview-box {
 
 .avatar-middle {
     width: 50px;
+    height: 50px;
 }
 
 .avatar-small {
     width: 32px;
+    height: 32px;
 }
 .avatar {
     border-radius: 50%;
@@ -1189,6 +1191,7 @@ div#preview-box {
 
 .topic-list .list-group-item .avatar.avatar-middle {
     width: 44px;
+    height: 44px;
 }
 
 .infos span.introduction {
@@ -1196,6 +1199,7 @@ div#preview-box {
 }
 .avatar-topnav {
     width: 26px;
+    height: 26px;
     margin-right: 5px;
     margin-top: -3px;
     border: 1px solid white;
