@@ -32,8 +32,7 @@ class AuthController extends Controller implements UserCreatorListener
      */
     public function __construct(User $userModel)
     {
-        $this->middleware('guest', ['except' => ['logout', 'emailVerificationRequired', 'oauth', 'callback', 'getVerification']]);
-        $this->middleware('auth', ['only' => ['emailVerificationRequired']]);
+        $this->middleware('guest', ['except' => ['logout', 'oauth', 'callback', 'getVerification']]);
     }
 
     private function loginUser($user)
@@ -55,11 +54,6 @@ class AuthController extends Controller implements UserCreatorListener
     public function loginRequired()
     {
         return view('auth.loginrequired');
-    }
-
-    public function emailVerificationRequired()
-    {
-        return view('auth.emailverificationrequired');
     }
 
     public function adminRequired()

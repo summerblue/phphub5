@@ -25,6 +25,7 @@ class TopicsController extends Controller implements CreatorListener
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
+        echo session()->get('url.intended');
     }
 
     public function index(Topic $topic)
@@ -42,7 +43,7 @@ class TopicsController extends Controller implements CreatorListener
 
     public function create(Request $request)
     {
-        if(!Auth::user()->verified) {
+        if (!Auth::user()->verified) {
             return redirect(route('email-verification-required'));
         }
 
@@ -54,7 +55,7 @@ class TopicsController extends Controller implements CreatorListener
 
     public function store(StoreTopicRequest $request)
     {
-        if(!Auth::user()->verified) {
+        if (!Auth::user()->verified) {
             return redirect(route('email-verification-required'));
         }
 
