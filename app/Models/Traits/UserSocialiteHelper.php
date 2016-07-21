@@ -8,7 +8,7 @@ trait UserSocialiteHelper
     {
         $functionMap = [
             'github' => 'getByGithubId',
-            'weixin' => 'getByWechatId'
+            'wechat' => 'getByWechatId'
         ];
         $function = $functionMap[$driver];
         if (!$function) {

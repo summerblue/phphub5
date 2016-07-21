@@ -14,8 +14,8 @@ class SiteStatus extends Model
             case 'github':
                 self::collect('new_user_from_github');
                 break;
-            case 'weixin':
-                self::collect('new_user_from_weixin');
+            case 'wechat':
+                self::collect('new_user_from_wechat');
                 break;
         }
     }
@@ -63,7 +63,7 @@ class SiteStatus extends Model
             case 'new_user_from_github':
                 $todayStatus->github_regitster_count += 1;
                 break;
-            case 'new_user_from_weixin':
+            case 'new_user_from_wechat':
                 $todayStatus->wechat_registered_count += 1;
                 break;
         }
