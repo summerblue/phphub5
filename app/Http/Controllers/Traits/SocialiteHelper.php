@@ -11,9 +11,7 @@ trait SocialiteHelper
     public function oauth(Request $request)
     {
         $driver = $request->input('driver');
-        $driver = !in_array($driver, $this->oauthDriver)
-                    ? $this->oauthDriver[0]
-                    : $driver;
+        $driver = !isset($this->oauthDrivers[$driver]) ? 'github' : $this->oauthDrivers[$driver];
 
         if (Auth::check() && Auth::user()->register_source == $driver) {
             return redirect('/');
@@ -27,7 +25,7 @@ trait SocialiteHelper
         $driver = $request->input('driver');
 
         if (
-            !in_array($driver, $this->oauthDriver)
+            !isset($this->oauthDrivers[$driver])
             || (Auth::check() && Auth::user()->register_source == $driver)
         ) {
             return redirect()->intended('/');
@@ -61,7 +59,7 @@ trait SocialiteHelper
         if ($driver == 'github') {
             $currentUser->github_id = $oauthUser->id;
             $currentUser->github_url = $oauthUser->user['url'];
-        } elseif ($driver == 'weixin') {
+        } elseif ($driver == 'wechat') {
             $currentUser->wechat_openid = $oauthUser->id;
             $currentUser->wechat_unionid = $oauthUser->user['unionid'];
         }

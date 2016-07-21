@@ -38,7 +38,7 @@
                 <label for="inputEmail3" class="col-sm-3 control-label">{{ lang('Register Binding') }}</label>
                 <div class="col-sm-9">
 
-                    <a class="btn btn-success login-btn weichat-login-btn {{ $currentUser->register_source == 'weixin' ? '' : 'hide' }}" role="button">
+                    <a class="btn btn-success login-btn weichat-login-btn {{ $currentUser->register_source == 'wechat' ? '' : 'hide' }}" role="button">
                       <i class="fa fa-weixin"></i>
                       {{ lang('WeChat') }}
                     </a>
@@ -59,11 +59,11 @@
                 <label for="inputEmail3" class="col-sm-3 control-label">{{ lang('Available Bindings') }}</label>
                 <div class="col-sm-9">
 
-                    @if($currentUser->register_source != 'weixin')
+                    @if($currentUser->register_source != 'wechat')
                     @if($currentUser->wechat_openid)
                     <a href="javascript:void(0);" class="btn btn-success login-btn">
                     @else
-                    <a href="{{ URL::route('auth.oauth', ['driver' => 'weixin']) }}" class="btn btn-default login-btn">
+                    <a href="{{ URL::route('auth.oauth', ['driver' => 'wechat']) }}" class="btn btn-default login-btn">
                     @endif
                       <i class="fa fa-weixin"></i>
                       {{ lang('WeChat') }}

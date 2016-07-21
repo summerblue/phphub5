@@ -23,7 +23,7 @@ use App\Http\Controllers\Traits\SocialiteHelper;
 class AuthController extends Controller implements UserCreatorListener
 {
     use VerifiesUsers,SocialiteHelper;
-    protected $oauthDriver = ['github', 'weixin'];
+    protected $oauthDrivers = ['github' => 'github', 'wechat' => 'weixin'];
 
     /**
      * Create a new authentication controller instance.
@@ -140,7 +140,7 @@ class AuthController extends Controller implements UserCreatorListener
             $oauthData['github_id'] = $registerUserData->user['id'];
             $oauthData['github_url'] = $registerUserData->user['url'];
             $oauthData['github_name'] = $registerUserData->nickname;
-        } elseif ($driver == 'weixin') {
+        } elseif ($driver == 'wechat') {
             $oauthData['image_url'] = $registerUserData->avatar;
             $oauthData['wechat_openid'] = $registerUserData->id;
             $oauthData['name'] = $registerUserData->nickname;
