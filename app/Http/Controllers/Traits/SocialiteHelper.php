@@ -33,9 +33,7 @@ trait SocialiteHelper
             return redirect()->intended('/');
         }
 
-        $driver = $this->oauthDrivers[$driver];
-
-        $oauthUser = Socialite::with($driver)->user();
+        $oauthUser = Socialite::with($this->oauthDrivers[$driver])->user();
         $user = User::getByDriver($driver, $oauthUser->id);
 
         if (Auth::check()) {
