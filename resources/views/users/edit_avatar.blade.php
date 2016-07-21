@@ -27,10 +27,10 @@
             <input name="_method" type="hidden" value="PATCH">
             {!! csrf_field() !!}
 
-            <div id="image-preview-div" style="display: none">
+            <div id="image-preview-div">
               <label for="exampleInputFile">{{ lang('Selected image:') }}</label>
               <br>
-              <img id="preview-img" class="avatar-preview-img" src="noimage">
+              <img id="preview-img" class="avatar-preview-img" src="{{$currentUser->present()->gravatar}}">
             </div>
             <div class="form-group">
               <input type="file" name="avatar" id="file" required>
