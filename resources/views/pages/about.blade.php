@@ -17,23 +17,21 @@
 <h2 id="toc_1">说明</h2>
 
 <p>PHPHub 是积极向上的 PHP &amp; Laravel 开发者社区</p>
-<p>我们是一个公益组织, 致力于推动 Laravel, php-fig 等国外 PHP 新技术, 新理念在中国的发展.</p>
+<p>我们致力于推动 Laravel, php-fig 等国外 PHP 新技术，新理念在中国的发展。</p>
 
-<p>在这里没有商业广告, 没有灌水, 没有千篇一律新手问答, 有的是关于新技术的讨论和分享. </p>
+<p>名字的灵感来自伟大的 GitHub, <b>hub</b> 有 "中心", "集线器" 的意思, 意味着 PHPer 们齐聚一堂, 互相交换着信息流. </p>
 
-<p>名字的灵感来自伟大的 Github, <b>hub</b> 有 "中心", "集线器" 的意思, 意味着 PHPer 们齐聚一堂, 互相交换着信息流. </p>
-
-<p>本项目基于 MIT Licence 开源, <a href="https://github.com/summerblue/phphub5">源代码在此 at Github</a>, 欢迎贡献代码, Feature Request 和 Bug Report <a href="https://github.com/summerblue/phphub5/issues">请到此发表</a>.</p>
+<p>论坛基于开源同名项目 PHPHub，PHPHub 项目 MIT Licence 开源，由 Laravel5.1 构建，<a href="https://github.com/summerblue/phphub5">源代码在此 at GitHub</a>。欢迎贡献代码，或者 <a href="https://github.com/summerblue/phphub5/issues">提交 Bug Report</a>。</p>
 
 <h2 id="toc_2">关于新手问题</h2>
 
-<p>这个社区不是用来问新手问题的, 如果你是新手, 请先看 <a href="http://www.phptherightway.com/">PHP The Right Way</a> , 里面有中文版本, 此文档能为你构建一个合理的 PHP 基础知识体系. </p>
+<p>这个社区不是用来问新手问题的，如果你是 PHP 新手，请先看 <a href="http://www.phptherightway.com/">PHP The Right Way</a>， 里面有中文版本，此文档能为你构建一个合理的 PHP 基础知识体系。</p>
 
-<p>第一次接触 Laravel? 这里是 <a href="http://laravel.com/docs/quick">官方文档</a>, 中文翻译见 <a href="http://laravel-china.org/">Laravel 中文网</a>, Laravel 的出名, 也得益于这份撰写精炼的文档, 值得多读几遍.</p>
+<p>第一次接触 Laravel? 这里是  <a href="http://laravel-china.org/">Laravel 中文文档</a>，Laravel 的出名，也得益于这份撰写精炼的文档，值得多次品读。</p>
 
-<p>在学习上遇到问题的时候, 请先 Google. </p>
+<p>在学习上遇到问题的时候，请先 Google。</p>
 
-<p>如果觉得你的问题比较独占, 需要单独提问的话, 请到 <a href="http://segmentfault.com/t/php">Segmentfault 的 PHP 节点下</a> 发表你的问题, 谢谢. </p>
+<p>如果觉得你的问题比较独占，请先仔细阅读 <a href="https://phphub.org/topics/535">提问的智慧</a>，然后在 <a href="https://phphub.org/categories/4">PHPHub 问答分类下</a> 发表你的问题，谢谢。 </p>
 
 <h2 id="toc_3">愿景 Vision</h2>
 
@@ -53,7 +51,7 @@
 <h3 id="toc_5">在这里我们可以</h3>
 
 <ul>
-<li>分享生活见闻, 分享知识</li>
+<li>分享生活见闻，分享知识，分享创意</li>
 <li>接触新技术</li>
 <li>为自己的创业项目找合伙人</li>
 <li>讨论技术解决方案</li>

@@ -23,9 +23,13 @@
     @endif
 
     <div class="panel panel-default">
-      @include('users.partials.infonav', ['current' => 'basicinfo'])
+        @include('users.partials.infonav', ['current' => 'basicinfo'])
 
-      <iframe src="{{ route('users.github-card') }}?user={{ $user->github_name }}&client_id={{ getenv('github_card_client_id') }}&client_secret={{ getenv('github_card_client_secret') }}&target=blank" frameborder="0" scrolling="0" width="100%" height="146px" allowtransparency></iframe>
+        @if($user->github_name)
+            <iframe src="{{ route('users.github-card') }}?user={{ $user->github_name }}&client_id={{ getenv('github_card_client_id') }}&client_secret={{ getenv('github_card_client_secret') }}&target=blank" frameborder="0" scrolling="0" width="100%" height="146px" allowtransparency></iframe>
+        @else
+            <div class="empty-block">{{ lang('Dont have any data Yet') }}~~</div>
+        @endif
     </div>
 
     <div class="panel panel-default">

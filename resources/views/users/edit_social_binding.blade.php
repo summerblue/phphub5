@@ -71,17 +71,22 @@
                     @endif
 
                     @if($currentUser->register_source != 'github')
-                    @if($currentUser->github_id > 0)
-                    <a href="javascript:void(0);" class="btn btn-info login-btn">
-                    @else
-                    <a href="{{ URL::route('auth.oauth', ['driver' => 'github']) }}" class="btn btn-default login-btn">
-                    @endif
-                      <i class="fa fa-github-alt"></i>
-                      {{ lang('GitHub') }}
-                    </a>
+                        @if($currentUser->github_id > 0)
+                        <a href="javascript:void(0);" class="btn btn-info login-btn">
+                        @else
+                        <a href="{{ URL::route('auth.oauth', ['driver' => 'github']) }}" class="btn btn-default login-btn">
+                        @endif
+                          <i class="fa fa-github-alt"></i>
+                          {{ lang('GitHub') }}
+                        </a>
                     @endif
 
-                    <span class="padding-sm">{{ lang('Click to bind to this account') }}</span>
+                    @if($currentUser->github_id > 0 && $currentUser->wechat_openid)
+                        <span class="padding-sm">{{ lang('Already binded to this account') }}</span>
+                    @else
+                        <span class="padding-sm">{{ lang('Click to bind to this account') }}</span>
+                    @endif
+
                 </div>
               </div>
 <br>
