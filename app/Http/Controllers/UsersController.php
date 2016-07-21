@@ -286,7 +286,7 @@ class UsersController extends Controller
     public function emailVerificationRequired()
     {
         if (\Auth::user()->verified) {
-            // return redirect()->intended('/');
+            return redirect()->intended('/');
         }
         return view('users.emailverificationrequired');
     }
