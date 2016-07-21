@@ -157,6 +157,9 @@
   </div>
   <div class="panel-body text-center" style="padding: 7px;">
       <img class="image-border popover-with-html" data-content="扫码，或者搜索微信订阅号：PHPHub" src="https://dn-phphub.qbox.me/uploads/images/201607/19/1/5KAh3F8EhD.jpg" style="width:240px;">
+      <p class="padding-md rm-padding-bottom">
+          新手 QQ 群：579866868
+      </p>
   </div>
 </div>
 

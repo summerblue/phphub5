@@ -13,7 +13,7 @@ return [
     'custom'               => [
                                   'topics' => [
                                       'priority' => '0.9',
-                                      'freq'     => 'weekly',
+                                      'freq'     => 'daily',
                                       'lastMod'  => 'created_at',
                                   ],
                                   'categories' => [

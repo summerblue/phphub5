@@ -24,6 +24,9 @@ EOD;
         'name' => [
             'title'    => '用户名',
             'sortable' => false,
+            'output' => function ($value, $model) {
+                return '<a href="/users/'.$model->id.'" target=_blank>'.$value.'</a>';
+            },
         ],
         'real_name' => [
             'title'    => '真实姓名',
