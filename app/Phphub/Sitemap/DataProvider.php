@@ -94,7 +94,7 @@ class DataProvider
         $static = [];
 
         $static[] = $this->getPage('home', 'daily', '1.0');
-        $static[] = $this->getPage('wiki', 'monthly', '0.7');
+        $static[] = $this->getPage('topics', 'daily', '1.0');
         $static[] = $this->getPage('users.index', 'weekly', '0.8');
         $static[] = $this->getPage('about', 'monthly', '0.7');
 
