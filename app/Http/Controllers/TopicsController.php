@@ -25,7 +25,6 @@ class TopicsController extends Controller implements CreatorListener
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
-        echo session()->get('url.intended');
     }
 
     public function index(Topic $topic)
