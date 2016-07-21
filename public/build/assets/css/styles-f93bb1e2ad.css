@@ -12589,14 +12589,15 @@ span.timeago {
     padding: 2px 6px;
     margin-left: 6px;
     font-size: 0.9em;
-    color: #606060; }
+    color: #606060;
+    margin-top: 8px; }
   .topic-author-box .list-inline li:hover {
     background-color: #00b5ad;
     color: white;
     border: 1px solid #17e8df; }
 
 .topic-author-box .media-heading {
-  margin-bottom: 10px; }
+  margin-bottom: 2px; }
 
 .topic-author-box a {
   color: inherit;
