@@ -33,35 +33,14 @@ trait UserAvatarHelper
 
     public function updateAvatar($file)
     {
-        $allowed_extensions = ["png", "jpg", "gif"];
-        if ($file->getClientOriginalExtension() && !in_array($file->getClientOriginalExtension(), $allowed_extensions)) {
-            return false;
+        $upload_status = app('Phphub\Handler\ImageUploadHandler')->uploadAvatar($file, $this);
+        if ($upload_status['error']) {
+            return ['error' => $upload_status['error']];
         }
 
-        $fileName        = $file->getClientOriginalName();
-        $extension       = $file->getClientOriginalExtension() ?: 'png';
-        $folderName      = 'uploads/avatars';
-        $destinationPath = public_path() . '/' . $folderName;
-        $avatar_name     = $this->id . '_' . time() . '.' . $extension;
-
-        $file->move($destinationPath, $avatar_name);
-
-        // If is not gif file, we will try to reduse the file size
-        if ($file->getClientOriginalExtension() != 'gif') {
-            // open an image file
-            $img = Image::make($destinationPath . '/' . $avatar_name);
-            // prevent possible upsizing
-            $img->resize(380, 380, function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            });
-            // finally we save the image as a new file
-            $img->save();
-        }
-
-        $this->avatar = $avatar_name;
+        $this->avatar = $upload_status['filename'];
         $this->save();
 
-        return true;
+        return ['error' => '', 'avatar' => $this->avatar];
     }
 }
