@@ -8,6 +8,8 @@ use Flash;
 
 trait SocialiteHelper
 {
+    protected $oauthDrivers = ['github' => 'github', 'wechat' => 'weixin'];
+
     public function oauth(Request $request)
     {
         $driver = $request->input('driver');
@@ -32,7 +34,7 @@ trait SocialiteHelper
         }
 
         $driver = $this->oauthDrivers[$driver];
-        
+
         $oauthUser = Socialite::with($driver)->user();
         $user = User::getByDriver($driver, $oauthUser->id);
 
