@@ -21,7 +21,7 @@ class UsersController extends Controller
             'only' => [
                 'edit', 'update', 'destroy',
                 'doFollow', 'editAvatar', 'updateAvatar',
-                'editEmailNotify','updateEmailNotify'
+                'editEmailNotify', 'updateEmailNotify', 'emailVerificationRequired'
              ]
         ]);
     }
@@ -257,7 +257,7 @@ class UsersController extends Controller
     public function sendVerificationMail()
     {
         $user = Auth::user();
-        $cache_key = 'send_activite_mail_'.$user->id;
+        $cache_key = 'send_activite_mail_' . $user->id;
         if (Cache::has($cache_key)) {
             Flash::error(lang('The mail send failed! Please try again in 60 seconds.', ['seconds' => (Cache::get($cache_key) - time())]));
         } else {
@@ -281,5 +281,13 @@ class UsersController extends Controller
         $this->authorize('update', $user);
 
         return view('users.edit_social_binding', compact('user'));
+    }
+
+    public function emailVerificationRequired()
+    {
+        if (\Auth::user()->verified) {
+            // return redirect()->intended('/');
+        }
+        return view('users.emailverificationrequired');
     }
 }
