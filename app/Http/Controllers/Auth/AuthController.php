@@ -23,7 +23,6 @@ use App\Http\Controllers\Traits\SocialiteHelper;
 class AuthController extends Controller implements UserCreatorListener
 {
     use VerifiesUsers,SocialiteHelper;
-    protected $oauthDrivers = ['github' => 'github', 'wechat' => 'weixin'];
 
     /**
      * Create a new authentication controller instance.
