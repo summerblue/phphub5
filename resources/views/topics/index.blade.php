@@ -44,6 +44,7 @@
 </div>
 
 @include('layouts.partials.sidebar')
+
 @if (!Input::get('filter') && !isset($category))
 @include('layouts.partials.topbanner')
 @endif
