@@ -268,6 +268,10 @@ ul.list {
   padding-top: 22px;
   color: #8A8A8A;
 
+  a {
+      color: #8A8A8A;
+  }
+
   i {
     font-size: 110%;
   }
@@ -1457,4 +1461,7 @@ span.timeago {
 
 .alert {
     border-radius: 0px;
+}
+.footer {
+    background-color: #fff;
 }

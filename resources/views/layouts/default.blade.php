@@ -78,18 +78,7 @@ PHPHub  - PHP & Laravel的中文社区
 
 		</div>
 
-	  <div id="footer" class="footer">
-	    <div class="container small">
-	      <p class="pull-left">
-	      	<i class="fa fa-heart-o"></i> Made With Love By <a href="http://estgroupe.com/" style="color:#989898;">The EST Group</a>. <br>
-			&nbsp;<i class="fa fa-lightbulb-o"></i> Inspired by v2ex & ruby-china.
-	      </p>
-
-	      <p class="pull-right">
-	      	<a href="http://www.ucloud.cn/?utm_source=zanzhu&utm_campaign=phphub&utm_medium=display&utm_content=yejiao&ytag=phphubyejiao" target="_blank"><img src="https://dn-phphub.qbox.me/uploads/images/201605/03/1/dYfOYswiQY.png" width="98" data-toggle="tooltip" data-placement="top" title="本站服务器由 UCloud 赞助"></a>.
-	      </p>
-	    </div>
-	  </div>
+		@include('layouts.partials.footer')
 
         <script src="{{ elixir('assets/js/scripts.js') }}"></script>
 

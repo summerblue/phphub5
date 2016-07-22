@@ -116,6 +116,15 @@
 
 @if (Route::currentRouteName() == 'topics.index')
 
+  <div class="panel panel-default corner-radius panel-active-users">
+    <div class="panel-heading text-center">
+      <h3 class="panel-title">{{ lang('Active Users') }}</h3>
+    </div>
+    <div class="panel-body">
+      @include('topics.partials.active_users')
+    </div>
+  </div>
+
 <div class="panel panel-default corner-radius">
   <div class="panel-heading text-center">
     <h3 class="panel-title">{{ lang('App Download') }}</h3>
@@ -127,41 +136,7 @@
   </div>
 </div>
 
-  <div class="panel panel-default corner-radius panel-active-users">
-    <div class="panel-heading text-center">
-      <h3 class="panel-title">{{ lang('Active Users') }}</h3>
-    </div>
-    <div class="panel-body">
-      @include('topics.partials.active_users')
-    </div>
-  </div>
-
-<div class="panel panel-default corner-radius">
-<div class="panel-heading text-center">
-  <h3 class="panel-title">{{ lang('Site Status') }}</h3>
-</div>
-<div class="panel-body">
-  <ul>
-    <li>{{ lang('Total User') }}: {{ $siteStat->user_count }} </li>
-    <li>{{ lang('Total Topic') }}: {{ $siteStat->topic_count }} </li>
-    <li>{{ lang('Total Reply') }}: {{ $siteStat->reply_count }} </li>
-  </ul>
-</div>
-</div>
-
 @endif
-
-<div class="panel panel-default corner-radius padding-bottom-sm">
-  <div class="panel-heading text-center">
-    <h3 class="panel-title">{{ lang('WeChat Account') }}<a href="http://weibo.com/u/5963322692" target="_blank">（<i class="fa fa-weibo"></i> 微博）</a></h3>
-  </div>
-  <div class="panel-body text-center" style="padding: 7px;">
-      <img class="image-border popover-with-html" data-content="扫码，或者搜索微信订阅号：PHPHub" src="https://dn-phphub.qbox.me/uploads/images/201607/19/1/5KAh3F8EhD.jpg" style="width:240px;">
-      <p class="padding-md rm-padding-bottom">
-          新手 QQ 群：579866868
-      </p>
-  </div>
-</div>
 
 </div>
 <div class="clearfix"></div>

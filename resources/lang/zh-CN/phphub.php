@@ -118,7 +118,7 @@ return [
     'Recent Topics' => '最近主题',
     'Reply' => '回复',
     'User Login Required for commenting.' => '需要登录后才能发表评论.',
-    'site_intro' => 'PHPHub 是积极向上的 PHP & Laravel 开发者社区，<a href="about"><i class="fa fa-info-circle" aria-hidden="true" style="font-size:17px"></i> 关于我们</a>、<a href="https://github.com/summerblue/phphub5" target="_blank"><i class="fa fa-github-alt" style="font-size:17px"></i> 源代码</a>、<a href="http://weibo.com/u/5963322692" target="_blank"><i class="fa fa-weibo" style="font-size:17px"></i> PHPHub</a>。',
+    'site_intro' => 'PHPHub 是积极向上的 PHP & Laravel 开发者社区 <a href="https://github.com/summerblue/phphub5" target="_blank"><i class="fa fa-github-alt" style="font-size:17px"></i> 源代码</a>、<a href="http://weibo.com/u/5963322692" target="_blank"><i class="fa fa-weibo" style="font-size:17px"></i> 微博账号</a>。',
     'contributing' => '功能正在完善中, 欢迎 <i class="fa fa-github" style="font-size:15px"></i> <a href="https://github.com/summerblue/phphub5" target="_blank">贡献代码</a> 或 <a href="https://github.com/summerblue/phphub5/issues" target="_blank">提交 Issue</a>.',
     'be_nice' => '我们希望 PHPHub 能够成为技术氛围最好的 PHP 社区，而实现这个目标，需要我们所有人的共同努力：友善，公平，尊重知识和事实。',
     'publish_typography' => '请注意单词拼写，以及中英文排版，<a href="https://github.com/sparanoid/chinese-copywriting-guidelines">参考此页</a>',
