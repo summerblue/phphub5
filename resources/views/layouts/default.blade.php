@@ -76,9 +76,11 @@ PHPHub  - PHP & Laravel的中文社区
 
 			</div>
 
+@include('layouts.partials.footer')
+
 		</div>
 
-		@include('layouts.partials.footer')
+
 
         <script src="{{ elixir('assets/js/scripts.js') }}"></script>
 
