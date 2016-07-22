@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <div class="panel">
+    <div class="panel padding-lg rm-padding-top">
         <div class="panel-body">
 
         <div class="markdown-body" id="emojify">

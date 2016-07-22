@@ -11656,6 +11656,8 @@ ul.list {
 .footer {
   padding-top: 22px;
   color: #8A8A8A; }
+  .footer a {
+    color: #8A8A8A; }
   .footer i {
     font-size: 110%; }
 
@@ -12639,5 +12641,8 @@ span.timeago {
 
 .alert {
   border-radius: 0px; }
+
+.footer {
+  background-color: #fff; }
 
 /*# sourceMappingURL=styles.css.map */
