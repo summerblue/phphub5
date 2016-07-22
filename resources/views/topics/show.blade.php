@@ -128,7 +128,6 @@
 
 @include('layouts.partials.sidebar')
 
-@include('layouts.partials.topbanner')
 @include('layouts.partials.bottombanner')
 
 @stop
