@@ -12,34 +12,13 @@
         <div class="panel-heading">
 
           <ul class="list-inline topic-filter">
-
-                <li><a class="{{ (Request::is('categories/5') && !Input::get('filter') ? ' active' : '') }}" href="{{ route('categories.show', 5) }}">{{ lang('Share') }}</a></li>
+                <li><a {!! app(App\Models\Topic::class)->present()->topicFilter('excellent') !!}>{{ lang('Excellent') }}</a></li>
                 <li><a class="{{ (Request::is('categories/1') && !Input::get('filter') ? ' active' : '') }}" href="{{ route('categories.show', 1) }}">{{ lang('Jobs') }}</a></li>
+                <li><a class="{{ (Request::is('categories/5') && !Input::get('filter') ? ' active' : '') }}" href="{{ route('categories.show', 5) }}">{{ lang('Share') }}</a></li>
+                <li><a {!! app(App\Models\Topic::class)->present()->topicFilter('vote') !!}>{{ lang('Vote') }}</a></li>
                 <li><a class="{{ (Request::is('categories/4') && !Input::get('filter') ? ' active' : '') }}" href="{{ route('categories.show', 4) }}">{{ lang('Q&A') }}</a></li>
-
-                <li>
-                    <a {!! app(App\Models\Topic::class)->present()->topicFilter('recent') !!}>
-                        {{ lang('Recent') }}
-                    </a>
-                </li>
-
-                <li>
-                    <a {!! app(App\Models\Topic::class)->present()->topicFilter('excellent') !!}>
-                        {{ lang('Excellent') }}
-                    </a>
-                </li>
-
-                <li>
-                    <a {!! app(App\Models\Topic::class)->present()->topicFilter('vote') !!}>
-                         {{ lang('Vote') }}
-                    </a>
-                </li>
-
-                <li>
-                    <a {!! app(App\Models\Topic::class)->present()->topicFilter('noreply') !!}>
-                        {{ lang('Noreply') }}
-                    </a>
-                </li>
+                <li><a {!! app(App\Models\Topic::class)->present()->topicFilter('recent') !!}>{{ lang('Recent') }}</a></li>
+                <li><a {!! app(App\Models\Topic::class)->present()->topicFilter('noreply') !!}>{{ lang('Noreply') }}</a></li>
             </ul>
 
           <div class="clearfix"></div>

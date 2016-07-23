@@ -10,18 +10,12 @@ class TopicPresenter extends Presenter
 {
     public function topicFilter($filter)
     {
-        $category_id = Request::segment(2);
-        $category_append = '';
-        if ($category_id) {
-            $link = url('categories', $category_id) . '?filter=' . $filter;
-        } else {
-            $query_append = '';
-            $query = Input::except('filter', '_pjax');
-            if ($query) {
-                $query_append = '&'.http_build_query($query);
-            }
-            $link = URL::to('topics') . '?filter=' . $filter . $query_append . $category_append;
+        $query_append = '';
+        $query = Input::except('filter', '_pjax');
+        if ($query) {
+            $query_append = '&'.http_build_query($query);
         }
+        $link = URL::to('topics') . '?filter=' . $filter . $query_append;
         $selected = Input::get('filter') ? (Input::get('filter') == $filter ? ' class="active"':'') : '';
 
         return 'href="' . $link . '"' . $selected;
