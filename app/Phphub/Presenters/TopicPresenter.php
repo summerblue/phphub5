@@ -22,7 +22,7 @@ class TopicPresenter extends Presenter
             }
             $link = URL::to('topics') . '?filter=' . $filter . $query_append . $category_append;
         }
-        $selected = Input::get('filter') ? (Input::get('filter') == $filter ? ' class="selected"':'') : '';
+        $selected = Input::get('filter') ? (Input::get('filter') == $filter ? ' class="active"':'') : '';
 
         return 'href="' . $link . '"' . $selected;
     }
