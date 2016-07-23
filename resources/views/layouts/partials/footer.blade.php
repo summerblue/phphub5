@@ -39,7 +39,7 @@
                   </div>
                   <div class="col-xs-3">
                       <h4>微信订阅号</h4>
-                    <img class="image-border popover-with-html" data-content="扫码，或者搜索微信订阅号：PHPHub" src="https://dn-phphub.qbox.me/uploads/images/201607/19/1/5KAh3F8EhD.jpg" style="width:120px;height:120px;">
+                    <img class="image-border popover-with-html" data-content="扫码，或者搜索微信订阅号：PHPHub" src="https://dn-phphub.qbox.me/uploads/images/201607/19/1/5KAh3F8EhD.jpg" style="width:100px;height:100px;">
                   </div>
 
                 </div>
