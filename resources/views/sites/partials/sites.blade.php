@@ -10,7 +10,7 @@
         @foreach($filterd_sites as $site)
             <div class="col-md-2 site">
               <a class="popover-with-html" target="_blank" href="{{ $site->link }}" data-content="{{ $site->description }}">
-                <img class="favicon src="{{ cdn_square_image($site->favicon, 40) }}">
+                <img class="favicon" src="{{ cdn_square_image($site->favicon, 40) }}">
                 {{ $site->title }}
               </a>
             </div>
