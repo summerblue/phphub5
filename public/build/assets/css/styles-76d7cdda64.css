@@ -12646,4 +12646,22 @@ span.timeago {
   background-color: #fff;
   margin-top: 22px; }
 
+.topics-index .topic-filter {
+  margin-top: 8px;
+  margin-left: 0px;
+  margin-bottom: 3px; }
+  .topics-index .topic-filter li {
+    margin-right: 8px; }
+  .topics-index .topic-filter a {
+    color: #06b3b4;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 1px 4px;
+    line-height: 18px; }
+  .topics-index .topic-filter a.active {
+    border-bottom: 2px solid #06b3b4; }
+
+a {
+  color: #06b3b4; }
+
 /*# sourceMappingURL=styles.css.map */

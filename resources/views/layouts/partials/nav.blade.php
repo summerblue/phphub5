@@ -7,9 +7,7 @@
     <div id="top-navbar-collapse" class="navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="{{ (Request::is('topics*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">{{ lang('Topics') }}</a></li>
-        <li class="{{ (Request::is('categories/1') ? ' active' : '') }}"><a href="{{ route('categories.show', 1) }}">{{ lang('Jobs') }}</a></li>
-        <li class="{{ (Request::is('categories/5') ? ' active' : '') }}"><a href="{{ route('categories.show', 5) }}">{{ lang('Share') }}</a></li>
-        <li class="{{ (Request::is('categories/4') ? ' active' : '') }}"><a href="{{ route('categories.show', 4) }}">{{ lang('Q&A') }}</a></li>
+        <li class="{{ (Request::is('about') ? ' active' : '') }}"><a href="{{ route('about') }}">{{ lang('About') }}</a></li>
       </ul>
 
       <div class="navbar-right">
