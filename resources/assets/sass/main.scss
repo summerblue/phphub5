@@ -1499,10 +1499,20 @@ a {
     color: #06b3b4;
 }
 
-.site {
-    margin-bottom: 10px
-}
+.sites-index {
+    font-size: 15px;
 
-.site a {
-    color: #777
+    .site {
+        margin-bottom: 12px
+    }
+
+    .site a {
+        color: #777
+    }
+
+    img.favicon {
+        width: 20px;
+        height: 20px;
+        margin-top: -3px;
+    }
 }

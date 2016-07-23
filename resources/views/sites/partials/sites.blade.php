@@ -9,8 +9,10 @@
     <div class="panel-body row">
         @foreach($filterd_sites as $site)
             <div class="col-md-2 site">
-              <img class="favicon" style="width: 16px; height: 16px;" src="{{ cdn_square_image($site->favicon, 32) }}">
-              <a class="popover-with-html" target="_blank" href="{{ $site->link }}" data-content="{{ $site->description }}">{{ $site->title }}</a>
+              <a class="popover-with-html" target="_blank" href="{{ $site->link }}" data-content="{{ $site->description }}">
+                <img class="favicon src="{{ cdn_square_image($site->favicon, 40) }}">
+                {{ $site->title }}
+              </a>
             </div>
         @endforeach
     </div>
