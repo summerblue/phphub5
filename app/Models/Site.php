@@ -36,4 +36,9 @@ class Site extends Model
         // });
         // return self::all();
     }
+
+    public function setFaviconAttribute($value)
+    {
+        $this->attributes['favicon'] = 'uploads/sites/' . $value;
+    }
 }
