@@ -100,7 +100,6 @@ EOD;
                 'weibo' => '微博',
                 'dev_service'  => '开发者服务',
             ],
-            'value' => 'site',
         ],
     ],
 ];
