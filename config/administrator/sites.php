@@ -60,8 +60,9 @@ EOD;
         ],
         'favicon' => [
             'title'    => '图片',
-            'type' => 'image',
+            'type' => 'file',
             'location' => public_path() . '/uploads/sites/',
+            'mimes' => 'jpeg,bmp,png,gif,ico',
         ],
         'order' => [
             'title'    => '排序',
