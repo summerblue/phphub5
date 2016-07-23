@@ -12570,7 +12570,7 @@ span.timeago {
 
 .panel .panel-heading {
   border-bottom: 1px solid #eeeeee;
-  background-color: transparent; }
+  background-color: #f8f8f8; }
 
 .helpblock.list li {
   line-height: 30px;
@@ -12645,6 +12645,9 @@ span.timeago {
 .footer {
   background-color: #fff;
   margin-top: 22px; }
+
+.topics-index .panel-heading {
+  background-color: #f8f8f8; }
 
 .topics-index .topic-filter {
   margin-top: 8px;
