@@ -62,6 +62,10 @@ Route::get('/verification/{token}', 'Auth\AuthController@getVerification')->name
 
 Route::get('categories/{id}', 'CategoriesController@show')->name('categories.show');
 
+# ------------------ Site ------------------------
+
+Route::get('/sites', 'SitesController@index')->name('sites.index');
+
 # ------------------ Replies ------------------------
 
 Route::post('/replies', 'RepliesController@store')->name('replies.store');

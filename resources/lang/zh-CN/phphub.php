@@ -148,6 +148,9 @@ return [
     'Recommended' => '推荐',
     'Refresh cache success' => '刷新缓存成功',
 
+    'Sites' => '酷站',
+    'Recommended Sites' => '推荐站点',
+
     'Append' => '附言',
     'Append Content' => '添加附言',
     'append_notice' => '附加内容, 使用此功能的话, 会给所有参加过讨论的人发送提醒.',

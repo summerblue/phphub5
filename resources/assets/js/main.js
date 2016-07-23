@@ -182,7 +182,7 @@
 				 trigger : 'hover',
                  container: 'body',
 				 placement: 'top',
-				 delay: {show: 600, hide: 400}
+				 delay: {show: 600, hide: 100}
 			 });
         },
 
