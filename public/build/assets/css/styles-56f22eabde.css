@@ -12667,10 +12667,15 @@ span.timeago {
 a {
   color: #06b3b4; }
 
-.site {
-  margin-bottom: 10px; }
-
-.site a {
-  color: #777; }
+.sites-index {
+  font-size: 15px; }
+  .sites-index .site {
+    margin-bottom: 12px; }
+  .sites-index .site a {
+    color: #777; }
+  .sites-index img.favicon {
+    width: 20px;
+    height: 20px;
+    margin-top: -3px; }
 
 /*# sourceMappingURL=styles.css.map */
