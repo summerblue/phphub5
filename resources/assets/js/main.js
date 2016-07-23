@@ -182,7 +182,6 @@
 				 trigger : 'hover',
                  container: 'body',
 				 placement: 'top',
-				 delay: {show: 300, hide: 100}
 			 });
         },
 
