@@ -3815,7 +3815,7 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
 				 trigger : 'hover',
                  container: 'body',
 				 placement: 'top',
-				 delay: {show: 600, hide: 400}
+				 delay: {show: 600, hide: 100}
 			 });
         },
 
