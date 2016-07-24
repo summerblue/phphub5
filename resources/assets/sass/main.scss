@@ -4,7 +4,6 @@ html,
 body {
   /* for sticky footer */
   height: 100%;
-
   font-size: 14px;
   color: #333333;
   // font-family: "lato-regular", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
@@ -161,9 +160,8 @@ ul.list {
 }
 
 #wrap {
-  // height: auto;
-  min-height:100%;
-  position:relative;
+  height: auto;
+
   /* Negative indent footer by its height */
   margin: 0 auto -80px;
   /* Pad bottom by footer height */
@@ -1466,10 +1464,7 @@ span.timeago {
 .footer {
     background-color: #fff;
     margin-top: 22px;
-    position:absolute;
-    bottom:0;
     width:100%;
-    height: 206px;
 }
 
 .topics-index {
@@ -1522,6 +1517,20 @@ a {
     }
 }
 
-.main-container {
-    padding-bottom:228px;
+
+@media (min-width: 768px) {
+    .main-container {
+        padding-bottom:228px;
+    }
+    .footer {
+        position:absolute;
+        bottom:0;
+        height: 206px;
+    }
+
+    #wrap {
+      // height: auto;
+      min-height:100%;
+      position:relative;
+    }
 }
