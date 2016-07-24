@@ -3,7 +3,7 @@
 return [
     'Topics' => '社区',
     'Wiki' => 'Wiki',
-    'Jobs' => '酷工作',
+    'Jobs' => '招聘',
     'Q&A' => '问答',
     'Share' => '分享',
     'Users' => '会员',
