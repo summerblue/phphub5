@@ -98,7 +98,7 @@ EOD;
             'options'  => [
                 'site' => '网站',
                 'blog' => '博客',
-                'weibo' => '微博',
+                'site_foreign' => '国外 Laravel 网站',
                 'dev_service'  => '开发者服务',
             ],
         ],
