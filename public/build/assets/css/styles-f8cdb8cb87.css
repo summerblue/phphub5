@@ -11575,8 +11575,7 @@ ul.list {
   margin-bottom: 0; }
 
 #wrap {
-  min-height: 100%;
-  position: relative;
+  height: auto;
   /* Negative indent footer by its height */
   margin: 0 auto -80px;
   /* Pad bottom by footer height */
@@ -12645,10 +12644,7 @@ span.timeago {
 .footer {
   background-color: #fff;
   margin-top: 22px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 206px; }
+  width: 100%; }
 
 .topics-index .panel-heading {
   background-color: #f8f8f8; }
@@ -12682,7 +12678,15 @@ a {
     height: 20px;
     margin-top: -3px; }
 
-.main-container {
-  padding-bottom: 228px; }
+@media (min-width: 768px) {
+  .main-container {
+    padding-bottom: 228px; }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    height: 206px; }
+  #wrap {
+    min-height: 100%;
+    position: relative; } }
 
 /*# sourceMappingURL=styles.css.map */
