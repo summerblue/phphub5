@@ -11576,7 +11576,7 @@ ul.list {
 
 #wrap {
   min-height: 100%;
-  height: auto;
+  position: relative;
   /* Negative indent footer by its height */
   margin: 0 auto -80px;
   /* Pad bottom by footer height */
@@ -12644,7 +12644,11 @@ span.timeago {
 
 .footer {
   background-color: #fff;
-  margin-top: 22px; }
+  margin-top: 22px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 206px; }
 
 .topics-index .panel-heading {
   background-color: #f8f8f8; }
@@ -12677,5 +12681,8 @@ a {
     width: 20px;
     height: 20px;
     margin-top: -3px; }
+
+.main-container {
+  padding-bottom: 220px; }
 
 /*# sourceMappingURL=styles.css.map */

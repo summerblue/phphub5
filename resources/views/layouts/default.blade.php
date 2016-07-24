@@ -61,7 +61,7 @@ PHPHub  - PHP & Laravel的中文社区
 
 			@include('layouts.partials.nav')
 
-			<div class="container">
+			<div class="container main-container">
 
 				@if(\Auth::check() && !\Auth::user()->verified && !Request::is('email-verification-required'))
 				<div class="alert alert-warning">
