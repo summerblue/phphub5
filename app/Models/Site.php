@@ -39,6 +39,8 @@ class Site extends Model
 
     public function setFaviconAttribute($value)
     {
-        $this->attributes['favicon'] = 'uploads/sites/' . $value;
+        $this->attributes['favicon'] = (strpos($value, 'uploads/sites/') !== true)
+                                        ? 'uploads/sites/' . $value
+                                        : $value;
     }
 }
