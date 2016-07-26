@@ -138,7 +138,7 @@
     $(document).ready(function()
     {
         var $config = {
-            title               : '{{{ $topic->title }}} from PHPHub - PHP，Laravel的中文社区 #laravel# @phphub {{{ $topic->user->weibo_name ? '@'.$topic->user->weibo_name : '' }}}',
+            title               : '{{{ $topic->title }}} from PHPHub - PHP，Laravel的中文社区 #laravel# @phphub @李桂龙_CJ {{{ $topic->user->weibo_name ? '@'.$topic->user->weibo_name : '' }}}',
             wechatQrcodeTitle   : "微信扫一扫：分享", // 微信二维码提示文字
             wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
         };
