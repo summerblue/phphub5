@@ -51,7 +51,7 @@
             self.initReplyOnPressKey();
             self.initDeleteForm();
             self.initInlineAttach();
-            self.snowing();
+            // self.snowing();
             self.forceImageDataType();
             self.initToolTips();
             self.initAjax();
@@ -229,13 +229,17 @@
         initEditorPreview: function() {
             var self = this;
             $("#reply_content").focus(function(event) {
-                $("#reply_notice").fadeIn(1500);
+                $("#reply_notice").addClass('animated swing');
                 $("#preview-box").fadeIn(1500);
                 $("#preview-lable").fadeIn(1500);
 
-                if (!$("#reply_content").val()) {
-                    $("html, body").animate({ scrollTop: $(document).height()}, 1800);
-                }
+                // Scroll to bottom
+                // if (!$("#reply_content").val()) {
+                //     $("html, body").animate({ scrollTop: $(document).height()}, 1800);
+                // }
+            });
+            $("#reply_content").blur(function(event) {
+                $("#reply_notice").removeClass('animated swing');
             });
             $('#reply_content').keyup(function(){
                 self.runPreview();

@@ -1,4 +1,4 @@
-<div id="reply_notice" class="box" style="display:none">
+<div id="reply_notice" class="box">
     <ul class="helpblock list">
       <li>{!! lang('publish_typography') !!}</li>
       <li>{!! lang('publish_markdown') !!}</li>
