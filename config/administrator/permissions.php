@@ -14,10 +14,10 @@ return [
 
     'action_permissions' => [
         'create' => function ($model) {
-            return false;
+            return true;
         },
         'update' => function ($model) {
-            return false;
+            return true;
         },
         'delete' => function ($model) {
             return false;
