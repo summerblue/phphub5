@@ -72,7 +72,7 @@ return [
         'display_name' => [
             'title' => '权限名称',
         ],
-        'discription' => [
+        'description' => [
             'title' => '描述',
         ],
     ],
@@ -83,7 +83,7 @@ return [
         'display_name' => [
             'title' => '权限名称',
         ],
-        'discription' => [
+        'description' => [
             'title' => '描述',
         ],
     ],
