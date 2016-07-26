@@ -125,7 +125,7 @@ return [
     'publish_markdown' => '支持 Markdown 格式, <strong>**粗体**</strong>、~~删除线~~、<code>`单行代码`</code>, 更多语法请见这里 <a href="https://github.com/riku/Markdown-Syntax-CN/blob/master/syntax.md">Markdown 语法</a>',
     'publish_at_user' => '@name 会链接到用户页面，并会通知他',
     'publish_image' => '上传图片, 支持拖拽和剪切板黏贴上传, 格式限制 - jpg, png, gif',
-    'publish_draft' => '发布框已经继承了本地存储功能，会在点击「提交」按钮的时候清空',
+    'publish_draft' => '发布框支持本地存储功能，会在内容变更时保存，「提交」按钮点击时清空',
     'Successfully remove attention.' => '成功取消关注',
     'Successfully_attention' => '成功关注主题, 系统会通知你关于此主题最新的讨论.',
     'Operation succeeded.' => '操作成功，Chrome 用户可使用 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">PHPHub 插件</a> 实时接收消息提醒。',
