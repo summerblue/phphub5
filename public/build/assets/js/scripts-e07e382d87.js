@@ -3871,9 +3871,9 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
                 //     $("html, body").animate({ scrollTop: $(document).height()}, 1800);
                 // }
             });
-            $("#reply_content").blur(function(event) {
-                $("#reply_notice").removeClass('animated swing');
-            });
+            // $("#reply_content").blur(function(event) {
+            //     $("#reply_notice").removeClass('animated swing');
+            // });
             $('#reply_content').keyup(function(){
                 self.runPreview();
             });
