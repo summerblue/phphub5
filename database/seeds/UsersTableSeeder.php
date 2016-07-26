@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
 
             $user->github_id = $i + 1;
         });
-        
+
         User::insert($users->toArray());
     }
 }
