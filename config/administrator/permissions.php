@@ -39,7 +39,7 @@ return [
             'title'    => '权限名称',
             'sortable' => false,
         ],
-        'discription' => [
+        'description' => [
             'title'    => '描述',
             'sortable' => false,
             'output'   => function ($value, $model) {
