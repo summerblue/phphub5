@@ -12689,4 +12689,7 @@ a {
     min-height: 100%;
     position: relative; } }
 
+.notification-index .media-body img {
+  max-width: 250px !important; }
+
 /*# sourceMappingURL=styles.css.map */
