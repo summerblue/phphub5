@@ -73,9 +73,8 @@ class Notification extends Model
         if (count($data)) {
             Notification::insert($data);
         }
-
         foreach ($data as $value) {
-            dispatch(new SendNotifyMail($type, $fromUser, $toUser, $topic, $reply));
+            dispatch(new SendNotifyMail($type, $fromUser, $toUser, $topic, $reply, $content));
             self::pushNotification($value);
         }
     }
@@ -94,7 +93,7 @@ class Notification extends Model
         if ($topic && Notification::isNotified($fromUser->id, $toUser->id, $topic->id, $type)) {
             return;
         }
-        
+
         $nowTimestamp = Carbon::now()->toDateTimeString();
 
         $data = [
