@@ -54,7 +54,7 @@ PHPHub 名人堂 @parent
                   @if ($user->github_name)
                   <li class="popover-with-html" data-content="{{ $user->github_name }}">
                     <a href="https://github.com/{{ $user->github_name }}" target="_blank">
-                      <i class="fa fa-github-alt"></i> Github
+                      <i class="fa fa-github-alt"></i> GitHub
                     </a>
                   </li>
                   @endif
