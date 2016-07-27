@@ -143,6 +143,17 @@ class EmailHandler
 
     protected function sendFollowNotifyMail()
     {
+        Mail::send('emails.fake', [], function (Message $message) {
+            $message->subject('有用户关注了你');
+
+            $message->getSwiftMessage()->setBody(new SendCloudTemplate('notification_mail', [
+                'name'     => "<a href='" . url(route('users.show', $this->fromUser->id)) . "' target='_blank'>{$this->fromUser->name}</a>",
+                'action'   => " 关注了你",
+                'content'  => "",
+            ]));
+
+            $message->to($this->toUser->email);
+        });
     }
 
     protected function sendReplyUpvoteNotifyMail()
