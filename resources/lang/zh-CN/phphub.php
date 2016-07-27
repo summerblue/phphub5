@@ -91,7 +91,7 @@ return [
     'personal_website_placebolder_hint' => '如：example.com，不需要加前缀 https://',
     'introduction_placeholder_hint' => '请一句话介绍你自己',
     'User ID:' => '用户 ID:',
-    'Real Name' => '姓名',
+    'Real Name' => '真实姓名',
     'Company' => '公司',
     'City' => '城市',
     'Blog' => '博客',

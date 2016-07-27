@@ -76,7 +76,7 @@ return [
     'We can benefit from it.' => '在高品質優秀社群的我們',
     'Total Reply Count' => '回覆數量',
     'User ID:' => '帳號 ID:',
-    'Real Name' => '姓名',
+    'Real Name' => '真实姓名',
     'Company' => '公司',
     'City' => '城市',
     'Blog' => '部落格',
