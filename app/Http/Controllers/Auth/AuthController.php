@@ -94,8 +94,6 @@ class AuthController extends Controller implements UserCreatorListener
             return redirect(route('home'));
         }
 
-        //force logout
-        Auth::logout();
         return view('auth.userbanned');
     }
 
