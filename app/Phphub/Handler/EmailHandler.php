@@ -147,6 +147,22 @@ class EmailHandler
 
     protected function sendReplyUpvoteNotifyMail()
     {
+        if (!$this->reply) {
+            return false;
+        }
+
+        Mail::send('emails.fake', [], function (Message $message) {
+            $message->subject('有用户赞了你的回复');
+
+            $message->getSwiftMessage()->setBody(new SendCloudTemplate('notification_mail', [
+                'name'     => "<a href='" . url(route('users.show', $this->fromUser->id)) . "' target='_blank'>{$this->fromUser->name}</a>",
+                'action'   => " 赞了你的回复: <a href='" . url(route('topics.show', $this->reply->topic_id)) . "' target='_blank'>{$this->reply->topic->title}</a>
+                              <br /><br />你的回复内容如下：<br />",
+                'content'  => $this->reply->body,
+            ]));
+
+            $message->to($this->toUser->email);
+        });
     }
 
     protected function sendTopicFavoriteNotifyMail()
