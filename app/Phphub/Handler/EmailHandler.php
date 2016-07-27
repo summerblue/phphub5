@@ -52,7 +52,12 @@ class EmailHandler
 
     public function sendNotifyMail($type, User $fromUser, User $toUser, Topic $topic = null, Reply $reply = null, $body = null)
     {
-        if (!isset($this->methodMap[$type])) {
+        if (
+            !isset($this->methodMap[$type])
+            || $toUser->email_notify_enabled != 'yes'
+            || $toUser->id == $fromUser->id
+            || !$toUser->email || $toUser->verified != 1
+        ) {
             return false;
         }
 
@@ -68,11 +73,7 @@ class EmailHandler
 
     protected function sendNewReplyNotifyMail()
     {
-        if (!$this->reply
-            || $this->toUser->email_notify_enabled != 'yes'
-            || $this->toUser->id == $this->fromUser->id
-            || !$this->toUser->email || $this->toUser->verified != 1
-        ) {
+        if (!$this->reply) {
             return false;
         }
 
@@ -91,11 +92,7 @@ class EmailHandler
 
     protected function sendAtNotifyMail(User $fromUser, User $toUser, Reply $reply = null)
     {
-        if (!$this->reply
-            || $this->toUser->email_notify_enabled != 'yes'
-            || $this->toUser->id == $this->fromUser->id
-            || !$this->toUser->email || $this->toUser->verified != 1
-        ) {
+        if (!$this->reply) {
             return false;
         }
 
@@ -115,11 +112,7 @@ class EmailHandler
 
     protected function sendTopicAttentNotifyMail()
     {
-        if (!$this->topic
-            || $this->toUser->email_notify_enabled != 'yes'
-            || $this->toUser->id == $this->fromUser->id
-            || !$this->toUser->email || $this->toUser->verified != 1
-        ) {
+        if (!$this->topic) {
             return false;
         }
 
@@ -158,11 +151,7 @@ class EmailHandler
 
     protected function sendTopicFavoriteNotifyMail()
     {
-        if (!$this->topic
-            || $this->toUser->email_notify_enabled != 'yes'
-            || $this->toUser->id == $this->fromUser->id
-            || !$this->toUser->email || $this->toUser->verified != 1
-        ) {
+        if (!$this->topic) {
             return false;
         }
 
@@ -185,5 +174,20 @@ class EmailHandler
 
     protected function sendTopicUpvoteNotifyMail()
     {
+        if (!$this->topic) {
+            return false;
+        }
+
+        Mail::send('emails.fake', [], function (Message $message) {
+            $message->subject('有用户赞了你的主题');
+
+            $message->getSwiftMessage()->setBody(new SendCloudTemplate('notification_mail', [
+                'name'    => "<a href='" . url(route('users.show', $this->fromUser->id)) . "' target='_blank'>{$this->fromUser->name}</a>",
+                'action'  => " 赞了你的主题: <a href='" . url(route('topics.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a>",
+                'content' => '',
+            ]));
+
+            $message->to($this->toUser->email);
+        });
     }
 }
