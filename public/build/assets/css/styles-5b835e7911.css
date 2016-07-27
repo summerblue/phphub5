@@ -12717,7 +12717,7 @@ a {
 .hall_of_fames .certification {
   margin-bottom: 5px; }
 
-.hall_of_fames .col-md-6 {
+.hall_of_fames .col-lg-6 {
   padding-left: 10px;
   padding-right: 10px; }
 
@@ -12751,7 +12751,9 @@ a {
 
 @media (max-width: 1400px) {
   .card {
-    height: 124px; } }
+    height: 124px;
+    margin-right: 0px !important;
+    margin-left: 0px !important; } }
 
 @media (max-width: 992px) {
   .card {
