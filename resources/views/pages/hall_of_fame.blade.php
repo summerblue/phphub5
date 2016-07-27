@@ -42,7 +42,7 @@ PHPHub 名人堂 @parent
                 </div>
 
                 <div class="certification">
-                    {{{ $user->certification }}}
+                    {!! $user->certification !!}
                 </div>
 
                 <ul class="list-inline">
