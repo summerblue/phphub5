@@ -16,7 +16,7 @@
           <form method="GET" action="{{ route('login')}}" accept-charset="UTF-8">
             <fieldset>
               <div class="alert alert-warning">
-                {{ lang('Sorry, You account is banned.') }}
+                {!! lang('Sorry, You account is banned.') !!}
               </div>
             </fieldset>
         </form>
