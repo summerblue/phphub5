@@ -30,6 +30,7 @@ class CreateUsersTable extends Migration
             $table->string('twitter_account')->nullable();
             $table->string('personal_website')->nullable();
             $table->string('introduction')->nullable();
+            $table->string('certification')->nullable();
             $table->integer('notification_count')->default(0);
             $table->string('github_name')->index();
             $table->string('real_name')->nullable();
