@@ -47,10 +47,6 @@ class ReplyCreator
 
         app('Phphub\Notification\Notifier')->newReplyNotify(Auth::user(), $this->mentionParser, $topic, $reply);
 
-        if ($topic->user->email_notify_enabled == 'yes' && $topic->user_id != Auth::id()) {
-            dispatch(new SendReplyNotifyMail($reply));
-        }
-
         return $observer->creatorSucceed($reply);
     }
 }

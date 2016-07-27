@@ -10,6 +10,7 @@ use App\Models\Notification;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Append;
+use App\Jobs\SendReplyNotifyMail;
 
 class Notifier
 {
@@ -74,7 +75,6 @@ class Notifier
                     null,
                     null,
                     null);
-
     }
 
     // in case of a user get a lot of the same notification
