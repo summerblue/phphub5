@@ -37,6 +37,6 @@ class SendNotifyMail extends Job implements SelfHandling, ShouldQueue
 
     public function handle()
     {
-        app('Phphub\Handler\EmailHandler')->sendNotifyMail($this->type, $this->fromUser, $this->toUser, $this->topic, $this->reply);
+        app('Phphub\Handler\EmailHandler')->sendNotifyMail($this->type, $this->fromUser, $this->toUser, $this->topic, $this->reply, $this->body);
     }
 }

@@ -101,7 +101,7 @@ class EmailHandler
 
             $message->getSwiftMessage()->setBody(new SendCloudTemplate('notification_mail', [
                 'name'     => "<a href='" . url(route('users.show', $this->fromUser->id)) . "' target='_blank'>{$this->fromUser->name}</a>",
-                'action'   => " 在主题中提及你: <a href='" . url(route('topics.show', $this->reply->topic_id)) . "' target='_blank'>{$this->reply->topic->title}</a>
+                'action'   => " 在主题: <a href='" . url(route('topics.show', $this->reply->topic_id)) . "' target='_blank'>{$this->reply->topic->title}</a> 中提及了你
                               <br /><br />内容如下：<br />",
                 'content'  => $this->reply->body,
             ]));
@@ -131,14 +131,62 @@ class EmailHandler
 
     protected function sendAttentionNotifyMail()
     {
+        if (!$this->reply) {
+            return false;
+        }
+
+        Mail::send('emails.fake', [], function (Message $message) {
+            $message->subject('有用户回复了你关注的主题');
+
+            $message->getSwiftMessage()->setBody(new SendCloudTemplate('notification_mail', [
+                'name'     => "<a href='" . url(route('users.show', $this->fromUser->id)) . "' target='_blank'>{$this->fromUser->name}</a>",
+                'action'   => " 回复了你关注的主题: <a href='" . url(route('topics.show', $this->reply->topic_id)) . "' target='_blank'>{$this->reply->topic->title}</a>
+                              <br /><br />回复内容如下：<br />",
+                'content'  => $this->reply->body,
+            ]));
+
+            $message->to($this->toUser->email);
+        });
     }
 
     protected function sendAttentionAppendNotifyMail()
     {
+        if (!$this->body || !$this->topic) {
+            return false;
+        }
+
+        Mail::send('emails.fake', [], function (Message $message) {
+            $message->subject('你关注的话题有新附言');
+
+            $message->getSwiftMessage()->setBody(new SendCloudTemplate('notification_mail', [
+                'name'     => "",
+                'action'   => " 你关注的话题: <a href='" . url(route('topics.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a> 有新附言
+                              <br /><br />附言内容如下：<br />",
+                'content'  => $this->body,
+            ]));
+
+            $message->to($this->toUser->email);
+        });
     }
 
     protected function sendCommentAppendNotifyMail()
     {
+        if (!$this->body || !$this->topic) {
+            return false;
+        }
+
+        Mail::send('emails.fake', [], function (Message $message) {
+            $message->subject('你留言的话题有新附言');
+
+            $message->getSwiftMessage()->setBody(new SendCloudTemplate('notification_mail', [
+                'name'     => "",
+                'action'   => " 你留言的话题: <a href='" . url(route('topics.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a> 有新附言
+                              <br /><br />附言内容如下：<br />",
+                'content'  => $this->body,
+            ]));
+
+            $message->to($this->toUser->email);
+        });
     }
 
     protected function sendFollowNotifyMail()
