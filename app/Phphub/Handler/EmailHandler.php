@@ -67,7 +67,12 @@ class EmailHandler
     public function sendNewReplyNotifyMail(User $fromUser, User $toUser, Reply $reply = null)
     {
         $this->reply = $reply ? $reply : $this->reply;
-        if (!$this->reply || $toUser->email_notify_enabled != 'yes' || $toUser->id == $fromUser->id) {
+
+        if (!$this->reply
+            || $toUser->email_notify_enabled != 'yes'
+            || $toUser->id == $fromUser->id
+            || !$toUser->email || $toUser->verified != 1
+        ) {
             return false;
         }
 
@@ -84,8 +89,30 @@ class EmailHandler
         });
     }
 
-    public function sendAtNotifyMail(Mention $mentionParser = null, Topic $topic = null, Reply $reply = null)
+    public function sendAtNotifyMail(User $fromUser, User $toUser, Reply $reply = null)
     {
+        $this->reply = $reply ? $reply : $this->reply;
+
+        if (!$this->reply
+            || $toUser->email_notify_enabled != 'yes'
+            || $toUser->id == $fromUser->id
+            || !$toUser->email || $toUser->verified != 1
+        ) {
+            return false;
+        }
+
+        Mail::send('emails.fake', [], function (Message $message) use ($fromUser, $toUser) {
+            $message->subject('有用户在主题中提及你');
+
+            $message->getSwiftMessage()->setBody(new SendCloudTemplate('notification_mail', [
+                'name'     => "<a href='" . url(route('users.show', $fromUser->id)) . "' target='_blank'>{$fromUser->name}</a>",
+                'action'   => " 在主题中提及你: <a href='" . url(route('topics.show', $this->reply->topic_id)) . "' target='_blank'>{$this->reply->topic->title}</a>
+                              <br /><br />内容如下：<br />",
+                'content'  => $this->reply->body,
+            ]));
+
+            $message->to($toUser->email);
+        });
     }
 
     public function sendAttentionNotifyMail()
