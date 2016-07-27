@@ -12749,15 +12749,11 @@ a {
   color: inherit;
   text-decoration: none; }
 
-@media (min-width: 1200px) {
+@media (max-width: 1400px) {
   .card {
     height: 124px; } }
 
-@media (min-width: 992px) {
-  .card {
-    height: 148px; } }
-
-@media (min-width: 768px) {
+@media (max-width: 992px) {
   .card {
     height: auto;
     margin-right: 0px !important;
