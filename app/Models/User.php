@@ -52,6 +52,13 @@ class User extends Model implements AuthenticatableContract,
         });
     }
 
+    public function scopeIsRole($query, $role) {
+        return $query->whereHas('roles', function($query) use ($role){
+                $query->where('name', $role);
+            }
+        );
+    }
+
     /**
      * For EntrustUserTrait and SoftDeletes conflict
      */

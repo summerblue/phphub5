@@ -12694,4 +12694,57 @@ a {
 .notification-index .media-body img {
   max-width: 250px !important; }
 
+.card {
+  background: white;
+  margin: 0px -10px 14px;
+  padding: 6px;
+  height: 106px; }
+
+.add-margin-right {
+  margin-right: -3px; }
+
+.add-margin-left {
+  margin-left: -3px; }
+
+.hall_of_fames .avatar {
+  max-width: inherit;
+  width: 80px;
+  height: 80px;
+  margin: 6px; }
+
+.hall_of_fames .certification {
+  margin-bottom: 5px; }
+
+.hall_of_fames .col-md-6 {
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.hall_of_fames, .hall_of_fames a {
+  color: #646464; }
+
+.hall_of_fames .list-inline {
+  margin-bottom: 0px; }
+  .hall_of_fames .list-inline li {
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 2px 6px;
+    margin-left: 6px;
+    font-size: 0.9em;
+    color: #b7b4b4;
+    margin-top: 4px;
+    font-size: 0.8em; }
+  .hall_of_fames .list-inline li:hover {
+    background-color: #00b5ad;
+    color: white;
+    border: 1px solid #17e8df; }
+
+.hall_of_fames .edit-btn {
+  padding-right: 2px; }
+
+.hall_of_fames a {
+  color: inherit;
+  text-decoration: none; }
+
 /*# sourceMappingURL=styles.css.map */

@@ -122,6 +122,10 @@ EOD;
         'introduction' => [
             'title' => '个人简介'
         ],
+        'certification' => [
+            'title' => '认证信息',
+            'type' => 'textarea',
+        ],
         'github_name' => [
             'title' => 'GitHub 用户名'
         ],

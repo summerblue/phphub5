@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Topic;
 use App\Models\Banner;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Rss;
 use Purifier;
@@ -69,11 +70,14 @@ class PagesController extends Controller
         return response($feed, 200, array('Content-Type' => 'text/xml'));
     }
 
-    /**
-     * Sitemap function
-     */
     public function sitemap()
     {
         return app('Phphub\Sitemap\Builder')->render();
+    }
+
+    public function hallOfFames()
+    {
+        $users = User::isRole('HallOfFame')->get();
+        return view('pages.hall_of_fame', compact('users'));
     }
 }
