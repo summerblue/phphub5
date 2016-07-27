@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Cache;
 use Laracasts\Presenter\PresentableTrait;
 use Carbon\Carbon;
+use App\Jobs\SendNotifyMail;
 
 class Notification extends Model
 {
@@ -50,7 +51,6 @@ class Notification extends Model
     {
         $nowTimestamp = Carbon::now()->toDateTimeString();
         $data = [];
-
         foreach ($users as $toUser) {
             if ($fromUser->id == $toUser->id) {
                 continue;
@@ -75,6 +75,7 @@ class Notification extends Model
         }
 
         foreach ($data as $value) {
+            dispatch(new SendNotifyMail($type, $fromUser, $toUser, $topic, $reply));
             self::pushNotification($value);
         }
     }
