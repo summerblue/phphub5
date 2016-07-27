@@ -28,6 +28,7 @@ $factory->define(User::class, function (Faker\Generator $faker) {
         'personal_website'     => $faker->url,
         'image_url'            => $faker->url,
         'introduction'         => $faker->sentence,
+        'certification'        => $faker->sentence,
         'email'                => $faker->email,
         'verified'             => true,
         'created_at'           => Carbon::now()->toDateTimeString(),

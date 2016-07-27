@@ -23,6 +23,11 @@ class Role extends EntrustRole
         return $role;
     }
 
+    public function allUsers()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
     public static function relationArrayWithCache()
     {
         return Cache::remember('all_assigned_roles', $minutes = 60, function () {
