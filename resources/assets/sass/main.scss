@@ -1609,3 +1609,21 @@ a {
         text-decoration: none;
     }
 }
+
+@media (min-width: 1200px) {
+    .card {
+        height: 124px;
+    }
+}
+@media (min-width: 992px) {
+    .card {
+        height: 148px;
+    }
+}
+@media (min-width: 768px) {
+    .card {
+        height: auto;
+        margin-right: 0px!important;
+        margin-left: 0px!important;
+    }
+}
