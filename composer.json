@@ -46,7 +46,7 @@
         "phpunit/phpunit": "~4.0",
         "phpspec/phpspec": "~2.1",
         "laracasts/generators": "^1.1",
-        "laralib/l5scaffold": "1.0"
+        "laralib/l5scaffold": "1.0.4"
     },
     "autoload": {
         "classmap": [
