@@ -170,6 +170,21 @@ class EmailHandler
 
     protected function sendTopicMarkExcellentNotifyMail()
     {
+        if (!$this->topic) {
+            return false;
+        }
+
+        Mail::send('emails.fake', [], function (Message $message) {
+            $message->subject('管理员推荐了你的主题');
+
+            $message->getSwiftMessage()->setBody(new SendCloudTemplate('notification_mail', [
+                'name'    => "<a href='" . url(route('users.show', $this->fromUser->id)) . "' target='_blank'>{$this->fromUser->name}</a>",
+                'action'  => " 推荐了你的主题: <a href='" . url(route('topics.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a>",
+                'content' => '',
+            ]));
+
+            $message->to($this->toUser->email);
+        });
     }
 
     protected function sendTopicUpvoteNotifyMail()
