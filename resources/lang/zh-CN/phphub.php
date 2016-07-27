@@ -33,7 +33,7 @@ return [
     'Email' => '邮 箱',
     'Confirm' => '确 定',
     'Operation Deny' => '操作被禁止',
-    'Sorry, You account is banned.' => '对不起，您的账号已被禁用',
+    'Sorry, You account is banned.' => '对不起，您的账号已被禁用！<br>如有疑问，请联系 summer 的微信：summer_charlie',
     'All Categories' => '分类导航',
     'My Notifications' => '我的提醒',
     'Your topic have new reply:' => '回复了你的主题:',
