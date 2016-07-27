@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Models\Role;
 
 class UsersTableSeeder extends Seeder
 {
@@ -17,5 +18,12 @@ class UsersTableSeeder extends Seeder
         });
 
         User::insert($users->toArray());
+
+        $hall_of_fame = Role::addRole('HallOfFame', '名人堂');
+        $users = User::all();
+        foreach ($users as $key => $user) {
+            $user->attachRole($hall_of_fame);
+        }
+
     }
 }

@@ -8,6 +8,7 @@ return [
     'Share' => '分享',
     'Users' => '会员',
     'About' => '关于',
+    'Hall of Fame' => '名人堂',
     'Search' => '搜索',
     'Login' => '登 录',
     'Logout' => '退出',
