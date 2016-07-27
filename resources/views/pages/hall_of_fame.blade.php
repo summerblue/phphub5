@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{ lang('Recommended Sites') }} @parent
+PHPHub 名人堂 @parent
 @stop
 
 @section('content')
