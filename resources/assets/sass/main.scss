@@ -1569,7 +1569,7 @@ a {
     .certification {
         margin-bottom: 5px;
     }
-    .col-md-6 {
+    .col-lg-6 {
         padding-left: 10px;
         padding-right: 10px;
     }
@@ -1613,6 +1613,8 @@ a {
 @media (max-width: 1400px) {
     .card {
         height: 124px;
+        margin-right: 0px!important;
+        margin-left: 0px!important;
     }
 }
 @media (max-width: 992px) {
