@@ -12713,7 +12713,7 @@ a {
   margin: 6px; }
 
 .hall_of_fames .certification {
-  margin-bottom: 4px; }
+  margin-bottom: 5px; }
 
 .hall_of_fames .col-md-6 {
   padding-left: 10px;
@@ -12733,7 +12733,8 @@ a {
     margin-left: 6px;
     font-size: 0.9em;
     color: #606060;
-    margin-top: 8px; }
+    margin-top: 4px;
+    font-size: 0.8em; }
   .hall_of_fames .list-inline li:hover {
     background-color: #00b5ad;
     color: white;
