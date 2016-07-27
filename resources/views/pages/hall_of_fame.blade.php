@@ -14,7 +14,7 @@
 
     @foreach($users as $index => $user)
 
-        <div class="col-md-6 ">
+        <div class="col-lg-6 ">
 
             <div class="card {{ $index % 2 == 0 ? 'add-margin-right' : 'add-margin-left' }}">
 
