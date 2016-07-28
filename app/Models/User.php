@@ -50,10 +50,15 @@ class User extends Model implements AuthenticatableContract,
 
             dispatch(new SendActivateMail($user));
         });
+
+        static::deleted(function ($user) {
+            \Artisan::call('phphub:clear-user-data', ['user_id' => $user->id]);
+        });
     }
 
-    public function scopeIsRole($query, $role) {
-        return $query->whereHas('roles', function($query) use ($role){
+    public function scopeIsRole($query, $role)
+    {
+        return $query->whereHas('roles', function ($query) use ($role) {
                 $query->where('name', $role);
             }
         );
