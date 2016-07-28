@@ -41,6 +41,10 @@
         <div class="panel-body">
             @if (count($topics))
               @include('users.partials.topics')
+
+                <div class="add-padding-vertically">
+          	        {!! $topics->render() !!}
+          	    </div>
             @else
               <div class="empty-block">{{ lang('Dont have any data Yet') }}~~</div>
             @endif
@@ -56,6 +60,9 @@
         <div class="panel-body">
             @if (count($replies))
               @include('users.partials.replies')
+              <div class="add-padding-vertically">
+                  {!! $topics->render() !!}
+              </div>
             @else
               <div class="empty-block">{{ lang('Dont have any comment yet') }}~~</div>
             @endif

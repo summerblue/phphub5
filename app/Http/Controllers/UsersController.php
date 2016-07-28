@@ -36,8 +36,8 @@ class UsersController extends Controller
     public function show($id)
     {
         $user    = User::findOrFail($id);
-        $topics  = Topic::whose($user->id)->recent()->limit(10)->get();
-        $replies = Reply::whose($user->id)->recent()->limit(10)->get();
+        $topics  = Topic::whose($user->id)->recent()->paginate(15);
+        $replies = Reply::whose($user->id)->recent()->paginate(15);
         return view('users.show', compact('user', 'topics', 'replies'));
     }
 
