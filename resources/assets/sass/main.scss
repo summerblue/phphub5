@@ -1618,8 +1618,8 @@ a {
 @media (max-width: 1200px) {
     .card {
         height: auto;
-        margin-right: 10px!important;
-        margin-left: 10px!important;
+        margin-right: -10px!important;
+        margin-left: -10px!important;
     }
     .hall_of_fames .list-inline {
         margin-bottom: 0px;
