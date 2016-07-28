@@ -303,6 +303,8 @@ class EmailHandler
         $data['user_id'] = $this->toUser->id;
         $data['type'] = $this->type;
         $data['body'] = $body;
+        $data['reply_id'] = $this->reply->id;
+        $data['topic_id'] = $this->topic->id;
 
         NotificationMailLog::create($data);
     }
