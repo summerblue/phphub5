@@ -23,6 +23,7 @@ class Kernel extends ConsoleKernel
 
         Commands\CalculateActiveUser::class,
         Commands\CalculateHotTopic::class,
+        Commands\ClearUserData::class,
     ];
 
     /**
