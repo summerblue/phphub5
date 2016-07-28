@@ -12751,9 +12751,7 @@ a {
 
 @media (max-width: 1400px) {
   .card {
-    height: 124px;
-    margin-right: 0px !important;
-    margin-left: 0px !important; } }
+    height: 124px; } }
 
 @media (max-width: 992px) {
   .card {
