@@ -14,12 +14,11 @@ class UpdateUserRequest extends Request
 
     public function rules()
     {
-
         return [
             'github_id'       => 'unique:users',
             'github_name'     => 'string',
             'wechat_openid'   => 'string',
-            'email'           => 'email|required|unique:users,email,' . \Auth::user()->id,
+            'email'           => 'email|required|unique:users,email,' . $this->id,
             'github_url'      => 'active_url',
             'image_url'       => 'active_url',
             'wechat_unionid'  => 'string',
