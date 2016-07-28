@@ -95,7 +95,7 @@ class EmailHandler
         });
     }
 
-    protected function sendAtNotifyMail(User $fromUser, User $toUser, Reply $reply = null)
+    protected function sendAtNotifyMail()
     {
         if (!$this->reply) {
             return false;
