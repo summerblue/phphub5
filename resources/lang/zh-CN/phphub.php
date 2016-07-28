@@ -20,6 +20,7 @@ return [
     'Total User' => '社区会员',
     'Total Topic' => '主题数',
     'Total Reply' => '评论数',
+    'Up Votes' => '点赞',
     'You dont have permission to proceed.' => '很抱歉, 当前用户没有权限继续操作. <br>有什么问题请联系管理员.',
     'Permission Deny' => '管理员权限提示',
     'Notice' => '提 示',
