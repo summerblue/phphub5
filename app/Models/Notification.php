@@ -72,9 +72,12 @@ class Notification extends Model
 
         if (count($data)) {
             Notification::insert($data);
+            foreach ($users as $toUser) {
+                dispatch(new SendNotifyMail($type, $fromUser, $toUser, $topic, $reply, $content));
+            }
         }
+
         foreach ($data as $value) {
-            dispatch(new SendNotifyMail($type, $fromUser, $toUser, $topic, $reply, $content));
             self::pushNotification($value);
         }
     }
