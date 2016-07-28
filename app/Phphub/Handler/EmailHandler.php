@@ -7,6 +7,7 @@ use App\Models\Reply;
 use App\Models\Topic;
 use App\Models\Mention;
 use App\Models\Append;
+use App\Models\NotificationMailLog;
 use Illuminate\Mail\Message;
 use Mail;
 use Naux\Mail\SendCloudTemplate;
@@ -66,6 +67,7 @@ class EmailHandler
         $this->body = $body;
         $this->fromUser = $fromUser;
         $this->toUser = $toUser;
+        $this->type = $type;
 
         $method = $this->methodMap[$type];
         $this->$method();
@@ -86,7 +88,10 @@ class EmailHandler
                               <br /><br />内容如下：<br />",
                 'content'  => $this->reply->body,
             ]));
+
             $message->to($this->toUser->email);
+
+            $this->generateMailLog($this->reply->body);
         });
     }
 
@@ -107,6 +112,7 @@ class EmailHandler
             ]));
 
             $message->to($this->toUser->email);
+            $this->generateMailLog($this->reply->body);
         });
     }
 
@@ -126,6 +132,7 @@ class EmailHandler
             ]));
 
             $message->to($this->toUser->email);
+            $this->generateMailLog();
         });
     }
 
@@ -146,6 +153,7 @@ class EmailHandler
             ]));
 
             $message->to($this->toUser->email);
+            $this->generateMailLog($this->reply->body);
         });
     }
 
@@ -166,6 +174,7 @@ class EmailHandler
             ]));
 
             $message->to($this->toUser->email);
+            $this->generateMailLog($this->body);
         });
     }
 
@@ -186,6 +195,7 @@ class EmailHandler
             ]));
 
             $message->to($this->toUser->email);
+            $this->generateMailLog($this->body);
         });
     }
 
@@ -201,6 +211,7 @@ class EmailHandler
             ]));
 
             $message->to($this->toUser->email);
+            $this->generateMailLog('');
         });
     }
 
@@ -221,6 +232,7 @@ class EmailHandler
             ]));
 
             $message->to($this->toUser->email);
+            $this->generateMailLog($this->reply->body);
         });
     }
 
@@ -240,6 +252,7 @@ class EmailHandler
             ]));
 
             $message->to($this->toUser->email);
+            $this->generateMailLog();
         });
     }
 
@@ -259,6 +272,7 @@ class EmailHandler
             ]));
 
             $message->to($this->toUser->email);
+            $this->generateMailLog();
         });
     }
 
@@ -278,6 +292,18 @@ class EmailHandler
             ]));
 
             $message->to($this->toUser->email);
+            $this->generateMailLog();
         });
+    }
+
+    protected function generateMailLog($body = '')
+    {
+        $data = [];
+        $data['from_user_id'] = $this->fromUser->id;
+        $data['user_id'] = $this->toUser->id;
+        $data['type'] = $this->type;
+        $data['body'] = $body;
+
+        NotificationMailLog::create($data);
     }
 }
