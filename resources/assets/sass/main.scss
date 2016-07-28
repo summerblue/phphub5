@@ -114,10 +114,11 @@ ul.list {
   font-size: 16px;
 }
 .emoji {
-    width: 1.5em;
+    width: 1.6em;
     display: inline-block;
     margin-bottom: 0;
     margin-top: -5px;
+    margin-left: 5px;
 }
 
 .divider {
@@ -1614,7 +1615,7 @@ a {
     .card {
         height: 124px;
     }
-}  
+}
 @media (max-width: 1200px) {
     .card {
         height: auto;
