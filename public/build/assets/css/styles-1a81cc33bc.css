@@ -11493,7 +11493,7 @@ a.stats:hover {
   display: inline-block; }
 
 textarea.form-control {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 30px; }
 
 ul.list {
@@ -11531,7 +11531,7 @@ ul.list {
   border: 1px solid #eaeaea; }
 
 .loading {
-  font-size: 16px; }
+  font-size: 15px; }
 
 .emoji {
   width: 1.6em;
@@ -12394,7 +12394,7 @@ div#preview-box {
   background-color: #f9fff3; }
 
 .topics-index .topic-list .media-heading {
-  font-size: 16px; }
+  font-size: 15px; }
 
 .label-default {
   background-color: #e5e5e5;
