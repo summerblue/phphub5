@@ -199,4 +199,6 @@ php artisan make:scaffold Users --schema="github_id:integer:unsigned:default(0):
 php artisan make:scaffold Votes --schema="user_id:integer:unsigned:default(0),votable_id:integer:unsigned:default(0),votable_type:string:index,is:string:index"
 
 php artisan make:scaffold Banners --schema="position:string:index,order:integer:unsigned:default(0):index,image_url:string,title:string:index,description:text:nullable"
+
+php artisan make:scaffold NotificationMailLogs --schema="from_user_id:integer:unsigned:default(0):index,user_id:integer:unsigned:default(0):index,type:string:index,body:text:nullable"
 ```
