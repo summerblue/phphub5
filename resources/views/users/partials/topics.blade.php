@@ -12,9 +12,11 @@
         <a href="{{ route('categories.show', [$topic->category->id]) }}" title="{{{ $topic->category->name }}}">
           {{{ $topic->category->name }}}
         </a>
-        <span> • </span>
+        <span> ⋅ </span>
+        {{ $topic->vote_count }} {{ lang('Up Votes') }}
+        <span> ⋅ </span>
         {{ $topic->reply_count }} {{ lang('Replies') }}
-        <span> • </span>
+        <span> ⋅ </span>
         <span class="timeago">{{ $topic->created_at }}</span>
 
       </span>
