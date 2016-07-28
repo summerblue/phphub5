@@ -175,7 +175,7 @@ return [
     'GitHub Info' => 'GitHub 信息',
     'User Role' => '用户组',
     'Change Avatar' => '修改头像',
-    'Notification Settings' => '消息设置',
+    'Notification Settings' => '消息通知',
     'Social Account Binding' => '账号绑定',
     'Edit Email Notify' => 'Email 通知设置',
     'Apply Changes' => '应用修改',
