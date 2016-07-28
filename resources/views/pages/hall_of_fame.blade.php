@@ -9,7 +9,7 @@ PHPHub 名人堂 @parent
 <div class="hall_of_fames">
 
     <div class="box text-center site-intro rm-link-color">
-        PHPHub 名人堂，用于推荐在 PHPHub 社区有突出贡献的用户。<a style="text-decoration: underline;" href="https://phphub.org/topics/2440">更多信息</a>
+        PHPHub 名人堂，用于推荐对 PHPHub 社区有突出贡献的用户。<a style="text-decoration: underline;" href="https://phphub.org/topics/2440">更多信息</a>
     </div>
 
     @foreach($users as $index => $user)
