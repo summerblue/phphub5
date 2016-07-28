@@ -12753,7 +12753,7 @@ a {
   .card {
     height: 124px; } }
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .card {
     height: auto;
     margin-right: 0px !important;
