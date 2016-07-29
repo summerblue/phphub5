@@ -6,9 +6,9 @@
 
 @section('content')
 
-    <div class="alert alert-info">
+    <div class="box text-center site-intro rm-link-color">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        欢迎交换友链，请加我微信 <i class="fa fa-weixin text-md"></i> summer_charlie，只接受 PHP、Laravel 相关话题的站点，如果微信回复较慢可以私信 <i class="fa fa-weibo text-md"></i> <a href="http://weibo.com/phphub">PHPHub</a>
+        欢迎交换友链，请加我微信 <i class="fa fa-weixin text-md"></i> summer_charlie，只接受 PHP、Laravel 相关话题的站点，如果微信回复较慢可以私信 <i class="fa fa-weibo text-md"></i> <a style="text-decoration: underline;" href="http://weibo.com/phphub">PHPHub</a>
     </div>
 
     <div class="sites-index">
