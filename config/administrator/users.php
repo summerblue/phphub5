@@ -35,11 +35,11 @@ EOD;
         'github_name' => [
             'title' => 'GitHub 用户名'
         ],
-        'github_id' => [
-            'title' => 'GitHub Id',
+        'topic_count' => [
+            'title' => '话题数量'
         ],
-        'wechat_unionid' => [
-            'title' => '微信 unionid',
+        'reply_count' => [
+            'title' => '回复数量'
         ],
         'register_source' => [
             'title'  => '注册来源',
