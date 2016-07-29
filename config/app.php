@@ -156,11 +156,8 @@ return [
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
 
         // infyomlabs/laravel-generator
-        Collective\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
-        \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
-        \InfyOm\CoreTemplates\CoreTemplatesServiceProvider::class,
 
         Orangehill\Iseed\IseedServiceProvider::class,
         \EstGroupe\Taggable\Providers\TaggingServiceProvider::class,
@@ -230,8 +227,6 @@ return [
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
-        'Form'             => Collective\Html\FormFacade::class,
-        'Html'             => Collective\Html\HtmlFacade::class,
         'Flash'            => Laracasts\Flash\Flash::class,
         'QrCode'           => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'Rss'              => Thujohn\Rss\RssFacade::class,

@@ -18,9 +18,6 @@
         "barryvdh/laravel-debugbar": "^2.2",
         "rap2hpoutre/laravel-log-viewer": "^0.7.0",
         "zizaco/entrust": "^1.7",
-        "infyomlabs/laravel-generator": "dev-master",
-        "laravelcollective/html": "5.1.*",
-        "infyomlabs/core-templates": "dev-master",
         "devster/ubench": "^1.2",
         "orangehill/iseed": "^2.1",
         "predis/predis": "^1.1",
@@ -33,9 +30,7 @@
         "spatie/laravel-backup": "^3.8",
         "VentureCraft/revisionable": "^1.27",
         "socialiteproviders/weixin": "^2.1",
-        "socialiteproviders/weibo": "^2.0",
         "smartisan/follow": "^1.0",
-        "socialiteproviders/weixin-web": "^2.0",
         "guzzlehttp/guzzle": "^6.2",
         "jrean/laravel-user-verification": "^2.2",
         "naux/sendcloud": "^1.1"
@@ -45,7 +40,6 @@
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~4.0",
         "phpspec/phpspec": "~2.1",
-        "laracasts/generators": "^1.1",
         "laralib/l5scaffold": "1.0.4"
     },
     "autoload": {
