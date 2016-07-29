@@ -248,10 +248,10 @@
     margin: 0;
     color: #e68270;
     background-color: rgba(0, 0, 0, 0.04);
-    border-radius: 3px;
-    background-color: #f4f3f1;
-    padding: 1px 1px 0px;
-    border: 1px solid #f6ebeb;
+    border-radius: 0px;
+    background-color: transparent;
+    padding: 1px 0px 1px;
+    border-bottom: 1px dotted #ee9898;
     max-width: 740px;
     overflow-x: auto; }
   .markdown-body code:before,
