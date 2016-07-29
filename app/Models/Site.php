@@ -4,9 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Cache;
+use Laracasts\Presenter\PresentableTrait;
+use Phphub\Presenters\SitePresenter;
 
 class Site extends Model
 {
+    use PresentableTrait;
+    protected $presenter = SitePresenter::class;
+
     protected $guarded = ['id'];
 
     public static function allFromCache($expire = 1440)
