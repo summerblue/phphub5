@@ -61,7 +61,7 @@
             @if (count($replies))
               @include('users.partials.replies')
               <div class="add-padding-vertically">
-                  {!! $topics->render() !!}
+                  {!! $replies->render() !!}
               </div>
             @else
               <div class="empty-block">{{ lang('Dont have any comment yet') }}~~</div>
