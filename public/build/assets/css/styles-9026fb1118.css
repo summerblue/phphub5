@@ -12642,7 +12642,8 @@ span.timeago {
   border-color: #00b5ad; }
 
 .alert {
-  border-radius: 0px; }
+  border-radius: 0px;
+  line-height: 26px; }
 
 .footer {
   background-color: #fff;
