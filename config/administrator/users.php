@@ -14,7 +14,8 @@ return [
         ],
         'image_url' => [
             'title'  => '头像',
-            'output' => function ($value) {
+            'output' => function ($value, $model) {
+                $value = $model->present()->gravatar();
                 return empty($value) ? 'N/A' : <<<EOD
     <img src="$value" width="80">
 EOD;
@@ -50,7 +51,7 @@ EOD;
         'is_banned' => [
             'title'  => '是否被屏蔽',
             'output' => function ($value) {
-                return admin_enum_style_output($value);
+                return admin_enum_style_output($value, true);
             },
         ],
         'verified' => [

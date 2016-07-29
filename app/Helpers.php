@@ -50,9 +50,9 @@ function admin_url($path, $id = '')
     return env('APP_URL') . "/admin/$path" . ($id ? '/'.$id : '');
 }
 
-function admin_enum_style_output($value)
+function admin_enum_style_output($value, $reverse = false)
 {
-    $class = ($value === true || $value == 'yes') ? 'success' : 'danger';
+    $class = ($value === true || $value == 'yes' || $reverse) ? 'success' : 'danger';
     return '<span class="label bg-'.$class.'">'.$value.'</span>';
 }
 
