@@ -40,7 +40,7 @@ class CalculateHotTopic extends Command
             $data = [];
             $data['topic_id']    = $topic->id;
             $data['reply_count'] = Reply::where('topic_id', $topic->id)->count();
-            $data['vote_count']  = Vote::where('votable_type', 'Topic')
+            $data['vote_count']  = Vote::where('votable_type', 'App\Models\Topic')
                                        ->where('votable_id', $topic->id)
                                        ->count();
 
