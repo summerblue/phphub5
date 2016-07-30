@@ -42,6 +42,7 @@ class CalculateHotTopic extends Command
             $data['reply_count'] = Reply::where('topic_id', $topic->id)->count();
             $data['vote_count']  = Vote::where('votable_type', 'App\Models\Topic')
                                        ->where('votable_id', $topic->id)
+                                       ->where('is', 'upvote')
                                        ->count();
 
             $data['weight'] = $data['vote_count'] * self::VOTE_TOPIC_WEIGHT
