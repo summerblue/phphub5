@@ -12776,7 +12776,9 @@ a {
   .topic-author-box .media-left {
     display: none; }
   .floating-box {
-    margin-top: 20px; } }
+    margin-top: 20px; }
+  .votes {
+    margin-bottom: 16px; } }
 
 @media (max-width: 991px) {
   .navbar {
@@ -12793,7 +12795,8 @@ a {
   .media-body.markdown-reply.content-body {
     margin-left: -60px;
     display: inline-block;
-    width: initial; }
+    width: initial;
+    margin-top: 6px; }
   .list-group-item.media .infos {
     margin-top: 0px; }
   .replies-index .list-group-item.media .avatar img {

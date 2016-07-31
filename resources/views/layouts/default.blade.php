@@ -26,7 +26,8 @@ PHPHub  - PHP & Laravel的中文社区
 			@show
 		</title>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
 		<meta name="keywords" content="PHP,Laravel,PHP论坛,Laravel论坛,PHP社区,Laravel社区" />
 		<meta name="author" content="The PHP China Community." />

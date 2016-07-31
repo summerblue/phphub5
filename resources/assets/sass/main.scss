@@ -1650,6 +1650,9 @@ a {
     .floating-box {
         margin-top: 20px;
     }
+    .votes {
+        margin-bottom: 16px;
+    }
 }
 
 // 桌面版单行
@@ -1679,6 +1682,7 @@ a {
         margin-left: -60px;
         display: inline-block;
         width: initial;
+        margin-top: 6px;
     }
     .list-group-item.media .infos {
         margin-top: 0px;
