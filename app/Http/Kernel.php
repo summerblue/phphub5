@@ -19,7 +19,7 @@ class Kernel extends HttpKernel
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
         \App\Http\Middleware\VerifyCsrfToken::class,
         \App\Http\Middleware\CheckUserIsItBanned::class,
-        \App\Http\Middleware\LastActivedAtMiddleware::class,
+        \App\Http\Middleware\RecordLastActivedTime::class,
     ];
 
     /**
