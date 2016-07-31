@@ -87,6 +87,9 @@
                 if(moment(time_str, "YYYY-MM-DD HH:mm:ss", true).isValid()) {
                     $(this).text(moment(time_str).fromNow());
                 }
+
+                $(this).addClass('popover-with-html');
+                $(this).attr('data-content', time_str);
             });
         },
 
