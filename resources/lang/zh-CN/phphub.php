@@ -220,4 +220,5 @@ return [
     'Github' => 'GitHub',
     'Sorry, this socialite account has been registed.' => '绑定失败：你的 :driver 账号已被其他用户使用. T_T',
     'Bind Successfully!' => '绑定成功！以后可以使用你的 :driver 账号登录 PHPHub 了 ^_^',
+    'Actived' => '活跃',
 ];

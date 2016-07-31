@@ -44,6 +44,7 @@ class CreateUsersTable extends Migration
             $table->string('verification_token')->nullable();
             $table->enum('email_notify_enabled', ['yes',  'no'])->default('yes')->index();
             $table->string('register_source')->index();
+            $table->timestamp('last_actived_at')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

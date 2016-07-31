@@ -4,6 +4,7 @@ use Laracasts\Presenter\Presenter;
 use Route;
 use App\Models\User;
 use App\Models\Role;
+use Cache;
 
 class UserPresenter extends Presenter
 {
@@ -76,4 +77,16 @@ class UserPresenter extends Presenter
         return json_encode($users);
     }
 
+    public function lastActivedAt()
+    {
+        $show_key  = config('phphub.actived_time_data');
+        $show_data = Cache::get($show_key);
+
+        if (!isset($show_data[$this->id])) {
+            $show_data[$this->id] = $this->last_actived_at;
+            Cache::forever($show_key, $show_data);
+        }
+        
+        return $show_data[$this->id];
+    }
 }
