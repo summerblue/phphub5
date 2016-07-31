@@ -15,6 +15,8 @@ use App\Jobs\SendActivateMail;
 use App\Models\Traits\UserRememberTokenHelper;
 use App\Models\Traits\UserSocialiteHelper;
 use App\Models\Traits\UserAvatarHelper;
+use Carbon\Carbon;
+use Cache;
 
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract
@@ -127,5 +129,18 @@ class User extends Model implements AuthenticatableContract,
     public function getAuthPassword()
     {
         return $this->password;
+    }
+
+    public function recordLastActivedAt()
+    {
+        $update_key = config('phphub.actived_time_for_update');
+        $update_data = Cache::get($update_key);
+        $update_data[$this->id] = Carbon::now()->toDateTimeString();
+        Cache::forever($update_key, $update_data);
+
+        $show_key = config('phphub.actived_time_data');
+        $show_data = Cache::get($show_key);
+        $show_data[$this->id] = Carbon::now()->toDateTimeString();
+        Cache::forever($show_key, $show_data);
     }
 }
