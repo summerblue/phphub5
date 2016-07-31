@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Auth;
 
-class LastActivedAtMiddleware
+class RecordLastActivedTime
 {
     public function handle($request, Closure $next)
     {

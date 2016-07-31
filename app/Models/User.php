@@ -133,14 +133,16 @@ class User extends Model implements AuthenticatableContract,
 
     public function recordLastActivedAt()
     {
+        $now = Carbon::now()->toDateTimeString();
+
         $update_key = config('phphub.actived_time_for_update');
         $update_data = Cache::get($update_key);
-        $update_data[$this->id] = Carbon::now()->toDateTimeString();
+        $update_data[$this->id] = $now;
         Cache::forever($update_key, $update_data);
 
         $show_key = config('phphub.actived_time_data');
         $show_data = Cache::get($show_key);
-        $show_data[$this->id] = Carbon::now()->toDateTimeString();
+        $show_data[$this->id] = $now;
         Cache::forever($show_key, $show_data);
     }
 }
