@@ -71,6 +71,13 @@
         <label>Since:</label>
       </dt>
       <dd><span>{{ $user->created_at }}</span></dd>
+
+      @if($user->present()->lastActivedAt)
+      <dt>
+        <label>{{ lang('Actived') }}:</label>
+      </dt>
+      <dd><span class="timeago">{{ $user->present()->lastActivedAt }}</span></dd>
+      @endif
     </dl>
     <div class="clearfix"></div>
 
