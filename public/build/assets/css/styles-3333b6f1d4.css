@@ -12766,4 +12766,37 @@ a {
     margin-left: inherit;
     margin-right: inherit; } }
 
+@media (max-width: 768px) {
+  .navbar {
+    margin-bottom: 10px; }
+  .hall_of_fames .avatar {
+    width: 38px;
+    height: 38px;
+    margin: 6px -5px 6px 3px; }
+  .topic-author-box .media-left {
+    display: none; }
+  .floating-box {
+    margin-top: 20px; } }
+
+@media (max-width: 991px) {
+  .navbar {
+    margin-bottom: 10px; }
+  .main-col {
+    padding-right: 0px; }
+    .main-col .padding-md {
+      padding: 0; }
+  .topics-show .panel .panel-heading {
+    margin: 0px;
+    padding: 10px 15px; }
+  .markdown-body, .markdown-reply {
+    font-size: 14px; }
+  .media-body.markdown-reply.content-body {
+    margin-left: -60px;
+    display: inline-block;
+    width: initial; }
+  .list-group-item.media .infos {
+    margin-top: 0px; }
+  .replies-index .list-group-item.media .avatar img {
+    margin-top: -6px; } }
+
 /*# sourceMappingURL=styles.css.map */
