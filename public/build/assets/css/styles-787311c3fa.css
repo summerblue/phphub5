@@ -12761,6 +12761,9 @@ a {
     margin-left: -10px !important; }
   .hall_of_fames .list-inline {
     margin-bottom: 0px;
-    margin-bottom: 10px; } }
+    margin-bottom: 10px; }
+  .footer-top.row {
+    margin-left: inherit;
+    margin-right: inherit; } }
 
 /*# sourceMappingURL=styles.css.map */
