@@ -1096,18 +1096,14 @@ div#preview-box {
     margin-top: 14px;
 }
 .reply_count_area .count_of_replies{
-    color: #9e78c0;
     text-align: center;
-    font-size: 15px;
 }
 .reply_count_area .count_seperator {
-    margin: 0 -3px;
-    font-size: 11px;
+    margin: 0 -2px;
     text-align: center;
+    font-size: 10px;
 }
 .reply_count_area .count_of_visits{
-    font-size: 10px;
-    color: #b4b4b4;
     text-align: center;
 }
 .reply_last_time {
@@ -1692,3 +1688,20 @@ a {
     }
 }
 
+
+.topic-list {
+    .reply_count_area {
+        line-height: inherit;
+        margin-top: inherit;
+    }
+    .count_of_votes {
+        font-size: 20px;
+        margin-top: 11px;
+        color: #9e78c0;
+        margin-bottom: -3px;
+    }
+    .count_set {
+        font-size: 12px;
+        color: #b4b4b4;
+    }
+}
