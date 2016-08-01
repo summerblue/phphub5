@@ -23,15 +23,20 @@
             </a>
         </div>
 
-        <span class="reply_count_area hidden-xs" >
-            <span class="count_of_replies" title="回复数">
-              {{ $topic->reply_count }}
-            </span>
-            <span class="count_seperator">/</span>
-            <span class="count_of_visits" title="查看数">
-              {{ $topic->view_count }}
-            </span>
-      </span>
+        <div class="reply_count_area hidden-xs" >
+            <div class="count_of_votes" title="投票数">
+              {{ $topic->vote_count }}
+          </div>
+            <div class="count_set">
+                <span class="count_of_replies" title="回复数">
+                  {{ $topic->reply_count }}
+                </span>
+                <span class="count_seperator">/</span>
+                <span class="count_of_visits" title="查看数">
+                  {{ $topic->view_count }}
+                </span>
+            </div>
+        </div>
 
         <div class="infos">
 
