@@ -39,9 +39,9 @@
         </div>
 
 
-        @foreach ($categories as $category)
-            <div class="category-hint alert alert-warning category-{{ $category->id }}" style="display:none">
-                {!! $category->description !!}
+        @foreach ($categories as $cat)
+            <div class="category-hint alert alert-warning category-{{ $cat->id }} {{ count($category) && $cat->id == $category->id ? 'animated rubberBand ' : ''}}" style="{{ (count($category) && $cat->id == $category->id) ? '' : 'display:none' }}">
+                {!! $cat->description !!}
             </div>
         @endforeach
 
