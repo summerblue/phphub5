@@ -15,10 +15,10 @@ class HotTopic extends Model
 
     public static function fetchAll($limit = 8)
     {
-        return self::with('topic')
-                   ->orderBy('weight', 'DESC')
-                   ->limit($limit)
-                   ->get()
-                   ->pluck('topic');
+        $topic_ids = self::orderBy('weight', 'DESC')
+                         ->limit($limit)
+                         ->lists('topic_id')
+                         ->toArray();
+        return Topic::whereIn('id', $topic_ids)->with('user')->get();
     }
 }
