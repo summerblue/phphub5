@@ -157,7 +157,6 @@ return [
 
         // infyomlabs/laravel-generator
         Laracasts\Flash\FlashServiceProvider::class,
-        Prettus\Repository\Providers\RepositoryServiceProvider::class,
 
         Orangehill\Iseed\IseedServiceProvider::class,
         \EstGroupe\Taggable\Providers\TaggingServiceProvider::class,
