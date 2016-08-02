@@ -16,9 +16,9 @@
                 如果觉得我的文章对您有用，请随意打赏。你的支持将鼓励我继续创作！
             </p>
             <img class="payment-qrcode" src="{{ $topic->user->payment_qrcode }}" alt="" style="width:320px;height:320px"/>
-<hr>
+            <hr>
             <p style="color: #898989;">
-                请使用微信扫描二维码。 <a href="#" style="color: #898989;text-decoration: underline;">如何开启打赏？</a>
+                请使用微信扫描二维码。 <a href="https://phphub.org/topics/2487" style="color: #898989;text-decoration: underline;">如何开启打赏？</a>
             </p>
         </div>
 
