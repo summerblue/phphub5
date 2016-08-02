@@ -138,7 +138,7 @@
                     @endif
                 </div>
                 <div class="col-sm-4 help-block">
-                      文章打赏时使用，微信支付二维码或者支付宝
+                      文章打赏时使用，微信支付二维码
                 </div>
             </div>
 
