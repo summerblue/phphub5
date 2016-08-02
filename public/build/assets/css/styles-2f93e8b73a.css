@@ -12812,4 +12812,12 @@ a {
   font-size: 12px;
   color: #b4b4b4; }
 
+.payment-qrcode {
+  width: 250px;
+  height: 250px;
+  border: 1px solid #d9d6d6;
+  border-radius: 2px;
+  padding: 6px;
+  margin: 11px 0px; }
+
 /*# sourceMappingURL=styles.css.map */

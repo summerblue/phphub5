@@ -23,6 +23,7 @@ class UpdateUserRequest extends Request
             'image_url'       => 'url',
             'wechat_unionid'  => 'string',
             'linkedin'        => 'url',
+            'payment_qrcode'  => 'image',
         ];
     }
 }

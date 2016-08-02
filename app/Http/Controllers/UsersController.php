@@ -61,6 +61,11 @@ class UsersController extends Controller
                 'introduction', 'weibo_name', 'weibo_id', 'email','linkedin'
             );
 
+        if ($file = $request->file('payment_qrcode')) {
+            $upload_status = app('Phphub\Handler\ImageUploadHandler')->uploadImage($file);
+            $data['payment_qrcode'] = $upload_status['filename'];
+        }
+
         $user->update($data);
 
         Flash::success(lang('Operation succeeded.'));
