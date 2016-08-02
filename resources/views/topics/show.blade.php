@@ -66,7 +66,7 @@
 
         @if( $topic->user->payment_qrcode )
         <div class="col-sm-6">
-                <span style="position: relative;top: 3px;">请随意打赏，你的支持将鼓励我继续创作！</span><button class="btn btn-success">¥ 打赏支持</button>
+                <span style="position: relative;top: 3px;">请随意打赏，你的支持将鼓励我继续创作！</span><button class="btn btn-success"  data-toggle="modal" data-target="#payment-qrcode-modal">¥ 打赏支持</button>
         </div>
         <div class="col-sm-6">
             <div class="social-share-cs"></div>
@@ -136,6 +136,10 @@
 
 
 </div>
+
+@if( $topic->user->payment_qrcode )
+    @include('topics.partials.payment_qrcode_modal')
+@endif
 
 @include('layouts.partials.sidebar')
 
