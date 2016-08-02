@@ -23,7 +23,7 @@
 
         @include('layouts.partials.errors')
 
-        <form class="form-horizontal" method="POST" action="{{ route('users.update', $user->id) }}" accept-charset="UTF-8">
+        <form class="form-horizontal" method="POST" action="{{ route('users.update', $user->id) }}" accept-charset="UTF-8" enctype="multipart/form-data">
             <input name="_method" type="hidden" value="PATCH">
             {!! csrf_field() !!}
 
@@ -127,6 +127,20 @@
                     {{ lang('personal_website_placebolder_hint') }}
               </div>
           </div>
+
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">支付二维码</label>
+                <div class="col-sm-6">
+                    <input type="file" name="payment_qrcode">
+
+                    @if($user->payment_qrcode)
+                        <img class="payment-qrcode" src="{{ $user->payment_qrcode }}" alt="" />
+                    @endif
+                </div>
+                <div class="col-sm-4 help-block">
+                      文章打赏时使用，微信支付二维码或者支付宝
+                </div>
+            </div>
 
           <div class="form-group">
               <label for="" class="col-sm-2 control-label">{{ lang('introduction_placeholder') }}</label>

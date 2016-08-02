@@ -35,6 +35,7 @@ class CreateUsersTable extends Migration
             $table->string('github_name')->index();
             $table->string('real_name')->nullable();
             $table->string('linkedin')->nullable();
+            $table->string('payment_qrcode')->nullable();
             $table->string('avatar');
             $table->string('login_qr')->nullable();
             $table->string('wechat_openid')->nullable()->index();

@@ -62,8 +62,19 @@
 
   <div class="replies panel panel-default padding-md">
 
-    <div class="panel-body ">
-        <div class="social-share-cs "></div>
+    <div class="panel-body hidden-xs">
+
+        @if( $topic->user->payment_qrcode )
+        <div class="col-sm-6">
+                <span style="position: relative;top: 3px;">请随意打赏，你的支持将鼓励我继续创作！</span><button class="btn btn-success">¥ 打赏支持</button>
+        </div>
+        <div class="col-sm-6">
+            <div class="social-share-cs"></div>
+            <div class="clearfix"></div>
+        </div>
+        @else
+            <div class="social-share-cs "></div>
+        @endif
     </div>
   </div>
 
@@ -138,9 +149,10 @@
     $(document).ready(function()
     {
         var $config = {
-            title               : '{{{ $topic->title }}} from PHPHub - PHP，Laravel的中文社区 #laravel# @phphub @李桂龙_CJ {{{ $topic->user->weibo_name ? '@'.$topic->user->weibo_name : '' }}}',
+            title               : '{{{ $topic->title }}} from PHPHub - PHP，Laravel的中文社区 #laravel# @phphub {{ $topic->user->id != 1 ? '@李桂龙_CJ' : '' }} {{{ $topic->user->weibo_name ? '@'.$topic->user->weibo_name : '' }}}',
             wechatQrcodeTitle   : "微信扫一扫：分享", // 微信二维码提示文字
             wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
+            sites               : ['weibo','wechat',  'facebook', 'twitter', 'google','qzone', 'qq', 'douban'],
         };
 
         socialShare('.social-share-cs', $config);

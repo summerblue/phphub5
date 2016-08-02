@@ -86,7 +86,7 @@ class UserPresenter extends Presenter
             $show_data[$this->id] = $this->last_actived_at;
             Cache::forever($show_key, $show_data);
         }
-        
+
         return $show_data[$this->id];
     }
 }
