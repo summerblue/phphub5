@@ -47,7 +47,7 @@ PHPHub  - PHP & Laravel的中文社区
                     'upload_image' : '{{ route('upload_image') }}'
                 },
                 'token': '{{ csrf_token() }}',
-                'following_users': @if($currentUser) {!!$currentUser->present()->followingUsersJson()!!} @else '[]' @endif
+                'following_users': @if($currentUser) {!!$currentUser->present()->followingUsersJson()!!} @else [] @endif
             };
 
 			var ShowCrxHint = '{{isset($show_crx_hint) ? $show_crx_hint : 'no'}}';
