@@ -42,21 +42,21 @@
           @if ($topic->user->github_name)
           <li>
             <a href="https://github.com/{{ $topic->user->github_name }}" target="_blank">
-              <i class="fa fa-github-alt"></i> {{ $topic->user->github_name }}
+              <i class="fa fa-github-alt"></i> GitHub
             </a>
           </li>
           @endif
 
           @if ($topic->user->weibo_id)
           <li>
-            <a href="http://weibo.com/u/{{ $topic->user->weibo_id }}" rel="nofollow" class="weibo" target="_blank"><i class="fa fa-weibo"></i> {{{ $topic->user->weibo_name ?: $topic->user->weibo_id }}}
+            <a href="http://weibo.com/u/{{ $topic->user->weibo_id }}" rel="nofollow" class="weibo" target="_blank"><i class="fa fa-weibo"></i> WeiBo
             </a>
           </li>
           @endif
 
           @if ($topic->user->twitter_account)
           <li>
-            <a href="https://twitter.com/{{ $topic->user->twitter_account }}" rel="nofollow" class="twitter" target="_blank"><i class="fa fa-twitter"></i> {{{ $topic->user->twitter_account }}}
+            <a href="https://twitter.com/{{ $topic->user->twitter_account }}" rel="nofollow" class="twitter" target="_blank"><i class="fa fa-twitter"></i> Twitter
             </a>
         </li>
           @endif
@@ -71,17 +71,17 @@
           @if ($topic->user->personal_website)
           <li>
             <a href="http://{{ $topic->user->personal_website }}" rel="nofollow" target="_blank" class="url">
-              <i class="fa fa-globe"></i> {{{ str_limit($topic->user->personal_website, 22) }}}
+              <i class="fa fa-globe"></i> Website
             </a>
         </li>
           @endif
 
         @if ($topic->user->company)
-          <li class="popover-with-html" data-content="{{ lang('Company') }}"><i class="fa fa-users"></i> {{{ $topic->user->company }}}</li>
+          <li class="popover-with-html" data-content="{{ $topic->user->company }}"><i class="fa fa-users"></i> {{{ lang('Company') }}}</li>
         @endif
 
         @if ($topic->user->city)
-          <li class="adr"><i class="fa fa-map-marker"></i> {{{ $topic->user->city }}}</li>
+          <li class="popover-with-html" data-content="{{ $topic->user->city }}"><i class="fa fa-map-marker"></i> {{{ lang('City') }}}</li>
         @endif
 
       </ul>
