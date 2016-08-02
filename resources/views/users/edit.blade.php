@@ -29,75 +29,116 @@
 
             <div class="form-group">
                 <label for="" class="col-sm-2 control-label">{{ lang('GitHub Name') }}</label>
-                <div class="col-sm-10">
-                    <input class="form-control" placeholder="{{ lang('GitHub Name likes: summerblue') }}" name="github_name" type="text" value="{{ $user->github_name }}">
+                <div class="col-sm-6">
+                    <input class="form-control" name="github_name" type="text" value="{{ $user->github_name }}">
+                </div>
+
+                <div class="col-sm-4 help-block">
+                    请跟 GitHub 上保持一致
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="" class="col-sm-2 control-label">{{ lang('Email') }}</label>
-                <div class="col-sm-10">
-                    <input class="form-control" placeholder="{{ lang('Email example: name@website.com') }}" name="email" type="text" value="{{ $user->email }}">
+                <div class="col-sm-6">
+                    <input class="form-control" name="email" type="text" value="{{ $user->email }}">
+                </div>
+                <div class="col-sm-4 help-block">
+                    {{ lang('Email example: name@website.com') }}
                 </div>
             </div>
 
           <div class="form-group">
               <label for="" class="col-sm-2 control-label">{{ lang('Real Name') }}</label>
-              <div class="col-sm-10">
-                  <input class="form-control" placeholder="{{ lang('Real Name example: 李小明') }}" name="real_name" type="text" value="{{ $user->real_name }}">
+              <div class="col-sm-6">
+                  <input class="form-control" name="real_name" type="text" value="{{ $user->real_name }}">
+              </div>
+              <div class="col-sm-4 help-block">
+                {{ lang('Real Name example: 李小明') }}
               </div>
           </div>
 
           <div class="form-group">
               <label for="" class="col-sm-2 control-label">{{lang('City')}}</label>
-              <div class="col-sm-10">
-                  <input class="form-control" placeholder="{{lang('City example: BeiJing')}}" name="city" type="text" value="{{ $user->city }}">
+              <div class="col-sm-6">
+                  <input class="form-control" name="city" type="text" value="{{ $user->city }}">
+              </div>
+              <div class="col-sm-4 help-block">
+                    {{lang('City example: BeiJing')}}
               </div>
           </div>
 
           <div class="form-group">
               <label for="" class="col-sm-2 control-label">{{ lang('Company') }}</label>
-              <div class="col-sm-10">
-                  <input class="form-control" placeholder="{{ lang('Company example: Alibaba') }}" name="company" type="text" value="{{ $user->company }}">
+              <div class="col-sm-6">
+                  <input class="form-control" name="company" type="text" value="{{ $user->company }}">
+              </div>
+              <div class="col-sm-4 help-block">
+                {{ lang('Company example: Alibaba') }}
               </div>
           </div>
 
           <div class="form-group">
               <label for="" class="col-sm-2 control-label">{{ lang('Weibo Username') }}</label>
-              <div class="col-sm-10">
-                  <input class="form-control" placeholder="{{ lang('Weibo Username example: PHPHub') }}" name="weibo_name" type="text" value="{{ $user->weibo_name}}">
+              <div class="col-sm-6">
+                  <input class="form-control" name="weibo_name" type="text" value="{{ $user->weibo_name}}">
+              </div>
+              <div class="col-sm-4 help-block">
+                    {{ lang('Weibo Username example: PHPHub') }}
               </div>
           </div>
 
           <div class="form-group">
               <label for="" class="col-sm-2 control-label">{{ lang('Weibo ID') }}</label>
-              <div class="col-sm-10">
-                  <input class="form-control" placeholder="{{ lang('Weibo ID example: 5963322692') }}" name="weibo_id" type="text" value="{{ $user->weibo_id}}">
+              <div class="col-sm-6">
+                  <input class="form-control" name="weibo_id" type="text" value="{{ $user->weibo_id}}">
+              </div>
+              <div class="col-sm-4 help-block">
+                {{ lang('Weibo ID example: 5963322692') }}
               </div>
           </div>
 
           <div class="form-group">
               <label for="" class="col-sm-2 control-label">{{ lang('twitter_placeholder') }}</label>
-              <div class="col-sm-10">
-                  <input class="form-control" placeholder="{{ lang('twitter_placeholder_hint') }}" name="twitter_account" type="text" value="{{ $user->twitter_account}}">
+              <div class="col-sm-6">
+                  <input class="form-control" name="twitter_account" type="text" value="{{ $user->twitter_account}}">
+              </div>
+              <div class="col-sm-4 help-block">
+                {{ lang('twitter_placeholder_hint') }}
+              </div>
+          </div>
+
+          <div class="form-group">
+              <label for="" class="col-sm-2 control-label">{{ lang('LinkedIn') }}</label>
+              <div class="col-sm-6">
+                  <input class="form-control" name="linkedin" type="text" value="{{ $user->linkedin}}">
+              </div>
+              <div class="col-sm-4 help-block">
+                你的 <a href="https://www.linkedin.com">LinkedIn</a> 主页完整 URL 地址，如：https://cn.linkedin.com/in/summerblue
               </div>
           </div>
 
           <div class="form-group">
               <label for="" class="col-sm-2 control-label">{{ lang('personal_website_placebolder') }}</label>
-              <div class="col-sm-10">
-                  <input class="form-control" placeholder="{{ lang('personal_website_placebolder_hint') }}" name="personal_website" type="text" value="{{ $user->personal_website }}">
+              <div class="col-sm-6">
+                  <input class="form-control" name="personal_website" type="text" value="{{ $user->personal_website }}">
+              </div>
+              <div class="col-sm-4 help-block">
+                    {{ lang('personal_website_placebolder_hint') }}
               </div>
           </div>
 
           <div class="form-group">
               <label for="" class="col-sm-2 control-label">{{ lang('introduction_placeholder') }}</label>
-              <div class="col-sm-10">
-                  <textarea class="form-control" rows="3" placeholder="{{ lang('introduction_placeholder_hint') }}" name="introduction" cols="50">{{ $user->introduction }}</textarea>
+              <div class="col-sm-6">
+                  <textarea class="form-control" rows="3" name="introduction" cols="50">{{ $user->introduction }}</textarea>
+              </div>
+              <div class="col-sm-4 help-block">
+                    {{ lang('introduction_placeholder_hint') }}，大部分情况下会在你的头像和名字旁边显示
               </div>
           </div>
           <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
+              <div class="col-sm-offset-2 col-sm-6">
                 <input class="btn btn-primary" id="user-edit-submit" type="submit" value="{{ lang('Apply Changes') }}">
               </div>
             </div>

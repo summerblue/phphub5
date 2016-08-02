@@ -58,7 +58,7 @@ class UsersController extends Controller
         $data = $request->only(
                 'github_name', 'real_name', 'city',
                 'company', 'twitter_account', 'personal_website',
-                'introduction', 'weibo_name', 'weibo_id', 'email'
+                'introduction', 'weibo_name', 'weibo_id', 'email','linkedin'
             );
 
         $user->update($data);

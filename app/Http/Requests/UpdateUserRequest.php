@@ -19,9 +19,10 @@ class UpdateUserRequest extends Request
             'github_name'     => 'string',
             'wechat_openid'   => 'string',
             'email'           => 'email|required|unique:users,email,' . $this->id,
-            'github_url'      => 'active_url',
-            'image_url'       => 'active_url',
+            'github_url'      => 'url',
+            'image_url'       => 'url',
             'wechat_unionid'  => 'string',
+            'linkedin'        => 'url',
         ];
     }
 }

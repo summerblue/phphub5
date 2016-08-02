@@ -66,17 +66,16 @@ PHPHub 名人堂 @parent
                   </li>
                   @endif
 
-                  @if ($user->company)
-                    <li class="popover-with-html" data-content="{{ $user->company }}"><i class="fa fa-users"></i> {{{ lang('Company') }}}</li>
-                  @endif
-
-                  @if ($user->city)
-                    <li class="popover-with-html" data-content="{{ $user->city }}"><i class="fa fa-map-marker"></i> {{{ lang('City') }}}</li>
-                  @endif
-
                   @if ($user->twitter_account)
                   <li class="popover-with-html" data-content="{{ $user->twitter_account }}">
                     <a href="https://twitter.com/{{ $user->twitter_account }}" rel="nofollow" class="twitter" target="_blank"><i class="fa fa-twitter"></i> Twitter
+                    </a>
+                </li>
+                  @endif
+
+                  @if ($user->linkedin)
+                  <li class="popover-with-html" data-content="点击查看 LinkedIn 个人资料">
+                    <a href="{{ $user->linkedin }}" rel="nofollow" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn
                     </a>
                 </li>
                   @endif
@@ -88,6 +87,15 @@ PHPHub 名人堂 @parent
                     </a>
                 </li>
                   @endif
+
+                @if ($user->company)
+                  <li class="popover-with-html" data-content="{{ $user->company }}"><i class="fa fa-users"></i> {{{ lang('Company') }}}</li>
+                @endif
+
+                @if ($user->city)
+                  <li class="popover-with-html" data-content="{{ $user->city }}"><i class="fa fa-map-marker"></i> {{{ lang('City') }}}</li>
+                @endif
+
               </ul>
 
 
