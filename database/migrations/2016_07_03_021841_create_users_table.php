@@ -34,6 +34,7 @@ class CreateUsersTable extends Migration
             $table->integer('notification_count')->default(0);
             $table->string('github_name')->index();
             $table->string('real_name')->nullable();
+            $table->string('linkedin')->nullable();
             $table->string('avatar');
             $table->string('login_qr')->nullable();
             $table->string('wechat_openid')->nullable()->index();

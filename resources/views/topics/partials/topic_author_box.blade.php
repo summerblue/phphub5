@@ -54,21 +54,18 @@
           </li>
           @endif
 
-          @if ($topic->user->company)
-            <li class="popover-with-html" data-content="{{ lang('Company') }}"><i class="fa fa-users"></i> {{{ $topic->user->company }}}</li>
-          @endif
-
-          @if ($topic->user->city)
-            <li class="adr"><i class="fa fa-map-marker"></i> {{{ $topic->user->city }}}</li>
-          @endif
-
-
-
           @if ($topic->user->twitter_account)
           <li>
             <a href="https://twitter.com/{{ $topic->user->twitter_account }}" rel="nofollow" class="twitter" target="_blank"><i class="fa fa-twitter"></i> {{{ $topic->user->twitter_account }}}
             </a>
         </li>
+          @endif
+
+          @if ($topic->user->linkedin)
+          <li class="popover-with-html" data-content="点击查看 LinkedIn 个人资料">
+            <a href="{{ $topic->user->linkedin }}" rel="nofollow" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn
+            </a>
+          </li>
           @endif
 
           @if ($topic->user->personal_website)
@@ -78,6 +75,15 @@
             </a>
         </li>
           @endif
+
+        @if ($topic->user->company)
+          <li class="popover-with-html" data-content="{{ lang('Company') }}"><i class="fa fa-users"></i> {{{ $topic->user->company }}}</li>
+        @endif
+
+        @if ($topic->user->city)
+          <li class="adr"><i class="fa fa-map-marker"></i> {{{ $topic->user->city }}}</li>
+        @endif
+
       </ul>
 
         <div class="clearfix"></div>

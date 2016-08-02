@@ -88,7 +88,7 @@ return [
     'Company example: Alibaba' => '如：阿里巴巴',
     'Weibo Username example: PHPHub' => '如：PHPHub',
     'Weibo ID example: 5963322692' => '用来拼接 URL 的，如：5963322692',
-    'twitter_placeholder_hint' => '如：summer_charlie，不需要加前缀 https://twitter.com/',
+    'twitter_placeholder_hint' => '如：summer_charlie',
     'personal_website_placebolder_hint' => '如：example.com，不需要加前缀 https://',
     'introduction_placeholder_hint' => '请一句话介绍你自己',
     'User ID:' => '用户 ID:',
