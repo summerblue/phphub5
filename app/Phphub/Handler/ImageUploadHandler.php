@@ -41,7 +41,8 @@ class ImageUploadHandler
 
     protected function checkAllowedExtensions($allowed_extensions)
     {
-        if ($this->file->getClientOriginalExtension() && !in_array($this->file->getClientOriginalExtension(), $allowed_extensions)) {
+        if ($this->file->getClientOriginalExtension()
+            && !in_array(strtolower($this->file->getClientOriginalExtension()), $allowed_extensions)) {
             return false;
         }
 
