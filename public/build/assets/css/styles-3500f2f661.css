@@ -12796,7 +12796,10 @@ a {
   .list-group-item.media .infos {
     margin-top: 0px; }
   .replies-index .list-group-item.media .avatar img {
-    margin-top: -6px; } }
+    margin-top: -6px; }
+  .topics-show .ribbon .ribbon-excellent {
+    margin: 0px -15px 10px;
+    padding-left: 15px; } }
 
 .topic-list .reply_count_area {
   line-height: inherit;
