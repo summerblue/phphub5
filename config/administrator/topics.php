@@ -54,9 +54,6 @@ return [
         'view_count' => [
             'title'    => '查看数量',
         ],
-        'favorite_count' => [
-            'title'    => '收藏数量',
-        ],
         'vote_count' => [
             'title'    => '投票数量',
         ],

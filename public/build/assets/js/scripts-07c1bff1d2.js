@@ -4209,8 +4209,6 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
                 var url = that.data('url');
                 var active = that.is('.active');
                 var cancelText = that.data('lang-cancel');
-                var attentText = that.data('lang-attent');
-                var favoriteText = that.data('lang-favorite');
                 var isRecomend = that.is('#topic-recomend-button');
                 var isWiki = that.is('#topic-wiki-button');
                 var ribbonContainer = $('.topic .ribbon-container');
@@ -4220,16 +4218,12 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
                 var total = $('.replies .total b');
                 var voteCount = $('#vote-count');
                 var upVote = $('#up-vote');
-                var downVote = $('#down-vote');
                 var isVote = that.is('.vote');
                 var isUpVote = that.is('#up-vote');
-                var isDownVote = that.is('#down-vote');
                 var isCommentVote= that.is('.comment-vote');
                 var commenVoteCount= that.find('.vote-count');
                 var emptyBlock = $('#replies-empty-block');
-                var originVoteCount = voteCount.html();
                 var originUpVoteActive = upVote.is('.active');
-                var originDownVoteActive = downVote.is('.active');
 
                 if (method === 'delete') {
                     swal({
@@ -4265,12 +4259,7 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
 
                 if (active) {
                     that.removeClass('active');
-
-                    if (attentText) {
-                        that.find('span').html(attentText);
-                    } else if (favoriteText) {
-                        that.find('span').html(favoriteText);
-                    }
+                    that.removeClass('animated rubberBand');
 
                     if (isRecomend) {
                         excellent.hide();
@@ -4279,14 +4268,14 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
                     }
 
                     if (isVote) {
-                        if (isUpVote) {
-                            voteCount.html(parseInt(voteCount.html()) - 1);
-                        } else if (downVote) {
-                            voteCount.html(parseInt(voteCount.html()) + 1);
-                        }
+                        // @CJ 如果是点赞，并且是已经点过赞的点赞，那就是去除点赞
+                        $('.user-lists').find("a[data-userId='"+Config.user_id+"']").fadeOut('slow/400/fast', function() {
+                            $(this).remove();
+                        });
                     }
                 } else {
                     that.addClass('active');
+                    that.addClass('animated rubberBand');
 
                     if (cancelText) {
                         that.find('span').html(cancelText);
@@ -4317,22 +4306,18 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
                         }
                     }
 
-                    if (isVote) {
-                        if (isUpVote) {
-                            if (downVote.is('.active')) {
-                                downVote.removeClass('active');
-                                voteCount.html(parseInt(voteCount.html()) + 2);
-                            } else {
-                                voteCount.html(parseInt(voteCount.html()) + 1);
-                            }
-                        } else if (downVote) {
-                            if (upVote.is('.active')) {
-                                upVote.removeClass('active');
-                                voteCount.html(parseInt(voteCount.html()) - 2);
-                            } else {
-                                voteCount.html(parseInt(voteCount.html()) - 1);
-                            }
-                        }
+                    if (isVote && Config.user_id > 0) {
+                        // @CJ 如果是点赞，并且是没有点过赞的
+                        var newContent = $('.voted-template').clone();
+                        newContent.attr('data-userId', Config.user_id);
+                        newContent.attr('href', Config.user_link);
+                        newContent.find('img').attr('src', Config.user_avatar);
+
+                        newContent.prependTo('.user-lists').show('fast', function() {
+                            $(this).addClass('animated swing');
+                        });
+
+                        $('.vote-hint').hide();
                     }
                 }
 
@@ -4356,12 +4341,6 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
                     if (!active) {
                         that.removeClass('active');
 
-                        if (attentText) {
-                            that.find('span').html(attentText);
-                        } else if (favoriteText) {
-                            that.find('span').html(favoriteText);
-                        }
-
                         if (isRecomend) {
                             excellent.hide();
                         } else if (isWiki) {
@@ -4382,18 +4361,10 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
                     }
 
                     if (isVote) {
-                        voteCount.html(originVoteCount);
-
                         if (originUpVoteActive) {
                             upVote.addClass('active');
                         } else {
                             upVote.removeClass('active');
-                        }
-
-                        if (originDownVoteActive) {
-                            downVote.addClass('active');
-                        } else {
-                            downVote.removeClass('active');
                         }
                     }
                 })

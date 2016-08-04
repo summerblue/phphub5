@@ -14,7 +14,7 @@ Route::get('/hall_of_fames', 'PagesController@hallOfFames')->name('hall_of_fames
 
 Route::get('/users/{id}/replies', 'UsersController@replies')->name('users.replies');
 Route::get('/users/{id}/topics', 'UsersController@topics')->name('users.topics');
-Route::get('/users/{id}/favorites', 'UsersController@favorites')->name('users.favorites');
+Route::get('/users/{id}/votes', 'UsersController@votes')->name('users.votes');
 Route::get('/users/{id}/following', 'UsersController@following')->name('users.following');
 Route::get('/users/{id}/refresh_cache', 'UsersController@refreshCache')->name('users.refresh_cache');
 Route::get('/users/{id}/access_tokens', 'UsersController@accessTokens')->name('users.access_tokens');
@@ -36,7 +36,6 @@ Route::get('/users/{id}/edit_avatar', 'UsersController@editAvatar')->name('users
 Route::patch('/users/{id}/update_avatar', 'UsersController@updateAvatar')->name('users.update_avatar');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::post('/favorites/{id}', 'FavoritesController@createOrDelete')->name('favorites.createOrDelete');
     Route::get('/notifications', 'NotificationsController@index')->name('notifications.index');
     Route::get('/notifications/count', 'NotificationsController@count')->name('notifications.count');
     Route::post('/attentions/{id}', 'AttentionsController@createOrDelete')->name('attentions.createOrDelete');

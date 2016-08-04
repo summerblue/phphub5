@@ -1750,11 +1750,11 @@ pre[class*="language-"] {
 .social-share .social-share-icon {
   position: relative;
   display: inline-block;
-  width: 32px;
-  height: 32px;
-  font-size: 20px;
+  width: 24px;
+  height: 24px;
+  font-size: 17px;
   border-radius: 50%;
-  line-height: 32px;
+  line-height: 20px;
   border: 1px solid #666;
   color: #666;
   text-align: center;
@@ -11964,39 +11964,6 @@ embed {
   .users-show .dl-horizontal dd {
     margin-left: 58px; } }
 
-.votes {
-  display: inline-block;
-  margin-right: 8px; }
-
-.vote:link, .vote:visited, .vote {
-  text-decoration: none;
-  font-size: 10px;
-  line-height: 1;
-  padding: 2px 8px 2px 8px;
-  border: 1px solid #C4C4C4;
-  border-radius: 3px;
-  color: #778;
-  display: inline-block;
-  vertical-align: baseline;
-  text-align: center;
-  background-color: #fff; }
-
-.vote:hover {
-  color: #667;
-  border: 1px solid #667;
-  text-decoration: none;
-  background-color: #F0F0F0; }
-
-.vote:active {
-  background-color: #f0f0f0;
-  border: 1px solid #aaa;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2) inset; }
-
-.vote.active {
-  background-color: #698ebf;
-  color: white;
-  border: 1px solid #E7E7E7; }
-
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 120px) and (max-device-width: 480px) {
   .container {
@@ -12799,7 +12766,9 @@ a {
     margin-top: -6px; }
   .topics-show .ribbon .ribbon-excellent {
     margin: 0px -15px 10px;
-    padding-left: 15px; } }
+    padding-left: 15px; }
+  .votes-container.votes-container {
+    padding-top: 15px; } }
 
 .topic-list .reply_count_area {
   line-height: inherit;
@@ -12822,5 +12791,42 @@ a {
   border-radius: 2px;
   padding: 6px;
   margin: 11px 0px; }
+
+.operate .actions {
+  line-height: 36px; }
+
+.or {
+  position: relative;
+  float: left;
+  width: .3em;
+  height: 2.57142em;
+  z-index: 3; }
+
+.or:before {
+  position: absolute;
+  text-align: center;
+  border-radius: 500rem;
+  content: 'or';
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  text-shadow: none;
+  margin-top: -.922855em;
+  margin-left: -.802855em;
+  width: 1.78571em;
+  height: 1.78571em;
+  line-height: 1.78571em;
+  color: rgba(0, 0, 0, 0.4);
+  font-style: normal;
+  font-weight: 700;
+  box-shadow: 0 0 0 1px transparent inset; }
+
+.vote-box .btn {
+  padding: 6px 20px; }
+
+.voted-users {
+  padding: 25px 12px 5px; }
+  .voted-users .avatar {
+    margin: 4px; }
 
 /*# sourceMappingURL=styles.css.map */

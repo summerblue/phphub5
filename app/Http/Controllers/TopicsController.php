@@ -69,11 +69,15 @@ class TopicsController extends Controller implements CreatorListener
         $replies = $topic->getRepliesWithLimit(config('phphub.replies_perpage'));
         $category = $topic->category;
         $categoryTopics = $topic->getSameCategoryTopics();
+        $votedUsers = $topic->votes()->orderBy('id', 'desc')->with('user')->get()->pluck('user');
 
         $topic->increment('view_count', 1);
 
         $banners  = Banner::allByPosition();
-        return view('topics.show', compact('topic', 'replies', 'categoryTopics', 'category', 'banners', 'randomExcellentTopics'));
+        return view('topics.show', compact(
+                            'topic', 'replies', 'categoryTopics',
+                            'category', 'banners', 'randomExcellentTopics',
+                            'votedUsers'));
     }
 
     public function edit($id)

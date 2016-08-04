@@ -42,6 +42,8 @@ PHPHub  - PHP & Laravel的中文社区
             Config = {
                 'cdnDomain': '{{ get_cdn_domain() }}',
                 'user_id': {{ $currentUser ? $currentUser->id : 0 }},
+                'user_avatar': {!! $currentUser ? '"'.$currentUser->present()->gravatar() . '"' : '' !!},
+                'user_link': {!! $currentUser ? '"'. route('users.show', $currentUser->id) . '"' : '' !!},
                 'routes': {
                     'notificationsCount' : '{{ route('notifications.count') }}',
                     'upload_image' : '{{ route('upload_image') }}'

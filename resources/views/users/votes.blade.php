@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{{ $user->name }}} {{ lang('Favorites') }}_@parent
+{{{ $user->name }}} {{ lang('Voted Topics') }}_@parent
 @stop
 
 @section('content')
@@ -26,7 +26,7 @@
 	      @include('users.partials.topics')
 	      <div class="pull-right add-padding-vertically"> {!! $topics->render() !!} </div>
       @else
-        <div class="empty-block">{{ lang('Dont have any favorites yet') }}~~</div>
+        <div class="empty-block">{{ lang('Dont have any votes yet') }}~~</div>
       @endif
 
     </div>

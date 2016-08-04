@@ -98,12 +98,12 @@ class UsersController extends Controller
         return view('users.topics', compact('user', 'topics'));
     }
 
-    public function favorites($id)
+    public function votes($id)
     {
         $user = User::findOrFail($id);
-        $topics = $user->favoriteTopics()->paginate(15);
+        $topics = $user->votedTopics()->orderBy('pivot_created_at', 'desc')->paginate(15);
 
-        return view('users.favorites', compact('user', 'topics'));
+        return view('users.votes', compact('user', 'topics'));
     }
 
     public function following($id)
