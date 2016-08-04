@@ -12829,4 +12829,8 @@ a {
   .voted-users .avatar {
     margin: 4px; }
 
+.vote-box .btn-primary.active {
+  background-color: #05c1b8;
+  border-color: #15cfc7; }
+
 /*# sourceMappingURL=styles.css.map */
