@@ -18,13 +18,12 @@ class EmailHandler
     protected $methodMap = [
         'at'                   => 'sendAtNotifyMail',
         'attention'            => 'sendAttentionNotifyMail',
-        'attention_append'     => 'sendAttentionAppendNotifyMail',
+        'vote_append'          => 'sendVoteAppendNotifyMail',
         'comment_append'       => 'sendCommentAppendNotifyMail',
         'follow'               => 'sendFollowNotifyMail',
         'new_reply'            => 'sendNewReplyNotifyMail',
         'reply_upvote'         => 'sendReplyUpvoteNotifyMail',
         'topic_attent'         => 'sendTopicAttentNotifyMail',
-        'topic_favorite'       => 'sendTopicFavoriteNotifyMail',
         'topic_mark_excellent' => 'sendTopicMarkExcellentNotifyMail',
         'topic_upvote'         => 'sendTopicUpvoteNotifyMail',
     ];
@@ -157,7 +156,7 @@ class EmailHandler
         });
     }
 
-    protected function sendAttentionAppendNotifyMail()
+    protected function sendVoteAppendNotifyMail()
     {
         if (!$this->body || !$this->topic) {
             return false;
@@ -233,26 +232,6 @@ class EmailHandler
 
             $message->to($this->toUser->email);
             $this->generateMailLog($this->reply->body);
-        });
-    }
-
-    protected function sendTopicFavoriteNotifyMail()
-    {
-        if (!$this->topic) {
-            return false;
-        }
-
-        Mail::send('emails.fake', [], function (Message $message) {
-            $message->subject('有用户收藏了你的主题');
-
-            $message->getSwiftMessage()->setBody(new SendCloudTemplate('notification_mail', [
-                'name'    => "<a href='" . url(route('users.show', $this->fromUser->id)) . "' target='_blank'>{$this->fromUser->name}</a>",
-                'action'  => " 收藏了你的主题: <a href='" . url(route('topics.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a>",
-                'content' => '',
-            ]));
-
-            $message->to($this->toUser->email);
-            $this->generateMailLog();
         });
     }
 
