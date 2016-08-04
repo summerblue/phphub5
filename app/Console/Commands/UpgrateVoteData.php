@@ -36,39 +36,39 @@ class UpgrateVoteData extends Command
 
     public function handle()
     {
-        // $favorites = DB::table('favorites')->get();
-        // foreach ($favorites as $favorite) {
-        //     $data = [];
-        //     $data['votable_type'] = 'App\Models\Topic';
-        //     $data['is'] = 'upvote';
-        //     $data['user_id'] = $favorite->user_id;
-        //     $data['votable_id'] = $favorite->topic_id;
-        //     $data['created_at'] = $favorite->created_at;
-        //     $data['updated_at'] = $favorite->updated_at;
-        //
-        //     Vote::updateOrCreate([
-        //         'votable_type' => $data['votable_type'],
-        //         'votable_id'   => $data['votable_id'],
-        //         'user_id'      => $data['user_id']
-        //     ], $data);
-        // }
-        //
-        // $attentions = DB::table('attentions')->get();
-        // foreach ($attentions as $attention) {
-        //     $data = [];
-        //     $data['votable_type'] = 'App\Models\Topic';
-        //     $data['is'] = 'upvote';
-        //     $data['user_id'] = $attention->user_id;
-        //     $data['votable_id'] = $attention->topic_id;
-        //     $data['created_at'] = $attention->created_at;
-        //     $data['updated_at'] = $attention->updated_at;
-        //
-        //     Vote::updateOrCreate([
-        //         'votable_type' => $data['votable_type'],
-        //         'votable_id'   => $data['votable_id'],
-        //         'user_id'      => $data['user_id']
-        //     ], $data);
-        // }
+        $favorites = DB::table('favorites')->get();
+        foreach ($favorites as $favorite) {
+            $data = [];
+            $data['votable_type'] = 'App\Models\Topic';
+            $data['is'] = 'upvote';
+            $data['user_id'] = $favorite->user_id;
+            $data['votable_id'] = $favorite->topic_id;
+            $data['created_at'] = $favorite->created_at;
+            $data['updated_at'] = $favorite->updated_at;
+
+            Vote::updateOrCreate([
+                'votable_type' => $data['votable_type'],
+                'votable_id'   => $data['votable_id'],
+                'user_id'      => $data['user_id']
+            ], $data);
+        }
+
+        $attentions = DB::table('attentions')->get();
+        foreach ($attentions as $attention) {
+            $data = [];
+            $data['votable_type'] = 'App\Models\Topic';
+            $data['is'] = 'upvote';
+            $data['user_id'] = $attention->user_id;
+            $data['votable_id'] = $attention->topic_id;
+            $data['created_at'] = $attention->created_at;
+            $data['updated_at'] = $attention->updated_at;
+
+            Vote::updateOrCreate([
+                'votable_type' => $data['votable_type'],
+                'votable_id'   => $data['votable_id'],
+                'user_id'      => $data['user_id']
+            ], $data);
+        }
 
         $topics = Topic::all();
         foreach ($topics as $topic) {
