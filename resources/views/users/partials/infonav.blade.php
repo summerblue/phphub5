@@ -13,9 +13,10 @@
   <li class="{{ navViewActive('users.replies') }}">
   	<a href="{{ route('users.replies', $user->id) }}" >{{ lang('Replies') }}</a>
   </li>
-  <li class="{{ navViewActive('users.favorites') }}">
-  	<a href="{{ route('users.favorites', $user->id) }}" >{{ lang('Favorites') }}</a>
+  <li class="{{ navViewActive('users.votes') }}">
+  	<a href="{{ route('users.votes', $user->id) }}" >{{ lang('Voted Topics') }}</a>
   </li>
+
   @if(Auth::check() && Auth::id() == $user->id)
   <!-- <li class="{{ navViewActive('users.access_tokens') }}">
     <a href="{{ route('users.access_tokens', $user->id) }}" >{{ lang('Access Tokens') }}</a>

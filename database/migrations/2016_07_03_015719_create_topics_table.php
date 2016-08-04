@@ -21,7 +21,6 @@ class CreateTopicsTable extends Migration
             $table->integer('category_id')->unsigned()->default(0)->index();
             $table->integer('reply_count')->default(0)->index();
             $table->integer('view_count')->unsigned()->default(0)->index();
-            $table->integer('favorite_count')->default(0)->index();
             $table->integer('vote_count')->default(0)->index();
             $table->integer('last_reply_user_id')->unsigned()->default(0)->index();
             $table->integer('order')->default(0)->index();

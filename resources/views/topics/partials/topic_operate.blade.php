@@ -1,26 +1,10 @@
 <div class="panel-footer operate">
 
-  <div class="">
+    <div class="pull-left">
+        <div class="social-share-cs "></div>
+    </div>
 
-    @if ($currentUser && \App\Models\Attention::isUserAttentedTopic($currentUser, $topic))
-      <a class="active" data-ajax="post" data-lang-cancel={{ lang('Cancel') }} data-lang-attent={{ lang('Attent') }}  id="topic-attent-cancel-button" href="javascript:void(0);" data-url="{{ route('attentions.createOrDelete', $topic->id) }}">
-        <i class="glyphicon glyphicon-eye-open"></i> <span>{{ lang('Cancel') }}</span>
-      </a>
-    @else
-      <a data-ajax="post" data-lang-cancel={{ lang('Cancel') }} data-lang-attent={{ lang('Attent') }}  id="topic-attent-button" href="javascript:void(0);" data-url="{{ route('attentions.createOrDelete', $topic->id) }}">
-        <i class="glyphicon glyphicon-eye-open"></i> <span>{{ lang('Attent') }}</span>
-      </a>
-    @endif
-
-    @if ($currentUser && \App\Models\Favorite::isUserFavoritedTopic($currentUser, $topic))
-      <a class="active" data-ajax="post" data-lang-cancel={{ lang('Cancel') }} data-lang-favorite={{ lang('Favorite') }}  id="topic-favorite-cancel-button" href="javascript:void(0);" data-url="{{ route('favorites.createOrDelete', $topic->id) }}">
-        <i class="glyphicon glyphicon-bookmark"></i> <span>{{ lang('Cancel') }}</span>
-      </a>
-    @else
-      <a data-ajax="post" data-lang-cancel={{ lang('Cancel') }} data-lang-favorite={{ lang('Favorite') }}  id="topic-favorite-button" href="javascript:void(0);" data-url="{{ route('favorites.createOrDelete', $topic->id) }}">
-        <i class="glyphicon glyphicon-bookmark"></i> <span>{{ lang('Favorite') }}</span>
-      </a>
-    @endif
+  <div class="pull-right actions">
 
     @if ($currentUser && $currentUser->can("manage_topics") )
         <a data-ajax="post" id="topic-recomend-button" href="javascript:void(0);" data-url="{{ route('topics.recommend', [$topic->id]) }}" class="admin {{ $topic->is_excellent == 'yes' ? 'active' : ''}}" title="{{ lang('Mark as Excellent') }}">

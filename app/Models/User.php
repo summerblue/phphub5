@@ -75,9 +75,9 @@ class User extends Model implements AuthenticatableContract,
         $this->restoreSoftDelete();
     }
 
-    public function favoriteTopics()
+    public function votedTopics()
     {
-        return $this->belongsToMany(Topic::class, 'favorites')->withTimestamps();
+        return $this->morphedByMany(Topic::class, 'votable', 'votes')->withPivot('created_at');
     }
 
     public function attentTopics()
