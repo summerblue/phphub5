@@ -16,13 +16,13 @@ function cdn($filepath)
     }
 }
 
-function cdn_square_image($path, $size){
+function cdn_square_image($path, $size)
+{
     if (strpos($path, '.ico') === false) {
         return cdn($path)."?imageView2/1/w/{$size}/h/{$size}";
-    }  else {
+    } else {
         return cdn($path);
     }
-
 }
 
 function get_cdn_domain()
@@ -52,7 +52,12 @@ function admin_url($path, $id = '')
 
 function admin_enum_style_output($value, $reverse = false)
 {
-    $class = ($value === true || $value == 'yes' || $reverse) ? 'success' : 'danger';
+    if ($reverse) {
+        $class = ($value === true || $value == 'yes') ? 'danger' : 'success';
+    } else {
+        $class = ($value === true || $value == 'yes') ? 'success' : 'danger';
+    }
+
     return '<span class="label bg-'.$class.'">'.$value.'</span>';
 }
 
