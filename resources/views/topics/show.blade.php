@@ -73,13 +73,13 @@
         <div class="voted-users">
 
             @if(count($votedUsers))
-                @foreach($votedUsers as $votedUser)
-                    <div class="user-lists">
+                <div class="user-lists">
+                    @foreach($votedUsers as $votedUser)
                         <a href="{{ route('users.show', $votedUser->id) }}" data-userId="{{ $votedUser->id }}">
                             <img class="img-thumbnail avatar avatar-middle" src="{{ $votedUser->present()->gravatar() }}" style="width:48px;height:48px;">
                         </a>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
             @else
                 <div class="user-lists">
 
