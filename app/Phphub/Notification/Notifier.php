@@ -30,7 +30,7 @@ class Notifier
         Notification::batchNotify(
                     'attention',
                     $fromUser,
-                    $this->removeDuplication($topic->attentedBy),
+                    $this->removeDuplication($topic->voteby()),
                     $topic,
                     $reply);
 
