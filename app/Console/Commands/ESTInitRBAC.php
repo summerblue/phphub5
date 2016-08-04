@@ -20,7 +20,6 @@ class ESTInitRBAC extends BaseCommand
 
     public function handle()
     {
-        // 如果没有第一个用户的话，创建新的，允许此命令多次运行
         $user = User::first();
         if (!$user) {
             $this->error("Users table is empty");
