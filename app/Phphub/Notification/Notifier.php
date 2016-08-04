@@ -58,9 +58,9 @@ class Notifier
 
         // Notify attented users
         Notification::batchNotify(
-                    'attention_append',
+                    'vote_append',
                     $fromUser,
-                    $this->removeDuplication($topic->attentedBy),
+                    $this->removeDuplication($topic->voteby()),
                     $topic,
                     null,
                     $append->content);

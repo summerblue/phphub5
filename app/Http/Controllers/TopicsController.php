@@ -5,7 +5,6 @@ use Phphub\Core\CreatorListener;
 use App\Models\Topic;
 use App\Models\SiteStatus;
 use App\Models\Link;
-use App\Models\Attention;
 use App\Models\Notification;
 use App\Models\Append;
 use App\Models\Category;

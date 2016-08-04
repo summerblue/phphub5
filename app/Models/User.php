@@ -80,11 +80,6 @@ class User extends Model implements AuthenticatableContract,
         return $this->morphedByMany(Topic::class, 'votable', 'votes')->withPivot('created_at');
     }
 
-    public function attentTopics()
-    {
-        return $this->belongsToMany(Topic::class, 'attentions')->withTimestamps();
-    }
-
     public function topics()
     {
         return $this->hasMany(Topic::class);

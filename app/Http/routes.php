@@ -38,7 +38,6 @@ Route::patch('/users/{id}/update_avatar', 'UsersController@updateAvatar')->name(
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/notifications', 'NotificationsController@index')->name('notifications.index');
     Route::get('/notifications/count', 'NotificationsController@count')->name('notifications.count');
-    Route::post('/attentions/{id}', 'AttentionsController@createOrDelete')->name('attentions.createOrDelete');
 });
 
 Route::get('/email-verification-required', 'UsersController@emailVerificationRequired')->name('email-verification-required');
