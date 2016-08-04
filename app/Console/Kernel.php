@@ -25,9 +25,6 @@ class Kernel extends ConsoleKernel
         Commands\CalculateHotTopic::class,
         Commands\ClearUserData::class,
         Commands\SyncUserActivedTime::class,
-
-        Commands\UpgrateVoteData::class,
-
     ];
 
     /**
