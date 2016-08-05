@@ -30,6 +30,7 @@
     <ul class="list list-group ">
 
       @foreach ($hot_topics as $hot_topic)
+      @if($hot_topic->user->is_banned !== 'yes')
         <li class="list-group-item ">
         <a href="{{ route('topics.show', $hot_topic->id) }}" class="popover-with-html" data-content="{{{ $hot_topic->title }}}">
             <img class="media-object img-thumbnail avatar avatar-small inline-block " src="{{ $hot_topic->user->present()->gravatar }}">
@@ -37,6 +38,7 @@
             {{{ $hot_topic->title }}}
         </a>
         </li>
+      @endif
       @endforeach
 
     </ul>
