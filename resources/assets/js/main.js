@@ -373,6 +373,9 @@
             $("#topic-create-form").submit(function(event){
                 localforage.removeItem('topic_create_content');
                 localforage.removeItem('topic-title');
+
+                $("#topic-create-submit").val('提交中...').addClass('disabled').prop('disabled', true);
+
             });
             $("#reply-form").submit(function(event){
                 localforage.removeItem('reply_content');
