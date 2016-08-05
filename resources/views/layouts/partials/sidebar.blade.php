@@ -14,7 +14,7 @@
         <a href="
           {{ isset($category) ? URL::route('topics.create', ['category_id' => $category->id]) : URL::route('topics.create') }}
           " class="btn btn-primary btn-lg">
-          <i class="glyphicon glyphicon-pencil"> </i> {{ lang('New Topic') }}
+          <i class="fa fa-paint-brush" aria-hidden="true"></i> {{ lang('New Topic') }}
         </a>
       </div>
     </div>
