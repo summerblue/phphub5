@@ -150,7 +150,6 @@ return [
 
         Mews\Purifier\PurifierServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        Laracasts\Flash\FlashServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
@@ -221,7 +220,6 @@ return [
         'Purifier'  => Mews\Purifier\Facades\Purifier::class,
         'Image'     => Intervention\Image\Facades\Image::class,
         'Rss'       => Thujohn\Rss\RssFacade::class,
-        'Flash'     => Laracasts\Flash\Flash::class,
         'Debugbar'  => Barryvdh\Debugbar\Facade::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
