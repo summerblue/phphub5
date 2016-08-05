@@ -19,6 +19,9 @@ class HotTopic extends Model
                          ->limit($limit)
                          ->lists('topic_id')
                          ->toArray();
-        return Topic::whereIn('id', $topic_ids)->with('user')->get();
+        return Topic::whereIn('id', $topic_ids)
+                    ->with('user')
+                    ->orderBy(\DB::raw('FIELD(id, '.implode(',', $topic_ids).')'))
+                    ->get();
     }
 }
