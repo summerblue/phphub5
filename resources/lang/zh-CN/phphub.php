@@ -12,7 +12,7 @@ return [
     'Search' => '搜索',
     'Login' => '登 录',
     'Logout' => '退出',
-    'New Topic' => '发 布 新 帖',
+    'New Topic' => ' 新 建 话 题',
     'Links' => '友情社区',
     'Same Category Topics' => '分类下其他主题',
     'Tips and Tricks' => '小贴士',
