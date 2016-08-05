@@ -12836,4 +12836,7 @@ a {
 .sites-index .panel .panel-heading {
   color: #959897; }
 
+.markdown-reply img:not(.emoji) {
+  max-width: 50%; }
+
 /*# sourceMappingURL=styles.css.map */
