@@ -7,7 +7,7 @@
 @endif
 
 <a href="{{ route('users.show', $topic->user->id) }}">
-  <img src="{{ $topic->user->present()->gravatar }}" style="width:75px; height:75px;" class="img-thumbnail avatar" />
+  <img src="{{ $topic->user->present()->gravatar }}" style="width:80px; height:80px;margin:5px;" class="img-thumbnail avatar" />
 </a>
 
 <div class="media-body padding-top-sm">
@@ -20,6 +20,8 @@
 
 </div>
 @endif
+
+<hr>
 
 <ul class="list-inline">
 
@@ -78,6 +80,5 @@
 
 </ul>
 
-<br>
 <div class="clearfix"></div>
 </div>
