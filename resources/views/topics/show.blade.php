@@ -46,8 +46,6 @@
     @include('topics.partials.topic_operate')
   </div>
 
-@include('topics.partials.topic_author_box')
-
 
   <div class="votes-container panel panel-default padding-md">
 
