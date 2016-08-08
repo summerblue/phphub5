@@ -23,7 +23,7 @@
       <ul class="list">
 
         @foreach ($userTopics as $userTopic)
-          <li>
+          <li class="popover-with-html" data-content="{{ $userTopic->title }}">
           <a href="{{ route('topics.show', $userTopic->id) }}">
             {{{ $userTopic->title }}}
           </a>
