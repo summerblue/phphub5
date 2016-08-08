@@ -37,7 +37,7 @@
                   </li>
                 @endif
                 <li>
-                    <a class="animated rubberBand nav-edit-btn text-md margin-top-2px" href="{{ route('users.edit', $currentUser->id) }}" data-content="{{ lang('Edit Profile') }}">
+                    <a class="nav-edit-btn text-md margin-top-2px" href="{{ route('users.edit', $currentUser->id) }}" data-content="{{ lang('Edit Profile') }}">
                         <i class="fa fa-cog"></i>
                     </a>
                 </li>
