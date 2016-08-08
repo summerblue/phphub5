@@ -1,5 +1,61 @@
 <div class="col-md-3 side-bar">
 
+    @if (isset($topic))
+  <div class="panel panel-default corner-radius">
+
+      <div class="panel-heading text-center">
+        <h3 class="panel-title">{{ $topic->user->name }}</h3>
+      </div>
+
+    <div class="panel-body text-center topic-author-box">
+        @include('topics.partials.topic_author_box')
+    </div>
+  </div>
+  @endif
+
+
+  @if (isset($userTopics) && count($userTopics))
+  <div class="panel panel-default corner-radius">
+    <div class="panel-heading text-center">
+      <h3 class="panel-title">TA 的其他话题</h3>
+    </div>
+    <div class="panel-body">
+      <ul class="list">
+
+        @foreach ($userTopics as $userTopic)
+          <li>
+          <a href="{{ route('topics.show', $userTopic->id) }}">
+            {{{ $userTopic->title }}}
+          </a>
+          </li>
+        @endforeach
+
+      </ul>
+    </div>
+  </div>
+  @endif
+
+
+  @if (isset($categoryTopics) && count($categoryTopics))
+  <div class="panel panel-default corner-radius">
+    <div class="panel-heading text-center">
+      <h3 class="panel-title">{{ lang('Same Category Topics') }}</h3>
+    </div>
+    <div class="panel-body">
+      <ul class="list">
+
+        @foreach ($categoryTopics as $categoryTopic)
+          <li>
+          <a href="{{ route('topics.show', $categoryTopic->id) }}">
+            {{{ $categoryTopic->title }}}
+          </a>
+          </li>
+        @endforeach
+
+      </ul>
+    </div>
+  </div>
+  @endif
 
   <div class="panel panel-default corner-radius">
 
@@ -69,27 +125,6 @@
       </div>
     </div>
   @endif
-
-@if (isset($categoryTopics) && count($categoryTopics))
-<div class="panel panel-default corner-radius">
-  <div class="panel-heading text-center">
-    <h3 class="panel-title">{{ lang('Same Category Topics') }}</h3>
-  </div>
-  <div class="panel-body">
-    <ul class="list">
-
-      @foreach ($categoryTopics as $categoryTopic)
-        <li>
-        <a href="{{ route('topics.show', $categoryTopic->id) }}">
-          {{{ $categoryTopic->title }}}
-        </a>
-        </li>
-      @endforeach
-
-    </ul>
-  </div>
-</div>
-@endif
 
 @if (isset($randomExcellentTopics) && count($randomExcellentTopics))
 
