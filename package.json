@@ -10,7 +10,8 @@
     "bootstrap-tagsinput": "^0.7.1",
     "font-awesome": "^4.1.0",
     "sweetalert": "^1.1.3",
-    "typeahead.js": "^0.11.1"
+    "typeahead.js": "^0.11.1",
+    "social-share.js": "^1.0"
   },
   "name": "phphub5",
   "description": "* 产品名称：PHPHub5 * 项目代码：PHPHub5 * 官方地址：https://phphub.org/",
