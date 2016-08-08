@@ -17,7 +17,7 @@
   @if (isset($userTopics) && count($userTopics))
   <div class="panel panel-default corner-radius">
     <div class="panel-heading text-center">
-      <h3 class="panel-title">TA 的其他话题</h3>
+      <h3 class="panel-title">{{ $topic->user->name }} 的其他话题</h3>
     </div>
     <div class="panel-body">
       <ul class="list">
