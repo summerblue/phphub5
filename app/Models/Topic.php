@@ -138,4 +138,14 @@ class Topic extends Model
     {
         $this->attributes['title'] = (new AutoCorrect)->convert($value);
     }
+
+    public function scopeByWhom($query, $user_id)
+    {
+        return $query->where('user_id', '=', $user_id);
+    }
+
+    public function scopeRecent($query)
+    {
+        return $query->orderBy('created_at', 'desc');
+    }
 }
