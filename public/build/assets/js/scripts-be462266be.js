@@ -3865,7 +3865,7 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
         initEditorPreview: function() {
             var self = this;
             $("#reply_content").focus(function(event) {
-                $("#reply_notice").addClass('animated swing');
+                // $("#reply_notice").addClass('animated pulse');
                 $("#preview-box").fadeIn(1500);
                 $("#preview-lable").fadeIn(1500);
 
