@@ -11,17 +11,15 @@
 </a>
 
 <div class="media-body padding-top-sm">
+@if($topic->user->introduction)
 <div class="media-heading">
-    <a href="{{ route('users.show', [$topic->user_id]) }}" title="{{{ $topic->user->name }}}" class="remove-padding-left author">
-        {{{ $topic->user->name }}}
-    </a>
-    @if($topic->user->introduction)
-    <span class="introduction">
-         ，{{{ $topic->user->introduction }}}
-    </span>
-    @endif
-</div>
 
+    <span class="introduction">
+         {{{ $topic->user->introduction }}}
+    </span>
+
+</div>
+@endif
 
 <ul class="list-inline">
 
