@@ -1570,14 +1570,14 @@ a {
 }
 
 @media (max-width: 1400px) {
+    .markdown-body, .markdown-reply {
+        font-size: 15px;
+    }
     .card {
         height: 124px;
     }
 }
 @media (max-width: 1200px) {
-    .markdown-body, .markdown-reply {
-        font-size: 15px;
-    }
     .card {
         height: auto;
         margin-right: -10px!important;
