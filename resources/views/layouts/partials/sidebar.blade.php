@@ -20,17 +20,7 @@
       <h3 class="panel-title">{{ $topic->user->name }} 的其他话题</h3>
     </div>
     <div class="panel-body">
-      <ul class="list">
-
-        @foreach ($userTopics as $userTopic)
-          <li class="popover-with-html" data-content="{{ $userTopic->title }}">
-          <a href="{{ route('topics.show', $userTopic->id) }}">
-            {{{ $userTopic->title }}}
-          </a>
-          </li>
-        @endforeach
-
-      </ul>
+      @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $userTopics])
     </div>
   </div>
   @endif
@@ -42,17 +32,7 @@
       <h3 class="panel-title">{{ lang('Same Category Topics') }}</h3>
     </div>
     <div class="panel-body">
-      <ul class="list">
-
-        @foreach ($categoryTopics as $categoryTopic)
-          <li>
-          <a href="{{ route('topics.show', $categoryTopic->id) }}">
-            {{{ $categoryTopic->title }}}
-          </a>
-          </li>
-        @endforeach
-
-      </ul>
+      @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $categoryTopics])
     </div>
   </div>
   @endif
@@ -81,21 +61,7 @@
     <h3 class="panel-title">{{ lang('Hot Topics') }}</h3>
   </div>
   <div class="panel-body">
-    <ul class="list list-group ">
-
-      @foreach ($hot_topics as $hot_topic)
-      @if($hot_topic->user->is_banned !== 'yes')
-        <li class="list-group-item ">
-        <a href="{{ route('topics.show', $hot_topic->id) }}" class="popover-with-html" data-content="{{{ $hot_topic->title }}}">
-            <img class="media-object img-thumbnail avatar avatar-small inline-block " src="{{ $hot_topic->user->present()->gravatar }}">
-
-            {{{ $hot_topic->title }}}
-        </a>
-        </li>
-      @endif
-      @endforeach
-
-    </ul>
+    @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $hot_topics])
   </div>
 </div>
 
@@ -131,19 +97,7 @@
     <h3 class="panel-title">{{ lang('Recommend Topics') }}</h3>
   </div>
   <div class="panel-body">
-    <ul class="list list-group ">
-
-      @foreach ($randomExcellentTopics as $randomExcellentTopic)
-        <li class="list-group-item ">
-        <a href="{{ route('topics.show', $randomExcellentTopic->id) }}" class="popover-with-html" data-content="{{{ $randomExcellentTopic->title }}}">
-            <img class="media-object img-thumbnail avatar avatar-small inline-block " src="{{ $randomExcellentTopic->user->present()->gravatar }}">
-
-            {{{ $randomExcellentTopic->title }}}
-        </a>
-        </li>
-      @endforeach
-
-    </ul>
+    @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $randomExcellentTopics])
   </div>
 </div>
 
