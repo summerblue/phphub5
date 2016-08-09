@@ -3640,7 +3640,10 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
     var PHPHub = {
         init: function(){
             var self = this;
-            $(document).pjax('a:not(a[target="_blank"])', 'body');
+            $(document).pjax('a:not(a[target="_blank"])', 'body', {
+                timeout: 1600,
+                maxCacheLength: 500
+            });
             $(document).on('pjax:start', function() {
                 NProgress.start();
             });
