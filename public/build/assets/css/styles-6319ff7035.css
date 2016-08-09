@@ -38,14 +38,13 @@
   .markdown-body *, .markdown-reply * {
     box-sizing: border-box; }
   .markdown-body a, .markdown-reply a {
-    color: #12c4c5;
     text-decoration: none; }
   .markdown-body a:hover,
   .markdown-body a:focus,
   .markdown-body a:active, .markdown-reply a:hover,
   .markdown-reply a:focus,
   .markdown-reply a:active {
-    text-decoration: underline; }
+    text-decoration: none; }
   .markdown-body hr, .markdown-reply hr {
     height: 0;
     margin: 15px 0;
@@ -12718,6 +12717,8 @@ a {
     height: 124px; } }
 
 @media (max-width: 1200px) {
+  .markdown-body, .markdown-reply {
+    font-size: 15px; }
   .card {
     height: auto;
     margin-right: -10px !important;
@@ -12879,5 +12880,12 @@ a.users-label-item {
   padding: 7px;
   padding-top: 8px;
   padding-bottom: 0px; }
+
+a {
+  color: #05a1a2; }
+
+a:hover, a:focus {
+  color: #00afb0;
+  text-decoration: underline; }
 
 /*# sourceMappingURL=styles.css.map */
