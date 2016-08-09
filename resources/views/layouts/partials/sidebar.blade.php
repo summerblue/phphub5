@@ -67,9 +67,7 @@
 
     <div class="panel-body text-center">
       <div class="btn-group">
-        <a href="
-          {{ isset($category) ? URL::route('topics.create', ['category_id' => $category->id]) : URL::route('topics.create') }}
-          " class="btn btn-primary btn-lg">
+        <a href="{{ isset($category) ? URL::route('topics.create', ['category_id' => $category->id]) : URL::route('topics.create') }}" class="btn btn-primary btn-lg">
           <i class="fa fa-paint-brush" aria-hidden="true"></i> {{ lang('New Topic') }}
         </a>
       </div>
