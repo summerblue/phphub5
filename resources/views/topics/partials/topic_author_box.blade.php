@@ -21,8 +21,6 @@
 </div>
 @endif
 
-<hr>
-
 <ul class="list-inline">
 
   @if ($topic->user->real_name)

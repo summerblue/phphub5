@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b133c6ff867cc866e4be84da6277c8f9",
-    "content-hash": "e31c741eae43d03fd96b96b8f85747bd",
+    "hash": "c45afaf206a3b17c8d60a8de793f67a0",
+    "content-hash": "5e10f173445ec86e0c60b3c173befb12",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -17,7 +17,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/Bacon/BaconQrCode/031a2ce68c5794064b49d11775b2daf45c96e21c.zip",
+                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/031a2ce68c5794064b49d11775b2daf45c96e21c",
                 "reference": "031a2ce68c5794064b49d11775b2daf45c96e21c",
                 "shasum": ""
             },
@@ -113,7 +113,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/etrepat/baum/9290bed862d329aaaef666a71e0a2734afc28286.zip",
+                "url": "https://api.github.com/repos/etrepat/baum/zipball/9290bed862d329aaaef666a71e0a2734afc28286",
                 "reference": "9290bed862d329aaaef666a71e0a2734afc28286",
                 "shasum": ""
             },
@@ -168,7 +168,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/ckeditor/ckeditor-releases/e3d4dba95343f1b33d8d9a08b78cd080efa0cdc1.zip",
+                "url": "https://api.github.com/repos/ckeditor/ckeditor-releases/zipball/e3d4dba95343f1b33d8d9a08b78cd080efa0cdc1",
                 "reference": "e3d4dba95343f1b33d8d9a08b78cd080efa0cdc1",
                 "shasum": ""
             },
@@ -319,7 +319,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/devster/ubench/4b5c8217b6067b0156fef2cf268523ed0720be95.zip",
+                "url": "https://api.github.com/repos/devster/ubench/zipball/4b5c8217b6067b0156fef2cf268523ed0720be95",
                 "reference": "4b5c8217b6067b0156fef2cf268523ed0720be95",
                 "shasum": ""
             },
@@ -503,7 +503,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/summerblue/laravel-taggable/16d9cc807e0555ff82064a4fadd7c6c096708385.zip",
+                "url": "https://api.github.com/repos/summerblue/laravel-taggable/zipball/16d9cc807e0555ff82064a4fadd7c6c096708385",
                 "reference": "16d9cc807e0555ff82064a4fadd7c6c096708385",
                 "shasum": ""
             },
@@ -604,7 +604,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/guzzle/guzzle3/0645b70d953bc1c067bbc8d5bc53194706b628d9.zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/0645b70d953bc1c067bbc8d5bc53194706b628d9",
                 "reference": "0645b70d953bc1c067bbc8d5bc53194706b628d9",
                 "shasum": ""
             },
@@ -700,7 +700,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/guzzle/guzzle/d094e337976dff9d8e2424e8485872194e768662.zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/d094e337976dff9d8e2424e8485872194e768662",
                 "reference": "d094e337976dff9d8e2424e8485872194e768662",
                 "shasum": ""
             },
@@ -762,7 +762,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/guzzle/promises/c10d860e2a9595f8883527fa0021c7da9e65f579.zip",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/c10d860e2a9595f8883527fa0021c7da9e65f579",
                 "reference": "c10d860e2a9595f8883527fa0021c7da9e65f579",
                 "shasum": ""
             },
@@ -1078,7 +1078,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/jrean/laravel-user-verification/9e64fb55a4d3772d827f69113a5388369b89df5c.zip",
+                "url": "https://api.github.com/repos/jrean/laravel-user-verification/zipball/9e64fb55a4d3772d827f69113a5388369b89df5c",
                 "reference": "9e64fb55a4d3772d827f69113a5388369b89df5c",
                 "shasum": ""
             },
@@ -1167,7 +1167,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/laracasts/Presenter/b284f3137f990efd6e95df49d254f1ccc4541e92.zip",
+                "url": "https://api.github.com/repos/laracasts/Presenter/zipball/b284f3137f990efd6e95df49d254f1ccc4541e92",
                 "reference": "b284f3137f990efd6e95df49d254f1ccc4541e92",
                 "shasum": ""
             },
@@ -1342,7 +1342,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/laravel/socialite/76ee5397fcdea5a062361392abca4eb397e519a3.zip",
+                "url": "https://api.github.com/repos/laravel/socialite/zipball/76ee5397fcdea5a062361392abca4eb397e519a3",
                 "reference": "76ee5397fcdea5a062361392abca4eb397e519a3",
                 "shasum": ""
             },
@@ -1543,7 +1543,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/thephpleague/oauth1-client/cef3ceda13c78f89c323e4d5e6301c0eb7cea422.zip",
+                "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/cef3ceda13c78f89c323e4d5e6301c0eb7cea422",
                 "reference": "cef3ceda13c78f89c323e4d5e6301c0eb7cea422",
                 "shasum": ""
             },
@@ -1883,7 +1883,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/NauxLiu/Laravel-SendCloud/d2ac795a53c39f4460fa4fe1701b16aba9cd6be2.zip",
+                "url": "https://api.github.com/repos/NauxLiu/Laravel-SendCloud/zipball/d2ac795a53c39f4460fa4fe1701b16aba9cd6be2",
                 "reference": "d2ac795a53c39f4460fa4fe1701b16aba9cd6be2",
                 "shasum": ""
             },
@@ -2018,7 +2018,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/orangehill/iseed/1847f70941f8b8f80be143574432439071bea3b4.zip",
+                "url": "https://api.github.com/repos/orangehill/iseed/zipball/1847f70941f8b8f80be143574432439071bea3b4",
                 "reference": "1847f70941f8b8f80be143574432439071bea3b4",
                 "shasum": ""
             },
@@ -2067,7 +2067,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/overtrue/pinyin/5e12584b4389a65e6b1c095ba8e541cd40ad4bcf.zip",
+                "url": "https://api.github.com/repos/overtrue/pinyin/zipball/5e12584b4389a65e6b1c095ba8e541cd40ad4bcf",
                 "reference": "5e12584b4389a65e6b1c095ba8e541cd40ad4bcf",
                 "shasum": ""
             },
@@ -2160,7 +2160,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/nrk/predis/f0210e38881631afeafb56ab43405a92cafd9fd1.zip",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
                 "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
                 "shasum": ""
             },
@@ -2464,7 +2464,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/SimpleSoftwareIO/simple-qrcode/ec5268adff5a632a463ebdd1ad2b8bf9f305bd1a.zip",
+                "url": "https://api.github.com/repos/SimpleSoftwareIO/simple-qrcode/zipball/ec5268adff5a632a463ebdd1ad2b8bf9f305bd1a",
                 "reference": "ec5268adff5a632a463ebdd1ad2b8bf9f305bd1a",
                 "shasum": ""
             },
@@ -2515,7 +2515,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/mohd-isa/follow/ea6e27d294262e5817fa8d23aa5724a92a96921f.zip",
+                "url": "https://api.github.com/repos/mohd-isa/follow/zipball/ea6e27d294262e5817fa8d23aa5724a92a96921f",
                 "reference": "ea6e27d294262e5817fa8d23aa5724a92a96921f",
                 "shasum": ""
             },
@@ -2556,7 +2556,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/SocialiteProviders/Manager/388851f850418941ea6e220d0d82fc20cca2c2e7.zip",
+                "url": "https://api.github.com/repos/SocialiteProviders/Manager/zipball/388851f850418941ea6e220d0d82fc20cca2c2e7",
                 "reference": "388851f850418941ea6e220d0d82fc20cca2c2e7",
                 "shasum": ""
             },
@@ -2589,43 +2589,6 @@
             "time": "2016-06-22 18:09:37"
         },
         {
-            "name": "socialiteproviders/weibo",
-            "version": "v2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SocialiteProviders/Weibo.git",
-                "reference": "10ff7fd36edacfcc1513440e01b863e88c9ff05e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/SocialiteProviders/Weibo/10ff7fd36edacfcc1513440e01b863e88c9ff05e.zip",
-                "reference": "10ff7fd36edacfcc1513440e01b863e88c9ff05e",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.6 || ^7.0",
-                "socialiteproviders/manager": "~2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "SocialiteProviders\\Weibo\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "xyxu",
-                    "email": "techxu@gmail.com"
-                }
-            ],
-            "description": "weibo.com OAuth2 Provider for Laravel Socialite",
-            "time": "2016-04-01 07:00:54"
-        },
-        {
             "name": "socialiteproviders/weixin",
             "version": "v2.1.1",
             "source": {
@@ -2635,7 +2598,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/SocialiteProviders/Weixin/8ac480f9c88522bd4d110dedb5deb1982e7d3aae.zip",
+                "url": "https://api.github.com/repos/SocialiteProviders/Weixin/zipball/8ac480f9c88522bd4d110dedb5deb1982e7d3aae",
                 "reference": "8ac480f9c88522bd4d110dedb5deb1982e7d3aae",
                 "shasum": ""
             },
@@ -2663,43 +2626,6 @@
             "time": "2016-06-14 13:04:39"
         },
         {
-            "name": "socialiteproviders/weixin-web",
-            "version": "v2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SocialiteProviders/Weixin-Web.git",
-                "reference": "30c741587e2ac6a77502f0ea8ea888a55d548108"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/SocialiteProviders/Weixin-Web/30c741587e2ac6a77502f0ea8ea888a55d548108.zip",
-                "reference": "30c741587e2ac6a77502f0ea8ea888a55d548108",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.6 || ^7.0",
-                "socialiteproviders/manager": "~2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "SocialiteProviders\\WeixinWeb\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "xyxu",
-                    "email": "techxu@gmail.com"
-                }
-            ],
-            "description": "Weixin-Web OAuth2 Provider for Laravel Socialite",
-            "time": "2016-03-31 05:10:48"
-        },
-        {
             "name": "spatie/db-dumper",
             "version": "1.5.1",
             "source": {
@@ -2709,7 +2635,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/spatie/db-dumper/efdf41891a9dd4bb63fb6253044c9e51f34fff41.zip",
+                "url": "https://api.github.com/repos/spatie/db-dumper/zipball/efdf41891a9dd4bb63fb6253044c9e51f34fff41",
                 "reference": "efdf41891a9dd4bb63fb6253044c9e51f34fff41",
                 "shasum": ""
             },
@@ -2759,7 +2685,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/spatie/laravel-backup/08b7b8c778d5aeb0179cc49da4f64415bab9f81f.zip",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/08b7b8c778d5aeb0179cc49da4f64415bab9f81f",
                 "reference": "08b7b8c778d5aeb0179cc49da4f64415bab9f81f",
                 "shasum": ""
             },
@@ -2812,6 +2738,58 @@
             "time": "2016-07-06 15:30:58"
         },
         {
+            "name": "spatie/laravel-pjax",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-pjax.git",
+                "reference": "30e1509517a6371a5774a29e99e2db204cb7fc5b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-pjax/zipball/30e1509517a6371a5774a29e99e2db204cb7fc5b",
+                "reference": "30e1509517a6371a5774a29e99e2db204cb7fc5b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^5.1",
+                "illuminate/support": "^5.1",
+                "php": "^5.5.0|^7.0",
+                "symfony/css-selector": "^2.7|^3.0",
+                "symfony/dom-crawler": "^2.7|^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Pjax\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A pjax middleware for Laravel 5",
+            "homepage": "https://github.com/spatie/laravel-pjax",
+            "keywords": [
+                "laravel-pjax",
+                "pjax",
+                "spatie"
+            ],
+            "time": "2016-02-18 15:16:46"
+        },
+        {
             "name": "summerblue/administrator",
             "version": "v1.0.3",
             "source": {
@@ -2821,7 +2799,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/summerblue/administrator/7e8283b4533c785dfdc21b817ccea0ab52cc3568.zip",
+                "url": "https://api.github.com/repos/summerblue/administrator/zipball/7e8283b4533c785dfdc21b817ccea0ab52cc3568",
                 "reference": "7e8283b4533c785dfdc21b817ccea0ab52cc3568",
                 "shasum": ""
             },
@@ -3848,7 +3826,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/rss/",
-                "reference": "542d2b13fcf2af62c84e018e1867f831",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -3887,7 +3865,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/VentureCraft/revisionable/dcf9f15f9eacee0d6df730b2155f78e859d19335.zip",
+                "url": "https://api.github.com/repos/VentureCraft/revisionable/zipball/dcf9f15f9eacee0d6df730b2155f78e859d19335",
                 "reference": "dcf9f15f9eacee0d6df730b2155f78e859d19335",
                 "shasum": ""
             },
@@ -4051,7 +4029,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/doctrine/annotations/f25c8aab83e0c3e976fd7d19875f198ccf2f7535.zip",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/f25c8aab83e0c3e976fd7d19875f198ccf2f7535",
                 "reference": "f25c8aab83e0c3e976fd7d19875f198ccf2f7535",
                 "shasum": ""
             },
@@ -4119,7 +4097,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/doctrine/cache/f8af318d14bdb0eff0336795b428b547bd39ccb6.zip",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/f8af318d14bdb0eff0336795b428b547bd39ccb6",
                 "reference": "f8af318d14bdb0eff0336795b428b547bd39ccb6",
                 "shasum": ""
             },
@@ -4189,7 +4167,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/doctrine/collections/6c1e4eef75f310ea1b3e30945e9f06e652128b8a.zip",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
                 "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
                 "shasum": ""
             },
@@ -4255,7 +4233,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/doctrine/common/a579557bc689580c19fee4e27487a67fe60defc0.zip",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/a579557bc689580c19fee4e27487a67fe60defc0",
                 "reference": "a579557bc689580c19fee4e27487a67fe60defc0",
                 "shasum": ""
             },
@@ -4328,7 +4306,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/doctrine/dbal/abbdfd1cff43a7b99d027af3be709bc8fc7d4769.zip",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/abbdfd1cff43a7b99d027af3be709bc8fc7d4769",
                 "reference": "abbdfd1cff43a7b99d027af3be709bc8fc7d4769",
                 "shasum": ""
             },
@@ -4453,7 +4431,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/doctrine/lexer/83893c552fd2045dd78aef794c31e694c37c0b8c.zip",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/83893c552fd2045dd78aef794c31e694c37c0b8c",
                 "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
                 "shasum": ""
             },
@@ -4600,7 +4578,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/laracasts/Laravel-5-Generators-Extended/d6afcc60dff846980393d59f6df2074b8a297b08.zip",
+                "url": "https://api.github.com/repos/laracasts/Laravel-5-Generators-Extended/zipball/d6afcc60dff846980393d59f6df2074b8a297b08",
                 "reference": "d6afcc60dff846980393d59f6df2074b8a297b08",
                 "shasum": ""
             },
@@ -4644,7 +4622,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/laralib/l5scaffold/893d7c3531449c17fa48e9d1974f449d7947c8eb.zip",
+                "url": "https://api.github.com/repos/laralib/l5scaffold/zipball/893d7c3531449c17fa48e9d1974f449d7947c8eb",
                 "reference": "893d7c3531449c17fa48e9d1974f449d7947c8eb",
                 "shasum": ""
             },
@@ -5443,7 +5421,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/andersao/l5-repository/05945e652bfdacd456128d69bcae91701ccc9e32.zip",
+                "url": "https://api.github.com/repos/andersao/l5-repository/zipball/05945e652bfdacd456128d69bcae91701ccc9e32",
                 "reference": "05945e652bfdacd456128d69bcae91701ccc9e32",
                 "shasum": ""
             },
@@ -5503,7 +5481,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/andersao/laravel-validator/c3501ba6b6312b8e98098783901060c0aff2b29d.zip",
+                "url": "https://api.github.com/repos/andersao/laravel-validator/zipball/c3501ba6b6312b8e98098783901060c0aff2b29d",
                 "reference": "c3501ba6b6312b8e98098783901060c0aff2b29d",
                 "shasum": ""
             },
@@ -5904,6 +5882,80 @@
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
             "time": "2015-06-21 13:59:46"
+        },
+        {
+            "name": "socialiteproviders/weibo",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/Weibo.git",
+                "reference": "10ff7fd36edacfcc1513440e01b863e88c9ff05e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SocialiteProviders/Weibo/zipball/10ff7fd36edacfcc1513440e01b863e88c9ff05e",
+                "reference": "10ff7fd36edacfcc1513440e01b863e88c9ff05e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "socialiteproviders/manager": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\Weibo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "xyxu",
+                    "email": "techxu@gmail.com"
+                }
+            ],
+            "description": "weibo.com OAuth2 Provider for Laravel Socialite",
+            "time": "2016-04-01 07:00:54"
+        },
+        {
+            "name": "socialiteproviders/weixin-web",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/Weixin-Web.git",
+                "reference": "30c741587e2ac6a77502f0ea8ea888a55d548108"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SocialiteProviders/Weixin-Web/zipball/30c741587e2ac6a77502f0ea8ea888a55d548108",
+                "reference": "30c741587e2ac6a77502f0ea8ea888a55d548108",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "socialiteproviders/manager": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\WeixinWeb\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "xyxu",
+                    "email": "techxu@gmail.com"
+                }
+            ],
+            "description": "Weixin-Web OAuth2 Provider for Laravel Socialite",
+            "time": "2016-03-31 05:10:48"
         },
         {
             "name": "symfony/yaml",

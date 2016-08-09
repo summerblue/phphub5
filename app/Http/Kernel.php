@@ -20,6 +20,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\VerifyCsrfToken::class,
         \App\Http\Middleware\CheckUserIsItBanned::class,
         \App\Http\Middleware\RecordLastActivedTime::class,
+        \Spatie\Pjax\Middleware\FilterIfPjax::class,
     ];
 
     /**
