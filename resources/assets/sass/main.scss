@@ -1575,6 +1575,9 @@ a {
     }
 }
 @media (max-width: 1200px) {
+    .markdown-body, .markdown-reply {
+        font-size: 15px;
+    }
     .card {
         height: auto;
         margin-right: -10px!important;
@@ -1786,4 +1789,11 @@ a.users-label-item {
     padding: 7px;
     padding-top: 8px;
     padding-bottom: 0px;
+}
+a {
+    color: #05a1a2;
+}
+a:hover, a:focus {
+    color: #00afb0;
+    text-decoration: underline;
 }
