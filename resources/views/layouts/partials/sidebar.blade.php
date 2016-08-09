@@ -72,7 +72,7 @@
         @if(isset($banners['sidebar-sponsor']))
             @foreach($banners['sidebar-sponsor'] as $banner)
                 <a class="sidebar-sponsor-link" href="{{ $banner->link }}" target="_blank">
-                    <img src="{{ $banner->image_url }}" class="popover-with-html footer-sponsor-link" data-content="{{ $banner->title }}" width="100%">
+                    <img src="{{ $banner->image_url }}" class="popover-with-html" data-content="{{ $banner->title }}" width="100%">
                 </a>
             @endforeach
         @endif
