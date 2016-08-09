@@ -1746,3 +1746,21 @@ margin-left: -.802855em;
        color: #8d8d8d;
    }
 }
+
+a.users-label-item {
+    border: 1px solid rgba(52, 52, 53, 0.23);
+    display: inline-block;
+    float: left;
+    border-radius: 23px;
+    padding: 0px 9px 0px 0px;
+    margin: 3px;
+    color: rgba(0,0,0,.87);
+    text-decoration: none;
+
+    img {
+        border-radius: 50%;
+        margin-right: 4px;
+        width: 28px;
+        height: 28px;
+    }
+}
