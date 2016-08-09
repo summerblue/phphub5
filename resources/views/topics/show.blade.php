@@ -43,7 +43,7 @@
       @endforeach
     </div>
 
-    @include('topics.partials.topic_operate')
+    @include('topics.partials.topic_operate', ['manage_topics' => $currentUser->can("manage_topics")])
   </div>
 
 
@@ -104,7 +104,7 @@
     <div class="panel-body">
 
       @if (count($replies))
-        @include('topics.partials.replies')
+        @include('topics.partials.replies', ['manage_topics' => $currentUser->can("manage_topics")])
         <div id="replies-empty-block" class="empty-block hide">{{ lang('No comments') }}~~</div>
       @else
         <ul class="list-group row"></ul>
