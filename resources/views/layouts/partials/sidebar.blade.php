@@ -68,7 +68,7 @@
 @endif
 
   <div class="panel panel-default corner-radius">
-    <div class="panel-body text-center" style="padding: 7px; padding-top: 8px;">
+    <div class="panel-body text-center sidebar-sponsor-box">
         @if(isset($banners['sidebar-sponsor']))
             @foreach($banners['sidebar-sponsor'] as $banner)
                 <a class="sidebar-sponsor-link" href="{{ $banner->link }}" target="_blank">
