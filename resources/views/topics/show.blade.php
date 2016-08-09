@@ -141,7 +141,7 @@
             @endif
         </div>
 
-        <div class="form-group status-post-submit">
+        <div class="form-group reply-post-submit">
             <input class="btn btn-primary {{ $currentUser ? '' :'disabled'}}" id="reply-create-submit" type="submit" value="{{ lang('Reply') }}">
             <span class="help-inline" title="Or Command + Enter">Ctrl+Enter</span>
         </div>

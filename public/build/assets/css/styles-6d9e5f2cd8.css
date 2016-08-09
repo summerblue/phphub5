@@ -12860,4 +12860,8 @@ a.users-label-item {
     width: 28px;
     height: 28px; }
 
+.reply-post-submit .help-inline {
+  margin-left: 10px;
+  font-size: 0.9em; }
+
 /*# sourceMappingURL=styles.css.map */
