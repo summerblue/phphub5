@@ -22,7 +22,11 @@
                 <div class="col-sm-3">
                   <h4>赞助商</h4>
                   <ul class="list-unstyled">
-                    <a href="http://www.ucloud.cn/?utm_source=zanzhu&utm_campaign=phphub&utm_medium=display&utm_content=yejiao&ytag=phphubyejiao" target="_blank"><img src="https://dn-phphub.qbox.me/uploads/images/201605/03/1/dYfOYswiQY.png" class="popover-with-html" width="98" data-placement="top" data-content="本站服务器由 UCloud 赞助"></a>
+                      @if(isset($banners['footer-sponsor']))
+                          @foreach($banners['footer-sponsor'] as $banner)
+                              <a href="{{ $banner->link }}" target="_blank"><img src="{{ $banner->image_url }}" class="popover-with-html footer-sponsor-link" width="98" data-placement="top" data-content="{{ $banner->title }}"></a>
+                          @endforeach
+                      @endif
                   </ul>
                 </div>
 
