@@ -12839,4 +12839,10 @@ a {
 .markdown-reply img:not(.emoji) {
   max-width: 50%; }
 
+.home-topic-list .list-group-item.media .infos {
+  margin-left: 60px; }
+
+.home-topic-list a.meta {
+  color: #8d8d8d; }
+
 /*# sourceMappingURL=styles.css.map */
