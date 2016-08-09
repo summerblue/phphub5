@@ -4,61 +4,60 @@
 
 <ul class="list-group row topic-list">
     @foreach ($topics as $topic)
-    @if($topic->user->is_banned !== 'yes')
+        @if($topic->user->is_banned !== 'yes')
 
-     <li class="list-group-item media {{ !$column ?:'col-md-6' }}" style="margin-top: 0px;">
+         <li class="list-group-item media" style="margin-top: 0px;">
 
-         <a class="reply_last_time hidden-xs" href="{{route('topics.show', [$topic->id])}}">
-             @if ($topic->reply_count > 0 && count($topic->lastReplyUser))
-             <img class="user_small_avatar avatar-circle" src="{{ $topic->lastReplyUser->present()->gravatar }}">
-             @else
-             <img class="user_small_avatar avatar-circle" src="{{ $topic->user->present()->gravatar }}">
-             @endif
+             <a class="reply_last_time hidden-xs" href="{{route('topics.show', [$topic->id])}}">
+                 @if ($topic->reply_count > 0 && count($topic->lastReplyUser))
+                 <img class="user_small_avatar avatar-circle" src="{{ $topic->lastReplyUser->present()->gravatar }}">
+                 @else
+                 <img class="user_small_avatar avatar-circle" src="{{ $topic->user->present()->gravatar }}">
+                 @endif
 
-             <span class="timeago">{{ $topic->updated_at }}</span>
-          </a>
+                 <span class="timeago">{{ $topic->updated_at }}</span>
+              </a>
 
-
-        <div class="avatar pull-left">
-            <a href="{{ route('users.show', [$topic->user_id]) }}">
-                <img class="media-object img-thumbnail avatar avatar-middle" alt="{{{ $topic->user->name }}}" src="{{ $topic->user->present()->gravatar }}"/>
-            </a>
-        </div>
-
-        <div class="reply_count_area hidden-xs" >
-            <div class="count_of_votes" title="投票数">
-              {{ $topic->vote_count }}
-          </div>
-            <div class="count_set">
-                <span class="count_of_replies" title="回复数">
-                  {{ $topic->reply_count }}
-                </span>
-                <span class="count_seperator">/</span>
-                <span class="count_of_visits" title="查看数">
-                  {{ $topic->view_count }}
-                </span>
+            <div class="avatar pull-left">
+                <a href="{{ route('users.show', [$topic->user_id]) }}">
+                    <img class="media-object img-thumbnail avatar avatar-middle" alt="{{{ $topic->user->name }}}" src="{{ $topic->user->present()->gravatar }}"/>
+                </a>
             </div>
-        </div>
 
-        <div class="infos">
+            <div class="reply_count_area hidden-xs" >
+                <div class="count_of_votes" title="投票数">
+                  {{ $topic->vote_count }}
+              </div>
+                <div class="count_set">
+                    <span class="count_of_replies" title="回复数">
+                      {{ $topic->reply_count }}
+                    </span>
+                    <span class="count_seperator">/</span>
+                    <span class="count_of_visits" title="查看数">
+                      {{ $topic->view_count }}
+                    </span>
+                </div>
+            </div>
 
-          <div class="media-heading">
+            <div class="infos">
 
-            @if ($topic->order > 0 && !Input::get('filter') && Route::currentRouteName() != 'home' )
-                <span class="hidden-xs label label-warning">{{ lang('Stick') }}</span>
-            @else
-                <span class="hidden-xs label label-{{ ($topic->is_excellent == 'yes' && Route::currentRouteName() != 'home') ? 'success' : 'default' }}">{{{ $topic->category->name }}}</span>
-            @endif
+              <div class="media-heading">
 
-            <a href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
-                {{{ $topic->title }}}
-            </a>
-          </div>
+                @if ($topic->order > 0 && !Input::get('filter') && Route::currentRouteName() != 'home' )
+                    <span class="hidden-xs label label-warning">{{ lang('Stick') }}</span>
+                @else
+                    <span class="hidden-xs label label-{{ ($topic->is_excellent == 'yes' && Route::currentRouteName() != 'home') ? 'success' : 'default' }}">{{{ $topic->category->name }}}</span>
+                @endif
 
-        </div>
+                <a href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
+                    {{{ $topic->title }}}
+                </a>
+              </div>
 
-    </li>
-    @endif
+            </div>
+
+        </li>
+        @endif
     @endforeach
 </ul>
 

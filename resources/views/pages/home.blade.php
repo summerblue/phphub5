@@ -19,8 +19,8 @@
 
   </div>
 
-  <div class="panel-body">
-	@include('topics.partials.topics', ['column' => true])
+  <div class="panel-body ">
+	@include('pages.partials.topics')
   </div>
 
   <div class="panel-footer text-right">
