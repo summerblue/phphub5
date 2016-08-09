@@ -12845,10 +12845,12 @@ a {
 .home-topic-list a.meta {
   color: #8d8d8d; }
 
+.users-label {
+  text-align: center; }
+
 a.users-label-item {
   border: 1px solid rgba(52, 52, 53, 0.23);
   display: inline-block;
-  float: left;
   border-radius: 23px;
   padding: 0px 9px 0px 0px;
   margin: 3px;
