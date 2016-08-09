@@ -6,7 +6,7 @@
 
   <div class="pull-right actions">
 
-    @if ($currentUser && $currentUser->can("manage_topics") )
+    @if ($currentUser && $manage_topics )
         <a data-ajax="post" id="topic-recomend-button" href="javascript:void(0);" data-url="{{ route('topics.recommend', [$topic->id]) }}" class="admin {{ $topic->is_excellent == 'yes' ? 'active' : ''}}" title="{{ lang('Mark as Excellent') }}">
         <i class="fa fa-trophy"></i>
         </a>
@@ -28,7 +28,7 @@
         </a>
     @endif
 
-    @if ( $currentUser && ($currentUser->can("manage_topics") || $currentUser->id == $topic->user_id) )
+    @if ( $currentUser && ($manage_topics || $currentUser->id == $topic->user_id) )
       <a id="topic-append-button" href="javascript:void(0);" title="{{ lang('Append') }}" class="admin" data-toggle="modal" data-target="#exampleModal">
         <i class="fa fa-plus"></i>
       </a>
