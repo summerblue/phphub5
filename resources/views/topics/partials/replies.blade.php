@@ -37,7 +37,7 @@
           <span> ⋅  </span>
           @endif
 
-          @if ($currentUser && ($currentUser->can("manage_topics") || $currentUser->id == $reply->user_id) )
+          @if ($currentUser && ($manage_topics || $currentUser->id == $reply->user_id) )
             <a id="reply-delete-{{ $reply->id }}" data-ajax="delete"  href="javascript:void(0);" data-url="{{route('replies.destroy', [$reply->id])}}" title="{{lang('Delete')}}">
                 <i class="fa fa-trash-o"></i>
             </a>
