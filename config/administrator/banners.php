@@ -62,6 +62,12 @@ return [
     'edit_fields' => [
         'position' => [
             'title' => '位置',
+            'type'     => 'enum',
+            'options'  => [
+                'website_top' => '友站',
+                'footer-sponsor'  => '页脚赞助商',
+                'sidebar-sponsor'  => '右边栏赞助商',
+            ],
         ],
         'title' => [
             'title' => '标题',

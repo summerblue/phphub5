@@ -12866,4 +12866,13 @@ a.users-label-item {
   margin-left: 10px;
   font-size: 0.9em; }
 
+.footer-sponsor-link {
+  margin-bottom: 5px;
+  display: inline-block; }
+
+.sidebar-sponsor-link {
+  line-height: 66px;
+  margin-bottom: 7px;
+  display: inline-block; }
+
 /*# sourceMappingURL=styles.css.map */

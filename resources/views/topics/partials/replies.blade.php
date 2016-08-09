@@ -1,6 +1,11 @@
 <ul class="list-group row">
 
   @foreach ($replies as $index => $reply)
+
+      @if($index+1 == count($replies))
+          <a name="last-reply" class="anchor" href="#last-reply" aria-hidden="true"></a>
+      @endif
+
    <li class="list-group-item media"
            @if($reply->vote_count >= 2)
                 style="margin-top: 0px; background-color: #fffce9"
@@ -48,6 +53,7 @@
 
         <div class="meta">
             <a name="reply{{ $topic->present()->replyFloorFromIndex($index) }}" class="anchor" href="#reply{{ $topic->present()->replyFloorFromIndex($index) }}" aria-hidden="true">#{{ $topic->present()->replyFloorFromIndex($index) }}</a>
+
 
             <span> ⋅  </span>
             <abbr class="timeago" title="{{ $reply->created_at }}">{{ $reply->created_at }}</abbr>
