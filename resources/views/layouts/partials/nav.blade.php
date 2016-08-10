@@ -6,7 +6,7 @@
     </div>
     <div id="top-navbar-collapse" class="navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="{{ (Request::is('topics*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">{{ lang('Topics') }}</a></li>
+        <li class="{{ (Request::is('topics*') && !Request::is('topics/2541') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">{{ lang('Topics') }}</a></li>
         <li class="{{ Request::is('categories/1') ? ' active' : '' }}"><a href="{{ route('categories.show', 1) }}">{{ lang('Jobs') }}</a></li>
         <li class="{{ (Request::is('sites') ? ' active' : '') }}"><a href="{{ route('sites.index') }}">{{ lang('Sites') }}</a></li>
         <li class="{{ (Request::is('hall_of_fames') ? ' active' : '') }}"><a href="{{ route('hall_of_fames') }}">{{ lang('Hall of Fame') }}</a></li>
