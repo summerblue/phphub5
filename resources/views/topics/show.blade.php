@@ -53,15 +53,17 @@
 
         <div class="btn-group">
 
-            <a data-ajax="post" href="javascript:void(0);" data-url="{{ route('topics.upvote', $topic->id) }}" title="{{ lang('Up Vote') }}" id="up-vote"
-                class="vote btn btn-primary {{ $currentUser && $topic->votes()->ByWhom(Auth::id())->WithType('upvote')->count() ? 'active' :'' }}" >
+            <a data-ajax="post" href="javascript:void(0);" data-url="{{ route('topics.upvote', $topic->id) }}" title="{{ lang('Up Vote') }}"
+                data-content="点赞相当于收藏哦，可以在个人页面的「赞过的话题」导航里查看"
+                id="up-vote"
+                class="vote btn btn-primary popover-with-html {{ $currentUser && $topic->votes()->ByWhom(Auth::id())->WithType('upvote')->count() ? 'active' :'' }}" >
                 <i class="fa fa-thumbs-up" aria-hidden="true"></i>
                 点赞
             </a>
 
             @if( $topic->user->payment_qrcode )
                 <div class="or"></div>
-                <button class="btn btn-warning"  data-toggle="modal" data-target="#payment-qrcode-modal">
+                <button class="btn btn-warning popover-with-html"  data-toggle="modal" data-target="#payment-qrcode-modal" data-content="如果觉得我的文章对您有用，请随意打赏。你的支持将鼓励我继续创作！">
                     <i class="fa fa-heart" aria-hidden="true"></i>
                     打赏
                 </button>
