@@ -77,7 +77,7 @@ class PagesController extends Controller
 
     public function hallOfFames()
     {
-        $users = User::isRole('HallOfFame')->get();
+        $users = User::isRole('HallOfFame')->orderBy('last_actived_at', 'desc')->get();
         return view('pages.hall_of_fame', compact('users'));
     }
 }
