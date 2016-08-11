@@ -105,9 +105,6 @@ EOD;
                 'no'  => '否',
             ],
         ],
-        'image_url' => [
-            'title' => 'GitHub 头像 URL'
-        ],
         'city' => [
             'title' => '所处城市'
         ],
@@ -134,7 +131,9 @@ EOD;
             'title' => '真实姓名'
         ],
         'avatar' => [
-            'title' => '头像 URL'
+            'title' => '用户头像',
+            'type' => 'image',
+            'location' => public_path() . '/uploads/avatars/',
         ],
         'roles' => array(
             'type'       => 'relationship',
