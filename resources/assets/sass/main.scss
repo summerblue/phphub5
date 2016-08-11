@@ -343,7 +343,8 @@ embed {
       transition: width 1s ease-in-out
     }
     .mac-style:focus {
-      width: 260px
+      width: 260px;
+        background-color: #4b4b54;
     }
   }
 }
@@ -1021,7 +1022,7 @@ div#preview-box {
     padding-right: 30px;
     font-size: 14px;
     line-height: 1em;
-    background-color: #5e6775;
+    background-color: #404041;
     border: none;
     border-radius: 0;
     margin-top: -7px;
@@ -1796,4 +1797,26 @@ a {
 a:hover, a:focus {
     color: #00afb0;
     text-decoration: underline;
+}
+.dropdown-menu {
+    background-color: #3c3e42;
+    color: white;
+    padding: 0px;
+
+    i.fa {
+        margin-right: 16px;
+    }
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: #3c3e42;
+    color: #fff;
+}
+.dropdown-menu > li > a {
+    color: #fff;
+    border-bottom: 1px solid #434a45;
+    line-height: 2.3;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color: #dcdcdc;
+    background-color: #474747;
 }
