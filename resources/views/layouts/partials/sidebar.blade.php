@@ -37,25 +37,19 @@
   </div>
   @endif
 
+
+@if (Route::currentRouteName() == 'topics.index')
+
   <div class="panel panel-default corner-radius">
-
-    @if (isset($category))
-      <div class="panel-heading text-center">
-        <h3 class="panel-title">{{{ $category->name }}}</h3>
-      </div>
-    @endif
-
     <div class="panel-body text-center">
       <div class="btn-group">
-        <a href="{{ isset($category) ? URL::route('topics.create', ['category_id' => $category->id]) : URL::route('topics.create') }}" class="btn btn-primary btn-lg">
+        <a href="{{ URL::route('topics.create') }}" class="btn btn-primary btn-lg">
           <i class="fa fa-paint-brush" aria-hidden="true"></i> {{ lang('New Topic') }}
         </a>
       </div>
     </div>
   </div>
-
-@if (Route::currentRouteName() == 'topics.index')
-
+  
 <div class="panel panel-default corner-radius panel-hot-topics">
   <div class="panel-heading text-center">
     <h3 class="panel-title">{{ lang('Hot Topics') }}</h3>
