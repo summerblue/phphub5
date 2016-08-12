@@ -1269,8 +1269,8 @@ a.avatar-edit {
 
     i.fa {
         position: absolute;
-        top: 15px;
-        right: 12px;
+        top: 0px;
+        left: 0px;
     }
 }
 .padding-xsm {
@@ -1819,4 +1819,64 @@ a:hover, a:focus {
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
     color: #dcdcdc;
     background-color: #474747;
+}
+.user-basic-info {
+
+    .role-label {
+        margin-top: 6px;
+        text-align: center;
+
+        .label {
+            position: inherit;
+        }
+    }
+    .item {
+        margin: 6px 0;
+    }
+}
+
+.user-basic-nav a {
+    color: inherit;
+    text-decoration: none;
+    line-height: 24px;
+}
+.user-basic-nav a:hover, .user-basic-nav a.active {
+    color: #05a1a2;
+}
+
+.user-basic-nav .list-group-item i.fa {
+    margin-right: 7px;
+}
+
+.user-basic-info .follow-info {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.user-basic-info {
+    .media-heading {
+        margin: 10px 0px;
+    }
+}
+
+.user-basic-info .follow-info a {
+    display: block;
+    text-decoration: none
+}
+
+.user-basic-info .follow-info a.counter {
+    font-size: 32px;
+    color: #00b5ad
+}
+
+.user-basic-info .follow-info a.counter:hover {
+    color: #00c4bc
+}
+
+.user-basic-info .follow-info a.text {
+    color: #999
+}
+
+.breadcrumb {
+    background-color: #ffffff;
 }
