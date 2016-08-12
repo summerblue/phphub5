@@ -172,7 +172,6 @@ gulp watch
 本项目使用 [infyomlabs/laravel-generator](https://packagist.org/packages/infyomlabs/laravel-generator) 快速构建项目， 记录这些日志目的为了方便后续开发可以借鉴。
 
 ```shell
-php artisan make:scaffold WeiboStatuses --schema="mid:string:index,created_at_wb:timestamp:nullable:index,text:text:nullable,reposts_count:integer:unsigned:default(0):index,comments_count:integer:unsigned:default(0):index,attitudes_count:integer:unsigned:default(0):index,weibo_user_id:integer:index,weibo_user_idstr:string:index"
 
 php artisan make:scaffold Appends --schema="content:text,topic_id:integer:unsigned:default(0):index"
 
