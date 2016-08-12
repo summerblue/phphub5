@@ -11774,7 +11774,8 @@ embed {
     font-size: 14px; }
 
 .replies-index .operate a {
-  color: #d0d0d0; }
+  color: #d0d0d0;
+  display: inline-block; }
 
 .users-show .users-show-avatar {
   margin: 4px 54px 0px 0px; }
