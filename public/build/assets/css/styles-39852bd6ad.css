@@ -12560,7 +12560,7 @@ span.timeago {
 .topic-author-box .media-heading {
   margin-bottom: 8px; }
 
-.topic-author-box a {
+.topic-author-box a, .topic-author-box a:hover, .topic-author-box a:focus {
   color: inherit;
   text-decoration: none; }
 
@@ -12709,7 +12709,7 @@ a {
 .hall_of_fames .edit-btn {
   padding-right: 2px; }
 
-.hall_of_fames a {
+.hall_of_fames a, .hall_of_fames a:hover, .hall_of_fames a:focus {
   color: inherit;
   text-decoration: none; }
 
