@@ -36,9 +36,9 @@
                 注册于 <span class="timeago">{{ $user->created_at }}</span>
               </div>
 
-              @if($user->last_active_time)
+              @if($user->last_actived_at)
               <div class="item number">
-                活跃于 <span class="timeago">{{ $user->last_active_time }}</span>
+                活跃于 <span class="timeago">{{ $user->last_actived_at }}</span>
               </div>
               @endif
 
