@@ -1369,7 +1369,7 @@ span.timeago {
     .media-heading {
         margin-bottom: 8px;
     }
-    a {
+    a, a:hover, a:focus {
         color: inherit;
         text-decoration: none;
     }
@@ -1564,7 +1564,7 @@ a {
     .edit-btn  {
         padding-right: 2px;
     }
-    a {
+    a, a:hover, a:focus {
         color: inherit;
         text-decoration: none;
     }
