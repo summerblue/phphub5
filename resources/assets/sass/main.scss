@@ -343,7 +343,8 @@ embed {
       transition: width 1s ease-in-out
     }
     .mac-style:focus {
-      width: 260px
+      width: 260px;
+        background-color: #4b4b54;
     }
   }
 }
@@ -1021,7 +1022,7 @@ div#preview-box {
     padding-right: 30px;
     font-size: 14px;
     line-height: 1em;
-    background-color: #5e6775;
+    background-color: #404041;
     border: none;
     border-radius: 0;
     margin-top: -7px;
@@ -1570,6 +1571,9 @@ a {
 }
 
 @media (max-width: 1400px) {
+    .markdown-body, .markdown-reply {
+        font-size: 15px;
+    }
     .card {
         height: 124px;
     }
@@ -1736,4 +1740,83 @@ margin-left: -.802855em;
 }
 .markdown-reply img:not(.emoji) {
     max-width: 50%;
+}
+
+.home-topic-list {
+    .list-group-item.media .infos{
+       margin-left: 60px;
+   }
+   a.meta  {
+       color: #8d8d8d;
+   }
+}
+
+.users-label {
+    text-align: center;
+}
+a.users-label-item {
+    border: 1px solid rgba(52, 52, 53, 0.23);
+    display: inline-block;
+    border-radius: 23px;
+    padding: 0px 9px 0px 0px;
+    margin: 3px;
+    color: rgba(0,0,0,.87);
+    text-decoration: none;
+
+    img {
+        border-radius: 50%;
+        margin-right: 4px;
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.reply-post-submit .help-inline {
+    margin-left: 10px;
+    font-size: 0.9em;
+}
+
+.footer-sponsor-link {
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.sidebar-sponsor-link {
+    line-height: 66px;
+    margin-bottom: 7px;
+    display: inline-block;
+}
+.sidebar-sponsor-box {
+    padding: 7px;
+    padding-top: 8px;
+    padding-bottom: 0px;
+}
+a {
+    color: #05a1a2;
+}
+a:hover, a:focus {
+    color: #00afb0;
+    text-decoration: underline;
+}
+.dropdown-menu {
+    background-color: #3c3e42;
+    color: white;
+    padding: 0px;
+
+    i.fa {
+        margin-right: 16px;
+    }
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: #3c3e42;
+    color: #fff;
+}
+.dropdown-menu > li > a {
+    color: #fff;
+    border-bottom: 1px solid #434a45;
+    line-height: 2.3;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color: #dcdcdc;
+    background-color: #474747;
 }
