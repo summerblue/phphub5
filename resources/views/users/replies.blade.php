@@ -7,18 +7,20 @@
 @section('content')
 
 
-<div class="users-show">
+<div class="users-show row">
 
-  <div class="col-md-3 box" style="padding: 15px 15px;">
-    @include('users.partials.basicinfo')
+  <div class="col-md-3">
+        @include('users.partials.basicinfo')
   </div>
 
   <div class="main-col col-md-9 left-col">
 
+  <ol class="breadcrumb">
+      <li><a href="{{ route('users.show', $user->id) }}">个人中心</a></li>
+      <li class="active">Ta 发表的回复（{{ $user->reply_count }}）</li>
+  </ol>
 
   <div class="panel panel-default">
-
-    @include('users.partials.infonav', ['current' => 'replies'])
 
     <div class="panel-body remove-padding-vertically remove-padding-horizontal">
 
