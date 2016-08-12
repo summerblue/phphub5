@@ -274,6 +274,11 @@
         },
 
         _resetTitle: function() {
+
+            if(window.location.href.indexOf("notifications") > -1) {
+               nCount = 0;
+            }
+
             if (nCount > 0) {
                 $('#notification-count').text(nCount);
                 $('#notification-count').hasClass('badge-important') || $('#notification-count').addClass('badge-important');
