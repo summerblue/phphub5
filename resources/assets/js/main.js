@@ -23,7 +23,7 @@
                 NProgress.done();
                 self._resetTitle();
             });
-            // Exclude links with a specific class  
+            // Exclude links with a specific class
             $(document).on("pjax:click", "a.no-pjax", false);
 
             self.siteBootUp();
