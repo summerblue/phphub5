@@ -47,7 +47,7 @@
 
                       @if (Auth::user()->can('visit_admin'))
                         <li>
-                            <a href="/admin">
+                            <a href="/admin" class="no-pjax">
                                 <i class="fa fa-tachometer text-md"></i> 管理后台
                             </a>
                         </li>
