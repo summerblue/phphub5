@@ -118,7 +118,7 @@ return [
     'Topic List' => '主题列表',
     'Dont have any comment yet' => '还未留下任何评论',
     'Recent Replies' => '最新评论',
-    'Recent Topics' => '最近主题',
+    'Recent Topics' => '最近话题',
     'Reply' => '回复',
     'User Login Required for commenting.' => '需要登录后才能发表评论.',
     'site_intro' => 'PHPHub 是积极向上的 PHP & Laravel 开发者社区 <a href="https://github.com/summerblue/phphub5" target="_blank"><i class="fa fa-github-alt" style="font-size:17px"></i> 源代码</a>、<a href="http://weibo.com/u/5963322692" target="_blank"><i class="fa fa-weibo" style="font-size:17px"></i> 微博账号</a>、QQ群：579866868',

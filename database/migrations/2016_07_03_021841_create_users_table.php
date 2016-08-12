@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('image_url')->nullable();
             $table->integer('topic_count')->default(0)->index();
             $table->integer('reply_count')->default(0)->index();
+            $table->integer('follower_count')->default(0)->index();
             $table->string('city')->nullable();
             $table->string('company')->nullable();
             $table->string('twitter_account')->nullable();

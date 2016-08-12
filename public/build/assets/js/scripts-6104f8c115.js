@@ -3656,7 +3656,7 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
                 NProgress.done();
                 self._resetTitle();
             });
-            // Exclude links with a specific class  
+            // Exclude links with a specific class
             $(document).on("pjax:click", "a.no-pjax", false);
 
             self.siteBootUp();
@@ -3907,6 +3907,11 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
         },
 
         _resetTitle: function() {
+
+            if(window.location.href.indexOf("notifications") > -1) {
+               nCount = 0;
+            }
+
             if (nCount > 0) {
                 $('#notification-count').text(nCount);
                 $('#notification-count').hasClass('badge-important') || $('#notification-count').addClass('badge-important');

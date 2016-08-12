@@ -36,8 +36,8 @@ class UsersController extends Controller
     public function show($id)
     {
         $user    = User::findOrFail($id);
-        $topics  = Topic::whose($user->id)->recent()->paginate(15);
-        $replies = Reply::whose($user->id)->recent()->paginate(15);
+        $topics  = Topic::whose($user->id)->recent()->limit(20)->get();
+        $replies = Reply::whose($user->id)->recent()->limit(20)->get();
         return view('users.show', compact('user', 'topics', 'replies'));
     }
 
@@ -109,8 +109,15 @@ class UsersController extends Controller
     public function following($id)
     {
         $user = User::findOrFail($id);
-        $followingUsers = $user->followings()->orderBy('id', 'desc')->paginate(15);
-        return view('users.following', compact('user', 'followingUsers'));
+        $users = $user->followings()->orderBy('id', 'desc')->paginate(15);
+        return view('users.following', compact('user', 'users'));
+    }
+
+    public function followers($id)
+    {
+        $user = User::findOrFail($id);
+        $users = $user->followers()->orderBy('id', 'desc')->paginate(15);
+        return view('users.followers', compact('user', 'users'));
     }
 
     public function accessTokens($id)
@@ -227,8 +234,10 @@ class UsersController extends Controller
 
         if (Auth::user()->isFollowing($id)) {
             Auth::user()->unfollow($id);
+            $user->decrement('follower_count', 1);
         } else {
             Auth::user()->follow($id);
+            $user->increment('follower_count', 1);
             app('Phphub\Notification\Notifier')->newFollowNotify(Auth::user(), $user);
         }
 
