@@ -12,7 +12,7 @@
         <div class="media">
             <div class="media-left">
               <div class="image ">
-                  <img class="media-object avatar-96 avatar img-thumbnail" src="{{ $user->present()->gravatar(200) }}" width="112" height="112">
+                  <img class="media-object avatar-112 avatar img-thumbnail" src="{{ $user->present()->gravatar(200) }}">
               </div>
 
             @if ($user->present()->hasBadge())
