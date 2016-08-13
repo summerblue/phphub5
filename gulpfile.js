@@ -46,6 +46,10 @@ elixir(function(mix) {
             'node_modules/social-share.js/dist/fonts'
         ], 'public/build/assets/fonts/iconfont')
 
+        .copy([
+            'resources/assets/fonts/googlefont'
+        ], 'public/build/assets/fonts/googlefont')
+
         .sass([
             'base.scss',
             'main.scss',
