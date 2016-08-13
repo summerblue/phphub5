@@ -137,7 +137,7 @@ gulp watch
 |[rap2hpoutre/laravel-logviewer](https://github.com/rap2hpoutre/laravel-log-viewer)| Log 查看工具 | 生产环境下，使用此扩展包快速查看 Log，已做权限控制。 |
 | [laracasts/presenter](https://github.com/laracasts/Presenter) | Presenter 机制 | 以下 Model: User、Topic、Notification 都使用到了 Presenter。 |
 |[league/html-to-markdown](https://github.com/thephpleague/html-to-markdown)| 将 HTML 转换成 Markdown| 用户发帖、回复帖子时使用了此扩展包。 |
-|[erusev/parsedown](https://github.com/erusev/parsedown)| 将 Mark 转换成 HTML| 用户发帖、回复帖子时使用了此扩展包。 |
+|[erusev/parsedown](https://github.com/erusev/parsedown)| 将 Markdown 转换成 HTML| 用户发帖、回复帖子时使用了此扩展包。 |
 | [laravel/socialite](https://github.com/laravel/socialite) | 官方社会化登录组件 | GitHub 登录逻辑使用了此扩展包。 |
 |[naux/auto-correct](github.com/NauxLiu/auto-correct)| 自动给中英文之间加入合理的空格，纠正专用名词大小写| 用户发帖时用此扩展包过滤标题。 |
 | [Intervention/image](https://github.com/Intervention/image) | 图片处理功能库 | 用发帖和回复帖子时，图片上传的逻辑使用了此扩展包。 |
