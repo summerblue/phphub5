@@ -49,6 +49,7 @@ PHPHub  - PHP & Laravel的中文社区
                     'upload_image' : '{{ route('upload_image') }}'
                 },
                 'token': '{{ csrf_token() }}',
+                'environment': '{{ app()->environment() }}',
                 'following_users': @if($currentUser) {!!$currentUser->present()->followingUsersJson()!!} @else [] @endif
             };
 

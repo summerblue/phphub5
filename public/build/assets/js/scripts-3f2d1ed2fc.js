@@ -3893,7 +3893,7 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
          */
         initNotificationsCount: function(argumen) {
             var self = this;
-            if (Config.user_id > 0) {
+            if (Config.user_id > 0 && Config.environment != 'local') {
                 function scheduleGetNotification(){
                     $.get( Config.routes.notificationsCount, function( data ) {
 
