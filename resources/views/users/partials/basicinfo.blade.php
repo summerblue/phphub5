@@ -69,10 +69,6 @@
         <div class="topic-author-box text-center">
             <ul class="list-inline">
 
-              @if ($user->real_name)
-                <li class="popover-with-html" data-content="{{ lang('Real Name') }}"><span class="org"><i class="fa fa-user"></i> {{{ $user->real_name }}}</span></li>
-              @endif
-
               @if ($user->github_name)
               <li class="popover-with-html" data-content="{{ $user->github_name }}">
                 <a href="https://github.com/{{ $user->github_name }}" target="_blank">
