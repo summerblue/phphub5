@@ -236,13 +236,11 @@
     box-sizing: border-box; }
   .markdown-body img:not(.emoji), .markdown-reply img:not(.emoji) {
     border: 1px solid #ddd;
-    max-width: 95%;
     box-shadow: 0 0 30px #ccc;
     -moz-box-shadow: 0 0 30px #ccc;
     -webkit-box-shadow: 0 0 30px #ccc;
     margin-bottom: 30px;
-    margin-top: 10px;
-    margin-left: 2%; }
+    margin-top: 10px; }
   .markdown-body code, .markdown-reply code {
     margin: 0;
     color: #e68270;
