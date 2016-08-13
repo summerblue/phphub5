@@ -260,7 +260,7 @@
          */
         initNotificationsCount: function(argumen) {
             var self = this;
-            if (Config.user_id > 0) {
+            if (Config.user_id > 0 && Config.environment != 'local') {
                 function scheduleGetNotification(){
                     $.get( Config.routes.notificationsCount, function( data ) {
 
