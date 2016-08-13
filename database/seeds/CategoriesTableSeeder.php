@@ -67,6 +67,19 @@ class CategoriesTableSeeder extends Seeder
                 'updated_at'  => '2016-07-03 10:00:00',
                 'deleted_at'  => null,
             ),
+            4 =>
+            array(
+                'id'          => 6,
+                'parent_id'   => 0,
+                'post_count'  => 0,
+                'weight'      => 98,
+                'name'        => '教程',
+                'slug'        => 'tutorial',
+                'description' => '教程文章请存放在此分类下，转载文章请注明「转载于」声明。',
+                'created_at'  => '2016-07-03 10:00:00',
+                'updated_at'  => '2016-07-03 10:00:00',
+                'deleted_at'  => null,
+            ),
         ));
     }
 }
