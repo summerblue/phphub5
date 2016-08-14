@@ -164,7 +164,6 @@ return [
                 'yes' => '是',
                 'no'  => '否',
             ],
-            'value' => 'no',
         ],
         'is_blocked' => [
             'title'    => '是否被屏蔽',
@@ -173,7 +172,6 @@ return [
                 'yes' => '是',
                 'no'  => '否',
             ],
-            'value' => 'no',
         ],
         'view_count' => [
             'type'                => 'number',
