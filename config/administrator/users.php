@@ -16,9 +16,7 @@ return [
             'title'  => '头像',
             'output' => function ($value, $model) {
                 $value = $model->present()->gravatar();
-                return empty($value) ? 'N/A' : <<<EOD
-    <img src="$value" width="80">
-EOD;
+                return empty($value) ? 'N/A' : '<img src="'.$value.'" width="80">';
             },
             'sortable' => false,
         ],
