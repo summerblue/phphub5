@@ -65,3 +65,13 @@ function navViewActive($anchor)
 {
     return Route::currentRouteName() == $anchor ? 'active' : '';
 }
+
+function model_link($title, $model, $id)
+{
+    return '<a href="'.model_url($model, $id).'" target="_blank">' . $title . '</a>';
+}
+
+function model_url($model, $id)
+{
+    return env('APP_URL') . "/$model/$id";
+}
