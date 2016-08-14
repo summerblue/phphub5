@@ -30,7 +30,7 @@
             <div id="image-preview-div">
               <label for="exampleInputFile">{{ lang('Selected image:') }}</label>
               <br>
-              <img id="preview-img" class="avatar-preview-img" src="{{$currentUser->present()->gravatar(380)}}">
+              <img id="preview-img" class="avatar-preview-img" src="{{$user->present()->gravatar(380)}}">
             </div>
             <div class="form-group">
               <input type="file" name="avatar" id="file" required>
