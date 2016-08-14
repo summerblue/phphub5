@@ -34,11 +34,11 @@ return [
             'title'    => '用户',
             'sortable' => false,
             'output'   => function ($value, $model) {
-                return admin_link(
-                    $model->user->name,
-                    'users',
-                    $model->user_id
-                );
+
+                $avatar = $model->user->present()->gravatar();
+                $value = empty($avatar) ? 'N/A' : '<img src="'.$avatar.'" style="height:44px;width:44px"> ' . $model->user->name;
+
+                return model_link($value, 'users', $model->id);
             },
         ],
         'category' => [
