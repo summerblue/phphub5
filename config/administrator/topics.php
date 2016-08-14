@@ -20,16 +20,6 @@ return [
                 return '<div style="max-width:260px">' .model_link($value, 'topics', $model->id). '</div>';
             },
         ],
-        'excerpt' => [
-            'title'    => '文摘',
-            'sortable' => false,
-            'output'   => function ($value, $model) {
-                return '<div style="max-width:320px">' .model_link($value, 'topics', $model->id). '</div>';
-            },
-        ],
-        'order' => [
-            'title'    => '排序',
-        ],
         'user' => [
             'title'    => '用户',
             'sortable' => false,
@@ -40,6 +30,16 @@ return [
 
                 return model_link($value, 'users', $model->id);
             },
+        ],
+        'excerpt' => [
+            'title'    => '文摘',
+            'sortable' => false,
+            'output'   => function ($value, $model) {
+                return '<div style="max-width:320px">' .model_link($value, 'topics', $model->id). '</div>';
+            },
+        ],
+        'order' => [
+            'title'    => '排序',
         ],
         'category' => [
             'title'    => '分类',
