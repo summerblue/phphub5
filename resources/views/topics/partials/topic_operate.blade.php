@@ -1,6 +1,6 @@
 <div class="panel-footer operate">
 
-    <div class="pull-left">
+    <div class="pull-left hidden-xs">
         <div class="social-share-cs "></div>
     </div>
 
