@@ -180,7 +180,8 @@
 
         socialShare('.social-share-cs', $config);
 
-        Config.following_users =  @if($currentUser) {!!$currentUser->present()->followingUsersJson()!!} @else [] @endif
+        Config.following_users =  @if($currentUser) {!!$currentUser->present()->followingUsersJson()!!} @else [] @endif;
+        PHPHub.initAutocompleteAtUser();
     });
 
 </script>
