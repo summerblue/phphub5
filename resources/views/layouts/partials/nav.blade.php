@@ -1,6 +1,6 @@
 <div role="navigation" class="navbar navbar-default navbar-static-top topnav">
   <div class="container">
-    <div class="navbar-header">
+    <div class="navbar-header hidden-xs">
 
       <a href="/" class="navbar-brand">PHPHub</a>
     </div>
