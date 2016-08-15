@@ -21,6 +21,9 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\CheckUserIsItBanned::class,
         \App\Http\Middleware\RecordLastActivedTime::class,
         \Spatie\Pjax\Middleware\FilterIfPjax::class,
+
+        // API
+        \LucaDegasperi\OAuth2Server\Middleware\OAuthExceptionHandlerMiddleware::class,
     ];
 
     /**
@@ -33,5 +36,10 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest'      => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'admin_auth' => \App\Http\Middleware\AdminAuth::class,
+
+        // API
+        'oauth2'     => \PHPHub\Http\Middleware\OAuthMiddleware::class,
+        'check-authorization-params' => \LucaDegasperi\OAuth2Server\Middleware\CheckAuthCodeRequestMiddleware::class,
+        'api.throttle'               => \Dingo\Api\Http\Middleware\RateLimit::class,
     ];
 }
