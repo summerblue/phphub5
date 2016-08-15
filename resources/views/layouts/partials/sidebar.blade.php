@@ -49,7 +49,7 @@
       </div>
     </div>
   </div>
-  
+
 <div class="panel panel-default corner-radius panel-hot-topics">
   <div class="panel-heading text-center">
     <h3 class="panel-title">{{ lang('Hot Topics') }}</h3>
@@ -105,7 +105,7 @@
 
   <div class="panel panel-default corner-radius panel-active-users">
     <div class="panel-heading text-center">
-      <h3 class="panel-title">{{ lang('Active Users') }}</h3>
+      <h3 class="panel-title">{{ lang('Active Users') }}（<a href="{{ route('hall_of_fames') }}"><i class="fa fa-star" aria-hidden="true"></i> {{ lang('Hall of Fame') }}</a>）</h3>
     </div>
     <div class="panel-body">
       @include('topics.partials.active_users')

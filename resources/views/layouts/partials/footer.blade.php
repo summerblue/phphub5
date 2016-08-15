@@ -42,8 +42,7 @@
                     <h4>其他信息</h4>
                     <ul class="list-unstyled">
                         <li><a href="/about">关于我们</a></li>
-                        <li class="hide"><a href="/links">站点推荐</a></li>
-                        <li><a href="http://weibo.com/u/5963322692" target="_blank">微博账号</a></li>
+                        <li><a href="{{ route('hall_of_fames') }}"><i class="fa fa-star" aria-hidden="true"></i> {{ lang('Hall of Fame') }}</a></li>
                         <li class="popover-with-html" data-content="新手 QQ 群">Q 群：579866868</li>
                     </ul>
                   </div>
