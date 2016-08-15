@@ -1,7 +1,7 @@
 <div class="meta inline-block" >
 
   <a href="{{ route('categories.show', $topic->category->id) }}" class="remove-padding-left">
-    {{{ $topic->category->name }}}
+    <i class="fa fa-folder text-md" aria-hidden="true"></i> {{{ $topic->category->name }}}
   </a>
   ⋅
   <a href="{{ route('users.show', $topic->user->id) }}">
