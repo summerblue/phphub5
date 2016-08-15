@@ -179,6 +179,8 @@
         };
 
         socialShare('.social-share-cs', $config);
+
+        Config.following_users =  @if($currentUser) {!!$currentUser->present()->followingUsersJson()!!} @else [] @endif
     });
 
 </script>
