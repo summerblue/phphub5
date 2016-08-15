@@ -3679,7 +3679,7 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
             self.initExternalLink();
             self.initTimeAgo();
             self.initEmoji();
-            self.initAutocompleteAtUser();
+            // self.initAutocompleteAtUser();
             self.initScrollToTop();
             self.initPopup();
             self.initTextareaAutoResize();

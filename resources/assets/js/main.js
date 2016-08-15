@@ -46,7 +46,7 @@
             self.initExternalLink();
             self.initTimeAgo();
             self.initEmoji();
-            self.initAutocompleteAtUser();
+            // self.initAutocompleteAtUser();
             self.initScrollToTop();
             self.initPopup();
             self.initTextareaAutoResize();
