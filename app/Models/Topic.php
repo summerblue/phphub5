@@ -153,4 +153,12 @@ class Topic extends Model
     {
         return $query->orderBy('created_at', 'desc');
     }
+
+    public function getRandomExcellent()
+    {
+        $data = Cache::remember('phphub_hot_topics', 10, function(){
+            return $topic->getTopicsWithFilter('random-excellent', 5);
+        });
+        return $data;
+    }
 }
