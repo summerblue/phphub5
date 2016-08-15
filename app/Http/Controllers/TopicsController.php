@@ -62,16 +62,15 @@ class TopicsController extends Controller implements CreatorListener
 
     public function show($id, Topic $topic)
     {
-        $topic = Topic::findOrFail($id);
+        $topic = Topic::where('id', $id)->with('user', 'lastReplyUser')->first();
 
         if ($topic->user->is_banned == 'yes') {
             Flash::error('你访问的文章已被屏蔽，有疑问请加微信：summer_charlie');
             return redirect(route('topics.index'));
         }
 
-        $randomExcellentTopics = $topic->getTopicsWithFilter('random-excellent', 5);
+        $randomExcellentTopics = $topic->getRandomExcellent();
         $replies = $topic->getRepliesWithLimit(config('phphub.replies_perpage'));
-        $category = $topic->category;
         $categoryTopics = $topic->getSameCategoryTopics();
         $userTopics = $topic->byWhom($topic->user_id)->with('user')->recent()->limit(8)->get();
         $votedUsers = $topic->votes()->orderBy('id', 'desc')->with('user')->get()->pluck('user');
