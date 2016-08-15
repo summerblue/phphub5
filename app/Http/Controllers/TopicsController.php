@@ -34,7 +34,7 @@ class TopicsController extends Controller implements CreatorListener
         $banners = Banner::allByPosition();
 
         $active_users = ActiveUser::fetchAll();
-        $hot_topics = HotTopic::fetchAll(10);
+        $hot_topics = HotTopic::fetchAll();
 
         return view('topics.index', compact('topics', 'links', 'banners', 'active_users', 'hot_topics'));
     }
