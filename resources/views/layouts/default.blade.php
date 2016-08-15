@@ -50,7 +50,7 @@ PHPHub  - PHP & Laravel的中文社区
                 },
                 'token': '{{ csrf_token() }}',
                 'environment': '{{ app()->environment() }}',
-                'following_users': @if($currentUser) {!!$currentUser->present()->followingUsersJson()!!} @else [] @endif
+                'following_users': []
             };
 
 			var ShowCrxHint = '{{isset($show_crx_hint) ? $show_crx_hint : 'no'}}';
