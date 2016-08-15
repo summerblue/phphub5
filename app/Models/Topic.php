@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
 use Illuminate\Pagination\Paginator;
 use Venturecraft\Revisionable\RevisionableTrait;
+use Cache;
 
 class Topic extends Model
 {
@@ -119,12 +120,16 @@ class Topic extends Model
                     ->paginate($limit, ['*'], $pageName, $latest_page);
     }
 
-    public function getSameCategoryTopics($limit = 8)
+    public function getSameCategoryTopics()
     {
-        return Topic::where('category_id', '=', $this->category_id)
-                        ->recent()
-                        ->take($limit)
-                        ->get();
+        $data = Cache::remember('phphub_hot_topics', 30, function(){
+            return Topic::where('category_id', '=', $this->category_id)
+                            ->recent()
+                            ->with('user')
+                            ->take(8)
+                            ->get();
+        });
+        return $data;
     }
 
     public static function makeExcerpt($body)
