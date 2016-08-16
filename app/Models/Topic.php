@@ -14,6 +14,7 @@ use Cache;
 class Topic extends Model
 {
     use Traits\TopicFilterable;
+    use Traits\TopicApiHelper;
 
     // manually maintian
     public $timestamps = false;
