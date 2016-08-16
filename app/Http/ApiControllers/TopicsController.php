@@ -16,7 +16,7 @@ class TopicsController extends Controller
 {
     public function index(Request $request, Topic $topic)
     {
-        $filter = $topic->correctApiFilter($request->get('filter'));
+        $filter = $topic->correctApiFilter($request->get('filters'));
         $topics = $topic->getTopicsWithFilter($filter, per_page());
         return $this->response()->paginator($topics, new TopicTransformer());
     }
