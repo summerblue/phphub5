@@ -181,7 +181,7 @@ return [
         Naux\Mail\SendCloudServiceProvider::class,
 
         // API
-        Dingo\Api\Provider\LaravelServiceProvider::class
+        Dingo\Api\Provider\LaravelServiceProvider::class,
         LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
         LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
     ],
@@ -243,6 +243,9 @@ return [
         'QrCode'           => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'Rss'              => Thujohn\Rss\RssFacade::class,
         'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class,
+
+        // API
+        'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
     ],
 
 ];
