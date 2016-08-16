@@ -6,6 +6,6 @@ class CategoryTransformer extends BaseTransformer
 {
     public function transformData($model)
     {
-        return ['name' => ''];
+        return ['name' => $model->name];
     }
 }
