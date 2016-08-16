@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0463556a38897558bbeb6316fc98ced1",
-    "content-hash": "f9bf6278ed2bb1bb54180d38df29792d",
+    "hash": "636487a489cdcb0bd12c41e58aaabe1f",
+    "content-hash": "278a66601e1f127aaa630042ce3cf8a3",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2966,16 +2966,16 @@
         },
         {
             "name": "socialiteproviders/manager",
-            "version": "v2.1.8",
+            "version": "v2.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SocialiteProviders/Manager.git",
-                "reference": "a8c01c35e40e1ffe5d12ad8da128b792b2b30a30"
+                "reference": "388851f850418941ea6e220d0d82fc20cca2c2e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/SocialiteProviders/Manager/a8c01c35e40e1ffe5d12ad8da128b792b2b30a30.zip",
-                "reference": "a8c01c35e40e1ffe5d12ad8da128b792b2b30a30",
+                "url": "https://packagist.phpcomposer.com/files/SocialiteProviders/Manager/388851f850418941ea6e220d0d82fc20cca2c2e7.zip",
+                "reference": "388851f850418941ea6e220d0d82fc20cca2c2e7",
                 "shasum": ""
             },
             "require": {
@@ -3004,7 +3004,7 @@
                 }
             ],
             "description": "Easily add new or override built-in providers in Laravel Socialite.",
-            "time": "2016-08-04 18:16:57"
+            "time": "2016-06-22 18:09:37"
         },
         {
             "name": "socialiteproviders/weixin",
