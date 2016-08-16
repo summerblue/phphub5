@@ -38,7 +38,8 @@
         "phpdocumentor/reflection":"3.x@dev",
         "dingo/api": "1.0.x@dev",
         "lucadegasperi/oauth2-server-laravel": "~5.0",
-        "jpush/jpush": "^3.2"
+        "jpush/jpush": "^3.2",
+        "socialiteproviders/manager": "2.1.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

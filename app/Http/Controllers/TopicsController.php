@@ -26,10 +26,9 @@ class TopicsController extends Controller implements CreatorListener
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-    public function index(Topic $topic)
+    public function index(Request $request, Topic $topic)
     {
-        $filter = $topic->present()->getTopicFilter();
-        $topics = $topic->getTopicsWithFilter($filter, 40);
+        $topics = $topic->getTopicsWithFilter($request->get('filter'), 40);
         $links  = Link::allFromCache();
         $banners = Banner::allByPosition();
 

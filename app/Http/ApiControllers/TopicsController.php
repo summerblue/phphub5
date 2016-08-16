@@ -14,9 +14,11 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 class TopicsController extends Controller
 {
-    public function index()
+    public function index(Request $request, Topic $topic)
     {
-        return $this->response()->paginator(Topic::paginate(per_page()), new TopicTransformer());
+        $filter = $topic->correctApiFilter($request->get('filter'));
+        $topics = $topic->getTopicsWithFilter($filter, per_page());
+        return $this->response()->paginator($topics, new TopicTransformer());
     }
 
     public function indexByUserId($user_id)

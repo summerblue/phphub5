@@ -13,11 +13,10 @@ use App\Models\Banner;
 class CategoriesController extends Controller
 {
 
-    public function show($id, Topic $topic)
+    public function show($id, Request $request, Topic $topic)
     {
         $category = Category::findOrFail($id);
-        $filter   = $topic->present()->getTopicFilter();
-        $topics   = $topic->getCategoryTopicsWithFilter($filter, $id);
+        $topics   = $topic->getCategoryTopicsWithFilter($request->get('filter'), $id);
         $links    = Link::allFromCache();
         $banners = Banner::allByPosition();
         return view('topics.index', compact('topics', 'category', 'links', 'banners'));

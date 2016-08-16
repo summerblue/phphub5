@@ -6,6 +6,8 @@ trait TopicFilterable
 {
     public function getTopicsWithFilter($filter, $limit = 20)
     {
+        $filter = $this->getTopicFilter($filter);
+
         return $this->applyFilter($filter)
                     ->with('user', 'category', 'lastReplyUser')
                     ->paginate($limit);
@@ -17,6 +19,15 @@ trait TopicFilterable
                     ->where('category_id', '=', $category_id)
                     ->with('user', 'category', 'lastReplyUser')
                     ->paginate($limit);
+    }
+
+    public function getTopicFilter($request_filter)
+    {
+        $filters = ['noreply', 'vote', 'excellent','recent', 'wiki', 'jobs'];
+        if (in_array($request_filter, $filters)) {
+            return $request_filter;
+        }
+        return 'default';
     }
 
     public function applyFilter($filter)
@@ -40,6 +51,16 @@ trait TopicFilterable
             case 'category':
                 return $this->recentReply();
                 break;
+
+            // for api，分类：教程
+            case 'wiki':
+                return $this->where('category_id', 6)->recent();
+                break;
+            // for api，分类：招聘
+            case 'jobs':
+                return $this->where('category_id', 1)->recent();
+                break;
+
             default:
                 return $this->pinAndRecentReply();
                 break;
@@ -82,6 +103,23 @@ trait TopicFilterable
     public function scopeExcellent($query)
     {
         return $query->where('is_excellent', '=', 'yes');
+    }
+
+    public function correctApiFilter($filter)
+    {
+        switch ($filter) {
+            case 'newest':
+                return 'recent';
+
+            case 'vote':
+                return 'excellent';
+
+            case 'nobody':
+                return 'noreply';
+
+            default:
+                return $filter;
+        }
     }
 }
 
