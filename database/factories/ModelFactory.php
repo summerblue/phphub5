@@ -31,6 +31,7 @@ $factory->define(User::class, function (Faker\Generator $faker) {
         'certification'        => $faker->sentence,
         'email'                => $faker->email,
         'verified'             => true,
+        'login_token'          => 'uDFDJys7iwM0fTXuLNNH',
         'created_at'           => Carbon::now()->toDateTimeString(),
         'updated_at'           => Carbon::now()->toDateTimeString(),
     ];
