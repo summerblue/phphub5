@@ -111,8 +111,8 @@ trait TopicFilterable
             case 'newest':
                 return 'recent';
 
-            case 'vote':
-                return 'excellent';
+            case 'excellent':
+                return 'default';
 
             case 'nobody':
                 return 'noreply';
