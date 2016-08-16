@@ -38,7 +38,7 @@ class Kernel extends HttpKernel
         'admin_auth' => \App\Http\Middleware\AdminAuth::class,
 
         // API
-        'oauth2'     => \PHPHub\Http\Middleware\OAuthMiddleware::class,
+        'oauth2'     => \App\Http\Middleware\OAuthMiddleware::class,
         'check-authorization-params' => \LucaDegasperi\OAuth2Server\Middleware\CheckAuthCodeRequestMiddleware::class,
         'api.throttle'               => \Dingo\Api\Http\Middleware\RateLimit::class,
     ];

@@ -16,7 +16,7 @@ class TopicsController extends Controller
 {
     public function index()
     {
-        return $this->commonIndex();
+        return $this->response()->paginator(Topic::paginate(per_page()), new TopicTransformer());
     }
 
     public function indexByUserId($user_id)

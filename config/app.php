@@ -184,6 +184,8 @@ return [
         Dingo\Api\Provider\LaravelServiceProvider::class,
         LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
         LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
+        App\Providers\OAuthServiceProvider::class,
+        App\Providers\ApiExceptionHandlerProvider::class,
     ],
 
     /*
