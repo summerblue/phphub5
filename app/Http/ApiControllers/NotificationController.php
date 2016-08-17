@@ -18,7 +18,7 @@ class NotificationController extends Controller
 
     public function unreadMessagesCount()
     {
-        $count = $this->users->getUnreadMessagesCount();
+        $count = Auth::user()->notification_count;
 
         return response(compact('count'));
     }
