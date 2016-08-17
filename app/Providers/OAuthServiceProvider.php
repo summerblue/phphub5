@@ -6,7 +6,7 @@ use Auth;
 use Dingo\Api\Auth\Auth as DingoAuth;
 use Dingo\Api\Auth\Provider\OAuth2;
 use Illuminate\Support\ServiceProvider;
-use App\User;
+use App\Models\User;
 
 class OAuthServiceProvider extends ServiceProvider
 {
