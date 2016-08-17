@@ -26,7 +26,7 @@ class ReplyCreator
     public function create(CreatorListener $observer, $data)
     {
         // 检查是否重复发布评论
-        if ($this->isDuplicateReply($data['body'])) {
+        if ($this->isDuplicateReply($data)) {
             $errorMessages = new MessageBag;
             $errorMessages->add('duplicated', '请不要发布重复内容。');
             return $observer->creatorFailed($errorMessages);
@@ -40,7 +40,7 @@ class ReplyCreator
         $data['body'] = $markdown->convertMarkdownToHtml($data['body']);
 
         $data['source'] = getPlatform();
-        
+
         $reply = Reply::create($data);
         if (! $reply) {
             return $observer->creatorFailed($reply->getErrors());
@@ -60,9 +60,12 @@ class ReplyCreator
         return $observer->creatorSucceed($reply);
     }
 
-    public function isDuplicateReply($body)
+    public function isDuplicateReply($data)
     {
-        $last_reply = Auth::user()->replies()->orderBy('id', 'desc')->first();
-        return strcmp($last_reply->body_original, $body) === 0;
+        $last_reply = Reply::where('user_id', Auth::user()->id)
+                            ->where('topic_id', $data['topic_id'])
+                            ->orderBy('id', 'desc')
+                            ->first();
+        return count($last_reply) && strcmp($last_reply->body_original, $data['body']) === 0;
     }
 }
