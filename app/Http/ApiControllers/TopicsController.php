@@ -8,6 +8,7 @@ use Gate;
 use App\Repositories\Criteria\FilterManager;
 use App\Models\Topic;
 use App\Models\User;
+use App\Models\Vote;
 use App\Transformers\TopicTransformer;
 use Illuminate\Http\Request;
 use Prettus\Validator\Exceptions\ValidatorException;
@@ -62,12 +63,28 @@ class TopicsController extends Controller implements CreatorListener
     {
         $topic = Topic::with('user')->find($id);
 
-        // if (Auth::check()) {
-        //     $topic->favorite = $this->topics->userFavorite($topic->id, Auth::id());
-        //     $topic->attention = $this->topics->userAttention($topic->id, Auth::id());
-        //     $topic->vote_up = $this->topics->userUpVoted($topic->id, Auth::id());
-        //     $topic->vote_down = $this->topics->userDownVoted($topic->id, Auth::id());
-        // }
+        $topic_id = $topic->id;
+        $user_id = Auth::id();
+
+        if (Auth::check()) {
+            $upvoted = Vote::where([
+                               'user_id'      => $user_id,
+                               'votable_id'   => $topic_id,
+                               'votable_type' => 'Topic',
+                               'is'           => 'upvote',
+                           ])->exists();
+            $downvoted = Vote::where([
+                               'user_id'      => $user_id,
+                               'votable_id'   => $topic_id,
+                               'votable_type' => 'Topic',
+                               'is'           => 'downvote',
+                           ])->exists();
+
+            $topic->favorite = $upvoted;
+            $topic->attention = $upvoted;
+            $topic->vote_up = $upvoted;
+            $topic->vote_down = $downvoted;
+        }
 
         return $this->response()->item($topic, new TopicTransformer());
     }
