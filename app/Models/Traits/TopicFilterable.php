@@ -34,10 +34,10 @@ trait TopicFilterable
     {
         switch ($filter) {
             case 'noreply':
-                return $this->orderBy('reply_count', 'asc')->recent();
+                return $this->pinned()->orderBy('reply_count', 'asc')->recent();
                 break;
             case 'vote':
-                return $this->orderBy('vote_count', 'desc')->recent();
+                return $this->pinned()->orderBy('vote_count', 'desc')->recent();
                 break;
             case 'excellent':
                 return $this->excellent()->recent();
@@ -52,19 +52,19 @@ trait TopicFilterable
                 return $this->excellent()->fresh()->random();
                 break;
             case 'recent':
-                return $this->recent();
+                return $this->pinned()->recent();
                 break;
             case 'category':
-                return $this->recentReply();
+                return $this->pinned()->recentReply();
                 break;
 
             // for api，分类：教程
             case 'wiki':
-                return $this->where('category_id', 6)->recent();
+                return $this->where('category_id', 6)->pinned()->recent();
                 break;
             // for api，分类：招聘
             case 'jobs':
-                return $this->where('category_id', 1)->recent();
+                return $this->where('category_id', 1)->pinned()->recent();
                 break;
 
             default:
@@ -107,7 +107,7 @@ trait TopicFilterable
 
     public function scopeRecentReply($query)
     {
-        return $query->orderBy('order', 'desc')
+        return $query->pinned()
                      ->orderBy('updated_at', 'desc');
     }
 
