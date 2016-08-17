@@ -1,4 +1,5 @@
-emojify.setConfig({img_dir : '/images/emoji'});
+emojify.setConfig({img_dir : Config.cdnDomain + 'assets/images/emoji'});
+
 emojify.run();
 
 // 图片被点击后向通过 JavascriptBridge 向宿主应用发送图片 URL

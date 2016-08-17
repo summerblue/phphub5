@@ -10,6 +10,14 @@ PHPHub  - PHP & Laravel 中文社区
     </title>
     <link rel="stylesheet" href="{{ cdn(elixir('assets/css/api.css')) }}">
 
+    <script>
+        Config = {
+            'cdnDomain': '{{ get_cdn_domain() }}',
+            'token': '{{ csrf_token() }}',
+            'environment': '{{ app()->environment() }}'
+        };
+    </script>
+
     @yield('styles')
 
 </head>
