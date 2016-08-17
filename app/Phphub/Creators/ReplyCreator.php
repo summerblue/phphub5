@@ -39,7 +39,7 @@ class ReplyCreator
         $data['body_original'] = $data['body'];
         $data['body'] = $markdown->convertMarkdownToHtml($data['body']);
 
-        $data['source'] = getPlatform();
+        $data['source'] = get_platform();
 
         $reply = Reply::create($data);
         if (! $reply) {
