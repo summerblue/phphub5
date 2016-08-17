@@ -25,7 +25,7 @@ class UpdateUserRequest extends Request
             'github_id'       => 'unique:users',
             'github_name'     => 'string',
             'wechat_openid'   => 'string',
-            'email'           => 'email|required|unique:users,email,' . $this->id,
+            'email'           => 'email|unique:users,email,' . $this->id,
             'github_url'      => 'url',
             'image_url'       => 'url',
             'wechat_unionid'  => 'string',
@@ -36,7 +36,7 @@ class UpdateUserRequest extends Request
 
     public function performUpdate(User $user)
     {
-        $data = $this->only($this->allowed_fields);
+        $data = array_filter($this->only($this->allowed_fields));
         $old_email = $user->email;
 
         if ($file = $this->file('payment_qrcode')) {
@@ -49,5 +49,6 @@ class UpdateUserRequest extends Request
         if ($user->email && $user->email != $old_email) {
             dispatch(new SendActivateMail($user));
         }
+        return $user;
     }
 }

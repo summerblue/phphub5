@@ -11,6 +11,7 @@ use App\Models\User;
 use App\Models\Reply;
 use Prettus\Validator\Exceptions\ValidatorException;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use App\Http\Requests\UpdateUserRequest;
 
 class UsersController extends Controller
 {
@@ -26,20 +27,19 @@ class UsersController extends Controller
         return $this->response()->item($user, new UserTransformer());
     }
 
-    public function update(Request $request, $id)
+    public function update($id, UpdateUserRequest $request)
     {
-        $user = $this->users->find($id);
+        $user = User::findOrFail($id);
 
         if (Gate::denies('update', $user)) {
             throw new AccessDeniedHttpException();
         }
 
         try {
-            $user = $this->users->update($request->all(), $id);
-
+            $user = $request->performUpdate($user);
             return $this->response()->item($user, new UserTransformer());
         } catch (ValidatorException $e) {
-            throw new UpdateResourceFailedException('Could not update user.', $e->getMessageBag()->all());
+            throw new UpdateResourceFailedException('无法更新用户信息：'. outputMsb($e->getMessageBag()));
         }
     }
 }
