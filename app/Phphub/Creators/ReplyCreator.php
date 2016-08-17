@@ -62,7 +62,7 @@ class ReplyCreator
 
     public function isDuplicateReply($data)
     {
-        $last_reply = Reply::where('user_id', Auth::user()->id)
+        $last_reply = Reply::where('user_id', Auth::id())
                             ->where('topic_id', $data['topic_id'])
                             ->orderBy('id', 'desc')
                             ->first();
