@@ -9,19 +9,11 @@ class NotificationController extends Controller
 {
     public function index()
     {
-        $this->notifications->addAvailableInclude('from_user', ['name', 'avatar']);
-        $this->notifications->addAvailableInclude('reply', ['created_at']);
-        $this->notifications->addAvailableInclude('topic', ['title']);
+        $notifications = Auth::user()->notifications();
+        Auth::user()->notification_count = 0;
+        Auth::user()->save();
 
-        $data = $this->notifications
-            ->userRecent(Auth::id())
-            ->autoWith()
-            ->autoWithRootColumns(['id', 'type', 'body', 'topic_id', 'reply_id', 'created_at'])
-            ->paginate(per_page());
-
-        $this->users->setUnreadMessagesCount(Auth::id(), 0);
-
-        return $this->response()->paginator($data, new NotificationTransformer());
+        return $this->response()->paginator($notifications, new NotificationTransformer());
     }
 
     public function unreadMessagesCount()

@@ -4,30 +4,15 @@ namespace App\Transformers;
 
 use App\Notification;
 
-/**
- * Class NotificationTransformer.
- */
 class NotificationTransformer extends BaseTransformer
 {
-    /**
-     * Resources that can be included if requested.
-     *
-     * @var array
-     */
     protected $availableIncludes = ['from_user', 'topic', 'reply'];
 
-    /**
-     * Transform the \Notification entity.
-     *
-     * @param Notification $model
-     *
-     * @return array
-     */
     public function transformData($model)
     {
         $data = $model->toArray();
-        $data['type_msg'] = $model->typeMessage();
-        $data['message'] = $model->message();
+        $data['type_msg'] = $model->present()->lableUp;
+        $data['message'] = $model->present()->message();
 
         return $data;
     }
