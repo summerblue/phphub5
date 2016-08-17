@@ -75,7 +75,7 @@ $router->group([
         ['as' => 'users.replies.web_view', 'uses' => 'RepliesController@indexWebViewByUser']);
 
     //Nodes
-    $router->get('nodes', 'NodesController@index');
+    $router->get('nodes', 'CategoriesController@index');
 
     //Replies
     $router->get('topics/{id}/replies', 'RepliesController@indexByTopicId');
