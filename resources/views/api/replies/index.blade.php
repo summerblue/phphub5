@@ -19,13 +19,13 @@
         <div class="info">
             <div class="meta">
                 <a href="{{ schema_url('users', ['id' => $reply->user->id]) }}">{{ $reply->user->name }}</a>
-                <span>•</span>
+                <span> ⋅ </span>
                 <abbr>{{ $reply->created_at }}</abbr>
-                <span>•</span>
+                <span> ⋅ </span>
                 <a class="anchor" href="#{{ $index+1 }}">#{{ $index+1 }}</a>
             </div>
             <div class="markdown-content">
-                {{ $reply->body }}
+                {!! $reply->body !!}
             </div>
         </div>
     </li>

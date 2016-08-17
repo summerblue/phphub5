@@ -11,9 +11,9 @@ $topic->title
 
         <p>{{ $topic->created_at }} ⋅ {{ $topic->view_count }} 阅读</p>
     </div>
-    
+
     <div class="markdown-content topic-body">
-        {{ $topic->body }}
+        {!! $topic->body !!}
     </div>
 
 @stop
