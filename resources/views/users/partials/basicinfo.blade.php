@@ -3,16 +3,12 @@
     <div class="padding-sm user-basic-info">
         <div style="">
 
-            @if ($currentUser && $currentUser->id == $user->id)
-            <a class="avatar-edit" href="{{ route('users.edit_avatar', $user->id) }}">
-                <i class="fa fa-pencil-square"></i>
-            </a>
-            @endif
-
         <div class="media">
             <div class="media-left">
-              <div class="image ">
-                  <img class="media-object avatar-112 avatar img-thumbnail" src="{{ $user->present()->gravatar(200) }}">
+              <div class="image popover-with-html" data-content="修改头像">
+                  <a href="{{ route('users.edit_avatar', $user->id) }}">
+                      <img class="media-object avatar-112 avatar img-thumbnail" src="{{ $user->present()->gravatar(200) }}">
+                  </a>
               </div>
 
             @if ($user->present()->hasBadge())
