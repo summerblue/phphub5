@@ -39,6 +39,8 @@ class ReplyCreator
         $data['body_original'] = $data['body'];
         $data['body'] = $markdown->convertMarkdownToHtml($data['body']);
 
+        $data['source'] = getPlatform();
+        
         $reply = Reply::create($data);
         if (! $reply) {
             return $observer->creatorFailed($reply->getErrors());

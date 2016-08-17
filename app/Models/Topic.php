@@ -39,6 +39,7 @@ class Topic extends Model
         'title',
         'body',
         'excerpt',
+        'source',
         'body_original',
         'user_id',
         'category_id',

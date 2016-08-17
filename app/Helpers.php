@@ -98,3 +98,7 @@ function schema_url($path, $parameters = [])
 function outputMsb(\Illuminate\Support\MessageBag $messageBag){
     return implode(", ", $messageBag->all());
 }
+
+function getPlatform(){
+    return Request::header('X-Client-Platform');
+}

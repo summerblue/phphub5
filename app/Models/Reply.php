@@ -17,6 +17,7 @@ class Reply extends Model
 
     protected $fillable = [
         'body',
+        'source',
         'user_id',
         'topic_id',
         'body_original',
