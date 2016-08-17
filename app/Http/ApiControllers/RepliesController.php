@@ -3,11 +3,12 @@
 namespace App\Http\ApiControllers;
 
 use Dingo\Api\Exception\StoreResourceFailedException;
+use Prettus\Validator\Exceptions\ValidatorException;
 use App\Transformers\ReplyTransformer;
+use Illuminate\Http\Request;
 use App\Models\Topic;
 use App\Models\User;
-use Illuminate\Http\Request;
-use Prettus\Validator\Exceptions\ValidatorException;
+use App\Models\Reply;
 
 class RepliesController extends Controller
 {
@@ -52,11 +53,8 @@ class RepliesController extends Controller
 
     public function indexWebViewByUser($user_id)
     {
-        $replies = $this->replies
-            ->byUserId($user_id)
-            ->withOnly('topic.user', ['avatar'])
-            ->all(['id', 'body', 'created_at', 'topic_id']);
-
-        return view('api_web_views.users_replies_list', compact('replies', 'count'));
+        $user = User::findOrFail($user_id);
+        $replies = Reply::whose($user->id)->recent()->paginate(20);
+        return view('api.users.users_replies_list', compact('replies'));
     }
 }
