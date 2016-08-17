@@ -3,9 +3,7 @@
 /*
  * 申请 access_token 或者刷新 access_token.
  */
-$router->post('oauth/access_token', function () {
-    return Response::json(Authorizer::issueAccessToken());
-});
+$router->post('oauth/access_token', 'OauthController@issueAccessToken');
 
 /*
  *  此分组下路由 需要通过 login-token 方式认证的 access token
