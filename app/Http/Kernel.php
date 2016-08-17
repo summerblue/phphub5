@@ -36,7 +36,8 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest'      => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'admin_auth' => \App\Http\Middleware\AdminAuth::class,
-
+        'verified_email' => \App\Http\Middleware\RequireVerifiedEmail::class,
+        
         // API
         'oauth2'     => \App\Http\Middleware\OAuthMiddleware::class,
         'check-authorization-params' => \LucaDegasperi\OAuth2Server\Middleware\CheckAuthCodeRequestMiddleware::class,

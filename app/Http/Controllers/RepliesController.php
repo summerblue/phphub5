@@ -18,13 +18,6 @@ class RepliesController extends Controller implements CreatorListener
 
     public function store(StoreReplyRequest $request)
     {
-        if(!Auth::user()->verified) {
-            return response([
-                        'status'  => 500,
-                        'message' => lang('You need to verify the email for commenting.'),
-                    ]);
-        }
-
         return app('Phphub\Creators\ReplyCreator')->create($this, $request->except('_token'));
     }
 
@@ -61,7 +54,7 @@ class RepliesController extends Controller implements CreatorListener
 
     public function creatorFailed($errors)
     {
-        if (Request::ajax()){
+        if (Request::ajax()) {
             return response([
                         'status'  => 500,
                         'message' => lang('Operation failed.'),
@@ -70,14 +63,13 @@ class RepliesController extends Controller implements CreatorListener
             Flash::error(lang('Operation failed.'));
             return Redirect::back();
         }
-
     }
 
     public function creatorSucceed($reply)
     {
         $reply->user->image_url = $reply->user->present()->gravatar;
 
-        if (Request::ajax()){
+        if (Request::ajax()) {
             return response([
                         'status'        => 200,
                         'message'       => lang('Operation succeeded.'),
@@ -88,6 +80,5 @@ class RepliesController extends Controller implements CreatorListener
             Flash::success(lang('Operation succeeded.'));
             return Redirect::route('topics.show', array(Request::get('topic_id'), '#last-reply'));
         }
-
     }
 }
