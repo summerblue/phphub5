@@ -23,7 +23,7 @@ trait TopicFilterable
 
     public function getTopicFilter($request_filter)
     {
-        $filters = ['noreply', 'vote', 'excellent','recent', 'wiki', 'jobs'];
+        $filters = ['noreply', 'vote', 'excellent','recent', 'wiki', 'jobs', 'excellent-pinned'];
         if (in_array($request_filter, $filters)) {
             return $request_filter;
         }
@@ -47,6 +47,7 @@ trait TopicFilterable
             case 'excellent-pinned':
                 return $this->excellent()->pinned()->recent();
                 break;
+
             case 'random-excellent':
                 return $this->excellent()->fresh()->random();
                 break;
