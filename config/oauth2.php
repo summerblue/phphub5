@@ -29,13 +29,18 @@ return [
 
     'grant_types' => [
 
+        // accesstoken 过期时间，以返回的时间的准，单位为秒，注意过期时提醒用户重新授权
+        // 类似于：
+        // 1. http://open.weibo.com/wiki/Oauth2/access_token
+        // 2. https://developers.douban.com/wiki/?title=oauth2
+
         /*
          * 使用 login_token 获取 access_token
          */
         'login_token' => [
             'class'            => \Phphub\OAuth\LoginTokenGrant::class,
             'callback'         => \Phphub\OAuth\LoginTokenVerifier::class.'@verify',
-            'access_token_ttl' => (int) env('OAUTH_ACCESS_TOKEN_TTL', 3600),
+            'access_token_ttl' => (int) env('OAUTH_ACCESS_TOKEN_TTL', 2592000),
         ],
 
         /*
@@ -43,7 +48,7 @@ return [
          */
         'client_credentials' => [
             'class'            => \League\OAuth2\Server\Grant\ClientCredentialsGrant::class,
-            'access_token_ttl' => (int) env('OAUTH_CLIENT_ACCESS_TOKEN_TTL', 3600),
+            'access_token_ttl' => (int) env('OAUTH_CLIENT_ACCESS_TOKEN_TTL', 2592000),
         ],
 
         /*
@@ -51,8 +56,8 @@ return [
          */
         'refresh_token' => [
             'class'             => \League\OAuth2\Server\Grant\RefreshTokenGrant::class,
-            'access_token_ttl'  => (int) env('OAUTH_ACCESS_TOKEN_TTL', 3600),
-            'refresh_token_ttl' => (int) env('OAUTH_REFRESH_TOKEN_TTL', 36000),
+            'access_token_ttl'  => (int) env('OAUTH_ACCESS_TOKEN_TTL', 2592000),
+            'refresh_token_ttl' => (int) env('OAUTH_REFRESH_TOKEN_TTL', 5184000),
         ],
     ],
 

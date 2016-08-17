@@ -158,6 +158,7 @@ class Topic extends Model
     public function getRandomExcellent()
     {
         $data = Cache::remember('phphub_hot_topics', 10, function(){
+            $topic = new Topic;
             return $topic->getTopicsWithFilter('random-excellent', 5);
         });
         return $data;

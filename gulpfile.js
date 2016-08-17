@@ -59,9 +59,24 @@ elixir(function(mix) {
             'resources/assets/js/main.js',
         ]), 'public/assets/js/scripts.js', './')
 
+        // API Web View
+        .sass([
+            'api/api.scss'
+        ], 'public/assets/css/api.css')
+        // API Web View
+        .scripts([
+            'api/emojify.js',
+            'api/api.js'
+        ], 'public/assets/js/api.js')
+
         .version([
+
             'assets/css/styles.css',
             'assets/js/scripts.js',
+
+            // API Web View
+            'assets/css/api.css',
+            'assets/js/api.js',
         ])
 
         .livereload();
