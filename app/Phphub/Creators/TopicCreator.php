@@ -21,6 +21,8 @@ class TopicCreator
         $data['body'] = $markdown->convertMarkdownToHtml($data['body']);
         $data['excerpt'] = Topic::makeExcerpt($data['body']);
 
+        $data['source'] = getPlatform();
+
         $topic = Topic::create($data);
         if (! $topic) {
             return $observer->creatorFailed($topic->getErrors());
