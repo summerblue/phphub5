@@ -6,6 +6,10 @@ class CategoryTransformer extends BaseTransformer
 {
     public function transformData($model)
     {
-        return ['name' => $model->name];
+        return [
+            'id' => $model->id,
+            'name' => $model->name,
+            'parent_node' => 0
+        ];
     }
 }
