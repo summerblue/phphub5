@@ -74,13 +74,13 @@ class TopicsController extends Controller implements CreatorListener
 
     public function destroy($id)
     {
-        $topic = $this->topics->find($id);
-
+        $topic = Topic::findOrFail($id);
         if (Gate::denies('delete', $topic)) {
             throw new AccessDeniedHttpException();
         }
 
-        $this->topics->delete($id);
+        $topic->delete();
+        return ['status' => 'ok'];
     }
 
     public function voteUp($id)
@@ -111,56 +111,27 @@ class TopicsController extends Controller implements CreatorListener
         return view('api.topics.show', compact('topic'));
     }
 
+    // 收藏和关注已被删除，这里只做客户端兼容处理
+    // https://phphub.org/topics/2545
     public function favorite($topic_id)
     {
-        try {
-            $this->topics->favorite($topic_id, Auth::id());
-        } catch (\Exception $e) {
-            $filed = true;
-        }
-
-        return response([
-            'status' => isset($filed) ? false : true,
-        ]);
+        $this->voteUp($topic_id);
+        return response([ 'status' => true]);
     }
-
     public function unFavorite($topic_id)
     {
-        try {
-            $this->topics->unFavorite($topic_id, Auth::id());
-        } catch (\Exception $e) {
-            $filed = true;
-        }
-
-        return response([
-            'status' => isset($filed) ? false : true,
-        ]);
+        $this->voteDown($topic_id);
+        return response([ 'status' => true]);
     }
-
     public function attention($topic_id)
     {
-        try {
-            $this->topics->attention($topic_id, Auth::id());
-        } catch (\Exception $e) {
-            $filed = true;
-        }
-
-        return response([
-            'status' => isset($filed) ? false : true,
-        ]);
+        $this->voteUp($topic_id);
+        return response([ 'status' => true]);
     }
-
     public function unAttention($topic_id)
     {
-        try {
-            $this->topics->unAttention($topic_id, Auth::id());
-        } catch (\Exception $e) {
-            $filed = true;
-        }
-
-        return response([
-            'status' => isset($filed) ? false : true,
-        ]);
+        $this->voteDown($topic_id);
+        return response([ 'status' => true]);
     }
 
     /**

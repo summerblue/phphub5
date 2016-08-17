@@ -32,7 +32,7 @@ $router->group(['middleware' => 'oauth2:user'], function ($router) {
         $router->put('users/{id}', 'UsersController@update');
 
         // Topics
-        $router->delete('topics/{id}', 'TopicsController@delete');
+        $router->delete('topics/{id}', 'TopicsController@destroy');
         $router->post('topics/{id}/vote-up', 'TopicsController@voteUp');
         $router->post('topics/{id}/vote-down', 'TopicsController@voteDown');
 
