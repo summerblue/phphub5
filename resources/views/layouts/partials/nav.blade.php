@@ -61,7 +61,7 @@
                       </li>
                       <li>
                           <a class="button" href="{{ route('users.edit', $currentUser->id) }}" >
-                              <i class="fa fa-cog text-md"></i> 个人资料
+                              <i class="fa fa-cog text-md"></i> 编辑资料
                           </a>
                       </li>
                       <li>
