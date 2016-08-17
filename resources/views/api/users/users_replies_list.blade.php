@@ -28,7 +28,7 @@
                     <abbr>{{ $reply->created_at }}</abbr>
                 </div>
                 <div class="markdown-content">
-                    {{ $reply->body }}
+                    {!! $reply->body !!}
                 </div>
             </div>
         </li>
