@@ -53,26 +53,9 @@ class UsersController extends Controller
     {
         $user = User::findOrFail($id);
         $this->authorize('update', $user);
-        $old_email = $user->email;
-
-        $data = $request->only(
-                'github_name', 'real_name', 'city',
-                'company', 'twitter_account', 'personal_website',
-                'introduction', 'weibo_name', 'weibo_id', 'email','linkedin'
-            );
-
-        if ($file = $request->file('payment_qrcode')) {
-            $upload_status = app('Phphub\Handler\ImageUploadHandler')->uploadImage($file);
-            $data['payment_qrcode'] = $upload_status['filename'];
-        }
-
-        $user->update($data);
-
+        $request->performUpdate($user);
+        
         Flash::success(lang('Operation succeeded.'));
-
-        if ($user->email && $user->email != $old_email) {
-            dispatch(new SendActivateMail($user));
-        }
 
         return redirect(route('users.edit', $id));
     }
