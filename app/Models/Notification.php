@@ -28,12 +28,19 @@ class Notification extends Model
         return $this->belongsTo(User::class);
     }
 
+
     public function topic()
     {
         return $this->belongsTo(Topic::class);
     }
 
     public function fromUser()
+    {
+        return $this->belongsTo(User::class, 'from_user_id');
+    }
+
+    // for api
+    public function from_user()
     {
         return $this->belongsTo(User::class, 'from_user_id');
     }
