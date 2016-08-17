@@ -1,4 +1,4 @@
-<?php 
+<?php
 # ------------------ Page Route ------------------------
 Route::get('/', 'PagesController@home')->name('home');
 Route::get('/about', 'PagesController@about')->name('about');
@@ -68,13 +68,13 @@ Route::get('/sites', 'SitesController@index')->name('sites.index');
 
 # ------------------ Replies ------------------------
 
-Route::post('/replies', 'RepliesController@store')->name('replies.store');
+Route::post('/replies', 'RepliesController@store')->name('replies.store')->middleware('verified_email');
 Route::delete('replies/delete/{id}', 'RepliesController@destroy')->name('replies.destroy')->middleware('auth');
 
 # ------------------ Topic ------------------------
 Route::get('/topics', 'TopicsController@index')->name('topics.index');
-Route::get('/topics/create', 'TopicsController@create')->name('topics.create');
-Route::post('/topics', 'TopicsController@store')->name('topics.store');
+Route::get('/topics/create', 'TopicsController@create')->name('topics.create')->middleware('verified_email');
+Route::post('/topics', 'TopicsController@store')->name('topics.store')->middleware('verified_email');
 Route::get('/topics/{id}', 'TopicsController@show')->name('topics.show');
 Route::get('/topics/{id}/edit', 'TopicsController@edit')->name('topics.edit');
 Route::patch('/topics/{id}', 'TopicsController@update')->name('topics.update');
