@@ -42,6 +42,11 @@ trait TopicFilterable
             case 'excellent':
                 return $this->excellent()->recent();
                 break;
+
+            // 主要 API 首页在用，置顶+精华
+            case 'excellent-pinned':
+                return $this->excellent()->pinned()->recent();
+                break;
             case 'random-excellent':
                 return $this->excellent()->fresh()->random();
                 break;
@@ -85,8 +90,13 @@ trait TopicFilterable
     public function scopePinAndRecentReply($query)
     {
         return $query->fresh()
-                     ->orderBy('order', 'desc')
+                     ->pinned()
                      ->orderBy('updated_at', 'desc');
+    }
+
+    public function scopePinned($query)
+    {
+        return $query->orderBy('order', 'desc');
     }
 
     public function scopeFresh($query)
@@ -112,7 +122,7 @@ trait TopicFilterable
                 return 'recent';
 
             case 'excellent':
-                return 'default';
+                return 'excellent-pinned';
 
             case 'nobody':
                 return 'noreply';
