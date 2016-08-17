@@ -17,6 +17,8 @@ class TopicPolicy
 
     public function delete(User $user, Topic $topic)
     {
+        // 不支持用户删帖
+        // return $user->id === $topic->user_id;
         return $user->may('manage_topics');
     }
 
