@@ -104,27 +104,6 @@ class TopicsController extends Controller
         ]);
     }
 
-    protected function commonIndex()
-    {
-        FilterManager::addFilter('newest');
-        $this->registerListApiIncludes();
-
-        $data = $this->topics
-            ->autoWith()
-            ->autoWithRootColumns([
-                'id',
-                'title',
-                'is_excellent',
-                'reply_count',
-                'updated_at',
-                'created_at',
-                'vote_count',
-            ])
-            ->paginate(per_page());
-
-        return $this->response()->paginator($data, new TopicTransformer());
-    }
-
     public function showWebView($id)
     {
         $topic = Topic::find($id);
@@ -181,12 +160,5 @@ class TopicsController extends Controller
         return response([
             'status' => isset($filed) ? false : true,
         ]);
-    }
-
-    protected function registerListApiIncludes()
-    {
-        $this->topics->addAvailableInclude('user', ['name', 'avatar']);
-        $this->topics->addAvailableInclude('last_reply_user', ['name']);
-        $this->topics->addAvailableInclude('node', ['name']);
     }
 }
