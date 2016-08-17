@@ -83,3 +83,13 @@ function per_page($default = null)
 
     return (int) ($per_page < $max_per_page ? $per_page : $max_per_page);
 }
+
+/**
+ * 生成用户客户端 URL Schema 技术的链接.
+ */
+function schema_url($path, $parameters = [])
+{
+    $query = empty($parameters) ? '' : '?'.http_build_query($parameters);
+
+    return strtolower(config('app.name')).'://'.trim($path, '/').$query;
+}

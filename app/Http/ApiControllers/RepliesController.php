@@ -4,6 +4,7 @@ namespace App\Http\ApiControllers;
 
 use Dingo\Api\Exception\StoreResourceFailedException;
 use App\Transformers\ReplyTransformer;
+use App\Models\Topic;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Prettus\Validator\Exceptions\ValidatorException;
@@ -12,15 +13,9 @@ class RepliesController extends Controller
 {
     public function indexByTopicId($topic_id)
     {
-        $this->replies->addAvailableInclude('user', ['name', 'avatar']);
-
-        $data = $this->replies
-            ->byTopicId($topic_id)
-            ->autoWith()
-            ->autoWithRootColumns(['id', 'vote_count', 'created_at'])
-            ->paginate(per_page());
-
-        return $this->response()->paginator($data, new ReplyTransformer());
+        $topic = Topic::find($topic_id);
+        $replies = $topic->getRepliesWithLimit(config('phphub.replies_perpage'));
+        return $this->response()->paginator($replies, new ReplyTransformer());
     }
 
     public function indexByUserId($user_id)
@@ -49,15 +44,10 @@ class RepliesController extends Controller
 
     public function indexWebViewByTopic($topic_id)
     {
-        $replies = $this->replies
-            ->byTopicId($topic_id)
-            ->withOnly('user', ['id', 'name', 'avatar'])
-            ->all(['id', 'body', 'created_at', 'user_id']);
+        $topic = Topic::find($topic_id);
+        $replies = $topic->getRepliesWithLimit(config('phphub.replies_perpage'));
 
-        // 楼层计数
-        $count = 1;
-
-        return view('api_web_views.replies_list', compact('replies', 'count'));
+        return view('api.replies.index', compact('replies'));
     }
 
     public function indexWebViewByUser($user_id)
