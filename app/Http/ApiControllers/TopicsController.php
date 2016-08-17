@@ -70,13 +70,13 @@ class TopicsController extends Controller implements CreatorListener
             $upvoted = Vote::where([
                                'user_id'      => $user_id,
                                'votable_id'   => $topic_id,
-                               'votable_type' => 'Topic',
+                               'votable_type' => 'App\Models\Topic',
                                'is'           => 'upvote',
                            ])->exists();
             $downvoted = Vote::where([
                                'user_id'      => $user_id,
                                'votable_id'   => $topic_id,
-                               'votable_type' => 'Topic',
+                               'votable_type' => 'App\Models\Topic',
                                'is'           => 'downvote',
                            ])->exists();
 
