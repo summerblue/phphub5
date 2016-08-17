@@ -54,7 +54,8 @@ class TopicsController extends Controller implements CreatorListener
         if (!Auth::user()->verified) {
             throw new StoreResourceFailedException('创建话题失败，请验证用户邮箱');
         }
-        return app('Phphub\Creators\TopicCreator')->create($this, $request->except('_token'));
+        $data = array_merge($request->except('_token'), ['category_id' => $request->node_id]);
+        return app('Phphub\Creators\TopicCreator')->create($this, $data);
     }
 
     public function show($id)
