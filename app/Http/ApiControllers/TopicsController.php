@@ -84,20 +84,22 @@ class TopicsController extends Controller implements CreatorListener
 
     public function voteUp($id)
     {
-        $topic = $this->topics->find($id);
+        $topic = Topic::find($id);
+        app('Phphub\Vote\Voter')->topicUpVote($topic);
 
         return response([
-            'vote-up'    => $this->topics->voteUp($topic),
+            'vote-up'    => true,
             'vote_count' => $topic->vote_count,
         ]);
     }
 
     public function voteDown($id)
     {
-        $topic = $this->topics->find($id);
+        $topic = Topic::find($id);
+        app('Phphub\Vote\Voter')->topicDownVote($topic);
 
         return response([
-            'vote-down'  => $this->topics->voteDown($topic),
+            'vote-down'  => true,
             'vote_count' => $topic->vote_count,
         ]);
     }
