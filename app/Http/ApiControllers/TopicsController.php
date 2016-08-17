@@ -2,18 +2,18 @@
 
 namespace App\Http\ApiControllers;
 
-use Auth;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Dingo\Api\Exception\StoreResourceFailedException;
-use Gate;
+use Prettus\Validator\Exceptions\ValidatorException;
 use App\Repositories\Criteria\FilterManager;
+use App\Transformers\TopicTransformer;
+use Phphub\Core\CreatorListener;
+use Illuminate\Http\Request;
 use App\Models\Topic;
 use App\Models\User;
 use App\Models\Vote;
-use App\Transformers\TopicTransformer;
-use Illuminate\Http\Request;
-use Prettus\Validator\Exceptions\ValidatorException;
-use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
-use Phphub\Core\CreatorListener;
+use Gate;
+use Auth;
 
 class TopicsController extends Controller implements CreatorListener
 {

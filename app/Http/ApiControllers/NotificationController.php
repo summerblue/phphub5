@@ -15,11 +15,10 @@ class NotificationController extends Controller
 
         return $this->response()->paginator($notifications, new NotificationTransformer());
     }
-
+    
     public function unreadMessagesCount()
     {
         $count = Auth::user()->notification_count;
-
         return response(compact('count'));
     }
 }
