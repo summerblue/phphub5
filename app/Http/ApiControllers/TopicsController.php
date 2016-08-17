@@ -171,7 +171,7 @@ class TopicsController extends Controller implements CreatorListener
 
     public function creatorFailed($errors)
     {
-        throw new StoreResourceFailedException('Could not create new topic.', $errors->getMessageBag()->all());
+        throw new StoreResourceFailedException('创建话题失败：'. outputMsb($errors->getMessageBag()) );
     }
 
     public function creatorSucceed($topic)

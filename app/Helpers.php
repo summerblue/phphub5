@@ -93,3 +93,8 @@ function schema_url($path, $parameters = [])
 
     return strtolower(config('app.name')).'://'.trim($path, '/').$query;
 }
+
+// formartted Illuminate\Support\MessageBag
+function outputMsb(\Illuminate\Support\MessageBag $messageBag){
+    return implode(", ", $messageBag->all());
+}
