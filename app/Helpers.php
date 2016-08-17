@@ -95,10 +95,15 @@ function schema_url($path, $parameters = [])
 }
 
 // formartted Illuminate\Support\MessageBag
-function outputMsb(\Illuminate\Support\MessageBag $messageBag){
+function output_msb(\Illuminate\Support\MessageBag $messageBag){
     return implode(", ", $messageBag->all());
 }
 
-function getPlatform(){
+function get_platform(){
     return Request::header('X-Client-Platform');
+}
+
+function is_request_from_api()
+{
+    return $_SERVER['SERVER_NAME'] != env('API_DOMAIN');
 }

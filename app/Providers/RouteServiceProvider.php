@@ -48,6 +48,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::group([
             'namespace' => $this->namespace,
+            'middleware' => 'restrict_web_access',
         ], function ($router) {
             require base_path('routes/web.php');
         });

@@ -29,7 +29,7 @@ class TopicCreator
         $data['body'] = $markdown->convertMarkdownToHtml($data['body']);
         $data['excerpt'] = Topic::makeExcerpt($data['body']);
 
-        $data['source'] = getPlatform();
+        $data['source'] = get_platform();
 
         $topic = Topic::create($data);
         if (! $topic) {

@@ -59,7 +59,7 @@ class RepliesController extends Controller implements CreatorListener
      */
     public function creatorFailed($errors)
     {
-        throw new StoreResourceFailedException('创建评论失败：' . outputMsb($errors->getMessageBag()));
+        throw new StoreResourceFailedException('创建评论失败：' . output_msb($errors->getMessageBag()));
     }
 
     public function creatorSucceed($reply)
