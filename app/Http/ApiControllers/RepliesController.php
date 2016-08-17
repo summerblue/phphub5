@@ -5,12 +5,14 @@ namespace App\Http\ApiControllers;
 use Dingo\Api\Exception\StoreResourceFailedException;
 use Prettus\Validator\Exceptions\ValidatorException;
 use App\Transformers\ReplyTransformer;
+use Phphub\Core\CreatorListener;
 use Illuminate\Http\Request;
 use App\Models\Topic;
 use App\Models\User;
 use App\Models\Reply;
+use Auth;
 
-class RepliesController extends Controller
+class RepliesController extends Controller implements CreatorListener
 {
     public function indexByTopicId($topic_id)
     {
@@ -34,13 +36,11 @@ class RepliesController extends Controller
 
     public function store(Request $request)
     {
-        try {
-            $reply = $this->replies->store($request->all());
-
-            return $this->response()->item($reply, new ReplyTransformer());
-        } catch (ValidatorException $e) {
-            throw new StoreResourceFailedException('Could not create new topic.', $e->getMessageBag()->all());
+        if (!Auth::user()->verified) {
+            throw new StoreResourceFailedException('创建评论失败，请验证用户邮箱');
         }
+
+        return app('Phphub\Creators\ReplyCreator')->create($this, $request->except('_token'));
     }
 
     public function indexWebViewByTopic($topic_id)
@@ -56,5 +56,21 @@ class RepliesController extends Controller
         $user = User::findOrFail($user_id);
         $replies = Reply::whose($user->id)->recent()->paginate(20);
         return view('api.users.users_replies_list', compact('replies'));
+    }
+
+    /**
+     * ----------------------------------------
+     * CreatorListener Delegate
+     * ----------------------------------------
+     */
+
+    public function creatorFailed($errors)
+    {
+        throw new StoreResourceFailedException('创建评论失败：' . outputMsb($errors->getMessageBag()));
+    }
+
+    public function creatorSucceed($reply)
+    {
+        return $this->response()->item($reply, new ReplyTransformer());
     }
 }

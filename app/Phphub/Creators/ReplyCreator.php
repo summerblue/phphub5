@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use App;
 use Phphub\Markdown\Markdown;
 use App\Jobs\SendReplyNotifyMail;
+use Illuminate\Support\MessageBag;
 
 class ReplyCreator
 {
@@ -24,6 +25,13 @@ class ReplyCreator
 
     public function create(CreatorListener $observer, $data)
     {
+        // 检查是否重复发布评论
+        if ($this->isDuplicateReply($data['body'])) {
+            $errorMessages = new MessageBag;
+            $errorMessages->add('duplicated', '请不要发布重复内容。');
+            return $observer->creatorFailed($errorMessages);
+        }
+
         $data['user_id'] = Auth::id();
         $data['body'] = $this->mentionParser->parse($data['body']);
 
@@ -48,5 +56,11 @@ class ReplyCreator
         app('Phphub\Notification\Notifier')->newReplyNotify(Auth::user(), $this->mentionParser, $topic, $reply);
 
         return $observer->creatorSucceed($reply);
+    }
+
+    public function isDuplicateReply($body)
+    {
+        $last_reply = Auth::user()->replies()->orderBy('id', 'desc')->first();
+        return strcmp($last_reply->body_original, $body) === 0;
     }
 }
