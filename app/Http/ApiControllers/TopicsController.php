@@ -12,8 +12,9 @@ use App\Transformers\TopicTransformer;
 use Illuminate\Http\Request;
 use Prettus\Validator\Exceptions\ValidatorException;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Phphub\Core\CreatorListener;
 
-class TopicsController extends Controller
+class TopicsController extends Controller implements CreatorListener
 {
     public function index(Request $request, Topic $topic)
     {
@@ -50,13 +51,10 @@ class TopicsController extends Controller
 
     public function store(Request $request)
     {
-        try {
-            $topic = $this->topics->create($request->all());
-
-            return $this->response()->item($topic, new TopicTransformer());
-        } catch (ValidatorException $e) {
-            throw new StoreResourceFailedException('Could not create new topic.', $e->getMessageBag()->all());
+        if (!Auth::user()->verified) {
+            throw new StoreResourceFailedException('创建话题失败，请验证用户邮箱');
         }
+        return app('Phphub\Creators\TopicCreator')->create($this, $request->except('_token'));
     }
 
     public function show($id)
@@ -160,5 +158,21 @@ class TopicsController extends Controller
         return response([
             'status' => isset($filed) ? false : true,
         ]);
+    }
+
+    /**
+     * ----------------------------------------
+     * CreatorListener Delegate
+     * ----------------------------------------
+     */
+
+    public function creatorFailed($errors)
+    {
+        throw new StoreResourceFailedException('Could not create new topic.', $errors->getMessageBag()->all());
+    }
+
+    public function creatorSucceed($topic)
+    {
+        return $this->response()->item($topic, new TopicTransformer());
     }
 }
