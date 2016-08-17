@@ -23,15 +23,9 @@ class RepliesController extends Controller implements CreatorListener
 
     public function indexByUserId($user_id)
     {
-        $this->replies->addAvailableInclude('user', ['name', 'avatar']);
-
-        $data = $this->replies
-            ->byUserId($user_id)
-            ->autoWith()
-            ->autoWithRootColumns(['id', 'vote_count'])
-            ->paginate(per_page());
-
-        return $this->response()->paginator($data, new ReplyTransformer());
+        $user = User::findOrFail($user_id);
+        $replies = Reply::whose($user->id)->with('user')->recent()->paginate(15);
+        return $this->response()->paginator($replies, new ReplyTransformer());
     }
 
     public function store(Request $request)
@@ -63,7 +57,6 @@ class RepliesController extends Controller implements CreatorListener
      * CreatorListener Delegate
      * ----------------------------------------
      */
-
     public function creatorFailed($errors)
     {
         throw new StoreResourceFailedException('创建评论失败：' . outputMsb($errors->getMessageBag()));
