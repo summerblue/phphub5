@@ -86,6 +86,8 @@ class TopicsController extends Controller implements CreatorListener
             $topic->vote_down = $downvoted;
         }
 
+        $topic->increment('view_count', 1);
+
         return $this->response()->item($topic, new TopicTransformer());
     }
 
