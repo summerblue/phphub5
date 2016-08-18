@@ -91,7 +91,7 @@
           <div class="form-group">
               <label for="" class="col-sm-2 control-label">{{ lang('Weibo ID') }}</label>
               <div class="col-sm-6">
-                  <input class="form-control" name="weibo_id" type="text" value="{{ $user->weibo_id}}">
+                  <input class="form-control" name="weibo_link" type="text" value="{{ $user->weibo_link}}">
               </div>
               <div class="col-sm-4 help-block">
                 {{ lang('Weibo ID example: 5963322692') }}

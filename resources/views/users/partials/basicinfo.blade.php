@@ -73,9 +73,9 @@
               </li>
               @endif
 
-              @if ($user->weibo_id)
+              @if ($user->weibo_link)
               <li class="popover-with-html" data-content="{{ $user->weibo_name }}">
-                <a href="http://weibo.com/u/{{ $user->weibo_id }}" rel="nofollow" class="weibo" target="_blank"><i class="fa fa-weibo"></i> Weibo
+                <a href="{{ $user->weibo_link }}" rel="nofollow" class="weibo" target="_blank"><i class="fa fa-weibo"></i> Weibo
                 </a>
               </li>
               @endif

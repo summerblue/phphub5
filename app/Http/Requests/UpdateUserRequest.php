@@ -11,7 +11,7 @@ class UpdateUserRequest extends Request
     public $allowed_fields = [
         'github_name', 'real_name', 'city',
         'company', 'twitter_account', 'personal_website',
-        'introduction', 'weibo_name', 'weibo_id', 'email','linkedin'
+        'introduction', 'weibo_name', 'weibo_link', 'email','linkedin'
     ];
 
     public function authorize()
