@@ -3822,7 +3822,7 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
 				 html : true,
 				 trigger : 'hover',
                  container: 'body',
-				 placement: 'top',
+				 placement: 'auto top',
 			 });
         },
 
