@@ -39,9 +39,9 @@
   </li>
   @endif
 
-  @if ($topic->user->weibo_id)
+  @if ($topic->user->weibo_link)
   <li>
-    <a href="http://weibo.com/u/{{ $topic->user->weibo_id }}" rel="nofollow" class="weibo" target="_blank"><i class="fa fa-weibo"></i> WeiBo
+    <a href="{{ $topic->user->weibo_link }}" rel="nofollow" class="weibo" target="_blank"><i class="fa fa-weibo"></i> WeiBo
     </a>
   </li>
   @endif
