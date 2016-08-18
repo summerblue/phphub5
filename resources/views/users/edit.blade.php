@@ -132,7 +132,7 @@
                 <label for="wechat_qrcode" class="col-sm-2 control-label">微信账号二维码</label>
                 <div class="col-sm-6">
                     <input type="file" name="wechat_qrcode">
-                    @if($user->payment_qrcode)
+                    @if($user->wechat_qrcode)
                         <img class="payment-qrcode" src="{{ $user->wechat_qrcode }}" alt="" />
                     @endif
                 </div>
