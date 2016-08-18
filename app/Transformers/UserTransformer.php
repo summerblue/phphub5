@@ -8,40 +8,29 @@ class UserTransformer extends BaseTransformer
 {
     public function transformData($model)
     {
-        $includable = [
-            'id',
-            'name',
-            'avatar',
-            'topic_count',
-            'reply_count',
-            'notification_count',
-            'is_banned',
-            'twitter_account',
-            'company',
-            'city',
-            'email',
-            'signature',
-            'introduction',
-            'github_name',
-            'github_url',
-            'real_name',
-            'personal_website',
-            'created_at',
-            'updated_at',
-        ];
-
-        $user = array_only($model->toArray(), $includable);
-
-        if ($model->getAttribute('avatar')) {
-            $user['avatar'] = starts_with($model->avatar, 'http') ? $model->avatar : cdn('uploads/avatars/'.$model->avatar);
-        }
-
-        if ($model->getAttribute('links')) {
-            $user['links'] = [
+        return [
+            'id' => $model->id,
+            'name' => $model->name,
+            'avatar' => $model->present()->gravatar(),
+            'topic_count' => $model->topic_count,
+            'reply_count' => $model->reply_count,
+            'notification_count' => $model->notification_count,
+            'is_banned' => $model->is_banned,
+            'twitter_account' => $model->twitter_account,
+            'company' => $model->company,
+            'city' => $model->city,
+            'email' => $model->email,
+            'signature' => $model->introduction,
+            'introduction' => $model->introduction,
+            'github_name' => $model->github_name,
+            'github_url' => $model->github_url,
+            'real_name' => $model->real_name,
+            'personal_website' => $model->personal_website,
+            'created_at' => $model->created_at,
+            'updated_at' => $model->updated_at,
+            'links' => [
                 'replies_web_view' => route('users.replies.web_view', $model->id),
-            ];
-        }
-
-        return $user;
+            ],
+        ];
     }
 }

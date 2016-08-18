@@ -2,28 +2,20 @@
 
 namespace App\Transformers;
 
-/**
- * Class ReplyTransformer.
- */
 class ReplyTransformer extends BaseTransformer
 {
-    /**
-     * Resources that can be included if requested.
-     *
-     * @var array
-     */
     protected $availableIncludes = ['user'];
 
-    /**
-     * Transform the \Reply entity.
-     *
-     * @param \Reply $model
-     *
-     * @return array
-     */
     public function transformData($model)
     {
-        return $model->toArray();
+        return [
+            "id" => $model->id,
+            "topic_id" => $model->topic_id,
+            "user_id" => $model->user_id,
+            "body" => $model->body,
+            'created_at' => $model->created_at,
+            'updated_at'=> $model->updated_at,
+        ];
     }
 
     public function includeUser($model)

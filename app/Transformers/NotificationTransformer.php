@@ -10,11 +10,12 @@ class NotificationTransformer extends BaseTransformer
 
     public function transformData($model)
     {
-        $data = $model->toArray();
-        $data['type_msg'] = $model->present()->lableUp;
-        $data['message'] = $model->present()->message();
-
-        return $data;
+        return [
+            "id" => $model->id,
+            "type_msg" => $model->present()->lableUp,
+            "message" => $model->present()->message(),
+            "created_at" => $model->created_at,
+        ];
     }
 
     public function includeFromUser($model)
