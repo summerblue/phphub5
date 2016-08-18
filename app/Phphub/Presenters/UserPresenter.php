@@ -15,7 +15,8 @@ class UserPresenter extends Presenter
     {
         if (config('app.url_static') && $this->avatar) {
             //Using Qiniu image processing service.
-            return cdn('uploads/avatars/'.$this->avatar)."?imageView2/1/w/{$size}/h/{$size}";
+            $postfix = $size > 0 ? "?imageView2/1/w/{$size}/h/{$size}" : '';
+            return cdn('uploads/avatars/'.$this->avatar) . $postfix;
         }
 
         $github_id = $this->github_id;
