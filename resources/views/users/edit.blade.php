@@ -89,7 +89,7 @@
           </div>
 
           <div class="form-group">
-              <label for="" class="col-sm-2 control-label">{{ lang('Weibo ID') }}</label>
+              <label for="" class="col-sm-2 control-label">微博个人页面</label>
               <div class="col-sm-6">
                   <input class="form-control" name="weibo_link" type="text" value="{{ $user->weibo_link}}">
               </div>
