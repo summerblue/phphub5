@@ -105,5 +105,5 @@ function get_platform(){
 
 function is_request_from_api()
 {
-    return $_SERVER['SERVER_NAME'] != env('API_DOMAIN');
+    return $_SERVER['SERVER_NAME'] == env('API_DOMAIN');
 }
