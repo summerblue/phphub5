@@ -14,7 +14,7 @@ class NotificationTransformer extends BaseTransformer
             "id" => $model->id,
             "type_msg" => $model->present()->lableUp,
             "message" => $model->present()->message(),
-            "created_at" => $model->created_at,
+            "created_at" => $model->created_at->toDateTimeString(),
         ];
     }
 

@@ -21,7 +21,7 @@ class TopicTransformer extends BaseTransformer
             "attention" => (bool)$model->attention,
             "vote_up" => (bool)$model->vote_up,
             "vote_down" => (bool)$model->vote_down,
-            "updated_at" => $model->updated_at,
+            "updated_at" => $model->updated_at->toDateTimeString(),
             'links' => [
                 'details_web_view' => route('topic.web_view', $model->id),
                 'replies_web_view' => route('replies.web_view', $model->id),
