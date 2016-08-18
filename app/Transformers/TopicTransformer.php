@@ -10,14 +10,24 @@ class TopicTransformer extends BaseTransformer
 
     public function transformData($model)
     {
-        $data = $model->toArray();
-        $data['links'] = [
-            'details_web_view' => route('topic.web_view', $model->id),
-            'replies_web_view' => route('replies.web_view', $model->id),
-            'web_url'          => trim(config('app.url'), '/').'/topics/'.$model->id,
+        return [
+            "id" => $model->id,
+            "node_id" => $model->category_id,
+            "title" => $model->title,
+            "body" => $model->body,
+            "reply_count" => $model->reply_count,
+            "vote_count" => $model->vote_count,
+            "favorite" => (bool)$model->favorite,
+            "attention" => (bool)$model->attention,
+            "vote_up" => (bool)$model->vote_up,
+            "vote_down" => (bool)$model->vote_down,
+            "updated_at" => $model->updated_at,
+            'links' => [
+                'details_web_view' => route('topic.web_view', $model->id),
+                'replies_web_view' => route('replies.web_view', $model->id),
+                'web_url'          => trim(config('app.url'), '/').'/topics/'.$model->id,
+            ],
         ];
-
-        return $data;
     }
 
     public function includeUser($model)

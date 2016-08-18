@@ -9,15 +9,7 @@ abstract class BaseTransformer extends TransformerAbstract
 {
     public function transform(Model $model)
     {
-        $transformData = $this->transformData($model);
-
-        $data = array_filter($transformData, function ($v) {
-            if (is_null($v)) {
-                return false;
-            }
-
-            return true;
-        });
+        $data = $this->transformData($model);
 
         // 转换 null 字段为空字符串
         foreach (array_keys($data) as $key) {
