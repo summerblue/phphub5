@@ -39,6 +39,9 @@ class UpdateUserRequest extends Request
         $data = array_filter($this->only($this->allowed_fields));
         $old_email = $user->email;
 
+        // A dirty fix for api client
+        $data['introduction'] = $this->get('signature');
+
         if ($file = $this->file('payment_qrcode')) {
             $upload_status = app('Phphub\Handler\ImageUploadHandler')->uploadImage($file);
             $data['payment_qrcode'] = $upload_status['filename'];
