@@ -26,8 +26,8 @@ class UserTransformer extends BaseTransformer
             'github_url' => $model->github_url,
             'real_name' => $model->real_name,
             'personal_website' => $model->personal_website,
-            'created_at' => $model->created_at,
-            'updated_at' => $model->updated_at,
+            'created_at' => $model->created_at->toDateTimeString(),
+            'updated_at' => $model->updated_at->toDateTimeString(),
             'links' => [
                 'replies_web_view' => route('users.replies.web_view', $model->id),
             ],
