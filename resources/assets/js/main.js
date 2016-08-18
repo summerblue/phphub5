@@ -189,7 +189,7 @@
 				 html : true,
 				 trigger : 'hover',
                  container: 'body',
-				 placement: 'top',
+				 placement: 'auto top',
 			 });
         },
 

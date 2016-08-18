@@ -31,6 +31,7 @@ class UpdateUserRequest extends Request
             'wechat_unionid'  => 'string',
             'linkedin'        => 'url',
             'payment_qrcode'  => 'image',
+            'wechat_qrcode'  => 'image',
         ];
     }
 
@@ -44,9 +45,16 @@ class UpdateUserRequest extends Request
             $data['introduction'] = $this->get('signature');
         }
 
+        // 微信支付二维码
         if ($file = $this->file('payment_qrcode')) {
             $upload_status = app('Phphub\Handler\ImageUploadHandler')->uploadImage($file);
             $data['payment_qrcode'] = $upload_status['filename'];
+        }
+
+        // 微信二维码
+        if ($file = $this->file('wechat_qrcode')) {
+            $upload_status = app('Phphub\Handler\ImageUploadHandler')->uploadImage($file);
+            $data['wechat_qrcode'] = $upload_status['filename'];
         }
 
         $user->update($data);

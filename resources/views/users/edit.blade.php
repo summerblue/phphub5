@@ -129,6 +129,19 @@
           </div>
 
             <div class="form-group">
+                <label for="wechat_qrcode" class="col-sm-2 control-label">微信账号二维码</label>
+                <div class="col-sm-6">
+                    <input type="file" name="wechat_qrcode">
+                    @if($user->payment_qrcode)
+                        <img class="payment-qrcode" src="{{ $user->wechat_qrcode }}" alt="" />
+                    @endif
+                </div>
+                <div class="col-sm-4 help-block">
+                    你的微信个人账号，或者订阅号
+                </div>
+            </div>
+
+            <div class="form-group">
                 <label for="" class="col-sm-2 control-label">支付二维码</label>
                 <div class="col-sm-6">
                     <input type="file" name="payment_qrcode">

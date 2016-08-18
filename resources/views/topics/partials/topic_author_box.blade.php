@@ -46,6 +46,12 @@
   </li>
   @endif
 
+    @if ($topic->user->wechat_qrcode)
+    <li class="popover-with-html" data-content="<img src='{{ $topic->user->wechat_qrcode }}' style='width:100%'>">
+      <i class="fa fa-wechat"></i> WeChat
+    </li>
+    @endif
+
   @if ($topic->user->twitter_account)
   <li>
     <a href="https://twitter.com/{{ $topic->user->twitter_account }}" rel="nofollow" class="twitter" target="_blank"><i class="fa fa-twitter"></i> Twitter

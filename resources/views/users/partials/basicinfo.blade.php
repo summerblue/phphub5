@@ -80,6 +80,12 @@
               </li>
               @endif
 
+              @if ($user->wechat_qrcode)
+              <li class="popover-with-html" data-content="<img src='{{ $user->wechat_qrcode }}' style='width:100%'>">
+                <i class="fa fa-wechat"></i> WeChat
+              </li>
+              @endif
+
               @if ($user->twitter_account)
               <li class="popover-with-html" data-content="{{ $user->twitter_account }}">
                 <a href="https://twitter.com/{{ $user->twitter_account }}" rel="nofollow" class="twitter" target="_blank"><i class="fa fa-twitter"></i> Twitter
