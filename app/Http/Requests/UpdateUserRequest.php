@@ -30,6 +30,7 @@ class UpdateUserRequest extends Request
             'image_url'       => 'url',
             'wechat_unionid'  => 'string',
             'linkedin'        => 'url',
+            'weibo_link'      => 'url',
             'payment_qrcode'  => 'image',
             'wechat_qrcode'  => 'image',
         ];
