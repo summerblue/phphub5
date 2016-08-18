@@ -50,6 +50,15 @@
     </div>
   </div>
 
+    <div class="panel panel-default corner-radius panel-active-users">
+      <div class="panel-heading text-center">
+        <h3 class="panel-title">{{ lang('Active Users') }}（<a href="{{ route('hall_of_fames') }}"><i class="fa fa-star" aria-hidden="true"></i> {{ lang('Hall of Fame') }}</a>）</h3>
+      </div>
+      <div class="panel-body">
+        @include('topics.partials.active_users')
+      </div>
+    </div>
+
 <div class="panel panel-default corner-radius panel-hot-topics">
   <div class="panel-heading text-center">
     <h3 class="panel-title">{{ lang('Hot Topics') }}</h3>
@@ -102,15 +111,6 @@
 @endif
 
 @if (Route::currentRouteName() == 'topics.index')
-
-  <div class="panel panel-default corner-radius panel-active-users">
-    <div class="panel-heading text-center">
-      <h3 class="panel-title">{{ lang('Active Users') }}（<a href="{{ route('hall_of_fames') }}"><i class="fa fa-star" aria-hidden="true"></i> {{ lang('Hall of Fame') }}</a>）</h3>
-    </div>
-    <div class="panel-body">
-      @include('topics.partials.active_users')
-    </div>
-  </div>
 
 <div class="panel panel-default corner-radius">
   <div class="panel-heading text-center">
