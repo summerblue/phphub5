@@ -11,7 +11,7 @@ class UserTransformer extends BaseTransformer
         return [
             'id' => $model->id,
             'name' => $model->name,
-            'avatar' => $model->present()->gravatar(),
+            'avatar' => $model->present()->gravatar(0),
             'topic_count' => $model->topic_count,
             'reply_count' => $model->reply_count,
             'notification_count' => $model->notification_count,
