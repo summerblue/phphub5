@@ -10,7 +10,7 @@
         @foreach($filterd_sites as $site)
             <div class="col-md-2 site">
               <a class="popover-with-html" target="_blank" href="{{ $site->present()->linkWithUTMSource() }}" data-content="{{ $site->description }}">
-                <img class="favicon" src="{{ $site->favicon ? cdn_square_image($site->favicon, 40) : 'https://dn-phphub.qbox.me/assets/images/emoji/arrow_right.png' }}">
+                <img class="favicon" src="{{ $site->present()->icon() }}">
                 {{ $site->title }}
               </a>
             </div>

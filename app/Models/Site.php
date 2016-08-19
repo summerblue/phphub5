@@ -36,11 +36,4 @@ class Site extends Model
         });
         return $data;
     }
-
-    public function setFaviconAttribute($value)
-    {
-        $this->attributes['favicon'] = (strpos($value, 'uploads/sites/') !== true && !empty($value))
-                                        ? 'uploads/sites/' . $value
-                                        : $value;
-    }
 }
