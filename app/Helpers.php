@@ -16,15 +16,6 @@ function cdn($filepath)
     }
 }
 
-function cdn_square_image($path, $size)
-{
-    if (strpos($path, '.ico') === false) {
-        return cdn($path)."?imageView2/1/w/{$size}/h/{$size}";
-    } else {
-        return cdn($path);
-    }
-}
-
 function get_cdn_domain()
 {
     return config('app.url_static') ?: config('app.url');
