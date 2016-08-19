@@ -54,7 +54,7 @@
         <div class="btn-group">
 
             <a data-ajax="post" href="javascript:void(0);" data-url="{{ route('topics.upvote', $topic->id) }}" title="{{ lang('Up Vote') }}"
-                data-content="点赞相当于收藏哦，可以在个人页面的「赞过的话题」导航里查看"
+                data-content="点赞相当于收藏，可以在个人页面的「赞过的话题」导航里查看"
                 id="up-vote"
                 class="vote btn btn-primary btn-inverted popover-with-html {{ $currentUser && $topic->votes()->ByWhom(Auth::id())->WithType('upvote')->count() ? 'active' :'' }}" >
                 <i class="fa fa-thumbs-up" aria-hidden="true"></i>
