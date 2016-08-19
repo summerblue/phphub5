@@ -44,6 +44,6 @@ class TopicPolicy
 
     public function append(User $user, Topic $topic)
     {
-        return $user->may('manage_topics');
+        return $user->may('manage_topics') || $topic->user_id == $user->id;
     }
 }
