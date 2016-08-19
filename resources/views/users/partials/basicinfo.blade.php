@@ -6,9 +6,14 @@
         <div class="media">
             <div class="media-left">
               <div class="image popover-with-html" data-content="修改头像">
+
+                  @if ($currentUser && $currentUser->id == $user->id)
                   <a href="{{ route('users.edit_avatar', $user->id) }}">
                       <img class="media-object avatar-112 avatar img-thumbnail" src="{{ $user->present()->gravatar(200) }}">
                   </a>
+                  @else
+                  <img class="media-object avatar-112 avatar img-thumbnail" src="{{ $user->present()->gravatar(200) }}">
+                  @endif
               </div>
 
             @if ($user->present()->hasBadge())
