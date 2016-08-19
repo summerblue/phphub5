@@ -12965,4 +12965,9 @@ a:hover, a:focus {
   color: #999;
   font-size: 13px; }
 
+.btn-inverted {
+  color: #00b5ad;
+  background-color: transparent;
+  border: 1px solid #00b5ad; }
+
 /*# sourceMappingURL=styles.css.map */
