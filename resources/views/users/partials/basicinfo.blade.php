@@ -5,10 +5,10 @@
 
         <div class="media">
             <div class="media-left">
-              <div class="image popover-with-html" data-content="修改头像">
+              <div class="image">
 
                   @if ($currentUser && $currentUser->id == $user->id)
-                  <a href="{{ route('users.edit_avatar', $user->id) }}">
+                  <a href="{{ route('users.edit_avatar', $user->id) }}" class="popover-with-html" data-content="修改头像">
                       <img class="media-object avatar-112 avatar img-thumbnail" src="{{ $user->present()->gravatar(200) }}">
                   </a>
                   @else
