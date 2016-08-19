@@ -19,6 +19,17 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 /*! emojify.js - v0.9.2 - 
  * Copyright (c) Hassan Khan 2014 
  */!function(a){"use strict";var b=function(){function b(a){return" "===a||"	"===a||"\r"===a||"\n"===a||""===a}function c(a,b,c){var d=i.createElement("img");d.setAttribute("title",":"+c+":"),d.setAttribute("alt",":"+c+":"),d.setAttribute("class","emoji"),d.setAttribute("src",q.img_dir+"/"+c+".png"),d.setAttribute("align","absmiddle"),a.splitText(b.index),a.nextSibling.nodeValue=a.nextSibling.nodeValue.substr(b[0].length,a.nextSibling.nodeValue.length),d.appendChild(a.splitText(b.index)),a.parentNode.insertBefore(d,a.nextSibling)}function d(a){if(a[1]&&a[2]){var b=a[2];if(l[b])return b}else for(var c=3;c<a.length-1;c++)if(a[c])return n[c-2][1]}function e(a,b){return"<img title=':"+b+":' alt=':"+b+":' class='emoji' src='"+q.img_dir+"/"+b+".png' align='absmiddle' />"}function f(){this.lastEmojiTerminatedAt=-1}function g(a,b){if(!a)return a;b||(b=e);var c=new f;return a.replace(p,function(){var a=Array.prototype.slice.call(arguments,0,-2),d=arguments[arguments.length-2],e=arguments[arguments.length-1],f=c.validate(a,d,e);return f?b(arguments[0],f):arguments[0]})}function h(a){"undefined"==typeof a&&(a=q.only_crawl_id?i.getElementById(q.only_crawl_id):i.body);for(var b,e=q.ignored_tags,g=i.createTreeWalker(a,NodeFilter.SHOW_TEXT|NodeFilter.SHOW_ELEMENT,function(a){return 1!==a.nodeType?NodeFilter.FILTER_ACCEPT:e[a.tagName]||a.classList.contains("no-emojify")?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_SKIP},!1),h=[];null!==(b=g.nextNode());)h.push(b);h.forEach(function(a){for(var b,e=[],g=new f;null!==(b=p.exec(a.data));)g.validate(b,b.index,b.input)&&e.push(b);for(var h=e.length;h-->0;){var i=d(e[h]);c(a,e[h],i)}})}var i=a.window.document,j="+1,-1,100,109,1234,8ball,a,ab,abc,abcd,accept,aerial_tramway,airplane,alarm_clock,alien,ambulance,anchor,angel,anger,angry,anguished,ant,apple,aquarius,aries,arrow_backward,arrow_double_down,arrow_double_up,arrow_down,arrow_down_small,arrow_forward,arrow_heading_down,arrow_heading_up,arrow_left,arrow_lower_left,arrow_lower_right,arrow_right,arrow_right_hook,arrow_up,arrow_up_down,arrow_up_small,arrow_upper_left,arrow_upper_right,arrows_clockwise,arrows_counterclockwise,art,articulated_lorry,astonished,atm,b,baby,baby_bottle,baby_chick,baby_symbol,baggage_claim,balloon,ballot_box_with_check,bamboo,banana,bangbang,bank,bar_chart,barber,baseball,basketball,bath,bathtub,battery,bear,bee,beer,beers,beetle,beginner,bell,bento,bicyclist,bike,bikini,bird,birthday,black_circle,black_joker,black_nib,black_square,black_square_button,blossom,blowfish,blue_book,blue_car,blue_heart,blush,boar,boat,bomb,book,bookmark,bookmark_tabs,books,boom,boot,bouquet,bow,bowling,bowtie,boy,bread,bride_with_veil,bridge_at_night,briefcase,broken_heart,bug,bulb,bullettrain_front,bullettrain_side,bus,busstop,bust_in_silhouette,busts_in_silhouette,cactus,cake,calendar,calling,camel,camera,cancer,candy,capital_abcd,capricorn,car,card_index,carousel_horse,cat,cat2,cd,chart,chart_with_downwards_trend,chart_with_upwards_trend,checkered_flag,cherries,cherry_blossom,chestnut,chicken,children_crossing,chocolate_bar,christmas_tree,church,cinema,circus_tent,city_sunrise,city_sunset,cl,clap,clapper,clipboard,clock1,clock10,clock1030,clock11,clock1130,clock12,clock1230,clock130,clock2,clock230,clock3,clock330,clock4,clock430,clock5,clock530,clock6,clock630,clock7,clock730,clock8,clock830,clock9,clock930,closed_book,closed_lock_with_key,closed_umbrella,cloud,clubs,cn,cocktail,coffee,cold_sweat,collision,computer,confetti_ball,confounded,confused,congratulations,construction,construction_worker,convenience_store,cookie,cool,cop,copyright,corn,couple,couple_with_heart,couplekiss,cow,cow2,credit_card,crocodile,crossed_flags,crown,cry,crying_cat_face,crystal_ball,cupid,curly_loop,currency_exchange,curry,custard,customs,cyclone,dancer,dancers,dango,dart,dash,date,de,deciduous_tree,department_store,diamond_shape_with_a_dot_inside,diamonds,disappointed,disappointed_relieved,dizzy,dizzy_face,do_not_litter,dog,dog2,dollar,dolls,dolphin,donut,door,doughnut,dragon,dragon_face,dress,dromedary_camel,droplet,dvd,e-mail,ear,ear_of_rice,earth_africa,earth_americas,earth_asia,egg,eggplant,eight,eight_pointed_black_star,eight_spoked_asterisk,electric_plug,elephant,email,end,envelope,es,euro,european_castle,european_post_office,evergreen_tree,exclamation,expressionless,eyeglasses,eyes,facepunch,factory,fallen_leaf,family,fast_forward,fax,fearful,feelsgood,feet,ferris_wheel,file_folder,finnadie,fire,fire_engine,fireworks,first_quarter_moon,first_quarter_moon_with_face,fish,fish_cake,fishing_pole_and_fish,fist,five,flags,flashlight,floppy_disk,flower_playing_cards,flushed,foggy,football,fork_and_knife,fountain,four,four_leaf_clover,fr,free,fried_shrimp,fries,frog,frowning,fu,fuelpump,full_moon,full_moon_with_face,game_die,gb,gem,gemini,ghost,gift,gift_heart,girl,globe_with_meridians,goat,goberserk,godmode,golf,grapes,green_apple,green_book,green_heart,grey_exclamation,grey_question,grimacing,grin,grinning,guardsman,guitar,gun,haircut,hamburger,hammer,hamster,hand,handbag,hankey,hash,hatched_chick,hatching_chick,headphones,hear_no_evil,heart,heart_decoration,heart_eyes,heart_eyes_cat,heartbeat,heartpulse,hearts,heavy_check_mark,heavy_division_sign,heavy_dollar_sign,heavy_exclamation_mark,heavy_minus_sign,heavy_multiplication_x,heavy_plus_sign,helicopter,herb,hibiscus,high_brightness,high_heel,hocho,honey_pot,honeybee,horse,horse_racing,hospital,hotel,hotsprings,hourglass,hourglass_flowing_sand,house,house_with_garden,hurtrealbad,hushed,ice_cream,icecream,id,ideograph_advantage,imp,inbox_tray,incoming_envelope,information_desk_person,information_source,innocent,interrobang,iphone,it,izakaya_lantern,jack_o_lantern,japan,japanese_castle,japanese_goblin,japanese_ogre,jeans,joy,joy_cat,jp,key,keycap_ten,kimono,kiss,kissing,kissing_cat,kissing_closed_eyes,kissing_face,kissing_heart,kissing_smiling_eyes,koala,koko,kr,large_blue_circle,large_blue_diamond,large_orange_diamond,last_quarter_moon,last_quarter_moon_with_face,laughing,leaves,ledger,left_luggage,left_right_arrow,leftwards_arrow_with_hook,lemon,leo,leopard,libra,light_rail,link,lips,lipstick,lock,lock_with_ink_pen,lollipop,loop,loudspeaker,love_hotel,love_letter,low_brightness,m,mag,mag_right,mahjong,mailbox,mailbox_closed,mailbox_with_mail,mailbox_with_no_mail,man,man_with_gua_pi_mao,man_with_turban,mans_shoe,maple_leaf,mask,massage,meat_on_bone,mega,melon,memo,mens,metal,metro,microphone,microscope,milky_way,minibus,minidisc,mobile_phone_off,money_with_wings,moneybag,monkey,monkey_face,monorail,moon,mortar_board,mount_fuji,mountain_bicyclist,mountain_cableway,mountain_railway,mouse,mouse2,movie_camera,moyai,muscle,mushroom,musical_keyboard,musical_note,musical_score,mute,nail_care,name_badge,neckbeard,necktie,negative_squared_cross_mark,neutral_face,new,new_moon,new_moon_with_face,newspaper,ng,nine,no_bell,no_bicycles,no_entry,no_entry_sign,no_good,no_mobile_phones,no_mouth,no_pedestrians,no_smoking,non-potable_water,nose,notebook,notebook_with_decorative_cover,notes,nut_and_bolt,o,o2,ocean,octocat,octopus,oden,office,ok,ok_hand,ok_woman,older_man,older_woman,on,oncoming_automobile,oncoming_bus,oncoming_police_car,oncoming_taxi,one,open_file_folder,open_hands,open_mouth,ophiuchus,orange_book,outbox_tray,ox,page_facing_up,page_with_curl,pager,palm_tree,panda_face,paperclip,parking,part_alternation_mark,partly_sunny,passport_control,paw_prints,peach,pear,pencil,pencil2,penguin,pensive,performing_arts,persevere,person_frowning,person_with_blond_hair,person_with_pouting_face,phone,pig,pig2,pig_nose,pill,pineapple,pisces,pizza,plus1,point_down,point_left,point_right,point_up,point_up_2,police_car,poodle,poop,post_office,postal_horn,postbox,potable_water,pouch,poultry_leg,pound,pouting_cat,pray,princess,punch,purple_heart,purse,pushpin,put_litter_in_its_place,question,rabbit,rabbit2,racehorse,radio,radio_button,rage,rage1,rage2,rage3,rage4,railway_car,rainbow,raised_hand,raised_hands,raising_hand,ram,ramen,rat,recycle,red_car,red_circle,registered,relaxed,relieved,repeat,repeat_one,restroom,revolving_hearts,rewind,ribbon,rice,rice_ball,rice_cracker,rice_scene,ring,rocket,roller_coaster,rooster,rose,rotating_light,round_pushpin,rowboat,ru,rugby_football,runner,running,running_shirt_with_sash,sa,sagittarius,sailboat,sake,sandal,santa,satellite,satisfied,saxophone,school,school_satchel,scissors,scorpius,scream,scream_cat,scroll,seat,secret,see_no_evil,seedling,seven,shaved_ice,sheep,shell,ship,shipit,shirt,shit,shoe,shower,signal_strength,six,six_pointed_star,ski,skull,sleeping,sleepy,slot_machine,small_blue_diamond,small_orange_diamond,small_red_triangle,small_red_triangle_down,smile,smile_cat,smiley,smiley_cat,smiling_imp,smirk,smirk_cat,smoking,snail,snake,snowboarder,snowflake,snowman,sob,soccer,soon,sos,sound,space_invader,spades,spaghetti,sparkler,sparkles,sparkling_heart,speak_no_evil,speaker,speech_balloon,speedboat,squirrel,star,star2,stars,station,statue_of_liberty,steam_locomotive,stew,straight_ruler,strawberry,stuck_out_tongue,stuck_out_tongue_closed_eyes,stuck_out_tongue_winking_eye,sun_with_face,sunflower,sunglasses,sunny,sunrise,sunrise_over_mountains,surfer,sushi,suspect,suspension_railway,sweat,sweat_drops,sweat_smile,sweet_potato,swimmer,symbols,syringe,tada,tanabata_tree,tangerine,taurus,taxi,tea,telephone,telephone_receiver,telescope,tennis,tent,thought_balloon,three,thumbsdown,thumbsup,ticket,tiger,tiger2,tired_face,tm,toilet,tokyo_tower,tomato,tongue,top,tophat,tractor,traffic_light,train,train2,tram,triangular_flag_on_post,triangular_ruler,trident,triumph,trolleybus,trollface,trophy,tropical_drink,tropical_fish,truck,trumpet,tshirt,tulip,turtle,tv,twisted_rightwards_arrows,two,two_hearts,two_men_holding_hands,two_women_holding_hands,u5272,u5408,u55b6,u6307,u6708,u6709,u6e80,u7121,u7533,u7981,u7a7a,uk,umbrella,unamused,underage,unlock,up,us,v,vertical_traffic_light,vhs,vibration_mode,video_camera,video_game,violin,virgo,volcano,vs,walking,waning_crescent_moon,waning_gibbous_moon,warning,watch,water_buffalo,watermelon,wave,wavy_dash,waxing_crescent_moon,waxing_gibbous_moon,wc,weary,wedding,whale,whale2,wheelchair,white_check_mark,white_circle,white_flower,white_large_square,white_square,white_square_button,wind_chime,wine_glass,wink,wink2,wolf,woman,womans_clothes,womans_hat,womens,worried,wrench,x,yellow_heart,yen,yum,zap,zero,zzz",k=j.split(/,/),l=k.reduce(function(a,b){return a[b]=!0,a},{}),m={named:/:([a-z0-9A-Z_-]+):/,blush:/:-?\)/g,scream:/:-o/gi,smirk:/[:;]-?]/g,smiley:/[:;]-?d/gi,stuck_out_tongue_closed_eyes:/x-d/gi,stuck_out_tongue_winking_eye:/[:;]-?p/gi,rage:/:-?[\[@]/g,disappointed:/:-?\(/g,sob:/:['’]-?\(|:&#x27;\(/g,kissing_heart:/:-?\*/g,wink:/;-?\)/g,pensive:/:-?\//g,confounded:/:-?s/gi,flushed:/:-?\|/g,relaxed:/:-?\$/g,mask:/:-x/gi,heart:/<3|&lt;3/g,broken_heart:/<\/3|&lt;&#x2F;3/g,thumbsup:/:\+1:/g,thumbsdown:/:\-1:/g},n=Object.keys(m).map(function(a){return[m[a],a]}),o=n.map(function(a){var b=a[0],c=b.source||b;return c=c.replace(/(^|[^\[])\^/g,"$1"),"("+c+")"}).join("|"),p=new RegExp(o,"gi"),q={emojify_tag_type:"div",only_crawl_id:null,img_dir:"images/emoji",ignored_tags:{SCRIPT:1,TEXTAREA:1,A:1,PRE:1,CODE:1}};return f.prototype={validate:function(a,c,e){function f(){return g.lastEmojiTerminatedAt=j+c,h}var g=this,h=d(a);if(h){var i=a[0],j=i.length;return 0===c?f():e.length===i.length+c?f():b(e.charAt(c-1))?f():b(e.charAt(i.length+c))?f():this.lastEmojiTerminatedAt===c?f():void 0}}},{defaultConfig:q,emojiNames:k,setConfig:function(a){Object.keys(q).forEach(function(b){b in a&&(q[b]=a[b])})},replace:g,run:h}}();return a.emojify=b,"function"==typeof define&&define.amd&&define([],function(){return b}),b}(this);
+// extension:
+$.fn.scrollEnd = function(callback, timeout) {
+  $(this).scroll(function(){
+    var $this = $(this);
+    if ($this.data('scrollTimeout')) {
+      clearTimeout($this.data('scrollTimeout'));
+    }
+    $this.data('scrollTimeout', setTimeout(callback,timeout));
+  });
+};
+
 (function ($, window, document) {
     'use strict';
 
@@ -123,6 +134,12 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                 }
             }
         });
+
+        // how to call it (with a 1500ms timeout):
+        $(window).scrollEnd(function(){
+            $self[animOut](animSpeed);
+            triggerVisible = false;
+        }, 1200);
 
         if (o.scrollTarget) {
             if (typeof o.scrollTarget === 'number') {
@@ -3740,6 +3757,1314 @@ $(document).ready(function (e) {
   })(window.jQuery, window);
 
 }).call(this);
+/*! messenger 1.5.0 */
+/*
+ * This file begins the output concatenated into messenger.js
+ *
+ * It establishes the Messenger object while preserving whatever it was before
+ * (for noConflict), and making it a callable function.
+ */
+
+(function(){
+    var _prevMessenger = window.Messenger;
+    var localMessenger;
+
+    localMessenger = window.Messenger = function(){
+        return localMessenger._call.apply(this, arguments);
+    }
+
+    window.Messenger.noConflict = function(){
+        window.Messenger = _prevMessenger;
+
+        return localMessenger;
+    }
+})();
+
+/*
+ * This file contains shims for when Underscore and Backbone
+ * are not included.
+ *
+ * Portions taken from Underscore.js and Backbone.js
+ * Both of which are Copyright (c) 2009-2013 Jeremy Ashkenas, DocumentCloud
+ */
+window.Messenger._ = (function() {
+    if (window._)
+        return window._
+
+    var ArrayProto = Array.prototype, ObjProto = Object.prototype, FuncProto = Function.prototype;
+
+    // Create quick reference variables for speed access to core prototypes.
+    var push             = ArrayProto.push,
+            slice            = ArrayProto.slice,
+            concat           = ArrayProto.concat,
+            toString         = ObjProto.toString,
+            hasOwnProperty   = ObjProto.hasOwnProperty;
+
+    // All **ECMAScript 5** native function implementations that we hope to use
+    // are declared here.
+    var
+        nativeForEach      = ArrayProto.forEach,
+        nativeMap          = ArrayProto.map,
+        nativeReduce       = ArrayProto.reduce,
+        nativeReduceRight  = ArrayProto.reduceRight,
+        nativeFilter       = ArrayProto.filter,
+        nativeEvery        = ArrayProto.every,
+        nativeSome         = ArrayProto.some,
+        nativeIndexOf      = ArrayProto.indexOf,
+        nativeLastIndexOf  = ArrayProto.lastIndexOf,
+        nativeIsArray      = Array.isArray,
+        nativeKeys         = Object.keys,
+        nativeBind         = FuncProto.bind;
+
+    // Create a safe reference to the Underscore object for use below.
+    var _ = {};
+
+    // Establish the object that gets returned to break out of a loop iteration.
+    var breaker = {};
+
+    var each = _.each = _.forEach = function(obj, iterator, context) {
+        if (obj == null) return;
+        if (nativeForEach && obj.forEach === nativeForEach) {
+            obj.forEach(iterator, context);
+        } else if (obj.length === +obj.length) {
+            for (var i = 0, l = obj.length; i < l; i++) {
+                if (iterator.call(context, obj[i], i, obj) === breaker) return;
+            }
+        } else {
+            for (var key in obj) {
+                if (_.has(obj, key)) {
+                    if (iterator.call(context, obj[key], key, obj) === breaker) return;
+                }
+            }
+        }
+    };
+
+    _.result = function(object, property) {
+        if (object == null) return null;
+        var value = object[property];
+        return _.isFunction(value) ? value.call(object) : value;
+    };
+
+    _.once = function(func) {
+        var ran = false, memo;
+        return function() {
+            if (ran) return memo;
+            ran = true;
+            memo = func.apply(this, arguments);
+            func = null;
+            return memo;
+        };
+    };
+
+    var idCounter = 0;
+    _.uniqueId = function(prefix) {
+        var id = ++idCounter + '';
+        return prefix ? prefix + id : id;
+    };
+
+    _.filter = _.select = function(obj, iterator, context) {
+        var results = [];
+        if (obj == null) return results;
+        if (nativeFilter && obj.filter === nativeFilter) return obj.filter(iterator, context);
+        each(obj, function(value, index, list) {
+            if (iterator.call(context, value, index, list)) results[results.length] = value;
+        });
+        return results;
+    };
+
+    // Add some isType methods: isArguments, isFunction, isString, isNumber, isDate, isRegExp.
+    each(['Arguments', 'Function', 'String', 'Number', 'Date', 'RegExp'], function(name) {
+        _['is' + name] = function(obj) {
+            return toString.call(obj) == '[object ' + name + ']';
+        };
+    });
+
+    _.defaults = function(obj) {
+        each(slice.call(arguments, 1), function(source) {
+            if (source) {
+                for (var prop in source) {
+                    if (obj[prop] == null) obj[prop] = source[prop];
+                }
+            }
+        });
+        return obj;
+    };
+
+    _.extend = function(obj) {
+        each(slice.call(arguments, 1), function(source) {
+            if (source) {
+                for (var prop in source) {
+                    obj[prop] = source[prop];
+                }
+            }
+        });
+        return obj;
+    };
+
+    _.keys = nativeKeys || function(obj) {
+        if (obj !== Object(obj)) throw new TypeError('Invalid object');
+        var keys = [];
+        for (var key in obj) if (_.has(obj, key)) keys[keys.length] = key;
+        return keys;
+    };
+
+    _.bind = function(func, context) {
+        if (func.bind === nativeBind && nativeBind) return nativeBind.apply(func, slice.call(arguments, 1));
+        var args = slice.call(arguments, 2);
+        return function() {
+            return func.apply(context, args.concat(slice.call(arguments)));
+        };
+    };
+
+    _.isObject = function(obj) {
+        return obj === Object(obj);
+    };
+
+    return _;
+})();
+
+window.Messenger.Events = (function() {
+    if (window.Backbone && Backbone.Events) {
+        return Backbone.Events;
+    }
+
+    var eventsShim = function() {
+        var eventSplitter = /\s+/;
+
+        var eventsApi = function(obj, action, name, rest) {
+            if (!name) return true;
+            if (typeof name === 'object') {
+                for (var key in name) {
+                    obj[action].apply(obj, [key, name[key]].concat(rest));
+                }
+            } else if (eventSplitter.test(name)) {
+                var names = name.split(eventSplitter);
+                for (var i = 0, l = names.length; i < l; i++) {
+                    obj[action].apply(obj, [names[i]].concat(rest));
+                }
+            } else {
+                return true;
+            }
+        };
+
+        var triggerEvents = function(events, args) {
+            var ev, i = -1, l = events.length;
+            switch (args.length) {
+            case 0: while (++i < l) (ev = events[i]).callback.call(ev.ctx);
+            return;
+            case 1: while (++i < l) (ev = events[i]).callback.call(ev.ctx, args[0]);
+            return;
+            case 2: while (++i < l) (ev = events[i]).callback.call(ev.ctx, args[0], args[1]);
+            return;
+            case 3: while (++i < l) (ev = events[i]).callback.call(ev.ctx, args[0], args[1], args[2]);
+            return;
+            default: while (++i < l) (ev = events[i]).callback.apply(ev.ctx, args);
+            }
+        };
+
+        var Events = {
+
+            on: function(name, callback, context) {
+                if (!(eventsApi(this, 'on', name, [callback, context]) && callback)) return this;
+                this._events || (this._events = {});
+                var list = this._events[name] || (this._events[name] = []);
+                list.push({callback: callback, context: context, ctx: context || this});
+                return this;
+            },
+
+            once: function(name, callback, context) {
+                if (!(eventsApi(this, 'once', name, [callback, context]) && callback)) return this;
+                var self = this;
+                var once = _.once(function() {
+                    self.off(name, once);
+                    callback.apply(this, arguments);
+                });
+                once._callback = callback;
+                this.on(name, once, context);
+                return this;
+            },
+
+            off: function(name, callback, context) {
+                var list, ev, events, names, i, l, j, k;
+                if (!this._events || !eventsApi(this, 'off', name, [callback, context])) return this;
+                if (!name && !callback && !context) {
+                    this._events = {};
+                    return this;
+                }
+
+                names = name ? [name] : _.keys(this._events);
+                for (i = 0, l = names.length; i < l; i++) {
+                    name = names[i];
+                    if (list = this._events[name]) {
+                        events = [];
+                        if (callback || context) {
+                            for (j = 0, k = list.length; j < k; j++) {
+                                ev = list[j];
+                                if ((callback && callback !== ev.callback &&
+                                                                 callback !== ev.callback._callback) ||
+                                        (context && context !== ev.context)) {
+                                    events.push(ev);
+                                }
+                            }
+                        }
+                        this._events[name] = events;
+                    }
+                }
+
+                return this;
+            },
+
+            trigger: function(name) {
+                if (!this._events) return this;
+                var args = Array.prototype.slice.call(arguments, 1);
+                if (!eventsApi(this, 'trigger', name, args)) return this;
+                var events = this._events[name];
+                var allEvents = this._events.all;
+                if (events) triggerEvents(events, args);
+                if (allEvents) triggerEvents(allEvents, arguments);
+                return this;
+            },
+
+            listenTo: function(obj, name, callback) {
+                var listeners = this._listeners || (this._listeners = {});
+                var id = obj._listenerId || (obj._listenerId = _.uniqueId('l'));
+                listeners[id] = obj;
+                obj.on(name, typeof name === 'object' ? this : callback, this);
+                return this;
+            },
+
+            stopListening: function(obj, name, callback) {
+                var listeners = this._listeners;
+                if (!listeners) return;
+                if (obj) {
+                    obj.off(name, typeof name === 'object' ? this : callback, this);
+                    if (!name && !callback) delete listeners[obj._listenerId];
+                } else {
+                    if (typeof name === 'object') callback = this;
+                    for (var id in listeners) {
+                        listeners[id].off(name, callback, this);
+                    }
+                    this._listeners = {};
+                }
+                return this;
+            }
+        };
+
+        Events.bind   = Events.on;
+        Events.unbind = Events.off;
+        return Events;
+    };
+    return eventsShim();
+})();
+
+(function() {
+  var $, ActionMessenger, BaseView, Events, RetryingMessage, _, _Message, _Messenger, _ref, _ref1, _ref2,
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+    __slice = [].slice,
+    __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
+
+  $ = jQuery;
+
+  _ = (_ref = window._) != null ? _ref : window.Messenger._;
+
+  Events = (_ref1 = typeof Backbone !== "undefined" && Backbone !== null ? Backbone.Events : void 0) != null ? _ref1 : window.Messenger.Events;
+
+  BaseView = (function() {
+
+    function BaseView(options) {
+      $.extend(this, Events);
+      if (_.isObject(options)) {
+        if (options.el) {
+          this.setElement(options.el);
+        }
+        this.model = options.model;
+      }
+      this.initialize.apply(this, arguments);
+    }
+
+    BaseView.prototype.setElement = function(el) {
+      this.$el = $(el);
+      return this.el = this.$el[0];
+    };
+
+    BaseView.prototype.delegateEvents = function(events) {
+      var delegateEventSplitter, eventName, key, match, method, selector, _results;
+      if (!(events || (events = _.result(this, "events")))) {
+        return;
+      }
+      this.undelegateEvents();
+      delegateEventSplitter = /^(\S+)\s*(.*)$/;
+      _results = [];
+      for (key in events) {
+        method = events[key];
+        if (!_.isFunction(method)) {
+          method = this[events[key]];
+        }
+        if (!method) {
+          throw new Error("Method \"" + events[key] + "\" does not exist");
+        }
+        match = key.match(delegateEventSplitter);
+        eventName = match[1];
+        selector = match[2];
+        method = _.bind(method, this);
+        eventName += ".delegateEvents" + this.cid;
+        if (selector === '') {
+          _results.push(this.jqon(eventName, method));
+        } else {
+          _results.push(this.jqon(eventName, selector, method));
+        }
+      }
+      return _results;
+    };
+
+    BaseView.prototype.jqon = function(eventName, selector, method) {
+      var _ref2;
+      if (this.$el.on != null) {
+        return (_ref2 = this.$el).on.apply(_ref2, arguments);
+      } else {
+        if (!(method != null)) {
+          method = selector;
+          selector = void 0;
+        }
+        if (selector != null) {
+          return this.$el.delegate(selector, eventName, method);
+        } else {
+          return this.$el.bind(eventName, method);
+        }
+      }
+    };
+
+    BaseView.prototype.jqoff = function(eventName) {
+      var _ref2;
+      if (this.$el.off != null) {
+        return (_ref2 = this.$el).off.apply(_ref2, arguments);
+      } else {
+        this.$el.undelegate();
+        return this.$el.unbind(eventName);
+      }
+    };
+
+    BaseView.prototype.undelegateEvents = function() {
+      return this.jqoff(".delegateEvents" + this.cid);
+    };
+
+    BaseView.prototype.remove = function() {
+      this.undelegateEvents();
+      return this.$el.remove();
+    };
+
+    return BaseView;
+
+  })();
+
+  _Message = (function(_super) {
+
+    __extends(_Message, _super);
+
+    function _Message() {
+      return _Message.__super__.constructor.apply(this, arguments);
+    }
+
+    _Message.prototype.defaults = {
+      hideAfter: 10,
+      scroll: true,
+      closeButtonText: "&times;",
+      escapeText: false
+    };
+
+    _Message.prototype.initialize = function(opts) {
+      if (opts == null) {
+        opts = {};
+      }
+      this.shown = false;
+      this.rendered = false;
+      this.messenger = opts.messenger;
+      return this.options = $.extend({}, this.options, opts, this.defaults);
+    };
+
+    _Message.prototype.show = function() {
+      var wasShown;
+      if (!this.rendered) {
+        this.render();
+      }
+      this.$message.removeClass('messenger-hidden');
+      wasShown = this.shown;
+      this.shown = true;
+      if (!wasShown) {
+        return this.trigger('show');
+      }
+    };
+
+    _Message.prototype.hide = function() {
+      var wasShown;
+      if (!this.rendered) {
+        return;
+      }
+      this.$message.addClass('messenger-hidden');
+      wasShown = this.shown;
+      this.shown = false;
+      if (wasShown) {
+        return this.trigger('hide');
+      }
+    };
+
+    _Message.prototype.cancel = function() {
+      return this.hide();
+    };
+
+    _Message.prototype.update = function(opts) {
+      var _ref2,
+        _this = this;
+      if (_.isString(opts)) {
+        opts = {
+          message: opts
+        };
+      }
+      $.extend(this.options, opts);
+      this.lastUpdate = new Date();
+      this.rendered = false;
+      this.events = (_ref2 = this.options.events) != null ? _ref2 : {};
+      this.render();
+      this.actionsToEvents();
+      this.delegateEvents();
+      this.checkClickable();
+      if (this.options.hideAfter) {
+        this.$message.addClass('messenger-will-hide-after');
+        if (this._hideTimeout != null) {
+          clearTimeout(this._hideTimeout);
+        }
+        this._hideTimeout = setTimeout(function() {
+          return _this.hide();
+        }, this.options.hideAfter * 1000);
+      } else {
+        this.$message.removeClass('messenger-will-hide-after');
+      }
+      if (this.options.hideOnNavigate) {
+        this.$message.addClass('messenger-will-hide-on-navigate');
+        if ((typeof Backbone !== "undefined" && Backbone !== null ? Backbone.history : void 0) != null) {
+          Backbone.history.on('route', function() {
+            return _this.hide();
+          });
+        }
+      } else {
+        this.$message.removeClass('messenger-will-hide-on-navigate');
+      }
+      return this.trigger('update', this);
+    };
+
+    _Message.prototype.scrollTo = function() {
+      if (!this.options.scroll) {
+        return;
+      }
+      return $.scrollTo(this.$el, {
+        duration: 400,
+        offset: {
+          left: 0,
+          top: -20
+        }
+      });
+    };
+
+    _Message.prototype.timeSinceUpdate = function() {
+      if (this.lastUpdate) {
+        return (new Date) - this.lastUpdate;
+      } else {
+        return null;
+      }
+    };
+
+    _Message.prototype.actionsToEvents = function() {
+      var act, name, _ref2, _results,
+        _this = this;
+      _ref2 = this.options.actions;
+      _results = [];
+      for (name in _ref2) {
+        act = _ref2[name];
+        _results.push(this.events["click [data-action=\"" + name + "\"] a"] = (function(act) {
+          return function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            _this.trigger("action:" + name, act, e);
+            return act.action.call(_this, e, _this);
+          };
+        })(act));
+      }
+      return _results;
+    };
+
+    _Message.prototype.checkClickable = function() {
+      var evt, name, _ref2, _results;
+      _ref2 = this.events;
+      _results = [];
+      for (name in _ref2) {
+        evt = _ref2[name];
+        if (name === 'click') {
+          _results.push(this.$message.addClass('messenger-clickable'));
+        } else {
+          _results.push(void 0);
+        }
+      }
+      return _results;
+    };
+
+    _Message.prototype.undelegateEvents = function() {
+      var _ref2;
+      _Message.__super__.undelegateEvents.apply(this, arguments);
+      return (_ref2 = this.$message) != null ? _ref2.removeClass('messenger-clickable') : void 0;
+    };
+
+    _Message.prototype.parseActions = function() {
+      var act, actions, n_act, name, _ref2, _ref3;
+      actions = [];
+      _ref2 = this.options.actions;
+      for (name in _ref2) {
+        act = _ref2[name];
+        n_act = $.extend({}, act);
+        n_act.name = name;
+        if ((_ref3 = n_act.label) == null) {
+          n_act.label = name;
+        }
+        actions.push(n_act);
+      }
+      return actions;
+    };
+
+    _Message.prototype.template = function(opts) {
+      var $action, $actions, $cancel, $link, $message, $text, action, _i, _len, _ref2,
+        _this = this;
+      $message = $("<div class='messenger-message message alert " + opts.type + " message-" + opts.type + " alert-" + opts.type + "'>");
+      if (opts.showCloseButton) {
+        $cancel = $('<button type="button" class="messenger-close" data-dismiss="alert">');
+        $cancel.html(opts.closeButtonText);
+        $cancel.click(function() {
+          var _base;
+          _this.cancel();
+          if (typeof (_base = _this.options).onClickClose === "function") {
+            _base.onClickClose();
+          }
+          return true;
+        });
+        $message.append($cancel);
+      }
+      if (opts.escapeText) {
+        $text = $('<div class="messenger-message-inner"></div>').text(opts.message);
+      } else {
+        $text = $("<div class=\"messenger-message-inner\">" + opts.message + "</div>");
+      }
+      $message.append($text);
+      if (opts.actions.length) {
+        $actions = $('<div class="messenger-actions">');
+      }
+      _ref2 = opts.actions;
+      for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
+        action = _ref2[_i];
+        $action = $('<span>');
+        $action.attr('data-action', "" + action.name);
+        $link = $('<a>');
+        $link.html(action.label);
+        $action.append($('<span class="messenger-phrase">'));
+        $action.append($link);
+        $actions.append($action);
+      }
+      $message.append($actions);
+      return $message;
+    };
+
+    _Message.prototype.render = function() {
+      var opts;
+      if (this.rendered) {
+        return;
+      }
+      if (!this._hasSlot) {
+        this.setElement(this.messenger._reserveMessageSlot(this));
+        this._hasSlot = true;
+      }
+      opts = $.extend({}, this.options, {
+        actions: this.parseActions()
+      });
+      this.$message = $(this.template(opts));
+      this.$el.html(this.$message);
+      this.shown = true;
+      this.rendered = true;
+      return this.trigger('render');
+    };
+
+    return _Message;
+
+  })(BaseView);
+
+  RetryingMessage = (function(_super) {
+
+    __extends(RetryingMessage, _super);
+
+    function RetryingMessage() {
+      return RetryingMessage.__super__.constructor.apply(this, arguments);
+    }
+
+    RetryingMessage.prototype.initialize = function() {
+      RetryingMessage.__super__.initialize.apply(this, arguments);
+      return this._timers = {};
+    };
+
+    RetryingMessage.prototype.cancel = function() {
+      this.clearTimers();
+      this.hide();
+      if ((this._actionInstance != null) && (this._actionInstance.abort != null)) {
+        return this._actionInstance.abort();
+      }
+    };
+
+    RetryingMessage.prototype.clearTimers = function() {
+      var name, timer, _ref2, _ref3;
+      _ref2 = this._timers;
+      for (name in _ref2) {
+        timer = _ref2[name];
+        clearTimeout(timer);
+      }
+      this._timers = {};
+      return (_ref3 = this.$message) != null ? _ref3.removeClass('messenger-retry-soon messenger-retry-later') : void 0;
+    };
+
+    RetryingMessage.prototype.render = function() {
+      var action, name, _ref2, _results;
+      RetryingMessage.__super__.render.apply(this, arguments);
+      this.clearTimers();
+      _ref2 = this.options.actions;
+      _results = [];
+      for (name in _ref2) {
+        action = _ref2[name];
+        if (action.auto) {
+          _results.push(this.startCountdown(name, action));
+        } else {
+          _results.push(void 0);
+        }
+      }
+      return _results;
+    };
+
+    RetryingMessage.prototype.renderPhrase = function(action, time) {
+      var phrase;
+      phrase = action.phrase.replace('TIME', this.formatTime(time));
+      return phrase;
+    };
+
+    RetryingMessage.prototype.formatTime = function(time) {
+      var pluralize;
+      pluralize = function(num, str) {
+        num = Math.floor(num);
+        if (num !== 1) {
+          str = str + 's';
+        }
+        return 'in ' + num + ' ' + str;
+      };
+      if (Math.floor(time) === 0) {
+        return 'now...';
+      }
+      if (time < 60) {
+        return pluralize(time, 'second');
+      }
+      time /= 60;
+      if (time < 60) {
+        return pluralize(time, 'minute');
+      }
+      time /= 60;
+      return pluralize(time, 'hour');
+    };
+
+    RetryingMessage.prototype.startCountdown = function(name, action) {
+      var $phrase, remaining, tick, _ref2,
+        _this = this;
+      if (this._timers[name] != null) {
+        return;
+      }
+      $phrase = this.$message.find("[data-action='" + name + "'] .messenger-phrase");
+      remaining = (_ref2 = action.delay) != null ? _ref2 : 3;
+      if (remaining <= 10) {
+        this.$message.removeClass('messenger-retry-later');
+        this.$message.addClass('messenger-retry-soon');
+      } else {
+        this.$message.removeClass('messenger-retry-soon');
+        this.$message.addClass('messenger-retry-later');
+      }
+      tick = function() {
+        var delta;
+        $phrase.text(_this.renderPhrase(action, remaining));
+        if (remaining > 0) {
+          delta = Math.min(remaining, 1);
+          remaining -= delta;
+          return _this._timers[name] = setTimeout(tick, delta * 1000);
+        } else {
+          _this.$message.removeClass('messenger-retry-soon messenger-retry-later');
+          delete _this._timers[name];
+          return action.action();
+        }
+      };
+      return tick();
+    };
+
+    return RetryingMessage;
+
+  })(_Message);
+
+  _Messenger = (function(_super) {
+
+    __extends(_Messenger, _super);
+
+    function _Messenger() {
+      return _Messenger.__super__.constructor.apply(this, arguments);
+    }
+
+    _Messenger.prototype.tagName = 'ul';
+
+    _Messenger.prototype.className = 'messenger';
+
+    _Messenger.prototype.messageDefaults = {
+      type: 'info'
+    };
+
+    _Messenger.prototype.initialize = function(options) {
+      this.options = options != null ? options : {};
+      this.history = [];
+      return this.messageDefaults = $.extend({}, this.messageDefaults, this.options.messageDefaults);
+    };
+
+    _Messenger.prototype.render = function() {
+      return this.updateMessageSlotClasses();
+    };
+
+    _Messenger.prototype.findById = function(id) {
+      return _.filter(this.history, function(rec) {
+        return rec.msg.options.id === id;
+      });
+    };
+
+    _Messenger.prototype._reserveMessageSlot = function(msg) {
+      var $slot, dmsg,
+        _this = this;
+      $slot = $('<li>');
+      $slot.addClass('messenger-message-slot');
+      this.$el.prepend($slot);
+      this.history.push({
+        msg: msg,
+        $slot: $slot
+      });
+      this._enforceIdConstraint(msg);
+      msg.on('update', function() {
+        return _this._enforceIdConstraint(msg);
+      });
+      while (this.options.maxMessages && this.history.length > this.options.maxMessages) {
+        dmsg = this.history.shift();
+        dmsg.msg.remove();
+        dmsg.$slot.remove();
+      }
+      return $slot;
+    };
+
+    _Messenger.prototype._enforceIdConstraint = function(msg) {
+      var entry, _i, _len, _msg, _ref2;
+      if (msg.options.id == null) {
+        return;
+      }
+      _ref2 = this.history;
+      for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
+        entry = _ref2[_i];
+        _msg = entry.msg;
+        if ((_msg.options.id != null) && _msg.options.id === msg.options.id && msg !== _msg) {
+          if (msg.options.singleton) {
+            msg.hide();
+            return;
+          } else {
+            _msg.hide();
+          }
+        }
+      }
+    };
+
+    _Messenger.prototype.newMessage = function(opts) {
+      var msg, _ref2, _ref3, _ref4,
+        _this = this;
+      if (opts == null) {
+        opts = {};
+      }
+      opts.messenger = this;
+      _Message = (_ref2 = (_ref3 = Messenger.themes[(_ref4 = opts.theme) != null ? _ref4 : this.options.theme]) != null ? _ref3.Message : void 0) != null ? _ref2 : RetryingMessage;
+      msg = new _Message(opts);
+      msg.on('show', function() {
+        if (opts.scrollTo && _this.$el.css('position') !== 'fixed') {
+          return msg.scrollTo();
+        }
+      });
+      msg.on('hide show render', this.updateMessageSlotClasses, this);
+      return msg;
+    };
+
+    _Messenger.prototype.updateMessageSlotClasses = function() {
+      var anyShown, last, rec, willBeFirst, _i, _len, _ref2;
+      willBeFirst = true;
+      last = null;
+      anyShown = false;
+      _ref2 = this.history;
+      for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
+        rec = _ref2[_i];
+        rec.$slot.removeClass('messenger-first messenger-last messenger-shown');
+        if (rec.msg.shown && rec.msg.rendered) {
+          rec.$slot.addClass('messenger-shown');
+          anyShown = true;
+          last = rec;
+          if (willBeFirst) {
+            willBeFirst = false;
+            rec.$slot.addClass('messenger-first');
+          }
+        }
+      }
+      if (last != null) {
+        last.$slot.addClass('messenger-last');
+      }
+      return this.$el["" + (anyShown ? 'remove' : 'add') + "Class"]('messenger-empty');
+    };
+
+    _Messenger.prototype.hideAll = function() {
+      var rec, _i, _len, _ref2, _results;
+      _ref2 = this.history;
+      _results = [];
+      for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
+        rec = _ref2[_i];
+        _results.push(rec.msg.hide());
+      }
+      return _results;
+    };
+
+    _Messenger.prototype.post = function(opts) {
+      var msg;
+      if (_.isString(opts)) {
+        opts = {
+          message: opts
+        };
+      }
+      opts = $.extend(true, {}, this.messageDefaults, opts);
+      msg = this.newMessage(opts);
+      msg.update(opts);
+      return msg;
+    };
+
+    return _Messenger;
+
+  })(BaseView);
+
+  ActionMessenger = (function(_super) {
+
+    __extends(ActionMessenger, _super);
+
+    function ActionMessenger() {
+      return ActionMessenger.__super__.constructor.apply(this, arguments);
+    }
+
+    ActionMessenger.prototype.doDefaults = {
+      progressMessage: null,
+      successMessage: null,
+      errorMessage: "Error connecting to the server.",
+      showSuccessWithoutError: true,
+      retry: {
+        auto: true,
+        allow: true
+      },
+      action: $.ajax
+    };
+
+    ActionMessenger.prototype.hookBackboneAjax = function(msgr_opts) {
+      var _ajax,
+        _this = this;
+      if (msgr_opts == null) {
+        msgr_opts = {};
+      }
+      if (!(window.Backbone != null)) {
+        throw 'Expected Backbone to be defined';
+      }
+      msgr_opts = _.defaults(msgr_opts, {
+        id: 'BACKBONE_ACTION',
+        errorMessage: false,
+        successMessage: "Request completed successfully.",
+        showSuccessWithoutError: false
+      });
+      _ajax = function(options) {
+        var sync_msgr_opts;
+        sync_msgr_opts = _.extend({}, msgr_opts, options.messenger);
+        return _this["do"](sync_msgr_opts, options);
+      };
+      if (Backbone.ajax != null) {
+        if (Backbone.ajax._withoutMessenger) {
+          Backbone.ajax = Backbone.ajax._withoutMessenger;
+        }
+        if (!(msgr_opts.action != null) || msgr_opts.action === this.doDefaults.action) {
+          msgr_opts.action = Backbone.ajax;
+        }
+        _ajax._withoutMessenger = Backbone.ajax;
+        return Backbone.ajax = _ajax;
+      } else {
+        return Backbone.sync = _.wrap(Backbone.sync, function() {
+          var args, _old_ajax, _old_sync;
+          _old_sync = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
+          _old_ajax = $.ajax;
+          $.ajax = _ajax;
+          _old_sync.call.apply(_old_sync, [this].concat(__slice.call(args)));
+          return $.ajax = _old_ajax;
+        });
+      }
+    };
+
+    ActionMessenger.prototype._getHandlerResponse = function(returnVal) {
+      if (returnVal === false) {
+        return false;
+      }
+      if (returnVal === true || !(returnVal != null)) {
+        return true;
+      }
+      return returnVal;
+    };
+
+    ActionMessenger.prototype._parseEvents = function(events) {
+      var desc, firstSpace, func, label, out, type, _ref2;
+      if (events == null) {
+        events = {};
+      }
+      out = {};
+      for (label in events) {
+        func = events[label];
+        firstSpace = label.indexOf(' ');
+        type = label.substring(0, firstSpace);
+        desc = label.substring(firstSpace + 1);
+        if ((_ref2 = out[type]) == null) {
+          out[type] = {};
+        }
+        out[type][desc] = func;
+      }
+      return out;
+    };
+
+    ActionMessenger.prototype._normalizeResponse = function() {
+      var data, elem, resp, type, xhr, _i, _len;
+      resp = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+      type = null;
+      xhr = null;
+      data = null;
+      for (_i = 0, _len = resp.length; _i < _len; _i++) {
+        elem = resp[_i];
+        if (elem === 'success' || elem === 'timeout' || elem === 'abort') {
+          type = elem;
+        } else if (((elem != null ? elem.readyState : void 0) != null) && ((elem != null ? elem.responseText : void 0) != null)) {
+          xhr = elem;
+        } else if (_.isObject(elem)) {
+          data = elem;
+        }
+      }
+      return [type, data, xhr];
+    };
+
+    ActionMessenger.prototype.run = function() {
+      var args, events, getMessageText, handler, handlers, m_opts, msg, old, opts, type, _ref2,
+        _this = this;
+      m_opts = arguments[0], opts = arguments[1], args = 3 <= arguments.length ? __slice.call(arguments, 2) : [];
+      if (opts == null) {
+        opts = {};
+      }
+      m_opts = $.extend(true, {}, this.messageDefaults, this.doDefaults, m_opts != null ? m_opts : {});
+      events = this._parseEvents(m_opts.events);
+      getMessageText = function(type, xhr) {
+        var message;
+        message = m_opts[type + 'Message'];
+        if (_.isFunction(message)) {
+          return message.call(_this, type, xhr);
+        }
+        return message;
+      };
+      msg = (_ref2 = m_opts.messageInstance) != null ? _ref2 : this.newMessage(m_opts);
+      if (m_opts.id != null) {
+        msg.options.id = m_opts.id;
+      }
+      if (m_opts.progressMessage != null) {
+        msg.update($.extend({}, m_opts, {
+          message: getMessageText('progress', null),
+          type: 'info'
+        }));
+      }
+      handlers = {};
+      _.each(['error', 'success'], function(type) {
+        var originalHandler;
+        originalHandler = opts[type];
+        return handlers[type] = function() {
+          var data, defaultOpts, handlerResp, msgOpts, reason, resp, responseOpts, xhr, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+          resp = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+          _ref3 = _this._normalizeResponse.apply(_this, resp), reason = _ref3[0], data = _ref3[1], xhr = _ref3[2];
+          if (type === 'success' && !(msg.errorCount != null) && m_opts.showSuccessWithoutError === false) {
+            m_opts['successMessage'] = null;
+          }
+          if (type === 'error') {
+            if ((_ref4 = m_opts.errorCount) == null) {
+              m_opts.errorCount = 0;
+            }
+            m_opts.errorCount += 1;
+          }
+          handlerResp = m_opts.returnsPromise ? resp[0] : typeof originalHandler === "function" ? originalHandler.apply(null, resp) : void 0;
+          responseOpts = _this._getHandlerResponse(handlerResp);
+          if (_.isString(responseOpts)) {
+            responseOpts = {
+              message: responseOpts
+            };
+          }
+          if (type === 'error' && ((xhr != null ? xhr.status : void 0) === 0 || reason === 'abort')) {
+            msg.hide();
+            return;
+          }
+          if (type === 'error' && ((m_opts.ignoredErrorCodes != null) && (_ref5 = xhr != null ? xhr.status : void 0, __indexOf.call(m_opts.ignoredErrorCodes, _ref5) >= 0))) {
+            msg.hide();
+            return;
+          }
+          defaultOpts = {
+            message: getMessageText(type, xhr),
+            type: type,
+            events: (_ref6 = events[type]) != null ? _ref6 : {},
+            hideOnNavigate: type === 'success'
+          };
+          msgOpts = $.extend({}, m_opts, defaultOpts, responseOpts);
+          if (typeof ((_ref7 = msgOpts.retry) != null ? _ref7.allow : void 0) === 'number') {
+            msgOpts.retry.allow--;
+          }
+          if (type === 'error' && (xhr != null ? xhr.status : void 0) >= 500 && ((_ref8 = msgOpts.retry) != null ? _ref8.allow : void 0)) {
+            if (msgOpts.retry.delay == null) {
+              if (msgOpts.errorCount < 4) {
+                msgOpts.retry.delay = 10;
+              } else {
+                msgOpts.retry.delay = 5 * 60;
+              }
+            }
+            if (msgOpts.hideAfter) {
+              if ((_ref9 = msgOpts._hideAfter) == null) {
+                msgOpts._hideAfter = msgOpts.hideAfter;
+              }
+              msgOpts.hideAfter = msgOpts._hideAfter + msgOpts.retry.delay;
+            }
+            msgOpts._retryActions = true;
+            msgOpts.actions = {
+              retry: {
+                label: 'retry now',
+                phrase: 'Retrying TIME',
+                auto: msgOpts.retry.auto,
+                delay: msgOpts.retry.delay,
+                action: function() {
+                  msgOpts.messageInstance = msg;
+                  return setTimeout(function() {
+                    return _this["do"].apply(_this, [msgOpts, opts].concat(__slice.call(args)));
+                  }, 0);
+                }
+              },
+              cancel: {
+                action: function() {
+                  return msg.cancel();
+                }
+              }
+            };
+          } else if (msgOpts._retryActions) {
+            delete msgOpts.actions.retry;
+            delete msgOpts.actions.cancel;
+            delete m_opts._retryActions;
+          }
+          msg.update(msgOpts);
+          if (responseOpts && msgOpts.message) {
+            Messenger(_.extend({}, _this.options, {
+              instance: _this
+            }));
+            return msg.show();
+          } else {
+            return msg.hide();
+          }
+        };
+      });
+      if (!m_opts.returnsPromise) {
+        for (type in handlers) {
+          handler = handlers[type];
+          old = opts[type];
+          opts[type] = handler;
+        }
+      }
+      msg._actionInstance = m_opts.action.apply(m_opts, [opts].concat(__slice.call(args)));
+      if (m_opts.returnsPromise) {
+        msg._actionInstance.then(handlers.success, handlers.error);
+      }
+      return msg;
+    };
+
+    ActionMessenger.prototype["do"] = ActionMessenger.prototype.run;
+
+    ActionMessenger.prototype.ajax = function() {
+      var args, m_opts;
+      m_opts = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
+      m_opts.action = $.ajax;
+      return this.run.apply(this, [m_opts].concat(__slice.call(args)));
+    };
+
+    ActionMessenger.prototype.expectPromise = function(action, m_opts) {
+      m_opts = _.extend({}, m_opts, {
+        action: action,
+        returnsPromise: true
+      });
+      return this.run(m_opts);
+    };
+
+    ActionMessenger.prototype.error = function(m_opts) {
+      if (m_opts == null) {
+        m_opts = {};
+      }
+      if (typeof m_opts === 'string') {
+        m_opts = {
+          message: m_opts
+        };
+      }
+      m_opts.type = 'error';
+      return this.post(m_opts);
+    };
+
+    ActionMessenger.prototype.info = function(m_opts) {
+      if (m_opts == null) {
+        m_opts = {};
+      }
+      if (typeof m_opts === 'string') {
+        m_opts = {
+          message: m_opts
+        };
+      }
+      m_opts.type = 'info';
+      return this.post(m_opts);
+    };
+
+    ActionMessenger.prototype.success = function(m_opts) {
+      if (m_opts == null) {
+        m_opts = {};
+      }
+      if (typeof m_opts === 'string') {
+        m_opts = {
+          message: m_opts
+        };
+      }
+      m_opts.type = 'success';
+      return this.post(m_opts);
+    };
+
+    return ActionMessenger;
+
+  })(_Messenger);
+
+  $.fn.messenger = function() {
+    var $el, args, func, instance, opts, _ref2, _ref3, _ref4;
+    func = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
+    if (func == null) {
+      func = {};
+    }
+    $el = this;
+    if (!(func != null) || !_.isString(func)) {
+      opts = func;
+      if (!($el.data('messenger') != null)) {
+        _Messenger = (_ref2 = (_ref3 = Messenger.themes[opts.theme]) != null ? _ref3.Messenger : void 0) != null ? _ref2 : ActionMessenger;
+        $el.data('messenger', instance = new _Messenger($.extend({
+          el: $el
+        }, opts)));
+        instance.render();
+      }
+      return $el.data('messenger');
+    } else {
+      return (_ref4 = $el.data('messenger'))[func].apply(_ref4, args);
+    }
+  };
+
+  window.Messenger._call = function(opts) {
+    var $el, $parent, choosen_loc, chosen_loc, classes, defaultOpts, inst, loc, locations, _i, _len;
+    defaultOpts = {
+      extraClasses: 'messenger-fixed messenger-on-bottom messenger-on-right',
+      theme: 'future',
+      maxMessages: 9,
+      parentLocations: ['body']
+    };
+    opts = $.extend(defaultOpts, $._messengerDefaults, Messenger.options, opts);
+    if (opts.theme != null) {
+      opts.extraClasses += " messenger-theme-" + opts.theme;
+    }
+    inst = opts.instance || Messenger.instance;
+    if (opts.instance == null) {
+      locations = opts.parentLocations;
+      $parent = null;
+      choosen_loc = null;
+      for (_i = 0, _len = locations.length; _i < _len; _i++) {
+        loc = locations[_i];
+        $parent = $(loc);
+        if ($parent.length) {
+          chosen_loc = loc;
+          break;
+        }
+      }
+      if (!inst) {
+        $el = $('<ul>');
+        $parent.prepend($el);
+        inst = $el.messenger(opts);
+        inst._location = chosen_loc;
+        Messenger.instance = inst;
+      } else if (!$(inst._location).is($(chosen_loc))) {
+        inst.$el.detach();
+        $parent.prepend(inst.$el);
+      }
+    }
+    if (inst._addedClasses != null) {
+      inst.$el.removeClass(inst._addedClasses);
+    }
+    inst.$el.addClass(classes = "" + inst.className + " " + opts.extraClasses);
+    inst._addedClasses = classes;
+    return inst;
+  };
+
+  $.extend(Messenger, {
+    Message: RetryingMessage,
+    Messenger: ActionMessenger,
+    themes: (_ref2 = Messenger.themes) != null ? _ref2 : {}
+  });
+
+  $.globalMessenger = window.Messenger = Messenger;
+
+}).call(this);
+
+// flat theme
+(function() {
+  var $, FlatMessage, spinner_template,
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+  $ = jQuery;
+
+  spinner_template = '<div class="messenger-spinner">\n    <span class="messenger-spinner-side messenger-spinner-side-left">\n        <span class="messenger-spinner-fill"></span>\n    </span>\n    <span class="messenger-spinner-side messenger-spinner-side-right">\n        <span class="messenger-spinner-fill"></span>\n    </span>\n</div>';
+
+  FlatMessage = (function(_super) {
+
+    __extends(FlatMessage, _super);
+
+    function FlatMessage() {
+      return FlatMessage.__super__.constructor.apply(this, arguments);
+    }
+
+    FlatMessage.prototype.template = function(opts) {
+      var $message;
+      $message = FlatMessage.__super__.template.apply(this, arguments);
+      $message.append($(spinner_template));
+      return $message;
+    };
+
+    return FlatMessage;
+
+  })(window.Messenger.Message);
+
+  window.Messenger.themes.flat = {
+    Message: FlatMessage
+  };
+
+}).call(this);
+
 !function(e,t,n){"use strict";!function o(e,t,n){function a(s,l){if(!t[s]){if(!e[s]){var i="function"==typeof require&&require;if(!l&&i)return i(s,!0);if(r)return r(s,!0);var u=new Error("Cannot find module '"+s+"'");throw u.code="MODULE_NOT_FOUND",u}var c=t[s]={exports:{}};e[s][0].call(c.exports,function(t){var n=e[s][1][t];return a(n?n:t)},c,c.exports,o,e,t,n)}return t[s].exports}for(var r="function"==typeof require&&require,s=0;s<n.length;s++)a(n[s]);return a}({1:[function(o,a,r){var s=function(e){return e&&e.__esModule?e:{"default":e}};Object.defineProperty(r,"__esModule",{value:!0});var l,i,u,c,d=o("./modules/handle-dom"),f=o("./modules/utils"),p=o("./modules/handle-swal-dom"),m=o("./modules/handle-click"),v=o("./modules/handle-key"),y=s(v),h=o("./modules/default-params"),b=s(h),g=o("./modules/set-params"),w=s(g);r["default"]=u=c=function(){function o(e){var t=a;return t[e]===n?b["default"][e]:t[e]}var a=arguments[0];if(d.addClass(t.body,"stop-scrolling"),p.resetInput(),a===n)return f.logStr("SweetAlert expects at least 1 attribute!"),!1;var r=f.extend({},b["default"]);switch(typeof a){case"string":r.title=a,r.text=arguments[1]||"",r.type=arguments[2]||"";break;case"object":if(a.title===n)return f.logStr('Missing "title" argument!'),!1;r.title=a.title;for(var s in b["default"])r[s]=o(s);r.confirmButtonText=r.showCancelButton?"Confirm":b["default"].confirmButtonText,r.confirmButtonText=o("confirmButtonText"),r.doneFunction=arguments[1]||null;break;default:return f.logStr('Unexpected type of argument! Expected "string" or "object", got '+typeof a),!1}w["default"](r),p.fixVerticalPosition(),p.openModal(arguments[1]);for(var u=p.getModal(),v=u.querySelectorAll("button"),h=["onclick","onmouseover","onmouseout","onmousedown","onmouseup","onfocus"],g=function(e){return m.handleButton(e,r,u)},C=0;C<v.length;C++)for(var S=0;S<h.length;S++){var x=h[S];v[C][x]=g}p.getOverlay().onclick=g,l=e.onkeydown;var k=function(e){return y["default"](e,r,u)};e.onkeydown=k,e.onfocus=function(){setTimeout(function(){i!==n&&(i.focus(),i=n)},0)},c.enableButtons()},u.setDefaults=c.setDefaults=function(e){if(!e)throw new Error("userParams is required");if("object"!=typeof e)throw new Error("userParams has to be a object");f.extend(b["default"],e)},u.close=c.close=function(){var o=p.getModal();d.fadeOut(p.getOverlay(),5),d.fadeOut(o,5),d.removeClass(o,"showSweetAlert"),d.addClass(o,"hideSweetAlert"),d.removeClass(o,"visible");var a=o.querySelector(".sa-icon.sa-success");d.removeClass(a,"animate"),d.removeClass(a.querySelector(".sa-tip"),"animateSuccessTip"),d.removeClass(a.querySelector(".sa-long"),"animateSuccessLong");var r=o.querySelector(".sa-icon.sa-error");d.removeClass(r,"animateErrorIcon"),d.removeClass(r.querySelector(".sa-x-mark"),"animateXMark");var s=o.querySelector(".sa-icon.sa-warning");return d.removeClass(s,"pulseWarning"),d.removeClass(s.querySelector(".sa-body"),"pulseWarningIns"),d.removeClass(s.querySelector(".sa-dot"),"pulseWarningIns"),setTimeout(function(){var e=o.getAttribute("data-custom-class");d.removeClass(o,e)},300),d.removeClass(t.body,"stop-scrolling"),e.onkeydown=l,e.previousActiveElement&&e.previousActiveElement.focus(),i=n,clearTimeout(o.timeout),!0},u.showInputError=c.showInputError=function(e){var t=p.getModal(),n=t.querySelector(".sa-input-error");d.addClass(n,"show");var o=t.querySelector(".sa-error-container");d.addClass(o,"show"),o.querySelector("p").innerHTML=e,setTimeout(function(){u.enableButtons()},1),t.querySelector("input").focus()},u.resetInputError=c.resetInputError=function(e){if(e&&13===e.keyCode)return!1;var t=p.getModal(),n=t.querySelector(".sa-input-error");d.removeClass(n,"show");var o=t.querySelector(".sa-error-container");d.removeClass(o,"show")},u.disableButtons=c.disableButtons=function(){var e=p.getModal(),t=e.querySelector("button.confirm"),n=e.querySelector("button.cancel");t.disabled=!0,n.disabled=!0},u.enableButtons=c.enableButtons=function(){var e=p.getModal(),t=e.querySelector("button.confirm"),n=e.querySelector("button.cancel");t.disabled=!1,n.disabled=!1},"undefined"!=typeof e?e.sweetAlert=e.swal=u:f.logStr("SweetAlert is a frontend module!"),a.exports=r["default"]},{"./modules/default-params":2,"./modules/handle-click":3,"./modules/handle-dom":4,"./modules/handle-key":5,"./modules/handle-swal-dom":6,"./modules/set-params":8,"./modules/utils":9}],2:[function(e,t,n){Object.defineProperty(n,"__esModule",{value:!0});var o={title:"",text:"",type:null,allowOutsideClick:!1,showConfirmButton:!0,showCancelButton:!1,closeOnConfirm:!0,closeOnCancel:!0,confirmButtonText:"OK",confirmButtonColor:"#8CD4F5",cancelButtonText:"Cancel",imageUrl:null,imageSize:null,timer:null,customClass:"",html:!1,animation:!0,allowEscapeKey:!0,inputType:"text",inputPlaceholder:"",inputValue:"",showLoaderOnConfirm:!1};n["default"]=o,t.exports=n["default"]},{}],3:[function(t,n,o){Object.defineProperty(o,"__esModule",{value:!0});var a=t("./utils"),r=(t("./handle-swal-dom"),t("./handle-dom")),s=function(t,n,o){function s(e){m&&n.confirmButtonColor&&(p.style.backgroundColor=e)}var u,c,d,f=t||e.event,p=f.target||f.srcElement,m=-1!==p.className.indexOf("confirm"),v=-1!==p.className.indexOf("sweet-overlay"),y=r.hasClass(o,"visible"),h=n.doneFunction&&"true"===o.getAttribute("data-has-done-function");switch(m&&n.confirmButtonColor&&(u=n.confirmButtonColor,c=a.colorLuminance(u,-.04),d=a.colorLuminance(u,-.14)),f.type){case"mouseover":s(c);break;case"mouseout":s(u);break;case"mousedown":s(d);break;case"mouseup":s(c);break;case"focus":var b=o.querySelector("button.confirm"),g=o.querySelector("button.cancel");m?g.style.boxShadow="none":b.style.boxShadow="none";break;case"click":var w=o===p,C=r.isDescendant(o,p);if(!w&&!C&&y&&!n.allowOutsideClick)break;m&&h&&y?l(o,n):h&&y||v?i(o,n):r.isDescendant(o,p)&&"BUTTON"===p.tagName&&sweetAlert.close()}},l=function(e,t){var n=!0;r.hasClass(e,"show-input")&&(n=e.querySelector("input").value,n||(n="")),t.doneFunction(n),t.closeOnConfirm&&sweetAlert.close(),t.showLoaderOnConfirm&&sweetAlert.disableButtons()},i=function(e,t){var n=String(t.doneFunction).replace(/\s/g,""),o="function("===n.substring(0,9)&&")"!==n.substring(9,10);o&&t.doneFunction(!1),t.closeOnCancel&&sweetAlert.close()};o["default"]={handleButton:s,handleConfirm:l,handleCancel:i},n.exports=o["default"]},{"./handle-dom":4,"./handle-swal-dom":6,"./utils":9}],4:[function(n,o,a){Object.defineProperty(a,"__esModule",{value:!0});var r=function(e,t){return new RegExp(" "+t+" ").test(" "+e.className+" ")},s=function(e,t){r(e,t)||(e.className+=" "+t)},l=function(e,t){var n=" "+e.className.replace(/[\t\r\n]/g," ")+" ";if(r(e,t)){for(;n.indexOf(" "+t+" ")>=0;)n=n.replace(" "+t+" "," ");e.className=n.replace(/^\s+|\s+$/g,"")}},i=function(e){var n=t.createElement("div");return n.appendChild(t.createTextNode(e)),n.innerHTML},u=function(e){e.style.opacity="",e.style.display="block"},c=function(e){if(e&&!e.length)return u(e);for(var t=0;t<e.length;++t)u(e[t])},d=function(e){e.style.opacity="",e.style.display="none"},f=function(e){if(e&&!e.length)return d(e);for(var t=0;t<e.length;++t)d(e[t])},p=function(e,t){for(var n=t.parentNode;null!==n;){if(n===e)return!0;n=n.parentNode}return!1},m=function(e){e.style.left="-9999px",e.style.display="block";var t,n=e.clientHeight;return t="undefined"!=typeof getComputedStyle?parseInt(getComputedStyle(e).getPropertyValue("padding-top"),10):parseInt(e.currentStyle.padding),e.style.left="",e.style.display="none","-"+parseInt((n+t)/2)+"px"},v=function(e,t){if(+e.style.opacity<1){t=t||16,e.style.opacity=0,e.style.display="block";var n=+new Date,o=function(e){function t(){return e.apply(this,arguments)}return t.toString=function(){return e.toString()},t}(function(){e.style.opacity=+e.style.opacity+(new Date-n)/100,n=+new Date,+e.style.opacity<1&&setTimeout(o,t)});o()}e.style.display="block"},y=function(e,t){t=t||16,e.style.opacity=1;var n=+new Date,o=function(e){function t(){return e.apply(this,arguments)}return t.toString=function(){return e.toString()},t}(function(){e.style.opacity=+e.style.opacity-(new Date-n)/100,n=+new Date,+e.style.opacity>0?setTimeout(o,t):e.style.display="none"});o()},h=function(n){if("function"==typeof MouseEvent){var o=new MouseEvent("click",{view:e,bubbles:!1,cancelable:!0});n.dispatchEvent(o)}else if(t.createEvent){var a=t.createEvent("MouseEvents");a.initEvent("click",!1,!1),n.dispatchEvent(a)}else t.createEventObject?n.fireEvent("onclick"):"function"==typeof n.onclick&&n.onclick()},b=function(t){"function"==typeof t.stopPropagation?(t.stopPropagation(),t.preventDefault()):e.event&&e.event.hasOwnProperty("cancelBubble")&&(e.event.cancelBubble=!0)};a.hasClass=r,a.addClass=s,a.removeClass=l,a.escapeHtml=i,a._show=u,a.show=c,a._hide=d,a.hide=f,a.isDescendant=p,a.getTopMargin=m,a.fadeIn=v,a.fadeOut=y,a.fireClick=h,a.stopEventPropagation=b},{}],5:[function(t,o,a){Object.defineProperty(a,"__esModule",{value:!0});var r=t("./handle-dom"),s=t("./handle-swal-dom"),l=function(t,o,a){var l=t||e.event,i=l.keyCode||l.which,u=a.querySelector("button.confirm"),c=a.querySelector("button.cancel"),d=a.querySelectorAll("button[tabindex]");if(-1!==[9,13,32,27].indexOf(i)){for(var f=l.target||l.srcElement,p=-1,m=0;m<d.length;m++)if(f===d[m]){p=m;break}9===i?(f=-1===p?u:p===d.length-1?d[0]:d[p+1],r.stopEventPropagation(l),f.focus(),o.confirmButtonColor&&s.setFocusStyle(f,o.confirmButtonColor)):13===i?("INPUT"===f.tagName&&(f=u,u.focus()),f=-1===p?u:n):27===i&&o.allowEscapeKey===!0?(f=c,r.fireClick(f,l)):f=n}};a["default"]=l,o.exports=a["default"]},{"./handle-dom":4,"./handle-swal-dom":6}],6:[function(n,o,a){var r=function(e){return e&&e.__esModule?e:{"default":e}};Object.defineProperty(a,"__esModule",{value:!0});var s=n("./utils"),l=n("./handle-dom"),i=n("./default-params"),u=r(i),c=n("./injected-html"),d=r(c),f=".sweet-alert",p=".sweet-overlay",m=function(){var e=t.createElement("div");for(e.innerHTML=d["default"];e.firstChild;)t.body.appendChild(e.firstChild)},v=function(e){function t(){return e.apply(this,arguments)}return t.toString=function(){return e.toString()},t}(function(){var e=t.querySelector(f);return e||(m(),e=v()),e}),y=function(){var e=v();return e?e.querySelector("input"):void 0},h=function(){return t.querySelector(p)},b=function(e,t){var n=s.hexToRgb(t);e.style.boxShadow="0 0 2px rgba("+n+", 0.8), inset 0 0 0 1px rgba(0, 0, 0, 0.05)"},g=function(n){var o=v();l.fadeIn(h(),10),l.show(o),l.addClass(o,"showSweetAlert"),l.removeClass(o,"hideSweetAlert"),e.previousActiveElement=t.activeElement;var a=o.querySelector("button.confirm");a.focus(),setTimeout(function(){l.addClass(o,"visible")},500);var r=o.getAttribute("data-timer");if("null"!==r&&""!==r){var s=n;o.timeout=setTimeout(function(){var e=(s||null)&&"true"===o.getAttribute("data-has-done-function");e?s(null):sweetAlert.close()},r)}},w=function(){var e=v(),t=y();l.removeClass(e,"show-input"),t.value=u["default"].inputValue,t.setAttribute("type",u["default"].inputType),t.setAttribute("placeholder",u["default"].inputPlaceholder),C()},C=function(e){if(e&&13===e.keyCode)return!1;var t=v(),n=t.querySelector(".sa-input-error");l.removeClass(n,"show");var o=t.querySelector(".sa-error-container");l.removeClass(o,"show")},S=function(){var e=v();e.style.marginTop=l.getTopMargin(v())};a.sweetAlertInitialize=m,a.getModal=v,a.getOverlay=h,a.getInput=y,a.setFocusStyle=b,a.openModal=g,a.resetInput=w,a.resetInputError=C,a.fixVerticalPosition=S},{"./default-params":2,"./handle-dom":4,"./injected-html":7,"./utils":9}],7:[function(e,t,n){Object.defineProperty(n,"__esModule",{value:!0});var o='<div class="sweet-overlay" tabIndex="-1"></div><div class="sweet-alert"><div class="sa-icon sa-error">\n      <span class="sa-x-mark">\n        <span class="sa-line sa-left"></span>\n        <span class="sa-line sa-right"></span>\n      </span>\n    </div><div class="sa-icon sa-warning">\n      <span class="sa-body"></span>\n      <span class="sa-dot"></span>\n    </div><div class="sa-icon sa-info"></div><div class="sa-icon sa-success">\n      <span class="sa-line sa-tip"></span>\n      <span class="sa-line sa-long"></span>\n\n      <div class="sa-placeholder"></div>\n      <div class="sa-fix"></div>\n    </div><div class="sa-icon sa-custom"></div><h2>Title</h2>\n    <p>Text</p>\n    <fieldset>\n      <input type="text" tabIndex="3" />\n      <div class="sa-input-error"></div>\n    </fieldset><div class="sa-error-container">\n      <div class="icon">!</div>\n      <p>Not valid!</p>\n    </div><div class="sa-button-container">\n      <button class="cancel" tabIndex="2">Cancel</button>\n      <div class="sa-confirm-button-container">\n        <button class="confirm" tabIndex="1">OK</button><div class="la-ball-fall">\n          <div></div>\n          <div></div>\n          <div></div>\n        </div>\n      </div>\n    </div></div>';n["default"]=o,t.exports=n["default"]},{}],8:[function(e,t,o){Object.defineProperty(o,"__esModule",{value:!0});var a=e("./utils"),r=e("./handle-swal-dom"),s=e("./handle-dom"),l=["error","warning","info","success","input","prompt"],i=function(e){var t=r.getModal(),o=t.querySelector("h2"),i=t.querySelector("p"),u=t.querySelector("button.cancel"),c=t.querySelector("button.confirm");if(o.innerHTML=e.html?e.title:s.escapeHtml(e.title).split("\n").join("<br>"),i.innerHTML=e.html?e.text:s.escapeHtml(e.text||"").split("\n").join("<br>"),e.text&&s.show(i),e.customClass)s.addClass(t,e.customClass),t.setAttribute("data-custom-class",e.customClass);else{var d=t.getAttribute("data-custom-class");s.removeClass(t,d),t.setAttribute("data-custom-class","")}if(s.hide(t.querySelectorAll(".sa-icon")),e.type&&!a.isIE8()){var f=function(){for(var o=!1,a=0;a<l.length;a++)if(e.type===l[a]){o=!0;break}if(!o)return logStr("Unknown alert type: "+e.type),{v:!1};var i=["success","error","warning","info"],u=n;-1!==i.indexOf(e.type)&&(u=t.querySelector(".sa-icon.sa-"+e.type),s.show(u));var c=r.getInput();switch(e.type){case"success":s.addClass(u,"animate"),s.addClass(u.querySelector(".sa-tip"),"animateSuccessTip"),s.addClass(u.querySelector(".sa-long"),"animateSuccessLong");break;case"error":s.addClass(u,"animateErrorIcon"),s.addClass(u.querySelector(".sa-x-mark"),"animateXMark");break;case"warning":s.addClass(u,"pulseWarning"),s.addClass(u.querySelector(".sa-body"),"pulseWarningIns"),s.addClass(u.querySelector(".sa-dot"),"pulseWarningIns");break;case"input":case"prompt":c.setAttribute("type",e.inputType),c.value=e.inputValue,c.setAttribute("placeholder",e.inputPlaceholder),s.addClass(t,"show-input"),setTimeout(function(){c.focus(),c.addEventListener("keyup",swal.resetInputError)},400)}}();if("object"==typeof f)return f.v}if(e.imageUrl){var p=t.querySelector(".sa-icon.sa-custom");p.style.backgroundImage="url("+e.imageUrl+")",s.show(p);var m=80,v=80;if(e.imageSize){var y=e.imageSize.toString().split("x"),h=y[0],b=y[1];h&&b?(m=h,v=b):logStr("Parameter imageSize expects value with format WIDTHxHEIGHT, got "+e.imageSize)}p.setAttribute("style",p.getAttribute("style")+"width:"+m+"px; height:"+v+"px")}t.setAttribute("data-has-cancel-button",e.showCancelButton),e.showCancelButton?u.style.display="inline-block":s.hide(u),t.setAttribute("data-has-confirm-button",e.showConfirmButton),e.showConfirmButton?c.style.display="inline-block":s.hide(c),e.cancelButtonText&&(u.innerHTML=s.escapeHtml(e.cancelButtonText)),e.confirmButtonText&&(c.innerHTML=s.escapeHtml(e.confirmButtonText)),e.confirmButtonColor&&(c.style.backgroundColor=e.confirmButtonColor,c.style.borderLeftColor=e.confirmLoadingButtonColor,c.style.borderRightColor=e.confirmLoadingButtonColor,r.setFocusStyle(c,e.confirmButtonColor)),t.setAttribute("data-allow-outside-click",e.allowOutsideClick);var g=e.doneFunction?!0:!1;t.setAttribute("data-has-done-function",g),e.animation?"string"==typeof e.animation?t.setAttribute("data-animation",e.animation):t.setAttribute("data-animation","pop"):t.setAttribute("data-animation","none"),t.setAttribute("data-timer",e.timer)};o["default"]=i,t.exports=o["default"]},{"./handle-dom":4,"./handle-swal-dom":6,"./utils":9}],9:[function(t,n,o){Object.defineProperty(o,"__esModule",{value:!0});var a=function(e,t){for(var n in t)t.hasOwnProperty(n)&&(e[n]=t[n]);return e},r=function(e){var t=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(e);return t?parseInt(t[1],16)+", "+parseInt(t[2],16)+", "+parseInt(t[3],16):null},s=function(){return e.attachEvent&&!e.addEventListener},l=function(t){e.console&&e.console.log("SweetAlert: "+t)},i=function(e,t){e=String(e).replace(/[^0-9a-f]/gi,""),e.length<6&&(e=e[0]+e[0]+e[1]+e[1]+e[2]+e[2]),t=t||0;var n,o,a="#";for(o=0;3>o;o++)n=parseInt(e.substr(2*o,2),16),n=Math.round(Math.min(Math.max(0,n+n*t),255)).toString(16),a+=("00"+n).substr(n.length);return a};o.extend=a,o.hexToRgb=r,o.isIE8=s,o.logStr=l,o.colorLuminance=i},{}]},{},[1]),"function"==typeof define&&define.amd?define(function(){return sweetAlert}):"undefined"!=typeof module&&module.exports&&(module.exports=sweetAlert)}(window,document);
 var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this.parsedData=[];for(var e=0,r=this.data.length;r>e;e++){var i=[],n=this.data.charCodeAt(e);n>65536?(i[0]=240|(1835008&n)>>>18,i[1]=128|(258048&n)>>>12,i[2]=128|(4032&n)>>>6,i[3]=128|63&n):n>2048?(i[0]=224|(61440&n)>>>12,i[1]=128|(4032&n)>>>6,i[2]=128|63&n):n>128?(i[0]=192|(1984&n)>>>6,i[1]=128|63&n):i[0]=n,this.parsedData.push(i)}this.parsedData=Array.prototype.concat.apply([],this.parsedData),this.parsedData.length!=this.data.length&&(this.parsedData.unshift(191),this.parsedData.unshift(187),this.parsedData.unshift(239))}function e(t,e){this.typeNumber=t,this.errorCorrectLevel=e,this.modules=null,this.moduleCount=0,this.dataCache=null,this.dataList=[]}function r(t,e){if(void 0==t.length)throw new Error(t.length+"/"+e);for(var r=0;r<t.length&&0==t[r];)r++;this.num=new Array(t.length-r+e);for(var i=0;i<t.length-r;i++)this.num[i]=t[i+r]}function i(t,e){this.totalCount=t,this.dataCount=e}function n(){this.buffer=[],this.length=0}function o(){return"undefined"!=typeof CanvasRenderingContext2D}function a(){var t=!1,e=navigator.userAgent;if(/android/i.test(e)){t=!0;var r=e.toString().match(/android ([0-9]\.[0-9])/i);r&&r[1]&&(t=parseFloat(r[1]))}return t}function s(t,e){for(var r=1,i=h(t),n=0,o=p.length;o>=n;n++){var a=0;switch(e){case u.L:a=p[n][0];break;case u.M:a=p[n][1];break;case u.Q:a=p[n][2];break;case u.H:a=p[n][3]}if(a>=i)break;r++}if(r>p.length)throw new Error("Too long data");return r}function h(t){var e=encodeURI(t).toString().replace(/\%[0-9a-fA-F]{2}/g,"a");return e.length+(e.length!=t?3:0)}t.prototype={getLength:function(t){return this.parsedData.length},write:function(t){for(var e=0,r=this.parsedData.length;r>e;e++)t.put(this.parsedData[e],8)}},e.prototype={addData:function(e){var r=new t(e);this.dataList.push(r),this.dataCache=null},isDark:function(t,e){if(0>t||this.moduleCount<=t||0>e||this.moduleCount<=e)throw new Error(t+","+e);return this.modules[t][e]},getModuleCount:function(){return this.moduleCount},make:function(){this.makeImpl(!1,this.getBestMaskPattern())},makeImpl:function(t,r){this.moduleCount=4*this.typeNumber+17,this.modules=new Array(this.moduleCount);for(var i=0;i<this.moduleCount;i++){this.modules[i]=new Array(this.moduleCount);for(var n=0;n<this.moduleCount;n++)this.modules[i][n]=null}this.setupPositionProbePattern(0,0),this.setupPositionProbePattern(this.moduleCount-7,0),this.setupPositionProbePattern(0,this.moduleCount-7),this.setupPositionAdjustPattern(),this.setupTimingPattern(),this.setupTypeInfo(t,r),this.typeNumber>=7&&this.setupTypeNumber(t),null==this.dataCache&&(this.dataCache=e.createData(this.typeNumber,this.errorCorrectLevel,this.dataList)),this.mapData(this.dataCache,r)},setupPositionProbePattern:function(t,e){for(var r=-1;7>=r;r++)if(!(-1>=t+r||this.moduleCount<=t+r))for(var i=-1;7>=i;i++)-1>=e+i||this.moduleCount<=e+i||(r>=0&&6>=r&&(0==i||6==i)||i>=0&&6>=i&&(0==r||6==r)||r>=2&&4>=r&&i>=2&&4>=i?this.modules[t+r][e+i]=!0:this.modules[t+r][e+i]=!1)},getBestMaskPattern:function(){for(var t=0,e=0,r=0;8>r;r++){this.makeImpl(!0,r);var i=f.getLostPoint(this);(0==r||t>i)&&(t=i,e=r)}return e},createMovieClip:function(t,e,r){var i=t.createEmptyMovieClip(e,r),n=1;this.make();for(var o=0;o<this.modules.length;o++)for(var a=o*n,s=0;s<this.modules[o].length;s++){var h=s*n,l=this.modules[o][s];l&&(i.beginFill(0,100),i.moveTo(h,a),i.lineTo(h+n,a),i.lineTo(h+n,a+n),i.lineTo(h,a+n),i.endFill())}return i},setupTimingPattern:function(){for(var t=8;t<this.moduleCount-8;t++)null==this.modules[t][6]&&(this.modules[t][6]=t%2==0);for(var e=8;e<this.moduleCount-8;e++)null==this.modules[6][e]&&(this.modules[6][e]=e%2==0)},setupPositionAdjustPattern:function(){for(var t=f.getPatternPosition(this.typeNumber),e=0;e<t.length;e++)for(var r=0;r<t.length;r++){var i=t[e],n=t[r];if(null==this.modules[i][n])for(var o=-2;2>=o;o++)for(var a=-2;2>=a;a++)-2==o||2==o||-2==a||2==a||0==o&&0==a?this.modules[i+o][n+a]=!0:this.modules[i+o][n+a]=!1}},setupTypeNumber:function(t){for(var e=f.getBCHTypeNumber(this.typeNumber),r=0;18>r;r++){var i=!t&&1==(e>>r&1);this.modules[Math.floor(r/3)][r%3+this.moduleCount-8-3]=i}for(var r=0;18>r;r++){var i=!t&&1==(e>>r&1);this.modules[r%3+this.moduleCount-8-3][Math.floor(r/3)]=i}},setupTypeInfo:function(t,e){for(var r=this.errorCorrectLevel<<3|e,i=f.getBCHTypeInfo(r),n=0;15>n;n++){var o=!t&&1==(i>>n&1);6>n?this.modules[n][8]=o:8>n?this.modules[n+1][8]=o:this.modules[this.moduleCount-15+n][8]=o}for(var n=0;15>n;n++){var o=!t&&1==(i>>n&1);8>n?this.modules[8][this.moduleCount-n-1]=o:9>n?this.modules[8][15-n-1+1]=o:this.modules[8][15-n-1]=o}this.modules[this.moduleCount-8][8]=!t},mapData:function(t,e){for(var r=-1,i=this.moduleCount-1,n=7,o=0,a=this.moduleCount-1;a>0;a-=2)for(6==a&&a--;;){for(var s=0;2>s;s++)if(null==this.modules[i][a-s]){var h=!1;o<t.length&&(h=1==(t[o]>>>n&1));var l=f.getMask(e,i,a-s);l&&(h=!h),this.modules[i][a-s]=h,n--,-1==n&&(o++,n=7)}if(i+=r,0>i||this.moduleCount<=i){i-=r,r=-r;break}}}},e.PAD0=236,e.PAD1=17,e.createData=function(t,r,o){for(var a=i.getRSBlocks(t,r),s=new n,h=0;h<o.length;h++){var l=o[h];s.put(l.mode,4),s.put(l.getLength(),f.getLengthInBits(l.mode,t)),l.write(s)}for(var u=0,h=0;h<a.length;h++)u+=a[h].dataCount;if(s.getLengthInBits()>8*u)throw new Error("code length overflow. ("+s.getLengthInBits()+">"+8*u+")");for(s.getLengthInBits()+4<=8*u&&s.put(0,4);s.getLengthInBits()%8!=0;)s.putBit(!1);for(;;){if(s.getLengthInBits()>=8*u)break;if(s.put(e.PAD0,8),s.getLengthInBits()>=8*u)break;s.put(e.PAD1,8)}return e.createBytes(s,a)},e.createBytes=function(t,e){for(var i=0,n=0,o=0,a=new Array(e.length),s=new Array(e.length),h=0;h<e.length;h++){var l=e[h].dataCount,u=e[h].totalCount-l;n=Math.max(n,l),o=Math.max(o,u),a[h]=new Array(l);for(var c=0;c<a[h].length;c++)a[h][c]=255&t.buffer[c+i];i+=l;var d=f.getErrorCorrectPolynomial(u),g=new r(a[h],d.getLength()-1),p=g.mod(d);s[h]=new Array(d.getLength()-1);for(var c=0;c<s[h].length;c++){var m=c+p.getLength()-s[h].length;s[h][c]=m>=0?p.get(m):0}}for(var v=0,c=0;c<e.length;c++)v+=e[c].totalCount;for(var _=new Array(v),w=0,c=0;n>c;c++)for(var h=0;h<e.length;h++)c<a[h].length&&(_[w++]=a[h][c]);for(var c=0;o>c;c++)for(var h=0;h<e.length;h++)c<s[h].length&&(_[w++]=s[h][c]);return _};for(var l={MODE_NUMBER:1,MODE_ALPHA_NUM:2,MODE_8BIT_BYTE:4,MODE_KANJI:8},u={L:1,M:0,Q:3,H:2},c={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7},f={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:1335,G18:7973,G15_MASK:21522,getBCHTypeInfo:function(t){for(var e=t<<10;f.getBCHDigit(e)-f.getBCHDigit(f.G15)>=0;)e^=f.G15<<f.getBCHDigit(e)-f.getBCHDigit(f.G15);return(t<<10|e)^f.G15_MASK},getBCHTypeNumber:function(t){for(var e=t<<12;f.getBCHDigit(e)-f.getBCHDigit(f.G18)>=0;)e^=f.G18<<f.getBCHDigit(e)-f.getBCHDigit(f.G18);return t<<12|e},getBCHDigit:function(t){for(var e=0;0!=t;)e++,t>>>=1;return e},getPatternPosition:function(t){return f.PATTERN_POSITION_TABLE[t-1]},getMask:function(t,e,r){switch(t){case c.PATTERN000:return(e+r)%2==0;case c.PATTERN001:return e%2==0;case c.PATTERN010:return r%3==0;case c.PATTERN011:return(e+r)%3==0;case c.PATTERN100:return(Math.floor(e/2)+Math.floor(r/3))%2==0;case c.PATTERN101:return e*r%2+e*r%3==0;case c.PATTERN110:return(e*r%2+e*r%3)%2==0;case c.PATTERN111:return(e*r%3+(e+r)%2)%2==0;default:throw new Error("bad maskPattern:"+t)}},getErrorCorrectPolynomial:function(t){for(var e=new r([1],0),i=0;t>i;i++)e=e.multiply(new r([1,d.gexp(i)],0));return e},getLengthInBits:function(t,e){if(e>=1&&10>e)switch(t){case l.MODE_NUMBER:return 10;case l.MODE_ALPHA_NUM:return 9;case l.MODE_8BIT_BYTE:return 8;case l.MODE_KANJI:return 8;default:throw new Error("mode:"+t)}else if(27>e)switch(t){case l.MODE_NUMBER:return 12;case l.MODE_ALPHA_NUM:return 11;case l.MODE_8BIT_BYTE:return 16;case l.MODE_KANJI:return 10;default:throw new Error("mode:"+t)}else{if(!(41>e))throw new Error("type:"+e);switch(t){case l.MODE_NUMBER:return 14;case l.MODE_ALPHA_NUM:return 13;case l.MODE_8BIT_BYTE:return 16;case l.MODE_KANJI:return 12;default:throw new Error("mode:"+t)}}},getLostPoint:function(t){for(var e=t.getModuleCount(),r=0,i=0;e>i;i++)for(var n=0;e>n;n++){for(var o=0,a=t.isDark(i,n),s=-1;1>=s;s++)if(!(0>i+s||i+s>=e))for(var h=-1;1>=h;h++)0>n+h||n+h>=e||(0!=s||0!=h)&&a==t.isDark(i+s,n+h)&&o++;o>5&&(r+=3+o-5)}for(var i=0;e-1>i;i++)for(var n=0;e-1>n;n++){var l=0;t.isDark(i,n)&&l++,t.isDark(i+1,n)&&l++,t.isDark(i,n+1)&&l++,t.isDark(i+1,n+1)&&l++,(0==l||4==l)&&(r+=3)}for(var i=0;e>i;i++)for(var n=0;e-6>n;n++)t.isDark(i,n)&&!t.isDark(i,n+1)&&t.isDark(i,n+2)&&t.isDark(i,n+3)&&t.isDark(i,n+4)&&!t.isDark(i,n+5)&&t.isDark(i,n+6)&&(r+=40);for(var n=0;e>n;n++)for(var i=0;e-6>i;i++)t.isDark(i,n)&&!t.isDark(i+1,n)&&t.isDark(i+2,n)&&t.isDark(i+3,n)&&t.isDark(i+4,n)&&!t.isDark(i+5,n)&&t.isDark(i+6,n)&&(r+=40);for(var u=0,n=0;e>n;n++)for(var i=0;e>i;i++)t.isDark(i,n)&&u++;var c=Math.abs(100*u/e/e-50)/5;return r+=10*c}},d={glog:function(t){if(1>t)throw new Error("glog("+t+")");return d.LOG_TABLE[t]},gexp:function(t){for(;0>t;)t+=255;for(;t>=256;)t-=255;return d.EXP_TABLE[t]},EXP_TABLE:new Array(256),LOG_TABLE:new Array(256)},g=0;8>g;g++)d.EXP_TABLE[g]=1<<g;for(var g=8;256>g;g++)d.EXP_TABLE[g]=d.EXP_TABLE[g-4]^d.EXP_TABLE[g-5]^d.EXP_TABLE[g-6]^d.EXP_TABLE[g-8];for(var g=0;255>g;g++)d.LOG_TABLE[d.EXP_TABLE[g]]=g;r.prototype={get:function(t){return this.num[t]},getLength:function(){return this.num.length},multiply:function(t){for(var e=new Array(this.getLength()+t.getLength()-1),i=0;i<this.getLength();i++)for(var n=0;n<t.getLength();n++)e[i+n]^=d.gexp(d.glog(this.get(i))+d.glog(t.get(n)));return new r(e,0)},mod:function(t){if(this.getLength()-t.getLength()<0)return this;for(var e=d.glog(this.get(0))-d.glog(t.get(0)),i=new Array(this.getLength()),n=0;n<this.getLength();n++)i[n]=this.get(n);for(var n=0;n<t.getLength();n++)i[n]^=d.gexp(d.glog(t.get(n))+e);return new r(i,0).mod(t)}},i.RS_BLOCK_TABLE=[[1,26,19],[1,26,16],[1,26,13],[1,26,9],[1,44,34],[1,44,28],[1,44,22],[1,44,16],[1,70,55],[1,70,44],[2,35,17],[2,35,13],[1,100,80],[2,50,32],[2,50,24],[4,25,9],[1,134,108],[2,67,43],[2,33,15,2,34,16],[2,33,11,2,34,12],[2,86,68],[4,43,27],[4,43,19],[4,43,15],[2,98,78],[4,49,31],[2,32,14,4,33,15],[4,39,13,1,40,14],[2,121,97],[2,60,38,2,61,39],[4,40,18,2,41,19],[4,40,14,2,41,15],[2,146,116],[3,58,36,2,59,37],[4,36,16,4,37,17],[4,36,12,4,37,13],[2,86,68,2,87,69],[4,69,43,1,70,44],[6,43,19,2,44,20],[6,43,15,2,44,16],[4,101,81],[1,80,50,4,81,51],[4,50,22,4,51,23],[3,36,12,8,37,13],[2,116,92,2,117,93],[6,58,36,2,59,37],[4,46,20,6,47,21],[7,42,14,4,43,15],[4,133,107],[8,59,37,1,60,38],[8,44,20,4,45,21],[12,33,11,4,34,12],[3,145,115,1,146,116],[4,64,40,5,65,41],[11,36,16,5,37,17],[11,36,12,5,37,13],[5,109,87,1,110,88],[5,65,41,5,66,42],[5,54,24,7,55,25],[11,36,12],[5,122,98,1,123,99],[7,73,45,3,74,46],[15,43,19,2,44,20],[3,45,15,13,46,16],[1,135,107,5,136,108],[10,74,46,1,75,47],[1,50,22,15,51,23],[2,42,14,17,43,15],[5,150,120,1,151,121],[9,69,43,4,70,44],[17,50,22,1,51,23],[2,42,14,19,43,15],[3,141,113,4,142,114],[3,70,44,11,71,45],[17,47,21,4,48,22],[9,39,13,16,40,14],[3,135,107,5,136,108],[3,67,41,13,68,42],[15,54,24,5,55,25],[15,43,15,10,44,16],[4,144,116,4,145,117],[17,68,42],[17,50,22,6,51,23],[19,46,16,6,47,17],[2,139,111,7,140,112],[17,74,46],[7,54,24,16,55,25],[34,37,13],[4,151,121,5,152,122],[4,75,47,14,76,48],[11,54,24,14,55,25],[16,45,15,14,46,16],[6,147,117,4,148,118],[6,73,45,14,74,46],[11,54,24,16,55,25],[30,46,16,2,47,17],[8,132,106,4,133,107],[8,75,47,13,76,48],[7,54,24,22,55,25],[22,45,15,13,46,16],[10,142,114,2,143,115],[19,74,46,4,75,47],[28,50,22,6,51,23],[33,46,16,4,47,17],[8,152,122,4,153,123],[22,73,45,3,74,46],[8,53,23,26,54,24],[12,45,15,28,46,16],[3,147,117,10,148,118],[3,73,45,23,74,46],[4,54,24,31,55,25],[11,45,15,31,46,16],[7,146,116,7,147,117],[21,73,45,7,74,46],[1,53,23,37,54,24],[19,45,15,26,46,16],[5,145,115,10,146,116],[19,75,47,10,76,48],[15,54,24,25,55,25],[23,45,15,25,46,16],[13,145,115,3,146,116],[2,74,46,29,75,47],[42,54,24,1,55,25],[23,45,15,28,46,16],[17,145,115],[10,74,46,23,75,47],[10,54,24,35,55,25],[19,45,15,35,46,16],[17,145,115,1,146,116],[14,74,46,21,75,47],[29,54,24,19,55,25],[11,45,15,46,46,16],[13,145,115,6,146,116],[14,74,46,23,75,47],[44,54,24,7,55,25],[59,46,16,1,47,17],[12,151,121,7,152,122],[12,75,47,26,76,48],[39,54,24,14,55,25],[22,45,15,41,46,16],[6,151,121,14,152,122],[6,75,47,34,76,48],[46,54,24,10,55,25],[2,45,15,64,46,16],[17,152,122,4,153,123],[29,74,46,14,75,47],[49,54,24,10,55,25],[24,45,15,46,46,16],[4,152,122,18,153,123],[13,74,46,32,75,47],[48,54,24,14,55,25],[42,45,15,32,46,16],[20,147,117,4,148,118],[40,75,47,7,76,48],[43,54,24,22,55,25],[10,45,15,67,46,16],[19,148,118,6,149,119],[18,75,47,31,76,48],[34,54,24,34,55,25],[20,45,15,61,46,16]],i.getRSBlocks=function(t,e){var r=i.getRsBlockTable(t,e);if(void 0==r)throw new Error("bad rs block @ typeNumber:"+t+"/errorCorrectLevel:"+e);for(var n=r.length/3,o=[],a=0;n>a;a++)for(var s=r[3*a+0],h=r[3*a+1],l=r[3*a+2],u=0;s>u;u++)o.push(new i(h,l));return o},i.getRsBlockTable=function(t,e){switch(e){case u.L:return i.RS_BLOCK_TABLE[4*(t-1)+0];case u.M:return i.RS_BLOCK_TABLE[4*(t-1)+1];case u.Q:return i.RS_BLOCK_TABLE[4*(t-1)+2];case u.H:return i.RS_BLOCK_TABLE[4*(t-1)+3];default:return}},n.prototype={get:function(t){var e=Math.floor(t/8);return 1==(this.buffer[e]>>>7-t%8&1)},put:function(t,e){for(var r=0;e>r;r++)this.putBit(1==(t>>>e-r-1&1))},getLengthInBits:function(){return this.length},putBit:function(t){var e=Math.floor(this.length/8);this.buffer.length<=e&&this.buffer.push(0),t&&(this.buffer[e]|=128>>>this.length%8),this.length++}};var p=[[17,14,11,7],[32,26,20,14],[53,42,32,24],[78,62,46,34],[106,84,60,44],[134,106,74,58],[154,122,86,64],[192,152,108,84],[230,180,130,98],[271,213,151,119],[321,251,177,137],[367,287,203,155],[425,331,241,177],[458,362,258,194],[520,412,292,220],[586,450,322,250],[644,504,364,280],[718,560,394,310],[792,624,442,338],[858,666,482,382],[929,711,509,403],[1003,779,565,439],[1091,857,611,461],[1171,911,661,511],[1273,997,715,535],[1367,1059,751,593],[1465,1125,805,625],[1528,1190,868,658],[1628,1264,908,698],[1732,1370,982,742],[1840,1452,1030,790],[1952,1538,1112,842],[2068,1628,1168,898],[2188,1722,1228,958],[2303,1809,1283,983],[2431,1911,1351,1051],[2563,1989,1423,1093],[2699,2099,1499,1139],[2809,2213,1579,1219],[2953,2331,1663,1273]],m=function(){var t=function(t,e){this._el=t,this._htOption=e};return t.prototype.draw=function(t){function e(t,e){var r=document.createElementNS("http://www.w3.org/2000/svg",t);for(var i in e)e.hasOwnProperty(i)&&r.setAttribute(i,e[i]);return r}var r=this._htOption,i=this._el,n=t.getModuleCount();Math.floor(r.width/n),Math.floor(r.height/n);this.clear();var o=e("svg",{viewBox:"0 0 "+String(n)+" "+String(n),width:"100%",height:"100%",fill:r.colorLight});o.setAttributeNS("http://www.w3.org/2000/xmlns/","xmlns:xlink","http://www.w3.org/1999/xlink"),i.appendChild(o),o.appendChild(e("rect",{fill:r.colorLight,width:"100%",height:"100%"})),o.appendChild(e("rect",{fill:r.colorDark,width:"1",height:"1",id:"template"}));for(var a=0;n>a;a++)for(var s=0;n>s;s++)if(t.isDark(a,s)){var h=e("use",{x:String(s),y:String(a)});h.setAttributeNS("http://www.w3.org/1999/xlink","href","#template"),o.appendChild(h)}},t.prototype.clear=function(){for(;this._el.hasChildNodes();)this._el.removeChild(this._el.lastChild)},t}(),v="svg"===document.documentElement.tagName.toLowerCase(),_=v?m:o()?function(){function t(){this._elImage.src=this._elCanvas.toDataURL("image/png"),this._elImage.style.display="block",this._elCanvas.style.display="none"}function e(t,e){var r=this;if(r._fFail=e,r._fSuccess=t,null===r._bSupportDataURI){var i=document.createElement("img"),n=function(){r._bSupportDataURI=!1,r._fFail&&r._fFail.call(r)},o=function(){r._bSupportDataURI=!0,r._fSuccess&&r._fSuccess.call(r)};return i.onabort=n,i.onerror=n,i.onload=o,void(i.src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==")}r._bSupportDataURI===!0&&r._fSuccess?r._fSuccess.call(r):r._bSupportDataURI===!1&&r._fFail&&r._fFail.call(r)}if(this._android&&this._android<=2.1){var r=1/window.devicePixelRatio,i=CanvasRenderingContext2D.prototype.drawImage;CanvasRenderingContext2D.prototype.drawImage=function(t,e,n,o,a,s,h,l,u){if("nodeName"in t&&/img/i.test(t.nodeName))for(var c=arguments.length-1;c>=1;c--)arguments[c]=arguments[c]*r;else"undefined"==typeof l&&(arguments[1]*=r,arguments[2]*=r,arguments[3]*=r,arguments[4]*=r);i.apply(this,arguments)}}var n=function(t,e){this._bIsPainted=!1,this._android=a(),this._htOption=e,this._elCanvas=document.createElement("canvas"),this._elCanvas.width=e.width,this._elCanvas.height=e.height,t.appendChild(this._elCanvas),this._el=t,this._oContext=this._elCanvas.getContext("2d"),this._bIsPainted=!1,this._elImage=document.createElement("img"),this._elImage.alt="Scan me!",this._elImage.style.display="none",this._el.appendChild(this._elImage),this._bSupportDataURI=null};return n.prototype.draw=function(t){var e=this._elImage,r=this._oContext,i=this._htOption,n=t.getModuleCount(),o=i.width/n,a=i.height/n,s=Math.round(o),h=Math.round(a);e.style.display="none",this.clear();for(var l=0;n>l;l++)for(var u=0;n>u;u++){var c=t.isDark(l,u),f=u*o,d=l*a;r.strokeStyle=c?i.colorDark:i.colorLight,r.lineWidth=1,r.fillStyle=c?i.colorDark:i.colorLight,r.fillRect(f,d,o,a),r.strokeRect(Math.floor(f)+.5,Math.floor(d)+.5,s,h),r.strokeRect(Math.ceil(f)-.5,Math.ceil(d)-.5,s,h)}this._bIsPainted=!0},n.prototype.makeImage=function(){this._bIsPainted&&e.call(this,t)},n.prototype.isPainted=function(){return this._bIsPainted},n.prototype.clear=function(){this._oContext.clearRect(0,0,this._elCanvas.width,this._elCanvas.height),this._bIsPainted=!1},n.prototype.round=function(t){return t?Math.floor(1e3*t)/1e3:t},n}():function(){var t=function(t,e){this._el=t,this._htOption=e};return t.prototype.draw=function(t){for(var e=this._htOption,r=this._el,i=t.getModuleCount(),n=Math.floor(e.width/i),o=Math.floor(e.height/i),a=['<table style="border:0;border-collapse:collapse;">'],s=0;i>s;s++){a.push("<tr>");for(var h=0;i>h;h++)a.push('<td style="border:0;border-collapse:collapse;padding:0;margin:0;width:'+n+"px;height:"+o+"px;background-color:"+(t.isDark(s,h)?e.colorDark:e.colorLight)+';"></td>');a.push("</tr>")}a.push("</table>"),r.innerHTML=a.join("");var l=r.childNodes[0],u=(e.width-l.offsetWidth)/2,c=(e.height-l.offsetHeight)/2;u>0&&c>0&&(l.style.margin=c+"px "+u+"px")},t.prototype.clear=function(){this._el.innerHTML=""},t}();QRCode=function(t,e){if(this._htOption={width:256,height:256,typeNumber:4,colorDark:"#000000",colorLight:"#ffffff",correctLevel:u.H},"string"==typeof e&&(e={text:e}),e)for(var r in e)this._htOption[r]=e[r];"string"==typeof t&&(t=document.getElementById(t)),this._htOption.useSVG&&(_=m),this._android=a(),this._el=t,this._oQRCode=null,this._oDrawing=new _(this._el,this._htOption),this._htOption.text&&this.makeCode(this._htOption.text)},QRCode.prototype.makeCode=function(t){this._oQRCode=new e(s(t,this._htOption.correctLevel),this._htOption.correctLevel),this._oQRCode.addData(t),this._oQRCode.make(),this._el.title=t,this._oDrawing.draw(this._oQRCode),this.makeImage()},QRCode.prototype.makeImage=function(){"function"==typeof this._oDrawing.makeImage&&(!this._android||this._android>=3)&&this._oDrawing.makeImage()},QRCode.prototype.clear=function(){this._oDrawing.clear()},QRCode.CorrectLevel=u}(),function(t,e,r){function i(t,e){var r=g({},b,e||{},p(t));u(t,"share-component social-share"),n(t,r),o(t,r),t.initialized=!0}function n(t,e){var r=a(e),i="prepend"==e.mode;v(i?r.reverse():r,function(r){var n=s(r,e),o=e.initialized?f(t,".icon-"+r):d('<a class="social-share-icon icon-'+r+'" target="_blank"></a>');return o.length?(o[0].href=n,void(e.initialized||(i?t.insertBefore(o[0],t.firstChild):t.appendChild(o[0])))):!0})}function o(t,e){var r=f(t,"icon-wechat","a");if(0===r.length)return!1;var i=d('<div class="wechat-qrcode"><h4>'+e.wechatQrcodeTitle+'</h4><div class="qrcode"></div><div class="help">'+e.wechatQrcodeHelper+"</div></div>"),n=f(i[0],"qrcode","div");r[0].appendChild(i[0]),new QRCode(n[0],{text:e.url,width:100,height:100})}function a(t){t.mobileSites.length||(t.mobileSites=t.sites);var e=(A?t.mobileSites:t.sites).slice(0),r=t.disabled;return"string"==typeof e&&(e=e.split(/\s*,\s*/)),"string"==typeof r&&(r=r.split(/\s*,\s*/)),E&&r.push("wechat"),r.length&&v(r,function(t){e.splice(m(t,e),1)}),e}function s(t,e){return e.summary=e.description,B[t].replace(/\{\{(\w)(\w*)\}\}/g,function(r,i,n){var o=t+i+n.toLowerCase();return n=(i+n).toLowerCase(),encodeURIComponent(e[o]||e[n]||"")})}function h(r){return(e.querySelectorAll||t.jQuery||t.Zepto||l).call(e,r)}function l(t){var r=[];return v(t.split(/\s*,\s*/),function(i){var n=i.match(/([#.])(\w+)/);if(null===n)throw Error("Supports only simple single #ID or .CLASS selector.");if(n[1]){var o=e.getElementById(n[2]);o&&r.push(o)}r=r.concat(f(t))}),r}function u(t,e){if(e&&"string"==typeof e){var r=(t.className+" "+e).split(/\s+/),i=" ";v(r,function(t){i.indexOf(" "+t+" ")<0&&(i+=t+" ")}),t.className=i.slice(1,-1)}}function c(t){return(e.getElementsByName(t)[0]||0).content}function f(t,e,r){if(t.getElementsByClassName)return t.getElementsByClassName(e);var i=[],n=t.getElementsByTagName(r||"*");return e=" "+e+" ",v(n,function(t){(" "+(t.className||"")+" ").indexOf(e)>=0&&i.push(t)}),i}function d(t){var r=e.createElement("div");return r.innerHTML=t,r.childNodes}function g(){var t=arguments;if(C)return C.apply(null,t);var e={};return v(t,function(t){v(t,function(t,r){e[r]=t})}),t[0]=e}function p(t){if(t.dataset)return t.dataset;var e={};return t.hasAttributes()?(v(t.attributes,function(t){var r=t.name;return 0!==r.indexOf("data-")?!0:(r=r.replace(/^data-/i,"").replace(/-(\w)/g,function(t,e){return e.toUpperCase()}),void(e[r]=t.value))}),e):{}}function m(t,e,r){var i;if(e){if(w)return w.call(e,t,r);for(i=e.length,r=r?0>r?Math.max(0,i+r):r:0;i>r;r++)if(r in e&&e[r]===t)return r}return-1}function v(t,e){var i=t.length;if(i===r){for(var n in t)if(t.hasOwnProperty(n)&&e.call(t[n],t[n],n)===!1)break}else for(var o=0;i>o&&e.call(t[o],t[o],o)!==!1;o++);}function _(r){var i="addEventListener",n=e[i]?"":"on";~e.readyState.indexOf("m")?r():"load DOMContentLoaded readystatechange".replace(/\w+/g,function(o,a){(a?e:t)[n?"attachEvent":i](n+o,function(){r&&(6>a||~e.readyState.indexOf("m"))&&(r(),r=0)},!1)})}var w=Array.prototype.indexOf,C=Object.assign,E=/MicroMessenger/i.test(navigator.userAgent),A=e.documentElement.clientWidth<=768,T=(e.images[0]||0).src||"",y=c("site")||c("Site")||e.title,L=c("title")||c("Title")||e.title,D=c("description")||c("Description")||"",b={url:location.href,origin:location.origin,source:y,title:L,description:D,image:T,weiboKey:"",wechatQrcodeTitle:"微信扫一扫：分享",wechatQrcodeHelper:"<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>",sites:["weibo","qq","wechat","tencent","douban","qzone","linkedin","diandian","facebook","twitter","google"],mobileSites:[],disabled:[],initialized:!1},B={qzone:"http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={{URL}}&title={{TITLE}}&desc={{DESCRIPTION}}&summary={{SUMMARY}}&site={{SOURCE}}",qq:"http://connect.qq.com/widget/shareqq/index.html?url={{URL}}&title={{TITLE}}&source={{SOURCE}}&desc={{DESCRIPTION}}&pics={{IMAGE}}",tencent:"http://share.v.t.qq.com/index.php?c=share&a=index&title={{TITLE}}&url={{URL}}&pic={{IMAGE}}",weibo:"http://service.weibo.com/share/share.php?url={{URL}}&title={{TITLE}}&pic={{IMAGE}}&appkey={{WEIBOKEY}}",wechat:"javascript:",douban:"http://shuo.douban.com/!service/share?href={{URL}}&name={{TITLE}}&text={{DESCRIPTION}}&image={{IMAGE}}&starid=0&aid=0&style=11",diandian:"http://www.diandian.com/share?lo={{URL}}&ti={{TITLE}}&type=link",linkedin:"http://www.linkedin.com/shareArticle?mini=true&ro=true&title={{TITLE}}&url={{URL}}&summary={{SUMMARY}}&source={{SOURCE}}&armin=armin",facebook:"https://www.facebook.com/sharer/sharer.php?u={{URL}}",twitter:"https://twitter.com/intent/tweet?text={{TITLE}}&url={{URL}}&via={{ORIGIN}}",google:"https://plus.google.com/share?url={{URL}}"};t.socialShare=function(t,e){t="string"==typeof t?h(t):t,t.length===r&&(t=[t]),v(t,function(t){t.initialized||i(t,e)})},_(function(){socialShare(".social-share, .share-component")})}(window,document);
 
@@ -3778,6 +5103,11 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
 
             if (ShowCrxHint === 'yes') {
                 showPluginDownload();
+            }
+
+            Messenger.options = {
+                extraClasses: 'messenger-fixed messenger-on-bottom messenger-on-right',
+                theme: 'flat'
             }
         },
 
@@ -4500,34 +5830,11 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
 
         showMsg: function(msg, myobj) {
             if (!msg) return;
-
-            var obj = myobj || {};
-            var type = obj.type || 'info';
-            var timer = obj.timer || 0;
-            var tpl = '';
-
-            tpl += '<div class="alert alert-' + type + ' alert-dismissible fade in" role="alert">';
-            tpl +=    '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>';
-            tpl +=    '<i class="glyphicon glyphicon-info-sign"></i>' + msg;
-            tpl += '</div>';
-
-            if (!$('.cus-top-alert').length) {
-                $(tpl).appendTo('body').wrap('<div class="cus-top-alert"></div>');
-            } else {
-                $('.cus-top-alert').html(tpl);
-            }
-
-            $('.cus-top-alert .alert').alert();
-
-            if (timer) {
-                setTimeout(function() {
-                    $('.cus-top-alert .alert').alert('close');
-                }, timer);
-            }
+            Messenger().post(msg);
         },
 
         showPluginDownload: function() {
-            this.showMsg('Chrome 用户可使用 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">PHPHub 插件</a> 实时接收消息提醒。', {
+            this.showMsg('操作成功，安装 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">Chrome 插件</a> 接收提醒。', {
                 type: 'success',
                 timer: 8000
             });

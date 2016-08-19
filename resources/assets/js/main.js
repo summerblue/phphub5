@@ -35,6 +35,11 @@
             if (ShowCrxHint === 'yes') {
                 showPluginDownload();
             }
+
+            Messenger.options = {
+                extraClasses: 'messenger-fixed messenger-on-bottom messenger-on-right',
+                theme: 'flat'
+            }
         },
 
         /*
@@ -756,34 +761,11 @@
 
         showMsg: function(msg, myobj) {
             if (!msg) return;
-
-            var obj = myobj || {};
-            var type = obj.type || 'info';
-            var timer = obj.timer || 0;
-            var tpl = '';
-
-            tpl += '<div class="alert alert-' + type + ' alert-dismissible fade in" role="alert">';
-            tpl +=    '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>';
-            tpl +=    '<i class="glyphicon glyphicon-info-sign"></i>' + msg;
-            tpl += '</div>';
-
-            if (!$('.cus-top-alert').length) {
-                $(tpl).appendTo('body').wrap('<div class="cus-top-alert"></div>');
-            } else {
-                $('.cus-top-alert').html(tpl);
-            }
-
-            $('.cus-top-alert .alert').alert();
-
-            if (timer) {
-                setTimeout(function() {
-                    $('.cus-top-alert .alert').alert('close');
-                }, timer);
-            }
+            Messenger().post(msg);
         },
 
         showPluginDownload: function() {
-            this.showMsg('Chrome 用户可使用 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">PHPHub 插件</a> 实时接收消息提醒。', {
+            this.showMsg('操作成功，安装 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">Chrome 插件</a> 接收提醒。', {
                 type: 'success',
                 timer: 8000
             });

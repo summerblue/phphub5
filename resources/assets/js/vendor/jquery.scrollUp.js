@@ -1,3 +1,14 @@
+// extension:
+$.fn.scrollEnd = function(callback, timeout) {
+  $(this).scroll(function(){
+    var $this = $(this);
+    if ($this.data('scrollTimeout')) {
+      clearTimeout($this.data('scrollTimeout'));
+    }
+    $this.data('scrollTimeout', setTimeout(callback,timeout));
+  });
+};
+
 (function ($, window, document) {
     'use strict';
 
@@ -102,6 +113,12 @@
                 }
             }
         });
+
+        // how to call it (with a 1500ms timeout):
+        $(window).scrollEnd(function(){
+            $self[animOut](animSpeed);
+            triggerVisible = false;
+        }, 1200);
 
         if (o.scrollTarget) {
             if (typeof o.scrollTarget === 'number') {
