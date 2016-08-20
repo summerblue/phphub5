@@ -12,6 +12,7 @@ use Auth;
 use Flash;
 use App\Http\Requests\UpdateUserRequest;
 use App\Jobs\SendActivateMail;
+use Phphub\Handler\Exception\ImageUploadException;
 
 class UsersController extends Controller
 {
@@ -53,16 +54,18 @@ class UsersController extends Controller
     {
         $user = User::findOrFail($id);
         $this->authorize('update', $user);
-        $request->performUpdate($user);
-        
-        Flash::success(lang('Operation succeeded.'));
+        try {
+            $request->performUpdate($user);
+            Flash::success(lang('Operation succeeded.'));
+        } catch (ImageUploadException $exception) {
+            Flash::error(lang($exception->getMessage()));
+        }
 
         return redirect(route('users.edit', $id));
     }
 
     public function destroy($id)
     {
-        $this->authorize('update', $topic->user);
     }
 
     public function replies($id)
@@ -242,8 +245,12 @@ class UsersController extends Controller
         $this->authorize('update', $user);
 
         if ($file = $request->file('avatar')) {
-            $user->updateAvatar($file);
-            Flash::success(lang('Update Avatar Success'));
+            try {
+                $user->updateAvatar($file);
+                Flash::success(lang('Update Avatar Success'));
+            } catch (ImageUploadException $exception) {
+                Flash::error(lang($exception->getMessage()));
+            }
         } else {
             Flash::error(lang('Update Avatar Failed'));
         }
