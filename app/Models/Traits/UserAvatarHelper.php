@@ -34,13 +34,9 @@ trait UserAvatarHelper
     public function updateAvatar($file)
     {
         $upload_status = app('Phphub\Handler\ImageUploadHandler')->uploadAvatar($file, $this);
-        if ($upload_status['error']) {
-            return ['error' => $upload_status['error']];
-        }
-
         $this->avatar = $upload_status['filename'];
         $this->save();
 
-        return ['error' => '', 'avatar' => $this->avatar];
+        return ['avatar' => $this->avatar];
     }
 }
