@@ -11,6 +11,7 @@ use App\Models\Category;
 use App\Models\Banner;
 use App\Models\ActiveUser;
 use App\Models\HotTopic;
+use Phphub\Handler\Exception\ImageUploadException;
 use Phphub\Markdown\Markdown;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreTopicRequest;
@@ -198,9 +199,10 @@ class TopicsController extends Controller implements CreatorListener
     public function uploadImage(Request $request)
     {
         if ($file = $request->file('file')) {
-            $upload_status = app('Phphub\Handler\ImageUploadHandler')->uploadImage($file);
-            if ($upload_status['error']) {
-                return ['error' => $upload_status['error']];
+            try {
+                $upload_status = app('Phphub\Handler\ImageUploadHandler')->uploadImage($file);
+            } catch (ImageUploadException $exception) {
+                return ['error' => $exception->getMessage()];
             }
             $data['filename'] = $upload_status['filename'];
 
