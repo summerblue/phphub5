@@ -78,6 +78,7 @@ EOD;
                 'blog' => '博客',
                 'weibo' => '微博',
                 'dev_service'  => '开发者服务',
+                'site_foreign'  => '国外网站',
             ],
             'value' => 'site',
         ],
