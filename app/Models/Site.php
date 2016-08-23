@@ -32,6 +32,9 @@ class Site extends Model
             $sorted['dev_service'] = $raw_sites->filter(function ($item) {
                 return $item->type == 'dev_service';
             });
+            $sorted['site_foreign'] = $raw_sites->filter(function ($item) {
+                return $item->type == 'site_foreign';
+            });
             return $sorted;
         });
         return $data;
