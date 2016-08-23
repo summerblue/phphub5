@@ -17,7 +17,7 @@ class Site extends Model
     public static function allFromCache($expire = 1440)
     {
         $data = Cache::remember('phphub_sites', 60, function () {
-            $raw_sites = self::orderBy('order', 'desc')->get();
+            $raw_sites = self::orderBy('order', 'desc')->orderBy('created_at', 'desc')->get();
             $sorted = [];
 
             $sorted['site'] = $raw_sites->filter(function ($item) {
