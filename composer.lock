@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7cdd49340accdf67506d39a681372002",
-    "content-hash": "8a21fd5db5cf73b22a931f95254ce759",
+    "hash": "ce36df523247fbc06d23e75dd896b1ab",
+    "content-hash": "08fffb4e83d3a4dd651b3ec4f035eafe",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -3189,6 +3189,48 @@
             "time": "2016-05-06 20:42:21"
         },
         {
+            "name": "socialiteproviders/manager",
+            "version": "v2.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/Manager.git",
+                "reference": "388851f850418941ea6e220d0d82fc20cca2c2e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SocialiteProviders/Manager/zipball/388851f850418941ea6e220d0d82fc20cca2c2e7",
+                "reference": "388851f850418941ea6e220d0d82fc20cca2c2e7",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/socialite": "~2.0",
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\Manager\\": "src/",
+                    "SocialiteProviders\\Manager\\Test\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andy Wendt",
+                    "email": "andy@awendt.com"
+                }
+            ],
+            "description": "Easily add new or override built-in providers in Laravel Socialite.",
+            "time": "2016-06-22 18:09:37"
+        },
+        {
             "name": "socialiteproviders/weixin",
             "version": "v2.1.1",
             "source": {
@@ -4426,7 +4468,7 @@
             "version": "dev-master",
             "dist": {
                 "type": "path",
-                "url": "packages/rss/",
+                "url": "packages/rss",
                 "reference": null,
                 "shasum": null
             },
