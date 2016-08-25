@@ -4,7 +4,6 @@
 
 <ul class="list-group row topic-list">
     @foreach ($topics as $topic)
-        @if($topic->user->is_banned !== 'yes')
 
          <li class="list-group-item media" style="margin-top: 0px;">
 
@@ -57,7 +56,6 @@
             </div>
 
         </li>
-        @endif
     @endforeach
 </ul>
 
