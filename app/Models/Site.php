@@ -16,36 +16,27 @@ class Site extends Model
 
     public static function allFromCache($expire = 1440)
     {
-        $cache_name = 'phphub_sites';
+        $data = Cache::remember('phphub_sites', 60, function () {
+            $raw_sites = self::orderBy('order', 'desc')->orderBy('created_at', 'desc')->get();
+            $sorted = [];
 
-        $raw_sites = self::orderBy('order', 'desc')->get();
-        $sorted = [];
-
-        $sorted['site'] = $raw_sites->filter(function ($item) {
-            return $item->type == 'site';
+            $sorted['site'] = $raw_sites->filter(function ($item) {
+                return $item->type == 'site';
+            });
+            $sorted['blog'] = $raw_sites->filter(function ($item) {
+                return $item->type == 'blog';
+            });
+            $sorted['weibo'] = $raw_sites->filter(function ($item) {
+                return $item->type == 'weibo';
+            });
+            $sorted['dev_service'] = $raw_sites->filter(function ($item) {
+                return $item->type == 'dev_service';
+            });
+            $sorted['site_foreign'] = $raw_sites->filter(function ($item) {
+                return $item->type == 'site_foreign';
+            });
+            return $sorted;
         });
-        $sorted['blog'] = $raw_sites->filter(function ($item) {
-            return $item->type == 'blog';
-        });
-        $sorted['weibo'] = $raw_sites->filter(function ($item) {
-            return $item->type == 'weibo';
-        });
-        $sorted['dev_service'] = $raw_sites->filter(function ($item) {
-            return $item->type == 'dev_service';
-        });
-
-        return $sorted;
-
-        // return Cache::remember($cache_name, $expire, function () {
-        //     return self::all();
-        // });
-        // return self::all();
-    }
-
-    public function setFaviconAttribute($value)
-    {
-        $this->attributes['favicon'] = (strpos($value, 'uploads/sites/') !== true && !empty($value))
-                                        ? 'uploads/sites/' . $value
-                                        : $value;
+        return $data;
     }
 }

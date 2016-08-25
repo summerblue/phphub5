@@ -12,6 +12,7 @@ use Auth;
 use Flash;
 use App\Http\Requests\UpdateUserRequest;
 use App\Jobs\SendActivateMail;
+use Phphub\Handler\Exception\ImageUploadException;
 
 class UsersController extends Controller
 {
@@ -36,8 +37,8 @@ class UsersController extends Controller
     public function show($id)
     {
         $user    = User::findOrFail($id);
-        $topics  = Topic::whose($user->id)->recent()->paginate(15);
-        $replies = Reply::whose($user->id)->recent()->paginate(15);
+        $topics  = Topic::whose($user->id)->recent()->limit(20)->get();
+        $replies = Reply::whose($user->id)->recent()->limit(20)->get();
         return view('users.show', compact('user', 'topics', 'replies'));
     }
 
@@ -53,25 +54,11 @@ class UsersController extends Controller
     {
         $user = User::findOrFail($id);
         $this->authorize('update', $user);
-        $old_email = $user->email;
-
-        $data = $request->only(
-                'github_name', 'real_name', 'city',
-                'company', 'twitter_account', 'personal_website',
-                'introduction', 'weibo_name', 'weibo_id', 'email','linkedin'
-            );
-
-        if ($file = $request->file('payment_qrcode')) {
-            $upload_status = app('Phphub\Handler\ImageUploadHandler')->uploadImage($file);
-            $data['payment_qrcode'] = $upload_status['filename'];
-        }
-
-        $user->update($data);
-
-        Flash::success(lang('Operation succeeded.'));
-
-        if ($user->email && $user->email != $old_email) {
-            dispatch(new SendActivateMail($user));
+        try {
+            $request->performUpdate($user);
+            Flash::success(lang('Operation succeeded.'));
+        } catch (ImageUploadException $exception) {
+            Flash::error(lang($exception->getMessage()));
         }
 
         return redirect(route('users.edit', $id));
@@ -79,7 +66,6 @@ class UsersController extends Controller
 
     public function destroy($id)
     {
-        $this->authorize('update', $topic->user);
     }
 
     public function replies($id)
@@ -98,19 +84,26 @@ class UsersController extends Controller
         return view('users.topics', compact('user', 'topics'));
     }
 
-    public function favorites($id)
+    public function votes($id)
     {
         $user = User::findOrFail($id);
-        $topics = $user->favoriteTopics()->paginate(15);
+        $topics = $user->votedTopics()->orderBy('pivot_created_at', 'desc')->paginate(15);
 
-        return view('users.favorites', compact('user', 'topics'));
+        return view('users.votes', compact('user', 'topics'));
     }
 
     public function following($id)
     {
         $user = User::findOrFail($id);
-        $followingUsers = $user->followings()->orderBy('id', 'desc')->paginate(15);
-        return view('users.following', compact('user', 'followingUsers'));
+        $users = $user->followings()->orderBy('id', 'desc')->paginate(15);
+        return view('users.following', compact('user', 'users'));
+    }
+
+    public function followers($id)
+    {
+        $user = User::findOrFail($id);
+        $users = $user->followers()->orderBy('id', 'desc')->paginate(15);
+        return view('users.followers', compact('user', 'users'));
     }
 
     public function accessTokens($id)
@@ -150,6 +143,10 @@ class UsersController extends Controller
         $user = User::findOrFail($id);
         $user->is_banned = $user->is_banned == 'yes' ? 'no' : 'yes';
         $user->save();
+
+        // 用户被屏蔽后屏蔽用户所有内容，解封时解封所有内容
+        $user->topics()->update(['is_blocked' => $user->is_banned]);
+        $user->replies()->update(['is_blocked' => $user->is_banned]);
 
         return redirect(route('users.show', $id));
     }
@@ -227,8 +224,10 @@ class UsersController extends Controller
 
         if (Auth::user()->isFollowing($id)) {
             Auth::user()->unfollow($id);
+            $user->decrement('follower_count', 1);
         } else {
             Auth::user()->follow($id);
+            $user->increment('follower_count', 1);
             app('Phphub\Notification\Notifier')->newFollowNotify(Auth::user(), $user);
         }
 
@@ -250,8 +249,12 @@ class UsersController extends Controller
         $this->authorize('update', $user);
 
         if ($file = $request->file('avatar')) {
-            $user->updateAvatar($file);
-            Flash::success(lang('Update Avatar Success'));
+            try {
+                $user->updateAvatar($file);
+                Flash::success(lang('Update Avatar Success'));
+            } catch (ImageUploadException $exception) {
+                Flash::error(lang($exception->getMessage()));
+            }
         } else {
             Flash::error(lang('Update Avatar Failed'));
         }

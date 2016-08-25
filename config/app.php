@@ -4,6 +4,16 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Name
+    |--------------------------------------------------------------------------
+    |
+    | 会用于生成 URL Schema 等.
+    |
+    */
+    'name' => env('APP_NAME', 'PHPHub'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Debug Mode
     |--------------------------------------------------------------------------
     |
@@ -150,7 +160,6 @@ return [
 
         Mews\Purifier\PurifierServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        Laracasts\Flash\FlashServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
@@ -170,6 +179,13 @@ return [
         Smartisan\Follow\FollowServiceProvider::class,
         Jrean\UserVerification\UserVerificationServiceProvider::class,
         Naux\Mail\SendCloudServiceProvider::class,
+
+        // API
+        Dingo\Api\Provider\LaravelServiceProvider::class,
+        LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
+        LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
+        App\Providers\OAuthServiceProvider::class,
+        App\Providers\ApiExceptionHandlerProvider::class,
     ],
 
     /*
@@ -221,7 +237,6 @@ return [
         'Purifier'  => Mews\Purifier\Facades\Purifier::class,
         'Image'     => Intervention\Image\Facades\Image::class,
         'Rss'       => Thujohn\Rss\RssFacade::class,
-        'Flash'     => Laracasts\Flash\Flash::class,
         'Debugbar'  => Barryvdh\Debugbar\Facade::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
@@ -230,6 +245,9 @@ return [
         'QrCode'           => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'Rss'              => Thujohn\Rss\RssFacade::class,
         'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class,
+
+        // API
+        'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
     ],
 
 ];

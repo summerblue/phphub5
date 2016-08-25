@@ -3,50 +3,50 @@
 namespace Phphub\Handler;
 
 use App\Models\User;
-use App\Models\Topic;
 use Image;
 use Auth;
+use Phphub\Handler\Exception\ImageUploadException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class ImageUploadHandler
 {
+    /**
+     * @var UploadedFile $file
+     */
     protected $file;
+    protected $allowed_extensions = ["png", "jpg", "gif"];
 
+    /**
+     * @param UploadedFile $file
+     * @param User $user
+     * @return array
+     */
     public function uploadAvatar($file, User $user)
     {
         $this->file = $file;
-
-        $allowed_extensions = ["png", "jpg", "gif"];
-        if (!$this->checkAllowedExtensions($allowed_extensions)) {
-            return ['error' => 'You may only upload png, jpg or gif.'];
-        }
+        $this->checkAllowedExtensionsOrFail();
 
         $avatar_name = $user->id . '_' . time() . '.' . $file->getClientOriginalExtension() ?: 'png';
-        $local_image = $this->saveImageToLocal('avatar', 380, $avatar_name);
+        $this->saveImageToLocal('avatar', 380, $avatar_name);
 
-        return ['error' => '', 'filename' => $avatar_name];
+        return ['filename' => $avatar_name];
     }
 
     public function uploadImage($file)
     {
         $this->file = $file;
-
-        $allowed_extensions = ["png", "jpg", "gif"];
-        if (!$this->checkAllowedExtensions($allowed_extensions)) {
-            return ['error' => 'You may only upload png, jpg or gif.'];
-        }
+        $this->checkAllowedExtensionsOrFail();
 
         $local_image = $this->saveImageToLocal('topic', 1440);
-        return ['error' => '', 'filename' => get_user_static_domain() . $local_image];
+        return ['filename' => get_user_static_domain() . $local_image];
     }
 
-    protected function checkAllowedExtensions($allowed_extensions)
+    protected function checkAllowedExtensionsOrFail()
     {
-        if ($this->file->getClientOriginalExtension()
-            && !in_array(strtolower($this->file->getClientOriginalExtension()), $allowed_extensions)) {
-            return false;
+        $extension = strtolower($this->file->getClientOriginalExtension());
+        if ($extension && !in_array($extension, $this->allowed_extensions)) {
+            throw new ImageUploadException('You can only upload image with extensions: ' . implode($this->allowed_extensions, ','));
         }
-
-        return true;
     }
 
     protected function saveImageToLocal($type, $resize, $filename = '')

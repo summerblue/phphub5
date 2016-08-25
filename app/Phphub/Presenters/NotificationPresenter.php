@@ -38,7 +38,7 @@ class NotificationPresenter extends Presenter
             case 'comment_append':
                 $lable = lang('Commented topic has new update:');
                 break;
-            case 'attention_append':
+            case 'vote_append':
                 $lable = lang('Attented topic has new update:');
                 break;
             case 'follow':
@@ -47,5 +47,16 @@ class NotificationPresenter extends Presenter
                 break;
         }
         return $lable;
+    }
+
+    // for API
+    public function message()
+    {
+        $message = $this->fromUser->name . ' ⋅ ' . $this->lableUp();
+
+        if (count($this->topic)) {
+            $message .= ' ⋅ ' . $this->topic->title;
+        }
+        return $message;
     }
 }

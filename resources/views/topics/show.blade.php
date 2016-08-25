@@ -17,17 +17,6 @@
 
       <h1 class="panel-title topic-title">{{{ $topic->title }}}</h1>
 
-      <div class="votes animated rubberBand ">
-
-        <a data-ajax="post" href="javascript:void(0);" data-url="{{ route('topics.upvote', $topic->id) }}" title="{{ lang('Up Vote') }}" id="up-vote" class="vote {{ $currentUser && $topic->votes()->ByWhom(Auth::id())->WithType('upvote')->count() ? 'active' :'' }}">
-            <li class="fa fa-chevron-up "></li> <span id="vote-count"> {{ $topic->vote_count }}</span>
-        </a>
-         &nbsp;
-        <a data-ajax="post" href="javascript:void(0);" data-url="{{ route('topics.downvote', $topic->id) }}" title="{{ lang('Down Vote') }}" id="down-vote" class="vote {{ $currentUser && $topic->votes()->ByWhom(Auth::id())->WithType('downvote')->count() ? 'active' :'' }}">
-            <li class="fa fa-chevron-down"></li>
-        </a>
-      </div>
-
       @include('topics.partials.meta')
     </div>
 
@@ -54,27 +43,57 @@
       @endforeach
     </div>
 
-    @include('topics.partials.topic_operate')
+    @include('topics.partials.topic_operate', ['manage_topics' => $currentUser ? $currentUser->can("manage_topics") : false])
   </div>
 
-@include('topics.partials.topic_author_box')
 
+  <div class="votes-container panel panel-default padding-md">
 
-  <div class="replies panel panel-default padding-md">
+    <div class="panel-body vote-box text-center">
 
-    <div class="panel-body hidden-xs">
+        <div class="btn-group">
 
-        @if( $topic->user->payment_qrcode )
-        <div class="col-sm-6">
-                <span style="position: relative;top: 3px;">请随意打赏，你的支持将鼓励我继续创作！</span><button class="btn btn-success"  data-toggle="modal" data-target="#payment-qrcode-modal">¥ 打赏支持</button>
+            <a data-ajax="post" href="javascript:void(0);" data-url="{{ route('topics.upvote', $topic->id) }}" title="{{ lang('Up Vote') }}"
+                data-content="点赞相当于收藏，可以在个人页面的「赞过的话题」导航里查看"
+                id="up-vote"
+                class="vote btn btn-primary {{ $topic->user->payment_qrcode ?: 'btn-inverted' }} popover-with-html {{ $currentUser && $topic->votes()->ByWhom(Auth::id())->WithType('upvote')->count() ? 'active' :'' }}" >
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                点赞
+            </a>
+
+            @if( $topic->user->payment_qrcode )
+                <div class="or"></div>
+                <button class="btn btn-warning popover-with-html"  data-toggle="modal" data-target="#payment-qrcode-modal" data-content="如果觉得我的文章对您有用，请随意打赏。你的支持将鼓励我继续创作！">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    打赏
+                </button>
+            @endif
         </div>
-        <div class="col-sm-6">
-            <div class="social-share-cs"></div>
-            <div class="clearfix"></div>
+
+        <div class="voted-users">
+
+            @if(count($votedUsers))
+                <div class="user-lists">
+                    @foreach($votedUsers as $votedUser)
+                        <a href="{{ route('users.show', $votedUser->id) }}" data-userId="{{ $votedUser->id }}">
+                            <img class="img-thumbnail avatar avatar-middle" src="{{ $votedUser->present()->gravatar() }}" style="width:48px;height:48px;">
+                        </a>
+                    @endforeach
+                </div>
+            @else
+                <div class="user-lists">
+
+                </div>
+                <div class="vote-hint">
+                    成为第一个点赞的人吧 <img title=":bowtie:" alt=":bowtie:" class="emoji" src="https://dn-phphub.qbox.me/assets/images/emoji/bowtie.png" align="absmiddle"></img>
+                </div>
+            @endif
+
+            <a class="voted-template" href="" data-userId="" style="display:none">
+                <img class="img-thumbnail avatar avatar-middle" src="" style="width:48px;height:48px;">
+            </a>
         </div>
-        @else
-            <div class="social-share-cs "></div>
-        @endif
+
     </div>
   </div>
 
@@ -87,7 +106,7 @@
     <div class="panel-body">
 
       @if (count($replies))
-        @include('topics.partials.replies')
+        @include('topics.partials.replies', ['manage_topics' => $currentUser ? $currentUser->can("manage_topics") : false])
         <div id="replies-empty-block" class="empty-block hide">{{ lang('No comments') }}~~</div>
       @else
         <ul class="list-group row"></ul>
@@ -124,8 +143,8 @@
             @endif
         </div>
 
-        <div class="form-group status-post-submit">
-            <input class="btn btn-primary {{ $currentUser ? :'disabled'}}" id="reply-create-submit" type="submit" value="{{ lang('Reply') }}">
+        <div class="form-group reply-post-submit">
+            <input class="btn btn-primary {{ $currentUser ? '' :'disabled'}}" id="reply-create-submit" type="submit" value="{{ lang('Reply') }}">
             <span class="help-inline" title="Or Command + Enter">Ctrl+Enter</span>
         </div>
 
@@ -160,6 +179,9 @@
         };
 
         socialShare('.social-share-cs', $config);
+
+        Config.following_users =  @if($currentUser) {!!$currentUser->present()->followingUsersJson()!!} @else [] @endif;
+        PHPHub.initAutocompleteAtUser();
     });
 
 </script>

@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('image_url')->nullable();
             $table->integer('topic_count')->default(0)->index();
             $table->integer('reply_count')->default(0)->index();
+            $table->integer('follower_count')->default(0)->index();
             $table->string('city')->nullable();
             $table->string('company')->nullable();
             $table->string('twitter_account')->nullable();
@@ -36,12 +37,13 @@ class CreateUsersTable extends Migration
             $table->string('real_name')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('payment_qrcode')->nullable();
+            $table->string('wechat_qrcode')->nullable();
             $table->string('avatar');
             $table->string('login_qr')->nullable();
             $table->string('wechat_openid')->nullable()->index();
             $table->string('wechat_unionid')->nullable()->index();
             $table->string('weibo_name')->nullable();
-            $table->string('weibo_id')->nullable();
+            $table->string('weibo_link')->nullable();
             $table->boolean('verified')->default(false)->index();
             $table->string('verification_token')->nullable();
             $table->enum('email_notify_enabled', ['yes',  'no'])->default('yes')->index();

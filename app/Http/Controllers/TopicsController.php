@@ -5,13 +5,13 @@ use Phphub\Core\CreatorListener;
 use App\Models\Topic;
 use App\Models\SiteStatus;
 use App\Models\Link;
-use App\Models\Attention;
 use App\Models\Notification;
 use App\Models\Append;
 use App\Models\Category;
 use App\Models\Banner;
 use App\Models\ActiveUser;
 use App\Models\HotTopic;
+use Phphub\Handler\Exception\ImageUploadException;
 use Phphub\Markdown\Markdown;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreTopicRequest;
@@ -27,25 +27,20 @@ class TopicsController extends Controller implements CreatorListener
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-    public function index(Topic $topic)
+    public function index(Request $request, Topic $topic)
     {
-        $filter = $topic->present()->getTopicFilter();
-        $topics = $topic->getTopicsWithFilter($filter, 40);
+        $topics = $topic->getTopicsWithFilter($request->get('filter'), 40);
         $links  = Link::allFromCache();
         $banners = Banner::allByPosition();
 
         $active_users = ActiveUser::fetchAll();
-        $hot_topics = HotTopic::fetchAll(10);
+        $hot_topics = HotTopic::fetchAll();
 
         return view('topics.index', compact('topics', 'links', 'banners', 'active_users', 'hot_topics'));
     }
 
     public function create(Request $request)
     {
-        if (!Auth::user()->verified) {
-            return redirect(route('email-verification-required'));
-        }
-
         $category = Category::find($request->input('category_id'));
         $categories = Category::all();
 
@@ -54,26 +49,31 @@ class TopicsController extends Controller implements CreatorListener
 
     public function store(StoreTopicRequest $request)
     {
-        if (!Auth::user()->verified) {
-            return redirect(route('email-verification-required'));
-        }
-
         return app('Phphub\Creators\TopicCreator')->create($this, $request->except('_token'));
     }
 
     public function show($id, Topic $topic)
     {
-        $randomExcellentTopics = $topic->getTopicsWithFilter('random-excellent', 5);
+        $topic = Topic::where('id', $id)->with('user', 'lastReplyUser')->first();
 
-        $topic = Topic::findOrFail($id);
+        if ($topic->user->is_banned == 'yes') {
+            Flash::error('你访问的文章已被屏蔽，有疑问请加微信：summer_charlie');
+            return redirect(route('topics.index'));
+        }
+
+        $randomExcellentTopics = $topic->getRandomExcellent();
         $replies = $topic->getRepliesWithLimit(config('phphub.replies_perpage'));
-        $category = $topic->category;
         $categoryTopics = $topic->getSameCategoryTopics();
+        $userTopics = $topic->byWhom($topic->user_id)->with('user')->recent()->limit(8)->get();
+        $votedUsers = $topic->votes()->orderBy('id', 'desc')->with('user')->get()->pluck('user');
 
         $topic->increment('view_count', 1);
 
         $banners  = Banner::allByPosition();
-        return view('topics.show', compact('topic', 'replies', 'categoryTopics', 'category', 'banners', 'randomExcellentTopics'));
+        return view('topics.show', compact(
+                            'topic', 'replies', 'categoryTopics',
+                            'category', 'banners', 'randomExcellentTopics',
+                            'votedUsers', 'userTopics'));
     }
 
     public function edit($id)
@@ -199,9 +199,10 @@ class TopicsController extends Controller implements CreatorListener
     public function uploadImage(Request $request)
     {
         if ($file = $request->file('file')) {
-            $upload_status = app('Phphub\Handler\ImageUploadHandler')->uploadImage($file);
-            if ($upload_status['error']) {
-                return ['error' => $upload_status['error']];
+            try {
+                $upload_status = app('Phphub\Handler\ImageUploadHandler')->uploadImage($file);
+            } catch (ImageUploadException $exception) {
+                return ['error' => $exception->getMessage()];
             }
             $data['filename'] = $upload_status['filename'];
 

@@ -137,7 +137,7 @@ gulp watch
 |[rap2hpoutre/laravel-logviewer](https://github.com/rap2hpoutre/laravel-log-viewer)| Log 查看工具 | 生产环境下，使用此扩展包快速查看 Log，已做权限控制。 |
 | [laracasts/presenter](https://github.com/laracasts/Presenter) | Presenter 机制 | 以下 Model: User、Topic、Notification 都使用到了 Presenter。 |
 |[league/html-to-markdown](https://github.com/thephpleague/html-to-markdown)| 将 HTML 转换成 Markdown| 用户发帖、回复帖子时使用了此扩展包。 |
-|[erusev/parsedown](https://github.com/erusev/parsedown)| 将 Mark 转换成 HTML| 用户发帖、回复帖子时使用了此扩展包。 |
+|[erusev/parsedown](https://github.com/erusev/parsedown)| 将 Markdown 转换成 HTML| 用户发帖、回复帖子时使用了此扩展包。 |
 | [laravel/socialite](https://github.com/laravel/socialite) | 官方社会化登录组件 | GitHub 登录逻辑使用了此扩展包。 |
 |[naux/auto-correct](github.com/NauxLiu/auto-correct)| 自动给中英文之间加入合理的空格，纠正专用名词大小写| 用户发帖时用此扩展包过滤标题。 |
 | [Intervention/image](https://github.com/Intervention/image) | 图片处理功能库 | 用发帖和回复帖子时，图片上传的逻辑使用了此扩展包。 |
@@ -172,13 +172,10 @@ gulp watch
 本项目使用 [infyomlabs/laravel-generator](https://packagist.org/packages/infyomlabs/laravel-generator) 快速构建项目， 记录这些日志目的为了方便后续开发可以借鉴。
 
 ```shell
-php artisan make:scaffold WeiboStatuses --schema="mid:string:index,created_at_wb:timestamp:nullable:index,text:text:nullable,reposts_count:integer:unsigned:default(0):index,comments_count:integer:unsigned:default(0):index,attitudes_count:integer:unsigned:default(0):index,weibo_user_id:integer:index,weibo_user_idstr:string:index"
 
 php artisan make:scaffold Appends --schema="content:text,topic_id:integer:unsigned:default(0):index"
 
 php artisan make:scaffold Attentions --schema="topic_id:integer:unsigned:default(0):index,user_id:integer:unsigned:default(0):index"
-
-php artisan make:scaffold Favorites --schema="topic_id:integer:unsigned:default(0):index,user_id:integer:unsigned:default(0):index"
 
 php artisan make:scaffold Links --schema="title:string:index,link:string:index,cover:text:nullable"
 
@@ -188,9 +185,7 @@ php artisan make:scaffold SiteStatuses --schema="day:string:index,register_count
 
 php artisan make:scaffold Tips --schema="body:text:nullable"
 
-php artisan make:scaffold Favorites --schema="title:string:index,link:string:index,cover:text:nullable"
-
-php artisan make:scaffold Topics --schema="title:string:index,body:text,user_id:tinyInteger:unsigned:default(0),category_id:integer:unsigned:default(0),reply_count:integer:unsigned:default(0),view_count:integer:unsigned:default(0),favorite_count:integer:unsigned:default(0),vote_count:integer:unsigned:default(0),last_reply_user_id:integer:unsigned:default(0),order:integer:unsigned:default(0),is_excellent:tinyInteger:unsigned:default(0),is_wiki:tinyInteger:unsigned:default(0),is_blocked:tinyInteger:unsigned:default(0),body_original:text:nullable,excerpt:text:nullable"
+php artisan make:scaffold Topics --schema="title:string:index,body:text,user_id:tinyInteger:unsigned:default(0),category_id:integer:unsigned:default(0),reply_count:integer:unsigned:default(0),view_count:integer:unsigned:default(0),vote_count:integer:unsigned:default(0),last_reply_user_id:integer:unsigned:default(0),order:integer:unsigned:default(0),is_excellent:tinyInteger:unsigned:default(0),is_wiki:tinyInteger:unsigned:default(0),is_blocked:tinyInteger:unsigned:default(0),body_original:text:nullable,excerpt:text:nullable"
 
 php artisan make:scaffold Topics --schema="user_id:integer:unsigned:default(0),votable_id:integer:unsigned:default(0),votable_type:string:index,is:string:index"
 

@@ -48,6 +48,11 @@ return [
             'root'   => storage_path('app'),
         ],
 
+        'backup' => [
+            'driver' => 'local',
+            'root'   => env('BACKUP_DISK', storage_path('app')),
+        ],
+
         'ftp' => [
             'driver'   => 'ftp',
             'host'     => 'ftp.example.com',

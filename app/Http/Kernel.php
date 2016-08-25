@@ -20,6 +20,10 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\VerifyCsrfToken::class,
         \App\Http\Middleware\CheckUserIsItBanned::class,
         \App\Http\Middleware\RecordLastActivedTime::class,
+        \Spatie\Pjax\Middleware\FilterIfPjax::class,
+
+        // API
+        \LucaDegasperi\OAuth2Server\Middleware\OAuthExceptionHandlerMiddleware::class,
     ];
 
     /**
@@ -32,5 +36,14 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest'      => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'admin_auth' => \App\Http\Middleware\AdminAuth::class,
+        'verified_email' => \App\Http\Middleware\RequireVerifiedEmail::class,
+        
+        // API
+        'oauth2'     => \App\Http\Middleware\OAuthMiddleware::class,
+        'check-authorization-params' => \LucaDegasperi\OAuth2Server\Middleware\CheckAuthCodeRequestMiddleware::class,
+        'api.throttle'               => \Dingo\Api\Http\Middleware\RateLimit::class,
+
+        // 限制 Web 内容只能是 web 访问
+        'restrict_web_access' => \App\Http\Middleware\RestrictWebAccess::class,
     ];
 }

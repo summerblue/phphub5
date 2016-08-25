@@ -5,8 +5,6 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Models\Reply;
 use App\Models\HotTopic;
-use App\Models\Favorite;
-use App\Models\Attention;
 use App\Models\Vote;
 use App\Models\Topic;
 use Carbon\Carbon;

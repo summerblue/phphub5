@@ -89,12 +89,12 @@
           </div>
 
           <div class="form-group">
-              <label for="" class="col-sm-2 control-label">{{ lang('Weibo ID') }}</label>
+              <label for="" class="col-sm-2 control-label">微博个人页面</label>
               <div class="col-sm-6">
-                  <input class="form-control" name="weibo_id" type="text" value="{{ $user->weibo_id}}">
+                  <input class="form-control" name="weibo_link" type="text" value="{{ $user->weibo_link}}">
               </div>
               <div class="col-sm-4 help-block">
-                {{ lang('Weibo ID example: 5963322692') }}
+                微博个人主页链接，如：http://weibo.com/phphub
               </div>
           </div>
 
@@ -127,6 +127,19 @@
                     {{ lang('personal_website_placebolder_hint') }}
               </div>
           </div>
+
+            <div class="form-group">
+                <label for="wechat_qrcode" class="col-sm-2 control-label">微信账号二维码</label>
+                <div class="col-sm-6">
+                    <input type="file" name="wechat_qrcode">
+                    @if($user->wechat_qrcode)
+                        <img class="payment-qrcode" src="{{ $user->wechat_qrcode }}" alt="" />
+                    @endif
+                </div>
+                <div class="col-sm-4 help-block">
+                    你的微信个人账号，或者订阅号
+                </div>
+            </div>
 
             <div class="form-group">
                 <label for="" class="col-sm-2 control-label">支付二维码</label>

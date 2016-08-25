@@ -16,9 +16,7 @@ return [
             'title'  => '头像',
             'output' => function ($value, $model) {
                 $value = $model->present()->gravatar();
-                return empty($value) ? 'N/A' : <<<EOD
-    <img src="$value" width="80">
-EOD;
+                return empty($value) ? 'N/A' : '<img src="'.$value.'" width="80">';
             },
             'sortable' => false,
         ],
@@ -105,9 +103,6 @@ EOD;
                 'no'  => '否',
             ],
         ],
-        'image_url' => [
-            'title' => 'GitHub 头像 URL'
-        ],
         'city' => [
             'title' => '所处城市'
         ],
@@ -134,7 +129,9 @@ EOD;
             'title' => '真实姓名'
         ],
         'avatar' => [
-            'title' => '头像 URL'
+            'title' => '用户头像',
+            'type' => 'image',
+            'location' => public_path() . '/uploads/avatars/',
         ],
         'roles' => array(
             'type'       => 'relationship',

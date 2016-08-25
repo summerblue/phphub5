@@ -6,6 +6,8 @@ trait TopicFilterable
 {
     public function getTopicsWithFilter($filter, $limit = 20)
     {
+        $filter = $this->getTopicFilter($filter);
+
         return $this->applyFilter($filter)
                     ->with('user', 'category', 'lastReplyUser')
                     ->paginate($limit);
@@ -19,29 +21,56 @@ trait TopicFilterable
                     ->paginate($limit);
     }
 
+    public function getTopicFilter($request_filter)
+    {
+        $filters = ['noreply', 'vote', 'excellent','recent', 'wiki', 'jobs', 'excellent-pinned'];
+        if (in_array($request_filter, $filters)) {
+            return $request_filter;
+        }
+        return 'default';
+    }
+
     public function applyFilter($filter)
     {
+        $query = $this->withoutBlocked();
+
         switch ($filter) {
             case 'noreply':
-                return $this->orderBy('reply_count', 'asc')->recent();
+                return $query->pinned()->orderBy('reply_count', 'asc')->recent();
                 break;
             case 'vote':
-                return $this->orderBy('vote_count', 'desc')->recent();
+                return $query->pinned()->orderBy('vote_count', 'desc')->recent();
                 break;
             case 'excellent':
-                return $this->excellent()->recent();
+                return $query->excellent()->recent();
                 break;
+
+            // 主要 API 首页在用，置顶+精华
+            case 'excellent-pinned':
+                return $query->excellent()->pinned()->recent();
+                break;
+
             case 'random-excellent':
-                return $this->excellent()->fresh()->random();
+                return $query->excellent()->fresh()->random();
                 break;
             case 'recent':
-                return $this->recent();
+                return $query->pinned()->recent();
                 break;
             case 'category':
-                return $this->recentReply();
+                return $query->pinned()->recentReply();
                 break;
+
+            // for api，分类：教程
+            case 'wiki':
+                return $query->where('category_id', 6)->pinned()->recent();
+                break;
+            // for api，分类：招聘
+            case 'jobs':
+                return $query->where('category_id', 1)->pinned()->recent();
+                break;
+
             default:
-                return $this->pinAndRecentReply();
+                return $query->pinAndRecentReply();
                 break;
         }
     }
@@ -64,8 +93,13 @@ trait TopicFilterable
     public function scopePinAndRecentReply($query)
     {
         return $query->fresh()
-                     ->orderBy('order', 'desc')
+                     ->pinned()
                      ->orderBy('updated_at', 'desc');
+    }
+
+    public function scopePinned($query)
+    {
+        return $query->orderBy('order', 'desc');
     }
 
     public function scopeFresh($query)
@@ -75,13 +109,35 @@ trait TopicFilterable
 
     public function scopeRecentReply($query)
     {
-        return $query->orderBy('order', 'desc')
+        return $query->pinned()
                      ->orderBy('updated_at', 'desc');
     }
 
     public function scopeExcellent($query)
     {
         return $query->where('is_excellent', '=', 'yes');
+    }
+
+    public function scopeWithoutBlocked($query)
+    {
+        return $query->where('is_blocked', '=', 'no');
+    }
+
+    public function correctApiFilter($filter)
+    {
+        switch ($filter) {
+            case 'newest':
+                return 'recent';
+
+            case 'excellent':
+                return 'excellent-pinned';
+
+            case 'nobody':
+                return 'noreply';
+
+            default:
+                return $filter;
+        }
     }
 }
 

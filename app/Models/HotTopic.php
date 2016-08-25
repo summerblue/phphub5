@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Cache;
 
 class HotTopic extends Model
 {
@@ -13,12 +14,16 @@ class HotTopic extends Model
         return $this->belongsTo(Topic::class);
     }
 
-    public static function fetchAll($limit = 8)
+    public static function fetchAll()
     {
-        $topic_ids = self::orderBy('weight', 'DESC')
-                         ->limit($limit)
-                         ->lists('topic_id')
-                         ->toArray();
-        return Topic::whereIn('id', $topic_ids)->with('user')->get();
+        $data = Cache::remember('phphub_hot_topics', 30, function(){
+            return self::orderBy('weight', 'DESC')
+                             ->with('topic','topic.user')
+                             ->limit(10)
+                             ->get()
+                             ->pluck('topic');
+        });
+
+        return $data;
     }
 }

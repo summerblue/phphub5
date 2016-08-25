@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Cache;
 
 class ActiveUser extends Model
 {
@@ -13,12 +14,17 @@ class ActiveUser extends Model
         return $this->belongsTo(User::class);
     }
 
-    public static function fetchAll($limit = 8)
+    public static function fetchAll()
     {
-        return self::with('user')
-                   ->orderBy('weight', 'DESC')
-                   ->limit($limit)
-                   ->get()
-                   ->pluck('user');
+        $data = Cache::remember('phphub_active_users', 30, function(){
+            return self::with('user')
+                       ->orderBy('weight', 'DESC')
+                       ->limit(8)
+                       ->get()
+                       ->pluck('user');
+        });
+
+        return $data;
+
     }
 }

@@ -1,55 +1,39 @@
 <div class="panel-footer operate">
 
-  <div class="">
+    <div class="pull-left hidden-xs">
+        <div class="social-share-cs "></div>
+    </div>
 
-    @if ($currentUser && \App\Models\Attention::isUserAttentedTopic($currentUser, $topic))
-      <a class="active" data-ajax="post" data-lang-cancel={{ lang('Cancel') }} data-lang-attent={{ lang('Attent') }}  id="topic-attent-cancel-button" href="javascript:void(0);" data-url="{{ route('attentions.createOrDelete', $topic->id) }}">
-        <i class="glyphicon glyphicon-eye-open"></i> <span>{{ lang('Cancel') }}</span>
-      </a>
-    @else
-      <a data-ajax="post" data-lang-cancel={{ lang('Cancel') }} data-lang-attent={{ lang('Attent') }}  id="topic-attent-button" href="javascript:void(0);" data-url="{{ route('attentions.createOrDelete', $topic->id) }}">
-        <i class="glyphicon glyphicon-eye-open"></i> <span>{{ lang('Attent') }}</span>
-      </a>
-    @endif
+  <div class="pull-right actions">
 
-    @if ($currentUser && \App\Models\Favorite::isUserFavoritedTopic($currentUser, $topic))
-      <a class="active" data-ajax="post" data-lang-cancel={{ lang('Cancel') }} data-lang-favorite={{ lang('Favorite') }}  id="topic-favorite-cancel-button" href="javascript:void(0);" data-url="{{ route('favorites.createOrDelete', $topic->id) }}">
-        <i class="glyphicon glyphicon-bookmark"></i> <span>{{ lang('Cancel') }}</span>
-      </a>
-    @else
-      <a data-ajax="post" data-lang-cancel={{ lang('Cancel') }} data-lang-favorite={{ lang('Favorite') }}  id="topic-favorite-button" href="javascript:void(0);" data-url="{{ route('favorites.createOrDelete', $topic->id) }}">
-        <i class="glyphicon glyphicon-bookmark"></i> <span>{{ lang('Favorite') }}</span>
-      </a>
-    @endif
-
-    @if ($currentUser && $currentUser->can("manage_topics") )
-        <a data-ajax="post" id="topic-recomend-button" href="javascript:void(0);" data-url="{{ route('topics.recommend', [$topic->id]) }}" class="admin {{ $topic->is_excellent == 'yes' ? 'active' : ''}}" title="{{ lang('Mark as Excellent') }}">
+    @if ($currentUser && $manage_topics )
+        <a data-ajax="post" id="topic-recomend-button" href="javascript:void(0);" data-url="{{ route('topics.recommend', [$topic->id]) }}" class="admin popover-with-html {{ $topic->is_excellent == 'yes' ? 'active' : ''}}" data-content="推荐主题，加精的帖子会出现在首页">
         <i class="fa fa-trophy"></i>
         </a>
 
         @if ($topic->order >= 0)
-          <a data-ajax="post" id="topic-pin-button" href="javascript:void(0);" data-url="{{ route('topics.pin', [$topic->id]) }}" class="admin {{ $topic->order > 0 ? 'active' : '' }}" title="{{ lang('Pin it on Top') }}">
+          <a data-ajax="post" id="topic-pin-button" href="javascript:void(0);" data-url="{{ route('topics.pin', [$topic->id]) }}" class="admin popover-with-html {{ $topic->order > 0 ? 'active' : '' }}" data-content="帖子置顶，会在列表页置顶">
             <i class="fa fa-thumb-tack"></i>
           </a>
         @endif
 
         @if ($topic->order <= 0)
-            <a data-ajax="post" id="topic-sink-button" href="javascript:void(0);" data-url="{{ route('topics.sink', [$topic->id]) }}" class="admin {{ $topic->order < 0 ? 'active' : '' }}" title="{{ lang('Sink This Topic') }}">
+            <a data-ajax="post" id="topic-sink-button" href="javascript:void(0);" data-url="{{ route('topics.sink', [$topic->id]) }}" class="admin popover-with-html {{ $topic->order < 0 ? 'active' : '' }}" data-content="沉贴，帖子将会被降低排序优先级">
                 <i class="fa fa-anchor"></i>
             </a>
         @endif
 
-        <a data-method="delete" id="topic-delete-button" href="javascript:void(0);" data-url="{{ route('topics.destroy', [$topic->id]) }}" title="{{ lang('Delete') }}" class="admin">
+        <a data-method="delete" id="topic-delete-button" href="javascript:void(0);" data-url="{{ route('topics.destroy', [$topic->id]) }}" data-content="{{ lang('Delete') }}" class="admin  popover-with-html">
             <i class="fa fa-trash-o"></i>
         </a>
     @endif
 
-    @if ( $currentUser && ($currentUser->can("manage_topics") || $currentUser->id == $topic->user_id) )
-      <a id="topic-append-button" href="javascript:void(0);" title="{{ lang('Append') }}" class="admin" data-toggle="modal" data-target="#exampleModal">
+    @if ( $currentUser && ($manage_topics || $currentUser->id == $topic->user_id) )
+      <a id="topic-append-button" href="javascript:void(0);" class="admin  popover-with-html" data-toggle="modal" data-target="#exampleModal" data-content="帖子附言，添加附言后所有参与讨论的用户都能收到消息提醒，包括点赞和评论的用户">
         <i class="fa fa-plus"></i>
       </a>
 
-      <a id="topic-edit-button" href="{{ route('topics.edit', [$topic->id]) }}" title="{{ lang('Edit') }}" class="admin">
+      <a id="topic-edit-button" href="{{ route('topics.edit', [$topic->id]) }}" data-content="{{ lang('Edit') }}" class="admin  popover-with-html">
         <i class="fa fa-pencil-square-o"></i>
       </a>
     @endif

@@ -7,7 +7,10 @@
     var PHPHub = {
         init: function(){
             var self = this;
-            $(document).pjax('a:not(a[target="_blank"])', 'body');
+            $(document).pjax('a:not(a[target="_blank"])', 'body', {
+                timeout: 1600,
+                maxCacheLength: 500
+            });
             $(document).on('pjax:start', function() {
                 NProgress.start();
             });
@@ -20,6 +23,8 @@
                 NProgress.done();
                 self._resetTitle();
             });
+            // Exclude links with a specific class
+            $(document).on("pjax:click", "a.no-pjax", false);
 
             self.siteBootUp();
             self.initLightBox();
@@ -29,6 +34,11 @@
 
             if (ShowCrxHint === 'yes') {
                 showPluginDownload();
+            }
+
+            Messenger.options = {
+                extraClasses: 'messenger-fixed messenger-on-bottom messenger-on-right',
+                theme: 'flat'
             }
         },
 
@@ -41,7 +51,7 @@
             self.initExternalLink();
             self.initTimeAgo();
             self.initEmoji();
-            self.initAutocompleteAtUser();
+            // self.initAutocompleteAtUser();
             self.initScrollToTop();
             self.initPopup();
             self.initTextareaAutoResize();
@@ -184,7 +194,7 @@
 				 html : true,
 				 trigger : 'hover',
                  container: 'body',
-				 placement: 'top',
+				 placement: 'auto top',
 			 });
         },
 
@@ -232,7 +242,7 @@
         initEditorPreview: function() {
             var self = this;
             $("#reply_content").focus(function(event) {
-                $("#reply_notice").addClass('animated swing');
+                // $("#reply_notice").addClass('animated pulse');
                 $("#preview-box").fadeIn(1500);
                 $("#preview-lable").fadeIn(1500);
 
@@ -255,7 +265,7 @@
          */
         initNotificationsCount: function(argumen) {
             var self = this;
-            if (Config.user_id > 0) {
+            if (Config.user_id > 0 && Config.environment != 'local') {
                 function scheduleGetNotification(){
                     $.get( Config.routes.notificationsCount, function( data ) {
 
@@ -269,6 +279,11 @@
         },
 
         _resetTitle: function() {
+
+            if(window.location.href.indexOf("notifications") > -1) {
+               nCount = 0;
+            }
+
             if (nCount > 0) {
                 $('#notification-count').text(nCount);
                 $('#notification-count').hasClass('badge-important') || $('#notification-count').addClass('badge-important');
@@ -373,6 +388,9 @@
             $("#topic-create-form").submit(function(event){
                 localforage.removeItem('topic_create_content');
                 localforage.removeItem('topic-title');
+
+                $("#topic-create-submit").val('提交中...').addClass('disabled').prop('disabled', true);
+
             });
             $("#reply-form").submit(function(event){
                 localforage.removeItem('reply_content');
@@ -576,8 +594,6 @@
                 var url = that.data('url');
                 var active = that.is('.active');
                 var cancelText = that.data('lang-cancel');
-                var attentText = that.data('lang-attent');
-                var favoriteText = that.data('lang-favorite');
                 var isRecomend = that.is('#topic-recomend-button');
                 var isWiki = that.is('#topic-wiki-button');
                 var ribbonContainer = $('.topic .ribbon-container');
@@ -587,16 +603,12 @@
                 var total = $('.replies .total b');
                 var voteCount = $('#vote-count');
                 var upVote = $('#up-vote');
-                var downVote = $('#down-vote');
                 var isVote = that.is('.vote');
                 var isUpVote = that.is('#up-vote');
-                var isDownVote = that.is('#down-vote');
                 var isCommentVote= that.is('.comment-vote');
                 var commenVoteCount= that.find('.vote-count');
                 var emptyBlock = $('#replies-empty-block');
-                var originVoteCount = voteCount.html();
                 var originUpVoteActive = upVote.is('.active');
-                var originDownVoteActive = downVote.is('.active');
 
                 if (method === 'delete') {
                     swal({
@@ -632,12 +644,7 @@
 
                 if (active) {
                     that.removeClass('active');
-
-                    if (attentText) {
-                        that.find('span').html(attentText);
-                    } else if (favoriteText) {
-                        that.find('span').html(favoriteText);
-                    }
+                    that.removeClass('animated rubberBand');
 
                     if (isRecomend) {
                         excellent.hide();
@@ -646,14 +653,14 @@
                     }
 
                     if (isVote) {
-                        if (isUpVote) {
-                            voteCount.html(parseInt(voteCount.html()) - 1);
-                        } else if (downVote) {
-                            voteCount.html(parseInt(voteCount.html()) + 1);
-                        }
+                        // @CJ 如果是点赞，并且是已经点过赞的点赞，那就是去除点赞
+                        $('.user-lists').find("a[data-userId='"+Config.user_id+"']").fadeOut('slow/400/fast', function() {
+                            $(this).remove();
+                        });
                     }
                 } else {
                     that.addClass('active');
+                    that.addClass('animated rubberBand');
 
                     if (cancelText) {
                         that.find('span').html(cancelText);
@@ -684,22 +691,18 @@
                         }
                     }
 
-                    if (isVote) {
-                        if (isUpVote) {
-                            if (downVote.is('.active')) {
-                                downVote.removeClass('active');
-                                voteCount.html(parseInt(voteCount.html()) + 2);
-                            } else {
-                                voteCount.html(parseInt(voteCount.html()) + 1);
-                            }
-                        } else if (downVote) {
-                            if (upVote.is('.active')) {
-                                upVote.removeClass('active');
-                                voteCount.html(parseInt(voteCount.html()) - 2);
-                            } else {
-                                voteCount.html(parseInt(voteCount.html()) - 1);
-                            }
-                        }
+                    if (isVote && Config.user_id > 0) {
+                        // @CJ 如果是点赞，并且是没有点过赞的
+                        var newContent = $('.voted-template').clone();
+                        newContent.attr('data-userId', Config.user_id);
+                        newContent.attr('href', Config.user_link);
+                        newContent.find('img').attr('src', Config.user_avatar);
+
+                        newContent.prependTo('.user-lists').show('fast', function() {
+                            $(this).addClass('animated swing');
+                        });
+
+                        $('.vote-hint').hide();
                     }
                 }
 
@@ -723,12 +726,6 @@
                     if (!active) {
                         that.removeClass('active');
 
-                        if (attentText) {
-                            that.find('span').html(attentText);
-                        } else if (favoriteText) {
-                            that.find('span').html(favoriteText);
-                        }
-
                         if (isRecomend) {
                             excellent.hide();
                         } else if (isWiki) {
@@ -749,18 +746,10 @@
                     }
 
                     if (isVote) {
-                        voteCount.html(originVoteCount);
-
                         if (originUpVoteActive) {
                             upVote.addClass('active');
                         } else {
                             upVote.removeClass('active');
-                        }
-
-                        if (originDownVoteActive) {
-                            downVote.addClass('active');
-                        } else {
-                            downVote.removeClass('active');
                         }
                     }
                 })
@@ -772,34 +761,11 @@
 
         showMsg: function(msg, myobj) {
             if (!msg) return;
-
-            var obj = myobj || {};
-            var type = obj.type || 'info';
-            var timer = obj.timer || 0;
-            var tpl = '';
-
-            tpl += '<div class="alert alert-' + type + ' alert-dismissible fade in" role="alert">';
-            tpl +=    '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>';
-            tpl +=    '<i class="glyphicon glyphicon-info-sign"></i>' + msg;
-            tpl += '</div>';
-
-            if (!$('.cus-top-alert').length) {
-                $(tpl).appendTo('body').wrap('<div class="cus-top-alert"></div>');
-            } else {
-                $('.cus-top-alert').html(tpl);
-            }
-
-            $('.cus-top-alert .alert').alert();
-
-            if (timer) {
-                setTimeout(function() {
-                    $('.cus-top-alert .alert').alert('close');
-                }, timer);
-            }
+            Messenger().post(msg);
         },
 
         showPluginDownload: function() {
-            this.showMsg('Chrome 用户可使用 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">PHPHub 插件</a> 实时接收消息提醒。', {
+            this.showMsg('操作成功，安装 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">Chrome 插件</a> 接收提醒。', {
                 type: 'success',
                 timer: 8000
             });

@@ -13,6 +13,11 @@ class Vote extends Model
         return $this->morphTo();
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function scopeByWhom($query, $user_id)
     {
         return $query->where('user_id', '=', $user_id);

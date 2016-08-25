@@ -23,6 +23,7 @@ var basejs = [
     'resources/assets/js/vendor/snowfall.jquery.min.js',
     'resources/assets/js/vendor/upload-image.js',
     'resources/assets/js/vendor/bootstrap-switch.js',
+    'resources/assets/js/vendor/messenger.js',
     'node_modules/sweetalert/dist/sweetalert.min.js',
     'node_modules/social-share.js/dist/js/social-share.min.js',
 ];
@@ -46,6 +47,10 @@ elixir(function(mix) {
             'node_modules/social-share.js/dist/fonts'
         ], 'public/build/assets/fonts/iconfont')
 
+        .copy([
+            'resources/assets/fonts/googlefont'
+        ], 'public/build/assets/fonts/googlefont')
+
         .sass([
             'base.scss',
             'main.scss',
@@ -55,9 +60,24 @@ elixir(function(mix) {
             'resources/assets/js/main.js',
         ]), 'public/assets/js/scripts.js', './')
 
+        // API Web View
+        .sass([
+            'api/api.scss'
+        ], 'public/assets/css/api.css')
+        // API Web View
+        .scripts([
+            'api/emojify.js',
+            'api/api.js'
+        ], 'public/assets/js/api.js')
+
         .version([
+
             'assets/css/styles.css',
             'assets/js/scripts.js',
+
+            // API Web View
+            'assets/css/api.css',
+            'assets/js/api.js',
         ])
 
         .livereload();

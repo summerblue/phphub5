@@ -12,13 +12,11 @@
         <div class="panel-heading">
 
           <ul class="list-inline topic-filter">
-                <li><a {!! app(App\Models\Topic::class)->present()->topicFilter('excellent') !!}>{{ lang('Excellent') }}</a></li>
-                <li><a class="{{ (Request::is('categories/1') && !Input::get('filter') ? ' active' : '') }}" href="{{ route('categories.show', 1) }}">{{ lang('Jobs') }}</a></li>
-                <li><a class="{{ (Request::is('categories/5') && !Input::get('filter') ? ' active' : '') }}" href="{{ route('categories.show', 5) }}">{{ lang('Share') }}</a></li>
-                <li><a {!! app(App\Models\Topic::class)->present()->topicFilter('vote') !!}>{{ lang('Vote') }}</a></li>
-                <li><a class="{{ (Request::is('categories/4') && !Input::get('filter') ? ' active' : '') }}" href="{{ route('categories.show', 4) }}">{{ lang('Q&A') }}</a></li>
-                <li><a {!! app(App\Models\Topic::class)->present()->topicFilter('recent') !!}>{{ lang('Recent') }}</a></li>
-                <li><a {!! app(App\Models\Topic::class)->present()->topicFilter('noreply') !!}>{{ lang('Noreply') }}</a></li>
+                <li class="popover-with-html" data-content="最后回复排序"><a {!! app(App\Models\Topic::class)->present()->topicFilter('default') !!}>活跃</a></li>
+                <li class="popover-with-html" data-content="只看加精的话题"><a {!! app(App\Models\Topic::class)->present()->topicFilter('excellent') !!}>{{ lang('Excellent') }}</a></li>
+                <li class="popover-with-html" data-content="点赞数排序"><a {!! app(App\Models\Topic::class)->present()->topicFilter('vote') !!}>{{ lang('Vote') }}</a></li>
+                <li class="popover-with-html" data-content="发布时间排序"><a {!! app(App\Models\Topic::class)->present()->topicFilter('recent') !!}>{{ lang('Recent') }}</a></li>
+                <li class="popover-with-html" data-content="无人问津的话题"><a {!! app(App\Models\Topic::class)->present()->topicFilter('noreply') !!}>{{ lang('Noreply') }}</a></li>
             </ul>
 
           <div class="clearfix"></div>
@@ -27,7 +25,7 @@
         @if ( ! $topics->isEmpty())
 
             <div class="panel-body remove-padding-horizontal">
-                @include('topics.partials.topics', ['column' => false])
+                @include('topics.partials.topics')
             </div>
 
             <div class="panel-footer text-right remove-padding-horizontal pager-footer">

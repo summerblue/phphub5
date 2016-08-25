@@ -38,12 +38,12 @@
                 <label for="inputEmail3" class="col-sm-3 control-label">{{ lang('Register Binding') }}</label>
                 <div class="col-sm-9">
 
-                    <a class="btn btn-success login-btn weichat-login-btn {{ $currentUser->register_source == 'wechat' ? '' : 'hide' }}" role="button">
+                    <a class="btn btn-success login-btn weichat-login-btn {{ $user->register_source == 'wechat' ? '' : 'hide' }}" role="button">
                       <i class="fa fa-weixin"></i>
                       {{ lang('WeChat') }}
                     </a>
 
-                    <a class="btn btn-info login-btn {{ $currentUser->register_source == 'github' ? '' : 'hide' }}" role="button">
+                    <a class="btn btn-info login-btn {{ $user->register_source == 'github' ? '' : 'hide' }}" role="button">
                       <i class="fa fa-github-alt"></i>
                       {{ lang('GitHub') }}
                     </a>
@@ -59,8 +59,8 @@
                 <label for="inputEmail3" class="col-sm-3 control-label">{{ lang('Available Bindings') }}</label>
                 <div class="col-sm-9">
 
-                    @if($currentUser->register_source != 'wechat')
-                    @if($currentUser->wechat_openid)
+                    @if($user->register_source != 'wechat')
+                    @if($user->wechat_openid)
                     <a href="javascript:void(0);" class="btn btn-success login-btn">
                     @else
                     <a href="{{ URL::route('auth.oauth', ['driver' => 'wechat']) }}" class="btn btn-default login-btn">
@@ -70,8 +70,8 @@
                     </a>
                     @endif
 
-                    @if($currentUser->register_source != 'github')
-                        @if($currentUser->github_id > 0)
+                    @if($user->register_source != 'github')
+                        @if($user->github_id > 0)
                         <a href="javascript:void(0);" class="btn btn-info login-btn">
                         @else
                         <a href="{{ URL::route('auth.oauth', ['driver' => 'github']) }}" class="btn btn-default login-btn">
@@ -81,7 +81,7 @@
                         </a>
                     @endif
 
-                    @if($currentUser->github_id > 0 && $currentUser->wechat_openid)
+                    @if($user->github_id > 0 && $user->wechat_openid)
                         <span class="padding-sm">{{ lang('Already binded to this account') }}</span>
                     @else
                         <span class="padding-sm">{{ lang('Click to bind to this account') }}</span>

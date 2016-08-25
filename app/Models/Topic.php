@@ -9,10 +9,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
 use Illuminate\Pagination\Paginator;
 use Venturecraft\Revisionable\RevisionableTrait;
+use Cache;
 
 class Topic extends Model
 {
     use Traits\TopicFilterable;
+    use Traits\TopicApiHelper;
 
     // manually maintian
     public $timestamps = false;
@@ -37,6 +39,7 @@ class Topic extends Model
         'title',
         'body',
         'excerpt',
+        'source',
         'body_original',
         'user_id',
         'category_id',
@@ -58,14 +61,14 @@ class Topic extends Model
         return $this->morphMany(Vote::class, 'votable');
     }
 
-    public function favoritedBy()
+    public function voteby()
     {
-        return $this->belongsToMany(User::class, 'favorites');
-    }
-
-    public function attentedBy()
-    {
-        return $this->belongsToMany(User::class, 'attentions');
+        $user_ids = Vote::where('votable_type', 'Topic')
+                        ->where('votable_id', $this->id)
+                        ->where('is', 'upvote')
+                        ->lists('user_id')
+                        ->toArray();
+        return User::whereIn('id', $user_ids)->get();
     }
 
     public function Category()
@@ -119,12 +122,16 @@ class Topic extends Model
                     ->paginate($limit, ['*'], $pageName, $latest_page);
     }
 
-    public function getSameCategoryTopics($limit = 8)
+    public function getSameCategoryTopics()
     {
-        return Topic::where('category_id', '=', $this->category_id)
-                        ->recent()
-                        ->take($limit)
-                        ->get();
+        $data = Cache::remember('phphub_hot_topics', 30, function(){
+            return Topic::where('category_id', '=', $this->category_id)
+                            ->recent()
+                            ->with('user')
+                            ->take(8)
+                            ->get();
+        });
+        return $data;
     }
 
     public static function makeExcerpt($body)
@@ -137,5 +144,24 @@ class Topic extends Model
     public function setTitleAttribute($value)
     {
         $this->attributes['title'] = (new AutoCorrect)->convert($value);
+    }
+
+    public function scopeByWhom($query, $user_id)
+    {
+        return $query->where('user_id', '=', $user_id);
+    }
+
+    public function scopeRecent($query)
+    {
+        return $query->orderBy('created_at', 'desc');
+    }
+
+    public function getRandomExcellent()
+    {
+        $data = Cache::remember('phphub_hot_topics', 10, function(){
+            $topic = new Topic;
+            return $topic->getTopicsWithFilter('random-excellent', 5);
+        });
+        return $data;
     }
 }

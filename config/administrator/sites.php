@@ -14,8 +14,8 @@ return [
         ],
         'favicon' => [
             'title'    => '图片',
-            'output'   => function ($value) {
-                $value = cdn_square_image($value, 32);
+            'output'   => function ($value, $model) {
+                $value = $model->present()->icon();
                 return empty($value) ? 'N/A' : <<<EOD
     <img src="$value" width="16">
 EOD;
@@ -78,6 +78,7 @@ EOD;
                 'blog' => '博客',
                 'weibo' => '微博',
                 'dev_service'  => '开发者服务',
+                'site_foreign'  => '国外网站',
             ],
             'value' => 'site',
         ],

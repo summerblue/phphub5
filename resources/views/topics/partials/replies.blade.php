@@ -1,6 +1,11 @@
 <ul class="list-group row">
 
   @foreach ($replies as $index => $reply)
+
+      @if($index+1 == count($replies))
+          <a name="last-reply" class="anchor" href="#last-reply" aria-hidden="true"></a>
+      @endif
+
    <li class="list-group-item media"
            @if($reply->vote_count >= 2)
                 style="margin-top: 0px; background-color: #fffce9"
@@ -37,7 +42,7 @@
           <span> ⋅  </span>
           @endif
 
-          @if ($currentUser && ($currentUser->can("manage_topics") || $currentUser->id == $reply->user_id) )
+          @if ($currentUser && ($manage_topics || $currentUser->id == $reply->user_id) )
             <a id="reply-delete-{{ $reply->id }}" data-ajax="delete"  href="javascript:void(0);" data-url="{{route('replies.destroy', [$reply->id])}}" title="{{lang('Delete')}}">
                 <i class="fa fa-trash-o"></i>
             </a>
@@ -49,8 +54,17 @@
         <div class="meta">
             <a name="reply{{ $topic->present()->replyFloorFromIndex($index) }}" class="anchor" href="#reply{{ $topic->present()->replyFloorFromIndex($index) }}" aria-hidden="true">#{{ $topic->present()->replyFloorFromIndex($index) }}</a>
 
+
             <span> ⋅  </span>
             <abbr class="timeago" title="{{ $reply->created_at }}">{{ $reply->created_at }}</abbr>
+
+            @if ($reply->source && in_array($reply->source, ['iOS', 'Android']))
+            ⋅ via
+                <a href="https://phphub.org/topics/1531" target="_blank" class="popover-with-html" data-content="来自手机客户端">
+                   <i class="text-md fa fa-{{ $reply->source == 'iOS' ? 'apple' : 'android' }}" aria-hidden="true"></i> {{ $reply->source == 'iOS' ? 'iOS 客户端' : '安卓客户端' }}
+                </a>
+
+            @endif
         </div>
 
       </div>

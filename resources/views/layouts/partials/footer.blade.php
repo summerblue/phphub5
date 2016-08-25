@@ -12,7 +12,7 @@
                       <a class="popover-with-html" data-content="下载 Chrome 消息通知插件" target="_blank" style="padding-right:8px" href="https://chrome.google.com/webstore/detail/phphub-notifier/fcopfkdgikhodlcjkjdppdfkbhmehdon"><i class="fa fa-chrome" aria-hidden="true"></i></a>
                   </span>
               </h4>
-              <p class="padding-top-xsm">我们是国内最大的 PHP &amp; Laravel 开源社区，致力于打造一个 PHPer 分享创造、结识伙伴、协同互助的平台。</p>
+              <p class="padding-top-xsm">我们是中国最靠谱的 PHP &amp; Laravel 开发者社区，致力于打造一个 PHPer 分享创造、结识伙伴、协同互助的平台。</p>
               <span style="font-size:0.9em">♥ Do what you love, love what you do. - <a href="http://estgroupe.com/">The EST Group</a></span>
           </div>
 
@@ -22,7 +22,11 @@
                 <div class="col-sm-3">
                   <h4>赞助商</h4>
                   <ul class="list-unstyled">
-                    <a href="http://www.ucloud.cn/?utm_source=zanzhu&utm_campaign=phphub&utm_medium=display&utm_content=yejiao&ytag=phphubyejiao" target="_blank"><img src="https://dn-phphub.qbox.me/uploads/images/201605/03/1/dYfOYswiQY.png" class="popover-with-html" width="98" data-placement="top" data-content="本站服务器由 UCloud 赞助"></a>
+                      @if(isset($banners['footer-sponsor']))
+                          @foreach($banners['footer-sponsor'] as $banner)
+                              <a href="{{ $banner->link }}" target="_blank"><img src="{{ $banner->image_url }}" class="popover-with-html footer-sponsor-link" width="98" data-placement="top" data-content="{{ $banner->title }}"></a>
+                          @endforeach
+                      @endif
                   </ul>
                 </div>
 
@@ -38,8 +42,7 @@
                     <h4>其他信息</h4>
                     <ul class="list-unstyled">
                         <li><a href="/about">关于我们</a></li>
-                        <li class="hide"><a href="/links">站点推荐</a></li>
-                        <li><a href="http://weibo.com/u/5963322692" target="_blank">微博账号</a></li>
+                        <li><a href="{{ route('hall_of_fames') }}"><i class="fa fa-star" aria-hidden="true"></i> {{ lang('Hall of Fame') }}</a></li>
                         <li class="popover-with-html" data-content="新手 QQ 群">Q 群：579866868</li>
                     </ul>
                   </div>

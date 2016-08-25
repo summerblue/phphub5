@@ -17,6 +17,8 @@ class TopicPolicy
 
     public function delete(User $user, Topic $topic)
     {
+        // 不支持用户删帖
+        // return $user->id === $topic->user_id;
         return $user->may('manage_topics');
     }
 
@@ -42,6 +44,6 @@ class TopicPolicy
 
     public function append(User $user, Topic $topic)
     {
-        return $user->may('manage_topics');
+        return $user->may('manage_topics') || $topic->user_id == $user->id;
     }
 }

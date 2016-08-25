@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('CACHE_DRIVER', 'file'),
+    'default' => env('CACHE_DRIVER', 'redis'),
 
     /*
     |--------------------------------------------------------------------------
@@ -75,5 +75,7 @@ return [
     */
 
     'prefix' => env('CACHE_KEY_PREFIX', 'phphub5'),
+
+    'ttl' => 60,
 
 ];

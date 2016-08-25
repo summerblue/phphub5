@@ -22,7 +22,7 @@ ______                            _              _                              
 
 		<title>
 			@section('title')
-PHPHub  - PHP & Laravel的中文社区
+PHPHub - 中国最靠谱的 PHP 和 Laravel 开发者社区
 			@show
 		</title>
 
@@ -34,7 +34,7 @@ PHPHub  - PHP & Laravel的中文社区
 		<meta name="description" content="@section('description') PHPHub 是 PHP 和 Laravel 的中文社区，致力于推动 Laravel，php-fig 等 PHP 新技术，新理念在中国的发展，是国内最靠谱的 PHP 论坛。 @show" />
         <meta name="_token" content="{{ csrf_token() }}">
 
-        <link rel="stylesheet" href="{{ elixir('assets/css/styles.css') }}">
+        <link rel="stylesheet" href="{{ cdn(elixir('assets/css/styles.css')) }}">
 
         <link rel="shortcut icon" href="{{ cdn('favicon.ico') }}"/>
 
@@ -42,12 +42,15 @@ PHPHub  - PHP & Laravel的中文社区
             Config = {
                 'cdnDomain': '{{ get_cdn_domain() }}',
                 'user_id': {{ $currentUser ? $currentUser->id : 0 }},
+                'user_avatar': {!! $currentUser ? '"'.$currentUser->present()->gravatar() . '"' : '""' !!},
+                'user_link': {!! $currentUser ? '"'. route('users.show', $currentUser->id) . '"' : '""' !!},
                 'routes': {
                     'notificationsCount' : '{{ route('notifications.count') }}',
                     'upload_image' : '{{ route('upload_image') }}'
                 },
                 'token': '{{ csrf_token() }}',
-                'following_users': @if($currentUser) {!!$currentUser->present()->followingUsersJson()!!} @else [] @endif
+                'environment': '{{ app()->environment() }}',
+                'following_users': []
             };
 
 			var ShowCrxHint = '{{isset($show_crx_hint) ? $show_crx_hint : 'no'}}';
@@ -83,7 +86,7 @@ PHPHub  - PHP & Laravel的中文社区
 
 
 
-        <script src="{{ elixir('assets/js/scripts.js') }}"></script>
+        <script src="{{ cdn(elixir('assets/js/scripts.js')) }}"></script>
 
 	    @yield('scripts')
 
@@ -100,11 +103,6 @@ PHPHub  - PHP & Laravel的中文社区
         </script>
         @endif
 
-		@if ( config('app.debug') )
-	    <script type="text/javascript">
-	        document.write('<script src="//localhost:35729/livereload.js?snipver=1" type="text/javascript"><\/script>')
-	    </script>
-	    @endif
 
 	</body>
 </html>
