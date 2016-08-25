@@ -144,8 +144,9 @@ class UsersController extends Controller
         $user->is_banned = $user->is_banned == 'yes' ? 'no' : 'yes';
         $user->save();
 
-        // 用户被屏蔽后屏蔽用户所有话题，解封时解封所有话题
+        // 用户被屏蔽后屏蔽用户所有内容，解封时解封所有内容
         $user->topics()->update(['is_blocked' => $user->is_banned]);
+        $user->replies()->update(['is_blocked' => $user->is_banned]);
 
         return redirect(route('users.show', $id));
     }
