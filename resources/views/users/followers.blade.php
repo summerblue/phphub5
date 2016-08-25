@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{{ $user->name }}} 的专注者_@parent
+{{{ $user->name }}} 的关注者_@parent
 @stop
 
 @section('content')
