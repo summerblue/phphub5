@@ -32,43 +32,45 @@ trait TopicFilterable
 
     public function applyFilter($filter)
     {
+        $query = $this->withoutBlocked();
+
         switch ($filter) {
             case 'noreply':
-                return $this->pinned()->orderBy('reply_count', 'asc')->recent();
+                return $query->pinned()->orderBy('reply_count', 'asc')->recent();
                 break;
             case 'vote':
-                return $this->pinned()->orderBy('vote_count', 'desc')->recent();
+                return $query->pinned()->orderBy('vote_count', 'desc')->recent();
                 break;
             case 'excellent':
-                return $this->excellent()->recent();
+                return $query->excellent()->recent();
                 break;
 
             // 主要 API 首页在用，置顶+精华
             case 'excellent-pinned':
-                return $this->excellent()->pinned()->recent();
+                return $query->excellent()->pinned()->recent();
                 break;
 
             case 'random-excellent':
-                return $this->excellent()->fresh()->random();
+                return $query->excellent()->fresh()->random();
                 break;
             case 'recent':
-                return $this->pinned()->recent();
+                return $query->pinned()->recent();
                 break;
             case 'category':
-                return $this->pinned()->recentReply();
+                return $query->pinned()->recentReply();
                 break;
 
             // for api，分类：教程
             case 'wiki':
-                return $this->where('category_id', 6)->pinned()->recent();
+                return $query->where('category_id', 6)->pinned()->recent();
                 break;
             // for api，分类：招聘
             case 'jobs':
-                return $this->where('category_id', 1)->pinned()->recent();
+                return $query->where('category_id', 1)->pinned()->recent();
                 break;
 
             default:
-                return $this->pinAndRecentReply();
+                return $query->pinAndRecentReply();
                 break;
         }
     }
@@ -114,6 +116,11 @@ trait TopicFilterable
     public function scopeExcellent($query)
     {
         return $query->where('is_excellent', '=', 'yes');
+    }
+
+    public function scopeWithoutBlocked($query)
+    {
+        return $query->where('is_blocked', '=', 'no');
     }
 
     public function correctApiFilter($filter)
