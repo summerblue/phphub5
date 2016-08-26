@@ -14,9 +14,6 @@ use Jrean\UserVerification\Facades\UserVerification;
 
 class PagesController extends Controller
 {
-    /**
-     * The home page
-     */
     public function home(Topic $topic)
     {
         $topics = $topic->getTopicsWithFilter('excellent');
@@ -24,26 +21,17 @@ class PagesController extends Controller
         return view('pages.home', compact('topics', 'banners'));
     }
 
-    /**
-     * About us page
-     */
     public function about()
     {
         return view('pages.about');
     }
 
-    /**
-     * Search page, using google's.
-     */
     public function search(Request $request)
     {
         $query = Purifier::clean($request->input('q'), 'search_q');
         return redirect()->away('https://www.bing.com/search?q=site:phphub.org ' . $query, 301);
     }
 
-    /**
-     * Feed function
-     */
     public function feed()
     {
         $topics = Topic::excellent()->recent()->limit(20)->get();
