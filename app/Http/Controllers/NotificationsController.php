@@ -5,12 +5,6 @@ use Auth;
 
 class NotificationsController extends Controller
 {
-
-    /**
-     * Display a listing of notifications
-     *
-     * @return Response
-     */
     public function index()
     {
         $notifications = Auth::user()->notifications();

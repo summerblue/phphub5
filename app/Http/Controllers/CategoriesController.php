@@ -12,7 +12,6 @@ use App\Models\Banner;
 
 class CategoriesController extends Controller
 {
-
     public function show($id, Request $request, Topic $topic)
     {
         $category = Category::findOrFail($id);
