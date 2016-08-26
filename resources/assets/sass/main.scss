@@ -1901,3 +1901,21 @@ a:hover, a:focus {
     background-color: transparent;
     border: 1px solid #00b5ad;
 }
+
+.pagination > li > a, .pagination > li > span {
+    color: #b4b4b4;
+    background-color: #fff;
+    border: 1px solid #e4e4e4;
+}
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+    z-index: 3;
+    color: #e4e4e4;
+    border-color: #e4e4e4;
+    background-color: transparent;
+}
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+    color: #b4b4b4;
+    background-color: #fff;
+    border-color: #e4e4e4;
+    cursor: not-allowed;
+}
