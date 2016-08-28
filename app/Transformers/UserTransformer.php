@@ -20,7 +20,6 @@ class UserTransformer extends BaseTransformer
             'company' => $model->company,
             'city' => $model->city,
             'email' => $model->email,
-            'signature' => $model->introduction,
             'introduction' => $model->introduction,
             'github_name' => $model->github_name,
             'github_url' => $model->github_url,

@@ -9,7 +9,6 @@ class CategoryTransformer extends BaseTransformer
         return [
             'id' => $model->id,
             'name' => $model->name,
-            'parent_node' => 1
         ];
     }
 }

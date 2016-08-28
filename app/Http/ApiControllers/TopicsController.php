@@ -30,20 +30,7 @@ class TopicsController extends Controller implements CreatorListener
         return $this->response()->paginator($topics, new TopicTransformer());
     }
 
-    public function indexByNodeId($node_id, Topic $topic)
-    {
-        $topics = $topic->getCategoryTopicsWithFilter('default', $node_id);
-        return $this->response()->paginator($topics, new TopicTransformer());
-    }
-
-    public function indexByUserFavorite($user_id)
-    {
-        $user = User::findOrFail($user_id);
-        $topics = $user->votedTopics()->orderBy('pivot_created_at', 'desc')->paginate(15);
-        return $this->response()->paginator($topics, new TopicTransformer());
-    }
-
-    public function indexByUserAttention($user_id)
+    public function indexByUserVotes($user_id)
     {
         $user = User::findOrFail($user_id);
         $topics = $user->votedTopics()->orderBy('pivot_created_at', 'desc')->paginate(15);
@@ -55,7 +42,7 @@ class TopicsController extends Controller implements CreatorListener
         if (!Auth::user()->verified) {
             throw new StoreResourceFailedException('创建话题失败，请验证用户邮箱');
         }
-        $data = array_merge($request->except('_token'), ['category_id' => $request->node_id]);
+        $data = array_merge($request->except('_token'), ['category_id' => $request->category_id]);
         return app('Phphub\Creators\TopicCreator')->create($this, $data);
     }
 
@@ -80,8 +67,6 @@ class TopicsController extends Controller implements CreatorListener
                                'is'           => 'downvote',
                            ])->exists();
 
-            $topic->favorite = $upvoted;
-            $topic->attention = $upvoted;
             $topic->vote_up = $upvoted;
             $topic->vote_down = $downvoted;
         }
@@ -128,29 +113,6 @@ class TopicsController extends Controller implements CreatorListener
     {
         $topic = Topic::find($id);
         return view('api.topics.show', compact('topic'));
-    }
-
-    // 收藏和关注已被删除，这里只做客户端兼容处理
-    // https://phphub.org/topics/2545
-    public function favorite($topic_id)
-    {
-        $this->voteUp($topic_id);
-        return response([ 'status' => true]);
-    }
-    public function unFavorite($topic_id)
-    {
-        $this->voteDown($topic_id);
-        return response([ 'status' => true]);
-    }
-    public function attention($topic_id)
-    {
-        $this->voteUp($topic_id);
-        return response([ 'status' => true]);
-    }
-    public function unAttention($topic_id)
-    {
-        $this->voteDown($topic_id);
-        return response([ 'status' => true]);
     }
 
     /**

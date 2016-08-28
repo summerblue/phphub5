@@ -34,14 +34,6 @@ $router->group(['middleware' => 'oauth2:user'], function ($router) {
         $router->post('topics/{id}/vote-up', 'TopicsController@voteUp');
         $router->post('topics/{id}/vote-down', 'TopicsController@voteDown');
 
-        // Topics 收藏
-        $router->post('topics/{id}/favorite', 'TopicsController@favorite');
-        $router->delete('topics/{id}/favorite', 'TopicsController@unFavorite');
-
-        // Topics 关注
-        $router->post('topics/{id}/attention', 'TopicsController@attention');
-        $router->delete('topics/{id}/attention', 'TopicsController@unAttention');
-
         // Notifications
         $router->get('me/notifications', 'NotificationController@index');
         $router->get('me/notifications/count', 'NotificationController@unreadMessagesCount');
@@ -59,21 +51,24 @@ $router->group([
     $router->get('topics/{id}', 'TopicsController@show');
     //Topics
     $router->get('topics', 'TopicsController@index');
-    $router->get('user/{id}/favorite/topics', 'TopicsController@indexByUserFavorite');
-    $router->get('user/{id}/attention/topics', 'TopicsController@indexByUserAttention');
+    $router->get('user/{id}/votes', 'TopicsController@indexByUserVotes');
     $router->get('user/{id}/topics', 'TopicsController@indexByUserId');
-    $router->get('node/{id}/topics', 'TopicsController@indexByNodeId');
 
     //Web Views
-    $router->get('topics/{id}/web_view',
-        ['as' => 'topic.web_view', 'uses' => 'TopicsController@showWebView']);
-    $router->get('topics/{id}/replies/web_view',
-        ['as' => 'replies.web_view', 'uses' => 'RepliesController@indexWebViewByTopic']);
-    $router->get('users/{id}/replies/web_view',
-        ['as' => 'users.replies.web_view', 'uses' => 'RepliesController@indexWebViewByUser']);
+    $router->get('topics/{id}/web_view', [
+        'as' => 'topic.web_view',
+        'uses' => 'TopicsController@showWebView'
+    ]);
+    $router->get('topics/{id}/replies/web_view', [
+        'as' => 'replies.web_view',
+        'uses' => 'RepliesController@indexWebViewByTopic'
+    ]);
+    $router->get('users/{id}/replies/web_view', [
+        'as' => 'users.replies.web_view',
+        'uses' => 'RepliesController@indexWebViewByUser'
+    ]);
 
-    //Nodes
-    $router->get('nodes', 'CategoriesController@index');
+    $router->get('categories', 'CategoriesController@index');
 
     //Replies
     $router->get('topics/{id}/replies', 'RepliesController@indexByTopicId');
