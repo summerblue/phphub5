@@ -4,7 +4,7 @@ namespace App\Transformers;
 
 class TopicTransformer extends BaseTransformer
 {
-    protected $availableIncludes = ['user', 'last_reply_user', 'replies', 'node'];
+    protected $availableIncludes = ['user', 'last_reply_user', 'replies', 'category'];
 
     protected $defaultIncludes = [];
 
@@ -12,13 +12,11 @@ class TopicTransformer extends BaseTransformer
     {
         return [
             "id" => $model->id,
-            "node_id" => $model->category_id,
+            "category_id" => $model->category_id,
             "title" => $model->title,
             "body" => $model->body,
             "reply_count" => $model->reply_count,
             "vote_count" => $model->vote_count,
-            "favorite" => (bool)$model->favorite,
-            "attention" => (bool)$model->attention,
             "vote_up" => (bool)$model->vote_up,
             "vote_down" => (bool)$model->vote_down,
             "updated_at" => $model->updated_at,
@@ -45,7 +43,7 @@ class TopicTransformer extends BaseTransformer
         return $this->collection($model->replies, new ReplyTransformer());
     }
 
-    public function includeNode($model)
+    public function includeCategory($model)
     {
         return $this->item($model->category, new CategoryTransformer());
     }
