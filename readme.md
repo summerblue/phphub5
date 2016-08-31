@@ -90,6 +90,8 @@ php artisan est:install
 
 ### 前端工具集安装
 
+> 代码里自带编译后的前端代码，如果你不想开发前端样式的话，你是不需要配置前端工具集的，可直接跳过直达 `链接入口` 部分。
+
 1). 安装 node.js
 
 直接去官网 [https://nodejs.org/en/](https://nodejs.org/en/) 下载安装最新版本。
