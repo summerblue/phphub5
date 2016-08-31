@@ -30,7 +30,6 @@
         "spatie/laravel-backup": "^3.8",
         "VentureCraft/revisionable": "^1.27",
         "socialiteproviders/weixin": "^2.1",
-        "smartisan/follow": "^1.0",
         "guzzlehttp/guzzle": "^6.2",
         "jrean/laravel-user-verification": "^2.2",
         "naux/sendcloud": "^1.1",
@@ -39,7 +38,8 @@
         "dingo/api": "1.0.x@dev",
         "lucadegasperi/oauth2-server-laravel": "~5.0",
         "jpush/jpush": "^3.2",
-        "socialiteproviders/manager": "2.1.5"
+        "socialiteproviders/manager": "2.1.5",
+        "smartisan/follow": "*@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -88,6 +88,10 @@
         {
             "type": "path",
             "url": "packages/rss"
+        },
+        {
+            "type": "path",
+            "url": "packages/follow"
         }
     ]
 }
