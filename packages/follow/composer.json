@@ -1,0 +1,30 @@
+{
+    "name": "smartisan/follow",
+    "description": "Laravel 5 User Based System",
+    "require": {
+        "php": ">=5.4",
+        "laravel/laravel": ">= 5.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^3.0",
+        "laravel/laravel": "dev-develop"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohammed Isa",
+            "email": "mohd.itcs@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Smartisan\\Follow\\": "src/"
+        }
+    },
+    "autoload-dev": {
+      "psr-4": {
+          "Smartisan\\Follow\\Test\\": "tests"
+      }
+    },
+    "minimum-stability": "dev"
+}

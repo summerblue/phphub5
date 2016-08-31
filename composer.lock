@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ce36df523247fbc06d23e75dd896b1ab",
-    "content-hash": "08fffb4e83d3a4dd651b3ec4f035eafe",
+    "hash": "39e72403f4b4c0422276a590d71c3948",
+    "content-hash": "051358067ec21aff03464262190306c3",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2135,6 +2135,7 @@
                 "oauth2",
                 "server"
             ],
+            "abandoned": "laravel/passport",
             "time": "2016-08-10 13:50:33"
         },
         {
@@ -3149,17 +3150,12 @@
         },
         {
             "name": "smartisan/follow",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mohd-isa/follow.git",
-                "reference": "ea6e27d294262e5817fa8d23aa5724a92a96921f"
-            },
+            "version": "dev-master",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mohd-isa/follow/zipball/ea6e27d294262e5817fa8d23aa5724a92a96921f",
-                "reference": "ea6e27d294262e5817fa8d23aa5724a92a96921f",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/follow",
+                "reference": "43c2cba47e1659882f6ca30dc70c2fc981e4fd04",
+                "shasum": null
             },
             "require": {
                 "laravel/laravel": ">= 5.1",
@@ -3175,7 +3171,11 @@
                     "Smartisan\\Follow\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Smartisan\\Follow\\Test\\": "tests"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -3185,8 +3185,7 @@
                     "email": "mohd.itcs@gmail.com"
                 }
             ],
-            "description": "Laravel 5 User Based System",
-            "time": "2016-05-06 20:42:21"
+            "description": "Laravel 5 User Based System"
         },
         {
             "name": "socialiteproviders/manager",
@@ -5889,7 +5888,8 @@
     "stability-flags": {
         "thujohn/rss": 20,
         "phpdocumentor/reflection": 20,
-        "dingo/api": 20
+        "dingo/api": 20,
+        "smartisan/follow": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
