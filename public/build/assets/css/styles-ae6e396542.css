@@ -11978,7 +11978,7 @@ embed {
     padding-top: 11px; }
   .topnav .nav > li > a {
     float: none;
-    padding: 12px 15px 9px;
+    padding: 15px 15px 6px;
     line-height: 26px;
     color: #fff;
     text-decoration: none; }
@@ -12542,10 +12542,10 @@ div#preview-box {
 
 .navbar-default .navbar-brand {
   color: #fff;
-  padding-top: 5px; }
+  padding-top: 8px; }
   .navbar-default .navbar-brand img {
-    width: 140px;
-    height: 39px; }
+    width: 126px;
+    height: 35px; }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
   color: #fff;
