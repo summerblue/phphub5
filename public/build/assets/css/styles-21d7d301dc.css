@@ -13279,4 +13279,7 @@ a:hover, a:focus {
   color: #ccc;
   font-size: .8; }
 
+.panel-heading {
+  padding: 8px 15px; }
+
 /*# sourceMappingURL=styles.css.map */
