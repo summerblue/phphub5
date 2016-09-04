@@ -971,7 +971,7 @@ div#preview-box {
 .avatar.pull-left{
     margin-right: 0px;
 }
- 
+
 .list-group-item.media .infos {
     margin-top: 16px;
     margin-left: 66px;
@@ -1486,10 +1486,14 @@ a {
     background: white;
     margin: 0px -10px 14px;
     padding: 6px;
-    height: 106px;
+    height: 126px;
 
     box-shadow: 0 2px 2px rgba(0,0,0,0.16);
     transition: box-shadow 250ms;
+
+    .introduction {
+        color:#b0b0b0;
+    }
 }
 .add-margin-right {
     margin-right: -3px;

@@ -54,28 +54,28 @@ PHPHub 名人堂 @parent
                   @if ($user->github_name)
                   <li class="popover-with-html" data-content="{{ $user->github_name }}">
                     <a href="https://github.com/{{ $user->github_name }}" target="_blank">
-                      <i class="fa fa-github-alt"></i> GitHub
+                      <i class="fa fa-github-alt"></i>
                     </a>
                   </li>
                   @endif
 
                   @if ($user->weibo_link)
                   <li class="popover-with-html" data-content="{{ $user->weibo_name }}">
-                    <a href="{{ $user->weibo_link }}" rel="nofollow" class="weibo" target="_blank"><i class="fa fa-weibo"></i> Weibo
+                    <a href="{{ $user->weibo_link }}" rel="nofollow" class="weibo" target="_blank"><i class="fa fa-weibo"></i>
                     </a>
                   </li>
                   @endif
 
                   @if ($user->twitter_account)
                   <li class="popover-with-html" data-content="{{ $user->twitter_account }}">
-                    <a href="https://twitter.com/{{ $user->twitter_account }}" rel="nofollow" class="twitter" target="_blank"><i class="fa fa-twitter"></i> Twitter
+                    <a href="https://twitter.com/{{ $user->twitter_account }}" rel="nofollow" class="twitter" target="_blank"><i class="fa fa-twitter"></i>
                     </a>
                 </li>
                   @endif
 
                   @if ($user->linkedin)
                   <li class="popover-with-html" data-content="点击查看 LinkedIn 个人资料">
-                    <a href="{{ $user->linkedin }}" rel="nofollow" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn
+                    <a href="{{ $user->linkedin }}" rel="nofollow" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i>
                     </a>
                 </li>
                   @endif
@@ -83,17 +83,17 @@ PHPHub 名人堂 @parent
                   @if ($user->personal_website)
                   <li class="popover-with-html" data-content="{{ $user->personal_website }}">
                     <a href="http://{{ $user->personal_website }}" rel="nofollow" target="_blank" class="url">
-                      <i class="fa fa-globe"></i> {{ lang('Website') }}
+                      <i class="fa fa-globe"></i>
                     </a>
                 </li>
                   @endif
 
                 @if ($user->company)
-                  <li class="popover-with-html" data-content="{{ $user->company }}"><i class="fa fa-users"></i> {{{ lang('Company') }}}</li>
+                  <li class="popover-with-html" data-content="{{ $user->company }}"><i class="fa fa-users"></i> </li>
                 @endif
 
                 @if ($user->city)
-                  <li class="popover-with-html" data-content="{{ $user->city }}"><i class="fa fa-map-marker"></i> {{{ lang('City') }}}</li>
+                  <li class="popover-with-html" data-content="{{ $user->city }}"><i class="fa fa-map-marker"></i> </li>
                 @endif
 
               </ul>
