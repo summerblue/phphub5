@@ -2,7 +2,9 @@
   <div class="container">
     <div class="navbar-header hidden-xs">
 
-      <a href="/" class="navbar-brand">PHPHub</a>
+      <a href="/" class="navbar-brand">
+          <img src="{{ cdn('assets/images/logo.png') }}" alt="PHPHub" />
+      </a>
     </div>
     <div id="top-navbar-collapse" class="navbar-collapse">
       <ul class="nav navbar-nav">

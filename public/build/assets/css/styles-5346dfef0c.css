@@ -11979,7 +11979,7 @@ embed {
   .topnav .nav > li > a {
     float: none;
     padding: 12px 15px 9px;
-    line-height: 19px;
+    line-height: 26px;
     color: #fff;
     text-decoration: none; }
   .topnav .navbar-nav.navbar-right:last-child {
@@ -12541,7 +12541,11 @@ div#preview-box {
   color: #fff; }
 
 .navbar-default .navbar-brand {
-  color: #fff; }
+  color: #fff;
+  padding-top: 5px; }
+  .navbar-default .navbar-brand img {
+    width: 140px;
+    height: 39px; }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
   color: #fff;
