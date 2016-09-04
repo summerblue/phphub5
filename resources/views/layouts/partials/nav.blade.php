@@ -26,13 +26,13 @@
         <ul class="nav navbar-nav github-login" >
           @if (Auth::check())
               <li>
-                  <a href="{{ isset($category) ? URL::route('topics.create', ['category_id' => $category->id]) : URL::route('topics.create') }}" data-placement="bottom" class="popover-with-html" data-content="添加主题" style="margin-top: 3px;">
+                  <a href="{{ isset($category) ? URL::route('topics.create', ['category_id' => $category->id]) : URL::route('topics.create') }}" data-placement="bottom" class="popover-with-html" data-content="添加主题">
                       <i class="fa fa-plus text-md"></i>
                   </a>
               </li>
 
               <li>
-                  <a href="{{ route('notifications.index') }}" class="text-warning">
+                  <a href="{{ route('notifications.index') }}" class="text-warning" style="margin-top: -4px;">
                       <span class="badge badge-{{ $currentUser->notification_count > 0 ? 'important' : 'fade' }} popover-with-html" data-content="消息提醒" id="notification-count">
                           {{ $currentUser->notification_count }}
                       </span>

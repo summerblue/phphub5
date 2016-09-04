@@ -11725,13 +11725,6 @@ body.stop-scrolling {
     opacity: 0;
     transform: translateY(145%); } }
 
-@font-face {
-  font-family: 'Averia Libre';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Averia Libre Regular"), local("AveriaLibre-Regular"), url(/build/assets/fonts/googlefont/AveriaLibre-Regular.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
-
 html,
 body {
   /* for sticky footer */
@@ -11978,9 +11971,9 @@ embed {
     padding-top: 11px; }
   .topnav .nav > li > a {
     float: none;
-    padding: 15px 15px 6px;
+    padding: 15px 15px 9px;
     line-height: 26px;
-    color: #fff;
+    color: inherit;
     text-decoration: none; }
   .topnav .navbar-nav.navbar-right:last-child {
     margin-right: 0px; }
@@ -12007,7 +12000,7 @@ embed {
       transition: width 1s ease-in-out; }
     .topnav .navbar-form .mac-style:focus {
       width: 260px;
-      background-color: #4b4b54; }
+      background-color: #fafafa; }
 
 .node-panel dt {
   color: #999;
@@ -12532,9 +12525,8 @@ div#preview-box {
 
 .navbar-default {
   min-height: 45px;
-  background-color: #3c3e42;
+  background-color: #fff;
   border: none;
-  box-shadow: 0 1px 5px #555;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
@@ -12547,14 +12539,6 @@ div#preview-box {
     width: 126px;
     height: 35px; }
 
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  color: #fff;
-  background-color: #383a3c; }
-
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #e2e2e2;
-  background-color: transparent; }
-
 .panel .panel-heading, .panel .panel-body {
   border: none; }
 
@@ -12564,24 +12548,12 @@ div#preview-box {
   padding-right: 30px;
   font-size: 14px;
   line-height: 1em;
-  background-color: #404041;
+  background-color: #fff;
   border: none;
   border-radius: 0;
   margin-top: -5px;
   margin-bottom: -4px;
-  color: #05e4da; }
-
-.badge-fade {
-  background-color: #5e6775; }
-
-.navbar-default .navbar-brand {
-  color: #0dcbc3;
-  font-size: 24px;
-  font-family: 'Averia Libre', cursive; }
-
-.topnav .nav > li.active {
-  border-bottom: 3px solid #1bb1b2;
-  padding-bottom: 2px; }
+  color: inherit; }
 
 .panel .panel-heading {
   border-bottom: 1px solid #f2f2f2; }
@@ -12688,10 +12660,10 @@ div#preview-box {
   color: #b0b0b0; }
 
 .avatar-topnav {
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   margin-right: 5px;
-  margin-top: -3px;
+  margin-top: -5px;
   border: 1px solid white;
   border-radius: 50%; }
 
@@ -12701,7 +12673,7 @@ div#preview-box {
 
 .panel {
   border-radius: 0px;
-  box-shadow: none; }
+  box-shadow: 0px 0px 1px 1px rgba(168, 168, 168, 0.1); }
 
 .topnav .github-login .btn.login-btn {
   margin-top: 7px; }
@@ -13198,28 +13170,23 @@ a {
   color: #05a1a2; }
 
 a:hover, a:focus {
-  color: #00afb0;
+  color: inherit;
   text-decoration: underline; }
 
 .dropdown-menu {
-  background-color: #3c3e42;
-  color: white;
+  background-color: #fff;
+  color: inherit;
   padding: 0px; }
   .dropdown-menu i.fa {
     margin-right: 16px; }
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #3c3e42;
-  color: #fff; }
+  color: inherit; }
 
 .dropdown-menu > li > a {
-  color: #fff;
-  border-bottom: 1px solid #434a45;
+  color: inherit;
+  border-bottom: 1px solid #d8d8d8;
   line-height: 2.3; }
-
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-  color: #dcdcdc;
-  background-color: #474747; }
 
 .user-basic-info .role-label {
   margin-top: 6px;
@@ -13294,5 +13261,25 @@ a:hover, a:focus {
   background-color: #fff;
   border-color: #e4e4e4;
   cursor: not-allowed; }
+
+.mac-style::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #ccc;
+  font-size: .8; }
+
+.mac-style::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #ccc;
+  font-size: .8; }
+
+.mac-style:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #ccc;
+  font-size: .8; }
+
+.mac-style:-moz-placeholder {
+  /* Firefox 18- */
+  color: #ccc;
+  font-size: .8; }
 
 /*# sourceMappingURL=styles.css.map */
