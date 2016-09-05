@@ -185,26 +185,6 @@ class UsersController extends Controller
         return view('users.github-card');
     }
 
-    public function refreshCache($id)
-    {
-        $user =  User::findOrFail($id);
-
-        $user_info = (new GithubUserDataReader())->getDataFromUserName($user->github_name);
-
-        // Refresh the GitHub card proxy cache.
-        $cache_name = 'github_api_proxy_user_'.$user->github_name;
-        Cache::put($cache_name, $user_info, 1440);
-
-        // Refresh the avatar cache.
-        $user->image_url = $user_info['avatar_url'];
-        $user->cacheAvatar();
-        $user->save();
-
-        Flash::message(lang('Refresh cache success'));
-
-        return redirect(route('users.edit', $id));
-    }
-
     public function regenerateLoginToken()
     {
         if (Auth::check()) {

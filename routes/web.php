@@ -16,10 +16,12 @@ Route::get('/users/{id}/topics', 'UsersController@topics')->name('users.topics')
 Route::get('/users/{id}/votes', 'UsersController@votes')->name('users.votes');
 Route::get('/users/{id}/following', 'UsersController@following')->name('users.following');
 Route::get('/users/{id}/followers', 'UsersController@followers')->name('users.followers');
+
 Route::get('/users/{id}/refresh_cache', 'UsersController@refreshCache')->name('users.refresh_cache');
 Route::get('/users/{id}/access_tokens', 'UsersController@accessTokens')->name('users.access_tokens');
 Route::get('/access_token/{token}/revoke', 'UsersController@revokeAccessToken')->name('users.access_tokens.revoke');
-Route::get('/users/regenerate_login_token', 'UsersController@regenerateLoginToken')->name('users.regenerate_login_token');
+Route::post('/users/regenerate_login_token', 'UsersController@regenerateLoginToken')->name('users.regenerate_login_token');
+
 Route::post('/users/follow/{id}', 'UsersController@doFollow')->name('users.doFollow');
 Route::get('/users/{id}/edit_email_notify', 'UsersController@editEmailNotify')->name('users.edit_email_notify');
 Route::post('/users/{id}/update_email_notify', 'UsersController@updateEmailNotify')->name('users.update_email_notify');

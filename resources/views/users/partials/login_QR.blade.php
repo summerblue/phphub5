@@ -1,8 +1,10 @@
-<div style="text-align: center; margin: 20px 0 15px">
-  <p style="margin-bottom: 10px">客户端登录二维码</p>
+<div style="text-align: center; margin: 25px 0 15px">
+  <p style="margin-bottom: 10px"><a href="https://phphub.org/topics/1531">客户端</a> 登录二维码</p>
   <img style="height: 180px; width=180px;" " src="data:image/png;base64,{{ base64_encode($user->present()->loginQR(180)) }}">
   <br/><br/>
-  <a href="{{ route('users.regenerate_login_token') }}">
-  	<button class="btn btn-sm btn-default">重新生成</button> 
-  </a>
+<form method="POST" action="{{ route('users.regenerate_login_token') }}" accept-charset="UTF-8">
+    {!! csrf_field() !!}
+    <input class="btn btn-sm btn-default" id="topic-create-submit" type="submit" value="重新生成">
+</form>
+
 </div>
