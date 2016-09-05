@@ -156,6 +156,7 @@
     </div>
 
 </div>
+
 <div class="box text-center">
 
    <div class="padding-sm user-basic-nav">
@@ -180,3 +181,7 @@
    </div>
 
 </div>
+
+@if(Auth::check() && Auth::id() == $user->id)
+  @include('users.partials.login_QR')
+@endif
