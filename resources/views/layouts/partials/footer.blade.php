@@ -13,7 +13,9 @@
                   </span>
               </h4>
               <p class="padding-top-xsm">我们是中国最靠谱的 PHP &amp; Laravel 开发者社区，致力于打造一个 PHPer 分享创造、结识伙伴、协同互助的平台。</p>
-              <span style="font-size:0.9em">♥ Do what you love, love what you do. - <a href="http://estgroupe.com/">The EST Group</a></span>
+              <span style="font-size:0.9em">
+                  Powered by <a href="https://github.com/summerblue/phphub5" target="_blank" style="color:inherit">PHPHub</a>
+              </span>
           </div>
 
           <div class="col-sm-6 col-lg-6 col-lg-offset-1">
