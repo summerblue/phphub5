@@ -63,7 +63,7 @@
 
             @if( $topic->user->payment_qrcode )
                 <div class="or"></div>
-                <button class="btn btn-warning popover-with-html"  data-toggle="modal" data-target="#payment-qrcode-modal" data-content="如果觉得我的文章对您有用，请随意打赏。你的支持将鼓励我继续创作！">
+                <button class="btn btn-warning popover-with-html"  data-toggle="modal" data-target="#payment-qrcode-modal" data-content="如果觉得我的文章对您有用，请随意打赏。你的支持将鼓励我继续创作！<br>可以修改个人资料「支付二维码」开启打赏功能。">
                     <i class="fa fa-heart" aria-hidden="true"></i>
                     打赏
                 </button>
