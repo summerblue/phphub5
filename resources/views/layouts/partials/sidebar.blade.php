@@ -126,9 +126,10 @@
 @endif
 
 
-<div class="panel panel-default corner-radius">
-  <div class="panel-body text-center" style="color:#a5a5a5">
-    Power by <a href="https://github.com/summerblue/phphub5" target="_blank" style="color:inherit">PHPHub</a>
+<div class="panel panel-default corner-radius" style="color:#a5a5a5">
+  <div class="panel-body text-center">
+    ♥ Do what you love, love what you do. <br>
+    by <a href="http://estgroupe.com/"  style="color:#a5a5a5">The EST Group</a>
   </div>
 </div>
 
