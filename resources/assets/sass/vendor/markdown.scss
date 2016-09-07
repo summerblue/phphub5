@@ -329,7 +329,7 @@
     box-sizing: border-box;
   }
 
-  img:not(.emoji){
+  img:not(.emoji), img:not(.rm-style){
     border: 1px solid #ddd;
     box-shadow: 0 0 30px #ccc;
     -moz-box-shadow: 0 0 30px #ccc;
