@@ -233,13 +233,20 @@
   .markdown-body img, .markdown-reply img {
     max-width: 100%;
     box-sizing: border-box; }
-  .markdown-body img:not(.emoji), .markdown-body img:not(.rm-style), .markdown-reply img:not(.emoji), .markdown-reply img:not(.rm-style) {
+  .markdown-body img:not(.emoji), .markdown-reply img:not(.emoji) {
     border: 1px solid #ddd;
     box-shadow: 0 0 30px #ccc;
     -moz-box-shadow: 0 0 30px #ccc;
     -webkit-box-shadow: 0 0 30px #ccc;
     margin-bottom: 30px;
     margin-top: 10px; }
+  .markdown-body img.rm-style, .markdown-reply img.rm-style {
+    border: 1px solid #ddd;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    margin-bottom: 0px;
+    margin-top: 0px; }
   .markdown-body code, .markdown-reply code {
     background: rgba(90, 87, 87, 0);
     margin: 5px;
