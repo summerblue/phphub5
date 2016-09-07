@@ -54,6 +54,12 @@ class UserPresenter extends Presenter
     public function badgeName()
     {
         $relations = Role::relationArrayWithCache();
+
+        // 用户所在的用户组，显示 role_id 最小的名称
+        $relations = array_sort($relations, function ($value) {
+            return $value->role_id;
+        });
+
         $relation = array_first($relations, function ($key, $value) {
             return $value->user_id == $this->id;
         });
