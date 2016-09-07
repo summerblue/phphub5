@@ -37,7 +37,7 @@
             </div>
             <br>
 
-            <button class="btn btn-lg btn-primary" id="upload-button" type="submit" disabled>{{ lang('Photo Upload') }}</button>
+            <button class="btn btn-lg btn-primary" id="upload-button" type="submit" >{{ lang('Photo Upload') }}</button>
 
             <div class="alert alert-info" id="loading" style="display: none;" role="alert">
               {{ lang('Uploading image...') }}
