@@ -233,7 +233,7 @@
   .markdown-body img, .markdown-reply img {
     max-width: 100%;
     box-sizing: border-box; }
-  .markdown-body img:not(.emoji), .markdown-reply img:not(.emoji) {
+  .markdown-body img:not(.emoji), .markdown-body img:not(.rm-style), .markdown-reply img:not(.emoji), .markdown-reply img:not(.rm-style) {
     border: 1px solid #ddd;
     box-shadow: 0 0 30px #ccc;
     -moz-box-shadow: 0 0 30px #ccc;
