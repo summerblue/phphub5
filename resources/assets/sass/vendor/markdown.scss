@@ -329,13 +329,21 @@
     box-sizing: border-box;
   }
 
-  img:not(.emoji), img:not(.rm-style){
+  img:not(.emoji){
     border: 1px solid #ddd;
     box-shadow: 0 0 30px #ccc;
     -moz-box-shadow: 0 0 30px #ccc;
     -webkit-box-shadow: 0 0 30px #ccc;
     margin-bottom: 30px;
     margin-top: 10px;
+  }
+  img.rm-style {
+    border: 1px solid #ddd;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    margin-bottom: 0px;
+    margin-top: 0px;
   }
 
   code {
