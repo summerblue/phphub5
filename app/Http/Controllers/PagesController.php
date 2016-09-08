@@ -26,6 +26,11 @@ class PagesController extends Controller
         return view('pages.about');
     }
 
+    public function wiki()
+    {
+        return app(TopicsController::class)->show(config('app.wiki_topic_id'));
+    }
+
     public function search(Request $request)
     {
         $query = Purifier::clean($request->input('q'), 'search_q');
