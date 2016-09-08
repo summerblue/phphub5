@@ -52,7 +52,7 @@ class TopicsController extends Controller implements CreatorListener
         return app('Phphub\Creators\TopicCreator')->create($this, $request->except('_token'));
     }
 
-    public function show($id, Topic $topic)
+    public function show($id)
     {
         $topic = Topic::where('id', $id)->with('user', 'lastReplyUser')->first();
 
