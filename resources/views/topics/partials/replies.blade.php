@@ -27,9 +27,14 @@
         <a href="{{ route('users.show', [$reply->user_id]) }}" title="{{{ $reply->user->name }}}" class="remove-padding-left author">
             {{{ $reply->user->name }}}
         </a>
+
+        @if ($reply->user->present()->isAdmin())
+            <span class="label label-success mod-label popover-with-html" data-content="管理员">MOD</span>
+        @endif
+
         @if($reply->user->introduction)
         <span class="introduction">
-             ，{{{ $reply->user->introduction }}}
+            {{{ $reply->user->introduction }}}
         </span>
         @endif
 
