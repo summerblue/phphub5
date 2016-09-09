@@ -12077,6 +12077,14 @@ embed {
     padding: 4px 30px;
     color: #31708f;
     font-size: 14px; }
+  .topics-show .ribbon .ribbon-anchored {
+    background: #fff2f2;
+    border-top: 1px solid #ffdba5;
+    border-bottom: 1px solid #ffdba5;
+    margin: 0px -30px 10px -30px;
+    padding: 4px 30px;
+    color: #ff3d00;
+    font-size: 14px; }
 
 .replies-index .operate a {
   color: #d0d0d0;
