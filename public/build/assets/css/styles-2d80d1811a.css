@@ -13316,12 +13316,17 @@ a:hover, a:focus {
 
 .sidebar-resources ul.list li {
   padding: 5px;
-  margin-top: -8px;
-  border-bottom: 0px; }
+  margin-top: -8px; }
+
+.sidebar-resources ul.list li:last-child {
+  border-bottom: none; }
 
 .sidebar-resources img.media-object {
   width: 20px;
   border-radius: 2px;
   margin-right: 4px; }
+
+.sidebar-resources .panel-body {
+  padding-bottom: 0px; }
 
 /*# sourceMappingURL=styles.css.map */
