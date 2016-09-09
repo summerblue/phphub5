@@ -13314,4 +13314,14 @@ a:hover, a:focus {
   box-shadow: none;
   border: none; }
 
+.sidebar-resources ul.list li {
+  padding: 5px;
+  margin-top: -8px;
+  border-bottom: 0px; }
+
+.sidebar-resources img.media-object {
+  width: 20px;
+  border-radius: 2px;
+  margin-right: 4px; }
+
 /*# sourceMappingURL=styles.css.map */

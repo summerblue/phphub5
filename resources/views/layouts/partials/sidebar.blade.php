@@ -37,7 +37,6 @@
   </div>
   @endif
 
-
 @if (Route::currentRouteName() == 'topics.index')
 
   <div class="panel panel-default corner-radius">
@@ -49,7 +48,29 @@
       </div>
     </div>
   </div>
+@endif
 
+@if(isset($banners['sidebar-resources']))
+<div class="panel panel-default corner-radius sidebar-resources">
+  <div class="panel-heading text-center">
+    <h3 class="panel-title">推荐资源</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="list list-group ">
+        @foreach($banners['sidebar-resources'] as $banner)
+            <li class="list-group-item ">
+                <a href="{{ $banner->link }}" class="popover-with-html" data-content="{{{ $banner->title }}}">
+                    <img class="media-object inline-block " src="{{ $banner->image_url }}">
+                    {{{ $banner->title }}}
+                </a>
+            </li>
+        @endforeach
+    </ul>
+  </div>
+</div>
+@endif
+
+@if (Route::currentRouteName() == 'topics.index')
     <div class="panel panel-default corner-radius panel-active-users">
       <div class="panel-heading text-center">
         <h3 class="panel-title">{{ lang('Active Users') }}（<a href="{{ route('hall_of_fames') }}"><i class="fa fa-star" aria-hidden="true"></i> {{ lang('Hall of Fame') }}</a>）</h3>
@@ -69,6 +90,7 @@
 </div>
 
 @endif
+
 
   <div class="panel panel-default corner-radius">
     <div class="panel-body text-center sidebar-sponsor-box">
