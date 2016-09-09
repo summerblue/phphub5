@@ -78,6 +78,17 @@ class UserPresenter extends Presenter
         return $role->display_name;
     }
 
+    public function isAdmin()
+    {
+        $relations = Role::relationArrayWithCache();
+
+        $relations = array_where($relations, function ($key, $value) {
+            return $value->user_id == $this->id && $value->role_id == 2;
+        });
+
+        return count($relations);
+    }
+
     public function followingUsersJson()
     {
         $users = \Auth::user()->followings()->lists('name');
