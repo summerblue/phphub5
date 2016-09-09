@@ -67,6 +67,7 @@ return [
                 'website_top' => '友站',
                 'footer-sponsor'  => '页脚赞助商',
                 'sidebar-sponsor'  => '右边栏赞助商',
+                'sidebar-resources'  => '右边栏资源推荐',
             ],
         ],
         'title' => [
