@@ -6,7 +6,7 @@ body {
   color: #525252;
   // font-family: "lato-regular", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   font-family: NotoSansHans-Regular,AvenirNext-Regular,arial,Hiragino Sans GB,"Microsoft Yahei","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
-  background: #ececec;
+  background: #E2E2E2;
 }
 .navbar-default{
     background-color: #fff;
@@ -1932,4 +1932,10 @@ a:hover, a:focus {
     font-size: .7em;
     margin: 0px 4px;
     font-family: sans-serif;
+}
+
+.panel {
+    border-radius: 0px;
+    box-shadow: none;
+    border: none;
 }
