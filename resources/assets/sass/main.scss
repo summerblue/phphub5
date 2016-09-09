@@ -1944,11 +1944,16 @@ a:hover, a:focus {
     ul.list li {
         padding: 5px;
         margin-top: -8px;
-        border-bottom: 0px;
+    }
+    ul.list li:last-child {
+        border-bottom: none;
     }
     img.media-object {
         width: 20px;
         border-radius: 2px;
         margin-right: 4px;
+    }
+    .panel-body {
+        padding-bottom: 0px;
     }
 }
