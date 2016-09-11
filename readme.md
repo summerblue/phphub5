@@ -1,6 +1,6 @@
 
 
-![macbook](https://cloud.githubusercontent.com/assets/324764/16890184/c5576a68-4b1e-11e6-85cd-5f47d099a746.png)
+![macbook](https://cloud.githubusercontent.com/assets/324764/18414540/a5849a7c-77ff-11e6-861d-51f7c05c54cd.png)
 
 ## 项目概述
 
