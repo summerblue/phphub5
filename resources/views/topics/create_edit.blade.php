@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{ lang('Create New Topic') }}_@parent
+{{ isset($topic) ? '编辑话题' : lang('Create New Topic') }}_@parent
 @stop
 
 @section('content')
