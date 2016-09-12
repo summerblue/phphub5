@@ -10,7 +10,7 @@
 @if ($topic->order == -1)
   <div class="ribbon">
       <div class="ribbon-anchored">
-          <i class="fa fa-anchor"></i> 此贴已被下沉，请查看 <a href="https://phphub.org/topics/2802">下沉说明</a> 进行修改。
+          <i class="fa fa-anchor"></i> 此贴已被下沉，请查看 <a href="http://phphub.laravel-china.org/topics/2802">下沉说明</a> 进行修改。
       </div>
   </div>
 @endif
