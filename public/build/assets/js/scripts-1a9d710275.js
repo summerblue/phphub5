@@ -5679,6 +5679,19 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
                 var emptyBlock = $('#replies-empty-block');
                 var originUpVoteActive = upVote.is('.active');
 
+                if (Config.user_id === 0) {
+                    swal({
+                        title: "",
+                        text: '需要登录以后才能执行此操作。',
+                        type: "warning",
+                        showCancelButton: true,
+                        cancelButtonText: "取消",
+                        confirmButtonText: "前往登录"
+                    }, function() {
+                        location.href = '/login-required';
+                    });
+                }
+
                 if (method === 'delete') {
                     swal({
                         title: "",
