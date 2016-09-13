@@ -12055,8 +12055,7 @@ embed {
 
 .topics-show .panel .panel-heading {
   padding-bottom: 12px;
-  margin: -15px -15px 0px;
-  padding: 15px 30px; }
+  padding: 15px 15px; }
 
 .topics-show .ribbon {
   margin-top: 20px;
@@ -12065,7 +12064,7 @@ embed {
     background: #fffce9;
     border-top: 1px solid #f0e0cf;
     border-bottom: 1px solid #f0e0cf;
-    margin: 0px -30px 10px -30px;
+    margin: 0px -15px 10px -15px;
     padding: 4px 30px;
     color: #da974d;
     font-size: 14px; }
