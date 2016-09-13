@@ -12053,9 +12053,12 @@ embed {
   margin-bottom: 12px;
   font-weight: bold; }
 
+.topics-show .panel-body {
+  padding: 22px; }
+
 .topics-show .panel .panel-heading {
   padding-bottom: 12px;
-  padding: 15px 15px; }
+  padding: 15px 22px; }
 
 .topics-show .ribbon {
   margin-top: 20px;
