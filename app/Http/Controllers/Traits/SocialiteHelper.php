@@ -19,10 +19,6 @@ trait SocialiteHelper
             return redirect('/');
         }
 
-        // by @Monkey Wait for WeChat audit
-        if ($driver == 'weixin' && \App::environment('production')) {
-            return redirect('/topics/2822');
-        }
         return Socialite::driver($driver)->redirect();
     }
 
