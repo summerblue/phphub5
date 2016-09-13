@@ -12,7 +12,7 @@
 
 <div class="col-md-9 topics-show main-col">
   <!-- Topic Detial -->
-  <div class="topic panel panel-default padding-md">
+  <div class="topic panel panel-default">
     <div class="infos panel-heading">
 
       <h1 class="panel-title topic-title">{{{ $topic->title }}}</h1>
@@ -98,7 +98,7 @@
   </div>
 
   <!-- Reply List -->
-  <div class="replies panel panel-default list-panel replies-index padding-md">
+  <div class="replies panel panel-default list-panel replies-index">
     <div class="panel-heading">
       <div class="total">{{ lang('Total Reply Count') }}: <b>{{ $replies->total() }}</b> </div>
     </div>
