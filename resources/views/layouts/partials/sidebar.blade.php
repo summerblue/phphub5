@@ -148,6 +148,14 @@
 @endif
 
 
+<div class="box text-center">
+  <p style="margin-bottom: 10px;margin-top: 10px;">Laravel资讯</p>
+  <img class="image-border popover-with-html" data-content="扫码，或者搜索微信订阅号：「Laravel资讯」"
+    src="https://dn-phphub.qbox.me/uploads/images/201609/08/1/43cy0uEmy0.jpg" style="width:80%">
+  <br/><br/>
+</div>
+
+
 <div class="panel panel-default corner-radius" style="color:#a5a5a5">
   <div class="panel-body text-center">
     ♥ Do what you love, love what you do. <br>

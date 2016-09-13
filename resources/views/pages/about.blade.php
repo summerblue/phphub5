@@ -16,10 +16,8 @@
 
 <h2 id="toc_1">说明</h2>
 
-<p>PHPHub 是积极向上的 PHP &amp; Laravel 开发者社区</p>
+<p>Laravel China 积极向上的 Laravel 和 开发者社区</p>
 <p>我们致力于推动 Laravel, php-fig 等国外 PHP 新技术，新理念在中国的发展。</p>
-
-<p>名字的灵感来自伟大的 GitHub, <b>hub</b> 有 "中心", "集线器" 的意思, 意味着 PHPer 们齐聚一堂, 互相交换着信息流. </p>
 
 <p>论坛基于开源同名项目 PHPHub，PHPHub 项目 MIT Licence 开源，由 Laravel5.1 构建，<a href="https://github.com/summerblue/phphub5">源代码在此 at GitHub</a>。欢迎贡献代码，或者 <a href="https://github.com/summerblue/phphub5/issues">提交 Bug Report</a>。</p>
 
@@ -81,7 +79,7 @@
 
 <p><a href="http://www.zhihu.com/question/19558755/answer/23062110">知乎上的答案 - 最好的 PHP 框架是什么？为什么？</a></p>
 
-<p>需要补充的一句是, <code>绝不排斥</code> 别的框架的讨论, 因为 <code>PHPHub</code> 是 <code>PHP</code> 社区多一点, 并且我们很开放.</p>
+<p>需要补充的一句是, <code>绝不排斥</code> 别的框架的讨论, 只要是 <code>PHP</code> 相关技术讨论我们都欢迎。</p>
 
 <h2 id="toc_8">Logo 和 icon</h2>
 
