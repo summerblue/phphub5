@@ -20,7 +20,7 @@ ______                            _              _                              
 
 		<meta charset="UTF-8">
 
-		<title>@section('title')PHPHub_中国最靠谱的_PHP_和_Laravel_开发者社区@show</title>
+		<title>@section('title')Laravel China 社区 - 靠谱的 PHP 和Laravel 开发者社区@show</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
