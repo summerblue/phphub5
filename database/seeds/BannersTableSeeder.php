@@ -24,7 +24,7 @@ class BannersTableSeeder extends Seeder
                 'order' => 1,
                 'image_url' => 'https://dn-phphub.qbox.me/uploads/banners/qCpz5a1iBETEfnNEAkGe.png',
                 'title' => 'Laravel 5.1 中文文档',
-                'link' => 'http://laravel-china.org/docs/5.1',
+                'link' => 'https://doc.laravel-china.org/docs/5.1',
                 'target' => '_blank',
                 'description' => '',
                 'created_at' => '2016-07-12 11:31:36',

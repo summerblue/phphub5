@@ -20,9 +20,9 @@
 
 ## 开发环境部署/安装
 
-本项目代码使用 PHP 框架 [Laravel 5.1](http://laravel-china.org/docs/5.1/) 开发，本地开发环境使用 [Laravel Homestead](http://laravel-china.org/docs/5.1/homestead)。
+本项目代码使用 PHP 框架 [Laravel 5.1](https://doc.laravel-china.org/docs/5.1/) 开发，本地开发环境使用 [Laravel Homestead](https://doc.laravel-china.org/docs/5.1/homestead)。
 
-下文将在假定读者已经安装好了 Homestead 的情况下进行说明。如果您还未安装 Homestead，可以参照 [Homestead 安装与设置](http://laravel-china.org/docs/5.1/homestead#installation-and-setup) 进行安装配置。
+下文将在假定读者已经安装好了 Homestead 的情况下进行说明。如果您还未安装 Homestead，可以参照 [Homestead 安装与设置](https://doc.laravel-china.org/docs/5.1/homestead#installation-and-setup) 进行安装配置。
 
 ### 基础安装
 
@@ -161,7 +161,7 @@ gulp watch
 
 ## 计划任务
 
-此项目的计划任务都以 Laravel 的 [任务调度](http://laravel-china.org/docs/5.1/scheduling) 方式执行。
+此项目的计划任务都以 Laravel 的 [任务调度](https://doc.laravel-china.org/docs/5.1/scheduling) 方式执行。
 
 | 命令 | 说明 | 调用 |
 | --- | --- | --- |
