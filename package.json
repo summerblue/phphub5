@@ -14,7 +14,7 @@
     "social-share.js": "^1.0"
   },
   "name": "phphub5",
-  "description": "* 产品名称：PHPHub5 * 项目代码：PHPHub5 * 官方地址：http://phphub.laravel-china.org/",
+  "description": "* 产品名称：PHPHub5 * 项目代码：PHPHub5 * 官方地址：https://laravel-china.org/",
   "version": "1.0.0",
   "main": "gulpfile.js",
   "repository": {

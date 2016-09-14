@@ -6,7 +6,7 @@
 
 * 产品名称：PHPHub5
 * 项目代码：PHPHub5
-* 官方地址：http://phphub.laravel-china.org/
+* 官方地址：https://laravel-china.org/
 
 [PHPHub](https://github.com/summerblue/phphub) Laravel 5.1 版本。
 
@@ -202,7 +202,7 @@ php artisan make:scaffold NotificationMailLogs --schema="from_user_id:integer:un
 
 ## License
 
-> 使用 PHPHub5 构建，或者基于 PHPHub5 源代码开发的站点 **必须** 在页脚加上 `Powered by PHPHub` 字样，并且必须链接到 `http://phphub.laravel-china.org` 上。
+> 使用 PHPHub5 构建，或者基于 PHPHub5 源代码开发的站点 **必须** 在页脚加上 `Powered by PHPHub` 字样，并且必须链接到 `https://laravel-china.org` 上。
 
 在遵守以上规则的情况下，你可以享受等同于 MIT 协议的授权。
 
