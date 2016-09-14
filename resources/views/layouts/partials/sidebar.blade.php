@@ -139,7 +139,7 @@
     <h3 class="panel-title">{{ lang('App Download') }}</h3>
   </div>
   <div class="panel-body text-center" style="padding: 7px;">
-    <a href="http://phphub.laravel-china.org/topics/1531" target="_blank" rel="nofollow" title="">
+    <a href="https://laravel-china.org/topics/1531" target="_blank" rel="nofollow" title="">
       <img src="https://dn-phphub.qbox.me/uploads/images/201512/08/1/cziZFHqkm8.png" style="width:240px;">
     </a>
   </div>

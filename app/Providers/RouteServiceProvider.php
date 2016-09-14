@@ -39,7 +39,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
-        // See: http://phphub.laravel-china.org/topics/2484#reply2
+        // See: https://laravel-china.org/topics/2484#reply2
         $this->mapWebRoutes();
         $this->mapApiRoutes();
     }

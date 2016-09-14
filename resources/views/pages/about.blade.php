@@ -29,7 +29,7 @@
 
 <p>在学习上遇到问题的时候，请先 Google。</p>
 
-<p>如果觉得你的问题比较独占，请先仔细阅读 <a href="http://phphub.laravel-china.org/topics/535">提问的智慧</a>，然后在 <a href="http://phphub.laravel-china.org/categories/4">PHPHub 问答分类下</a> 发表你的问题，谢谢。 </p>
+<p>如果觉得你的问题比较独占，请先仔细阅读 <a href="https://laravel-china.org/topics/535">提问的智慧</a>，然后在 <a href="https://laravel-china.org/categories/4">PHPHub 问答分类下</a> 发表你的问题，谢谢。 </p>
 
 <h2 id="toc_3">愿景 Vision</h2>
 
