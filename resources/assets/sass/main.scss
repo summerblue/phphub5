@@ -6,7 +6,7 @@ body {
   color: #525252;
   // font-family: "lato-regular", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   font-family: NotoSansHans-Regular,AvenirNext-Regular,arial,Hiragino Sans GB,"Microsoft Yahei","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
-  background: #E2E2E2;
+  background: #e9eaed;
 }
 .navbar-default{
     background-color: #fff;
@@ -408,7 +408,7 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
 
 .topics-show {
   .topic-title {
-    font-size: 2em;
+    font-size: 1.8em;
     color: #333;
     text-align: left;
     line-height: 135%;
@@ -1939,7 +1939,7 @@ a:hover, a:focus {
 .panel {
     border-radius: 0px;
     box-shadow: none;
-    border: none;
+    border: 1px solid #e2e1e1;
 }
 
 .sidebar-resources {
