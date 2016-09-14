@@ -31,7 +31,7 @@ ______                            _              _                              
 
         <link rel="stylesheet" href="{{ cdn(elixir('assets/css/styles.css')) }}">
 
-        <link rel="shortcut icon" href="{{ cdn('favicon.ico') }}"/>
+        <link rel="shortcut icon" href="{{ cdn('laravel-china-favicon.ico') }}"/>
 
         <script>
             Config = {
