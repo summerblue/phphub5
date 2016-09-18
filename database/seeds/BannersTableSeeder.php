@@ -37,7 +37,7 @@ class BannersTableSeeder extends Seeder
                 'order' => 3,
                 'image_url' => 'https://dn-phphub.qbox.me/uploads/banners/YCkIqPrz6v8MV0keu4pW.png',
                 'title' => 'Laravel 速查表',
-                'link' => 'https://cs.phphub.org/',
+                'link' => 'https://cs.laravel-china.org/',
                 'target' => '_blank',
                 'description' => '',
                 'created_at' => '2016-07-12 11:32:25',
