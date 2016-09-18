@@ -149,7 +149,7 @@
 
 
 <div class="box text-center">
-  <p style="margin-bottom: 10px;margin-top: 10px;">Laravel资讯</p>
+  <p style="margin-bottom: 10px;margin-top: 10px;">订阅 Laravel 资讯</p>
   <img class="image-border popover-with-html" data-content="扫码，或者搜索微信订阅号：「Laravel资讯」"
     src="https://dn-phphub.qbox.me/uploads/images/201609/08/1/43cy0uEmy0.jpg" style="width:80%">
   <br/><br/>
