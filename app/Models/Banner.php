@@ -16,6 +16,13 @@ class Banner extends Model
     ];
     use SoftDeletes;
 
+    public static function boot() {
+        parent::boot();
+
+        static::saving(function($article) {
+            Cache::forget('phphub_banner');
+        });
+    }
 
     public function setImageUrlAttribute($file_name)
     {
@@ -49,7 +56,7 @@ class Banner extends Model
             }
             return $return;
         });
-        
+
         return $data;
     }
 }
