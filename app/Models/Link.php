@@ -17,11 +17,17 @@ class Link extends Model
     ];
     use SoftDeletes;
 
+    public static function boot() {
+        parent::boot();
+
+        static::saving(function($model) {
+            Cache::forget('phphub_links');
+        });
+    }
+
     public static function allFromCache($expire = 1440)
     {
-        $cache_name = 'links';
-
-        return Cache::remember($cache_name, $expire, function () {
+        return Cache::remember('phphub_links', $expire, function () {
             return self::where('is_enabled', 'yes')->get();
         });
     }

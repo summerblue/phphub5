@@ -14,6 +14,14 @@ class Site extends Model
 
     protected $guarded = ['id'];
 
+    public static function boot() {
+        parent::boot();
+
+        static::saving(function($model) {
+            Cache::forget('phphub_sites');
+        });
+    }
+
     public static function allFromCache($expire = 1440)
     {
         $data = Cache::remember('phphub_sites', 60, function () {
