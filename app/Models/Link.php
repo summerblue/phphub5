@@ -25,6 +25,25 @@ class Link extends Model
         });
     }
 
+    public function setCoverAttribute($file_name)
+    {
+        if (starts_with($file_name, 'http')) {
+            $parser_url = explode('/', $file_name);
+            $file_name = end($parser_url);
+        }
+
+        $this->attributes['cover'] = 'uploads/banners/'.$file_name;
+    }
+
+    public function getCoverAttribute($file_name)
+    {
+        if (starts_with($file_name, 'http')) {
+            return $file_name;
+        }
+
+        return cdn($file_name);
+    }
+
     public static function allFromCache($expire = 1440)
     {
         return Cache::remember('phphub_links', $expire, function () {

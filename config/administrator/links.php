@@ -22,12 +22,10 @@ return [
         ],
         'cover' => [
             'title'    => '图片',
-            'output'   => function ($value) {
-                return empty($value) ? 'N/A' : <<<EOD
-    <img src="$value" width="180">
-EOD;
-            },
             'sortable' => false,
+            'output'   => function ($value, $model) {
+                return $value ? "<img src='$value' width='200' height='100'>" : 'N/A';
+            },
         ],
         'is_enabled' => [
             'title'    => '是否启用',
@@ -52,7 +50,13 @@ EOD;
             'title'    => '链接',
         ],
         'cover' => [
-            'title'    => '图片',
+            'title'             => '封面',
+            'type'              => 'image',
+            'location'          => public_path() . '/uploads/banners/',
+            'naming'            => 'random',
+            'length'            => 20,
+            'size_limit'        => 2,
+            'display_raw_value' => false,
         ],
     ],
     'filters' => [
