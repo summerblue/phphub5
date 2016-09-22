@@ -34,7 +34,7 @@ class PagesController extends Controller
     public function search(Request $request)
     {
         $query = Purifier::clean($request->input('q'), 'search_q');
-        return redirect()->away('https://www.bing.com/search?q=site:laravel-china.org ' . $query, 301);
+        return redirect()->away('https://www.google.com/search?q=site:laravel-china.org ' . $query, 301);
     }
 
     public function feed()
