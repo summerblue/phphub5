@@ -5400,7 +5400,7 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
                     if ($(this).attr('data-method') == 'delete') {
                         swal({
                             title: "",
-                            text: "Are you sure want to proceed?",
+                            text: "你确定要删除此内容吗？",
                             type: "warning",
                             showCancelButton: true,
                             cancelButtonText: "取消",
