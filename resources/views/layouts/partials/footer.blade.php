@@ -45,7 +45,7 @@
                     <ul class="list-unstyled">
                         <li><a href="/about"><i class="fa fa-info-circle" aria-hidden="true"></i> 关于我们</a></li>
                         <li><a href="{{ route('hall_of_fames') }}"><i class="fa fa-star" aria-hidden="true"></i> {{ lang('Hall of Fame') }}</a></li>
-                        <li><a href="{{ route('hall_of_fames') }}"><i class="fa fa-thumbs-up" aria-hidden="true"></i> 技术合作</a></li>
+                        <li><a href="http://estgroupe.com/tickets/create"><i class="fa fa-thumbs-up" aria-hidden="true"></i> 技术合作</a></li>
                     </ul>
                   </div>
 
