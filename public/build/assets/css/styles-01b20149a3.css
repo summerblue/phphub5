@@ -13331,4 +13331,10 @@ a:hover, a:focus {
 .sidebar-resources .panel-body {
   padding-bottom: 0px; }
 
+a.anchorific {
+  padding-left: 4px;
+  color: #e2e2e2;
+  font-weight: 100;
+  display: inline-block; }
+
 /*# sourceMappingURL=styles.css.map */
