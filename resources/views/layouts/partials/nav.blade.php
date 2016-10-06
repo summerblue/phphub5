@@ -3,7 +3,7 @@
     <div class="navbar-header hidden-xs">
 
       <a href="/" class="navbar-brand">
-          <img src="{{ cdn('assets/images/logo3.png') }}" alt="PHPHub" />
+          <img src="{{ cdn('assets/images/logo4.png') }}" alt="Laravel China" />
       </a>
     </div>
     <div id="top-navbar-collapse" class="navbar-collapse">
