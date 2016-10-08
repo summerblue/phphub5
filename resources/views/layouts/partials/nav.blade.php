@@ -14,6 +14,10 @@
         <li class="{{ (Request::is('sites') ? ' active' : '') }}"><a href="{{ route('sites.index') }}">{{ lang('Sites') }}</a></li>
         <li class="{{ (Request::is('wiki') ? ' active' : '') }}"><a href="{{ route('wiki') }}">Wiki</a></li>
         <li class="nav-docs"><a href="https://laravel-china.org/docs/home">文档</a></li>
+
+        @if(Auth::check() && Auth::user()->can('access_board'))
+            <li class="{{ Request::is('categories/'.config('app.admin_board_cid')) ? ' active' : '' }}"><a href="{{ route('categories.show', config('app.admin_board_cid')) }}">站务</a></li>
+        @endif
       </ul>
 
       <div class="navbar-right">
