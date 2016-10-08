@@ -10,8 +10,7 @@ return [
 
     'permission'=> function()
     {
-        // return Auth::user()->hasRole('developer');
-        return true;
+        return Auth::user()->may('manage_users');
     },
 
     'columns' => [
