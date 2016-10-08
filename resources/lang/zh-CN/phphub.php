@@ -41,7 +41,7 @@ return [
     'Your topic have new reply:' => '回复了你的主题:',
     'Attented topic has new reply:' => '回复了你关注的主题:',
     'Mention you At:' => '在主题中提及你:',
-    'Data has been deleted.' => '信息已被删除.',
+    'Data has been deleted.' => '信息被删除或无权限查看',
     'You dont have any notice yet!' => '还未收到提醒!',
     'About Us' => '关于我们',
     'Excellent Topics' => '社区精华帖',
