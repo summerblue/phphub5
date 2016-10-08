@@ -11,7 +11,7 @@ ______                            _              _                              
                                            laravel-china.org
 
   --------------------------------------------------------
-  Laravel: v5.1 LTS
+  Powered by PHPHub
 -->
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ ______                            _              _                              
 
 		<meta charset="UTF-8">
 
-		<title>@section('title')Laravel China 社区 - 靠谱的 Laravel 和 PHP 开发者社区@show</title>
+		<title>@section('title')Laravel China 社区 - 靠谱的 Laravel 和 PHP 开发者社区@show - Powered by PHPHub</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
