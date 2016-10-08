@@ -10,9 +10,17 @@
   <img src="{{ $topic->user->present()->gravatar }}" style="width:80px; height:80px;margin:5px;" class="img-thumbnail avatar" />
 </a>
 
+
 <div class="media-body padding-top-sm">
 @if($topic->user->introduction)
 <div class="media-heading">
+
+
+@if ($topic->user->present()->hasBadge())
+    <div class="role-label">
+        <span class="label label-success role">{{{ $topic->user->present()->badgeName() }}}</span>
+    </div>
+@endif
 
     <span class="introduction">
          {{{ $topic->user->introduction }}}
@@ -25,10 +33,6 @@
 
   @if ($topic->user->real_name)
     <li class="popover-with-html" data-content="{{ lang('Real Name') }}"><span class="org"><i class="fa fa-user"></i> {{{ $topic->user->real_name }}}</span></li>
-  @endif
-
-  @if ($topic->user->present()->hasBadge())
-    <li class="popover-with-html" data-content="{{ lang('User Role') }}"><i class="fa fa-graduation-cap" aria-hidden="true"></i> {{{ $topic->user->present()->badgeName() }}}</li>
   @endif
 
   @if ($topic->user->github_name)
