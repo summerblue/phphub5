@@ -8,6 +8,11 @@ return [
     'single'  => '用户',
     'model'   => User::class,
 
+    'permission'=> function()
+    {
+        return Auth::user()->may('manage_users');
+    },
+
     'columns' => [
         'id' => [
             'title' => 'ID',
