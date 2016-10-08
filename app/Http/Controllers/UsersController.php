@@ -37,7 +37,7 @@ class UsersController extends Controller
     public function show($id)
     {
         $user    = User::findOrFail($id);
-        $topics  = Topic::whose($user->id)->recent()->limit(20)->get();
+        $topics  = Topic::whose($user->id)->withoutBoardTopics()->recent()->limit(20)->get();
         $replies = Reply::whose($user->id)->recent()->limit(20)->get();
         return view('users.show', compact('user', 'topics', 'replies'));
     }
@@ -79,7 +79,7 @@ class UsersController extends Controller
     public function topics($id)
     {
         $user = User::findOrFail($id);
-        $topics = Topic::whose($user->id)->recent()->paginate(15);
+        $topics = Topic::whose($user->id)->withoutBoardTopics()->recent()->paginate(15);
 
         return view('users.topics', compact('user', 'topics'));
     }

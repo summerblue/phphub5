@@ -26,14 +26,14 @@ class TopicsController extends Controller implements CreatorListener
 
     public function indexByUserId($user_id)
     {
-        $topics = Topic::whose($user_id)->recent()->paginate(15);
+        $topics = Topic::whose($user_id)->withoutBoardTopics()->recent()->paginate(15);
         return $this->response()->paginator($topics, new TopicTransformer());
     }
 
     public function indexByUserVotes($user_id)
     {
         $user = User::findOrFail($user_id);
-        $topics = $user->votedTopics()->orderBy('pivot_created_at', 'desc')->paginate(15);
+        $topics = $user->votedTopics()->withoutBoardTopics()->orderBy('pivot_created_at', 'desc')->paginate(15);
         return $this->response()->paginator($topics, new TopicTransformer());
     }
 

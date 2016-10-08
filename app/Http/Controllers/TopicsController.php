@@ -57,14 +57,22 @@ class TopicsController extends Controller implements CreatorListener
         $topic = Topic::where('id', $id)->with('user', 'lastReplyUser')->first();
 
         if ($topic->user->is_banned == 'yes') {
-            Flash::error('你访问的文章已被屏蔽，有疑问请加微信：summer_charlie');
+            Flash::error('你访问的文章已被屏蔽，有疑问请发邮件：all@estgroupe.com');
+            return redirect(route('topics.index'));
+        }
+
+        if (
+            config('app.admin_board_cid')
+            && (!Auth::check() || !Auth::user()->can('access_board'))
+        ) {
+            Flash::error('您没有权限访问该文章，有疑问请发邮件：all@estgroupe.com');
             return redirect(route('topics.index'));
         }
 
         $randomExcellentTopics = $topic->getRandomExcellent();
         $replies = $topic->getRepliesWithLimit(config('phphub.replies_perpage'));
         $categoryTopics = $topic->getSameCategoryTopics();
-        $userTopics = $topic->byWhom($topic->user_id)->with('user')->recent()->limit(8)->get();
+        $userTopics = $topic->byWhom($topic->user_id)->with('user')->withoutBoardTopics()->recent()->limit(8)->get();
         $votedUsers = $topic->votes()->orderBy('id', 'desc')->with('user')->get()->pluck('user');
 
         $topic->increment('view_count', 1);

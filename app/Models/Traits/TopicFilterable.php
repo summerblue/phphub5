@@ -1,6 +1,7 @@
 <?php namespace App\Models\Traits;
 
 use Carbon\Carbon;
+use Auth;
 
 trait TopicFilterable
 {
@@ -33,6 +34,9 @@ trait TopicFilterable
     public function applyFilter($filter)
     {
         $query = $this->withoutBlocked();
+
+        // 过滤站务信息
+        $query = $query->withoutBoardTopics();
 
         switch ($filter) {
             case 'noreply':
@@ -121,6 +125,17 @@ trait TopicFilterable
     public function scopeWithoutBlocked($query)
     {
         return $query->where('is_blocked', '=', 'no');
+    }
+
+    public function scopeWithoutBoardTopics($query)
+    {
+        if (
+            config('app.admin_board_cid')
+            && (!Auth::check() || !Auth::user()->can('access_board'))
+            ) {
+            return $query->where('category_id', '!=', config('app.admin_board_cid'));
+        }
+        return $query;
     }
 
     public function correctApiFilter($filter)

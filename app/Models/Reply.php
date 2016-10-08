@@ -44,7 +44,7 @@ class Reply extends Model
 
     public function topic()
     {
-        return $this->belongsTo(Topic::class);
+        return $this->belongsTo(Topic::class)->withoutBoardTopics();
     }
 
     public function scopeWhose($query, $user_id)
