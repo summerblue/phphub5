@@ -13345,4 +13345,16 @@ a.anchorific {
   color: #fff;
   padding-top: 17px; }
 
+.text-white {
+  color: #fff; }
+
+.topic-author-box a.btn-default {
+  color: #333; }
+
+.topic-author-box .label {
+  position: inherit; }
+
+.topic-author-box .role-label {
+  padding-bottom: 15px; }
+
 /*# sourceMappingURL=styles.css.map */
