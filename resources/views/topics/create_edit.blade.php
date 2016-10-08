@@ -13,7 +13,7 @@
     <div class="reply-box form box-block">
 
       <div class="alert alert-warning">
-          {{ lang('be_nice') }}
+          {!! lang('be_nice') !!}
       </div>
 
       @include('layouts.partials.errors')
