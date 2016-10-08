@@ -83,7 +83,7 @@ class UserPresenter extends Presenter
         $relations = Role::relationArrayWithCache();
 
         $relations = array_where($relations, function ($key, $value) {
-            return $value->user_id == $this->id && $value->role_id == 2;
+            return $value->user_id == $this->id && $value->role_id <= 2;
         });
 
         return count($relations);
