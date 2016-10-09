@@ -70,7 +70,7 @@ class PagesController extends Controller
 
     public function hallOfFames()
     {
-        $users = User::hallOfFamesUsers();
+        $users = User::byRolesName('HallOfFame');
         return view('pages.hall_of_fame', compact('users'));
     }
 }

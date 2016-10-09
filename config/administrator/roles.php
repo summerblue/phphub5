@@ -40,6 +40,10 @@ return [
         'name' => [
             'title' => '标识',
         ],
+        'description' => [
+            'type' => 'textarea',
+            'title' => '描述',
+        ],
         'perms' => array(
             'type' => 'relationship',
             'title' => '权限',
