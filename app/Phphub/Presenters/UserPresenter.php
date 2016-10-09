@@ -92,6 +92,7 @@ class UserPresenter extends Presenter
     public function followingUsersJson()
     {
         $users = \Auth::user()->followings()->lists('name');
+
         return json_encode($users);
     }
 

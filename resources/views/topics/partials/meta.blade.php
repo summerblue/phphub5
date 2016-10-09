@@ -4,7 +4,7 @@
     <i class="fa fa-folder text-md" aria-hidden="true"></i> {{{ $topic->category->name }}}
   </a>
   ⋅
-  <a href="{{ route('users.show', $topic->user->id) }}">
+  <a class="author" href="{{ route('users.show', $topic->user->id) }}">
     {{{ $topic->user->name }}}
   </a>
 
