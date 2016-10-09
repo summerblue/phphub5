@@ -18,7 +18,7 @@
 
             @if ($user->present()->hasBadge())
                 <div class="role-label">
-                    <span class="label label-success role">{{{ $user->present()->badgeName() }}}</span>
+                    <a class="label label-success role" href="{{ route('roles.show', [$user->present()->badgeID()]) }}">{{{ $user->present()->badgeName() }}}</a>
                 </div>
             @endif
 

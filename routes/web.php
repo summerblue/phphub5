@@ -10,6 +10,8 @@ Route::get('/sitemap.xml', 'PagesController@sitemap');
 Route::get('/sitemap', 'PagesController@sitemap');
 Route::get('/hall_of_fames', 'PagesController@hallOfFames')->name('hall_of_fames');
 
+Route::get('/roles/{id}', 'RolesController@show')->name('roles.show');
+
 # ------------------ User stuff ------------------------
 
 Route::get('/users/{id}/replies', 'UsersController@replies')->name('users.replies');

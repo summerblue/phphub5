@@ -29,7 +29,7 @@
         </a>
 
         @if ($reply->user->present()->isAdmin())
-            <span class="label label-success mod-label popover-with-html" data-content="管理员">MOD</span>
+            <a class="label label-success mod-label popover-with-html" data-content="管理员" href="{{ route('roles.show', [$reply->user->present()->badgeID()]) }}">MOD</a>
         @endif
 
         @if($reply->user->introduction)

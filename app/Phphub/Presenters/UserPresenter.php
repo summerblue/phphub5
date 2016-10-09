@@ -51,7 +51,25 @@ class UserPresenter extends Presenter
         return in_array($this->id, $user_ids);
     }
 
+    public function badgeID()
+    {
+        $role = $this->getBadge();
+        if (!$role) {
+            return;
+        }
+        return $role->id;
+    }
+
     public function badgeName()
+    {
+        $role = $this->getBadge();
+        if (!$role) {
+            return;
+        }
+        return $role->display_name;
+    }
+
+    public function getBadge()
     {
         $relations = Role::relationArrayWithCache();
 
@@ -65,7 +83,7 @@ class UserPresenter extends Presenter
         });
 
         if (!$relation) {
-            return;
+            return false;
         }
 
         $roles = Role::rolesArrayWithCache();
@@ -74,8 +92,7 @@ class UserPresenter extends Presenter
             return $value->id == $relation->role_id;
         });
 
-
-        return $role->display_name;
+        return $role;
     }
 
     public function isAdmin()
