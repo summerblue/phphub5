@@ -158,7 +158,7 @@
         initAutocompleteAtUser: function() {
             var at_users = Config.following_users,
                   user;
-            $users = $('.media-heading').find('a.author');
+            $users = $('.topic .meta a.author, .media-heading a.author');
             for (var i = 0; i < $users.length; i++) {
                 user = $users.eq(i).text().trim();
                 if ($.inArray(user, at_users) == -1) {
