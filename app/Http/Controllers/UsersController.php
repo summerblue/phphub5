@@ -22,8 +22,8 @@ class UsersController extends Controller
             'only' => [
                 'edit', 'update', 'destroy',
                 'doFollow', 'editAvatar', 'updateAvatar',
-                'editEmailNotify', 'updateEmailNotify', 'emailVerificationRequired'
-             ]
+                'editEmailNotify', 'updateEmailNotify', 'emailVerificationRequired',
+            ],
         ]);
     }
 
@@ -39,6 +39,7 @@ class UsersController extends Controller
         $user    = User::findOrFail($id);
         $topics  = Topic::whose($user->id)->withoutBoardTopics()->recent()->limit(20)->get();
         $replies = Reply::whose($user->id)->recent()->limit(20)->get();
+
         return view('users.show', compact('user', 'topics', 'replies'));
     }
 
@@ -70,7 +71,7 @@ class UsersController extends Controller
 
     public function replies($id)
     {
-        $user = User::findOrFail($id);
+        $user    = User::findOrFail($id);
         $replies = Reply::whose($user->id)->recent()->paginate(15);
 
         return view('users.replies', compact('user', 'replies'));
@@ -78,7 +79,7 @@ class UsersController extends Controller
 
     public function topics($id)
     {
-        $user = User::findOrFail($id);
+        $user   = User::findOrFail($id);
         $topics = Topic::whose($user->id)->withoutBoardTopics()->recent()->paginate(15);
 
         return view('users.topics', compact('user', 'topics'));
@@ -86,7 +87,7 @@ class UsersController extends Controller
 
     public function votes($id)
     {
-        $user = User::findOrFail($id);
+        $user   = User::findOrFail($id);
         $topics = $user->votedTopics()->orderBy('pivot_created_at', 'desc')->paginate(15);
 
         return view('users.votes', compact('user', 'topics'));
@@ -94,15 +95,17 @@ class UsersController extends Controller
 
     public function following($id)
     {
-        $user = User::findOrFail($id);
+        $user  = User::findOrFail($id);
         $users = $user->followings()->orderBy('id', 'desc')->paginate(15);
+
         return view('users.following', compact('user', 'users'));
     }
 
     public function followers($id)
     {
-        $user = User::findOrFail($id);
+        $user  = User::findOrFail($id);
         $users = $user->followers()->orderBy('id', 'desc')->paginate(15);
+
         return view('users.followers', compact('user', 'users'));
     }
 
@@ -111,11 +114,11 @@ class UsersController extends Controller
         if (!Auth::check() || Auth::id() != $id) {
             return redirect(route('users.show', $id));
         }
-        $user = User::findOrFail($id);
+        $user     = User::findOrFail($id);
         $sessions = OAuthSession::where([
             'owner_type' => 'user',
             'owner_id'   => Auth::id(),
-            ])
+        ])
             ->with('token')
             ->lists('id') ?: [];
 
@@ -140,7 +143,7 @@ class UsersController extends Controller
 
     public function blocking($id)
     {
-        $user = User::findOrFail($id);
+        $user            = User::findOrFail($id);
         $user->is_banned = $user->is_banned == 'yes' ? 'no' : 'yes';
         $user->save();
 
@@ -173,9 +176,11 @@ class UsersController extends Controller
 
     public function githubApiProxy($username)
     {
-        $cache_name = 'github_api_proxy_user_'.$username;
+        $cache_name = 'github_api_proxy_user_' . $username;
+
         return Cache::remember($cache_name, 1440, function () use ($username) {
             $result = (new GithubUserDataReader())->getDataFromUserName($username);
+
             return response()->json($result);
         });
     }
@@ -211,6 +216,7 @@ class UsersController extends Controller
 
         $user->update(['follower_count' => $user->followers()->count()]);
         Flash::success(lang('Operation succeeded.'));
+
         return redirect(route('users.show', $id));
     }
 
@@ -243,7 +249,7 @@ class UsersController extends Controller
 
     public function sendVerificationMail()
     {
-        $user = Auth::user();
+        $user      = Auth::user();
         $cache_key = 'send_activite_mail_' . $user->id;
         if (Cache::has($cache_key)) {
             Flash::error(lang('The mail send failed! Please try again in 60 seconds.', ['seconds' => (Cache::get($cache_key) - time())]));
@@ -275,6 +281,7 @@ class UsersController extends Controller
         if (\Auth::user()->verified) {
             return redirect()->intended('/');
         }
+
         return view('users.emailverificationrequired');
     }
 }
