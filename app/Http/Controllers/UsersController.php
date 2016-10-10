@@ -204,13 +204,12 @@ class UsersController extends Controller
 
         if (Auth::user()->isFollowing($id)) {
             Auth::user()->unfollow($id);
-            $user->decrement('follower_count', 1);
         } else {
             Auth::user()->follow($id);
-            $user->increment('follower_count', 1);
             app('Phphub\Notification\Notifier')->newFollowNotify(Auth::user(), $user);
         }
 
+        $user->update(['follower_count' => $user->followers()->count()]);
         Flash::success(lang('Operation succeeded.'));
         return redirect(route('users.show', $id));
     }
