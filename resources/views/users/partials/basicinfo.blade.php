@@ -18,7 +18,7 @@
 
             @if ($user->present()->hasBadge())
                 <div class="role-label">
-                    <span class="label label-success role">{{{ $user->present()->badgeName() }}}</span>
+                    <a class="label label-success role" href="{{ route('roles.show', [$user->present()->badgeID()]) }}">{{{ $user->present()->badgeName() }}}</a>
                 </div>
             @endif
 
@@ -146,6 +146,9 @@
         @if ($currentUser && Entrust::can('manage_users') && ($currentUser->id != $user->id))
           <a data-method="post" class="btn btn-{{ $user->is_banned == 'yes' ? 'warning' : 'danger' }} btn-block" href="javascript:void(0);" data-url="{{ route('users.blocking', $user->id) }}" id="user-edit-button" onclick=" return confirm('{{ lang('Are you sure want to '. ($user->is_banned == 'yes' ? 'unblock' : 'block') . ' this User?') }}')">
             <i class="fa fa-times"></i> {{ $user->is_banned == 'yes' ? lang('Unblock User') : lang('Block User') }}
+          </a>
+          <a class="btn btn-info btn-block" href="{{ url('admin/users/' . $user->id) }}" >
+            <i class="fa fa-eye"></i> 后台管理
           </a>
         @endif
 

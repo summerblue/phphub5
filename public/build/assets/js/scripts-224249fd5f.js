@@ -5354,7 +5354,7 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
         },
 
         initAnchorific: function(){
-            $('div.content-body').anchorific({
+            $('div.entry-content').anchorific({
                 navigation: '.anchorific', // position of navigation
                 speed: 200, // speed of sliding back to top
                 anchorClass: 'anchorific', // class of anchor links
@@ -5451,14 +5451,10 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
 
             $('textarea').textcomplete([{
                 mentions: at_users,
-                match: /\B@(\S+)$/,
+                match: /\B@(\w*)$/,
                 search: function(term, callback) {
                     callback($.map(this.mentions, function(mention) {
-                        console.log(term + ' -> '+ mention.indexOf(term) + ' -> ' + mention);
-                        return (mention.indexOf(term) >= 0
-                                || mention.indexOf(term.toUpperCase()) >= 0
-                                || mention.indexOf(term.toLowerCase()) >= 0
-                                ) ? mention : null;
+                        return mention.indexOf(term) === 0 ? mention : null;
                     }));
                 },
                 index: 1,
@@ -5466,10 +5462,7 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
                     return '@' + mention + ' ';
                 }
             }], {
-                appendTo: 'body',
-                onKeydown: function(e, commands){
-                    console.log(commands);
-                }
+                appendTo: 'body'
             });
 
         },

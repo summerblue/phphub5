@@ -71,7 +71,7 @@
         },
 
         initAnchorific: function(){
-            $('div.content-body').anchorific({
+            $('div.entry-content').anchorific({
                 navigation: '.anchorific', // position of navigation
                 speed: 200, // speed of sliding back to top
                 anchorClass: 'anchorific', // class of anchor links
