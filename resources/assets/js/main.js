@@ -168,10 +168,14 @@
 
             $('textarea').textcomplete([{
                 mentions: at_users,
-                match: /\B@(\w*)$/,
+                match: /\B@(\S+)$/,
                 search: function(term, callback) {
                     callback($.map(this.mentions, function(mention) {
-                        return mention.indexOf(term) === 0 ? mention : null;
+                        console.log(term + ' -> '+ mention.indexOf(term) + ' -> ' + mention);
+                        return (mention.indexOf(term) >= 0 // 中文
+                                || mention.indexOf(term.toUpperCase()) >= 0 // 大写
+                                || mention.indexOf(term.toLowerCase()) >= 0 // 小写
+                                ) ? mention : null;
                     }));
                 },
                 index: 1,
@@ -179,7 +183,10 @@
                     return '@' + mention + ' ';
                 }
             }], {
-                appendTo: 'body'
+                appendTo: 'body',
+                onKeydown: function(e, commands){
+                    console.log(commands);
+                }
             });
 
         },
