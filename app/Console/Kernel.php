@@ -41,7 +41,7 @@ class Kernel extends ConsoleKernel
 
         $schedule->command('backup:run --only-db')->cron('0 */4 * * * *');
         $schedule->command('backup:clean')->daily()->at('00:10');
-        $schedule->command('phphub:calculate-maintainer-works')->mondays()->at('00:10');
+        $schedule->command('phphub:calculate-maintainer-works')->mondays()->at('00:05');
 
         $schedule->command('phphub:calculate-active-user')->everyTenMinutes();
         $schedule->command('phphub:calculate-hot-topic')->everyTenMinutes();
