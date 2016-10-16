@@ -11,7 +11,7 @@ use App\Models\MaintainerLog;
 class CalculateMaintainerWorks extends Command
 {
 
-    protected $signature = 'phphub:calculate-maintainer-works';
+    protected $signature = 'phphub:calculate-maintainer-works {--send-mail=no}';
     protected $description = 'Calculate maintainer works';
 
 
@@ -24,6 +24,9 @@ class CalculateMaintainerWorks extends Command
     {
         $start_time = Carbon::now()->subDays(7)->toDateString();
         $end_time = Carbon::now()->toDateString();
+        MaintainerLog::where('start_time', $start_time)
+                     ->where('end_time', $end_time)
+                     ->delete();
 
         $role = Role::find(2);
         $maintainers = User::byRolesName($role->name);
@@ -42,7 +45,7 @@ class CalculateMaintainerWorks extends Command
             $excellent_count = $user->revisions()
                                     ->where('key', 'is_excellent')
                                     ->whereBetween('created_at', [$start_time, $end_time])
-                                    ->get();
+                                    ->count();
 
             $sink_count = $user->revisions()
                                ->where('key', 'order')
