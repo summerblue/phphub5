@@ -68,7 +68,7 @@ class User extends Model implements AuthenticatableContract,
 
     public static function byRolesName($name)
     {
-        $data = Cache::remember('phphub_roles_'.$name, 60, function() use ($name) {
+        $data = Cache::remember('phphub_roles_'.$name, 60, function () use ($name) {
             return User::isRole($name)->orderBy('last_actived_at', 'desc')->get();
         });
         return $data;
@@ -101,6 +101,11 @@ class User extends Model implements AuthenticatableContract,
     public function notifications()
     {
         return $this->hasMany(Notification::class)->recent()->with('topic', 'fromUser')->paginate(20);
+    }
+
+    public function revisions()
+    {
+        return $this->hasMany(Revision::class);
     }
 
     public function scopeRecent($query)
