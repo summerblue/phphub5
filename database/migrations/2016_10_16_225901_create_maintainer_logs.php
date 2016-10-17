@@ -14,7 +14,7 @@ class CreateMaintainerLogs extends Migration
             $table->timestamp('end_time');
             $table->integer('user_id')->unsigned()->index();
             $table->integer('topics_count')->unsigned();
-            $table->integer('replies_Count')->unsigned();
+            $table->integer('replies_count')->unsigned();
             $table->integer('excellent_count')->unsigned();
             $table->integer('sink_count')->unsigned();
             $table->timestamps();
