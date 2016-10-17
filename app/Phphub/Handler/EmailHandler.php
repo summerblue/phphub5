@@ -35,6 +35,21 @@ class EmailHandler
     protected $reply;
     protected $body;
 
+    public function sendMaintainerWorksMail(User $user, $timeFrame, $content)
+    {
+        Mail::send('emails.fake', [], function (Message $message) use ($user, $timeFrame, $content) {
+            $message->subject('管理员工作统计');
+
+            $message->getSwiftMessage()->setBody(new SendCloudTemplate('maintainer_works', [
+                'name'       => $user->name,
+                'time_frame' => $timeFrame,
+                'content'    => $content,
+            ]));
+
+            $message->to($user->email);
+        });
+    }
+
     public function sendActivateMail(User $user)
     {
         UserVerification::generate($user);

@@ -12087,6 +12087,11 @@ embed {
     color: #ff3d00;
     font-size: 14px; }
 
+.topics-show .admin-operation {
+  text-align: center;
+  margin-top: 10px;
+  color: #999; }
+
 .replies-index .operate a {
   color: #d0d0d0;
   display: inline-block; }
