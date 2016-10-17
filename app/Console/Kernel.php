@@ -24,8 +24,10 @@ class Kernel extends ConsoleKernel
         Commands\CalculateActiveUser::class,
         Commands\CalculateHotTopic::class,
         Commands\ClearUserData::class,
-        Commands\CalculateMaintainerWorks::class,
         Commands\SyncUserActivedTime::class,
+
+        Commands\CalculateMaintainerWorks::class,
+        Commands\SendMaintainerWorksMail::class,
     ];
 
     /**
@@ -41,7 +43,7 @@ class Kernel extends ConsoleKernel
 
         $schedule->command('backup:run --only-db')->cron('0 */4 * * * *');
         $schedule->command('backup:clean')->daily()->at('00:10');
-        $schedule->command('phphub:calculate-maintainer-works')->mondays()->at('00:05');
+        $schedule->command('phphub:calculate-maintainer-works --send-mail=yes')->mondays()->at('00:05');
 
         $schedule->command('phphub:calculate-active-user')->everyTenMinutes();
         $schedule->command('phphub:calculate-hot-topic')->everyTenMinutes();
