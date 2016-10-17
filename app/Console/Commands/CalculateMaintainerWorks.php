@@ -59,6 +59,13 @@ class CalculateMaintainerWorks extends Command
             MaintainerLog::create($data);
         }
 
+        if ($this->option('send-mail') == 'yes') {
+            \Artisan::call('phphub:send-maintainer-works-mail', [
+                'start_time' => $start_time,
+                'end_time'   => $end_time
+            ]);
+        }
+
         $this->info('Done');
     }
 }
