@@ -75,14 +75,14 @@ class TopicsController extends Controller implements CreatorListener
         $categoryTopics = $topic->getSameCategoryTopics();
         $userTopics = $topic->byWhom($topic->user_id)->with('user')->withoutBoardTopics()->recent()->limit(8)->get();
         $votedUsers = $topic->votes()->orderBy('id', 'desc')->with('user')->get()->pluck('user');
-
+        $revisionHistory = $topic->revisionHistory()->orderBy('created_at', 'DESC')->first();
         $topic->increment('view_count', 1);
 
         $banners  = Banner::allByPosition();
         return view('topics.show', compact(
                             'topic', 'replies', 'categoryTopics',
                             'category', 'banners', 'randomExcellentTopics',
-                            'votedUsers', 'userTopics'));
+                            'votedUsers', 'userTopics', 'revisionHistory'));
     }
 
     public function edit($id)
