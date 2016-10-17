@@ -6,7 +6,6 @@ use Illuminate\Console\Command;
 use App\Models\User;
 use App\Models\Role;
 use App\Models\MaintainerLog;
-use App\Jobs\SendMaintainerWorksMail;
 
 class SendMaintainerWorksMail extends Command
 {
@@ -38,9 +37,9 @@ class SendMaintainerWorksMail extends Command
         $users = $founders->merge($maintainer);
 
         foreach ($users as $user) {
-            dispatch(new SendMaintainerWorksMail($user, $timeFrame, $content));
+            dispatch(new \App\Jobs\SendMaintainerWorksMail($user, $timeFrame, $content));
         }
-        
+
         $this->info('Done');
     }
 
