@@ -46,11 +46,15 @@
         <?php
         $revisionAdmin = \App\Models\User::find($revisionHistory->user_id);
         if ($revisionHistory->key == 'is_excellent') {
-            $adminOperation = $revisionHistory->new_value == 'yes' ? '置顶' : '解除置顶';
+            $adminOperation = $revisionHistory->new_value == 'yes' ? '加精' : '解除加精';
         }
 
         if ($revisionHistory->key == 'order') {
-            $adminOperation = $revisionHistory->new_value == -1 ? '沉帖' : '解除沉帖';
+            if ($revisionHistory->new_value < 0) {
+                $adminOperation = '沉帖';
+            } elseif ($revisionHistory->new_value > 0) {
+                $adminOperation = '置顶';
+            }
         }
         ?>
         本帖由 <a href="{{route('users.show', $revisionAdmin->id)}}" target="_blank">{{$revisionAdmin->name}}</a> 于 {{$revisionHistory->created_at->diffForHumans()}} {{$adminOperation}}
