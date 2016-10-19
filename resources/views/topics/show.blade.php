@@ -45,6 +45,7 @@
     <div class="admin-operation">
         <?php
         $revisionAdmin = \App\Models\User::find($revisionHistory->user_id);
+        $adminOperation = '';
         if ($revisionHistory->key == 'is_excellent') {
             $adminOperation = $revisionHistory->new_value == 'yes' ? '加精' : '解除加精';
         }
@@ -54,10 +55,12 @@
                 $adminOperation = '沉帖';
             } elseif ($revisionHistory->new_value > 0) {
                 $adminOperation = '置顶';
+            } elseif ($revisionHistory->new_value == 0) {
+                $adminOperation = $revisionHistory->old_value > 0 ? '取消置顶' : '取消沉帖';
             }
         }
         ?>
-        @if(isset($adminOperation))
+        @if($adminOperation)
         本帖由 <a href="{{route('users.show', $revisionAdmin->id)}}" target="_blank">{{$revisionAdmin->name}}</a> 于 {{$revisionHistory->created_at->diffForHumans()}} {{$adminOperation}}
         @endif
     </div>
