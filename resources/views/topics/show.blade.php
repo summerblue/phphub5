@@ -57,7 +57,9 @@
             }
         }
         ?>
+        @if(isset($adminOperation))
         本帖由 <a href="{{route('users.show', $revisionAdmin->id)}}" target="_blank">{{$revisionAdmin->name}}</a> 于 {{$revisionHistory->created_at->diffForHumans()}} {{$adminOperation}}
+        @endif
     </div>
     @endif
     @include('topics.partials.topic_operate', ['manage_topics' => $currentUser ? $currentUser->can("manage_topics") : false])
