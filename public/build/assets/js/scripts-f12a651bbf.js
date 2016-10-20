@@ -6091,7 +6091,7 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
         },
 
         showPluginDownload: function() {
-            this.showMsg('操作成功，安装 <a target="_blank" href="https://chrome.google.com/webstore/detail/fcopfkdgikhodlcjkjdppdfkbhmehdon">Chrome 插件</a> 接收提醒。', {
+            this.showMsg('操作成功', {
                 type: 'success',
                 timer: 8000
             });
