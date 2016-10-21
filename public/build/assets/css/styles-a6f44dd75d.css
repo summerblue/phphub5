@@ -13366,4 +13366,7 @@ a.anchorific {
   font-weight: 100;
   padding: 0.2em 1em .2em; }
 
+.hall_of_fames .site-intro a {
+  text-decoration: underline; }
+
 /*# sourceMappingURL=styles.css.map */
