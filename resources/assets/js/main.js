@@ -168,7 +168,7 @@
 
             $('textarea').textcomplete([{
                 mentions: at_users,
-                match: /\B@(\S+)$/,
+                match: /\B@(\S*)$/,
                 search: function(term, callback) {
                     callback($.map(this.mentions, function(mention) {
                         console.log(term + ' -> '+ mention.indexOf(term) + ' -> ' + mention);
