@@ -54,7 +54,7 @@ class TopicsController extends Controller implements CreatorListener
 
     public function show($id)
     {
-        $topic = Topic::where('id', $id)->with('user', 'lastReplyUser')->first();
+        $topic = Topic::where('id', $id)->with('user', 'lastReplyUser')->firstOrFail();
 
         if ($topic->user->is_banned == 'yes') {
             Flash::error('你访问的文章已被屏蔽，有疑问请发邮件：all@estgroupe.com');
