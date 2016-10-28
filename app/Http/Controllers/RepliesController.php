@@ -23,7 +23,7 @@ class RepliesController extends Controller implements CreatorListener
 
     public function vote($id)
     {
-        $reply = Reply::find($id);
+        $reply = Reply::findOrFail($id);
         $type = app('Phphub\Vote\Voter')->replyUpVote($reply);
 
         return response([
