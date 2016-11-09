@@ -39,7 +39,6 @@ class UsersController extends Controller
         $user    = User::findOrFail($id);
         $topics  = Topic::whose($user->id)->withoutBoardTopics()->recent()->limit(20)->get();
         $replies = Reply::whose($user->id)->recent()->limit(20)->get();
-
         return view('users.show', compact('user', 'topics', 'replies'));
     }
 

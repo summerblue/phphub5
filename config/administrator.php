@@ -95,7 +95,7 @@ return array(
             }
         }
 
-        if (!Auth::check() || !Auth::user()->can('visit_admin')) {
+        if (!Auth::check() || !Auth::user()->can('visit_admin') || Auth::user()->roles->count() > 5) {
             return false;
         }
 
