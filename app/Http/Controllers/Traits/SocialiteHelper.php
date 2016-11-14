@@ -35,7 +35,6 @@ trait SocialiteHelper
 
         $oauthUser = Socialite::with($this->oauthDrivers[$driver])->user();
         $user = User::getByDriver($driver, $oauthUser->id);
-
         if (Auth::check()) {
             if ($user && $user->id != Auth::id()) {
                 Flash::error(lang('Sorry, this socialite account has been registed.', ['driver' => lang($driver)]));

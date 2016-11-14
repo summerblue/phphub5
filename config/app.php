@@ -170,15 +170,15 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
 
         Orangehill\Iseed\IseedServiceProvider::class,
-        \EstGroupe\Taggable\Providers\TaggingServiceProvider::class,
+        EstGroupe\Taggable\Providers\TaggingServiceProvider::class,
         Frozennode\Administrator\AdministratorServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
         Thujohn\Rss\RssServiceProvider::class,
         Roumen\Sitemap\SitemapServiceProvider::class,
         Phphub\Sitemap\SitemapServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
-        \SocialiteProviders\Manager\ServiceProvider::class,
-        Smartisan\Follow\FollowServiceProvider::class,
+        SocialiteProviders\Manager\ServiceProvider::class,
+        Overtrue\LaravelFollow\FollowServiceProvider::class,
         Jrean\UserVerification\UserVerificationServiceProvider::class,
         Naux\Mail\SendCloudServiceProvider::class,
 

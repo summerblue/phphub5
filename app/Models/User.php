@@ -10,7 +10,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Laracasts\Presenter\PresentableTrait;
 use Venturecraft\Revisionable\RevisionableTrait;
-use Smartisan\Follow\FollowTrait;
+use Overtrue\LaravelFollow\FollowTrait;
 use App\Jobs\SendActivateMail;
 use App\Models\Traits\UserRememberTokenHelper;
 use App\Models\Traits\UserSocialiteHelper;
