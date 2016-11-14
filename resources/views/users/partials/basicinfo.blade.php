@@ -129,7 +129,7 @@
             <hr>
         @endif
 
-        @if ($currentUser && (($currentUser->id != $user->id) && $currentUser->roles->count() < 5 || Entrust::can('manage_users')))
+        @if ($currentUser && (($currentUser->id != $user->id && $currentUser->roles->count() < 5) || Entrust::can('manage_users')))
           <a class="btn btn-primary btn-block" href="{{ route('users.edit', $user->id) }}" id="user-edit-button">
             <i class="fa fa-edit"></i> {{ lang('Edit Profile') }}
           </a>
@@ -143,7 +143,7 @@
         </a>
         @endif
 
-        @if ($currentUser && Entrust::can('manage_users') && ($currentUser->id != $user->id) && $currentUser->roles->count() < 5)
+        @if ($currentUser && Entrust::can('manage_users') && $currentUser->id != $user->id && $currentUser->roles->count() < 5)
           <a data-method="post" class="btn btn-{{ $user->is_banned == 'yes' ? 'warning' : 'danger' }} btn-block" href="javascript:void(0);" data-url="{{ route('users.blocking', $user->id) }}" id="user-edit-button" onclick=" return confirm('{{ lang('Are you sure want to '. ($user->is_banned == 'yes' ? 'unblock' : 'block') . ' this User?') }}')">
             <i class="fa fa-times"></i> {{ $user->is_banned == 'yes' ? lang('Unblock User') : lang('Block User') }}
           </a>
