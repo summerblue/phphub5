@@ -38,7 +38,7 @@ return [
     'github' => [
         'client_id'     => env('CLIENT_ID'),
         'client_secret' => env('CLIENT_SECRET'),
-        'redirect'      => env('APP_URL').'auth/callback?driver=github',
+        'redirect'      => str_finish(env('APP_URL'), '/').'auth/callback?driver=github',
     ],
 
     'weixin' => [
