@@ -53,6 +53,8 @@ ______                            _              _                              
 
 	    @yield('styles')
 
+		<meta http-equiv="x-pjax-version" content="{{ elixir('assets/css/styles.css') }}">
+
 	</head>
 	<body id="body">
 
