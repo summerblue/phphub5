@@ -38,7 +38,7 @@
         "lucadegasperi/oauth2-server-laravel": "~5.0",
         "jpush/jpush": "^3.2",
         "socialiteproviders/manager": "2.1.5",
-        "smartisan/follow": "*@dev",
+        "overtrue/laravel-follow": "dev-master",
         "pda/pheanstalk": "^3.1"
     },
     "require-dev": {
@@ -88,10 +88,6 @@
         {
             "type": "path",
             "url": "packages/rss"
-        },
-        {
-            "type": "path",
-            "url": "packages/follow"
         }
     ]
 }
