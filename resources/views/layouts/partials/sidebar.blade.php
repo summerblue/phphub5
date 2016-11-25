@@ -71,7 +71,7 @@
     <ul class="list list-group ">
         @foreach($banners['sidebar-resources'] as $banner)
             <li class="list-group-item ">
-                <a href="{{ $banner->link }}" class="popover-with-html" data-content="{{{ $banner->title }}}">
+                <a href="{{ $banner->link }}" class="popover-with-html" class="no-pjax" data-content="{{{ $banner->title }}}">
                     <img class="media-object inline-block " src="{{ $banner->image_url }}">
                     {{{ $banner->title }}}
                 </a>
