@@ -73,7 +73,7 @@ class TopicsController extends Controller implements CreatorListener
         $randomExcellentTopics = $topic->getRandomExcellent();
         $replies = $topic->getRepliesWithLimit(config('phphub.replies_perpage'));
         $categoryTopics = $topic->getSameCategoryTopics();
-        $userTopics = $topic->byWhom($topic->user_id)->with('user')->withoutBoardTopics()->recent()->limit(8)->get();
+        $userTopics = $topic->byWhom($topic->user_id)->with('user')->withoutBoardTopics()->recent()->limit(3)->get();
         $votedUsers = $topic->votes()->orderBy('id', 'desc')->with('user')->get()->pluck('user');
         $revisionHistory = $topic->revisionHistory()->orderBy('created_at', 'DESC')->first();
         $topic->increment('view_count', 1);
