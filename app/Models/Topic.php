@@ -128,7 +128,7 @@ class Topic extends Model
             return Topic::where('category_id', '=', $this->category_id)
                             ->recent()
                             ->with('user')
-                            ->take(8)
+                            ->take(3)
                             ->get();
         });
         return $data;
