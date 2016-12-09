@@ -67,9 +67,8 @@
     background-color: transparent;
     border: none;
 ">
-<a href="https://laravel-china.org/laravel-tutorial/5.1/about" target="_blank" rel="nofollow" title="" style="
-">
-      <img src="https://dn-phphub.qbox.me/uploads/images/201612/09/1/b0sGEwDn8D.jpg" style="width: 100%;"></a>
+<a href="https://laravel-china.org/topics/3383" target="_blank" rel="nofollow" title="" style="">
+      <img src="https://dn-phphub.qbox.me/uploads/images/201612/09/1/vGTXfKk57y.jpg" style="width: 100%;border-radius: 0px;box-shadow: none;border: 1px solid #e2e1e1;"></a>
 </div>
 
 
