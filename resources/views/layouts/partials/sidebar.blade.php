@@ -69,8 +69,10 @@
 ">
 <a href="https://laravel-china.org/laravel-tutorial/5.1/about" target="_blank" rel="nofollow" title="" style="
 ">
-      <img src="https://dn-phphub.qbox.me/uploads/images/201612/08/1/pk7DcxYrm5.png" style="width: 100%;"></a>
+      <img src="https://dn-phphub.qbox.me/uploads/images/201612/09/1/b0sGEwDn8D.jpg" style="width: 100%;"></a>
 </div>
+
+
 
 @if(isset($banners['sidebar-resources']))
 <div class="panel panel-default corner-radius sidebar-resources">
