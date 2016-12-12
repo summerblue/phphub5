@@ -191,7 +191,7 @@
 <div class="panel panel-default corner-radius" style="color:#a5a5a5">
   <div class="panel-body text-center">
       <a href="http://estgroupe.com/" style="color:#a5a5a5">
-          <img src="http://estgroupe.com/favicon.png" style="width: 20px;margin-right: 4px;margin-top: -4px;">
+          <img src="https://dn-phphub.qbox.me/uploads/images/201612/12/1/iq7WQc2iuW.png" style="width: 20px;margin-right: 4px;margin-top: -4px;">
           <span style="margin-top: 7px;display: inline-block;">
               优帆远扬 - 创造不息，交付不止
           </span>
