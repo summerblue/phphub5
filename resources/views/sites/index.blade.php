@@ -8,7 +8,7 @@
 
     <div class="box text-center site-intro rm-link-color">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        欢迎交换友链，优先考虑 PHP、Laravel 相关话题的站点。请联系 <a href="jobslong@estgroupe.com">晓文同学</a>
+        欢迎交换友链，优先考虑 PHP、Laravel 相关话题的站点。请联系 <a href="mailto:jobslong@estgroupe.com">晓文同学</a>
     </div>
 
     <div class="sites-index">
