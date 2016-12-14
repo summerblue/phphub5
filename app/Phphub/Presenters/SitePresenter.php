@@ -7,7 +7,7 @@ class SitePresenter extends Presenter
 {
     public function linkWithUTMSource()
     {
-        $append = 'utm_source=phphub.org';
+        $append = 'utm_source=laravel-china.org';
         return strpos($this->link, '?') === false
                     ? $this->link . '?' . $append
                     : $this->link . '&' . $append;
