@@ -5,6 +5,7 @@ use Route;
 use App\Models\User;
 use App\Models\Role;
 use Cache;
+use Phphub\Markdown\Markdown;
 
 class UserPresenter extends Presenter
 {
@@ -124,5 +125,10 @@ class UserPresenter extends Presenter
         }
 
         return $show_data[$this->id];
+    }
+
+    public function formattedSignature()
+    {
+        return (new Markdown)->convertMarkdownToHtml($this->signature);
     }
 }

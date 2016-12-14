@@ -164,6 +164,17 @@
                     {{ lang('introduction_placeholder_hint') }}，大部分情况下会在你的头像和名字旁边显示
               </div>
           </div>
+
+          <div class="form-group">
+              <label for="" class="col-sm-2 control-label">署名</label>
+              <div class="col-sm-6">
+                  <textarea class="form-control" rows="3" name="signature" cols="50">{{ $user->signature }}</textarea>
+              </div>
+              <div class="col-sm-4 help-block">
+                 文章署名，会拼接在每一个你发表过的帖子内容后面。
+              </div>
+          </div>
+
           <div class="form-group">
               <div class="col-sm-offset-2 col-sm-6">
                 <input class="btn btn-primary" id="user-edit-submit" type="submit" value="{{ lang('Apply Changes') }}">
