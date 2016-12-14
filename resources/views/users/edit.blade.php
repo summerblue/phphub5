@@ -171,7 +171,7 @@
                   <textarea class="form-control" rows="3" name="signature" cols="50">{{ $user->signature }}</textarea>
               </div>
               <div class="col-sm-4 help-block">
-                 文章署名，会拼接在每一个你发表过的帖子内容后面。
+                 文章署名，会拼接在每一个你发表过的帖子内容后面。支持 Markdown。
               </div>
           </div>
 
