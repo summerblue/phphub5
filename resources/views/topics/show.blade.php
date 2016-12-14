@@ -24,6 +24,10 @@
 
       @include('topics.partials.body', array('body' => $topic->body))
 
+      <br>
+      <br>
+      {!! $topic->user->present()->formattedSignature() !!}
+
       <div data-lang-excellent="{{ lang('This topic has been mark as Excenllent Topic.') }}" data-lang-wiki="{{ lang('This is a Community Wiki.') }}" class="ribbon-container">
         @include('topics.partials.ribbon')
       </div>
