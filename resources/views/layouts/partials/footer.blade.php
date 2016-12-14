@@ -7,6 +7,7 @@
               <p class="padding-top-xsm">我们是 PHP 和 Laravel 开发者社区，致力于为 PHP 和 Laravel 开发者提供一个分享创造、结识伙伴、协同互助的平台。</p>
 
               <div class="text-md " >
+                  <a class="popover-with-html" data-content="反馈问题" target="_blank" style="padding-right:8px" href="mailto:summer@estgroupe.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>
                   <a class="popover-with-html" data-content="查看源代码" target="_blank" style="padding-right:8px" href="https://github.com/summerblue/phphub5"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
                   <a class="popover-with-html" data-content="关注「Laravel资讯」" target="_blank" style="padding-right:8px" href="http://weibo.com/laravelnews"><i class="fa fa-weibo" aria-hidden="true"></i></a>
                   <a class="popover-with-html" data-content="扫码关注微信订阅号：「Laravel资讯」" target="_blank" style="padding-right:8px" href="https://dn-phphub.qbox.me/uploads/images/201607/19/1/5KAh3F8EhD.jpg"><i class="fa fa-weixin" aria-hidden="true"></i></a>
