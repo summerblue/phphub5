@@ -10,7 +10,7 @@
                   <a class="popover-with-html" data-content="反馈问题" target="_blank" style="padding-right:8px" href="mailto:summer@estgroupe.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>
                   <a class="popover-with-html" data-content="查看源代码" target="_blank" style="padding-right:8px" href="https://github.com/summerblue/phphub5"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
                   <a class="popover-with-html" data-content="关注「Laravel资讯」" target="_blank" style="padding-right:8px" href="http://weibo.com/laravelnews"><i class="fa fa-weibo" aria-hidden="true"></i></a>
-                  <a class="popover-with-html" data-content="扫码关注微信订阅号：「Laravel资讯」" target="_blank" style="padding-right:8px" href="https://dn-phphub.qbox.me/uploads/images/201607/19/1/5KAh3F8EhD.jpg"><i class="fa fa-weixin" aria-hidden="true"></i></a>
+                  <a class="popover-with-html" data-content="扫码关注微信订阅号：「Laravel资讯」" target="_blank" style="padding-right:8px" href="https://dn-phphub.qbox.me/uploads/images/201612/15/1/MGig6IACCQ.png"><i class="fa fa-weixin" aria-hidden="true"></i></a>
                   <a class="popover-with-html" data-content="下载 Chrome 消息通知插件" target="_blank" style="padding-right:8px" href="https://chrome.google.com/webstore/detail/phphub-notifier/fcopfkdgikhodlcjkjdppdfkbhmehdon"><i class="fa fa-chrome" aria-hidden="true"></i></a>
               </div>
               <br>
