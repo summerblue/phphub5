@@ -20,12 +20,12 @@ class EmailHandler
         'attention'            => 'sendAttentionNotifyMail',
         'vote_append'          => 'sendVoteAppendNotifyMail',
         'comment_append'       => 'sendCommentAppendNotifyMail',
-        'follow'               => 'sendFollowNotifyMail',
+        // 'follow'               => 'sendFollowNotifyMail',
         'new_reply'            => 'sendNewReplyNotifyMail',
-        'reply_upvote'         => 'sendReplyUpvoteNotifyMail',
+        // 'reply_upvote'         => 'sendReplyUpvoteNotifyMail',
         'topic_attent'         => 'sendTopicAttentNotifyMail',
-        'topic_mark_excellent' => 'sendTopicMarkExcellentNotifyMail',
-        'topic_upvote'         => 'sendTopicUpvoteNotifyMail',
+        // 'topic_mark_excellent' => 'sendTopicMarkExcellentNotifyMail',
+        // 'topic_upvote'         => 'sendTopicUpvoteNotifyMail',
     ];
 
     protected $type;
