@@ -37,7 +37,7 @@ class UserPresenter extends Presenter
             ->size(200)
             ->errorCorrection('L')
             ->margin(0)
-            ->generate($this->github_name . ',' . $this->login_token);
+            ->generate($this->name . ',' . $this->login_token);
     }
 
     public function userinfoNavActive($anchor)
