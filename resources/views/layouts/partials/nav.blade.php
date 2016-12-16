@@ -9,7 +9,7 @@
     <div id="top-navbar-collapse" class="navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="{{ (Request::is('topics*') && !Request::is('categories*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">{{ lang('Topics') }}</a></li>
-
+        <li ><a href="https://news.laravel-china.org/" class="no-pjax">资讯</a></li>
         <li class="{{ Request::is('categories/1') ? ' active' : '' }}"><a href="{{ route('categories.show', 1) }}">{{ lang('Jobs') }}</a></li>
         <li class="{{ (Request::is('sites') ? ' active' : '') }}"><a href="{{ route('sites.index') }}">{{ lang('Sites') }}</a></li>
         <li class="{{ (Request::is('wiki') ? ' active' : '') }}"><a href="{{ route('wiki') }}">Wiki</a></li>
