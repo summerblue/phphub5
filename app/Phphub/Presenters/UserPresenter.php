@@ -37,6 +37,7 @@ class UserPresenter extends Presenter
             ->size(200)
             ->errorCorrection('L')
             ->margin(0)
+            ->encoding('utf-8')
             ->generate($this->name . ',' . $this->login_token);
     }
 
