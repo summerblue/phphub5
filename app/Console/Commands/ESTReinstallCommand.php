@@ -22,6 +22,8 @@ class ESTReinstallCommand extends BaseCommand
         $this->execShellWithPrettyPrint('php artisan est:dbreset --force');
         $this->execShellWithPrettyPrint('php artisan est:init-rbac');
 
+        $this->execShellWithPrettyPrint('php artisan cache:clear');
+
         $this->printBenchInfo();
     }
 }

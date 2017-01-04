@@ -2003,5 +2003,53 @@ a.anchorific {
 }
 
 .hall_of_fames .site-intro a {
-    text-decoration: underline;
+    text-decoration:  underline;
+}
+
+.projects-card {
+    .caption {
+        text-align: center;
+    }
+
+    .card-title a{
+        font-size: 1.2em;
+        color: #676464;
+    }
+    .card-description {
+        height: 40px;
+        margin-top: 15px;
+        color: #909090;
+    }
+}
+
+#top-navbar-collapse {
+    overflow: visible;
+}
+
+@media (max-width: 767px) {
+
+    .projects-card {
+        padding-left: 5px;
+        padding-right: 5px;
+
+        .thumbnail {
+            margin-bottom: 10px;
+        }
+        .caption {
+            text-align: center;
+        }
+        h3 {
+            margin-top: 4px;
+            margin-bottom: 0px;
+        }
+
+        .card-title a{
+            font-size: .9em;
+            color: #676464;
+        }
+    }
+    .topbanner {
+        margin-left: -5px;
+        margin-right: -5px;
+    }
 }
