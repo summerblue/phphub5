@@ -13505,17 +13505,26 @@ a.anchorific {
 .hall_of_fames .site-intro a {
   text-decoration: underline; }
 
-.projects-card .caption {
-  text-align: center; }
+.topbanner {
+  margin-left: -12px;
+  margin-right: -12px; }
 
-.projects-card .card-title a {
-  font-size: 1.2em;
-  color: #676464; }
-
-.projects-card .card-description {
-  height: 40px;
-  margin-top: 15px;
-  color: #909090; }
+.projects-card {
+  padding-left: 12px;
+  padding-right: 12px; }
+  .projects-card .thumbnail {
+    border-radius: 0px;
+    box-shadow: 0 1px 5px #c3c3c3;
+    padding: 0px; }
+  .projects-card .caption {
+    text-align: center; }
+  .projects-card .card-title a {
+    font-size: 1.2em;
+    color: #676464; }
+  .projects-card .card-description {
+    height: 40px;
+    margin-top: 15px;
+    color: #909090; }
 
 #top-navbar-collapse {
   overflow: visible; }

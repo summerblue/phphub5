@@ -2006,7 +2006,21 @@ a.anchorific {
     text-decoration:  underline;
 }
 
+.topbanner {
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
 .projects-card {
+    padding-left: 12px;
+    padding-right: 12px;
+
+    .thumbnail {
+        border-radius: 0px;
+        box-shadow: 0 1px 5px #c3c3c3;
+        padding: 0px
+    }
+
     .caption {
         text-align: center;
     }
@@ -2025,6 +2039,7 @@ a.anchorific {
 #top-navbar-collapse {
     overflow: visible;
 }
+
 
 @media (max-width: 767px) {
 
