@@ -1,12 +1,20 @@
 <div role="navigation" class="navbar navbar-default navbar-static-top topnav">
   <div class="container">
-    <div class="navbar-header hidden-xs">
+    <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
       <a href="/" class="navbar-brand">
           <img src="{{ cdn('assets/images/logo4.png') }}" alt="Laravel China" />
       </a>
     </div>
-    <div id="top-navbar-collapse" class="navbar-collapse">
+
+    <div id="top-navbar-collapse" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="{{ (Request::is('topics*') && !Request::is('categories*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">{{ lang('Topics') }}</a></li>
         <li ><a href="https://news.laravel-china.org/" class="no-pjax">资讯</a></li>
