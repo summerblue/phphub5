@@ -12717,7 +12717,7 @@ div#preview-box {
   text-align: right;
   float: left;
   line-height: 2em;
-  margin-top: 14px; }
+  margin-top: 18px; }
 
 .reply_count_area .count_of_replies {
   text-align: center; }
@@ -13220,19 +13220,19 @@ a {
   line-height: inherit; }
 
 .topic-list .count_of_votes {
-  font-size: 18px;
+  font-size: 15px;
   margin-top: 11px;
   color: #9e78c0;
   margin-bottom: -3px; }
 
 .topic-list .count_of_replies {
-  font-size: 18px;
+  font-size: 15px;
   margin-top: 11px;
   color: #bab9bb;
   margin-bottom: -3px; }
 
 .topic-list .count_of_visits {
-  font-size: 18px;
+  font-size: 15px;
   margin-top: 11px;
   color: #bab9bb;
   margin-bottom: -3px; }
