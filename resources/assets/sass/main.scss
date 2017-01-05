@@ -1668,8 +1668,11 @@ a {
 }
 
 .topic-list .infos .media-heading a {
-    display: inline-block;
     padding-left: 2px;
+}
+
+.topics-index .topic-list .infos .media-heading a {
+    display: inline-block;
 }
 
 .topic-list {
