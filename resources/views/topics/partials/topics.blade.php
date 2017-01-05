@@ -25,6 +25,9 @@
                      <span class="count_of_visits" title="查看数">
                        {{ $topic->view_count }}
                      </span>
+                     <span class="count_seperator">|</span>
+
+                      <abbr title="{{ $topic->updated_at }}" class="timeago">{{ $topic->updated_at }}</abbr>
                  </div>
              </a>
 
