@@ -13214,7 +13214,8 @@ a {
 
 .topic-list .infos .media-heading a {
   width: 100%;
-  display: inline-block; }
+  display: inline-block;
+  padding-left: 2px; }
 
 .topic-list .reply_count_area {
   line-height: inherit; }
