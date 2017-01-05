@@ -22,6 +22,8 @@
                 original_title = document.title;
                 NProgress.done();
                 self._resetTitle();
+                // Fixing popover persist problem
+                $('.popover').remove();
             });
             // Exclude links with a specific class
             $(document).on("pjax:click", "a.no-pjax", false);
