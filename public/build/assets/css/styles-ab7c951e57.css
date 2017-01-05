@@ -13213,8 +13213,10 @@ a {
   background-color: rgba(0, 181, 173, 0.04); }
 
 .topic-list .infos .media-heading a {
-  display: inline-block;
   padding-left: 2px; }
+
+.topics-index .topic-list .infos .media-heading a {
+  display: inline-block; }
 
 .topic-list .reply_count_area {
   line-height: inherit; }
