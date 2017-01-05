@@ -5346,6 +5346,8 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
             $(document).on('pjax:end', function() {
                 NProgress.done();
                 self.siteBootUp();
+
+                $('.popover').remove();
             });
             $(document).on('pjax:complete', function() {
                 original_title = document.title;
