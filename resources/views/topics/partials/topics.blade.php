@@ -32,7 +32,7 @@
              </a>
 
             <div class="avatar pull-left">
-                <a href="{{ route('users.show', [$topic->user_id]) }}">
+                <a href="{{ route('users.show', [$topic->user_id]) }}" title="{{{ $topic->user->name }}}">
                     <img class="media-object img-thumbnail avatar avatar-middle" alt="{{{ $topic->user->name }}}" src="{{ $topic->user->present()->gravatar }}"/>
                 </a>
             </div>
