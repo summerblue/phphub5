@@ -968,7 +968,6 @@ div#preview-box {
   .rbs.row div[class*="col-"] { padding-left: 5px; padding-right: 5px;}
   .banner-container .item { margin-bottom: 10px;}
   .topic-list .list-group-item.media .infos { margin-top: 10px; margin-left: 56px;}
-  ul.topic-list .list-group-item .avatar { margin-top: -2px;}
   div.topics-index .topic-list .media-heading { font-size: 14px;}
   .replies-index .list-group-item.media { padding-bottom: 10px;}
   .replies-index .list-group-item.media .infos, div.replies-index .list-group-item.media .avatar img { margin-top: 6px;}
@@ -1047,20 +1046,21 @@ background-color: #fff;
 }
 
 .reply_count_area {
-    width: 70px;
+    width: 200px;
     display: inline-block;
-    text-align: center;
+    text-align: right;
     float: left;
     line-height: 2em;
     margin-top: 14px;
+
 }
 .reply_count_area .count_of_replies{
     text-align: center;
 }
 .reply_count_area .count_seperator {
-    margin: 0 -2px;
+    margin: 0px 4px;
     text-align: center;
-    font-size: 10px;
+    font-size: 13px;
 }
 .reply_count_area .count_of_visits{
     text-align: center;
@@ -1646,9 +1646,7 @@ a {
         width: initial;
         margin-top: 6px;
     }
-    .list-group-item.media .infos {
-        margin-top: 0px;
-    }
+
     .replies-index .list-group-item.media .avatar img {
         margin-top: -6px;
     }
@@ -1662,21 +1660,43 @@ a {
     }
 }
 
+.topic-list a:hover{
+    text-decoration: none;
+}
+.topic-list .list-group-item:hover {
+    background-color: rgba(0, 181, 173, 0.04);
+}
+
+.topic-list .infos .media-heading a {
+    width: 100%;
+    display: inline-block;
+}
 
 .topic-list {
     .reply_count_area {
         line-height: inherit;
-        margin-top: inherit;
     }
     .count_of_votes {
-        font-size: 20px;
+        font-size: 18px;
         margin-top: 11px;
         color: #9e78c0;
         margin-bottom: -3px;
     }
+    .count_of_replies {
+        font-size: 18px;
+        margin-top: 11px;
+        color: #bab9bb;
+        margin-bottom: -3px;
+    }
+    .count_of_visits {
+        font-size:  18px;
+        margin-top: 11px;
+        color: #bab9bb;
+        margin-bottom: -3px;
+    }
     .count_set {
         font-size: 12px;
-        color: #b4b4b4;
+        color: #dcd9d9;
     }
 }
 
@@ -2067,4 +2087,11 @@ a.anchorific {
         margin-left: -5px;
         margin-right: -5px;
     }
+
+}
+
+.topics-index .topic-list .media-heading {
+    font-size: 15px;
+    padding-top: 18px;
+    padding-left: 14px;
 }
