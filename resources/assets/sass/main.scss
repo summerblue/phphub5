@@ -37,7 +37,6 @@ body {
   .media-heading {
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
 abbr[data-original-title], abbr[title] {
@@ -416,7 +415,7 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
     font-weight: bold;
   }
 
-  .panel-body {
+  .entry-content {
       padding: 22px;
   }
 
@@ -1135,6 +1134,9 @@ background-color: #fff;
 .topics-index .topic-list .media-heading {
     font-size: 15px;
 }
+.topics-index .topic-list .media-heading:hover {
+    cursor: pointer;
+}
 
 .label-default {
     background-color: #e5e5e5;
@@ -1673,6 +1675,7 @@ a {
 
 .topics-index .topic-list .infos .media-heading a {
     display: inline-block;
+    width: 100%;
 }
 
 .topic-list {
