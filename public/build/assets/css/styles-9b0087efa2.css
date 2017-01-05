@@ -13342,10 +13342,6 @@ a.users-label-item {
 a {
   color: #05a1a2; }
 
-a:hover, a:focus {
-  color: inherit;
-  text-decoration: underline; }
-
 .dropdown-menu {
   background-color: #fff;
   color: inherit;
