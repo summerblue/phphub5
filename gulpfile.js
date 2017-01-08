@@ -72,6 +72,18 @@ elixir(function(mix) {
             'api/api.js'
         ], 'public/assets/js/api.js')
 
+        // editor
+        .scripts([
+            'vendor/inline-attachment.js',
+            'vendor/codemirror-4.inline-attachment.js',
+            'vendor/simplemde.min.js',
+        ], 'public/assets/js/editor.js')
+
+        // API Web View
+        .sass([
+            'vendor/simplemde.min.scss'
+        ], 'public/assets/css/editor.css')
+
         .version([
 
             'assets/css/styles.css',
@@ -80,6 +92,10 @@ elixir(function(mix) {
             // API Web View
             'assets/css/api.css',
             'assets/js/api.js',
+
+            // API Web View
+            'assets/css/editor.css',
+            'assets/js/editor.js',
         ])
 
         .livereload();

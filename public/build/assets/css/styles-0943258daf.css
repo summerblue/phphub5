@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.markdown-body, .markdown-reply {
+.editor-preview-side, .editor-preview, .markdown-body, .markdown-reply {
   font-size: 16px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -7,58 +7,78 @@
   overflow: hidden;
   line-height: 1.6;
   word-wrap: break-word; }
-  .markdown-body a, .markdown-reply a {
+  .editor-preview-side a, .editor-preview a, .markdown-body a, .markdown-reply a {
     background: transparent; }
-  .markdown-body a:active,
+  .editor-preview-side a:active,
+  .editor-preview-side a:hover, .editor-preview a:active,
+  .editor-preview a:hover, .markdown-body a:active,
   .markdown-body a:hover, .markdown-reply a:active,
   .markdown-reply a:hover {
     outline: 0; }
-  .markdown-body ol li, .markdown-reply ol li {
+  .editor-preview-side ol li, .editor-preview ol li, .markdown-body ol li, .markdown-reply ol li {
     margin: 8px 0; }
-  .markdown-body pre[class*=language-], .markdown-reply pre[class*=language-] {
+  .editor-preview-side pre[class*=language-], .editor-preview pre[class*=language-], .markdown-body pre[class*=language-], .markdown-reply pre[class*=language-] {
     margin: 1.2em 0 !important; }
-  .markdown-body strong, .markdown-reply strong {
+  .editor-preview-side strong, .editor-preview strong, .markdown-body strong, .markdown-reply strong {
     font-weight: bold; }
-  .markdown-body h1, .markdown-reply h1 {
+  .editor-preview-side h1, .editor-preview h1, .markdown-body h1, .markdown-reply h1 {
     font-size: 2em;
     margin: 0.67em 0; }
-  .markdown-body img, .markdown-reply img {
+  .editor-preview-side img, .editor-preview img, .markdown-body img, .markdown-reply img {
     border: 0; }
-  .markdown-body hr, .markdown-reply hr {
+  .editor-preview-side hr, .editor-preview hr, .markdown-body hr, .markdown-reply hr {
     box-sizing: content-box;
     height: 0; }
-  .markdown-body table, .markdown-reply table {
+  .editor-preview-side table, .editor-preview table, .markdown-body table, .markdown-reply table {
     border-collapse: collapse;
     border-spacing: 0; }
-  .markdown-body td,
+  .editor-preview-side td,
+  .editor-preview-side th, .editor-preview td,
+  .editor-preview th, .markdown-body td,
   .markdown-body th, .markdown-reply td,
   .markdown-reply th {
     padding: 0; }
-  .markdown-body *, .markdown-reply * {
+  .editor-preview-side *, .editor-preview *, .markdown-body *, .markdown-reply * {
     box-sizing: border-box; }
-  .markdown-body a, .markdown-reply a {
+  .editor-preview-side a, .editor-preview a, .markdown-body a, .markdown-reply a {
     text-decoration: none; }
-  .markdown-body a:hover,
+  .editor-preview-side a:hover,
+  .editor-preview-side a:focus,
+  .editor-preview-side a:active, .editor-preview a:hover,
+  .editor-preview a:focus,
+  .editor-preview a:active, .markdown-body a:hover,
   .markdown-body a:focus,
   .markdown-body a:active, .markdown-reply a:hover,
   .markdown-reply a:focus,
   .markdown-reply a:active {
     text-decoration: none; }
-  .markdown-body hr, .markdown-reply hr {
+  .editor-preview-side hr, .editor-preview hr, .markdown-body hr, .markdown-reply hr {
     height: 0;
     margin: 15px 0;
     overflow: hidden;
     background: transparent;
     border: 0;
     border-bottom: 1px solid #ddd; }
-  .markdown-body hr:before,
+  .editor-preview-side hr:before,
+  .editor-preview-side hr:after, .editor-preview hr:before,
+  .editor-preview hr:after, .markdown-body hr:before,
   .markdown-body hr:after, .markdown-reply hr:before,
   .markdown-reply hr:after {
     display: table;
     content: " "; }
-  .markdown-body hr:after, .markdown-reply hr:after {
+  .editor-preview-side hr:after, .editor-preview hr:after, .markdown-body hr:after, .markdown-reply hr:after {
     clear: both; }
-  .markdown-body h1,
+  .editor-preview-side h1,
+  .editor-preview-side h2,
+  .editor-preview-side h3,
+  .editor-preview-side h4,
+  .editor-preview-side h5,
+  .editor-preview-side h6, .editor-preview h1,
+  .editor-preview h2,
+  .editor-preview h3,
+  .editor-preview h4,
+  .editor-preview h5,
+  .editor-preview h6, .markdown-body h1,
   .markdown-body h2,
   .markdown-body h3,
   .markdown-body h4,
@@ -72,44 +92,48 @@
     margin-top: 15px;
     margin-bottom: 15px;
     line-height: 1.1; }
-  .markdown-body h1, .markdown-reply h1 {
+  .editor-preview-side h1, .editor-preview h1, .markdown-body h1, .markdown-reply h1 {
     font-size: 30px; }
-  .markdown-body h2, .markdown-reply h2 {
+  .editor-preview-side h2, .editor-preview h2, .markdown-body h2, .markdown-reply h2 {
     font-size: 21px; }
-  .markdown-body h3, .markdown-reply h3 {
+  .editor-preview-side h3, .editor-preview h3, .markdown-body h3, .markdown-reply h3 {
     font-size: 16px; }
-  .markdown-body h4, .markdown-reply h4 {
+  .editor-preview-side h4, .editor-preview h4, .markdown-body h4, .markdown-reply h4 {
     font-size: 14px; }
-  .markdown-body h5, .markdown-reply h5 {
+  .editor-preview-side h5, .editor-preview h5, .markdown-body h5, .markdown-reply h5 {
     font-size: 12px; }
-  .markdown-body h6, .markdown-reply h6 {
+  .editor-preview-side h6, .editor-preview h6, .markdown-body h6, .markdown-reply h6 {
     font-size: 11px; }
-  .markdown-body blockquote, .markdown-reply blockquote {
+  .editor-preview-side blockquote, .editor-preview blockquote, .markdown-body blockquote, .markdown-reply blockquote {
     margin: 0; }
-  .markdown-body ul,
+  .editor-preview-side ul,
+  .editor-preview-side ol, .editor-preview ul,
+  .editor-preview ol, .markdown-body ul,
   .markdown-body ol, .markdown-reply ul,
   .markdown-reply ol {
     padding: 0;
     margin-top: 0;
     margin-bottom: 0; }
-  .markdown-body ol ol, .markdown-reply ol ol {
+  .editor-preview-side ol ol, .editor-preview ol ol, .markdown-body ol ol, .markdown-reply ol ol {
     list-style-type: lower-roman; }
-  .markdown-body dd, .markdown-reply dd {
+  .editor-preview-side dd, .editor-preview dd, .markdown-body dd, .markdown-reply dd {
     margin-left: 0; }
-  .markdown-body code,
+  .editor-preview-side code,
+  .editor-preview-side pre, .editor-preview code,
+  .editor-preview pre, .markdown-body code,
   .markdown-body pre, .markdown-reply code,
   .markdown-reply pre {
     font-family: monaco, Consolas, "Liberation Mono", Menlo, Courier, monospace;
     font-size: 1em; }
-  .markdown-body pre, .markdown-reply pre {
+  .editor-preview-side pre, .editor-preview pre, .markdown-body pre, .markdown-reply pre {
     margin-top: 0;
     margin-bottom: 0;
     overflow: auto; }
-  .markdown-body .markdown-body > *:first-child, .markdown-reply .markdown-body > *:first-child {
+  .editor-preview-side .markdown-body > *:first-child, .editor-preview .markdown-body > *:first-child, .markdown-body .markdown-body > *:first-child, .markdown-reply .markdown-body > *:first-child {
     margin-top: 0 !important; }
-  .markdown-body .markdown-body > *:last-child, .markdown-reply .markdown-body > *:last-child {
+  .editor-preview-side .markdown-body > *:last-child, .editor-preview .markdown-body > *:last-child, .markdown-body .markdown-body > *:last-child, .markdown-reply .markdown-body > *:last-child {
     margin-bottom: 0 !important; }
-  .markdown-body .anchor, .markdown-reply .anchor {
+  .editor-preview-side .anchor, .editor-preview .anchor, .markdown-body .anchor, .markdown-reply .anchor {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -118,9 +142,19 @@
     padding-right: 6px;
     padding-left: 30px;
     margin-left: -30px; }
-  .markdown-body .anchor:focus, .markdown-reply .anchor:focus {
+  .editor-preview-side .anchor:focus, .editor-preview .anchor:focus, .markdown-body .anchor:focus, .markdown-reply .anchor:focus {
     outline: none; }
-  .markdown-body h1,
+  .editor-preview-side h1,
+  .editor-preview-side h2,
+  .editor-preview-side h3,
+  .editor-preview-side h4,
+  .editor-preview-side h5,
+  .editor-preview-side h6, .editor-preview h1,
+  .editor-preview h2,
+  .editor-preview h3,
+  .editor-preview h4,
+  .editor-preview h5,
+  .editor-preview h6, .markdown-body h1,
   .markdown-body h2,
   .markdown-body h3,
   .markdown-body h4,
@@ -136,27 +170,39 @@
     margin-bottom: 16px;
     font-weight: bold;
     line-height: 1.4; }
-  .markdown-body h1, .markdown-reply h1 {
+  .editor-preview-side h1, .editor-preview h1, .markdown-body h1, .markdown-reply h1 {
     padding-bottom: 0.3em;
     font-size: 2.25em;
     line-height: 1.2;
     border-bottom: 2px solid #eee; }
-  .markdown-body h2, .markdown-reply h2 {
+  .editor-preview-side h2, .editor-preview h2, .markdown-body h2, .markdown-reply h2 {
     padding-bottom: 0.3em;
     font-size: 1.5em;
     line-height: 1.225;
     border-bottom: 2px solid #eee; }
-  .markdown-body h3, .markdown-reply h3 {
+  .editor-preview-side h3, .editor-preview h3, .markdown-body h3, .markdown-reply h3 {
     font-size: 1.4em;
     line-height: 1.43; }
-  .markdown-body h4, .markdown-reply h4 {
+  .editor-preview-side h4, .editor-preview h4, .markdown-body h4, .markdown-reply h4 {
     font-size: 1.3em; }
-  .markdown-body h5, .markdown-reply h5 {
+  .editor-preview-side h5, .editor-preview h5, .markdown-body h5, .markdown-reply h5 {
     font-size: 1.2em; }
-  .markdown-body h6, .markdown-reply h6 {
+  .editor-preview-side h6, .editor-preview h6, .markdown-body h6, .markdown-reply h6 {
     font-size: 1.1em;
     color: #777; }
-  .markdown-body p,
+  .editor-preview-side p,
+  .editor-preview-side blockquote,
+  .editor-preview-side ul,
+  .editor-preview-side ol,
+  .editor-preview-side dl,
+  .editor-preview-side table,
+  .editor-preview-side pre, .editor-preview p,
+  .editor-preview blockquote,
+  .editor-preview ul,
+  .editor-preview ol,
+  .editor-preview dl,
+  .editor-preview table,
+  .editor-preview pre, .markdown-body p,
   .markdown-body blockquote,
   .markdown-body ul,
   .markdown-body ol,
@@ -172,82 +218,88 @@
     margin-top: 0;
     margin-bottom: 10px;
     line-height: 30px; }
-  .markdown-body hr, .markdown-reply hr {
+  .editor-preview-side hr, .editor-preview hr, .markdown-body hr, .markdown-reply hr {
     height: 4px;
     padding: 0;
     margin: 16px 0;
     background-color: #e7e7e7;
     border: 0 none; }
-  .markdown-body ul,
+  .editor-preview-side ul,
+  .editor-preview-side ol, .editor-preview ul,
+  .editor-preview ol, .markdown-body ul,
   .markdown-body ol, .markdown-reply ul,
   .markdown-reply ol {
     padding-left: 2em; }
-  .markdown-body ol ol,
+  .editor-preview-side ol ol,
+  .editor-preview-side ol ul, .editor-preview ol ol,
+  .editor-preview ol ul, .markdown-body ol ol,
   .markdown-body ol ul, .markdown-reply ol ol,
   .markdown-reply ol ul {
     margin-top: 0;
     margin-bottom: 0; }
-  .markdown-body li > p, .markdown-reply li > p {
+  .editor-preview-side li > p, .editor-preview li > p, .markdown-body li > p, .markdown-reply li > p {
     margin-top: 16px; }
-  .markdown-body dl, .markdown-reply dl {
+  .editor-preview-side dl, .editor-preview dl, .markdown-body dl, .markdown-reply dl {
     padding: 0; }
-  .markdown-body dl dt, .markdown-reply dl dt {
+  .editor-preview-side dl dt, .editor-preview dl dt, .markdown-body dl dt, .markdown-reply dl dt {
     padding: 0;
     margin-top: 16px;
     font-size: 1em;
     font-style: italic;
     font-weight: bold; }
-  .markdown-body dl dd, .markdown-reply dl dd {
+  .editor-preview-side dl dd, .editor-preview dl dd, .markdown-body dl dd, .markdown-reply dl dd {
     padding: 0 16px;
     margin-bottom: 16px; }
-  .markdown-body blockquote, .markdown-reply blockquote {
+  .editor-preview-side blockquote, .editor-preview blockquote, .markdown-body blockquote, .markdown-reply blockquote {
     font-size: inherit;
     padding: 0 15px;
     color: #777;
     border-left: 4px solid #ddd; }
-  .markdown-body blockquote > :first-child, .markdown-reply blockquote > :first-child {
+  .editor-preview-side blockquote > :first-child, .editor-preview blockquote > :first-child, .markdown-body blockquote > :first-child, .markdown-reply blockquote > :first-child {
     margin-top: 20; }
-  .markdown-body blockquote > :last-child, .markdown-reply blockquote > :last-child {
+  .editor-preview-side blockquote > :last-child, .editor-preview blockquote > :last-child, .markdown-body blockquote > :last-child, .markdown-reply blockquote > :last-child {
     margin-bottom: 20; }
-  .markdown-body blockquote, .markdown-reply blockquote {
+  .editor-preview-side blockquote, .editor-preview blockquote, .markdown-body blockquote, .markdown-reply blockquote {
     margin: 20px 0 !important;
     background-color: #f7f7f7;
     padding: 6px 8px; }
-  .markdown-body table, .markdown-reply table {
+  .editor-preview-side table, .editor-preview table, .markdown-body table, .markdown-reply table {
     display: block;
     width: 100%;
     overflow: auto;
     margin: 25px 0; }
-  .markdown-body table th, .markdown-reply table th {
+  .editor-preview-side table th, .editor-preview table th, .markdown-body table th, .markdown-reply table th {
     font-weight: bold; }
-  .markdown-body table th,
+  .editor-preview-side table th,
+  .editor-preview-side table td, .editor-preview table th,
+  .editor-preview table td, .markdown-body table th,
   .markdown-body table td, .markdown-reply table th,
   .markdown-reply table td {
     padding: 6px 13px;
     border: 1px solid #ddd; }
-  .markdown-body table tr, .markdown-reply table tr {
+  .editor-preview-side table tr, .editor-preview table tr, .markdown-body table tr, .markdown-reply table tr {
     background-color: #fff;
     border-top: 1px solid #ccc; }
-  .markdown-body table tr:nth-child(2n), .markdown-reply table tr:nth-child(2n) {
+  .editor-preview-side table tr:nth-child(2n), .editor-preview table tr:nth-child(2n), .markdown-body table tr:nth-child(2n), .markdown-reply table tr:nth-child(2n) {
     background-color: #f8f8f8; }
-  .markdown-body img, .markdown-reply img {
+  .editor-preview-side img, .editor-preview img, .markdown-body img, .markdown-reply img {
     max-width: 100%;
     box-sizing: border-box; }
-  .markdown-body img:not(.emoji), .markdown-reply img:not(.emoji) {
+  .editor-preview-side img:not(.emoji), .editor-preview img:not(.emoji), .markdown-body img:not(.emoji), .markdown-reply img:not(.emoji) {
     border: 1px solid #ddd;
     box-shadow: 0 0 30px #ccc;
     -moz-box-shadow: 0 0 30px #ccc;
     -webkit-box-shadow: 0 0 30px #ccc;
     margin-bottom: 30px;
     margin-top: 10px; }
-  .markdown-body img.rm-style, .markdown-reply img.rm-style {
+  .editor-preview-side img.rm-style, .editor-preview img.rm-style, .markdown-body img.rm-style, .markdown-reply img.rm-style {
     border: none;
     box-shadow: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     margin-bottom: 0px;
     margin-top: 0px; }
-  .markdown-body code, .markdown-reply code {
+  .editor-preview-side code, .editor-preview code, .markdown-body code, .markdown-reply code {
     background: rgba(90, 87, 87, 0);
     margin: 5px;
     color: #858080;
@@ -258,12 +310,14 @@
     overflow-x: auto;
     font-size: .9em;
     padding: 1px 2px 1px; }
-  .markdown-body code:before,
+  .editor-preview-side code:before,
+  .editor-preview-side code:after, .editor-preview code:before,
+  .editor-preview code:after, .markdown-body code:before,
   .markdown-body code:after, .markdown-reply code:before,
   .markdown-reply code:after {
     letter-spacing: -0.2em;
     content: "\00a0"; }
-  .markdown-body pre > code, .markdown-reply pre > code {
+  .editor-preview-side pre > code, .editor-preview pre > code, .markdown-body pre > code, .markdown-reply pre > code {
     padding: 0;
     margin: 0;
     font-size: 100%;
@@ -271,9 +325,11 @@
     background: transparent;
     border: 0;
     color: #E6E8D3; }
-  .markdown-body .highlight, .markdown-reply .highlight {
+  .editor-preview-side .highlight, .editor-preview .highlight, .markdown-body .highlight, .markdown-reply .highlight {
     margin-bottom: 16px; }
-  .markdown-body .highlight pre,
+  .editor-preview-side .highlight pre,
+  .editor-preview-side pre, .editor-preview .highlight pre,
+  .editor-preview pre, .markdown-body .highlight pre,
   .markdown-body pre, .markdown-reply .highlight pre,
   .markdown-reply pre {
     padding: 14px;
@@ -283,11 +339,11 @@
     border-radius: 3px;
     color: #fff;
     border: none; }
-  .markdown-body .highlight pre, .markdown-reply .highlight pre {
+  .editor-preview-side .highlight pre, .editor-preview .highlight pre, .markdown-body .highlight pre, .markdown-reply .highlight pre {
     margin-bottom: 0; }
-  .markdown-body pre, .markdown-reply pre {
+  .editor-preview-side pre, .editor-preview pre, .markdown-body pre, .markdown-reply pre {
     word-wrap: normal; }
-  .markdown-body pre code, .markdown-reply pre code {
+  .editor-preview-side pre code, .editor-preview pre code, .markdown-body pre code, .markdown-reply pre code {
     display: block;
     padding: 0;
     margin: 0;
@@ -296,151 +352,153 @@
     word-wrap: normal;
     background-color: transparent;
     border: 0; }
-  .markdown-body pre code:before,
+  .editor-preview-side pre code:before,
+  .editor-preview-side pre code:after, .editor-preview pre code:before,
+  .editor-preview pre code:after, .markdown-body pre code:before,
   .markdown-body pre code:after, .markdown-reply pre code:before,
   .markdown-reply pre code:after {
     content: normal; }
-  .markdown-body .highlight, .markdown-reply .highlight {
+  .editor-preview-side .highlight, .editor-preview .highlight, .markdown-body .highlight, .markdown-reply .highlight {
     background: #ffffff; }
-  .markdown-body .highlight .c, .markdown-reply .highlight .c {
+  .editor-preview-side .highlight .c, .editor-preview .highlight .c, .markdown-body .highlight .c, .markdown-reply .highlight .c {
     color: #999988;
     font-style: italic; }
-  .markdown-body .highlight .err, .markdown-reply .highlight .err {
+  .editor-preview-side .highlight .err, .editor-preview .highlight .err, .markdown-body .highlight .err, .markdown-reply .highlight .err {
     color: #a61717;
     background-color: #e3d2d2; }
-  .markdown-body .highlight .k, .markdown-reply .highlight .k {
+  .editor-preview-side .highlight .k, .editor-preview .highlight .k, .markdown-body .highlight .k, .markdown-reply .highlight .k {
     font-weight: bold; }
-  .markdown-body .highlight .o, .markdown-reply .highlight .o {
+  .editor-preview-side .highlight .o, .editor-preview .highlight .o, .markdown-body .highlight .o, .markdown-reply .highlight .o {
     font-weight: bold; }
-  .markdown-body .highlight .cm, .markdown-reply .highlight .cm {
+  .editor-preview-side .highlight .cm, .editor-preview .highlight .cm, .markdown-body .highlight .cm, .markdown-reply .highlight .cm {
     color: #999988;
     font-style: italic; }
-  .markdown-body .highlight .cp, .markdown-reply .highlight .cp {
+  .editor-preview-side .highlight .cp, .editor-preview .highlight .cp, .markdown-body .highlight .cp, .markdown-reply .highlight .cp {
     color: #999999;
     font-weight: bold; }
-  .markdown-body .highlight .c1, .markdown-reply .highlight .c1 {
+  .editor-preview-side .highlight .c1, .editor-preview .highlight .c1, .markdown-body .highlight .c1, .markdown-reply .highlight .c1 {
     color: #999988;
     font-style: italic; }
-  .markdown-body .highlight .cs, .markdown-reply .highlight .cs {
+  .editor-preview-side .highlight .cs, .editor-preview .highlight .cs, .markdown-body .highlight .cs, .markdown-reply .highlight .cs {
     color: #999999;
     font-weight: bold;
     font-style: italic; }
-  .markdown-body .highlight .gd, .markdown-reply .highlight .gd {
+  .editor-preview-side .highlight .gd, .editor-preview .highlight .gd, .markdown-body .highlight .gd, .markdown-reply .highlight .gd {
     color: #000000;
     background-color: #ffdddd; }
-  .markdown-body .highlight .gd .x, .markdown-reply .highlight .gd .x {
+  .editor-preview-side .highlight .gd .x, .editor-preview .highlight .gd .x, .markdown-body .highlight .gd .x, .markdown-reply .highlight .gd .x {
     color: #000000;
     background-color: #ffaaaa; }
-  .markdown-body .highlight .ge, .markdown-reply .highlight .ge {
+  .editor-preview-side .highlight .ge, .editor-preview .highlight .ge, .markdown-body .highlight .ge, .markdown-reply .highlight .ge {
     font-style: italic; }
-  .markdown-body .highlight .gr, .markdown-reply .highlight .gr {
+  .editor-preview-side .highlight .gr, .editor-preview .highlight .gr, .markdown-body .highlight .gr, .markdown-reply .highlight .gr {
     color: #aa0000; }
-  .markdown-body .highlight .gh, .markdown-reply .highlight .gh {
+  .editor-preview-side .highlight .gh, .editor-preview .highlight .gh, .markdown-body .highlight .gh, .markdown-reply .highlight .gh {
     color: #999999; }
-  .markdown-body .highlight .gi, .markdown-reply .highlight .gi {
+  .editor-preview-side .highlight .gi, .editor-preview .highlight .gi, .markdown-body .highlight .gi, .markdown-reply .highlight .gi {
     color: #000000;
     background-color: #ddffdd; }
-  .markdown-body .highlight .gi .x, .markdown-reply .highlight .gi .x {
+  .editor-preview-side .highlight .gi .x, .editor-preview .highlight .gi .x, .markdown-body .highlight .gi .x, .markdown-reply .highlight .gi .x {
     color: #000000;
     background-color: #aaffaa; }
-  .markdown-body .highlight .go, .markdown-reply .highlight .go {
+  .editor-preview-side .highlight .go, .editor-preview .highlight .go, .markdown-body .highlight .go, .markdown-reply .highlight .go {
     color: #888888; }
-  .markdown-body .highlight .gp, .markdown-reply .highlight .gp {
+  .editor-preview-side .highlight .gp, .editor-preview .highlight .gp, .markdown-body .highlight .gp, .markdown-reply .highlight .gp {
     color: #555555; }
-  .markdown-body .highlight .gs, .markdown-reply .highlight .gs {
+  .editor-preview-side .highlight .gs, .editor-preview .highlight .gs, .markdown-body .highlight .gs, .markdown-reply .highlight .gs {
     font-weight: bold; }
-  .markdown-body .highlight .gu, .markdown-reply .highlight .gu {
+  .editor-preview-side .highlight .gu, .editor-preview .highlight .gu, .markdown-body .highlight .gu, .markdown-reply .highlight .gu {
     color: #800080;
     font-weight: bold; }
-  .markdown-body .highlight .gt, .markdown-reply .highlight .gt {
+  .editor-preview-side .highlight .gt, .editor-preview .highlight .gt, .markdown-body .highlight .gt, .markdown-reply .highlight .gt {
     color: #aa0000; }
-  .markdown-body .highlight .kc, .markdown-reply .highlight .kc {
+  .editor-preview-side .highlight .kc, .editor-preview .highlight .kc, .markdown-body .highlight .kc, .markdown-reply .highlight .kc {
     font-weight: bold; }
-  .markdown-body .highlight .kd, .markdown-reply .highlight .kd {
+  .editor-preview-side .highlight .kd, .editor-preview .highlight .kd, .markdown-body .highlight .kd, .markdown-reply .highlight .kd {
     font-weight: bold; }
-  .markdown-body .highlight .kn, .markdown-reply .highlight .kn {
+  .editor-preview-side .highlight .kn, .editor-preview .highlight .kn, .markdown-body .highlight .kn, .markdown-reply .highlight .kn {
     font-weight: bold; }
-  .markdown-body .highlight .kp, .markdown-reply .highlight .kp {
+  .editor-preview-side .highlight .kp, .editor-preview .highlight .kp, .markdown-body .highlight .kp, .markdown-reply .highlight .kp {
     font-weight: bold; }
-  .markdown-body .highlight .kr, .markdown-reply .highlight .kr {
+  .editor-preview-side .highlight .kr, .editor-preview .highlight .kr, .markdown-body .highlight .kr, .markdown-reply .highlight .kr {
     font-weight: bold; }
-  .markdown-body .highlight .kt, .markdown-reply .highlight .kt {
+  .editor-preview-side .highlight .kt, .editor-preview .highlight .kt, .markdown-body .highlight .kt, .markdown-reply .highlight .kt {
     color: #445588;
     font-weight: bold; }
-  .markdown-body .highlight .m, .markdown-reply .highlight .m {
+  .editor-preview-side .highlight .m, .editor-preview .highlight .m, .markdown-body .highlight .m, .markdown-reply .highlight .m {
     color: #009999; }
-  .markdown-body .highlight .s, .markdown-reply .highlight .s {
+  .editor-preview-side .highlight .s, .editor-preview .highlight .s, .markdown-body .highlight .s, .markdown-reply .highlight .s {
     color: #dd1144; }
-  .markdown-body .highlight .n, .markdown-reply .highlight .n {
+  .editor-preview-side .highlight .n, .editor-preview .highlight .n, .markdown-body .highlight .n, .markdown-reply .highlight .n {
     color: #333333; }
-  .markdown-body .highlight .na, .markdown-reply .highlight .na {
+  .editor-preview-side .highlight .na, .editor-preview .highlight .na, .markdown-body .highlight .na, .markdown-reply .highlight .na {
     color: teal; }
-  .markdown-body .highlight .nb, .markdown-reply .highlight .nb {
+  .editor-preview-side .highlight .nb, .editor-preview .highlight .nb, .markdown-body .highlight .nb, .markdown-reply .highlight .nb {
     color: #0086b3; }
-  .markdown-body .highlight .nc, .markdown-reply .highlight .nc {
+  .editor-preview-side .highlight .nc, .editor-preview .highlight .nc, .markdown-body .highlight .nc, .markdown-reply .highlight .nc {
     color: #445588;
     font-weight: bold; }
-  .markdown-body .highlight .no, .markdown-reply .highlight .no {
+  .editor-preview-side .highlight .no, .editor-preview .highlight .no, .markdown-body .highlight .no, .markdown-reply .highlight .no {
     color: teal; }
-  .markdown-body .highlight .ni, .markdown-reply .highlight .ni {
+  .editor-preview-side .highlight .ni, .editor-preview .highlight .ni, .markdown-body .highlight .ni, .markdown-reply .highlight .ni {
     color: purple; }
-  .markdown-body .highlight .ne, .markdown-reply .highlight .ne {
+  .editor-preview-side .highlight .ne, .editor-preview .highlight .ne, .markdown-body .highlight .ne, .markdown-reply .highlight .ne {
     color: #990000;
     font-weight: bold; }
-  .markdown-body .highlight .nf, .markdown-reply .highlight .nf {
+  .editor-preview-side .highlight .nf, .editor-preview .highlight .nf, .markdown-body .highlight .nf, .markdown-reply .highlight .nf {
     color: #990000;
     font-weight: bold; }
-  .markdown-body .highlight .nn, .markdown-reply .highlight .nn {
+  .editor-preview-side .highlight .nn, .editor-preview .highlight .nn, .markdown-body .highlight .nn, .markdown-reply .highlight .nn {
     color: #555555; }
-  .markdown-body .highlight .nt, .markdown-reply .highlight .nt {
+  .editor-preview-side .highlight .nt, .editor-preview .highlight .nt, .markdown-body .highlight .nt, .markdown-reply .highlight .nt {
     color: navy; }
-  .markdown-body .highlight .nv, .markdown-reply .highlight .nv {
+  .editor-preview-side .highlight .nv, .editor-preview .highlight .nv, .markdown-body .highlight .nv, .markdown-reply .highlight .nv {
     color: teal; }
-  .markdown-body .highlight .ow, .markdown-reply .highlight .ow {
+  .editor-preview-side .highlight .ow, .editor-preview .highlight .ow, .markdown-body .highlight .ow, .markdown-reply .highlight .ow {
     font-weight: bold; }
-  .markdown-body .highlight .w, .markdown-reply .highlight .w {
+  .editor-preview-side .highlight .w, .editor-preview .highlight .w, .markdown-body .highlight .w, .markdown-reply .highlight .w {
     color: #bbbbbb; }
-  .markdown-body .highlight .mf, .markdown-reply .highlight .mf {
+  .editor-preview-side .highlight .mf, .editor-preview .highlight .mf, .markdown-body .highlight .mf, .markdown-reply .highlight .mf {
     color: #009999; }
-  .markdown-body .highlight .mh, .markdown-reply .highlight .mh {
+  .editor-preview-side .highlight .mh, .editor-preview .highlight .mh, .markdown-body .highlight .mh, .markdown-reply .highlight .mh {
     color: #009999; }
-  .markdown-body .highlight .mi, .markdown-reply .highlight .mi {
+  .editor-preview-side .highlight .mi, .editor-preview .highlight .mi, .markdown-body .highlight .mi, .markdown-reply .highlight .mi {
     color: #009999; }
-  .markdown-body .highlight .mo, .markdown-reply .highlight .mo {
+  .editor-preview-side .highlight .mo, .editor-preview .highlight .mo, .markdown-body .highlight .mo, .markdown-reply .highlight .mo {
     color: #009999; }
-  .markdown-body .highlight .sb, .markdown-reply .highlight .sb {
+  .editor-preview-side .highlight .sb, .editor-preview .highlight .sb, .markdown-body .highlight .sb, .markdown-reply .highlight .sb {
     color: #dd1144; }
-  .markdown-body .highlight .sc, .markdown-reply .highlight .sc {
+  .editor-preview-side .highlight .sc, .editor-preview .highlight .sc, .markdown-body .highlight .sc, .markdown-reply .highlight .sc {
     color: #dd1144; }
-  .markdown-body .highlight .sd, .markdown-reply .highlight .sd {
+  .editor-preview-side .highlight .sd, .editor-preview .highlight .sd, .markdown-body .highlight .sd, .markdown-reply .highlight .sd {
     color: #dd1144; }
-  .markdown-body .highlight .s2, .markdown-reply .highlight .s2 {
+  .editor-preview-side .highlight .s2, .editor-preview .highlight .s2, .markdown-body .highlight .s2, .markdown-reply .highlight .s2 {
     color: #dd1144; }
-  .markdown-body .highlight .se, .markdown-reply .highlight .se {
+  .editor-preview-side .highlight .se, .editor-preview .highlight .se, .markdown-body .highlight .se, .markdown-reply .highlight .se {
     color: #dd1144; }
-  .markdown-body .highlight .sh, .markdown-reply .highlight .sh {
+  .editor-preview-side .highlight .sh, .editor-preview .highlight .sh, .markdown-body .highlight .sh, .markdown-reply .highlight .sh {
     color: #dd1144; }
-  .markdown-body .highlight .si, .markdown-reply .highlight .si {
+  .editor-preview-side .highlight .si, .editor-preview .highlight .si, .markdown-body .highlight .si, .markdown-reply .highlight .si {
     color: #dd1144; }
-  .markdown-body .highlight .sx, .markdown-reply .highlight .sx {
+  .editor-preview-side .highlight .sx, .editor-preview .highlight .sx, .markdown-body .highlight .sx, .markdown-reply .highlight .sx {
     color: #dd1144; }
-  .markdown-body .highlight .sr, .markdown-reply .highlight .sr {
+  .editor-preview-side .highlight .sr, .editor-preview .highlight .sr, .markdown-body .highlight .sr, .markdown-reply .highlight .sr {
     color: #009926; }
-  .markdown-body .highlight .s1, .markdown-reply .highlight .s1 {
+  .editor-preview-side .highlight .s1, .editor-preview .highlight .s1, .markdown-body .highlight .s1, .markdown-reply .highlight .s1 {
     color: #dd1144; }
-  .markdown-body .highlight .ss, .markdown-reply .highlight .ss {
+  .editor-preview-side .highlight .ss, .editor-preview .highlight .ss, .markdown-body .highlight .ss, .markdown-reply .highlight .ss {
     color: #990073; }
-  .markdown-body .highlight .bp, .markdown-reply .highlight .bp {
+  .editor-preview-side .highlight .bp, .editor-preview .highlight .bp, .markdown-body .highlight .bp, .markdown-reply .highlight .bp {
     color: #999999; }
-  .markdown-body .highlight .vc, .markdown-reply .highlight .vc {
+  .editor-preview-side .highlight .vc, .editor-preview .highlight .vc, .markdown-body .highlight .vc, .markdown-reply .highlight .vc {
     color: teal; }
-  .markdown-body .highlight .vg, .markdown-reply .highlight .vg {
+  .editor-preview-side .highlight .vg, .editor-preview .highlight .vg, .markdown-body .highlight .vg, .markdown-reply .highlight .vg {
     color: teal; }
-  .markdown-body .highlight .vi, .markdown-reply .highlight .vi {
+  .editor-preview-side .highlight .vi, .editor-preview .highlight .vi, .markdown-body .highlight .vi, .markdown-reply .highlight .vi {
     color: teal; }
-  .markdown-body .highlight .il, .markdown-reply .highlight .il {
+  .editor-preview-side .highlight .il, .editor-preview .highlight .il, .markdown-body .highlight .il, .markdown-reply .highlight .il {
     color: #009999; }
-  .markdown-body .highlight .gc, .markdown-reply .highlight .gc {
+  .editor-preview-side .highlight .gc, .editor-preview .highlight .gc, .markdown-body .highlight .gc, .markdown-reply .highlight .gc {
     color: #999;
     background-color: #EAF2F5; }
 
@@ -13569,5 +13627,14 @@ a.anchorific {
   font-size: 15px;
   padding-top: 18px;
   padding-left: 8px; }
+
+.editor-toolbar {
+  background-color: #fff; }
+
+.reply-box .CodeMirror, .reply-box .CodeMirror-scroll {
+  min-height: 500px; }
+
+.reply-box .CodeMirror pre {
+  font-size: 14px; }
 
 /*# sourceMappingURL=styles.css.map */

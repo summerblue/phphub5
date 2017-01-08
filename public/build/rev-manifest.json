@@ -1,6 +1,8 @@
 {
   "assets/css/api.css": "assets/css/api-b4075dade3.css",
-  "assets/css/styles.css": "assets/css/styles-0038f75ef7.css",
+  "assets/css/editor.css": "assets/css/editor-03a7115913.css",
+  "assets/css/styles.css": "assets/css/styles-0943258daf.css",
   "assets/js/api.js": "assets/js/api-7e40a02c6c.js",
+  "assets/js/editor.js": "assets/js/editor-7c1634df3a.js",
   "assets/js/scripts.js": "assets/js/scripts-42a302d01e.js"
 }

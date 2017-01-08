@@ -26,7 +26,7 @@
       @endif
         {!! csrf_field() !!}
         <div class="form-group">
-            <select class="selectpicker form-control" name="category_id" id="category-select">
+            <select class="selectpicker form-control" name="category_id" id="category-select" required="require">
 
               <option value="" disabled {{ count($category) != 0 ?: 'selected' }}>{{ lang('Pick a category') }}</option>
 
@@ -49,13 +49,13 @@
         @endforeach
 
         <div class="form-group">
-            <input class="form-control" id="topic-title" placeholder="{{ lang('Please write down a topic') }}" name="title" type="text" value="{{ !isset($topic) ? '' : $topic->title }}">
+            <input class="form-control" id="topic-title" placeholder="{{ lang('Please write down a topic') }}" name="title" type="text" value="{{ !isset($topic) ? '' : $topic->title }}" required="require">
         </div>
 
         @include('topics.partials.composing_help_block')
 
         <div class="form-group">
-            <textarea class="form-control" rows="20" style="overflow:hidden" id="reply_content" placeholder="{{ lang('Please using markdown.') }}" name="body" cols="50">{{ !isset($topic) ? '' : $topic->body_original }}</textarea>
+            <textarea required="require" class="form-control" rows="20" style="overflow:hidden" id="reply_content" placeholder="{{ lang('Please using markdown.') }}" name="body" cols="50">{{ !isset($topic) ? '' : $topic->body_original }}</textarea>
         </div>
 
         <div class="form-group status-post-submit">
@@ -104,9 +104,11 @@
 
 @stop
 
-
-
 @section('scripts')
+
+<link rel="stylesheet" href="{{ cdn(elixir('assets/css/editor.css')) }}">
+<script src="{{ cdn(elixir('assets/js/editor.js')) }}"></script>
+
 <script type="text/javascript">
 
     $(document).ready(function()
@@ -116,7 +118,43 @@
             $('.category-hint').hide();
             $('.category-'+current_cid).fadeIn();
         });
+
+        var simplemde = new SimpleMDE({
+            spellChecker: false,
+            autosave: {
+                enabled: true,
+                delay: 1,
+                unique_id: "topic_content"
+            },
+            forceSync: true
+        });
+
+        inlineAttachment.editors.codemirror4.attach(simplemde.codemirror, {
+            uploadUrl: Config.routes.upload_image,
+            extraParams: {
+              '_token': Config.token,
+            },
+            onFileUploadResponse: function(xhr) {
+                var result = JSON.parse(xhr.responseText),
+                filename = result[this.settings.jsonFieldName];
+
+                if (result && filename) {
+                    var newValue;
+                    if (typeof this.settings.urlText === 'function') {
+                        newValue = this.settings.urlText.call(this, filename, result);
+                    } else {
+                        newValue = this.settings.urlText.replace(this.filenameTag, filename);
+                    }
+                    var text = this.editor.getValue().replace(this.lastValue, newValue);
+                    this.editor.setValue(text);
+                    this.settings.onFileUploaded.call(this, filename);
+                }
+                return false;
+            }
+        });
     });
+
+
 
 </script>
 @stop
