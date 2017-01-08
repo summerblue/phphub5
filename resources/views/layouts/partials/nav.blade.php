@@ -1,4 +1,4 @@
-<div role="navigation" class="navbar navbar-default navbar-static-top topnav">
+<div role="navigation" class="navbar navbar-default topnav">
   <div class="container">
     <div class="navbar-header">
 

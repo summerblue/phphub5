@@ -33,7 +33,7 @@
         <i class="fa fa-plus"></i>
       </a>
 
-      <a id="topic-edit-button" href="{{ route('topics.edit', [$topic->id]) }}" data-content="{{ lang('Edit') }}" class="admin  popover-with-html">
+      <a id="topic-edit-button" href="{{ route('topics.edit', [$topic->id]) }}" data-content="{{ lang('Edit') }}" class="admin  popover-with-html no-pjax">
         <i class="fa fa-pencil-square-o"></i>
       </a>
     @endif

@@ -2097,3 +2097,16 @@ a.anchorific {
     padding-top: 18px;
     padding-left: 8px;
 }
+
+.editor-toolbar {
+    background-color: #fff;
+}
+
+.reply-box {
+    .CodeMirror, .CodeMirror-scroll {
+        min-height: 500px;
+    }
+    .CodeMirror pre {
+        font-size: 14px;
+    }
+}

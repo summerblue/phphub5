@@ -73,7 +73,7 @@ return [
     'Edit' => '编辑',
     'Preview' => '预览',
     'No content.' => '没有内容',
-    'Please using markdown.' => '请使用 Markdown 格式书写 ;-)',
+    'Please using markdown.' => '请使用 Markdown 格式书写 ;-)，代码片段黏贴时请注意使用高亮语法。',
     'Current Category' => '当前分类',
     'Pick a category' => '请选择分类',
     'Please write down a topic' => '请填写标题',
