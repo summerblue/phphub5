@@ -39,7 +39,7 @@
         <ul class="nav navbar-nav github-login" >
           @if (Auth::check())
               <li>
-                  <a href="{{ isset($category) ? URL::route('topics.create', ['category_id' => $category->id]) : URL::route('topics.create') }}" data-placement="bottom" class="popover-with-html" data-content="添加主题">
+                  <a href="{{ isset($category) ? URL::route('topics.create', ['category_id' => $category->id]) : URL::route('topics.create') }}" data-placement="bottom" class="popover-with-html no-pjax" data-content="添加主题">
                       <i class="fa fa-plus text-md"></i>
                   </a>
               </li>
