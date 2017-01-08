@@ -124,7 +124,7 @@
             autosave: {
                 enabled: true,
                 delay: 1,
-                unique_id: "topic_content"
+                unique_id: "topic_content{{ isset($topic) ? $topic->id : '' }}"
             },
             forceSync: true
         });
