@@ -98,3 +98,8 @@ function is_request_from_api()
 {
     return $_SERVER['SERVER_NAME'] == env('API_DOMAIN');
 }
+
+function route_class()
+{
+    return str_replace('.', '-', Route::currentRouteName());
+}

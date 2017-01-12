@@ -62,8 +62,6 @@
             <input class="btn btn-primary" id="topic-create-submit" type="submit" value="{{ lang('Publish') }}">
         </div>
 
-        <div class="box preview markdown-body" id="preview-box" style="display:none;"></div>
-
     </form>
 
     </div>

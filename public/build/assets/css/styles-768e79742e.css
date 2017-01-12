@@ -12843,9 +12843,6 @@ div#preview-box {
 .alert {
   box-shadow: 0px 0px 0px 1px rgba(39, 41, 43, 0.15) inset, 0px 0px 0px 0px transparent; }
 
-#reply_notice {
-  background-color: #f9fff3; }
-
 .topics-index .topic-list .media-heading {
   font-size: 15px; }
 
@@ -13636,5 +13633,11 @@ a.anchorific {
 
 .reply-box .CodeMirror pre {
   font-size: 14px; }
+
+.blogs-create_post #reply_notice {
+  margin-bottom: 15px; }
+
+.blogs-create_post .CodeMirror, .blogs-create_post .CodeMirror-scroll {
+  min-height: 500px; }
 
 /*# sourceMappingURL=styles.css.map */
