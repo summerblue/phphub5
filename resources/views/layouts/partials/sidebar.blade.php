@@ -49,19 +49,6 @@
   </div>
   @endif
 
-@if (Route::currentRouteName() == 'topics.index')
-
-  <div class="panel panel-default corner-radius">
-    <div class="panel-body text-center">
-      <div class="btn-group">
-        <a href="{{ URL::route('topics.create') }}" class="btn btn-primary btn-lg btn-inverted">
-          <i class="fa fa-paint-brush" aria-hidden="true"></i> {{ lang('New Topic') }}
-        </a>
-      </div>
-    </div>
-  </div>
-@endif
-
 <div class="panel panel-default corner-radius" style="
     text-align: center;
     background-color: transparent;

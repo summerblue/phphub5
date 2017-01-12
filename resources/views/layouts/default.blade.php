@@ -56,7 +56,7 @@ ______                            _              _                              
 		<meta http-equiv="x-pjax-version" content="{{ elixir('assets/css/styles.css') }}">
 
 	</head>
-	<body id="body">
+	<body id="body" class="{{ route_class() }}">
 
 		<div id="wrap">
 

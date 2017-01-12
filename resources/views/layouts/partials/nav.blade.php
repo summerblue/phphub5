@@ -39,9 +39,22 @@
         <ul class="nav navbar-nav github-login" >
           @if (Auth::check())
               <li>
-                  <a href="{{ isset($category) ? URL::route('topics.create', ['category_id' => $category->id]) : URL::route('topics.create') }}" data-placement="bottom" class="popover-with-html no-pjax" data-content="添加主题">
+                  <a href="#" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                       <i class="fa fa-plus text-md"></i>
                   </a>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <li>
+                            <a class="button no-pjax" href="{{ route('blogs.create_post') }}" >
+                                <i class="fa fa-paint-brush text-md"></i> 创作文章
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="button no-pjax" href="{{ isset($category) ? URL::route('topics.create', ['category_id' => $category->id]) : URL::route('topics.create') }}">
+                                <i class="fa fa-comment text-md"></i> 发起讨论
+                            </a>
+                        </li>
+                    </ul>
               </li>
 
               <li>

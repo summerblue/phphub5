@@ -120,3 +120,21 @@ Route::get('/github-card', 'UsersController@githubCard')->name('users.github-car
 Route::group(['middleware' => ['auth', 'admin_auth']], function () {
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 });
+
+# ------------------ Blogs ------------------------
+
+Route::get('/blogs', 'TopicsController@index')->name('blogs.index');
+Route::get('/blogs/create', 'TopicsController@create')->name('blogs.create')->middleware('verified_email');
+Route::post('/blogs', 'TopicsController@store')->name('blogs.store')->middleware('verified_email');
+Route::get('/blogs/{id}/edit', 'TopicsController@edit')->name('blogs.edit');
+Route::patch('/blogs/{id}', 'TopicsController@update')->name('blogs.update');
+
+Route::get("{name}", "BlogController@show")->name('blogs.show');
+
+// Article
+Route::get("/blogs/write", "BlogController@createPost")->name('blogs.create_post');
+Route::post("{name}", "BlogController@storePost")->name('blogs.store_post');
+Route::get("{name}/{id}/edit", "BlogController@editPost")->name('blogs.edit_post');
+Route::patch('{name}/{id}', 'BlogController@updatePost')->name('blogs.update_post');
+
+Route::get('{name}/{id}', 'BlogController@showPost')->name('blogs.show_post');
