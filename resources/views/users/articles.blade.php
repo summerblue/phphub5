@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{{ $user->name }}} {{ lang('Voted Topics') }}_@parent
+{{{ $user->name }}} 的文章列表 | @parent
 @stop
 
 @section('content')
@@ -14,27 +14,29 @@
 
   <div class="main-col col-md-9 left-col">
 
+
   <ol class="breadcrumb">
       <li><a href="{{ route('users.show', $user->id) }}">个人中心</a></li>
-      <li class="active">Ta 赞过的话题</li>
+      <li class="active">Ta 表表的文章（{{ $user->topic_count }}）</li>
   </ol>
-
 
   <div class="panel panel-default">
 
     <div class="panel-body remove-padding-vertically remove-padding-horizontal">
 
       @if (count($topics))
-	      @include('users.partials.topics', ['is_article' => true])
-	      <div class="pull-right add-padding-vertically"> {!! $topics->render() !!} </div>
+	    @include('users.partials.topics', ['is_article' => true])
+	    <div class="pull-right add-padding-vertically">
+	        {!! $topics->render() !!}
+	    </div>
       @else
-        <div class="empty-block">{{ lang('Dont have any votes yet') }}~~</div>
+        <div class="empty-block">{{ lang('Dont have any data Yet') }}~~</div>
       @endif
 
     </div>
 
   </div>
-  </div>
+</div>
 </div>
 
 @stop

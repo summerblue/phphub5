@@ -119,6 +119,8 @@ class ArticlesController extends Controller implements CreatorListener
 
     public function creatorSucceed($topic)
     {
+        Auth::user()->decrement('topic_count', 1);
+        Auth::user()->increment('article_count', 1);
         Flash::success(lang('Operation succeeded.'));
         return redirect()->route('articles.show', array($topic->id));
     }

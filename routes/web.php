@@ -16,6 +16,7 @@ Route::get('/roles/{id}', 'RolesController@show')->name('roles.show');
 
 Route::get('/users/{id}/replies', 'UsersController@replies')->name('users.replies');
 Route::get('/users/{id}/topics', 'UsersController@topics')->name('users.topics');
+Route::get('/users/{id}/articles', 'UsersController@articles')->name('users.articles');
 Route::get('/users/{id}/votes', 'UsersController@votes')->name('users.votes');
 Route::get('/users/{id}/following', 'UsersController@following')->name('users.following');
 Route::get('/users/{id}/followers', 'UsersController@followers')->name('users.followers');

@@ -24,9 +24,9 @@
                 <div class="blog-description">
                     {{ $blog->description ?: $user->name . '的个人专栏' }}
                 </div>
+                <hr>
 
                 @if ($currentUser && ($currentUser->id == $user->id || Entrust::can('manage_users')) )
-                  <hr>
                   <div class="follow-box">
                       <a class="btn btn-primary btn-block" href="{{ route('blogs.edit') }}">
                         <i class="fa fa-edit"></i> 编辑专栏
@@ -94,6 +94,9 @@
                             <label class="info-title">版权声明：</label><i class="fa fa-fw fa-creative-commons"></i>自由转载-非商用-非衍生-保持署名（<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">创意共享3.0许可证</a>）
                         </p>
                     </div>
+                    <br>
+                    <br>
+                    @include('topics.partials.topic_operate', ['manage_topics' => $currentUser ? ($currentUser->can("manage_topics") && $currentUser->roles->count() <= 5) : false])
               </div>
 
           </div>
