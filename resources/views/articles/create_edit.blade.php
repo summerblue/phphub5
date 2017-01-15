@@ -1,39 +1,40 @@
 @extends('layouts.default')
 
 @section('title')
-新建文章 _@parent
+{{ $topic->id > 0 ? '编辑文章' : '新建文章' }} | @parent
 @stop
 
 @section('content')
 
-<div class="users-show  row">
+<div class="blog-pages">
 
-  <div class="col-md-3">
-        @include('users.partials.basicinfo')
-  </div>
+  <div class="col-md-12 panel">
 
-  <div class="main-col col-md-9 left-col">
+      <div class="panel-body">
 
-      <div class="box">
+            <h2 class="text-center"> {{ $topic->id > 0 ? '编辑文章' : '新建文章' }}</h2>
+            <hr>
 
             @include('layouts.partials.errors')
 
-            @if (isset($topic))
-                <form method="POST" action="{{ route('topics.update', $topic->id) }}" accept-charset="UTF-8" id="topic-create-form">
+            @if ($topic->id > 0)
+            <form method="POST" action="{{ route('articles.update', $topic->id) }}" accept-charset="UTF-8" id="topic-create-form">
                 <input name="_method" type="hidden" value="PATCH">
             @else
-                <form method="POST" action="{{ route('topics.store') }}" accept-charset="UTF-8" id="topic-create-form">
+                <form method="POST" action="{{ route('articles.store') }}" accept-charset="UTF-8" id="topic-create-form">
             @endif
                 {!! csrf_field() !!}
 
+                <input name="category_id" type="hidden" value="{{ config('phphub.blog_category_id') }}">
+
                 <div class="form-group">
-                    <input class="form-control" id="topic-title" placeholder="{{ lang('Please write down a topic') }}" name="title" type="text" value="{{ !isset($topic) ? '' : $topic->title }}" required="require">
+                    <input class="form-control" id="topic-title" placeholder="{{ lang('Please write down a topic') }}" name="title" type="text" value="{{ old('title') ?: $topic->title }}" required="require">
                 </div>
 
                 @include('topics.partials.composing_help_block', ['without_box' => false])
 
                 <div class="form-group">
-                  <textarea required="require" class="form-control" rows="20" style="overflow:hidden" id="reply_content" placeholder="{{ lang('Please using markdown.') }}" name="body" cols="50">{{ !isset($topic) ? '' : $topic->body_original }}</textarea>
+                  <textarea required="require" class="form-control" rows="20" style="overflow:hidden" id="reply_content" placeholder="{{ lang('Please using markdown.') }}" name="body" cols="50">{{ old('body') ?: $topic->body_original }}</textarea>
                 </div>
 
                 <div class="form-group status-post-submit">

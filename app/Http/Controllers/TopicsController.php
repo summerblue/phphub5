@@ -42,7 +42,7 @@ class TopicsController extends Controller implements CreatorListener
     public function create(Request $request)
     {
         $category = Category::find($request->input('category_id'));
-        $categories = Category::all();
+        $categories = Category::where('id', '!=', config('phphub.blog_category_id'))->get();
 
         return view('topics.create_edit', compact('categories', 'category'));
     }
@@ -89,7 +89,7 @@ class TopicsController extends Controller implements CreatorListener
     {
         $topic = Topic::findOrFail($id);
         $this->authorize('update', $topic);
-        $categories = Category::all();
+        $categories = Category::where('id', '!=', config('phphub.blog_category_id'))->get();
         $category = $topic->category;
 
         $topic->body = $topic->body_original;

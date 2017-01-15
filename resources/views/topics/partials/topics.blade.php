@@ -7,7 +7,6 @@
 
          <li class="list-group-item ">
 
-
              <a class="reply_count_area hidden-xs pull-right" href="{{ route('topics.show', [$topic->id]) }}">
                  <div class="count_set">
                      <span class="count_of_votes" title="投票数">
@@ -48,9 +47,16 @@
                     <span class="hidden-xs label label-{{ ($topic->is_excellent == 'yes' && Route::currentRouteName() != 'home') ? 'success' : 'default' }}">{{{ $topic->category->name }}}</span>
                 @endif
 
-                <a href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
-                    {{{ $topic->title }}}
-                </a>
+                @if ($topic->category->id == config('phphub.blog_category_id'))
+                    <a href="{{ route('articles.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
+                        {{{ $topic->title }}}
+                    </a>
+                @else
+                    <a href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
+                        {{{ $topic->title }}}
+                    </a>
+                @endif
+
               </div>
 
             </div>

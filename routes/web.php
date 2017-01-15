@@ -123,18 +123,18 @@ Route::group(['middleware' => ['auth', 'admin_auth']], function () {
 
 # ------------------ Blogs ------------------------
 
-Route::get('/blogs', 'TopicsController@index')->name('blogs.index');
-Route::get('/blogs/create', 'TopicsController@create')->name('blogs.create')->middleware('verified_email');
-Route::post('/blogs', 'TopicsController@store')->name('blogs.store')->middleware('verified_email');
-Route::get('/blogs/{id}/edit', 'TopicsController@edit')->name('blogs.edit');
-Route::patch('/blogs/{id}', 'TopicsController@update')->name('blogs.update');
+Route::get('/blogs', 'BlogsController@index')->name('blogs.index');
+Route::get('/blogs/create', 'BlogsController@create')->name('blogs.create')->middleware('verified_email');
+Route::post('/blogs', 'BlogsController@store')->name('blogs.store')->middleware('verified_email');
+Route::get('/blogs/edit', 'BlogsController@edit')->name('blogs.edit');
+Route::patch('/blogs/{id}', 'BlogsController@update')->name('blogs.update');
 
-Route::get("{name}", "BlogController@show")->name('blogs.show');
+Route::get("{name}", "BlogsController@show")->name('blogs.show');
 
 // Article
-Route::get("/blogs/write", "BlogController@createPost")->name('blogs.create_post');
-Route::post("{name}", "BlogController@storePost")->name('blogs.store_post');
-Route::get("{name}/{id}/edit", "BlogController@editPost")->name('blogs.edit_post');
-Route::patch('{name}/{id}', 'BlogController@updatePost')->name('blogs.update_post');
+Route::get("/blogs/write", "ArticlesController@create")->name('articles.create')->middleware('verified_email');
+Route::post("{name}", "ArticlesController@store")->name('articles.store')->middleware('verified_email');
+Route::get("articles/{id}/edit", "ArticlesController@edit")->name('articles.edit');
+Route::patch('articles/{id}', "ArticlesController@update")->name('articles.update');
 
-Route::get('{name}/{id}', 'BlogController@showPost')->name('blogs.show_post');
+Route::get('articles/{id}', "ArticlesController@show")->name('articles.show');
