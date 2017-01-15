@@ -93,6 +93,11 @@ class User extends Model implements AuthenticatableContract,
         return $this->hasMany(Topic::class);
     }
 
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class);
+    }
+
     public function replies()
     {
         return $this->hasMany(Reply::class);

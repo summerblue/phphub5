@@ -24,6 +24,27 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
+          最新文章
+        </div>
+
+        <div class="panel-body">
+            @if (count($articles))
+              @include('users.partials.articles')
+
+            @elseif ($currentUser && $currentUser->id == $user->id)
+                <div class="empty-block">
+                    <a href="{{ route('articles.create') }}" class="btn btn-primary no-pjax">
+                        <i class="fa fa-paint-brush" aria-hidden="true"></i>  新建文章
+                      </a>
+                 </div>
+            @else
+                <div class="empty-block">{{ lang('Dont have any data Yet') }}~~</div>
+            @endif
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
           {{ lang('Recent Topics') }}
         </div>
 

@@ -38,8 +38,10 @@ class UsersController extends Controller
     {
         $user    = User::findOrFail($id);
         $topics  = Topic::whose($user->id)->withoutBoardTopics()->recent()->limit(20)->get();
+        $articles  = Topic::whose($user->id)->onlyArticle()->withoutBoardTopics()->recent()->limit(20)->get();
+        $blog  = $user->blogs()->first();
         $replies = Reply::whose($user->id)->recent()->limit(20)->get();
-        return view('users.show', compact('user', 'topics', 'replies'));
+        return view('users.show', compact('user','blog', 'articles', 'topics', 'replies'));
     }
 
     public function edit($id)

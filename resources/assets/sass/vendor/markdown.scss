@@ -195,14 +195,14 @@
     padding-bottom: 0.3em;
     font-size: 2.25em;
     line-height: 1.2;
-    border-bottom: 2px solid #eee;
+    border-bottom: 1px solid #eee;
   }
 
   h2 {
     padding-bottom: 0.3em;
     font-size: 1.5em;
     line-height: 1.225;
-    border-bottom: 2px solid #eee;
+    border-bottom: 1px solid #eee;
   }
 
   h3 {
@@ -293,8 +293,10 @@
 
   blockquote {
     margin: 20px 0!important;
-    background-color: #f7f7f7;
-    padding: 6px 8px;
+    background-color: #f5f8fc;
+    padding: 1rem;
+    color: #8796A8;
+    border-left: none;
   }
 
   table {

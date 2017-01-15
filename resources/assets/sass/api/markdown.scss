@@ -276,7 +276,6 @@
     font-size: inherit;
     padding: 0 15px;
     color: #777;
-    border-left: 4px solid #ddd;
   }
 
   blockquote>:first-child {
@@ -289,8 +288,10 @@
 
   blockquote {
     margin: 20px 0!important;
-    background-color: #f7f7f7;
-    padding: 6px 8px;
+    background-color: #f5f8fc;
+    padding: 1rem;
+    color: #8796A8;
+    border-left: none;
   }
 
   table {

@@ -6,7 +6,7 @@ body {
   color: #525252;
   // font-family: "lato-regular", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   font-family: NotoSansHans-Regular,AvenirNext-Regular,arial,Hiragino Sans GB,"Microsoft Yahei","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
-  background: #e9eaed;
+  background: #f0f2f5;
 }
 .navbar-default{
     background-color: #fff;
@@ -2107,12 +2107,78 @@ a.anchorific {
     }
 }
 
-.blogs-create_post {
+.articles-create {
     #reply_notice {
         margin-bottom: 15px;
+        border: 1px solid #ddd;
     }
 
     .CodeMirror, .CodeMirror-scroll {
         min-height: 500px;
     }
+
+    .blog-container.container {
+        max-width: 980px;
+    }
+}
+
+.blog-container.container {
+    margin-top: 50px;
+
+    h1 {
+        margin: 1em auto 1.35em;
+        font-size: 32px;
+    }
+
+
+    .panel {
+        margin-bottom: 25px;
+    }
+    .panel .panel-heading {
+        border-bottom: 1px solid #f8f8f8;
+        background-color: #fff;
+    }
+}
+
+.article-body {
+    padding: 1em 40px 4em;
+}
+.panel {
+    border: none;
+}
+hr {
+    border-top: 1px solid #e4e4e4;
+}
+
+.follow-box {
+    margin: 20px 0 8px;
+    a.btn {
+        color: #fff;
+    }
+}
+
+.blog-cover {
+    margin: 25px 0 15px;
+}
+.blog-name {
+    margin: 0 0 10px;
+}
+.blog-description {
+    font-size: 14px;
+    color: #8a8a8a;
+}
+
+.post-info-panel {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    padding: 20px 20px 8px;
+    margin:  40px -10px -26px;
+    color: #495057;
+    font-size: 14px;
+}
+
+.article-meta {
+    margin: 20px 0px;
+    color: #aaa;
+    font-size: 13px;
 }
