@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{ $topic->id > 0 ? '编辑文章' : '新建文章' }} | @parent
+{{ $topic->id > 0 ? '编辑文章' : '创作文章' }} | @parent
 @stop
 
 @section('content')
@@ -12,7 +12,7 @@
 
       <div class="panel-body">
 
-            <h2 class="text-center"> {{ $topic->id > 0 ? '编辑文章' : '新建文章' }}</h2>
+            <h2 class="text-center"> {{ $topic->id > 0 ? '编辑文章' : '创作文章' }}</h2>
             <hr>
 
             @include('layouts.partials.errors')

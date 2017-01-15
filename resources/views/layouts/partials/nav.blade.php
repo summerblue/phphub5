@@ -17,12 +17,13 @@
     <div id="top-navbar-collapse" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="{{ (Request::is('topics*') && !Request::is('categories*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">{{ lang('Topics') }}</a></li>
+        <li class="{{ Request::is('categories/1') ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.blog_category_id')) }}">专栏</a></li>
         <li ><a href="https://news.laravel-china.org/" class="no-pjax">资讯</a></li>
         <li class="{{ Request::is('categories/1') ? ' active' : '' }}"><a href="{{ route('categories.show', 1) }}">{{ lang('Jobs') }}</a></li>
         <li class="{{ (Request::is('sites') ? ' active' : '') }}"><a href="{{ route('sites.index') }}">{{ lang('Sites') }}</a></li>
         <li class="{{ (Request::is('wiki') ? ' active' : '') }}"><a href="{{ route('wiki') }}">Wiki</a></li>
         <li class="nav-docs"><a href="https://laravel-china.org/docs/home" class="no-pjax">文档</a></li>
-        <li ><a href="https://laravel-china.org/laravel-tutorial/5.1/about" class="no-pjax">Laravel 教程</a></li>
+        <li ><a href="https://laravel-china.org/laravel-tutorial/5.1/about" class="no-pjax">教程</a></li>
 
         @if(Auth::check() && Auth::user()->can('access_board'))
             <li class="{{ Request::is('categories/'.config('app.admin_board_cid')) ? ' active' : '' }}"><a href="{{ route('categories.show', config('app.admin_board_cid')) }}">站务</a></li>

@@ -37,7 +37,7 @@ class UsersController extends Controller
     public function show($id)
     {
         $user    = User::findOrFail($id);
-        $topics  = Topic::whose($user->id)->withoutBoardTopics()->recent()->limit(20)->get();
+        $topics  = Topic::whose($user->id)->withoutArticle()->withoutBoardTopics()->recent()->limit(20)->get();
         $articles  = Topic::whose($user->id)->onlyArticle()->withoutBoardTopics()->recent()->limit(20)->get();
         $blog  = $user->blogs()->first();
         $replies = Reply::whose($user->id)->recent()->limit(20)->get();
@@ -81,15 +81,23 @@ class UsersController extends Controller
     public function topics($id)
     {
         $user   = User::findOrFail($id);
-        $topics = Topic::whose($user->id)->withoutBoardTopics()->recent()->paginate(15);
+        $topics = Topic::whose($user->id)->withoutArticle()->withoutBoardTopics()->recent()->paginate(30);
 
         return view('users.topics', compact('user', 'topics'));
+    }
+
+    public function articles($id)
+    {
+        $user   = User::findOrFail($id);
+        $topics = Topic::whose($user->id)->onlyArticle()->withoutBoardTopics()->recent()->paginate(30);
+        $blog   = $user->blogs()->first();
+        return view('users.articles', compact('user','blog', 'topics'));
     }
 
     public function votes($id)
     {
         $user   = User::findOrFail($id);
-        $topics = $user->votedTopics()->orderBy('pivot_created_at', 'desc')->paginate(15);
+        $topics = $user->votedTopics()->orderBy('pivot_created_at', 'desc')->paginate(30);
 
         return view('users.votes', compact('user', 'topics'));
     }
