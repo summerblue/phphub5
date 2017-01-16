@@ -28,9 +28,8 @@
         </div>
 
         <div class="panel-body">
-            @if (count($articles))
+            @if (count($articles) && count($blog))
               @include('users.partials.articles')
-
             @elseif ($currentUser && $currentUser->id == $user->id)
                 <div class="empty-block">
                     <a href="{{ route('articles.create') }}" class="btn btn-primary no-pjax">
