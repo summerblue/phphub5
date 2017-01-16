@@ -34,7 +34,6 @@ class PagesController extends Controller
     public function search(Request $request)
     {
         $query = Purifier::clean($request->input('q'), 'search_q');
-        $users = User::search($query, null, true)->orderBy('last_actived_at', 'desc')->limit(5)->get();
 
         if ($request->user_id) {
             $user = User::findOrFail($request->user_id);
@@ -43,8 +42,9 @@ class PagesController extends Controller
                                 ->withoutBlocked()
                                 ->withoutBoardTopics()
                                 ->paginate(30);
-
+            $users = User::where('id', '-1')->limit(5)->get();
         } else {
+            $users = User::search($query, null, true)->orderBy('last_actived_at', 'desc')->limit(5)->get();
             $user = new User;
             $topics = Topic::search($query, null, true)
                                 ->withoutBlocked()
