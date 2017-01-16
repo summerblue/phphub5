@@ -27,7 +27,7 @@ class ArticlesController extends Controller implements CreatorListener
 	{
         $user = Auth::user();
         if ($user->blogs()->count() <= 0) {
-            Flash::info('请先才创建专栏，专栏创建成功后才能发布文章。');
+            Flash::info('请先创建专栏，专栏创建成功后才能发布文章。');
             return redirect()->route('blogs.create');
         }
         $topic = new Topic;
@@ -37,6 +37,20 @@ class ArticlesController extends Controller implements CreatorListener
 	public function store(StoreTopicRequest $request)
 	{
         return app('Phphub\Creators\TopicCreator')->create($this, $request->except('_token'));
+	}
+
+	public function transform($id)
+	{
+        if (Auth::user()->blogs()->count() <= 0) {
+            Flash::info('请先创建专栏，专栏创建成功后才能发布文章。');
+            return redirect()->route('blogs.create');
+        }
+        $topic = Topic::find($id);
+        $topic->update([
+            'category_id' => config('phphub.blog_category_id')
+        ]);
+        Flash::success(lang('Operation succeeded.'));
+        return redirect()->route('articles.show', [$topic->id]);
 	}
 
 	public function show($id)
@@ -72,6 +86,6 @@ class ArticlesController extends Controller implements CreatorListener
         Auth::user()->decrement('topic_count', 1);
         Auth::user()->increment('article_count', 1);
         Flash::success(lang('Operation succeeded.'));
-        return redirect()->route('articles.show', array($topic->id));
+        return redirect()->route('articles.show', [$topic->id]);
     }
 }

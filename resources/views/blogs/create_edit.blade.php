@@ -18,9 +18,11 @@
 
           <div class="">
               <h2><i class="fa fa-paper-plane" aria-hidden="true"></i> {{ $blog->id > 0 ? '编辑专栏' : '新建专栏' }}
-                  <a href="{{ route('articles.create') }}" class="btn btn-primary no-pjax">
-                      <i class="fa fa-paint-brush" aria-hidden="true"></i>  新建文章
+                  @if ( $blog->id > 0)
+                      <a href="{{ route('articles.create') }}" class="btn btn-primary no-pjax">
+                      <i class="fa fa-paint-brush" aria-hidden="true"></i>  创作文章
                     </a>
+                  @endif
               </h2>
           </div>
 

@@ -357,9 +357,6 @@
                 .attr('style','cursor:pointer;')
                 .click(function() {
                     var that = $(this);
-                    if ($(this).attr('data-method') == 'post') {
-                        $(this).find("form").submit();
-                    }
                     if ($(this).attr('data-method') == 'delete') {
                         swal({
                             title: "",
@@ -371,6 +368,21 @@
                         }, function() {
                             that.find("form").submit();
                         });
+                    }
+                    if ($(this).attr('data-btn') == 'transform-button') {
+                        swal({
+                            title: "",
+                            text: "确定要把此话题转换为专栏文章？",
+                            type: "warning",
+                            showCancelButton: true,
+                            cancelButtonText: "取消",
+                            confirmButtonText: "转为文章"
+                        }, function() {
+                            that.find("form").submit();
+                        });
+                    }
+                    if ($(this).attr('data-method') == 'post') {
+                        $(this).find("form").submit();
                     }
                 });
            // attr('onclick',' if (confirm("Are you sure want to proceed?")) { $(this).find("form").submit(); };');
