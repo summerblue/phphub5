@@ -103,3 +103,8 @@ function route_class()
 {
     return str_replace('.', '-', Route::currentRouteName());
 }
+
+function img_crop($filepath, $width = 0, $height = 0)
+{
+    return $filepath . "?imageView2/1/w/{$width}/h/{$height}";
+}

@@ -51,7 +51,7 @@
 
                 <div class="image blog-cover">
                     {{-- <a href="{{ route('blogs.show', $blog->slug) }}" > --}}
-                        <img class=" avatar-112 avatar img-thumbnail" src="{{ $blog->cover }}">
+                        <img class=" avatar-112 avatar img-thumbnail" src="{{ img_crop($blog->cover, 224, 224) }}">
                     {{-- </a> --}}
                 </div>
                 <div class="blog-name">
