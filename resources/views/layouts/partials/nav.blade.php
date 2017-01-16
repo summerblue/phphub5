@@ -31,7 +31,7 @@
       </ul>
 
       <div class="navbar-right">
-          <form method="GET" action="{{route('search')}}" accept-charset="UTF-8" class="navbar-form navbar-left" target="_blank">
+          <form method="GET" action="{{route('search')}}" accept-charset="UTF-8" class="navbar-form navbar-left">
             <div class="form-group">
             <input class="form-control search-input mac-style" placeholder="{{lang('Search')}}" name="q" type="text">
             </div>

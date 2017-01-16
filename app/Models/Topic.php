@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Pagination\Paginator;
 use Venturecraft\Revisionable\RevisionableTrait;
 use Cache;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Topic extends Model
 {
@@ -26,6 +27,14 @@ class Topic extends Model
         'is_excellent',
         'is_blocked',
         'order',
+    ];
+
+    use SearchableTrait;
+    protected $searchable = [
+        'columns' => [
+            'topics.title' => 10,
+            'topics.body' => 5,
+        ]
     ];
 
     use PresentableTrait;
