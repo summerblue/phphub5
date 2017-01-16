@@ -13705,7 +13705,9 @@ hr {
     .blog-container.container .article-body {
       padding: 1em 5px 0; }
   .panel .list-group .list-group-item {
-    padding: 0px 8px; } }
+    padding: 0px 8px; }
+  .search-results {
+    padding: 12px 2px 0; } }
 
 .search-results {
   padding: 20px;
