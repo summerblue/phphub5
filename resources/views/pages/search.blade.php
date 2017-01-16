@@ -22,7 +22,7 @@
   <div class="panel-body ">
 
         @if (count($users))
-            @foreach ($users as $user)
+            @foreach ($users as $user_result)
                 @include('pages.partials.users_result')
             @endforeach
         @endif

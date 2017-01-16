@@ -1,30 +1,30 @@
 <div class="result user media">
   <div class="media">
     <div class="avatar media-left">
-      <div class="image"><a title="{{ $user->name }}" href="{{ route('users.show', $user->id) }}">
-          <img class="media-object img-thumbnail avatar avatar-66" src="{{ $user->present()->gravatar }}" alt="96"></a>
+      <div class="image"><a title="{{ $user_result->name }}" href="{{ route('users.show', $user_result->id) }}">
+          <img class="media-object img-thumbnail avatar avatar-66" src="{{ $user_result->present()->gravatar }}" alt="96"></a>
       </div>
     </div>
     <div class="media-body user-info">
       <div class="info">
-        <a href="{{ route('users.show', $user->id) }}">{{ $user->name }}</a>
-        @if ($user->present()->hasBadge())
+        <a href="{{ route('users.show', $user_result->id) }}">{{ $user_result->name }}</a>
+        @if ($user_result->present()->hasBadge())
             <div class="role-label">
-                <a class="label label-success role" href="{{ route('roles.show', [$user->present()->badgeID()]) }}">{{{ $user->present()->badgeName() }}}</a>
+                <a class="label label-success role" href="{{ route('roles.show', [$user_result->present()->badgeID()]) }}">{{{ $user_result->present()->badgeName() }}}</a>
             </div>
         @endif
       </div>
       <div class="info number">
-        第 {{ $user->id }} 位会员
+        第 {{ $user_result->id }} 位会员
           ⋅
         <span title="注册日期">
-            {{ Carbon\Carbon::parse($user->created_at)->format('Y-m-d') }}
+            {{ Carbon\Carbon::parse($user_result->created_at)->format('Y-m-d') }}
         </span>
 
-          ⋅ <span>{{ $user->follower_count }}</span> 关注者
-          ⋅ <span>{{ $user->topic_count }}</span> 篇话题
-          ⋅ <span>{{ $user->reply_count }}</span> 条回帖
-          ⋅ <span>{{ $user->article_count }}</span> 篇文章
+          ⋅ <span>{{ $user_result->follower_count }}</span> 关注者
+          ⋅ <span>{{ $user_result->topic_count }}</span> 篇话题
+          ⋅ <span>{{ $user_result->reply_count }}</span> 条回帖
+          ⋅ <span>{{ $user_result->article_count }}</span> 篇文章
       </div>
     </div>
   </div>
