@@ -59,7 +59,7 @@
                 <a class="text" href="{{ route('users.replies', $user->id) }}">讨论</a>
             </div>
             <div class="col-xs-4">
-                <a class="counter" href="{{ route('users.topics', $user->id) }}">{{ $user->article_count }}</a>
+                <a class="counter" href="{{ route('users.articles', $user->id) }}">{{ $user->article_count }}</a>
                 <a class="text" href="{{ route('users.topics', $user->id) }}">文章</a>
             </div>
         </div>
