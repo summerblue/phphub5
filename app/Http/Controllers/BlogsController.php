@@ -49,7 +49,7 @@ class BlogsController extends Controller
 	public function update(BlogStoreRequest $request, $id)
 	{
 		$blog = Blog::findOrFail($id);
-
+        $this->authorize('update', $blog);
         try {
             $request->performUpdate($blog);
             Flash::success(lang('Operation succeeded.'));
