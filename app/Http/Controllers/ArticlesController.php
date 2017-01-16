@@ -20,15 +20,8 @@ class ArticlesController extends Controller implements CreatorListener
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index', 'show', 'showPost']]);
+        $this->middleware('auth', ['except' => ['index', 'show']]);
     }
-
-	// public function index()
-	// {
-	// 	$articles = Blog::orderBy('id', 'desc')->paginate(10);
-    //
-	// 	return view('articles.index', compact('articles'));
-	// }
 
 	public function create()
 	{

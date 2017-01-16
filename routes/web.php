@@ -130,11 +130,9 @@ Route::post('/blogs', 'BlogsController@store')->name('blogs.store')->middleware(
 Route::get('/blogs/edit', 'BlogsController@edit')->name('blogs.edit');
 Route::patch('/blogs/{id}', 'BlogsController@update')->name('blogs.update');
 
-Route::get("{name}", "BlogsController@show")->name('blogs.show');
-
 // Article
-Route::get("/blogs/write", "ArticlesController@create")->name('articles.create')->middleware('verified_email');
-Route::post("{name}", "ArticlesController@store")->name('articles.store')->middleware('verified_email');
-Route::get("articles/{id}/edit", "ArticlesController@edit")->name('articles.edit');
+Route::get("/articles/create", "ArticlesController@create")->name('articles.create')->middleware('verified_email');
+Route::post("/articles", "ArticlesController@store")->name('articles.store')->middleware('verified_email');
+Route::get("/articles/{id}/edit", "ArticlesController@edit")->name('articles.edit');
 
-Route::get('articles/{id}', "TopicsController@show")->name('articles.show');
+Route::get('/articles/{id}', "TopicsController@show")->name('articles.show');
