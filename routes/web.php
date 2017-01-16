@@ -132,6 +132,7 @@ Route::patch('/blogs/{id}', 'BlogsController@update')->name('blogs.update');
 
 // Article
 Route::get("/articles/create", "ArticlesController@create")->name('articles.create')->middleware('verified_email');
+Route::patch("/topics/{id}/transform", "ArticlesController@transform")->name('articles.transform');
 Route::post("/articles", "ArticlesController@store")->name('articles.store')->middleware('verified_email');
 Route::get("/articles/{id}/edit", "ArticlesController@edit")->name('articles.edit');
 
