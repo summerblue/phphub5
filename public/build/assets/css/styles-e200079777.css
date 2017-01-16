@@ -218,10 +218,10 @@
     margin-bottom: 10px;
     line-height: 30px; }
   .editor-preview-side hr, .editor-preview hr, .markdown-body hr, .markdown-reply hr {
-    height: 4px;
+    height: 2px;
     padding: 0;
     margin: 16px 0;
-    background-color: #e7e7e7;
+    background-color: #e8ecef;
     border: 0 none; }
   .editor-preview-side ul,
   .editor-preview-side ol, .editor-preview ul,
