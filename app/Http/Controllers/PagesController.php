@@ -34,7 +34,7 @@ class PagesController extends Controller
     public function search(Request $request)
     {
         $query = Purifier::clean($request->input('q'), 'search_q');
-        $users = User::search($query, null, true)->limit(3)->get();
+        $users = User::search($query, null, true)->orderBy('last_actived_at', 'desc')->limit(5)->get();
         $topics = Topic::search($query, null, true)
                             ->withoutBlocked()
                             ->withoutBoardTopics()
