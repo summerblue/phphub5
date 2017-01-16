@@ -44,8 +44,6 @@
 
 @section('scripts')
 
-<script src="{{ cdn('assets/js/highlight.js') }}"></script>
-
 <script type="text/javascript">
 
     $(document).ready(function()
