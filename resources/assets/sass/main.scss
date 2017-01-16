@@ -2194,35 +2194,6 @@ hr {
     font-size: 13px;
 }
 
-
-
-
-@media (max-width: 767px) {
-
-    .blog-pages {
-        .left-col {
-            width: 100%;
-            padding-left: 0px;
-        }
-    }
-
-    .blog-container.container {
-        margin-top: 18px;
-
-        .article-body {
-            padding: 1em 5px 0;
-        }
-    }
-
-    .panel .list-group .list-group-item {
-        padding: 0px 8px;
-    }
-
-    .search-results {
-        padding: 12px 2px 0;
-    }
-}
-
 .search-results {
     padding: 20px;
     line-height: 25px;
@@ -2322,5 +2293,35 @@ hr {
 
     .list-panel .panel-body {
         padding:0px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .blog-pages {
+        .left-col {
+            width: 100%;
+            padding-left: 0px;
+        }
+    }
+
+    .blog-container.container {
+        margin-top: 18px;
+
+        .article-body {
+            padding: 1em 5px 0;
+        }
+    }
+
+    .panel .list-group .list-group-item {
+        padding: 0px 8px;
+    }
+
+    .search-results {
+        padding: 12px 2px 0;
+    }
+
+    .container.main-container {
+        margin-top:15px;
     }
 }
