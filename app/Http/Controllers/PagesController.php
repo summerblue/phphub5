@@ -35,12 +35,24 @@ class PagesController extends Controller
     {
         $query = Purifier::clean($request->input('q'), 'search_q');
         $users = User::search($query, null, true)->orderBy('last_actived_at', 'desc')->limit(5)->get();
-        $topics = Topic::search($query, null, true)
-                            ->withoutBlocked()
-                            ->withoutBoardTopics()
-                            ->paginate(30);
 
-        return view('pages.search', compact('users', 'query', 'topics'));
+        if ($request->user_id) {
+            $user = User::findOrFail($request->user_id);
+            $topics = Topic::where('user_id', $user->id)
+                                ->search($query, null, true)
+                                ->withoutBlocked()
+                                ->withoutBoardTopics()
+                                ->paginate(30);
+
+        } else {
+            $user = new User;
+            $topics = Topic::search($query, null, true)
+                                ->withoutBlocked()
+                                ->withoutBoardTopics()
+                                ->paginate(30);
+        }
+
+        return view('pages.search', compact('users', 'user', 'query', 'topics'));
     }
 
     public function feed()

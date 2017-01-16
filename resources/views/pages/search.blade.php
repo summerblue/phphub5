@@ -9,7 +9,12 @@
 <div class="panel panel-default list-panel search-results">
   <div class="panel-heading">
     <h3 class="panel-title ">
+
      <i class="fa fa-search"></i> 关于 “{{ $query }}” 的搜索结果, 共 {{ count($users) + $topics->total() }} 条
+
+      @if ($user->id > 0)
+          。当前搜索范围：{{ $user->name }} <a class="popover-with-html" data-content="清除搜索范围" href="{{ route('search', ['q' => Input::get('q')]) }}"><i class="fa fa-times" aria-hidden="true"></i></a>
+      @endif
     </h3>
 
   </div>
