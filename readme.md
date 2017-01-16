@@ -122,6 +122,8 @@ gulp watch
 
 ### 链接入口
 
+> 请修改 `.env` 文件为 `APP_ENV=local` 和 `APP_DEBUG=true` 。
+
 * 首页地址：http://phphub5.app/
 * 管理后台：http://phphub5.app/admin
 
@@ -207,4 +209,3 @@ php artisan make:scaffold NotificationMailLogs --schema="from_user_id:integer:un
 在遵守以上规则的情况下，你可以享受等同于 MIT 协议的授权。
 
 或者你可以联系 `cj@estgroupe.com` 购买商业授权，商业授权允许移除页脚和标题的 `Powered by PHPHub` 字样。
-
