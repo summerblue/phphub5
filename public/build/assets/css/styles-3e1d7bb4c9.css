@@ -168,7 +168,6 @@
     position: relative;
     margin-top: 1.0em;
     margin-bottom: 16px;
-    font-weight: bold;
     line-height: 1.4; }
   .editor-preview-side h1, .editor-preview h1, .markdown-body h1, .markdown-reply h1 {
     padding-bottom: 0.3em;
@@ -177,18 +176,18 @@
     border-bottom: 1px solid #eee; }
   .editor-preview-side h2, .editor-preview h2, .markdown-body h2, .markdown-reply h2 {
     padding-bottom: 0.3em;
-    font-size: 1.5em;
+    font-size: 1.3em;
     line-height: 1.225;
     border-bottom: 1px solid #eee; }
   .editor-preview-side h3, .editor-preview h3, .markdown-body h3, .markdown-reply h3 {
-    font-size: 1.4em;
+    font-size: 1.2em;
     line-height: 1.43; }
   .editor-preview-side h4, .editor-preview h4, .markdown-body h4, .markdown-reply h4 {
-    font-size: 1.3em; }
+    font-size: 1.1em; }
   .editor-preview-side h5, .editor-preview h5, .markdown-body h5, .markdown-reply h5 {
-    font-size: 1.2em; }
+    font-size: 1.0em; }
   .editor-preview-side h6, .editor-preview h6, .markdown-body h6, .markdown-reply h6 {
-    font-size: 1.1em;
+    font-size: 0.9em;
     color: #777; }
   .editor-preview-side p,
   .editor-preview-side blockquote,
@@ -12241,12 +12240,12 @@ embed {
     width: 100%; }
 
 .topics-show .topic-title {
-  font-size: 1.8em;
+  font-size: 25px;
   color: #333;
   text-align: left;
   line-height: 135%;
   margin-bottom: 12px;
-  font-weight: bold; }
+  font-weight: normal; }
 
 .topics-show .entry-content {
   padding: 22px; }
@@ -13027,7 +13026,7 @@ span.timeago {
 
 .panel .panel-heading {
   border-bottom: 1px solid #eeeeee;
-  background-color: #f8f8f8; }
+  background-color: #fff; }
 
 .helpblock.list li {
   line-height: 30px;
@@ -13106,7 +13105,7 @@ span.timeago {
   width: 100%; }
 
 .topics-index .panel-heading {
-  background-color: #f8f8f8; }
+  background-color: #fff; }
 
 .topics-index .topic-filter {
   margin-top: 8px;
@@ -13529,7 +13528,7 @@ a {
 .panel {
   border-radius: 0px;
   box-shadow: none;
-  border: 1px solid #e2e1e1; }
+  border: 1px solid #dde2e8; }
 
 .sidebar-resources ul.list li {
   padding: 5px;
@@ -13636,32 +13635,31 @@ a.anchorific {
 .reply-box .CodeMirror pre {
   font-size: 14px; }
 
-.articles-create #reply_notice {
+.articles-create #reply_notice, .articles-edit #reply_notice {
   margin-bottom: 15px;
   border: 1px solid #ddd; }
 
-.articles-create .CodeMirror, .articles-create .CodeMirror-scroll {
+.articles-create .CodeMirror, .articles-create .CodeMirror-scroll, .articles-edit .CodeMirror, .articles-edit .CodeMirror-scroll {
   min-height: 500px; }
 
-.articles-create .blog-container.container {
+.articles-create .blog-container.container, .articles-edit .blog-container.container {
   max-width: 980px; }
 
 .blog-container.container {
   margin-top: 50px; }
   .blog-container.container h1 {
-    margin: 1em auto 1.35em;
-    font-size: 32px; }
+    margin: 1.3em auto .9em;
+    font-size: 28px; }
   .blog-container.container .panel {
     margin-bottom: 25px; }
   .blog-container.container .panel .panel-heading {
     border-bottom: 1px solid #f8f8f8;
     background-color: #fff; }
-
-.article-body {
-  padding: 1em 40px 4em; }
-
-.panel {
-  border: none; }
+  .blog-container.container .panel .panel-footer {
+    background-color: #fff;
+    padding-right: 0px; }
+  .blog-container.container .article-body {
+    padding: 1em 30px 0; }
 
 hr {
   border-top: 1px solid #e4e4e4; }
@@ -13690,7 +13688,7 @@ hr {
   font-size: 14px; }
 
 .article-meta {
-  margin: 20px 0px;
+  margin: 20px 0px 32px;
   color: #aaa;
   font-size: 13px; }
 

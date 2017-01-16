@@ -136,6 +136,5 @@ Route::get("{name}", "BlogsController@show")->name('blogs.show');
 Route::get("/blogs/write", "ArticlesController@create")->name('articles.create')->middleware('verified_email');
 Route::post("{name}", "ArticlesController@store")->name('articles.store')->middleware('verified_email');
 Route::get("articles/{id}/edit", "ArticlesController@edit")->name('articles.edit');
-Route::patch('articles/{id}', "ArticlesController@update")->name('articles.update');
 
-Route::get('articles/{id}', "ArticlesController@show")->name('articles.show');
+Route::get('articles/{id}', "TopicsController@show")->name('articles.show');
