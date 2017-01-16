@@ -41,8 +41,8 @@ class BlogsController extends Controller
 
 	public function edit()
 	{
-		$blog = Blog::first();
         $user = Auth::user();
+        $blog = $user->blogs()->first();
 		return view('blogs.create_edit', compact('blog', 'user'));
 	}
 
