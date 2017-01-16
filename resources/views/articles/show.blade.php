@@ -74,9 +74,8 @@
               <div class="panel-body">
 
                     <h1 class="text-center">{{ $topic->title }}</h1>
-                    <hr>
 
-                    <div class="article-meta">
+                    <div class="article-meta text-center">
                         <i class="fa fa-clock-o"></i> <abbr title="{{ $topic->created_at }}" class="timeago">{{ $topic->created_at }}</abbr>
                         ⋅
                         <i class="fa fa-eye"></i> {{ $topic->view_count }}
@@ -96,7 +95,7 @@
                     </div>
                     <br>
                     <br>
-                    @include('topics.partials.topic_operate', ['manage_topics' => $currentUser ? ($currentUser->can("manage_topics") && $currentUser->roles->count() <= 5) : false])
+                    @include('topics.partials.topic_operate', ['is_article' => true, 'manage_topics' => $currentUser ? ($currentUser->can("manage_topics") && $currentUser->roles->count() <= 5) : false])
               </div>
 
           </div>

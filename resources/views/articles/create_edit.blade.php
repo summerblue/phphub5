@@ -18,7 +18,7 @@
             @include('layouts.partials.errors')
 
             @if ($topic->id > 0)
-            <form method="POST" action="{{ route('articles.update', $topic->id) }}" accept-charset="UTF-8" id="topic-create-form">
+            <form method="POST" action="{{ route('topics.update', $topic->id) }}" accept-charset="UTF-8" id="topic-create-form">
                 <input name="_method" type="hidden" value="PATCH">
             @else
                 <form method="POST" action="{{ route('articles.store') }}" accept-charset="UTF-8" id="topic-create-form">

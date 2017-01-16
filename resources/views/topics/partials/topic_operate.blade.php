@@ -23,17 +23,21 @@
             </a>
         @endif
 
-        <a data-method="delete" id="topic-delete-button" href="javascript:void(0);" data-url="{{ route('topics.destroy', [$topic->id]) }}" data-content="{{ lang('Delete') }}" class="admin  popover-with-html">
-            <i class="fa fa-trash-o"></i>
-        </a>
     @endif
 
     @if ( $currentUser && ($manage_topics || $currentUser->id == $topic->user_id) )
-      <a id="topic-append-button" href="javascript:void(0);" class="admin  popover-with-html" data-toggle="modal" data-target="#exampleModal" data-content="帖子附言，添加附言后所有参与讨论的用户都能收到消息提醒，包括点赞和评论的用户">
-        <i class="fa fa-plus"></i>
-      </a>
 
-      <a id="topic-edit-button" href="{{ route('topics.edit', [$topic->id]) }}" data-content="{{ lang('Edit') }}" class="admin  popover-with-html no-pjax">
+    <a data-method="delete" id="topic-delete-button" href="javascript:void(0);" data-url="{{ route('topics.destroy', [$topic->id]) }}" data-content="{{ lang('Delete') }}" class="admin  popover-with-html">
+        <i class="fa fa-trash-o"></i>
+    </a>
+
+      @if (!isset($is_article))
+          <a id="topic-append-button" href="javascript:void(0);" class="admin  popover-with-html" data-toggle="modal" data-target="#exampleModal" data-content="帖子附言，添加附言后所有参与讨论的用户都能收到消息提醒，包括点赞和评论的用户">
+            <i class="fa fa-plus"></i>
+          </a>
+      @endif
+
+      <a id="topic-edit-button" href="{{ isset($is_article) ?  route('articles.edit', [$topic->id]) : route('topics.edit', [$topic->id]) }}" data-content="{{ lang('Edit') }}" class="admin  popover-with-html no-pjax">
         <i class="fa fa-pencil-square-o"></i>
       </a>
     @endif

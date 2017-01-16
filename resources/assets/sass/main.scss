@@ -407,12 +407,12 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
 
 .topics-show {
   .topic-title {
-    font-size: 1.8em;
+    font-size: 25px;
     color: #333;
     text-align: left;
     line-height: 135%;
     margin-bottom: 12px;
-    font-weight: bold;
+    font-weight: normal;
   }
 
   .entry-content {
@@ -1332,7 +1332,7 @@ span.timeago {
 
 .panel .panel-heading {
     border-bottom: 1px solid #eeeeee;
-    background-color: #f8f8f8;
+    background-color: #fff;
 }
 
 .helpblock.list li {
@@ -1431,7 +1431,7 @@ span.timeago {
 .topics-index {
 
     .panel-heading {
-        background-color: #f8f8f8;
+        background-color: #fff;
     }
     .topic-filter {
         margin-top: 8px;
@@ -1967,7 +1967,7 @@ a {
 .panel {
     border-radius: 0px;
     box-shadow: none;
-    border: 1px solid #e2e1e1;
+    border: 1px solid #dde2e8;
 }
 
 .sidebar-resources {
@@ -2111,7 +2111,7 @@ a.anchorific {
     }
 }
 
-.articles-create {
+.articles-create,.articles-edit {
     #reply_notice {
         margin-bottom: 15px;
         border: 1px solid #ddd;
@@ -2130,8 +2130,8 @@ a.anchorific {
     margin-top: 50px;
 
     h1 {
-        margin: 1em auto 1.35em;
-        font-size: 32px;
+        margin: 1.3em auto .9em;
+        font-size: 28px;
     }
 
 
@@ -2142,14 +2142,17 @@ a.anchorific {
         border-bottom: 1px solid #f8f8f8;
         background-color: #fff;
     }
+    .panel .panel-footer {
+        background-color: #fff;
+        padding-right: 0px;
+    }
+
+    .article-body {
+        padding: 1em 30px 0;
+    }
+
 }
 
-.article-body {
-    padding: 1em 40px 4em;
-}
-.panel {
-    border: none;
-}
 hr {
     border-top: 1px solid #e4e4e4;
 }
@@ -2182,7 +2185,7 @@ hr {
 }
 
 .article-meta {
-    margin: 20px 0px;
+    margin: 20px 0px 32px;;
     color: #aaa;
     font-size: 13px;
 }

@@ -18,6 +18,7 @@ use App\Http\Requests\StoreTopicRequest;
 use Auth;
 use Flash;
 use Image;
+use Request as UserRequest;
 
 class TopicsController extends Controller implements CreatorListener
 {
@@ -67,7 +68,7 @@ class TopicsController extends Controller implements CreatorListener
             && (!Auth::check() || !Auth::user()->can('access_board'))
         ) {
             Flash::error('您没有权限访问该文章，有疑问请发邮件：all@estgroupe.com');
-            return redirect(route('topics.index'));
+            return redirect()->route('topics.index');
         }
 
         $randomExcellentTopics = $topic->getRandomExcellent();
@@ -79,10 +80,25 @@ class TopicsController extends Controller implements CreatorListener
         $topic->increment('view_count', 1);
 
         $banners  = Banner::allByPosition();
-        return view('topics.show', compact(
-                            'topic', 'replies', 'categoryTopics',
-                            'category', 'banners', 'randomExcellentTopics',
-                            'votedUsers', 'userTopics', 'revisionHistory'));
+
+        if ($topic->category_id == config('phphub.blog_category_id')) {
+
+            if (UserRequest::is('topics*')) {
+                return redirect()->route('articles.show', [$topic->id]);
+            }
+
+            $user = $topic->user;
+            $blog = $user->blogs()->first();
+            return view('articles.show', compact(
+                                'blog', 'user','topic', 'replies', 'categoryTopics',
+                                'category', 'banners', 'randomExcellentTopics',
+                                'votedUsers', 'userTopics', 'revisionHistory'));
+        } else {
+            return view('topics.show', compact(
+                                'topic', 'replies', 'categoryTopics',
+                                'category', 'banners', 'randomExcellentTopics',
+                                'votedUsers', 'userTopics', 'revisionHistory'));
+        }
     }
 
     public function edit($id)
@@ -131,7 +147,12 @@ class TopicsController extends Controller implements CreatorListener
         $topic->update($data);
 
         Flash::success(lang('Operation succeeded.'));
-        return redirect(route('topics.show', $topic->id));
+
+        $route = $topic->category_id == config('phphub.blog_category_id')
+                    ? 'articles.show'
+                    : 'topics.show';
+
+        return redirect()->route($route, $topic->id);
     }
 
     /**
@@ -202,7 +223,7 @@ class TopicsController extends Controller implements CreatorListener
         $topic->delete();
         Flash::success(lang('Operation succeeded.'));
 
-        return redirect(route('topics.index'));
+        return redirect()->route('topics.index');
     }
 
     public function uploadImage(Request $request)
