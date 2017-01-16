@@ -13770,5 +13770,7 @@ hr {
   .search-results hr {
     margin-top: 15px;
     margin-bottom: 15px; }
+  .search-results .list-panel .panel-body {
+    padding: 0px; }
 
 /*# sourceMappingURL=styles.css.map */
