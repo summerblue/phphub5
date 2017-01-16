@@ -13692,4 +13692,13 @@ hr {
   color: #aaa;
   font-size: 13px; }
 
+@media (max-width: 767px) {
+  .blog-pages .left-col {
+    width: 100%;
+    padding-left: 0px; }
+  .blog-container.container {
+    margin-top: 18px; }
+    .blog-container.container .article-body {
+      padding: 1em 5px 0; } }
+
 /*# sourceMappingURL=styles.css.map */
