@@ -94,12 +94,21 @@ class EmailHandler
         }
 
         Mail::send('emails.fake', [], function (Message $message) {
-            $message->subject(lang('Your topic have new reply'));
+
+
+            if ($this->topic->category_id == config('phphub.blog_category_id')) {
+                $message->subject('你的文章有新评论');
+                $action = " 回复了你的文章: <a href='" . url(route('articles.show', $this->reply->topic_id)) . "' target='_blank'>{$this->reply->topic->title}</a>
+                              <br /><br />内容如下：<br />";
+            } else {
+                $message->subject(lang('Your topic have new reply'));
+                $action = " 回复了你的主题: <a href='" . url(route('topics.show', $this->reply->topic_id)) . "' target='_blank'>{$this->reply->topic->title}</a>
+                              <br /><br />内容如下：<br />";
+            }
 
             $message->getSwiftMessage()->setBody(new SendCloudTemplate('notification_mail', [
                 'name'     => "<a href='" . url(route('users.show', $this->fromUser->id)) . "' target='_blank'>{$this->fromUser->name}</a>",
-                'action'   => " 回复了你的主题: <a href='" . url(route('topics.show', $this->reply->topic_id)) . "' target='_blank'>{$this->reply->topic->title}</a>
-                              <br /><br />内容如下：<br />",
+                'action'   => $action,
                 'content'  => $this->reply->body,
             ]));
 
@@ -116,12 +125,21 @@ class EmailHandler
         }
 
         Mail::send('emails.fake', [], function (Message $message) {
-            $message->subject('有用户在主题中提及你');
+
+            if ($this->topic->category_id == config('phphub.blog_category_id')) {
+                $message->subject('有用户在文章中提及你');
+                $action = " 在文章: <a href='" . url(route('articles.show', $this->reply->topic_id)) . "' target='_blank'>{$this->reply->topic->title}</a> 中提及了你
+                              <br /><br />内容如下：<br />";
+            } else {
+                $message->subject('有用户在主题中提及你');
+                $action = " 在主题: <a href='" . url(route('topics.show', $this->reply->topic_id)) . "' target='_blank'>{$this->reply->topic->title}</a> 中提及了你
+                              <br /><br />内容如下：<br />";
+            }
+
 
             $message->getSwiftMessage()->setBody(new SendCloudTemplate('notification_mail', [
                 'name'     => "<a href='" . url(route('users.show', $this->fromUser->id)) . "' target='_blank'>{$this->fromUser->name}</a>",
-                'action'   => " 在主题: <a href='" . url(route('topics.show', $this->reply->topic_id)) . "' target='_blank'>{$this->reply->topic->title}</a> 中提及了你
-                              <br /><br />内容如下：<br />",
+                'action'   => $action,
                 'content'  => $this->reply->body,
             ]));
 
@@ -277,11 +295,18 @@ class EmailHandler
         }
 
         Mail::send('emails.fake', [], function (Message $message) {
-            $message->subject('有用户赞了你的主题');
+
+            if ($this->topic->category_id == config('phphub.blog_category_id')) {
+                $message->subject('有用户赞了你的文章');
+                $action = " 赞了你的文章: <a href='" . url(route('articles.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a>";
+            } else {
+                $message->subject('有用户赞了你的主题');
+                $action = " 赞了你的主题: <a href='" . url(route('topics.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a>";
+            }
 
             $message->getSwiftMessage()->setBody(new SendCloudTemplate('notification_mail', [
                 'name'    => "<a href='" . url(route('users.show', $this->fromUser->id)) . "' target='_blank'>{$this->fromUser->name}</a>",
-                'action'  => " 赞了你的主题: <a href='" . url(route('topics.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a>",
+                'action'  => $action,
                 'content' => '',
             ]));
 

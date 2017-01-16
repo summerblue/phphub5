@@ -1341,6 +1341,7 @@ span.timeago {
 }
 
 .topic-author-box{
+    position: relative;
     .list-inline {
         margin-bottom: 10px;
 
@@ -1377,6 +1378,9 @@ span.timeago {
 
     .edit-btn  {
         padding-right: 2px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
     }
 }
 

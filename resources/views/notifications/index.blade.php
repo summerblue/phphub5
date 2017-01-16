@@ -35,13 +35,20 @@
                                 {{{ $notification->fromUser->name }}}
                             </a>
                              •
-                            {{ $notification->present()->lableUp }}
+                             @if ($notification->type != 'follow' && $notification->topic->category_id == config('phphub.blog_category_id'))
+                                 {{ str_replace('主题', '文章', $notification->present()->lableUp) }}
+                                 <a href="{{ route('articles.show', [$notification->topic->id]) }}{{{ !empty($notification->reply_id) ? '#reply' . $notification->reply_id : '' }}}" title="{{{ $notification->topic->title }}}">
+                                     {{{ str_limit($notification->topic->title, '100') }}}
+                                 </a>
+                             @else
+                                {{ $notification->present()->lableUp }}
+                                @if($notification->type != 'follow')
+                                    <a href="{{ route('topics.show', [$notification->topic->id]) }}{{{ !empty($notification->reply_id) ? '#reply' . $notification->reply_id : '' }}}" title="{{{ $notification->topic->title }}}">
+                                        {{{ str_limit($notification->topic->title, '100') }}}
+                                    </a>
+                                @endif
+                             @endif
 
-                            @if($notification->type!='follow')
-                            <a href="{{ route('topics.show', [$notification->topic->id]) }}{{{ !empty($notification->reply_id) ? '#reply' . $notification->reply_id : '' }}}" title="{{{ $notification->topic->title }}}">
-                                {{{ str_limit($notification->topic->title, '100') }}}
-                            </a>
-                            @endif
                             <span class="meta">
                                  • {{ lang('at') }} • <span class="timeago">{{ $notification->created_at }}</span>
                             </span>
