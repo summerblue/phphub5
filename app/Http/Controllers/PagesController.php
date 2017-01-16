@@ -34,7 +34,13 @@ class PagesController extends Controller
     public function search(Request $request)
     {
         $query = Purifier::clean($request->input('q'), 'search_q');
-        return redirect()->away('https://www.google.com/search?q=site:laravel-china.org ' . $query, 301);
+        $users = User::search($query, null, true)->limit(3)->get();
+        $topics = Topic::search($query, null, true)
+                            ->withoutBlocked()
+                            ->withoutBoardTopics()
+                            ->paginate(30);
+
+        return view('pages.search', compact('users', 'query', 'topics'));
     }
 
     public function feed()

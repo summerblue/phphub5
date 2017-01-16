@@ -79,6 +79,11 @@ elixir(function(mix) {
             'vendor/simplemde.min.js',
         ], 'public/assets/js/editor.js')
 
+        // search
+        .scripts([
+            'vendor/jquery.highlight.js',
+        ], 'public/assets/js/highlight.js')
+
         // API Web View
         .sass([
             'vendor/simplemde.min.scss'
@@ -96,9 +101,8 @@ elixir(function(mix) {
             // API Web View
             'assets/css/editor.css',
             'assets/js/editor.js',
-        ])
 
-        .livereload();
+        ]);
 
     if (production) {
         mix.compress();

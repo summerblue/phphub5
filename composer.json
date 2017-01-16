@@ -38,7 +38,8 @@
         "jpush/jpush": "^3.2",
         "socialiteproviders/manager": "2.1.5",
         "overtrue/laravel-follow": "dev-master",
-        "pda/pheanstalk": "^3.1"
+        "pda/pheanstalk": "^3.1",
+        "nicolaslopezj/searchable": "1.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
