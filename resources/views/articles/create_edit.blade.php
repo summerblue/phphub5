@@ -68,7 +68,7 @@
             autosave: {
                 enabled: true,
                 delay: 1,
-                unique_id: "post_content{{ isset($topic) ? $topic->id : '' }}"
+                unique_id: "article_content{{ isset($topic) ? $topic->id : '' }}"
             },
             forceSync: true
         });

@@ -226,7 +226,7 @@ class UsersController extends Controller
         $user->update(['follower_count' => $user->followers()->count()]);
         Flash::success(lang('Operation succeeded.'));
 
-        return redirect(route('users.show', $id));
+        return redirect()->back();
     }
 
     public function editAvatar($id)

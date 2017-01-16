@@ -57,7 +57,7 @@
         </span>
 
         <div class="meta">
-            <a name="reply{{ $topic->present()->replyFloorFromIndex($index) }}" class="anchor" href="#reply{{ $topic->present()->replyFloorFromIndex($index) }}" aria-hidden="true">#{{ $topic->present()->replyFloorFromIndex($index) }}</a>
+            <a name="reply{{ $reply->id }}" id="reply{{ $reply->id }}" class="anchor" href="#reply{{ $reply->id }}" aria-hidden="true">#{{ $topic->present()->replyFloorFromIndex($index) }}</a>
 
 
             <span> ⋅  </span>
