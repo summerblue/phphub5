@@ -26,6 +26,7 @@ var basejs = [
     'resources/assets/js/vendor/messenger.js',
     'resources/assets/js/vendor/anchorific.js',
     'resources/assets/js/vendor/analytics.js',
+    'resources/assets/js/vendor/jquery.highlight.js',
     'node_modules/sweetalert/dist/sweetalert.min.js',
     'node_modules/social-share.js/dist/js/social-share.min.js',
 ];
@@ -78,11 +79,6 @@ elixir(function(mix) {
             'vendor/codemirror-4.inline-attachment.js',
             'vendor/simplemde.min.js',
         ], 'public/assets/js/editor.js')
-
-        // search
-        .scripts([
-            'vendor/jquery.highlight.js',
-        ], 'public/assets/js/highlight.js')
 
         // API Web View
         .sass([
