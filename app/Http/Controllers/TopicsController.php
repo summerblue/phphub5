@@ -223,6 +223,12 @@ class TopicsController extends Controller implements CreatorListener
         $topic->delete();
         Flash::success(lang('Operation succeeded.'));
 
+        if ($topic->category_id == config('phphub.blog_category_id')) {
+            Auth::user()->decrement('article_count', 1);
+        } else {
+            Auth::user()->decrement('topic_count', 1);
+        }
+
         return redirect()->route('topics.index');
     }
 
