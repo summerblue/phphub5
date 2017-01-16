@@ -30,7 +30,7 @@
       </ul>
 
       <div class="navbar-right">
-          @if (Request::is('users*') && isset($user))
+          @if ((Request::is('users*') && isset($user)) || (Request::is('search*') && $user->id > 0))
               <form method="GET" action="{{ route('search') }}" accept-charset="UTF-8" class="navbar-form navbar-left">
                   <div class="form-group">
                   <input class="form-control search-input mac-style" placeholder="搜索范围：{{ $user->name }}" name="q" type="text">
