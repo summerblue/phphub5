@@ -72,7 +72,7 @@ ______                            _              _                              
                 @elseif (Auth::check() && empty(Auth::user()->password) )
                     <div class="alert alert-warning">
     		            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    		            未设置登录密码，请前往 <a href="{{ route('users.edit_password', [Auth::id()]) }}">修改密码</a> 页面进行设置。
+    		            未设置登录密码，请前往 <a href="{{ route('users.edit_password', [Auth::id()]) }}">修改密码</a> 页面进行设置。设置密码后将可以在移动设备上使用邮箱登录网站。
     		        </div>
 				@endif
 
