@@ -64,11 +64,16 @@ ______                            _              _                              
 
 			<div class="container main-container {{ (Request::is('blogs*') || Request::is('articles*')) ? 'blog-container' : '' }}">
 
-				@if(\Auth::check() && !\Auth::user()->verified && !Request::is('email-verification-required'))
-				<div class="alert alert-warning">
-		            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-		            邮箱未激活，请前往 {{ \Auth::user()->email }} 查收激活邮件，激活后才能完整地使用社区功能，如发帖和回帖。未收到邮件？请前往 <a href="{{ route('email-verification-required') }}">重发邮件</a> 。
-		        </div>
+				@if(Auth::check() && !Auth::user()->verified && !Request::is('email-verification-required'))
+    				<div class="alert alert-warning">
+    		            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    		            邮箱未激活，请前往 {{ Auth::user()->email }} 查收激活邮件，激活后才能完整地使用社区功能，如发帖和回帖。未收到邮件？请前往 <a href="{{ route('email-verification-required') }}">重发邮件</a> 。
+    		        </div>
+                @elseif (Auth::check() && empty(Auth::user()->password) )
+                    <div class="alert alert-warning">
+    		            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    		            未设置登录密码，请前往 <a href="{{ route('users.edit_password', [Auth::id()]) }}">修改密码</a> 页面进行设置。
+    		        </div>
 				@endif
 
 				@include('flash::message')

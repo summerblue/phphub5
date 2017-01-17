@@ -18,13 +18,11 @@ class UsersController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', [
-            'only' => [
-                'edit', 'update', 'destroy',
-                'doFollow', 'editAvatar', 'updateAvatar',
-                'editEmailNotify', 'updateEmailNotify', 'emailVerificationRequired',
-            ],
-        ]);
+        $this->middleware('auth', ['except' => [
+                'index', 'show', 'replies',
+                 'topics', 'articles', 'votes', 'following',
+                 'followers', 'githubCard', 'githubApiProxy',
+            ]]);
     }
 
     public function index()
@@ -64,10 +62,6 @@ class UsersController extends Controller
         }
 
         return redirect(route('users.edit', $id));
-    }
-
-    public function destroy($id)
-    {
     }
 
     public function replies($id)
@@ -172,6 +166,26 @@ class UsersController extends Controller
     }
 
     public function updateEmailNotify($id, Request $request)
+    {
+        $user = User::findOrFail($id);
+        $this->authorize('update', $user);
+        $user->email_notify_enabled = $request->email_notify_enabled == 'on' ? 'yes' : 'no';
+        $user->save();
+
+        Flash::success(lang('Operation succeeded.'));
+
+        return redirect(route('users.edit_email_notify', $id));
+    }
+
+    public function editPassword($id)
+    {
+        $user = User::findOrFail($id);
+        $this->authorize('update', $user);
+
+        return view('users.edit_password', compact('user'));
+    }
+
+    public function updatePassword($id, Request $request)
     {
         $user = User::findOrFail($id);
         $this->authorize('update', $user);
