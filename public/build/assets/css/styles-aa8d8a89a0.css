@@ -13089,7 +13089,8 @@ span.timeago {
   margin-top: 2px; }
 
 .floating-box {
-  margin-top: 120px; }
+  margin-top: 120px;
+  margin-bottom: 80px; }
 
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
   background-color: #00b5ad;

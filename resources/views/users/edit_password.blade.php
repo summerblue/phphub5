@@ -30,8 +30,7 @@
             <div class="form-group">
               <label class="col-md-2 control-label">邮 箱：</label>
               <div class="col-md-6">
-                {{ $user->email }}
-                <input name="email" type="hidden" value="{{ $user->email }}">
+                <input name="email" class="form-control" type="text" value="{{ $user->email }}" disabled>
               </div>
               <div class="col-sm-4 help-block">
                   设置密码后将可以使用此邮箱登录。
