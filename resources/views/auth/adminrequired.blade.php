@@ -13,22 +13,12 @@
         </div>
         <div class="panel-body">
 
-          <form method="GET" action="{{route('login')}}" accept-charset="UTF-8">
-
-            <fieldset>
-              <div class="alert alert-warning">
-                {!! lang('You dont have permission to proceed.') !!}
-              </div>
-
+            <div class="alert alert-warning">
+              {!! lang('You dont have permission to proceed.') !!}
+            </div>
             @if ( ! $currentUser)
-                <a class="btn btn-lg btn-primary btn-block" id="login-required-submit" href="{{ URL::route('auth.oauth', ['driver' => 'github']) }}"><i class="fa fa-github-alt"></i> {{lang('Login with GitHub')}}</a>
-                <a class="btn btn-lg btn-success btn-block" href="{{ URL::route('auth.oauth', ['driver' => 'wechat']) }}"><i class="fa fa-weixin" ></i> {{lang('Login with WeChat')}}</a>
+                @include('auth._login_form')
             @endif
-
-
-            </fieldset>
-
-        </form>
 
         </div>
       </div>
