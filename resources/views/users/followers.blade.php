@@ -23,7 +23,7 @@
 
 
 
-    <div class="panel-body remove-padding-vertically remove-padding-horizontal">
+    <div class="panel-body">
 
       @if (count($users))
 	    @include('users.partials.users')
