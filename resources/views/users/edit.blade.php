@@ -1,18 +1,18 @@
 @extends('layouts.default')
 
 @section('title')
-{{ lang('Edit Profile') }}_@parent
+{{ lang('Edit Profile') }} | @parent
 @stop
 
 @section('content')
 
 <div class="users-show">
 
-  <div class="col-md-3 box" style="padding: 15px 15px;">
+  <div class="col-md-3 main-col">
     @include('users.partials.setting_nav')
   </div>
 
-  <div class="main-col col-md-9 left-col">
+  <div class="col-md-9  left-col ">
 
     <div class="panel panel-default padding-md">
 

@@ -11,6 +11,7 @@ use Cache;
 use Auth;
 use Flash;
 use App\Http\Requests\UpdateUserRequest;
+use App\Http\Requests\ResetPasswordRequest;
 use App\Jobs\SendActivateMail;
 use Phphub\Handler\Exception\ImageUploadException;
 
@@ -185,16 +186,17 @@ class UsersController extends Controller
         return view('users.edit_password', compact('user'));
     }
 
-    public function updatePassword($id, Request $request)
+    public function updatePassword($id, ResetPasswordRequest $request)
     {
         $user = User::findOrFail($id);
         $this->authorize('update', $user);
-        $user->email_notify_enabled = $request->email_notify_enabled == 'on' ? 'yes' : 'no';
+
+        $user->password = bcrypt($request->password);
         $user->save();
 
         Flash::success(lang('Operation succeeded.'));
 
-        return redirect(route('users.edit_email_notify', $id));
+        return redirect(route('users.edit_password', $id));
     }
 
     public function githubApiProxy($username)

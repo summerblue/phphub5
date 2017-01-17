@@ -1,14 +1,14 @@
 @extends('layouts.default')
 
 @section('title')
-{{ lang('Edit Social Binding') }}_@parent
+{{ lang('Edit Social Binding') }} | @parent
 @stop
 
 @section('content')
 
 <div class="users-show">
 
-  <div class="col-md-3 box" style="padding: 15px 15px;">
+  <div class="col-md-3 main-col ">
     @include('users.partials.setting_nav')
   </div>
 
