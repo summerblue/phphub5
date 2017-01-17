@@ -22,6 +22,7 @@ class UserCreator
 
     public function create(UserCreatorListener $observer, $data)
     {
+        $data['password'] = bcrypt($data['password']);
         $user = User::create($data);
         if (! $user) {
             return $observer->userValidationError($user->getErrors());

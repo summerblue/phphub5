@@ -52,11 +52,13 @@ Route::post('/users/send-verification-mail', 'UsersController@sendVerificationMa
 # ------------------ Authentication ------------------------
 
 Route::get('/login', 'Auth\AuthController@oauth')->name('login');
+Route::get('/auth/login', 'Auth\AuthController@signin')->name('auth.login');
+Route::post('/auth/login', 'Auth\AuthController@postLogin')->name('auth.login');
 Route::get('/login-required', 'Auth\AuthController@loginRequired')->name('login-required');
 Route::get('/admin-required', 'Auth\AuthController@adminRequired')->name('admin-required');
 Route::get('/user-banned', 'Auth\AuthController@userBanned')->name('user-banned');
 Route::get('/signup', 'Auth\AuthController@create')->name('signup');
-Route::post('/signup', 'Auth\AuthController@store')->name('signup');
+Route::post('/signup', 'Auth\AuthController@createNewUser')->name('signup');
 Route::get('/logout', 'Auth\AuthController@logout')->name('logout');
 Route::get('/oauth', 'Auth\AuthController@getOauth');
 

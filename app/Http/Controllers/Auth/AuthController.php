@@ -22,7 +22,9 @@ use App\Http\Controllers\Traits\SocialiteHelper;
 
 class AuthController extends Controller implements UserCreatorListener
 {
-    use VerifiesUsers,SocialiteHelper;
+    use VerifiesUsers,SocialiteHelper,AuthenticatesAndRegistersUsers, ThrottlesLogins;
+
+    protected $redirectTo = '/topics';
 
     /**
      * Create a new authentication controller instance.
@@ -55,6 +57,16 @@ class AuthController extends Controller implements UserCreatorListener
         return view('auth.loginrequired');
     }
 
+    public function signin()
+    {
+        return view('auth.signin');
+    }
+
+    public function signinStore()
+    {
+        return view('auth.signin');
+    }
+
     public function adminRequired()
     {
         return view('auth.adminrequired');
@@ -66,7 +78,7 @@ class AuthController extends Controller implements UserCreatorListener
     public function create()
     {
         if (! Session::has('oauthData')) {
-            return redirect(route('login'));
+            return redirect()->route('login');
         }
 
         $oauthData = array_merge(Session::get('oauthData'), Session::get('_old_input', []));
@@ -76,12 +88,12 @@ class AuthController extends Controller implements UserCreatorListener
     /**
      * Actually creates the new user account
      */
-    public function store(StoreUserRequest $request)
+    public function createNewUser(StoreUserRequest $request)
     {
         if (! Session::has('oauthData')) {
-            return redirect(route('login'));
+            return redirect()->route('login');
         }
-        $oauthUser = array_merge(Session::get('oauthData'), $request->only('name', 'email'));
+        $oauthUser = array_merge(Session::get('oauthData'), $request->only('name', 'email', 'password'));
         $userData = array_only($oauthUser, array_keys($request->rules()));
         $userData['register_source'] = $oauthUser['driver'];
 
