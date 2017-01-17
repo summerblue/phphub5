@@ -15,7 +15,7 @@ class CategoriesController extends Controller
     public function show($id, Request $request, Topic $topic)
     {
         $category = Category::findOrFail($id);
-        $topics   = $topic->getCategoryTopicsWithFilter($request->get('filter'), $id);
+        $topics   = $topic->getCategoryTopicsWithFilter($request->get('filter', 'default'), $id);
         $links    = Link::allFromCache();
         $banners = Banner::allByPosition();
         return view('topics.index', compact('topics', 'category', 'links', 'banners'));
