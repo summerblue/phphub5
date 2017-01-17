@@ -30,7 +30,7 @@ Route::post('/users/follow/{id}', 'UsersController@doFollow')->name('users.doFol
 Route::get('/users/{id}/edit_email_notify', 'UsersController@editEmailNotify')->name('users.edit_email_notify');
 Route::post('/users/{id}/update_email_notify', 'UsersController@updateEmailNotify')->name('users.update_email_notify');
 Route::get('/users/{id}/edit_password', 'UsersController@editPassword')->name('users.edit_password');
-Route::post('/users/{id}/update_password', 'UsersController@updatePassword')->name('users.update_password');
+Route::patch('/users/{id}/update_password', 'UsersController@updatePassword')->name('users.update_password');
 Route::get('/users/{id}/edit_social_binding', 'UsersController@editSocialBinding')->name('users.edit_social_binding');
 
 Route::get('/users', 'UsersController@index')->name('users.index');
