@@ -22,7 +22,7 @@
 
   <div class="panel panel-default">
 
-    <div class="panel-body remove-padding-vertically remove-padding-horizontal">
+    <div class="panel-body">
 
       @if (count($topics))
 	    @include('users.partials.topics', ['is_article' => true])
