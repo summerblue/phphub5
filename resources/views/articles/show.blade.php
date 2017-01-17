@@ -50,9 +50,9 @@
             <div class="panel-body text-center topic-author-box">
 
                 <div class="image blog-cover">
-                    {{-- <a href="{{ route('blogs.show', $blog->slug) }}" > --}}
+                    <a href="{{ route('users.articles', $user->id) }}" >
                         <img class=" avatar-112 avatar img-thumbnail" src="{{ img_crop($blog->cover, 224, 224) }}">
-                    {{-- </a> --}}
+                    </a>
                 </div>
                 <div class="blog-name">
                     <h4>专栏：{{ $blog->name }}</h4>
