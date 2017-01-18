@@ -39,6 +39,8 @@ ______                            _              _                              
                 'user_id': {{ $currentUser ? $currentUser->id : 0 }},
                 'user_avatar': {!! $currentUser ? '"'.$currentUser->present()->gravatar() . '"' : '""' !!},
                 'user_link': {!! $currentUser ? '"'. route('users.show', $currentUser->id) . '"' : '""' !!},
+                'user_badge': '{{ $user->present()->hasBadge() ? $user->present()->badgeName() : '' }}',
+                'user_badge_link': "{{ route('roles.show', [$user->present()->badgeID()]) }}",
                 'routes': {
                     'notificationsCount' : '{{ route('notifications.count') }}',
                     'upload_image' : '{{ route('upload_image') }}'

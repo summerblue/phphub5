@@ -13253,7 +13253,7 @@ a {
   .markdown-body, .markdown-reply {
     font-size: 14px; }
   .media-body.markdown-reply.content-body {
-    margin-left: -60px;
+    margin-left: -86px;
     display: inline-block;
     width: initial;
     margin-top: 6px; }
@@ -13777,5 +13777,25 @@ hr {
     padding: 12px 2px 0; }
   .container.main-container {
     margin-top: 15px; } }
+
+.replies .list-group-item.media .infos {
+  margin-left: 90px; }
+
+.replies .avatar-container {
+  text-align: center;
+  width: 80px; }
+
+.replies .label.role {
+  padding: .1em .2em .1em;
+  position: inherit;
+  color: #949090;
+  border: 1px solid #e0e0e0;
+  font-weight: normal;
+  display: inline-block;
+  margin: 8px 0;
+  background: transparent; }
+
+.replies .media-object.avatar {
+  display: inline-block; }
 
 /*# sourceMappingURL=styles.css.map */

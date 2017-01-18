@@ -14,10 +14,15 @@
            @endif
            >
 
-    <div class="avatar pull-left">
+    <div class="avatar avatar-container pull-left">
       <a href="{{ route('users.show', [$reply->user_id]) }}">
-        <img class="media-object img-thumbnail avatar avatar-middle" alt="{{{ $reply->user->name }}}" src="{{ $reply->user->present()->gravatar }}"  style="width:48px;height:48px;"/>
+        <img class="media-object img-thumbnail avatar avatar-middle" alt="{{{ $reply->user->name }}}" src="{{ $reply->user->present()->gravatar }}"  style="width:55px;height:55px;"/>
       </a>
+      @if ($user->present()->hasBadge())
+          <div>
+              <a class="label label-success role" href="{{ route('roles.show', [$user->present()->badgeID()]) }}">{{{ $user->present()->badgeName() }}}</a>
+          </div>
+      @endif
     </div>
 
     <div class="infos">
