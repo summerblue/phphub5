@@ -44,6 +44,12 @@
               @include('topics.partials.show_segment')
         </div>
 
+
+        @if( $topic->user->payment_qrcode )
+            @include('topics.partials.payment_qrcode_modal')
+        @endif
+
+
       <div class="col-md-3 main-col pull-left">
           <div class="panel panel-default corner-radius">
 
