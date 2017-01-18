@@ -18,9 +18,9 @@
       <a href="{{ route('users.show', [$reply->user_id]) }}">
         <img class="media-object img-thumbnail avatar avatar-middle" alt="{{{ $reply->user->name }}}" src="{{ $reply->user->present()->gravatar }}"  style="width:55px;height:55px;"/>
       </a>
-      @if ($user->present()->hasBadge())
+      @if ($reply->user->present()->hasBadge())
           <div>
-              <a class="label label-success role" href="{{ route('roles.show', [$user->present()->badgeID()]) }}">{{{ $user->present()->badgeName() }}}</a>
+              <a class="label label-success role" href="{{ route('roles.show', [$reply->user->present()->badgeID()]) }}">{{{ $reply->user->present()->badgeName() }}}</a>
           </div>
       @endif
     </div>
