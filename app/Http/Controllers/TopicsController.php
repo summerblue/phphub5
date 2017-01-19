@@ -58,8 +58,12 @@ class TopicsController extends Controller implements CreatorListener
         $topic = Topic::where('id', $id)->with('user', 'lastReplyUser')->firstOrFail();
 
         if ($topic->user->is_banned == 'yes') {
-            Flash::error('你访问的文章已被屏蔽，有疑问请发邮件：all@estgroupe.com');
-            return redirect(route('topics.index'));
+            // 未登录，或者已登录但是没有管理员权限
+            if (!Auth::check() || (Auth::check() && !Auth::user()->may('manage_topics'))) {
+                Flash::error('你访问的文章已被屏蔽，有疑问请发邮件：all@estgroupe.com');
+                return redirect(route('topics.index'));
+            }
+            Flash::error('当前文章的作者已被屏蔽，游客与用户将看不到此文章。');
         }
 
         if (
