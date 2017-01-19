@@ -71,6 +71,7 @@ return array(
             'tags'
         ],
         '站点管理' => [
+            'settings.site',
             'banners',
             'links',
             'sites',
