@@ -44,7 +44,7 @@
                 @if ($topic->order > 0 && !Input::get('filter') && Route::currentRouteName() != 'home' )
                     <span class="hidden-xs label label-warning">{{ lang('Stick') }}</span>
                 @else
-                    <span class="hidden-xs label label-{{ (($topic->is_excellent == 'yes' || $topic->isArticle()) && Route::currentRouteName() != 'home') ? 'success' : 'default' }}">{{{ $topic->category->name }}}</span>
+                    <span class="hidden-xs label label-{{ ($topic->is_excellent == 'yes' && Route::currentRouteName() != 'home') ? 'success' : 'default' }}">{{{ $topic->category->name }}}</span>
                 @endif
 
                 @if ($topic->category->id == config('phphub.blog_category_id'))
