@@ -1,10 +1,4 @@
 @charset "UTF-8";
-/**
- * simplemde v1.11.2
- * Copyright Next Step Webs, Inc.
- * @link https://github.com/NextStepWebs/simplemde-markdown-editor
- * @license MIT
- */
 .CodeMirror {
   color: #000; }
 
@@ -14,7 +8,8 @@
 .CodeMirror pre {
   padding: 0 4px; }
 
-.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler {
+.CodeMirror-gutter-filler,
+.CodeMirror-scrollbar-filler {
   background-color: #fff; }
 
 .CodeMirror-gutters {
@@ -81,7 +76,7 @@
 .cm-positive {
   color: #292; }
 
-.cm-header, .cm-strong {
+.cm-strong {
   font-weight: 700; }
 
 .cm-em {
@@ -120,7 +115,8 @@
 .cm-s-default .cm-string-2 {
   color: #f50; }
 
-.cm-s-default .cm-meta, .cm-s-default .cm-qualifier {
+.cm-s-default .cm-meta,
+.cm-s-default .cm-qualifier {
   color: #555; }
 
 .cm-s-default .cm-builtin {
@@ -141,7 +137,8 @@
 .cm-s-default .cm-link {
   color: #00c; }
 
-.cm-invalidchar, .cm-s-default .cm-error {
+.cm-invalidchar,
+.cm-s-default .cm-error {
   color: red; }
 
 .CodeMirror-composing {
@@ -177,7 +174,10 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   position: relative;
   border-right: 30px solid transparent; }
 
-.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar {
+.CodeMirror-gutter-filler,
+.CodeMirror-hscrollbar,
+.CodeMirror-scrollbar-filler,
+.CodeMirror-vscrollbar {
   position: absolute;
   z-index: 6;
   display: none; }
@@ -246,11 +246,11 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   border-width: 0;
   background: 0 0;
   font-family: inherit;
-  font-size: inherit;
+  font-size: 16px;
   margin: 0;
   white-space: pre;
   word-wrap: normal;
-  line-height: inherit;
+  line-height: 30px;
   color: inherit;
   z-index: 2;
   position: relative;
@@ -279,7 +279,11 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 .CodeMirror-code {
   outline: 0; }
 
-.CodeMirror-gutter, .CodeMirror-gutters, .CodeMirror-linenumber, .CodeMirror-scroll, .CodeMirror-sizer {
+.CodeMirror-gutter,
+.CodeMirror-gutters,
+.CodeMirror-linenumber,
+.CodeMirror-scroll,
+.CodeMirror-sizer {
   box-sizing: content-box; }
 
 .CodeMirror-measure {
@@ -300,22 +304,31 @@ div.CodeMirror-cursors {
   position: relative;
   z-index: 3; }
 
-.CodeMirror-focused div.CodeMirror-cursors, div.CodeMirror-dragcursors {
+.CodeMirror-focused div.CodeMirror-cursors,
+div.CodeMirror-dragcursors {
   visibility: visible; }
 
 .CodeMirror-selected {
   background: #d9d9d9; }
 
-.CodeMirror-focused .CodeMirror-selected, .CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection {
+.CodeMirror-focused .CodeMirror-selected,
+.CodeMirror-line::-moz-selection,
+.CodeMirror-line > span::-moz-selection,
+.CodeMirror-line > span > span::-moz-selection {
   background: #d7d4f0; }
 
-.CodeMirror-focused .CodeMirror-selected, .CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection {
+.CodeMirror-focused .CodeMirror-selected,
+.CodeMirror-line::selection,
+.CodeMirror-line > span::selection,
+.CodeMirror-line > span > span::selection {
   background: #d7d4f0; }
 
 .CodeMirror-crosshair {
   cursor: crosshair; }
 
-.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection {
+.CodeMirror-line::-moz-selection,
+.CodeMirror-line > span::-moz-selection,
+.CodeMirror-line > span > span::-moz-selection {
   background: #d7d4f0; }
 
 .cm-searching {
@@ -376,7 +389,8 @@ span.CodeMirror-selectedtext {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px; }
 
-.editor-toolbar:after, .editor-toolbar:before {
+.editor-toolbar:after,
+.editor-toolbar:before {
   display: block;
   content: ' ';
   height: 1px; }
@@ -387,7 +401,9 @@ span.CodeMirror-selectedtext {
 .editor-toolbar:after {
   margin-top: 8px; }
 
-.editor-toolbar:hover, .editor-wrapper input.title:focus, .editor-wrapper input.title:hover {
+.editor-toolbar:hover,
+.editor-wrapper input.title:focus,
+.editor-wrapper input.title:hover {
   opacity: .8; }
 
 .editor-toolbar.fullscreen {
@@ -439,7 +455,8 @@ span.CodeMirror-selectedtext {
   border-radius: 3px;
   cursor: pointer; }
 
-.editor-toolbar a.active, .editor-toolbar a:hover {
+.editor-toolbar a.active,
+.editor-toolbar a:hover {
   background: #fcfcfc;
   border-color: #95a5a6; }
 
@@ -456,7 +473,7 @@ span.CodeMirror-selectedtext {
   margin: 0 6px; }
 
 .editor-toolbar a.fa-header-x:after {
-  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 65%;
   vertical-align: text-bottom;
   position: relative;
@@ -498,9 +515,10 @@ span.CodeMirror-selectedtext {
   min-width: 4em;
   margin-left: 1em; }
 
-.editor-preview, .editor-preview-side {
-  padding: 10px;
-  background: #fafafa;
+.editor-preview,
+.editor-preview-side {
+  padding: 30px;
+  background: #fff;
   overflow: auto;
   display: none;
   box-sizing: border-box; }
@@ -531,17 +549,23 @@ span.CodeMirror-selectedtext {
   z-index: 9;
   border: 1px solid #ddd; }
 
-.editor-preview-active, .editor-preview-active-side {
+.editor-preview-active,
+.editor-preview-active-side {
   display: block; }
 
-.editor-preview-side > p, .editor-preview > p {
+.editor-preview-side > p,
+.editor-preview > p {
   margin-top: 0; }
 
-.editor-preview pre, .editor-preview-side pre {
-  background: #eee;
+.editor-preview pre,
+.editor-preview-side pre {
+  background: #3a3a3a;
   margin-bottom: 10px; }
 
-.editor-preview table td, .editor-preview table th, .editor-preview-side table td, .editor-preview-side table th {
+.editor-preview table td,
+.editor-preview table th,
+.editor-preview-side table td,
+.editor-preview-side table th {
   border: 1px solid #ddd;
   padding: 5px; }
 
@@ -574,8 +598,9 @@ span.CodeMirror-selectedtext {
   line-height: 110%; }
 
 .CodeMirror .CodeMirror-code .cm-comment {
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 2px; }
+  background: #f9f3eb;
+  border-radius: 2px;
+  color: #dc7e36; }
 
 .CodeMirror .CodeMirror-code .cm-link {
   color: #7f8c8d; }
