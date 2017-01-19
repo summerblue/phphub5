@@ -35,7 +35,7 @@
                                 {{{ $notification->fromUser->name }}}
                             </a>
                              •
-                             @if ($notification->type != 'follow' && $notification->topic->category_id == config('phphub.blog_category_id'))
+                             @if ($notification->type != 'follow' && $notification->topic->isArticle())
                                  {{ str_replace('话题', '文章', $notification->present()->lableUp) }}
                                  <a href="{{ route('articles.show', [$notification->topic->id]) }}{{{ !empty($notification->reply_id) ? '#reply' . $notification->reply_id : '' }}}" title="{{{ $notification->topic->title }}}">
                                      {{{ str_limit($notification->topic->title, '100') }}}
