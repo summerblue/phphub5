@@ -96,7 +96,7 @@ class EmailHandler
         Mail::send('emails.fake', [], function (Message $message) {
 
 
-            if ($this->topic->category_id == config('phphub.blog_category_id')) {
+            if ($this->topic->isArticle()) {
                 $message->subject('你的文章有新评论');
                 $action = " 回复了你的文章: <a href='" . url(route('articles.show', $this->reply->topic_id)) . "' target='_blank'>{$this->reply->topic->title}</a>
                               <br /><br />内容如下：<br />";
@@ -126,7 +126,7 @@ class EmailHandler
 
         Mail::send('emails.fake', [], function (Message $message) {
 
-            if ($this->topic->category_id == config('phphub.blog_category_id')) {
+            if ($this->topic->isArticle()) {
                 $message->subject('有用户在文章中提及你');
                 $action = " 在文章: <a href='" . url(route('articles.show', $this->reply->topic_id)) . "' target='_blank'>{$this->reply->topic->title}</a> 中提及了你
                               <br /><br />内容如下：<br />";
@@ -296,7 +296,7 @@ class EmailHandler
 
         Mail::send('emails.fake', [], function (Message $message) {
 
-            if ($this->topic->category_id == config('phphub.blog_category_id')) {
+            if ($this->topic->isArticle()) {
                 $message->subject('有用户赞了你的文章');
                 $action = " 赞了你的文章: <a href='" . url(route('articles.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a>";
             } else {

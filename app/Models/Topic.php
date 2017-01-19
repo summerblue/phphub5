@@ -173,4 +173,9 @@ class Topic extends Model
         });
         return $data;
     }
+
+    public function isArticle()
+    {
+        return $this->category->id == config('phphub.blog_category_id');
+    }
 }

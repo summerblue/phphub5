@@ -81,7 +81,7 @@ class TopicsController extends Controller implements CreatorListener
 
         $banners  = Banner::allByPosition();
 
-        if ($topic->category_id == config('phphub.blog_category_id')) {
+        if ($topic->isArticle()) {
 
             if (UserRequest::is('topics*')) {
                 return redirect()->route('articles.show', [$topic->id]);
@@ -148,9 +148,7 @@ class TopicsController extends Controller implements CreatorListener
 
         Flash::success(lang('Operation succeeded.'));
 
-        $route = $topic->category_id == config('phphub.blog_category_id')
-                    ? 'articles.show'
-                    : 'topics.show';
+        $route = $topic->isArticle() ? 'articles.show' : 'topics.show';
 
         return redirect()->route($route, $topic->id);
     }
@@ -223,7 +221,7 @@ class TopicsController extends Controller implements CreatorListener
         $topic->delete();
         Flash::success(lang('Operation succeeded.'));
 
-        if ($topic->category_id == config('phphub.blog_category_id')) {
+        if ($topic->isArticle()) {
             Auth::user()->decrement('article_count', 1);
         } else {
             Auth::user()->decrement('topic_count', 1);
