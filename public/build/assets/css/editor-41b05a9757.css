@@ -586,7 +586,7 @@ span.CodeMirror-selectedtext {
   line-height: 200%; }
 
 .CodeMirror .CodeMirror-code .cm-header-2 {
-  font-size: 160%;
+  font-size: 140%;
   line-height: 160%; }
 
 .CodeMirror .CodeMirror-code .cm-header-3 {
@@ -598,9 +598,9 @@ span.CodeMirror-selectedtext {
   line-height: 110%; }
 
 .CodeMirror .CodeMirror-code .cm-comment {
-  background: #f9f3eb;
+  background: none;
   border-radius: 2px;
-  color: #dc7e36; }
+  color: #0aa4d8; }
 
 .CodeMirror .CodeMirror-code .cm-link {
   color: #7f8c8d; }
