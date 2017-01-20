@@ -1644,10 +1644,11 @@ a {
     }
 
     .media-body.markdown-reply.content-body {
-        margin-left: -86px;
-        display: inline-block;
-        width: initial;
-        margin-top: 6px;
+            margin-left: 0px;
+            display: inline-block;
+            width: initial;
+            margin-top: 6px;
+            margin-bottom: 8px;
     }
 
     .replies-index .list-group-item.media .avatar img {

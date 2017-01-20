@@ -13255,10 +13255,11 @@ a {
   .markdown-body, .markdown-reply {
     font-size: 14px; }
   .media-body.markdown-reply.content-body {
-    margin-left: -86px;
+    margin-left: 0px;
     display: inline-block;
     width: initial;
-    margin-top: 6px; }
+    margin-top: 6px;
+    margin-bottom: 8px; }
   .replies-index .list-group-item.media .avatar img {
     margin-top: -6px; }
   .topics-show .ribbon .ribbon-excellent {
