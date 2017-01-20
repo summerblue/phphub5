@@ -229,7 +229,7 @@
   .markdown-body ol, .markdown-reply ul,
   .markdown-reply ol {
     padding-left: 2em;
-    padding: 10px 0px 10px 20px;
+    padding: 10px 20px 10px 30px;
     color: #7d8688; }
   .editor-preview-active-side ol ol,
   .editor-preview-active-side ol ul, .editor-preview ol ol,
