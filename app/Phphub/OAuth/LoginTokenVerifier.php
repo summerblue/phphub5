@@ -6,10 +6,10 @@ use App\Models\User;
 
 class LoginTokenVerifier
 {
-    public function verify($name, $login_token)
+    public function verify($user_id, $login_token)
     {
         $user = User::query()
-            ->where(['name' => $name])
+            ->where(['id' => $user_id])
             ->first(['id', 'login_token']);
 
         if (count($user) && $user->login_token === $login_token) {

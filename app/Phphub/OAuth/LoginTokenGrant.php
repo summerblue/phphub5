@@ -12,9 +12,11 @@ class LoginTokenGrant extends BaseGrant
 
     public function getUserId(Request $request, $verifier)
     {
-        $username = $this->server->getRequest()->request->get('username', null);
-        if (is_null($username)) {
-            throw new InvalidRequestException('username');
+        // get('username') 为客户端的兼容写法
+        // 修改为 user id 会更加稳定
+        $user_id = $this->server->getRequest()->request->get('username', null);
+        if (is_null($user_id)) {
+            throw new InvalidRequestException('user_id');
         }
 
         $login_token = $this->server->getRequest()->request->get('login_token', null);
@@ -22,6 +24,6 @@ class LoginTokenGrant extends BaseGrant
             throw new InvalidRequestException('login_token');
         }
 
-        return call_user_func($verifier, $username, $login_token);
+        return call_user_func($verifier, $user_id, $login_token);
     }
 }
