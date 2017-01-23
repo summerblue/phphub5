@@ -151,10 +151,6 @@
           </a>
         @endif
 
-        {{-- @if(Auth::check() && Auth::id() == $user->id)
-          @include('users.partials.login_QR')
-        @endif --}}
-
     </div>
 
 </div>
