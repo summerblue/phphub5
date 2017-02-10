@@ -10,6 +10,11 @@ class TopicPolicy
 {
     use HandlesAuthorization;
 
+    public function show_draft(User $user, Topic $topic)
+    {
+        return $user->may('manage_topics') || $topic->user_id == $user->id;
+    }
+
     public function update(User $user, Topic $topic)
     {
         return $user->may('manage_topics') || $topic->user_id == $user->id;
