@@ -36,7 +36,13 @@ class TopicCreator
             return $observer->creatorFailed($topic->getErrors());
         }
 
-        Auth::user()->increment('topic_count', 1);
+        if ($topic->isArticle() && $topic->is_draft == 'yes') {
+            Auth::user()->increment('draft_count', 1);
+        } elseif ($topic->isArticle() && $topic->is_draft == 'no') {
+            Auth::user()->increment('article_count', 1);
+        } else {
+            Auth::user()->increment('topic_count', 1);
+        }
 
         return $observer->creatorSucceed($topic);
     }

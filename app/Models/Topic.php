@@ -48,6 +48,7 @@ class Topic extends Model
         'title',
         'body',
         'excerpt',
+        'is_draft',
         'source',
         'body_original',
         'user_id',
@@ -158,6 +159,16 @@ class Topic extends Model
     public function scopeByWhom($query, $user_id)
     {
         return $query->where('user_id', '=', $user_id);
+    }
+
+    public function scopeDraft($query)
+    {
+        return $query->where('is_draft', '=', 'yes');
+    }
+
+    public function scopeWithoutDraft($query)
+    {
+        return $query->where('is_draft', '=', 'no');
     }
 
     public function scopeRecent($query)

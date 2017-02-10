@@ -14,7 +14,15 @@
 
                   <div class="panel-body">
 
-                        <h1 class="text-center">{{ $topic->title }}</h1>
+                        <h1 class="text-center">
+                            {{ $topic->title }}
+                        </h1>
+
+                        @if ($topic->is_draft == 'yes')
+                            <div class="text-center alert alert-warning">
+                                当前状态为 <i class="fa fa-file-text-o"></i> 草稿，仅作者可见，请前往 <a href="{{ route('articles.edit', $topic->id) }}" class="no-pjax">编辑发布</a>
+                            </div>
+                        @endif
 
                         <div class="article-meta text-center">
                             <i class="fa fa-clock-o"></i> <abbr title="{{ $topic->created_at }}" class="timeago">{{ $topic->created_at }}</abbr>

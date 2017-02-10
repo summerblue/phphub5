@@ -37,7 +37,7 @@ class UsersController extends Controller
     {
         $user    = User::findOrFail($id);
         $topics  = Topic::whose($user->id)->withoutArticle()->withoutBoardTopics()->recent()->limit(20)->get();
-        $articles  = Topic::whose($user->id)->onlyArticle()->withoutBoardTopics()->recent()->limit(20)->get();
+        $articles  = Topic::whose($user->id)->onlyArticle()->withoutDraft()->recent()->limit(20)->get();
         $blog  = $user->blogs()->first();
         $replies = Reply::whose($user->id)->recent()->limit(20)->get();
         return view('users.show', compact('user','blog', 'articles', 'topics', 'replies'));
@@ -84,8 +84,20 @@ class UsersController extends Controller
     public function articles($id)
     {
         $user   = User::findOrFail($id);
-        $topics = Topic::whose($user->id)->onlyArticle()->withoutBoardTopics()->recent()->paginate(30);
+        $topics = Topic::whose($user->id)->onlyArticle()->withoutDraft()->recent()->paginate(30);
         $blog   = $user->blogs()->first();
+        return view('users.articles', compact('user','blog', 'topics'));
+    }
+
+    public function drafts()
+    {
+        $user   = Auth::user();
+        $topics = $user->topics()->onlyArticle()->draft()->recent()->paginate(30);
+        $blog   = $user->blogs()->first();
+
+        $user->draft_count = $user->topics()->onlyArticle()->draft()->count();
+        $user->save();
+
         return view('users.articles', compact('user','blog', 'topics'));
     }
 
