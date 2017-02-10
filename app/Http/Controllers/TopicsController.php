@@ -57,6 +57,10 @@ class TopicsController extends Controller implements CreatorListener
     {
         $topic = Topic::where('id', $id)->with('user', 'lastReplyUser')->firstOrFail();
 
+        if ($topic->isArticle() && $topic->is_draft == 'yes') {
+            $this->authorize('show_draft', $topic);
+        }
+
         if ($topic->user->is_banned == 'yes') {
             // 未登录，或者已登录但是没有管理员权限
             if (!Auth::check() || (Auth::check() && !Auth::user()->may('manage_topics'))) {
