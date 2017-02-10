@@ -5404,16 +5404,18 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
         },
 
         initAnchorific: function(){
-            $('div.entry-content').anchorific({
-                navigation: '.anchorific', // position of navigation
-                speed: 200, // speed of sliding back to top
-                anchorClass: 'anchorific', // class of anchor links
-                anchorText: '#', // prepended or appended to anchor headings
-                top: '.top', // back to top button or link class
-                spy: true, // scroll spy
-                position: 'append', // position of anchor text
-                spyOffset: 0 // specify heading offset for spy scrolling
-            });
+            if ($('.anchorific').length == 0) {
+                $('div.entry-content').anchorific({
+                    navigation: '.anchorific', // position of navigation
+                    speed: 200, // speed of sliding back to top
+                    anchorClass: 'anchorific', // class of anchor links
+                    anchorText: '#', // prepended or appended to anchor headings
+                    top: '.top', // back to top button or link class
+                    spy: true, // scroll spy
+                    position: 'append', // position of anchor text
+                    spyOffset: 0 // specify heading offset for spy scrolling
+                });
+            }
         },
         /**
          * Open External Links In New Window
