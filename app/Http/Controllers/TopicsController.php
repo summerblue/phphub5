@@ -56,6 +56,7 @@ class TopicsController extends Controller implements CreatorListener
     public function show($id)
     {
         $topic = Topic::where('id', $id)->with('user', 'lastReplyUser')->firstOrFail();
+        $this->authorize('show', $topic);
 
         if ($topic->user->is_banned == 'yes') {
             // 未登录，或者已登录但是没有管理员权限
@@ -78,7 +79,7 @@ class TopicsController extends Controller implements CreatorListener
         $randomExcellentTopics = $topic->getRandomExcellent();
         $replies = $topic->getRepliesWithLimit(config('phphub.replies_perpage'));
         $categoryTopics = $topic->getSameCategoryTopics();
-        $userTopics = $topic->byWhom($topic->user_id)->with('user')->withoutBoardTopics()->recent()->limit(3)->get();
+        $userTopics = $topic->byWhom($topic->user_id)->with('user')->withoutDraft()->withoutBoardTopics()->recent()->limit(3)->get();
         $votedUsers = $topic->votes()->orderBy('id', 'desc')->with('user')->get()->pluck('user');
         $revisionHistory = $topic->revisionHistory()->orderBy('created_at', 'DESC')->first();
         $topic->increment('view_count', 1);
@@ -147,6 +148,12 @@ class TopicsController extends Controller implements CreatorListener
         $data['body_original'] = $data['body'];
         $data['body'] = $markdown->convertMarkdownToHtml($data['body']);
         $data['excerpt'] = Topic::makeExcerpt($data['body']);
+
+        if ($topic->isArticle() && $request->subject == 'publish' && $topic->is_draft == 'yes') {
+            $data['is_draft'] = 'no';
+            Auth::user()->decrement('draft_count', 1);
+            Auth::user()->increment('article_count', 1);
+        }
 
         $topic->update($data);
 
@@ -225,7 +232,9 @@ class TopicsController extends Controller implements CreatorListener
         $topic->delete();
         Flash::success(lang('Operation succeeded.'));
 
-        if ($topic->isArticle()) {
+        if ($topic->isArticle() && $topic->is_draft == 'yes') {
+            Auth::user()->decrement('draft_count', 1);
+        } elseif ($topic->isArticle() && $topic->is_draft == 'no') {
             Auth::user()->decrement('article_count', 1);
         } else {
             Auth::user()->decrement('topic_count', 1);

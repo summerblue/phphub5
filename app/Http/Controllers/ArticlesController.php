@@ -36,7 +36,11 @@ class ArticlesController extends Controller implements CreatorListener
 
 	public function store(StoreTopicRequest $request)
 	{
-        return app('Phphub\Creators\TopicCreator')->create($this, $request->except('_token'));
+        $data = $request->except('_token');
+        if ($request->subject == 'draft') {
+            $data['is_draft'] = 'yes';
+        }
+        return app('Phphub\Creators\TopicCreator')->create($this, $data);
 	}
 
 	public function transform($id)
@@ -80,14 +84,14 @@ class ArticlesController extends Controller implements CreatorListener
 
     public function creatorFailed($errors)
     {
-        Flash::error('发布失败，未知错误。');
-        return redirect('/');
+        foreach ($errors->all() as $key => $value) {
+            Flash::error('发布失败：' . $value);
+        }
+        return redirect()->back();
     }
 
     public function creatorSucceed($topic)
     {
-        Auth::user()->decrement('topic_count', 1);
-        Auth::user()->increment('article_count', 1);
         Flash::success(lang('Operation succeeded.'));
         return redirect()->route('articles.show', [$topic->id]);
     }

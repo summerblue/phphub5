@@ -155,6 +155,12 @@
 
 </div>
 
+@if ($currentUser && $currentUser->id == $user->id && Auth::user()->draft_count > 0)
+    <div class="text-center alert alert-warning">
+        <a href="{{ route('users.drafts') }}" style="color:inherit;"><i class="fa fa-file-text-o"></i> 草稿 {{ Auth::user()->draft_count }} 篇</a>
+    </div>
+@endif
+
 <div class="box text-center">
 
    <div class="padding-sm user-basic-nav">

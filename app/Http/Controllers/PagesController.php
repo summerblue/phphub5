@@ -41,6 +41,7 @@ class PagesController extends Controller
                                 ->search($query, null, true)
                                 ->withoutBlocked()
                                 ->withoutBoardTopics()
+                                ->withoutDraft()
                                 ->paginate(30);
             $users = User::where('id', '-1')->limit(5)->get();
         } else {
@@ -49,6 +50,7 @@ class PagesController extends Controller
             $topics = Topic::search($query, null, true)
                                 ->withoutBlocked()
                                 ->withoutBoardTopics()
+                                ->withoutDraft()
                                 ->paginate(30);
         }
 

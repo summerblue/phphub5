@@ -1,5 +1,12 @@
 <div class="col-md-3 side-bar">
 
+    @if (Auth::check() && Auth::user()->draft_count > 0)
+        <div class="text-center alert alert-warning">
+            <a href="{{ route('users.drafts') }}" style="color:inherit;"><i class="fa fa-file-text-o"></i> 草稿 {{ Auth::user()->draft_count }} 篇</a>
+        </div>
+    @endif
+
+
     @if (isset($topic))
   <div class="panel panel-default corner-radius">
 

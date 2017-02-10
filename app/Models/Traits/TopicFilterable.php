@@ -33,7 +33,7 @@ trait TopicFilterable
 
     public function applyFilter($filter)
     {
-        $query = $this->withoutBlocked();
+        $query = $this->withoutBlocked()->withoutDraft();
 
         // 过滤站务信息
         $query = $query->withoutBoardTopics();

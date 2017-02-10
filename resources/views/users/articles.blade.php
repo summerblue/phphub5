@@ -14,10 +14,13 @@
 
   <div class="main-col col-md-9 left-col">
 
-
   <ol class="breadcrumb">
       <li><a href="{{ route('users.show', $user->id) }}">个人中心</a></li>
-      <li class="active">Ta 发表的文章（{{ $user->article_count }}）</li>
+      @if(Request::is('users/drafts'))
+          <li class="active">我的草稿（{{ $user->draft_count }}）</li>
+      @else
+          <li class="active">Ta 发表的文章（{{ $user->article_count }}）</li>
+      @endif
   </ol>
 
   <div class="panel panel-default">

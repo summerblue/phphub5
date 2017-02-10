@@ -38,7 +38,12 @@
                 </div>
 
                 <div class="form-group status-post-submit">
-                  <input class="btn btn-primary" id="topic-create-submit" type="submit" value="{{ lang('Publish') }}">
+                  <button class="btn btn-primary" type="submit" name="subject" value="publish" id="{{ $topic->is_draft == 'yes' ? 'publish-hint' : '' }}">{{ lang('Publish') }}</button>
+
+                    @if($topic->is_draft == 'yes' || empty($topic->id))
+                        &nbsp;&nbsp;or&nbsp;&nbsp;
+                        <button class="btn btn-basic" type="submit" name="subject" value="draft">保存草稿</button>
+                    @endif
                 </div>
             </form>
       </div>
@@ -57,6 +62,26 @@
 
     $(document).ready(function()
     {
+        $('#publish-hint').click(function(event) {
+            event.preventDefault();
+            swal({
+                title: "",
+                text: "确定要将发布草稿？",
+                type: "warning",
+                showCancelButton: true,
+                cancelButtonText: "取消",
+                confirmButtonText: "发布"
+            }, function(isConfirm) {
+                if(isConfirm) {
+                    $('<input />').attr('type', 'hidden')
+                      .attr('name', "subject")
+                      .attr('value', "publish")
+                      .appendTo('#topic-create-form');
+                      $("#topic-create-form").submit();
+                }
+            });
+        });
+
         $('#category-select').on('change', function() {
             var current_cid = $(this).val();
             $('.category-hint').hide();

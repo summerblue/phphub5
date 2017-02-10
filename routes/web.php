@@ -14,6 +14,7 @@ Route::get('/roles/{id}', 'RolesController@show')->name('roles.show');
 
 # ------------------ User stuff ------------------------
 
+Route::get('/users/drafts', 'UsersController@drafts')->name('users.drafts');
 Route::get('/users/{id}/replies', 'UsersController@replies')->name('users.replies');
 Route::get('/users/{id}/topics', 'UsersController@topics')->name('users.topics');
 Route::get('/users/{id}/articles', 'UsersController@articles')->name('users.articles');
