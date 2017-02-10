@@ -56,7 +56,6 @@ class TopicsController extends Controller implements CreatorListener
     public function show($id)
     {
         $topic = Topic::where('id', $id)->with('user', 'lastReplyUser')->firstOrFail();
-        $this->authorize('show', $topic);
 
         if ($topic->user->is_banned == 'yes') {
             // 未登录，或者已登录但是没有管理员权限
