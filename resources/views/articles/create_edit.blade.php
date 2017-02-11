@@ -18,10 +18,10 @@
             @include('layouts.partials.errors')
 
             @if ($topic->id > 0)
-            <form method="POST" action="{{ route('topics.update', $topic->id) }}" accept-charset="UTF-8" id="topic-create-form">
+            <form method="POST" action="{{ route('topics.update', $topic->id) }}" accept-charset="UTF-8" id="article-edit-form">
                 <input name="_method" type="hidden" value="PATCH">
             @else
-                <form method="POST" action="{{ route('articles.store') }}" accept-charset="UTF-8" id="topic-create-form">
+                <form method="POST" action="{{ route('articles.store') }}" accept-charset="UTF-8" id="article-create-form">
             @endif
                 {!! csrf_field() !!}
 
@@ -50,6 +50,10 @@
 
   </div>
 </div>
+
+<script>
+    Config.article_id = '{{ $article->id }}';
+</script>
 
 @stop
 
@@ -91,8 +95,8 @@
         var simplemde = new SimpleMDE({
             spellChecker: false,
             autosave: {
-                enabled: true,
-                delay: 1,
+                enabled: {{ isset($topic) ? 'false' : 'true' }},
+                delay: 1000,
                 unique_id: "article_content{{ isset($topic) ? $topic->id : '' }}"
             },
             forceSync: true
