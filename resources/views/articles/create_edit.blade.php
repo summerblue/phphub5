@@ -52,7 +52,7 @@
 </div>
 
 <script>
-    Config.article_id = '{{ $article->id }}';
+    Config.article_id = '{{ isset($article) ? $article->id : 0 }}';
 </script>
 
 @stop
