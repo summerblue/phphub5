@@ -101,7 +101,7 @@
 </div>
 
 <script>
-    Config.topic_id = '{{ $topic->id }}';
+    Config.topic_id = '{{ isset($topic) ? $topic->id : 0 }}';
 </script>
 
 @stop
