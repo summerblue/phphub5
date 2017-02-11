@@ -431,13 +431,28 @@
             })
 
             // Clear Local Storage on submit
-            $("#topic-create-form").submit(function(event){
-                localforage.removeItem('topic_create_content');
-                localforage.removeItem('topic-title');
-
-                $("#topic-create-submit").val('提交中...').addClass('disabled').prop('disabled', true);
-
+            $("#article-create-form").submit(function(event){
+                localStorage.removeItem('smde_article_content');
+                localStorage.removeItem('article-title');
+                $("#article-create-submit").val('提交中...').addClass('disabled').prop('disabled', true);
             });
+            $("#topic-create-form").submit(function(event){
+                localStorage.removeItem('smde_topic_content');
+                localStorage.removeItem('topic-title');
+                $("#topic-create-submit").val('提交中...').addClass('disabled').prop('disabled', true);
+            });
+
+            $("#article-edit-form").submit(function(event){
+                localStorage.removeItem('smde_article_content'+Config.article_id);
+                $("#article-edit-submit").val('提交中...').addClass('disabled').prop('disabled', true);
+            });
+            $("#topic-edit-form").submit(function(event){
+                localStorage.removeItem('smde_topic_content'+Config.topic_id);
+                console.log('smde_topic_content'+Config.topic_id);
+                $("#topic-submit").val('提交中...').addClass('disabled').prop('disabled', true);
+            });
+
+
             $("#reply-form").submit(function(event){
                 localforage.removeItem('reply_content');
             });

@@ -19,10 +19,10 @@
       @include('layouts.partials.errors')
 
       @if (isset($topic))
-        <form method="POST" action="{{ route('topics.update', $topic->id) }}" accept-charset="UTF-8" id="topic-create-form">
+        <form method="POST" action="{{ route('topics.update', $topic->id) }}" accept-charset="UTF-8" id="topic-edit-form">
         <input name="_method" type="hidden" value="PATCH">
       @else
-      <form method="POST" action="{{ route('topics.store') }}" accept-charset="UTF-8" id="topic-create-form">
+        <form method="POST" action="{{ route('topics.store') }}" accept-charset="UTF-8" id="topic-create-form">
       @endif
         {!! csrf_field() !!}
         <div class="form-group">
@@ -59,7 +59,7 @@
         </div>
 
         <div class="form-group status-post-submit">
-            <input class="btn btn-primary" id="topic-create-submit" type="submit" value="{{ lang('Publish') }}">
+            <input class="btn btn-primary" id="topic-submit" type="submit" value="{{ lang('Publish') }}">
         </div>
 
     </form>
@@ -100,6 +100,10 @@
   </div>
 </div>
 
+<script>
+    Config.topic_id = '{{ $topic->id }}';
+</script>
+
 @stop
 
 @section('scripts')
@@ -120,8 +124,8 @@
         var simplemde = new SimpleMDE({
             spellChecker: false,
             autosave: {
-                enabled: true,
-                delay: 1,
+                enabled: {{ isset($topic) ? 'false' : 'true' }},
+                delay: 1000,
                 unique_id: "topic_content{{ isset($topic) ? $topic->id : '' }}"
             },
             forceSync: true
