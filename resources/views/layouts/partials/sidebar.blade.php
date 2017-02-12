@@ -65,17 +65,6 @@
       <img src="https://dn-phphub.qbox.me/uploads/images/201612/09/1/qASrRyKNj0.jpg" style="width: 100%;border-radius: 0px;box-shadow: none;border: 1px solid #ffafaf;"></a>
 </div>
 
-<div class="panel panel-default corner-radius" style="
-    text-align: center;
-    background-color: transparent;
-    border: none;
-">
-<a href="https://laravel-china.org/topics/3213" rel="nofollow" title="" style="">
-      <img src="https://dn-phphub.qbox.me/uploads/images/201612/09/1/06fkozmGAH.jpg" style="width: 100%;border-radius: 0px;box-shadow: none;border: 1px solid #e2e1e1;"></a>
-</div>
-
-
-
 @if(isset($banners['sidebar-resources']))
 <div class="panel panel-default corner-radius sidebar-resources">
   <div class="panel-heading text-center">
