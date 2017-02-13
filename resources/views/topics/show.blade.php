@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{{ $topic->title }}}_@parent
+{{{ $topic->title }}} | @parent
 @stop
 
 @section('description')
