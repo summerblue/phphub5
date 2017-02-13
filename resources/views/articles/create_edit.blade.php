@@ -80,8 +80,8 @@
                     $('<input />').attr('type', 'hidden')
                       .attr('name', "subject")
                       .attr('value', "publish")
-                      .appendTo('#topic-create-form');
-                      $("#topic-create-form").submit();
+                      .appendTo('#article-edit-form');
+                      $("#article-edit-form").submit();
                 }
             });
         });
