@@ -66,6 +66,8 @@
             pagingSelector: '.panel-footer',
             callback: function() {
                 PHPHub.initTimeAgo();
+
+                $('.panel-footer').hide();
             }
         });
     });
