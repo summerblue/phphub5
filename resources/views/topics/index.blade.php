@@ -24,13 +24,15 @@
 
         @if ( ! $topics->isEmpty())
 
-            <div class="panel-body remove-padding-horizontal">
-                @include('topics.partials.topics')
-            </div>
+            <div class="jscroll">
+                <div class="panel-body remove-padding-horizontal">
+                    @include('topics.partials.topics')
+                </div>
 
-            <div class="panel-footer text-right remove-padding-horizontal pager-footer">
-                <!-- Pager -->
-                {!! $topics->appends(Request::except('page', '_pjax'))->render() !!}
+                <div class="panel-footer text-right remove-padding-horizontal pager-footer">
+                    <!-- Pager -->
+                    {!! $topics->appends(Request::except('page', '_pjax'))->render() !!}
+                </div>
             </div>
 
         @else
@@ -49,3 +51,25 @@
 @include('layouts.partials.sidebar')
 
 @stop
+
+@section('scripts')
+
+<script type="text/javascript">
+
+    $(document).ready(function()
+    {
+        $('.jscroll').jscroll({
+            loadingHtml: '<div style="padding:20px">Loading...</div>',
+            padding: 20,
+            nextSelector: '.pagination li:last-child a',
+            contentSelector: '.jscroll',
+            pagingSelector: '.panel-footer',
+            callback: function() {
+                PHPHub.initTimeAgo();
+            }
+        });
+    });
+
+</script>
+@stop
+
