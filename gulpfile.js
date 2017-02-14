@@ -26,6 +26,7 @@ var basejs = [
     'resources/assets/js/vendor/messenger.js',
     'resources/assets/js/vendor/anchorific.js',
     'resources/assets/js/vendor/analytics.js',
+    'resources/assets/js/vendor/jquery.jscroll.js',
     'resources/assets/js/vendor/jquery.highlight.js',
     'node_modules/sweetalert/dist/sweetalert.min.js',
     'node_modules/social-share.js/dist/js/social-share.min.js',
