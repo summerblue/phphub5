@@ -70,6 +70,22 @@
             self.initLogin();
             self.initEditBtnAnimated();
             self.initAnchorific();
+            self.initIinfiniteScroll();
+        },
+
+        initIinfiniteScroll: function(){
+            var self = this;
+            $('.jscroll').jscroll({
+                loadingHtml: '<div style="padding:20px">Loading...</div>',
+                padding: 20,
+                nextSelector: '.pagination li:last-child a',
+                contentSelector: '.jscroll',
+                pagingSelector: '.panel-footer',
+                callback: function() {
+                    self.initTimeAgo();
+                    $('.panel-footer').hide();
+                }
+            });
         },
 
         initAnchorific: function(){
