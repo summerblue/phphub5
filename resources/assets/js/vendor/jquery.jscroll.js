@@ -115,7 +115,7 @@
             },
 
             _setBindings = function() {
-                var $next = _options.nextSelector.first();
+                var $next = $e.find(_options.nextSelector).first();
                 if (!$next.length) {
                     return;
                 }

@@ -5628,6 +5628,22 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
             self.initLogin();
             self.initEditBtnAnimated();
             self.initAnchorific();
+            self.initIinfiniteScroll();
+        },
+
+        initIinfiniteScroll: function(){
+            var self = this;
+            $('.jscroll').jscroll({
+                loadingHtml: '<div style="padding:20px">Loading...</div>',
+                padding: 20,
+                nextSelector: '.pagination li:last-child a',
+                contentSelector: '.jscroll',
+                pagingSelector: '.panel-footer',
+                callback: function() {
+                    self.initTimeAgo();
+                    $('.panel-footer').hide();
+                }
+            });
         },
 
         initAnchorific: function(){

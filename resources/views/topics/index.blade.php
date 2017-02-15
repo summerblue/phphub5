@@ -52,26 +52,4 @@
 
 @stop
 
-@section('scripts')
-
-<script type="text/javascript">
-
-    $(document).ready(function()
-    {
-        $('.jscroll').jscroll({
-            loadingHtml: '<div style="padding:20px">Loading...</div>',
-            padding: 20,
-            nextSelector: '.pagination li:last-child a',
-            contentSelector: '.jscroll',
-            pagingSelector: '.panel-footer',
-            callback: function() {
-                PHPHub.initTimeAgo();
-
-                $('.panel-footer').hide();
-            }
-        });
-    });
-
-</script>
-@stop
 
