@@ -86,6 +86,8 @@ class UsersController extends Controller
         $user   = User::findOrFail($id);
         $topics = Topic::whose($user->id)->onlyArticle()->withoutDraft()->recent()->paginate(30);
         $blog   = $user->blogs()->first();
+
+        $user->update(['article_count' => $topics->total()]);
         return view('users.articles', compact('user','blog', 'topics'));
     }
 
