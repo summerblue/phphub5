@@ -38,7 +38,7 @@ class UpdateUserRequest extends Request
 
     public function performUpdate(User $user)
     {
-        $data = array_filter($this->only($this->allowed_fields));
+        $data = $this->only($this->allowed_fields);
         $old_email = $user->email;
 
         // A dirty fix for api client
