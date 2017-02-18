@@ -13553,7 +13553,7 @@ a {
 .sidebar-resources .panel-body {
   padding-bottom: 0px; }
 
-a.anchorific {
+a.anchorific, a.anchorjs-link {
   padding-left: 4px;
   color: #e2e2e2;
   font-weight: 100;

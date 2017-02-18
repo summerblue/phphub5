@@ -5192,8 +5192,12 @@ if ( typeof Object.create !== 'function' ) {
 
 		name: function( obj ) {
 			var name = obj.text().replace( /\s+/g, '-' );
-
-			return name;
+            var pattern = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）&;|{}【】‘；：”“'。，、？]")
+            var rs = "";
+            for (var i = 0; i < name.length; i++) {
+                rs = rs+name.substr(i, 1).replace(pattern, '');
+            }
+            return rs;
 		},
 
 		anchor: function( obj ) {
