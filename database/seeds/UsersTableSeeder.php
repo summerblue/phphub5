@@ -8,13 +8,15 @@ class UsersTableSeeder extends Seeder
 {
     public function run()
     {
-        $users = factory(User::class)->times(49)->make()->each(function ($user, $i) {
+        $password = bcrypt('secret');
+        $users = factory(User::class)->times(49)->make()->each(function ($user, $i) use ($password)  {
             if ($i == 0) {
                 $user->name = 'admin';
                 $user->email = 'admin@estgroupe.com';
                 $user->github_name = 'admin';
+                $user->verified = 1;
             }
-
+            $user->password = $password;
             $user->github_id = $i + 1;
         });
 
