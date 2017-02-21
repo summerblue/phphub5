@@ -30,6 +30,7 @@ $factory->define(User::class, function (Faker\Generator $faker) {
         'introduction'         => $faker->sentence,
         'certification'        => $faker->sentence,
         'email'                => $faker->email,
+        'password'             => 'xxx',
         'verified'             => true,
         'login_token'          => 'uDFDJys7iwM0fTXuLNNH',
         'created_at'           => Carbon::now()->toDateTimeString(),
