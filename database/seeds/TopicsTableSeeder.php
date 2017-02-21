@@ -22,10 +22,18 @@ class TopicsTableSeeder extends Seeder
         });
         Topic::insert($topics->toArray());
 
+        // Test User Topic Seeding
         $admin_topics = factory(Topic::class)->times(rand(1, 100))->make()->each(function ($topic) use ($faker, $categories) {
             $topic->user_id     = 1;
             $topic->category_id = $faker->randomElement($categories);
         });
         Topic::insert($admin_topics->toArray());
+
+        // Test User Article Seeding
+        $admin_articles = factory(Topic::class)->times(31)->make()->each(function ($topic) {
+            $topic->user_id     = 1;
+            $topic->category_id = 5;
+        });
+        Topic::insert($admin_articles->toArray());
     }
 }

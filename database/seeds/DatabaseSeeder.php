@@ -9,6 +9,7 @@ class DatabaseSeeder extends Seeder
         'UsersTableSeeder',
         'LinksTableSeeder',
         'CategoriesTableSeeder',
+        'BlogTableSeeder',
         'TopicsTableSeeder',
         'RepliesTableSeeder',
         'BannersTableSeeder',
@@ -17,7 +18,6 @@ class DatabaseSeeder extends Seeder
         'HotTopicsTableSeeder',
         'SitesTableSeeder',
         'OauthClientsTableSeeder',
-        'BlogTableSeeder',
     ];
 
     public function run()
