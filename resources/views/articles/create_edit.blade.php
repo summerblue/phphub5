@@ -96,7 +96,7 @@
             spellChecker: false,
             autosave: {
                 enabled: {{ isset($topic) ? 'false' : 'true' }},
-                delay: 1000,
+                delay: 5000,
                 unique_id: "article_content{{ isset($topic) ? $topic->id : '' }}"
             },
             forceSync: true
