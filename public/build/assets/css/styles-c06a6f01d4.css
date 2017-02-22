@@ -13812,7 +13812,7 @@ hr {
     margin-right: 2px; }
   .blog-pages .list-group .list-group-item .avatar {
     margin-top: -4px; }
-  .blog-pages .list-group .list-group-item a, .blog-pages .list-group .list-group-item a:hover {
+  .blog-pages .list-group .list-group-item a.title, .blog-pages .list-group .list-group-item a.title:hover {
     color: #777; }
   .blog-pages .list-group .list-group-item span.meta {
     color: #d0d0d0; }

@@ -10,7 +10,7 @@
         @endif
 
       @if (isset($is_article))
-          <a href="{{ route('articles.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
+          <a href="{{ route('articles.show', [$topic->id]) }}" title="{{{ $topic->title }}}" class="title">
             {{{ str_limit($topic->title, '100') }}}
           </a>
       @else
