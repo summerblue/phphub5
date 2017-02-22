@@ -65,27 +65,9 @@
       <img src="https://dn-phphub.qbox.me/uploads/images/201612/09/1/qASrRyKNj0.jpg" style="width: 100%;border-radius: 0px;box-shadow: none;border: 1px solid #ffafaf;"></a>
 </div>
 
-@if(isset($banners['sidebar-resources']))
-<div class="panel panel-default corner-radius sidebar-resources">
-  <div class="panel-heading text-center">
-    <h3 class="panel-title">推荐资源</h3>
-  </div>
-  <div class="panel-body">
-    <ul class="list list-group ">
-        @foreach($banners['sidebar-resources'] as $banner)
-            <li class="list-group-item ">
-                <a href="{{ $banner->link }}" class="popover-with-html no-pjax" data-content="{{{ $banner->title }}}">
-                    <img class="media-object inline-block " src="{{ $banner->image_url }}">
-                    {{{ $banner->title }}}
-                </a>
-            </li>
-        @endforeach
-    </ul>
-  </div>
-</div>
-@endif
-
 @if (Route::currentRouteName() == 'topics.index')
+@include('layouts.partials._resources_panel')
+
     <div class="panel panel-default corner-radius panel-active-users">
       <div class="panel-heading text-center">
         <h3 class="panel-title">{{ lang('Active Users') }}（<a href="{{ route('hall_of_fames') }}"><i class="fa fa-star" aria-hidden="true"></i> {{ lang('Hall of Fame') }}</a>）</h3>
@@ -134,19 +116,6 @@
     </div>
   @endif
 
-@if (isset($randomExcellentTopics) && count($randomExcellentTopics))
-
-<div class="panel panel-default corner-radius panel-hot-topics">
-  <div class="panel-heading text-center">
-    <h3 class="panel-title">{{ lang('Recommend Topics') }}</h3>
-  </div>
-  <div class="panel-body">
-    @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $randomExcellentTopics])
-  </div>
-</div>
-
-@endif
-
 @if (Route::currentRouteName() == 'topics.index')
 
 <div class="panel panel-default corner-radius">
@@ -162,14 +131,9 @@
 
 @endif
 
+<div id="sticker">
 
-<div class="box text-center">
-  <p style="margin-bottom: 10px;margin-top: 10px;">订阅 Laravel 资讯</p>
-  <img class="image-border popover-with-html" data-content="扫码，或者搜索微信订阅号：「Laravel资讯」"
-    src="https://dn-phphub.qbox.me/uploads/images/201612/15/1/MGig6IACCQ.png" style="width:80%">
-  <br/><br/>
-</div>
-
+@include('layouts.partials._resources_panel')
 
 <div class="panel panel-default corner-radius" style="color:#a5a5a5">
   <div class="panel-body text-center">
@@ -180,8 +144,8 @@
           </span>
       </a>
   </div>
-
 </div>
 
+</div>
 </div>
 <div class="clearfix"></div>

@@ -79,7 +79,6 @@ class TopicsController extends Controller implements CreatorListener
             return redirect()->route('topics.index');
         }
 
-        $randomExcellentTopics = $topic->getRandomExcellent();
         $replies = $topic->getRepliesWithLimit(config('phphub.replies_perpage'));
         $categoryTopics = $topic->getSameCategoryTopics();
 
@@ -101,14 +100,14 @@ class TopicsController extends Controller implements CreatorListener
 
             return view('articles.show', compact(
                                 'blog', 'user','topic', 'replies', 'categoryTopics',
-                                'category', 'banners', 'randomExcellentTopics',
+                                'category', 'banners',
                                 'votedUsers', 'userTopics', 'revisionHistory'));
         } else {
             $userTopics = $topic->byWhom($topic->user_id)->withoutDraft()->withoutBoardTopics()->recent()->limit(3)->get();
 
             return view('topics.show', compact(
                                 'topic', 'replies', 'categoryTopics',
-                                'category', 'banners', 'randomExcellentTopics',
+                                'category', 'banners',
                                 'votedUsers', 'userTopics', 'revisionHistory'));
         }
     }

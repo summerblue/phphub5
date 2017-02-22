@@ -134,7 +134,7 @@ class Topic extends Model
 
     public function getSameCategoryTopics()
     {
-        $data = Cache::remember('phphub_hot_topics', 30, function(){
+        $data = Cache::remember('phphub_hot_topics_' . $this->category_id, 30, function(){
             return Topic::where('category_id', '=', $this->category_id)
                             ->recent()
                             ->with('user')
