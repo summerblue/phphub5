@@ -2393,16 +2393,21 @@ hr {
     .recommended-articles {
         ul.list {
             list-style: none;
-            padding-left: 6px;
+            padding-left: 2px;
 
-            li a {
-                color: #777;
-                line-height: 18px;
-                margin-bottom: 4px;
+            li {
+                margin-bottom: 0px;
+                line-height: 16px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: 100%;
                 display: inline-block;
-                width: 200px;
-                text-overflow: clip;
-                font-size: 14px;
+                a {
+                    color: #777;
+                    line-height: 22px;
+                    font-size: 14px;
+                }
             }
         }
     }
