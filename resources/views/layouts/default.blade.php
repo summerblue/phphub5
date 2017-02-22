@@ -70,7 +70,7 @@ ______                            _              _                              
 
 			@include('layouts.partials.nav')
 
-			<div class="container main-container {{ (Request::is('blogs*') || Request::is('articles*')) ? 'blog-container' : '' }}">
+			<div class="container main-container {{ (Request::is('blogs*') || Request::is('articles*')) || is_route('wildcard') ? 'blog-container' : '' }}">
 
 				@if(Auth::check() && !Auth::user()->verified && !Request::is('email-verification-required'))
     				<div class="alert alert-warning">
