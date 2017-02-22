@@ -142,3 +142,5 @@ Route::post("/articles", "ArticlesController@store")->name('articles.store')->mi
 Route::get("/articles/{id}/edit", "ArticlesController@edit")->name('articles.edit');
 
 Route::get('/articles/{id}', "TopicsController@show")->name('articles.show');
+
+Route::get('{name}', 'PagesController@wildcard')->name('wildcard');

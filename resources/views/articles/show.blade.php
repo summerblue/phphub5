@@ -57,42 +57,9 @@
             @include('topics.partials.payment_qrcode_modal')
         @endif
 
-
       <div class="col-md-3 main-col pull-left">
-          <div class="panel panel-default corner-radius">
 
-            <div class="panel-body text-center topic-author-box">
-
-                <div class="image blog-cover">
-                    <a href="{{ route('users.articles', $user->id) }}" >
-                        <img class=" avatar-112 avatar img-thumbnail" src="{{ img_crop($blog->cover, 224, 224) }}">
-                    </a>
-                </div>
-                <div class="blog-name">
-                    <h4>专栏：{{ $blog->name }}</h4>
-                </div>
-                <div class="blog-description">
-                    {{ $blog->description ?: $user->name . '的个人专栏' }}
-                </div>
-                <hr>
-
-                @if ($currentUser && ($currentUser->id == $user->id || Entrust::can('manage_users')) )
-                  <div class="follow-box">
-                      <a class="btn btn-primary btn-block" href="{{ route('blogs.edit') }}">
-                        <i class="fa fa-edit"></i> 编辑专栏
-                      </a>
-                  </div>
-                @endif
-                {{--
-                <div class="follow-box">
-                    <a class="btn btn-primary btn-block" href="">
-                      <i class="fa fa-eye"></i> 关注专栏
-                    </a>
-                </div> --}}
-
-            </div>
-
-          </div>
+          @include('blogs._info')
 
           <div class="panel panel-default corner-radius">
 
