@@ -189,4 +189,12 @@ class Topic extends Model
     {
         return $this->category->id == config('phphub.blog_category_id');
     }
+
+    public function link()
+    {
+        if ($this->isArticle()) {
+            return route('articles.show', $this->id);
+        }
+        return route('topics.show', $this->id);
+    }
 }

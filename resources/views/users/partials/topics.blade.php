@@ -9,15 +9,9 @@
         </a>
         @endif
 
-      @if (isset($is_article))
-          <a href="{{ route('articles.show', [$topic->id]) }}" title="{{{ $topic->title }}}" class="title">
-            {{{ str_limit($topic->title, '100') }}}
-          </a>
-      @else
-          <a href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
-            {{{ str_limit($topic->title, '100') }}}
-          </a>
-      @endif
+      <a href="{{ $topic->link() }}" title="{{{ $topic->title }}}" class="title">
+        {{{ str_limit($topic->title, '100') }}}
+      </a>
 
       <span class="meta">
           @if (isset($is_article) && isset($blog) )
