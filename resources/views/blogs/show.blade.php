@@ -10,7 +10,7 @@
 
           <div class="col-md-9 left-col pull-right">
 
-              <div class="panel article-body">
+              <div class="panel article-body article-index">
 
                   <div class="panel-body">
 
