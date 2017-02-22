@@ -88,7 +88,7 @@
                       <h3 class="panel-title">专栏推荐</h3>
                     </div>
                     <div class="panel-body">
-                      @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $userTopics])
+                      @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $userTopics, 'is_article' => true])
                     </div>
                 </div>
             @endif
