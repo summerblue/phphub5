@@ -51,14 +51,3 @@
 @include('layouts.partials.sidebar')
 
 @stop
-
-@section('scripts')
-
-<script type="text/javascript">
-
-    $(document).ready(function()
-    {
-        $("#sticker").sticky({topSpacing:20});
-    });
-</script>
-@stop
