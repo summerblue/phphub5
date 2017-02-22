@@ -13803,17 +13803,17 @@ hr {
 .blog-pages .blog-info hr {
   border-top: 1px solid #f3f3f3; }
 
-.blog-pages .list-group .list-group-item {
+.blog-pages .article-index .list-group .list-group-item {
   line-height: 46px;
   font-size: 15px;
   padding-left: 5px; }
-  .blog-pages .list-group .list-group-item .avatar-wrap {
+  .blog-pages .article-index .list-group .list-group-item .avatar-wrap {
     margin-right: 2px; }
-  .blog-pages .list-group .list-group-item .avatar {
+  .blog-pages .article-index .list-group .list-group-item .avatar {
     margin-top: -4px; }
-  .blog-pages .list-group .list-group-item a.title, .blog-pages .list-group .list-group-item a.title:hover {
+  .blog-pages .article-index .list-group .list-group-item a.title, .blog-pages .article-index .list-group .list-group-item a.title:hover {
     color: #777; }
-  .blog-pages .list-group .list-group-item span.meta {
+  .blog-pages .article-index .list-group .list-group-item span.meta {
     color: #d0d0d0; }
 
 .blog-pages h1.all-articles {
