@@ -71,6 +71,11 @@
             self.initEditBtnAnimated();
             self.initAnchorific();
             self.initIinfiniteScroll();
+            self.initSticky();
+        },
+
+        initSticky: function(){
+            $("#sticker").sticky({topSpacing:20});
         },
 
         initIinfiniteScroll: function(){

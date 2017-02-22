@@ -5921,6 +5921,11 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
             self.initEditBtnAnimated();
             self.initAnchorific();
             self.initIinfiniteScroll();
+            self.initSticky();
+        },
+
+        initSticky: function(){
+            $("#sticker").sticky({topSpacing:20});
         },
 
         initIinfiniteScroll: function(){
