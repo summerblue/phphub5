@@ -405,6 +405,12 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
   }
 }
 
+
+.topics-show .panel .panel-heading, .blog-pages .panel .panel-heading {
+      padding-bottom: 12px;
+      padding: 15px 22px;
+}
+
 .topics-show {
   .topic-title {
     font-size: 25px;
@@ -419,10 +425,6 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
       padding: 22px;
   }
 
-  .panel .panel-heading {
-      padding-bottom: 12px;
-      padding: 15px 22px;
-  }
 
   .ribbon {
     margin-top: 20px;
@@ -2409,6 +2411,19 @@ hr {
                     font-size: 14px;
                 }
             }
+        }
+    }
+}
+
+.replies-index.replies {
+    position: relative;
+    .order-links {
+        position: absolute;
+        top: 11px;
+        right: 11px;
+
+        .btn-sm {
+            margin-left: 2px;
         }
     }
 }

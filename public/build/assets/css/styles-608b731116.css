@@ -218,11 +218,10 @@
     margin-bottom: 10px;
     line-height: 30px; }
   .editor-preview-active-side hr, .editor-preview hr, .markdown-body hr, .markdown-reply hr {
-    height: 2px;
-    padding: 0;
-    margin: 16px 0;
-    background-color: #e8ecef;
-    border: 0 none; }
+    border: 2px dashed #F0F4F6;
+    border-bottom: 0px;
+    margin: 18px auto;
+    width: 50%; }
   .editor-preview-active-side ul,
   .editor-preview-active-side ol, .editor-preview ul,
   .editor-preview ol, .markdown-body ul,
@@ -12241,6 +12240,10 @@ embed {
     white-space: nowrap;
     width: 100%; }
 
+.topics-show .panel .panel-heading, .blog-pages .panel .panel-heading {
+  padding-bottom: 12px;
+  padding: 15px 22px; }
+
 .topics-show .topic-title {
   font-size: 25px;
   color: #333;
@@ -12251,10 +12254,6 @@ embed {
 
 .topics-show .entry-content {
   padding: 22px; }
-
-.topics-show .panel .panel-heading {
-  padding-bottom: 12px;
-  padding: 15px 22px; }
 
 .topics-show .ribbon {
   margin-top: 20px;
@@ -13841,5 +13840,14 @@ hr {
       color: #777;
       line-height: 22px;
       font-size: 14px; }
+
+.replies-index.replies {
+  position: relative; }
+  .replies-index.replies .order-links {
+    position: absolute;
+    top: 11px;
+    right: 11px; }
+    .replies-index.replies .order-links .btn-sm {
+      margin-left: 2px; }
 
 /*# sourceMappingURL=styles.css.map */
