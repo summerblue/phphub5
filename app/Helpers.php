@@ -122,3 +122,8 @@ function setting($key, $default = '')
     // Access a setting, supplying a default value
     return config()->get('settings.'.$key, $default);
 }
+
+function is_route($name)
+{
+    return Request::route()->getName() == $name;
+}
