@@ -35,7 +35,10 @@
 
                         </div>
 
-                        @include('topics.partials.body', array('body' => $topic->body))
+                        <div class="entry-content">
+                            @include('topics.partials.body', array('body' => $topic->body))
+                        </div>
+
 
                         <div class="post-info-panel">
                             <p class="info">
