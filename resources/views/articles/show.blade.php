@@ -57,11 +57,22 @@
             @include('topics.partials.payment_qrcode_modal')
         @endif
 
-      <div class="col-md-3 main-col pull-left">
+        <div class="col-md-3 main-col pull-left">
+            @include('blogs._info')
 
-          @include('blogs._info')
+            @if (count($userTopics))
+                <div class="panel panel-default corner-radius recommended-articles">
+                    <div class="panel-heading text-center">
+                      <h3 class="panel-title">专栏推荐</h3>
+                    </div>
+                    <div class="panel-body">
+                      @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $userTopics])
+                    </div>
+                </div>
+            @endif
 
-          <div class="panel panel-default corner-radius">
+
+            <div class="panel panel-default corner-radius">
 
               <div class="panel-heading text-center">
                 <h3 class="panel-title">作者：{{ $topic->user->name }}</h3>
@@ -80,9 +91,8 @@
                     </span>
                 @endif
             </div>
-
-          </div>
-      </div>
+            </div>
+        </div>
 
 </div>
 
