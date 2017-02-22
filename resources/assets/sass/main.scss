@@ -663,8 +663,9 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
     }
 
     .navbar-form {
-      padding-left: 18px;
-      margin-left: -22px;
+        margin: 0;
+        padding: 0;
+
       .form-group {
         display: inline-block;
         margin-top: 11px;
@@ -672,10 +673,10 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
       }
 
       .mac-style {
-        width: 200px;
+        width: 90%;
       }
       .mac-style:focus {
-        width: 220px;
+        width: 100%;
       }
 
     }
@@ -815,8 +816,8 @@ and (max-device-width : 480px) {
             padding: 8px 10px 9px;
             line-height: 15px;
         }
-        .navbar-form {
-            display: none;
+        .navbar-form .form-group {
+            width: 100%;
         }
         .github-login {
             text-align: right;
