@@ -93,6 +93,32 @@ class BannersTableSeeder extends Seeder
                 'created_at' => '2016-07-12 11:34:36',
                 'updated_at' => '2016-07-12 15:05:09',
             ),
+            6 =>
+            array (
+                'id' => 8,
+                'position' => 'sidebar-resources',
+                'order' => 5,
+                'image_url' => 'https://dn-phphub.qbox.me/uploads/banners/EptWCkT1qDDvtn5nV2id.png',
+                'title' => 'Laravel API 文档',
+                'link' => 'http://laravel-china.org/api/5.1/',
+                'target' => '_blank',
+                'description' => 'Laravel API 文档，涵盖 5.1, 5.2, 5.3 版本',
+                'created_at' => '2016-07-12 11:34:36',
+                'updated_at' => '2016-07-12 15:05:09',
+            ),
+            7 =>
+            array (
+                'id' => 9,
+                'position' => 'sidebar-resources',
+                'order' => 6,
+                'image_url' => 'https://dn-phphub.qbox.me/uploads/banners/HCNo4rSRxIpK12yDL13U.png',
+                'title' => '新手入门 PHP 之道',
+                'link' => 'http://laravel-china.github.io/php-the-right-way/',
+                'target' => '_blank',
+                'description' => '正确的学习 PHP 的方式',
+                'created_at' => '2016-07-12 11:34:07',
+                'updated_at' => '2016-07-12 11:34:07',
+            ),
         ));
 
 
