@@ -26,6 +26,11 @@ class PagesController extends Controller
         return view('pages.about');
     }
 
+    public function wildcard($name, Request $request)
+    {
+        return app(BlogsController::class)->show($name);
+    }
+
     public function wiki()
     {
         return app(TopicsController::class)->show(config('app.wiki_topic_id'));

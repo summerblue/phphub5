@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Blog;
 use App\Models\User;
+use App\Models\Topic;
 use Illuminate\Http\Request;
 use Auth;
 use Flash;
@@ -17,11 +18,21 @@ class BlogsController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-	public function create()
-	{
+    public function create()
+    {
         $user = Auth::user();
         $blog = Blog::firstOrNew(['user_id' => Auth::id()]);
-    	return view('blogs.create_edit', compact('user', 'blog'));
+        return view('blogs.create_edit', compact('user', 'blog'));
+    }
+
+	public function show($name)
+	{
+        $blog = Blog::where('slug', $name)->firstOrFail();
+        $user   = $blog->user;
+        $topics = Topic::whose($user->id)->onlyArticle()->withoutDraft()->recent()->paginate(28);
+
+        $user->update(['article_count' => $topics->total()]);
+        return view('blogs.show', compact('user','blog', 'topics'));
 	}
 
 	public function store(BlogStoreRequest $request)

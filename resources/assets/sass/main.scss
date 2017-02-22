@@ -2350,3 +2350,40 @@ hr {
         display: inline-block;
     }
 }
+
+.blog-pages {
+    .blog-info {
+        hr {
+            border-top: 1px solid #f3f3f3;
+        }
+    }
+    .list-group .list-group-item {
+        line-height: 46px;
+        font-size: 15px;
+        padding-left: 5px;
+
+        .avatar-wrap {
+            margin-right: 2px;
+        }
+        .avatar {
+            margin-top: -4px;
+        }
+
+        a, a:hover {
+            color: #777;
+        }
+
+        span.meta {
+            color: #d0d0d0;
+        }
+    }
+
+    h1.all-articles {
+        font-size: 26px;
+        line-height: 46px;
+        padding-left: 10px;
+        margin-top: 11px;
+    }
+
+}
+
