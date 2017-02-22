@@ -60,17 +60,6 @@
         <div class="col-md-3 main-col pull-left">
             @include('blogs._info')
 
-            @if (count($userTopics))
-                <div class="panel panel-default corner-radius recommended-articles">
-                    <div class="panel-heading text-center">
-                      <h3 class="panel-title">专栏推荐</h3>
-                    </div>
-                    <div class="panel-body">
-                      @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $userTopics])
-                    </div>
-                </div>
-            @endif
-
 
             <div class="panel panel-default corner-radius">
 
@@ -92,6 +81,18 @@
                 @endif
             </div>
             </div>
+
+            @if (count($userTopics))
+                <div class="panel panel-default corner-radius recommended-articles">
+                    <div class="panel-heading text-center">
+                      <h3 class="panel-title">专栏推荐</h3>
+                    </div>
+                    <div class="panel-body">
+                      @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $userTopics])
+                    </div>
+                </div>
+            @endif
+
         </div>
 
 </div>
