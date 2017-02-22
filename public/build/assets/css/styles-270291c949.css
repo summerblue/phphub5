@@ -12426,16 +12426,16 @@ embed {
     word-spacing: 2px;
     padding-right: 18px; }
   .topnav .navbar-form {
-    padding-left: 18px;
-    margin-left: -22px; }
+    margin: 0;
+    padding: 0; }
     .topnav .navbar-form .form-group {
       display: inline-block;
       margin-top: 11px;
       margin-bottom: 11px; }
     .topnav .navbar-form .mac-style {
-      width: 200px; }
+      width: 90%; }
     .topnav .navbar-form .mac-style:focus {
-      width: 220px; }
+      width: 100%; }
   .node-panel .remove-padding-vertically {
     padding-left: 15px;
     padding-right: 15px; }
@@ -12514,8 +12514,8 @@ embed {
   .topnav .nav > li > a {
     padding: 8px 10px 9px;
     line-height: 15px; }
-  .topnav .navbar-form {
-    display: none; }
+  .topnav .navbar-form .form-group {
+    width: 100%; }
   .topnav .github-login {
     text-align: right; }
   .topnav .navbar-nav.navbar-right:last-child {
