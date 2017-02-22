@@ -3,7 +3,7 @@
 <div class="panel-body text-center topic-author-box blog-info">
 
     <div class="image blog-cover">
-        <a href="{{ route('users.articles', $user->id) }}" >
+        <a href="{{ route('wildcard', $blog->slug) }}" >
             <img class=" avatar-112 avatar img-thumbnail" src="{{ img_crop($blog->cover, 224, 224) }}">
         </a>
     </div>
