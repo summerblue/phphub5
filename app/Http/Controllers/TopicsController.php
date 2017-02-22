@@ -82,7 +82,7 @@ class TopicsController extends Controller implements CreatorListener
         $randomExcellentTopics = $topic->getRandomExcellent();
         $replies = $topic->getRepliesWithLimit(config('phphub.replies_perpage'));
         $categoryTopics = $topic->getSameCategoryTopics();
-        $userTopics = $topic->byWhom($topic->user_id)->with('user')->withoutDraft()->withoutBoardTopics()->recent()->limit(3)->get();
+
         $votedUsers = $topic->votes()->orderBy('id', 'desc')->with('user')->get()->pluck('user');
         $revisionHistory = $topic->revisionHistory()->orderBy('created_at', 'DESC')->first();
         $topic->increment('view_count', 1);
@@ -97,11 +97,15 @@ class TopicsController extends Controller implements CreatorListener
 
             $user = $topic->user;
             $blog = $user->blogs()->first();
+            $userTopics = $topic->byWhom($topic->user_id)->withoutDraft()->onlyArticle()->orderBy('vote_count', 'desc')->limit(5)->get();
+
             return view('articles.show', compact(
                                 'blog', 'user','topic', 'replies', 'categoryTopics',
                                 'category', 'banners', 'randomExcellentTopics',
                                 'votedUsers', 'userTopics', 'revisionHistory'));
         } else {
+            $userTopics = $topic->byWhom($topic->user_id)->withoutDraft()->withoutBoardTopics()->recent()->limit(3)->get();
+
             return view('topics.show', compact(
                                 'topic', 'replies', 'categoryTopics',
                                 'category', 'banners', 'randomExcellentTopics',

@@ -13826,4 +13826,16 @@ hr {
 .blog-pages .list-group {
   margin-bottom: 30px; }
 
+.blog-pages .recommended-articles ul.list {
+  list-style: none;
+  padding-left: 6px; }
+  .blog-pages .recommended-articles ul.list li a {
+    color: #777;
+    line-height: 18px;
+    margin-bottom: 4px;
+    display: inline-block;
+    width: 200px;
+    text-overflow: clip;
+    font-size: 14px; }
+
 /*# sourceMappingURL=styles.css.map */
