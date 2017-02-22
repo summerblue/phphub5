@@ -60,38 +60,40 @@
         <div class="col-md-3 main-col pull-left">
             @include('blogs._info')
 
+            <div id="sticker">
 
-            <div class="panel panel-default corner-radius">
+                <div class="panel panel-default corner-radius">
 
-              <div class="panel-heading text-center">
-                <h3 class="panel-title">作者：{{ $topic->user->name }}</h3>
-              </div>
+                  <div class="panel-heading text-center">
+                    <h3 class="panel-title">作者：{{ $topic->user->name }}</h3>
+                  </div>
 
-            <div class="panel-body text-center topic-author-box">
-                @include('topics.partials.topic_author_box')
+                <div class="panel-body text-center topic-author-box">
+                    @include('topics.partials.topic_author_box')
 
-                @if(Auth::check() && $currentUser->id != $topic->user->id)
-                    <span class="text-white">
-                        <?php $isFollowing = $currentUser && $currentUser->isFollowing($topic->user->id) ?>
-                        <hr>
-                        <a data-method="post" class="btn btn-{{ !$isFollowing ? 'warning' : 'default' }} btn-block" href="javascript:void(0);" data-url="{{ route('users.doFollow', $topic->user->id) }}" id="user-edit-button">
-                           <i class="fa {{!$isFollowing ? 'fa-plus' : 'fa-minus'}}"></i> {{ !$isFollowing ? lang('Follow') : lang('Unfollow') }}
-                        </a>
-                    </span>
+                    @if(Auth::check() && $currentUser->id != $topic->user->id)
+                        <span class="text-white">
+                            <?php $isFollowing = $currentUser && $currentUser->isFollowing($topic->user->id) ?>
+                            <hr>
+                            <a data-method="post" class="btn btn-{{ !$isFollowing ? 'warning' : 'default' }} btn-block" href="javascript:void(0);" data-url="{{ route('users.doFollow', $topic->user->id) }}" id="user-edit-button">
+                               <i class="fa {{!$isFollowing ? 'fa-plus' : 'fa-minus'}}"></i> {{ !$isFollowing ? lang('Follow') : lang('Unfollow') }}
+                            </a>
+                        </span>
+                    @endif
+                </div>
+                </div>
+
+                @if (count($userTopics))
+                    <div class="panel panel-default corner-radius recommended-articles">
+                        <div class="panel-heading text-center">
+                          <h3 class="panel-title">专栏推荐</h3>
+                        </div>
+                        <div class="panel-body">
+                          @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $userTopics, 'is_article' => true])
+                        </div>
+                    </div>
                 @endif
             </div>
-            </div>
-
-            @if (count($userTopics))
-                <div class="panel panel-default corner-radius recommended-articles">
-                    <div class="panel-heading text-center">
-                      <h3 class="panel-title">专栏推荐</h3>
-                    </div>
-                    <div class="panel-body">
-                      @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $userTopics, 'is_article' => true])
-                    </div>
-                </div>
-            @endif
 
         </div>
 
