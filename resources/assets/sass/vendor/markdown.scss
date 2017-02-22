@@ -236,12 +236,10 @@
   }
 
   hr {
-    height: 2px;
-    padding: 0;
-    margin: 16px 0;
-    background-color: #e8ecef;
-    border: 0 none;
-  }
+    border: 2px dashed #F0F4F6;
+    border-bottom: 0px;
+    margin: 18px auto;
+    width: 50%;  }
 
   ul,
   ol {

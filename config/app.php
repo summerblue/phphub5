@@ -165,6 +165,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        HieuLe\Active\ActiveServiceProvider::class,
 
         // infyomlabs/laravel-generator
         Laracasts\Flash\FlashServiceProvider::class,
@@ -249,6 +250,7 @@ return [
 
         // API
         'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
+
     ],
 
 ];

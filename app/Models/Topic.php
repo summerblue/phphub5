@@ -119,17 +119,16 @@ class Topic extends Model
         $this->save();
     }
 
-    public function getRepliesWithLimit($limit = 30)
+    public function getRepliesWithLimit($limit = 30, $order = 'created_at')
     {
         $pageName = 'page';
-
         // Default display the latest reply
         $latest_page = is_null(\Input::get($pageName)) ? ceil($this->reply_count / $limit) : 1;
+        $query = $this->replies()->with('user');
 
-        return $this->replies()
-                    ->orderBy('created_at', 'asc')
-                    ->with('user')
-                    ->paginate($limit, ['*'], $pageName, $latest_page);
+        $query = ($order == 'vote_count') ? $query->orderBy('vote_count', 'desc') : $query->orderBy('created_at', 'asc');
+
+        return $query->paginate($limit, ['*'], $pageName, $latest_page);
     }
 
     public function getSameCategoryTopics()

@@ -53,7 +53,7 @@ class TopicsController extends Controller implements CreatorListener
         return app('Phphub\Creators\TopicCreator')->create($this, $request->except('_token'));
     }
 
-    public function show($id)
+    public function show($id, Request $request)
     {
         $topic = Topic::where('id', $id)->with('user', 'lastReplyUser')->firstOrFail();
 
@@ -79,7 +79,7 @@ class TopicsController extends Controller implements CreatorListener
             return redirect()->route('topics.index');
         }
 
-        $replies = $topic->getRepliesWithLimit(config('phphub.replies_perpage'));
+        $replies = $topic->getRepliesWithLimit(config('phphub.replies_perpage'), $request->order_by);
         $categoryTopics = $topic->getSameCategoryTopics();
 
         $votedUsers = $topic->votes()->orderBy('id', 'desc')->with('user')->get()->pluck('user');
