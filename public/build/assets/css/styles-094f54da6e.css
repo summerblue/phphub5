@@ -13851,5 +13851,13 @@ hr {
     right: 11px; }
     .replies-index.replies .order-links .btn-sm {
       margin-left: 2px; }
+    .replies-index.replies .order-links .btn-default {
+      color: #b7b7b7;
+      background-color: #fff;
+      border-color: #dcdada; }
+    .replies-index.replies .order-links .btn-default.active {
+      color: #b7b7b7;
+      background-color: #fbfbfb;
+      border-color: #e4e4e4; }
 
 /*# sourceMappingURL=styles.css.map */
