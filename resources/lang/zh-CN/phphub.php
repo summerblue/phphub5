@@ -129,7 +129,7 @@ return [
     'publish_at_user' => '@name 会链接到用户页面，并会通知他',
     'publish_image' => '上传图片, 支持拖拽和剪切板黏贴上传, 格式限制 - jpg, png, gif',
     'publish_draft' => '发布框支持本地存储功能，会在内容变更时保存，「提交」按钮点击时清空',
-    'Successfully remove attention.' => '成功取消关注',
+    'Successfully remove attention.' => '成功取消跟踪',
     'Successfully_attention' => '成功跟踪话题, 系统会通知你关于此话题最新的讨论.',
     'Operation succeeded.' => '操作成功！',
     'Login Successfully.' => '成功登录！',
