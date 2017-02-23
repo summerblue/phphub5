@@ -23,17 +23,27 @@
     @if ($currentUser && ($currentUser->id == $user->id || Entrust::can('manage_users')) )
         <hr>
       <div class="follow-box">
-          <a class="btn btn-primary btn-block" href="{{ route('blogs.edit') }}">
+          <a class="btn btn-info btn-block" href="{{ route('blogs.edit') }}">
             <i class="fa fa-edit"></i> 编辑专栏
           </a>
       </div>
     @endif
-{{--
-    <div class="follow-box">
-        <a class="btn btn-primary btn-block" href="">
-          <i class="fa fa-eye"></i> 关注专栏
-        </a>
-    </div> --}}
+
+    @if ($currentUser && $currentUser->id != $user->id)
+        <hr>
+
+        @if ($currentUser->subscribe($blog))
+            <a data-method="post" class="btn btn-default btn-block" href="javascript:void(0);" data-url="{{ route('blogs.unsubscribe', $user->id) }}">
+              <i class="fa fa-minus"></i> 取消订阅
+            </a>
+        @else
+            <div class="follow-box">
+                <a data-method="post" class="btn btn-primary btn-block" href="javascript:void(0);" data-url="{{ route('blogs.subscribe', $user->id) }}">
+                  <i class="fa fa-eye"></i> 订阅专栏
+                </a>
+            </div>
+        @endif
+    @endif
 
 </div>
 

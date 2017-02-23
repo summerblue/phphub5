@@ -71,4 +71,22 @@ class BlogsController extends Controller
 
 		return redirect()->route('blogs.edit');
 	}
+
+    public function subscribe($id)
+    {
+        $blog = Blog::findOrFail($id);
+        Auth::user()->subscribes()->attach($blog->id);
+        $blog->increment('subscriber_count', 1);
+        Flash::success("订阅成功");
+        return redirect()->back();
+    }
+
+    public function unsubscribe($id)
+    {
+        $blog = Blog::findOrFail($id);
+        Auth::user()->subscribes()->detach($blog->id);
+        $blog->decrement('subscriber_count', 1);
+        Flash::success("成功取消订阅");
+        return redirect()->back();
+    }
 }

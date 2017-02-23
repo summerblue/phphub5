@@ -12,4 +12,9 @@ class Blog extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function subscribers()
+    {
+        return $this->belongsToMany(User::class, 'blog_subscribers');
+    }
 }
