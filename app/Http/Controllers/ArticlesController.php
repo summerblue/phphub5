@@ -82,11 +82,9 @@ class ArticlesController extends Controller implements CreatorListener
      * ----------------------------------------
      */
 
-    public function creatorFailed($errors)
+    public function creatorFailed($error)
     {
-        foreach ($errors->all() as $key => $value) {
-            Flash::error('发布失败：' . $value);
-        }
+        Flash::error('发布失败：' . $error);
         return redirect()->back();
     }
 
