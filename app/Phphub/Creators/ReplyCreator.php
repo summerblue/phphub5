@@ -3,7 +3,6 @@
 use Phphub\Core\CreatorListener;
 use Phphub\Core\Robot;
 use Phphub\Notification\Mention;
-use Phphub\Notification\Notifier;
 use App\Models\Reply;
 use Auth;
 use App\Models\Topic;

@@ -19,24 +19,24 @@ class Notifier
     public function newTopicNotify(User $fromUser, $users, Topic $topic)
     {
         // Notify user follower
-        Notification::batchNotify(
-                    'new_reply',
-                    $fromUser,
-                    $this->removeDuplication([$topic->user]),
-                    $topic,
-                    $reply);
+        // Notification::batchNotify(
+        //             'new_topic_from_following',
+        //             $fromUser,
+        //             $this->removeDuplication([$topic->user]),
+        //             $topic,
+        //             $reply);
 
         // Notify blog subscriber
-        Notification::batchNotify(
-                    'attention',
-                    $fromUser,
-                    $this->removeDuplication($topic->attentedUsers()->get()),
-                    $topic,
-                    $reply);
+        // Notification::batchNotify(
+        //             'attention',
+        //             $fromUser,
+        //             $this->removeDuplication($topic->attentedUsers()),
+        //             $topic,
+        //             $reply);
 
         // Notify mentioned users
         Notification::batchNotify(
-                    'at',
+                    'mentioned_in_topic',
                     $fromUser,
                     $this->removeDuplication($mentionParser->users),
                     $topic,
@@ -57,7 +57,7 @@ class Notifier
         Notification::batchNotify(
                     'attention',
                     $fromUser,
-                    $this->removeDuplication($topic->attentedUsers()->get()),
+                    $this->removeDuplication($topic->attentedUsers()),
                     $topic,
                     $reply);
 
@@ -83,11 +83,20 @@ class Notifier
                     null,
                     $append->content);
 
-        // Notify attented users
+        // Notify voted users
         Notification::batchNotify(
                     'vote_append',
                     $fromUser,
-                    $this->removeDuplication($topic->attentedUsers()->get()),
+                    $this->removeDuplication($topic->votedUsers()),
+                    $topic,
+                    null,
+                    $append->content);
+
+        // Notify attented users
+        Notification::batchNotify(
+                    'attented_append',
+                    $fromUser,
+                    $this->removeDuplication($topic->attentedUsers()),
                     $topic,
                     null,
                     $append->content);

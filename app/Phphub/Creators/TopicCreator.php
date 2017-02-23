@@ -10,6 +10,12 @@ use Illuminate\Support\MessageBag;
 
 class TopicCreator
 {
+    protected $mentionParser;
+
+    public function __construct(Mention $mentionParser)
+    {
+        $this->mentionParser = $mentionParser;
+    }
 
     public function create(CreatorListener $observer, $data)
     {
@@ -23,6 +29,9 @@ class TopicCreator
         $data['user_id'] = Auth::id();
         $data['created_at'] = Carbon::now()->toDateTimeString();
         $data['updated_at'] = Carbon::now()->toDateTimeString();
+
+        // @ user
+        $data['body'] = $this->mentionParser->parse($data['body']);
 
         $markdown = new Markdown;
         $data['body_original'] = $data['body'];
@@ -43,6 +52,8 @@ class TopicCreator
         } else {
             Auth::user()->increment('topic_count', 1);
         }
+
+        // app('Phphub\Notification\Notifier')->newTopicNotify(Auth::user(), $this->mentionParser, $topic, $reply);
 
         return $observer->creatorSucceed($topic);
     }

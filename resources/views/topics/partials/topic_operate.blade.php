@@ -7,11 +7,11 @@
   <div class="pull-right actions">
 
     @if ($currentUser && $currentUser->isAttentedTopic($topic))
-      <a class="popover-with-html" data-content="跟踪主题，当评论和附言创建时将会被通知" data-method="post" id="topic-attent-cancel-button" href="javascript:void(0);" data-url="{{ route('attentions.createOrDelete', $topic->id) }}">
+      <a class="popover-with-html" data-content="关注主题，当评论和附言创建时将会被通知" data-method="post" id="topic-attent-cancel-button" href="javascript:void(0);" data-url="{{ route('attentions.createOrDelete', $topic->id) }}">
         <i class="glyphicon glyphicon-eye-open" style="color:#ce8a81"></i> <span></span>
       </a>
     @else
-      <a class="popover-with-html" data-content="跟踪主题，当评论和附言创建时将会被通知" data-method="post" id="topic-attent-button" href="javascript:void(0);" data-url="{{ route('attentions.createOrDelete', $topic->id) }}">
+      <a class="popover-with-html" data-content="关注主题，当评论和附言创建时将会被通知" data-method="post" id="topic-attent-button" href="javascript:void(0);" data-url="{{ route('attentions.createOrDelete', $topic->id) }}">
         <i class="glyphicon glyphicon-eye-open"></i> <span></span>
       </a>
     @endif
@@ -47,7 +47,7 @@
     @endif
 
 
-      @if (!isset($is_article) && $currentUser && $currentUser->id == $topic->user_id)
+      @if (!isset($is_article) && $currentUser && ($manage_topics || $currentUser->id == $topic->user_id))
           <a id="topic-append-button" href="javascript:void(0);" class="admin  popover-with-html" data-toggle="modal" data-target="#exampleModal" data-content="帖子附言，添加附言后所有参与讨论的用户都能收到消息提醒，包括点赞和评论的用户">
             <i class="fa fa-plus"></i>
           </a>
