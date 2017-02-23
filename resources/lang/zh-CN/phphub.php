@@ -136,7 +136,7 @@ return [
     'Congratulations and Welcome!' => '恭喜，欢迎加入 Laravel China 社区！',
     'Operation failed!' => '操作失败!',
     'Favorited your topic:' => '收藏了你的话题',
-    'Attented your topic:' => '关注了你的话题',
+    'Attented your topic:' => '跟踪了你的话题',
     'Up Vote your topic' => '赞了你的话题',
     'Up Vote your reply' => '赞了你的回复',
     'has mark your topic as wiki:' => '把你的话题收录为社区 Wiki',
