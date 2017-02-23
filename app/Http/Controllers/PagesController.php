@@ -31,9 +31,9 @@ class PagesController extends Controller
         return app(BlogsController::class)->show($name);
     }
 
-    public function wiki()
+    public function wiki(Request $request)
     {
-        return app(TopicsController::class)->show(config('app.wiki_topic_id'));
+        return app(TopicsController::class)->show(config('app.wiki_topic_id'), $request);
     }
 
     public function search(Request $request)
