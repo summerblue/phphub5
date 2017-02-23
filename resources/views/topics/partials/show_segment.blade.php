@@ -56,8 +56,8 @@
         <div class="total">{{ lang('Total Reply Count') }}: <b>{{ $replies->total() }}</b> </div>
 
         <div class="order-links">
-            <a class="btn btn-default btn-sm {{ active_class( ! if_query('order_by', 'vote_count')) }}" href="{{ $topic->link(['order_by' => 'created_at', '#replies']) }}" role="button">最近</a>
-            <a class="btn btn-default btn-sm {{ active_class(if_query('order_by', 'vote_count')) }}" href="{{ $topic->link(['order_by' => 'vote_count', '#replies'])  }}" role="button">投票</a>
+            <a class="btn btn-default btn-sm {{ active_class( ! if_query('order_by', 'vote_count')) }} popover-with-html" data-content="按照时间排序" href="{{ $topic->link(['order_by' => 'created_at', '#replies']) }}" role="button">时间</a>
+            <a class="btn btn-default btn-sm {{ active_class(if_query('order_by', 'vote_count')) }} popover-with-html" data-content="按照投票排序" href="{{ $topic->link(['order_by' => 'vote_count', '#replies'])  }}" role="button">投票</a>
         </div>
 
     </div>

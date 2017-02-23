@@ -32,7 +32,7 @@ class User extends Model implements AuthenticatableContract,
         'columns' => [
             'users.name' => 10,
             'users.real_name' => 10,
-            'users.introduction' => 5,
+            'users.introduction' => 10,
         ],
     ];
 
