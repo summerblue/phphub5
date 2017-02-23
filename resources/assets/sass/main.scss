@@ -2429,6 +2429,18 @@ hr {
         .btn-sm {
             margin-left: 2px;
         }
+
+        .btn-default {
+            color: #b7b7b7;
+            background-color: #fff;
+            border-color: #dcdada;
+        }
+
+        .btn-default.active {
+            color: #b7b7b7;
+            background-color: #fbfbfb;
+            border-color: #e4e4e4;
+        }
     }
 }
 
