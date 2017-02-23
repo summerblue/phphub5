@@ -11,6 +11,9 @@ class NotificationPresenter extends Presenter
             case 'mentioned_in_topic':
                 $lable = "在话题中提及你";
                 break;
+            case 'new_topic_from_following':
+                $lable = "你关注的用户发布了新话题";
+                break;
             case 'new_reply':
                 $lable = lang('Your topic have new reply:');
                 break;

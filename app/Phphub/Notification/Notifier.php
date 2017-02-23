@@ -18,13 +18,19 @@ class Notifier
 
     public function newTopicNotify(User $fromUser,  Mention $mentionParser, Topic $topic)
     {
+        // Notify mentioned users
+        Notification::batchNotify(
+                    'mentioned_in_topic',
+                    $fromUser,
+                    $this->removeDuplication($mentionParser->users),
+                    $topic);
+
         // Notify user follower
-        // Notification::batchNotify(
-        //             'new_topic_from_following',
-        //             $fromUser,
-        //             $this->removeDuplication([$topic->user]),
-        //             $topic,
-        //             $reply);
+        Notification::batchNotify(
+                    'new_topic_from_following',
+                    $fromUser,
+                    $this->removeDuplication($fromUser->followers),
+                    $topic);
 
         // Notify blog subscriber
         // Notification::batchNotify(
@@ -33,15 +39,6 @@ class Notifier
         //             $this->removeDuplication($topic->attentedUsers()),
         //             $topic,
         //             $reply);
-
-        // Notify mentioned users
-        Notification::batchNotify(
-                    'mentioned_in_topic',
-                    $fromUser,
-                    $this->removeDuplication($mentionParser->users),
-                    $topic,
-                    null,
-                    null);
     }
 
     public function newReplyNotify(User $fromUser, Mention $mentionParser, Topic $topic, Reply $reply)
