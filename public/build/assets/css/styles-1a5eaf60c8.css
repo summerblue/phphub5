@@ -13766,6 +13766,9 @@ hr {
     padding: 0px; }
   .search-results .user.result .info .role-label {
     position: relative; }
+  .search-results .avatar-small {
+    width: 26px;
+    height: 26px; }
 
 @media (max-width: 767px) {
   .blog-pages .left-col {
