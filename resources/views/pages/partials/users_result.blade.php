@@ -13,6 +13,11 @@
                 <a class="label label-success role" href="{{ route('roles.show', [$user_result->present()->badgeID()]) }}">{{{ $user_result->present()->badgeName() }}}</a>
             </div>
         @endif
+
+        @if ($user_result->introduction)
+             | {{ $user_result->introduction }}
+        @endif
+
       </div>
       <div class="info number">
         第 {{ $user_result->id }} 位会员
