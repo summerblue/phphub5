@@ -155,11 +155,11 @@ class EmailHandler
         }
 
         Mail::send('emails.fake', [], function (Message $message) {
-            $message->subject('有用户关注了你的主题');
+            $message->subject('有用户跟踪了你的主题');
 
             $message->getSwiftMessage()->setBody(new SendCloudTemplate('notification_mail', [
                 'name'    => "<a href='" . url(route('users.show', $this->fromUser->id)) . "' target='_blank'>{$this->fromUser->name}</a>",
-                'action'  => " 关注了你的主题: <a href='" . url(route('topics.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a>",
+                'action'  => " 跟踪了你的主题: <a href='" . url(route('topics.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a>",
                 'content' => '',
             ]));
 
@@ -175,11 +175,11 @@ class EmailHandler
         }
 
         Mail::send('emails.fake', [], function (Message $message) {
-            $message->subject('有用户回复了你关注的主题');
+            $message->subject('有用户回复了你跟踪的主题');
 
             $message->getSwiftMessage()->setBody(new SendCloudTemplate('notification_mail', [
                 'name'     => "<a href='" . url(route('users.show', $this->fromUser->id)) . "' target='_blank'>{$this->fromUser->name}</a>",
-                'action'   => " 回复了你关注的主题: <a href='" . url(route('topics.show', $this->reply->topic_id)) . "' target='_blank'>{$this->reply->topic->title}</a>
+                'action'   => " 回复了你跟踪的主题: <a href='" . url(route('topics.show', [$this->reply->topic_id, '#reply' . $this->reply->id])) . "' target='_blank'>{$this->reply->topic->title}</a>
                               <br /><br />回复内容如下：<br />",
                 'content'  => $this->reply->body,
             ]));
