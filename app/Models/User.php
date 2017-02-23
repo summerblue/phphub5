@@ -114,6 +114,11 @@ class User extends Model implements AuthenticatableContract,
         return $this->hasMany(Reply::class);
     }
 
+    public function subscribes()
+    {
+        return $this->belongsToMany(Blog::class, 'blog_subscribers');
+    }
+
     public function attentTopics()
     {
         return $this->belongsToMany(Topic::class, 'attentions')->withTimestamps();
@@ -149,6 +154,10 @@ class User extends Model implements AuthenticatableContract,
         return Attention::isUserAttentedTopic($this, $topic);
     }
 
+    public function subscribe(Blog $blog)
+    {
+        return $blog->subscribers()->where('user_id', $this->id)->count() > 0;
+    }
     /**
      * ----------------------------------------
      * UserInterface

@@ -136,6 +136,9 @@ Route::post('/blogs', 'BlogsController@store')->name('blogs.store')->middleware(
 Route::get('/blogs/edit', 'BlogsController@edit')->name('blogs.edit');
 Route::patch('/blogs/{id}', 'BlogsController@update')->name('blogs.update');
 
+Route::post('/blogs/{blog}/subscribe', 'BlogsController@subscribe')->name('blogs.subscribe');
+Route::post('/blogs/{blog}/unsubscribe', 'BlogsController@unsubscribe')->name('blogs.unsubscribe');
+
 // Article
 Route::get("/articles/create", "ArticlesController@create")->name('articles.create')->middleware('verified_email');
 Route::patch("/topics/{id}/transform", "ArticlesController@transform")->name('articles.transform');
