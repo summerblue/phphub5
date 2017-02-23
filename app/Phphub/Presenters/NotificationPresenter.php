@@ -14,6 +14,9 @@ class NotificationPresenter extends Presenter
             case 'attention':
                 $lable = lang('Attented topic has new reply:');
                 break;
+            case 'attented_append':
+                $lable = lang('Attented topic has new reply:');
+                break;
             case 'at':
                 $lable = lang('Mention you At:');
                 break;

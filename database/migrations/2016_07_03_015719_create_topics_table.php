@@ -16,7 +16,7 @@ class CreateTopicsTable extends Migration
         Schema::create('topics', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title')->index();
-            $table->string('source')->nullable()->index(); // 来源跟踪：iOS，Android
+            $table->string('source')->nullable()->index(); // 来源关注：iOS，Android
             $table->text('body');
             $table->integer('user_id')->unsigned()->default(0)->index();
             $table->integer('category_id')->unsigned()->default(0)->index();
