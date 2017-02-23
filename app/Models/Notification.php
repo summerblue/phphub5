@@ -60,8 +60,8 @@ class Notification extends Model
                 'from_user_id' => $fromUser->id,
                 'user_id'      => $toUser->id,
                 'topic_id'     => $topic->id,
-                'reply_id'     => $content ?: $reply->id,
-                'body'         => $content ?: $reply->body,
+                'reply_id'     => $content ?: ($reply ? $reply->id : '' ),
+                'body'         => $content ?: ($reply ? $reply->body : '' ),
                 'type'         => $type,
                 'created_at'   => $nowTimestamp,
                 'updated_at'   => $nowTimestamp

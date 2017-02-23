@@ -3,6 +3,7 @@
 use Phphub\Core\CreatorListener;
 use Phphub\Core\Robot;
 use App\Models\Topic;
+use Phphub\Notification\Mention;
 use Auth;
 use Carbon\Carbon;
 use Phphub\Markdown\Markdown;
@@ -21,9 +22,7 @@ class TopicCreator
     {
         // 检查是否重复发布
         if ($this->isDuplicate($data)) {
-            $errorMessages = new MessageBag;
-            $errorMessages->add('duplicated', '请不要发布重复内容。');
-            return $observer->creatorFailed($errorMessages);
+            return $observer->creatorFailed('请不要发布重复内容。');
         }
 
         $data['user_id'] = Auth::id();
@@ -53,7 +52,7 @@ class TopicCreator
             Auth::user()->increment('topic_count', 1);
         }
 
-        // app('Phphub\Notification\Notifier')->newTopicNotify(Auth::user(), $this->mentionParser, $topic, $reply);
+        app('Phphub\Notification\Notifier')->newTopicNotify(Auth::user(), $this->mentionParser, $topic);
 
         return $observer->creatorSucceed($topic);
     }

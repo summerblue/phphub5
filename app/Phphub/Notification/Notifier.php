@@ -16,7 +16,7 @@ class Notifier
 {
     public $notifiedUsers = [];
 
-    public function newTopicNotify(User $fromUser, $users, Topic $topic)
+    public function newTopicNotify(User $fromUser,  Mention $mentionParser, Topic $topic)
     {
         // Notify user follower
         // Notification::batchNotify(
@@ -40,7 +40,8 @@ class Notifier
                     $fromUser,
                     $this->removeDuplication($mentionParser->users),
                     $topic,
-                    $reply);
+                    null,
+                    null);
     }
 
     public function newReplyNotify(User $fromUser, Mention $mentionParser, Topic $topic, Reply $reply)

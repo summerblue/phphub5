@@ -20,6 +20,7 @@ class EmailHandler
         // 只有需要用户处理的信息，才有必要发送邮件
 
         'at'                   => 'sendAtNotifyMail',
+        'mentioned_in_topic'   => 'sendMentionedInTopicNotifyMail',
         'attention'            => 'sendAttentionNotifyMail',
         'vote_append'          => 'sendVoteAppendNotifyMail',
         'comment_append'       => 'sendCommentAppendNotifyMail',
@@ -105,7 +106,6 @@ class EmailHandler
     protected function sendAtNotifyMail()
     {
         if (!$this->reply) return false;
-
         $action = " 在主题: <a href='" . url(route('topics.show', [$this->reply->topic_id, '#reply' . $this->reply->id])) . "' target='_blank'>{$this->reply->topic->title}</a> 的评论中提及了你<br /><br />内容如下：<br />";
         $this->_send($this->topic, $this->fromUser, '有用户在评论中提及你', $action, $this->reply->body, $this->reply->body);
     }
@@ -136,6 +136,13 @@ class EmailHandler
         if (!$this->body || !$this->topic) return false;
         $action = " 你关注的话题: <a href='" . url(route('topics.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a> 有新附言<br /><br />附言内容如下：<br />";
         $this->_send($this->topic, '', '你关注的话题有新附言', $action, $this->body, $this->body);
+    }
+
+    protected function sendMentionedInTopicNotifyMail()
+    {
+        if (!$this->topic) return false;
+        $action = " 在主题: <a href='" . url(route('topics.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a> 中提及了你。<br />";
+        $this->_send($this->topic, $this->fromUser, '有用户在主题中提及你', $action, '', '');
     }
 
     protected function generateMailLog($body = '')

@@ -8,8 +8,11 @@ class NotificationPresenter extends Presenter
     public function lableUp()
     {
         switch ($this->type) {
+            case 'mentioned_in_topic':
+                $lable = "在话题中提及你";
+                break;
             case 'new_reply':
-            $lable = lang('Your topic have new reply:');
+                $lable = lang('Your topic have new reply:');
                 break;
             case 'attention':
                 $lable = lang('Attented topic has new reply:');

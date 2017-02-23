@@ -272,8 +272,9 @@ class TopicsController extends Controller implements CreatorListener
      * ----------------------------------------
      */
 
-    public function creatorFailed($errors)
+    public function creatorFailed($error)
     {
+        Flash::error('发布失败：' . $error);
         return redirect('/');
     }
 
