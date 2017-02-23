@@ -34,6 +34,8 @@ class EmailHandler
         // 'topic_attent'         => 'sendTopicAttentNotifyMail',
         // 'topic_mark_excellent' => 'sendTopicMarkExcellentNotifyMail',
         // 'topic_upvote'         => 'sendTopicUpvoteNotifyMail',
+        // 'new_topic_from_subscribe'
+        // 'new_topic_from_following'
     ];
 
     protected $type;
