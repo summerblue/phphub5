@@ -2299,6 +2299,10 @@ hr {
     .list-panel .panel-body {
         padding:0px;
     }
+
+    .user.result .info .role-label {
+        position: relative;
+    }
 }
 
 @media (max-width: 767px) {
