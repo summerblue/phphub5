@@ -6,6 +6,16 @@
 
   <div class="pull-right actions">
 
+    @if ($currentUser && $currentUser->isAttentedTopic($topic))
+      <a class="popover-with-html" data-content="跟踪主题，当评论和附言创建时将会被通知" data-method="post" id="topic-attent-cancel-button" href="javascript:void(0);" data-url="{{ route('attentions.createOrDelete', $topic->id) }}">
+        <i class="glyphicon glyphicon-eye-open" style="color:#ce8a81"></i> <span></span>
+      </a>
+    @else
+      <a class="popover-with-html" data-content="跟踪主题，当评论和附言创建时将会被通知" data-method="post" id="topic-attent-button" href="javascript:void(0);" data-url="{{ route('attentions.createOrDelete', $topic->id) }}">
+        <i class="glyphicon glyphicon-eye-open"></i> <span></span>
+      </a>
+    @endif
+
     @if ($currentUser && $manage_topics )
         <a data-ajax="post" id="topic-recomend-button" href="javascript:void(0);" data-url="{{ route('topics.recommend', [$topic->id]) }}" class="admin popover-with-html {{ $topic->is_excellent == 'yes' ? 'active' : ''}}" data-content="推荐主题，加精的帖子会出现在首页">
         <i class="fa fa-trophy"></i>

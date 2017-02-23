@@ -92,12 +92,13 @@ Route::patch('/topics/{id}', 'TopicsController@update')->name('topics.update');
 Route::delete('/topics/{id}', 'TopicsController@destroy')->name('topics.destroy');
 Route::post('/topics/{id}/append', 'TopicsController@append')->name('topics.append');
 
-# ------------------ Votes ------------------------
+# ------------------ User Topic Actions ------------------------
 
 Route::group(['before' => 'auth'], function () {
     Route::post('/topics/{id}/upvote', 'TopicsController@upvote')->name('topics.upvote');
     Route::post('/topics/{id}/downvote', 'TopicsController@downvote')->name('topics.downvote');
     Route::post('/replies/{id}/vote', 'RepliesController@vote')->name('replies.vote');
+    Route::post('/attentions/{id}', 'AttentionsController@createOrDelete')->name('attentions.createOrDelete');
 });
 
 # ------------------ Admin Route ------------------------

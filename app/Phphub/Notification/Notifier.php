@@ -16,6 +16,33 @@ class Notifier
 {
     public $notifiedUsers = [];
 
+    public function newTopicNotify(User $fromUser, $users, Topic $topic)
+    {
+        // Notify user follower
+        Notification::batchNotify(
+                    'new_reply',
+                    $fromUser,
+                    $this->removeDuplication([$topic->user]),
+                    $topic,
+                    $reply);
+
+        // Notify blog subscriber
+        Notification::batchNotify(
+                    'attention',
+                    $fromUser,
+                    $this->removeDuplication($topic->attentedUsers()->get()),
+                    $topic,
+                    $reply);
+
+        // Notify mentioned users
+        Notification::batchNotify(
+                    'at',
+                    $fromUser,
+                    $this->removeDuplication($mentionParser->users),
+                    $topic,
+                    $reply);
+    }
+
     public function newReplyNotify(User $fromUser, Mention $mentionParser, Topic $topic, Reply $reply)
     {
         // Notify the author
@@ -30,7 +57,7 @@ class Notifier
         Notification::batchNotify(
                     'attention',
                     $fromUser,
-                    $this->removeDuplication($topic->voteby()),
+                    $this->removeDuplication($topic->attentedUsers()->get()),
                     $topic,
                     $reply);
 
@@ -60,7 +87,7 @@ class Notifier
         Notification::batchNotify(
                     'vote_append',
                     $fromUser,
-                    $this->removeDuplication($topic->voteby()),
+                    $this->removeDuplication($topic->attentedUsers()->get()),
                     $topic,
                     null,
                     $append->content);
@@ -82,7 +109,7 @@ class Notifier
     {
         $notYetNotifyUsers = [];
         foreach ($users as $user) {
-            if (!in_array($user->id, $this->notifiedUsers)) {
+            if ( ! in_array($user->id, $this->notifiedUsers)) {
                 $notYetNotifyUsers[] = $user;
                 $this->notifiedUsers[] = $user->id;
             }
