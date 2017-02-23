@@ -196,11 +196,11 @@ class EmailHandler
         }
 
         Mail::send('emails.fake', [], function (Message $message) {
-            $message->subject('你关注的话题有新附言');
+            $message->subject('你跟踪的话题有新附言');
 
             $message->getSwiftMessage()->setBody(new SendCloudTemplate('notification_mail', [
                 'name'     => "",
-                'action'   => " 你关注的话题: <a href='" . url(route('topics.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a> 有新附言
+                'action'   => " 你跟踪的话题: <a href='" . url(route('topics.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a> 有新附言
                               <br /><br />附言内容如下：<br />",
                 'content'  => $this->body,
             ]));

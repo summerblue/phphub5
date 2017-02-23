@@ -112,6 +112,11 @@ class User extends Model implements AuthenticatableContract,
         return $this->hasMany(Reply::class);
     }
 
+    public function attentTopics()
+    {
+        return $this->belongsToMany(Topic::class, 'attentions')->withTimestamps();
+    }
+
     public function notifications()
     {
         return $this->hasMany(Notification::class)->recent()->with('topic', 'fromUser')->paginate(20);
@@ -135,6 +140,11 @@ class User extends Model implements AuthenticatableContract,
     public function getPersonalWebsiteAttribute($value)
     {
         return str_replace(['https://', 'http://'], '', $value);
+    }
+
+    public function isAttentedTopic(Topic $topic)
+    {
+        return Attention::isUserAttentedTopic($this, $topic);
     }
 
     /**

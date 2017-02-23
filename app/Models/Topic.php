@@ -71,14 +71,9 @@ class Topic extends Model
         return $this->morphMany(Vote::class, 'votable');
     }
 
-    public function voteby()
+    public function attentedUsers()
     {
-        $user_ids = Vote::where('votable_type', 'Topic')
-                        ->where('votable_id', $this->id)
-                        ->where('is', 'upvote')
-                        ->lists('user_id')
-                        ->toArray();
-        return User::whereIn('id', $user_ids)->get();
+        return $this->belongsToMany(User::class, 'attentions');
     }
 
     public function Category()

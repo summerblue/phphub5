@@ -14,14 +14,7 @@ class Notification extends Model
     public $presenter = 'Phphub\Presenters\NotificationPresenter';
 
     // Don't forget to fill this array
-    protected $fillable = [
-            'from_user_id',
-            'user_id',
-            'topic_id',
-            'reply_id',
-            'body',
-            'type'
-            ];
+    protected $fillable = ['from_user_id','user_id','topic_id','reply_id','body','type'];
 
     public function user()
     {
