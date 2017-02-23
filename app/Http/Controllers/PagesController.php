@@ -40,26 +40,23 @@ class PagesController extends Controller
     {
         $query = Purifier::clean($request->input('q'), 'search_q');
 
+        $topics_query = Topic::search($query, null, true)->withoutBlocked()->withoutBoardTopics()->withoutDraft();
+
         if ($request->user_id) {
             $user = User::findOrFail($request->user_id);
-            $topics = Topic::where('user_id', $user->id)
-                                ->search($query, null, true)
-                                ->withoutBlocked()
-                                ->withoutBoardTopics()
-                                ->withoutDraft()
-                                ->paginate(30);
-            $users = User::where('id', '-1')->limit(5)->get();
-        } else {
-            $users = User::search($query, null, true)->orderBy('last_actived_at', 'desc')->limit(5)->get();
-            $user = new User;
-            $topics = Topic::search($query, null, true)
-                                ->withoutBlocked()
-                                ->withoutBoardTopics()
-                                ->withoutDraft()
-                                ->paginate(30);
+            $topics = $topics_query->where('user_id', $user->id)->paginate(30);
+            $users = collect([]);
         }
 
-        return view('pages.search', compact('users', 'user', 'query', 'topics'));
+        $filterd_noresult = $topics->total() == 0;
+
+        if ( ! $request->user_id || ($request->user_id && $topics->total() == 0)) {
+            $user = $request->user_id ? $user : new User;
+            $users = User::search($query, null, true)->orderBy('last_actived_at', 'desc')->limit(5)->get();
+            $topics = $topics_query->paginate(30);
+        }
+
+        return view('pages.search', compact('users', 'user', 'query', 'topics', 'filterd_noresult'));
     }
 
     public function feed()
