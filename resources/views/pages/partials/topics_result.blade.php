@@ -1,5 +1,10 @@
 <div class="result">
 <h2 class="title">
+
+    <a href="{{ route('users.show', [$topic->user_id]) }}" title="{{ $topic->user->name }}" class="avatar-wrap popover-with-html" data-content="{{ $topic->user->name }}">
+        <img class="avatar avatar-small" alt="{{ $topic->user->name }}" src="{{ $topic->user->present()->gravatar }}"/>
+    </a>
+
     @if ($topic->category->id == config('phphub.blog_category_id'))
         <a href="{{ route('articles.show', [$topic->id]) }}">{{ $topic->title }}</a>
     @else
