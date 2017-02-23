@@ -7,7 +7,12 @@
     </div>
     <div class="media-body user-info">
       <div class="info">
-        <a href="{{ route('users.show', $user_result->id) }}">{{ $user_result->name }}</a>
+        <a href="{{ route('users.show', $user_result->id) }}">
+            {{ $user_result->name }}
+            @if ($user_result->real_name)
+                （{{ $user_result->real_name }}）
+            @endif
+        </a>
         @if ($user_result->present()->hasBadge())
             <div class="role-label">
                 <a class="label label-success role" href="{{ route('roles.show', [$user_result->present()->badgeID()]) }}">{{{ $user_result->present()->badgeName() }}}</a>
