@@ -48,7 +48,7 @@ class PagesController extends Controller
             $users = collect([]);
         }
 
-        $filterd_noresult = $topics->total() == 0;
+        $filterd_noresult = isset($topics) ? $topics->total() == 0 : false;
 
         if ( ! $request->user_id || ($request->user_id && $topics->total() == 0)) {
             $user = $request->user_id ? $user : new User;
