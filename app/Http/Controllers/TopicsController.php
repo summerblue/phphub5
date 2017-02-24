@@ -159,6 +159,9 @@ class TopicsController extends Controller implements CreatorListener
             $data['is_draft'] = 'no';
             Auth::user()->decrement('draft_count', 1);
             Auth::user()->increment('article_count', 1);
+
+            // Topic Published
+            app('Phphub\Notification\Notifier')->newTopicNotify(Auth::user(), $this->mentionParser, $topic);
         }
 
         $topic->update($data);
