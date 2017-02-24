@@ -30,7 +30,7 @@ class TopicsController extends Controller implements CreatorListener
 
     public function index(Request $request, Topic $topic)
     {
-        $topics = $topic->getTopicsWithFilter($request->get('filter'), 40);
+        $topics = $topic->getTopicsWithFilter($request->get('filter', 'index'), 40);
         $links  = Link::allFromCache();
         $banners = Banner::allByPosition();
 

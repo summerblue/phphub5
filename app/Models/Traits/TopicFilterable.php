@@ -24,7 +24,7 @@ trait TopicFilterable
 
     public function getTopicFilter($request_filter)
     {
-        $filters = ['noreply', 'vote', 'excellent','recent', 'wiki', 'jobs', 'excellent-pinned'];
+        $filters = ['noreply', 'vote', 'excellent','recent', 'wiki', 'jobs', 'excellent-pinned', 'index'];
         if (in_array($request_filter, $filters)) {
             return $request_filter;
         }
@@ -71,6 +71,10 @@ trait TopicFilterable
             // for api，分类：招聘
             case 'jobs':
                 return $query->where('category_id', 1)->pinned()->recent();
+                break;
+
+            case 'index':
+                return $query->pinAndRecentReply()->withoutQA();
                 break;
 
             default:
@@ -143,6 +147,14 @@ trait TopicFilterable
             && (!Auth::check() || !Auth::user()->can('access_board'))
             ) {
             return $query->where('category_id', '!=', config('app.admin_board_cid'));
+        }
+        return $query;
+    }
+
+    public function scopeWithoutQA($query)
+    {
+        if (config('phphub.qa_category_id')) {
+            return $query->where('category_id', '!=', config('phphub.qa_category_id'));
         }
         return $query;
     }
