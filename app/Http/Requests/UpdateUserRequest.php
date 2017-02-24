@@ -9,7 +9,7 @@ use App\Jobs\SendActivateMail;
 class UpdateUserRequest extends Request
 {
     public $allowed_fields = [
-        'github_name', 'real_name', 'city',
+        'github_name', 'real_name', 'city', 'gender',
         'company', 'twitter_account', 'personal_website',
         'introduction', 'weibo_name', 'weibo_link', 'email','linkedin','signature'
     ];
@@ -39,6 +39,7 @@ class UpdateUserRequest extends Request
     public function performUpdate(User $user)
     {
         $data = $this->only($this->allowed_fields);
+
         $old_email = $user->email;
 
         // A dirty fix for api client
