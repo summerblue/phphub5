@@ -21,9 +21,9 @@
         <li class="{{ Request::is('categories/1') ? ' active' : '' }}"><a href="{{ route('categories.show', 1) }}">{{ lang('Jobs') }}</a></li>
         <li class="{{ Request::is('categories/'.config('phphub.qa_category_id')) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.qa_category_id')) }}">问答</a></li>
         <li class="{{ (Request::is('wiki') ? ' active' : '') }}"><a href="{{ route('wiki') }}">Wiki</a></li>
-        <li ><a href="https://news.laravel-china.org/" class="no-pjax">资讯</a></li>
-        <li class="nav-docs"><a href="https://laravel-china.org/docs/home" class="no-pjax">文档</a></li>
-        <li ><a href="https://laravel-china.org/laravel-tutorial/5.1/about" class="no-pjax">教程</a></li>
+        <li ><a href="https://news.laravel-china.org/" class="no-pjax" target="_blank">资讯</a></li>
+        <li class="nav-docs"><a href="https://laravel-china.org/docs/home" class="no-pjax" target="_blank">文档</a></li>
+        <li ><a href="https://laravel-china.org/laravel-tutorial/5.1/about" class="no-pjax" target="_blank">教程</a></li>
       </ul>
 
       <div class="navbar-right">
