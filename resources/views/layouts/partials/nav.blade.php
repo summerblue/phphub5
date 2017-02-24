@@ -87,13 +87,15 @@
                                 <i class="fa fa-tachometer text-md"></i> 管理后台
                             </a>
                         </li>
-
-                        <li>
-                            <a class="button" href="{{ route('categories.show', config('app.admin_board_cid')) }}">
-                                <i class="fa fa-users "></i> 站务
-                            </a>
-                        </li>
                       @endif
+
+                        @if(Auth::user()->can('access_board'))
+                            <li>
+                                <a class="button" href="{{ route('categories.show', config('app.admin_board_cid')) }}">
+                                    <i class="fa fa-users "></i> 站务
+                                </a>
+                            </li>
+                        @endif
 
                       <li>
                           <a class="button" href="{{ route('users.show', $currentUser->id) }}" data-lang-loginout="{{ lang('Are you sure want to logout?') }}">
