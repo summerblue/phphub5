@@ -12989,4 +12989,7 @@ hr {
       background-color: #fbfbfb;
       border-color: #e4e4e4; }
 
+.list-group .list-group-item.big {
+  padding: 10px 15px; }
+
 /*# sourceMappingURL=styles.css.map */
