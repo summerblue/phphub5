@@ -29,7 +29,7 @@ var basejs = [
     'resources/assets/js/vendor/jquery.jscroll.js',
     'resources/assets/js/vendor/jquery.highlight.js',
     'resources/assets/js/vendor/jquery.sticky.js',
-    'node_modules/sweetalert/dist/sweetalert.min.js',
+    'resources/assets/js/vendor/sweetalert.js',
     'node_modules/social-share.js/dist/js/social-share.min.js',
 ];
 

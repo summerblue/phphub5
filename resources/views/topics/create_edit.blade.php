@@ -19,10 +19,10 @@
       @include('layouts.partials.errors')
 
       @if (isset($topic))
-        <form method="POST" action="{{ route('topics.update', $topic->id) }}" accept-charset="UTF-8" id="topic-edit-form">
+        <form method="POST" action="{{ route('topics.update', $topic->id) }}" accept-charset="UTF-8" id="topic-edit-form" class="topic-form">
         <input name="_method" type="hidden" value="PATCH">
       @else
-        <form method="POST" action="{{ route('topics.store') }}" accept-charset="UTF-8" id="topic-create-form">
+        <form method="POST" action="{{ route('topics.store') }}" accept-charset="UTF-8" id="topic-create-form" class="topic-form">
       @endif
         {!! csrf_field() !!}
         <div class="form-group">

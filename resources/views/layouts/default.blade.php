@@ -47,7 +47,8 @@ ______                            _              _                              
                 },
                 'token': '{{ csrf_token() }}',
                 'environment': '{{ app()->environment() }}',
-                'following_users': []
+                'following_users': [],
+                'qa_category_id': '{{ config('phphub.qa_category_id') }}'
             };
 
 			var ShowCrxHint = '{{isset($show_crx_hint) ? $show_crx_hint : 'no'}}';
