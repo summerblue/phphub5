@@ -24,10 +24,6 @@
         <li class="{{ (Request::is('wiki') ? ' active' : '') }}"><a href="{{ route('wiki') }}">Wiki</a></li>
         <li class="nav-docs"><a href="https://laravel-china.org/docs/home" class="no-pjax">文档</a></li>
         <li ><a href="https://laravel-china.org/laravel-tutorial/5.1/about" class="no-pjax">教程</a></li>
-
-        @if(Auth::check() && Auth::user()->can('access_board'))
-            <li class="{{ Request::is('categories/'.config('app.admin_board_cid')) ? ' active' : '' }}"><a href="{{ route('categories.show', config('app.admin_board_cid')) }}">站务</a></li>
-        @endif
       </ul>
 
       <div class="navbar-right">
@@ -89,6 +85,12 @@
                         <li>
                             <a href="/admin" class="no-pjax">
                                 <i class="fa fa-tachometer text-md"></i> 管理后台
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="button" href="{{ route('categories.show', config('app.admin_board_cid')) }}">
+                                <i class="fa fa-users "></i> 站务
                             </a>
                         </li>
                       @endif
