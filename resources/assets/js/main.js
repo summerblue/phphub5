@@ -388,9 +388,9 @@
                             showCancelButton: true,
                             cancelButtonText: "取消",
                             confirmButtonText: "删除"
-                        }, function() {
+                        }).then(function(){
                             that.find("form").submit();
-                        });
+                        }).catch(swal.noop);
                     }
                     if ($(this).attr('data-btn') == 'transform-button') {
                         swal({
@@ -400,9 +400,9 @@
                             showCancelButton: true,
                             cancelButtonText: "取消",
                             confirmButtonText: "转为文章"
-                        }, function() {
+                        }).then(function(){
                             that.find("form").submit();
-                        });
+                        }).catch(swal.noop);
                     }
                     if ($(this).attr('data-method') == 'post') {
                         $(this).find("form").submit();
@@ -471,6 +471,109 @@
                 localStorage.removeItem('smde_topic_content'+Config.topic_id);
                 console.log('smde_topic_content'+Config.topic_id);
                 $("#topic-submit").val('提交中...').addClass('disabled').prop('disabled', true);
+            });
+
+            var allow_submit = false;
+
+            $(".topic-form").submit(function(event){
+
+                var title = $('#topic-title').val();
+                var cid = $('#category-select').val();
+
+                console.log(title);
+                console.log(cid);
+
+                if ( ! allow_submit) {
+                    event.preventDefault();
+                } else {
+                    return;
+                }
+
+                if ( cid == Config.qa_category_id && ! title.includes('?') && ! title.includes('？')) {
+                    swal({
+                        title: "",
+                        text: '问答话题的标题必须带问号❓',
+                        type: "error",
+                        confirmButtonText: "我知道了"
+                    }).catch(swal.noop);
+                } else if (cid == Config.qa_category_id) {
+
+                    swal.setDefaults({
+                      input: 'text',
+                      confirmButtonText: '下一个 &rarr;',
+                      animation: false,
+                      progressSteps: ['1', '2', '3', '4'],
+                      allowOutsideClick: false,
+                      allowEscapeKey: false
+                    })
+
+                    var steps = [
+                      {
+                        title: '搜索为先',
+                        html: '你是否已经尝试过 <a href="https://laravel-china.org/search?q=%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD" target=_blank>站内搜索</a> 和 <a href="https://google.com" target=_blank>Google 搜索</a>？<br> 请回答：已尝试过搜索'
+                      },
+                      {
+                        title: '提问的智慧',
+                        html: '你是否已经阅读过 <a href="https://laravel-china.org/topics/535" target=_blank>《提问的智慧》</a><br> 请回答：已阅读'
+                      },
+                      {
+                        title: '排版是最基本的礼仪',
+                        html: '你是否知道排版错落帖子将会被 <a href="https://laravel-china.org/topics/2802#1-排版错乱" target=_blank>下沉</a>？ <br> 请回答：我已知悉'
+                      },
+                      {
+                        title: 'Markdown 代码高亮',
+                        html: '我们对代码块不使用高亮的态度是 <a href="https://laravel-china.org/topics/2802#2-Markdown" target=_blank>零容忍</a> <br> 请回答：我会使用高亮'
+                      }
+                    ]
+
+                    swal.queue(steps).then(function (result) {
+                      swal.resetDefaults()
+                        var text = '恭喜你💐，现在你可以发布问题啦。';
+                        var type = 'success';
+                        var confirmButtonText = '提交问题';
+                        var showCancelButton = true;
+                        console.log(result);
+                        console.log(result[0]);
+                        if (
+                            result[0] != '已尝试过搜索'
+                            || result[1] != '已阅读'
+                            || result[2] != '我已知悉'
+                            || result[3] != '我会使用高亮'
+                        ) {
+                            text = '回答有误，请严格按照建议进行回答。';
+                            type = 'error';
+                            confirmButtonText = '再尝试一遍';
+                            showCancelButton = false;
+                            allow_submit = false;
+                        } else {
+                            allow_submit = true;
+                        }
+
+                        swal({
+                            title: '',
+                            text: text,
+                            type: type,
+                            confirmButtonText: confirmButtonText,
+                            showCancelButton: showCancelButton,
+                            cancelButtonText: '修改问题',
+                            allowOutsideClick: false,
+                            allowEscapeKey: false
+                        }).then(function () {
+
+                            $('.topic-form').submit();
+
+                        }).catch(swal.noop)
+
+                    }, function () {
+
+                      swal.resetDefaults()
+
+                    }).catch(swal.noop)
+
+                } else {
+
+                }
+
             });
 
 
@@ -706,9 +809,11 @@
                         showCancelButton: true,
                         cancelButtonText: "取消",
                         confirmButtonText: "前往登录"
-                    }, function() {
+                    }).then(function(){
+
                         location.href = '/login-required';
-                    });
+
+                    }).catch(swal.noop);
                 }
 
                 if (method === 'delete') {
@@ -719,7 +824,7 @@
                         showCancelButton: true,
                         cancelButtonText: "取消",
                         confirmButtonText: "删除"
-                    }, function() {
+                    }).then(function(){
                         that.closest('.list-group-item').slideUp();
                         $.ajax({
                             method: method,
@@ -735,7 +840,7 @@
                         }).fail(function() {
                             that.closest('.list-group-item').show();
                         });
-                    });
+                    }).catch(swal.noop);
 
                     return;
                 }
@@ -884,9 +989,9 @@
                     showCancelButton: true,
                     cancelButtonText: "取消",
                     confirmButtonText: "退出"
-                }, function() {
+                }).then(function() {
                     location.href = href;
-                });
+                }).catch(swal.noop);
 
                 return false;
             });

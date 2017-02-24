@@ -7,4 +7,5 @@ return [
     'actived_time_data'       => 'actived_time_data',
 
     'blog_category_id'       => env('BLOG_CATEGORY_ID'),
+    'qa_category_id'         => env('QA_CATEGORY_ID'),
 ];
