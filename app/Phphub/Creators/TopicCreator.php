@@ -52,7 +52,9 @@ class TopicCreator
             Auth::user()->increment('topic_count', 1);
         }
 
-        app('Phphub\Notification\Notifier')->newTopicNotify(Auth::user(), $this->mentionParser, $topic);
+        if ($topic->is_draft != 'yes' && $topic->category_id != config('app.admin_board_cid')) {
+            app('Phphub\Notification\Notifier')->newTopicNotify(Auth::user(), $this->mentionParser, $topic);
+        }
 
         return $observer->creatorSucceed($topic);
     }
