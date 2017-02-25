@@ -11,7 +11,7 @@ class TopicsTableSeeder extends Seeder
     public function run()
     {
         $users = User::lists('id')->toArray();
-        $categories = Category::lists('id')->toArray();
+        $categories = Category::where('id', '!=', 8)->lists('id')->toArray();
 
         $faker = app(Faker\Generator::class);
 
@@ -30,9 +30,9 @@ class TopicsTableSeeder extends Seeder
         Topic::insert($admin_topics->toArray());
 
         // Test User Article Seeding
-        $admin_articles = factory(Topic::class)->times(31)->make()->each(function ($topic) {
-            $topic->user_id     = 1;
-            $topic->category_id = 5;
+        $admin_articles = factory(Topic::class)->times(31)->make()->each(function ($topic) use ($faker) {
+            $topic->user_id     = $faker->randomElement([1,2]);
+            $topic->category_id = 8;
         });
         Topic::insert($admin_articles->toArray());
     }

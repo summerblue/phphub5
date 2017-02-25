@@ -30,9 +30,9 @@ class BlogTableSeeder extends Seeder {
             1 =>
             array (
                 'id' => 2,
-                'name' => '我的专栏',
-                'slug' => 'myblog',
-                'description' => '记录工作日志',
+                'name' => '望洋路12号',
+                'slug' => 'road12',
+                'description' => '记录生活',
                 'cover' => 'https://dn-phphub.qbox.me/uploads/images/201701/16/1/9Il9wyivOg.png',
                 'user_id' => 2,
                 'article_count' => 0,
