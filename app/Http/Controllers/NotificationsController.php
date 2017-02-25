@@ -11,6 +11,15 @@ class NotificationsController extends Controller
         $this->middleware('auth');
     }
 
+    public function unread()
+    {
+        if (Auth::user()->message_count > 0) {
+            return redirect()->route('messages.index');
+        } else {
+            return redirect()->route('notifications.index');
+        }
+    }
+
     public function index()
     {
         $notifications = Auth::user()->notifications();
