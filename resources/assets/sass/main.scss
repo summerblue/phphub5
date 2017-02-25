@@ -2464,3 +2464,7 @@ hr {
 .normalize-link-color:hover{
     text-decoration: underline;
 }
+
+.messages .list-group-item.unread {
+    background-color: #fff7ea;
+}
