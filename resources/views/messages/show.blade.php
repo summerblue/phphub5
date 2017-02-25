@@ -49,8 +49,8 @@
                 <hr>
 
                 <ul class="list-group row">
-                    @foreach($messages as $message)
-                     <li class="list-group-item media" style="margin-top: 0px;">
+                    @foreach($messages as $index => $message)
+                     <li class="list-group-item media {{ ($unread_message_count > 0 && $index < $unread_message_count) ? 'unread' : ''  }}" style="margin-top: 0px;"  >
                         <div class="avatar pull-left">
                             <a href="{{ route('users.show', [$message->user->id]) }}">
                                 <img class="media-object img-thumbnail avatar" alt="{{ $message->user->name }}" src="{{ $message->user->present()->gravatar }}"  style="width:48px;height:48px;"/>

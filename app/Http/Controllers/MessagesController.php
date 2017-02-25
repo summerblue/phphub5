@@ -45,7 +45,7 @@ class MessagesController extends Controller
         }
         $thread->markAsRead(Auth::id());
 
-        return view('messages.show', compact('thread', 'participant', 'messages'));
+        return view('messages.show', compact('thread', 'participant', 'messages', 'unread_message_count'));
     }
 
     public function create($id)
