@@ -11584,7 +11584,9 @@ embed {
   .users-show dl dd {
     margin-left: inherit; }
   .users-show .dl-horizontal dd {
-    margin-left: 0px; } }
+    margin-left: 0px; }
+  .left-col {
+    padding-left: 0px; } }
 
 /* iPads (portrait) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
