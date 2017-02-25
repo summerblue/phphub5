@@ -13,11 +13,10 @@ class NotificationsController extends Controller
 
     public function unread()
     {
-        if (Auth::user()->message_count > 0) {
-            return redirect()->route('messages.index');
-        } else {
+        if (Auth::user()->notification_count > 0 && Auth::user()->message_count == 0) {
             return redirect()->route('notifications.index');
         }
+        return redirect()->route('messages.index');
     }
 
     public function index()
