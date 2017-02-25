@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use Phphub\Markdown\Markdown;
 
 class MessagesController extends Controller
 {
@@ -59,7 +60,7 @@ class MessagesController extends Controller
         return view('messages.create', compact('recipient'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, Markdown $markdown)
     {
         $recipient = User::findOrFail($request->recipient_id);
 
@@ -71,9 +72,10 @@ class MessagesController extends Controller
         }
 
         // Message
-        Message::create(['thread_id' => $thread->id, 'user_id' => Auth::id(), 'body' => $request->message]);
-        // Sender
+        $message = $markdown->convertMarkdownToHtml($request->message);
+        Message::create(['thread_id' => $thread->id, 'user_id' => Auth::id(), 'body' => $message]);
 
+        // Sender
         // Add replier as a participant
         $participant = Participant::firstOrCreate(['thread_id' => $thread->id, 'user_id' => Auth::id()]);
         $participant->last_read = new Carbon;
