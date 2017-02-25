@@ -31,6 +31,6 @@ class NotificationsController extends Controller
 
     public function count()
     {
-        return Auth::user()->notification_count;
+        return Auth::user()->notification_count + Auth::user()->message_count;
     }
 }
