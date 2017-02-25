@@ -483,7 +483,7 @@
                 console.log(title);
                 console.log(cid);
 
-                if ( ! allow_submit) {
+                if ( ! allow_submit && cid == Config.qa_category_id) {
                     event.preventDefault();
                 } else {
                     return;

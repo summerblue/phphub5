@@ -7896,7 +7896,7 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
                 console.log(title);
                 console.log(cid);
 
-                if ( ! allow_submit) {
+                if ( ! allow_submit && cid == Config.qa_category_id) {
                     event.preventDefault();
                 } else {
                     return;
