@@ -33,7 +33,7 @@ class PagesController extends Controller
 
     public function wiki(Request $request)
     {
-        return app(TopicsController::class)->show(config('app.wiki_topic_id'), $request);
+        return app(TopicsController::class)->show(config('phphub.wiki_topic_id'), $request);
     }
 
     public function search(Request $request)
