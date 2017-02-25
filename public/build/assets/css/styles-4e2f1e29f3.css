@@ -12748,7 +12748,9 @@ a.anchorific, a.anchorjs-link {
       text-align: center; }
     .projects-card h3 {
       margin-top: 4px;
-      margin-bottom: 0px; }
+      margin-bottom: 0px;
+      overflow: hidden;
+      height: 16px; }
     .projects-card .card-title a {
       font-size: .9em;
       color: #676464; }
