@@ -25,7 +25,8 @@
             nextSelector: 'a:last',
             contentSelector: '',
             pagingSelector: '',
-            callback: false
+            callback: false,
+            maxPages: 0,
         }
     };
 
@@ -42,6 +43,8 @@
             _$body = $('body'),
             _$scroll = _isWindow ? _$window : $e,
             _nextHref = $.trim(_$next.attr('href') + ' ' + _options.contentSelector),
+            _maxPages = _options.maxPages,
+            _currentPage = 1,
 
             // Check if a loading image is defined and preload
             _preloadImage = function() {
@@ -96,7 +99,11 @@
                     if (!data.waiting && iTotalHeight + _options.padding >= $inner.outerHeight()) {
                         //data.nextHref = $.trim(data.nextHref + ' ' + _options.contentSelector);
                         _debug('info', 'jScroll:', $inner.outerHeight() - iTotalHeight, 'from bottom. Loading next request...');
-                        return _load();
+                        if (_maxPages <= 0 ||  _currentPage <= _maxPages) {
+                            return _load();
+                        } else {
+                            $inner.find(_options.pagingSelector).last().show();
+                        }
                     }
                 }
             },
@@ -173,6 +180,7 @@
                         if (_options.callback) {
                             _options.callback.call(this, nextHref);
                         }
+                        _currentPage++;
                         _debug('dir', data);
                     });
                 });

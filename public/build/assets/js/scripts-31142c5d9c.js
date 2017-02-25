@@ -5356,7 +5356,8 @@ b=!0;break a}}b=!1}b&&(Ba=!0)}Ud()||Ba||!Ed(new Od(1E4))||(J(36),Ba=!0);(O.gaplu
             nextSelector: 'a:last',
             contentSelector: '',
             pagingSelector: '',
-            callback: false
+            callback: false,
+            maxPages: 0,
         }
     };
 
@@ -5373,6 +5374,8 @@ b=!0;break a}}b=!1}b&&(Ba=!0)}Ud()||Ba||!Ed(new Od(1E4))||(J(36),Ba=!0);(O.gaplu
             _$body = $('body'),
             _$scroll = _isWindow ? _$window : $e,
             _nextHref = $.trim(_$next.attr('href') + ' ' + _options.contentSelector),
+            _maxPages = _options.maxPages,
+            _currentPage = 1,
 
             // Check if a loading image is defined and preload
             _preloadImage = function() {
@@ -5427,7 +5430,11 @@ b=!0;break a}}b=!1}b&&(Ba=!0)}Ud()||Ba||!Ed(new Od(1E4))||(J(36),Ba=!0);(O.gaplu
                     if (!data.waiting && iTotalHeight + _options.padding >= $inner.outerHeight()) {
                         //data.nextHref = $.trim(data.nextHref + ' ' + _options.contentSelector);
                         _debug('info', 'jScroll:', $inner.outerHeight() - iTotalHeight, 'from bottom. Loading next request...');
-                        return _load();
+                        if (_maxPages <= 0 ||  _currentPage <= _maxPages) {
+                            return _load();
+                        } else {
+                            $inner.find(_options.pagingSelector).last().show();
+                        }
                     }
                 }
             },
@@ -5504,6 +5511,7 @@ b=!0;break a}}b=!1}b&&(Ba=!0)}Ud()||Ba||!Ed(new Od(1E4))||(J(36),Ba=!0);(O.gaplu
                         if (_options.callback) {
                             _options.callback.call(this, nextHref);
                         }
+                        _currentPage++;
                         _debug('dir', data);
                     });
                 });
@@ -7499,6 +7507,7 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
                 nextSelector: '.pagination li:last-child a',
                 contentSelector: '.jscroll',
                 pagingSelector: '.panel-footer',
+                maxPages: 2,
                 callback: function() {
                     self.initTimeAgo();
                     $('.panel-footer').hide();
