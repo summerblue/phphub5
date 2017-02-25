@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-我的私信 @parent
+我的私信 | @parent
 @stop
 
 @section('content')

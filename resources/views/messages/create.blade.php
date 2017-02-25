@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-我的消息列表 @parent
+新建私信 | @parent
 @stop
 
 @section('content')
