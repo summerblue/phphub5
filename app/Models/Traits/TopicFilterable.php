@@ -143,10 +143,10 @@ trait TopicFilterable
     public function scopeWithoutBoardTopics($query)
     {
         if (
-            config('app.admin_board_cid')
+            config('phphub.admin_board_cid')
             && (!Auth::check() || !Auth::user()->can('access_board'))
             ) {
-            return $query->where('category_id', '!=', config('app.admin_board_cid'));
+            return $query->where('category_id', '!=', config('phphub.admin_board_cid'));
         }
         return $query;
     }

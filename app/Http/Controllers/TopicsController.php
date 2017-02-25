@@ -71,8 +71,8 @@ class TopicsController extends Controller implements CreatorListener
         }
 
         if (
-            config('app.admin_board_cid')
-            && $topic->id == config('app.admin_board_cid')
+            config('phphub.admin_board_cid')
+            && $topic->id == config('phphub.admin_board_cid')
             && (!Auth::check() || !Auth::user()->can('access_board'))
         ) {
             Flash::error('您没有权限访问该文章，有疑问请发邮件：all@estgroupe.com');

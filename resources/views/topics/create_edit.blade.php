@@ -33,7 +33,7 @@
               @foreach ($categories as $value)
                   {{-- 如果用户可以发布公告，并且是 id == 3 的话 --}}
                   @if($value->id != 3 || Auth::user()->can('compose_announcement'))
-                      @if($value->id != config('app.admin_board_cid') || Auth::user()->can('access_board'))
+                      @if($value->id != config('phphub.admin_board_cid') || Auth::user()->can('access_board'))
                           <option value="{{ $value->id }}" {{ (count($category) != 0 && $value->id == $category->id) ? 'selected' : '' }} >{{ $value->name }}</option>
                       @endif
                   @endif

@@ -91,7 +91,7 @@
 
                         @if(Auth::user()->can('access_board'))
                             <li>
-                                <a class="button" href="{{ route('categories.show', config('app.admin_board_cid')) }}">
+                                <a class="button" href="{{ route('categories.show', config('phphub.admin_board_cid')) }}">
                                     <i class="fa fa-users "></i> 站务
                                 </a>
                             </li>
