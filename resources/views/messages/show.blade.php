@@ -29,9 +29,11 @@
                     <input name="recipient_id" type="hidden" value="{{ $participant->id }}">
                     <input name="thread_id" type="hidden" value="{{ $thread->id }}">
 
+                        @include('layouts.partials.errors')
+
                         <div class="form-group">
                               <div class="col-sm-8">
-                                  <textarea class="form-control" rows="3" name="message" cols="50" id="reply_content"></textarea>
+                                  <textarea class="form-control" rows="3" name="message" cols="50" id="reply_content" required></textarea>
                               </div>
                               <div class="col-sm-4 help-block">
                                     <ul>

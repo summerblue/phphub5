@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Phphub\Markdown\Markdown;
+use App\Jobs\SendNotifyMail;
+use App\Http\Requests\MessageRequest;
 
 class MessagesController extends Controller
 {
@@ -60,7 +62,7 @@ class MessagesController extends Controller
         return view('messages.create', compact('recipient'));
     }
 
-    public function store(Request $request, Markdown $markdown)
+    public function store(MessageRequest $request, Markdown $markdown)
     {
         $recipient = User::findOrFail($request->recipient_id);
 
@@ -76,13 +78,15 @@ class MessagesController extends Controller
         Message::create(['thread_id' => $thread->id, 'user_id' => Auth::id(), 'body' => $message]);
 
         // Sender
-        // Add replier as a participant
         $participant = Participant::firstOrCreate(['thread_id' => $thread->id, 'user_id' => Auth::id()]);
         $participant->last_read = new Carbon;
         $participant->save();
 
         // Recipient
         $thread->addParticipant($recipient->id);
+
+        // Notify user by Email
+        // dispatch(new SendNotifyMail('new_message', Auth::user(), $recipient, null, null, $message));
 
         // notifications count
         $recipient->message_count++;

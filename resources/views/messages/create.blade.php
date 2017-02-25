@@ -31,13 +31,17 @@
                     </a>
                 </div>
                 <br>
+
                 <form class="form-horizontal" method="POST" action="{{ route('messages.store') }}" accept-charset="UTF-8">
                     {!! csrf_field() !!}
                     <input name="recipient_id" type="hidden" value="{{ $recipient->id }}">
 
+                        @include('layouts.partials.errors')
+
                         <div class="form-group">
+
                               <div class="col-sm-8">
-                                  <textarea class="form-control" rows="5" name="message" cols="50" id="reply_content"></textarea>
+                                  <textarea class="form-control" rows="5" name="message" cols="50" id="reply_content" required></textarea>
                               </div>
                               <div class="col-sm-4 help-block">
                                     <ul>
