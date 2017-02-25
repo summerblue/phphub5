@@ -44,6 +44,7 @@ Route::delete('/users/{id}', 'UsersController@destroy')->name('users.destroy');
 Route::get('/users/{id}/edit_avatar', 'UsersController@editAvatar')->name('users.edit_avatar');
 Route::patch('/users/{id}/update_avatar', 'UsersController@updateAvatar')->name('users.update_avatar');
 
+Route::get('/notifications/unread', 'NotificationsController@unread')->name('notifications.unread');
 Route::get('/notifications', 'NotificationsController@index')->name('notifications.index');
 Route::get('/notifications/count', 'NotificationsController@count')->name('notifications.count');
 

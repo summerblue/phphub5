@@ -57,7 +57,16 @@
                           </div>
 
                             <div>
-                                <a href="{{ route('messages.show', $thread->id) }}" class="meta"><i class="fa fa-commenting-o" aria-hidden="true"></i> 查看对话</a>
+
+                                <a href="{{ route('messages.show', $thread->id) }}" class="normalize-link-color"><i class="fa fa-commenting-o" aria-hidden="true"></i>
+                                    <?php $unread_messagesCount = $thread->userUnreadMessagesCount($currentUser->id) ?>
+                                    @if ($unread_messagesCount > 0)
+                                        {{ $unread_messagesCount }} 条未读消息
+                                    @else
+                                        查看对话
+                                    @endif
+
+                                </a>
                             </div>
                         </div>
                     </li>

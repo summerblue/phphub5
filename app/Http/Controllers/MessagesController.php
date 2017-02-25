@@ -15,7 +15,6 @@ use Illuminate\Http\Request;
 
 class MessagesController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -24,15 +23,27 @@ class MessagesController extends Controller
     public function index()
     {
         $threads = Thread::for(Auth::id());
+        if (Auth::user()->newThreadsCount() == 0) {
+            Auth::user()->message_count = 0;
+            Auth::user()->save();
+        }
         return view('messages.index', compact('threads', 'currentUserId'));
     }
 
     public function show($id)
     {
         $thread = Thread::findOrFail($id);
-        $thread->markAsRead(Auth::id());
         $participant = $thread->participant();
         $messages = $thread->messages()->recent()->get();
+
+        // counters
+        $unread_message_count = $thread->userUnreadMessagesCount(Auth::id());
+        if ($unread_message_count > 0) {
+            Auth::user()->message_count -= $unread_message_count;
+            Auth::user()->save();
+        }
+        $thread->markAsRead(Auth::id());
+
         return view('messages.show', compact('thread', 'participant', 'messages'));
     }
 
@@ -40,7 +51,11 @@ class MessagesController extends Controller
     {
         $recipient = User::findOrFail($id);
 
-        // @TODO 如果已经聊过天的话，直接跳转 到 thread 里
+        $thread = Thread::between([$recipient->id, Auth::id()])->first();
+        if ($thread) {
+            return redirect()->route('messages.show', $thread->id);
+        }
+
         return view('messages.create', compact('recipient'));
     }
 
@@ -58,55 +73,19 @@ class MessagesController extends Controller
         // Message
         Message::create(['thread_id' => $thread->id, 'user_id' => Auth::id(), 'body' => $request->message]);
         // Sender
-        Participant::create(['thread_id' => $thread->id, 'user_id' => Auth::id(), 'last_read' => new Carbon]);
-        // Recipient
-        $thread->addParticipant($recipient->id);
-
-        return redirect()->route('messages.show', $thread->id);
-    }
-
-    /**
-     * Adds a new message to a current thread.
-     *
-     * @param $id
-     * @return mixed
-     */
-    public function update($id)
-    {
-        try {
-            $thread = Thread::findOrFail($id);
-        } catch (ModelNotFoundException $e) {
-            Session::flash('error_message', 'The thread with ID: ' . $id . ' was not found.');
-
-            return redirect('messages');
-        }
-
-        $thread->activateAllParticipants();
-
-        // Message
-        Message::create(
-            [
-                'thread_id' => $thread->id,
-                'user_id'   => Auth::id(),
-                'body'      => Input::get('message'),
-            ]
-        );
 
         // Add replier as a participant
-        $participant = Participant::firstOrCreate(
-            [
-                'thread_id' => $thread->id,
-                'user_id'   => Auth::id(),
-            ]
-        );
+        $participant = Participant::firstOrCreate(['thread_id' => $thread->id, 'user_id' => Auth::id()]);
         $participant->last_read = new Carbon;
         $participant->save();
 
-        // Recipients
-        if (Input::has('recipients')) {
-            $thread->addParticipants(Input::get('recipients'));
-        }
+        // Recipient
+        $thread->addParticipant($recipient->id);
 
-        return redirect('messages/' . $id);
+        // notifications count
+        $recipient->message_count++;
+        $recipient->save();
+
+        return redirect()->route('messages.show', $thread->id);
     }
 }

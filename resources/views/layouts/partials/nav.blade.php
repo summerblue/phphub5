@@ -65,9 +65,9 @@
               </li>
 
               <li>
-                  <a href="{{ route('notifications.index') }}" class="text-warning" style="margin-top: -4px;">
-                      <span class="badge badge-{{ $currentUser->notification_count > 0 ? 'important' : 'fade' }} popover-with-html" data-content="消息提醒" id="notification-count">
-                          {{ $currentUser->notification_count }}
+                  <a href="{{ route('notifications.unread') }}" class="text-warning" style="margin-top: -4px;">
+                      <span class="badge badge-{{ $currentUser->notification_count + $currentUser->message_count > 0 ? 'important' : 'fade' }} popover-with-html" data-content="消息提醒" id="notification-count">
+                          {{ $currentUser->notification_count + $currentUser->message_count }}
                       </span>
                   </a>
               </li>

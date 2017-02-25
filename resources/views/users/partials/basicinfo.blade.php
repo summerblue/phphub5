@@ -151,6 +151,10 @@
         <a data-method="post" class="btn btn-{{ !$isFollowing ? 'warning' : 'default' }} btn-block" href="javascript:void(0);" data-url="{{ route('users.doFollow', $user->id) }}" id="user-edit-button">
            <i class="fa {{!$isFollowing ? 'fa-plus' : 'fa-minus'}}"></i> {{ !$isFollowing ? lang('Follow') : lang('Unfollow') }}
         </a>
+
+        <a class="btn btn-default btn-block" href="{{ route('messages.create', $user->id) }}" >
+           <i class="fa fa-envelope-o"></i> 发私信
+        </a>
         @endif
 
         @if ($currentUser && Entrust::can('manage_users') && $currentUser->id != $user->id && $currentUser->roles->count() < 5)
