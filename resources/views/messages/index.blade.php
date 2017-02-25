@@ -26,7 +26,9 @@
 
                 <ul class="list-group row">
                     @foreach($threads as $thread)
-                     <li class="list-group-item media" style="margin-top: 0px;">
+                    <?php $unread_messagesCount = $thread->userUnreadMessagesCount($currentUser->id) ?>
+
+                     <li class="list-group-item media {{ $unread_messagesCount > 0 ? 'unread' : '' }}" style="margin-top: 0px;">
                         <?php
                             $participant = $thread->participant();
                         ?>
@@ -60,10 +62,10 @@
                                 <p>
 
                                 <a href="{{ route('messages.show', $thread->id) }}" class="normalize-link-color ">
-                                    <?php $unread_messagesCount = $thread->userUnreadMessagesCount($currentUser->id) ?>
+
                                     @if ($unread_messagesCount > 0)
 
-                                    <span style="color:red">
+                                    <span style="color:#ff7b00;">
                                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
                                         {{ $unread_messagesCount }} 条未读消息
                                     </span>
