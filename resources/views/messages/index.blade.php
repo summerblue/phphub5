@@ -82,8 +82,10 @@
                     </li>
                     @endforeach
                 </ul>
+            </div>
 
-
+            <div class="panel-footer text-right remove-padding-horizontal pager-footer">
+                {!! $threads->render() !!}
             </div>
 
         @else
