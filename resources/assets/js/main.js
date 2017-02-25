@@ -86,6 +86,7 @@
                 nextSelector: '.pagination li:last-child a',
                 contentSelector: '.jscroll',
                 pagingSelector: '.panel-footer',
+                maxPages: 2,
                 callback: function() {
                     self.initTimeAgo();
                     $('.panel-footer').hide();
