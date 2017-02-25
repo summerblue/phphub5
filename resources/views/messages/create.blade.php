@@ -37,7 +37,7 @@
 
                         <div class="form-group">
                               <div class="col-sm-8">
-                                  <textarea class="form-control" rows="5" name="message" cols="50"></textarea>
+                                  <textarea class="form-control" rows="5" name="message" cols="50" id="reply_content"></textarea>
                               </div>
                               <div class="col-sm-4 help-block">
                                     <ul>
