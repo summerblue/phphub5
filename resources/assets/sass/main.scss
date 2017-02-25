@@ -2453,3 +2453,14 @@ hr {
 .list-group .list-group-item.big {
     padding: 10px 15px;
 }
+.messages h1 {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.normalize-link-color, .normalize-link-color:hover{
+    color: inherit;
+}
+.normalize-link-color:hover{
+    text-decoration: underline;
+}

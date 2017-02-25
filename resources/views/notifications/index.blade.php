@@ -6,16 +6,18 @@
 
 @section('content')
 
+<div class="messages">
+
 <div class="col-md-3 main-col">
     @include('notifications._nav')
 </div>
 
 <div class="col-md-9  left-col ">
 
-    <div class="panel panel-default">
+    <div class="panel panel-default padding-sm">
 
         <div class="panel-heading">
-          {{ lang('My Notifications') }}
+          <h1>{{ lang('My Notifications') }}</h1>
         </div>
 
         @if (count($notifications))
@@ -86,6 +88,7 @@
         @endif
 
     </div>
+</div>
 </div>
 
 

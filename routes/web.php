@@ -44,10 +44,14 @@ Route::delete('/users/{id}', 'UsersController@destroy')->name('users.destroy');
 Route::get('/users/{id}/edit_avatar', 'UsersController@editAvatar')->name('users.edit_avatar');
 Route::patch('/users/{id}/update_avatar', 'UsersController@updateAvatar')->name('users.update_avatar');
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('/notifications', 'NotificationsController@index')->name('notifications.index');
-    Route::get('/notifications/count', 'NotificationsController@count')->name('notifications.count');
-});
+Route::get('/notifications', 'NotificationsController@index')->name('notifications.index');
+Route::get('/notifications/count', 'NotificationsController@count')->name('notifications.count');
+
+Route::get('/messages', 'MessagesController@index')->name('messages.index');
+Route::get('/messages/to/{id}', 'MessagesController@create')->name('messages.create');
+Route::post('/messages', 'MessagesController@store')->name('messages.store');
+Route::get('/messages/{id}', 'MessagesController@show')->name('messages.show');
+Route::put('/messages/{id}', 'MessagesController@update')->name('messages.update');
 
 Route::get('/email-verification-required', 'UsersController@emailVerificationRequired')->name('email-verification-required');
 Route::post('/users/send-verification-mail', 'UsersController@sendVerificationMail')->name('users.send-verification-mail');
