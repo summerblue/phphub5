@@ -56,10 +56,10 @@
                                 {!! $thread->latestMessage->body  !!}
                           </div>
 
-                            <div>
+                            <div class="message-meta">
                                 <p>
 
-                                <a href="{{ route('messages.show', $thread->id) }}" class="normalize-link-color">
+                                <a href="{{ route('messages.show', $thread->id) }}" class="normalize-link-color ">
                                     <?php $unread_messagesCount = $thread->userUnreadMessagesCount($currentUser->id) ?>
                                     @if ($unread_messagesCount > 0)
 
