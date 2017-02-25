@@ -182,6 +182,7 @@ return [
         Overtrue\LaravelFollow\FollowServiceProvider::class,
         Jrean\UserVerification\UserVerificationServiceProvider::class,
         Naux\Mail\SendCloudServiceProvider::class,
+        Cmgmyr\Messenger\MessengerServiceProvider::class,
 
         // API
         Dingo\Api\Provider\LaravelServiceProvider::class,

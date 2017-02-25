@@ -18,11 +18,13 @@ use App\Models\Traits\UserAvatarHelper;
 use Carbon\Carbon;
 use Cache;
 use Nicolaslopezj\Searchable\SearchableTrait;
+use Cmgmyr\Messenger\Traits\Messagable;
 
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract
 {
     use UserRememberTokenHelper,UserSocialiteHelper,UserAvatarHelper;
+    use Messagable;
 
     use PresentableTrait;
     public $presenter = 'Phphub\Presenters\UserPresenter';
