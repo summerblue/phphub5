@@ -86,7 +86,7 @@ class MessagesController extends Controller
         $thread->addParticipant($recipient->id);
 
         // Notify user by Email
-        // dispatch(new SendNotifyMail('new_message', Auth::user(), $recipient, null, null, $message));
+        dispatch(new SendNotifyMail('new_message', Auth::user(), $recipient, null, null, $message));
 
         // notifications count
         $recipient->message_count++;

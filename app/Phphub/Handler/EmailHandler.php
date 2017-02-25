@@ -24,8 +24,9 @@ class EmailHandler
         'attention'            => 'sendAttentionNotifyMail',
         'vote_append'          => 'sendVoteAppendNotifyMail',
         'comment_append'       => 'sendCommentAppendNotifyMail',
-        'attented_append'       => 'sendAttendAppendNotifyMail',
+        'attented_append'      => 'sendAttendAppendNotifyMail',
         'new_reply'            => 'sendNewReplyNotifyMail',
+        'new_message'          => 'sendNewMessageNotifyMail',
 
         // 下面动作只是「信息的知悉」，无需发送邮件，系统通知即可（删除保持精简）
 
@@ -95,6 +96,14 @@ class EmailHandler
 
         $method = $this->methodMap[$type];
         $this->$method();
+    }
+
+    protected function sendNewMessageNotifyMail()
+    {
+        if ( ! $this->body) return false;
+
+        $action = " 发了一条私信给你。内容如下：<br />";
+        $this->_send(null, $this->fromUser, '你有新的私信', $action, $this->body, $this->body);
     }
 
     protected function sendNewReplyNotifyMail()
@@ -178,11 +187,14 @@ class EmailHandler
         return $action;
     }
 
-    private function _send(Topic $topic, $user, $subject, $action, $content, $mailog = '')
+    private function _send($topic, $user, $subject, $action, $content, $mailog = '')
     {
         $name = $user ? "<a href='" . url(route('users.show', $user->id)) . "' target='_blank'>{$user->name}</a>" : '';
-        $subject = $this->_correctAction($subject, $topic);
-        $action = $this->_correctAction($action, $topic);
+
+        if ($topic) {
+            $subject = $this->_correctAction($subject, $topic);
+            $action = $this->_correctAction($action, $topic);
+        }
 
         Mail::send('emails.fake', [], function (Message $message) use ($topic, $name, $subject, $action, $content, $mailog) {
 
