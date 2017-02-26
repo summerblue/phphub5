@@ -33,12 +33,12 @@
         <hr>
 
         @if ($currentUser->subscribe($blog))
-            <a data-method="post" class="btn btn-default btn-block" href="javascript:void(0);" data-url="{{ route('blogs.unsubscribe', $user->id) }}">
+            <a data-method="post" class="btn btn-default btn-block" href="javascript:void(0);" data-url="{{ route('blogs.unsubscribe', $blog->id) }}">
               <i class="fa fa-minus"></i> 取消订阅
             </a>
         @else
             <div class="follow-box">
-                <a data-method="post" class="btn btn-primary btn-block" href="javascript:void(0);" data-url="{{ route('blogs.subscribe', $user->id) }}">
+                <a data-method="post" class="btn btn-primary btn-block" href="javascript:void(0);" data-url="{{ route('blogs.subscribe', $blog->id) }}">
                   <i class="fa fa-eye"></i> 订阅专栏
                 </a>
             </div>
