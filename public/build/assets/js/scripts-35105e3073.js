@@ -7493,6 +7493,13 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
             self.initAnchorific();
             self.initIinfiniteScroll();
             self.initSticky();
+            self.initSubmitBtn();
+        },
+
+        initSubmitBtn: function(){
+            $('button[type="submit"]').click(function() {
+                $(this).button('loading');
+            });
         },
 
         initSticky: function(){
