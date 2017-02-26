@@ -33,11 +33,13 @@ class Notifier
                     $topic);
 
         // Notify blog subscriber
-        Notification::batchNotify(
-                    'new_topic_from_subscribe',
-                    $fromUser,
-                    $this->removeDuplication($topic->user->blogs->first()->subscribers),
-                    $topic);
+        if (count($topic->user->blogs)) {
+            Notification::batchNotify(
+                        'new_topic_from_subscribe',
+                        $fromUser,
+                        $this->removeDuplication($topic->user->blogs->first()->subscribers),
+                        $topic);
+        }
     }
 
     public function newReplyNotify(User $fromUser, Mention $mentionParser, Topic $topic, Reply $reply)

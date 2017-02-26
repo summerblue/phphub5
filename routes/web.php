@@ -126,8 +126,6 @@ Route::get('heartbeat', function () {
 });
 
 Route::get('/github-api-proxy/users/{username}', 'UsersController@githubApiProxy')->name('users.github-api-proxy');
-Route::get('/github-card', 'UsersController@githubCard')->name('users.github-card');
-
 Route::group(['middleware' => ['auth', 'admin_auth']], function () {
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 });
