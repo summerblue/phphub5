@@ -224,11 +224,6 @@ class UsersController extends Controller
         });
     }
 
-    public function githubCard()
-    {
-        return view('users.github-card');
-    }
-
     public function regenerateLoginToken()
     {
         if (Auth::check()) {
