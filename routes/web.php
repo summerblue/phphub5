@@ -40,7 +40,6 @@ Route::post('/users', 'UsersController@store')->name('users.store');
 Route::get('/users/{id}', 'UsersController@show')->name('users.show');
 Route::get('/users/{id}/edit', 'UsersController@edit')->name('users.edit');
 Route::patch('/users/{id}', 'UsersController@update')->name('users.update');
-Route::delete('/users/{id}', 'UsersController@destroy')->name('users.destroy');
 Route::get('/users/{id}/edit_avatar', 'UsersController@editAvatar')->name('users.edit_avatar');
 Route::patch('/users/{id}/update_avatar', 'UsersController@updateAvatar')->name('users.update_avatar');
 
