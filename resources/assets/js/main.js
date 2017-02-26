@@ -72,6 +72,13 @@
             self.initAnchorific();
             self.initIinfiniteScroll();
             self.initSticky();
+            self.initSubmitBtn();
+        },
+
+        initSubmitBtn: function(){
+            $('button[type="submit"]').click(function() {
+                $(this).button('loading');
+            });
         },
 
         initSticky: function(){

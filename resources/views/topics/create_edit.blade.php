@@ -59,7 +59,7 @@
         </div>
 
         <div class="form-group status-post-submit">
-            <input class="btn btn-primary" id="topic-submit" type="submit" value="{{ lang('Publish') }}">
+            <button class="btn btn-primary" id="topic-submit" type="submit">{{ lang('Publish') }}</button>
         </div>
 
     </form>
