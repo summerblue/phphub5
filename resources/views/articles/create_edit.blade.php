@@ -75,15 +75,13 @@
                 showCancelButton: true,
                 cancelButtonText: "取消",
                 confirmButtonText: "发布"
-            }, function(isConfirm) {
-                if(isConfirm) {
-                    $('<input />').attr('type', 'hidden')
+            }).then(function () {
+                $('<input />').attr('type', 'hidden')
                       .attr('name', "subject")
                       .attr('value', "publish")
                       .appendTo('#article-edit-form');
                       $("#article-edit-form").submit();
-                }
-            });
+            }).catch(swal.noop);
         });
 
         $('#category-select').on('change', function() {

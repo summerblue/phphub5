@@ -19,6 +19,7 @@ use Auth;
 use Flash;
 use Image;
 use Request as UserRequest;
+use Phphub\Notification\Mention;
 
 class TopicsController extends Controller implements CreatorListener
 {
@@ -143,12 +144,14 @@ class TopicsController extends Controller implements CreatorListener
                 ]);
     }
 
-    public function update($id, StoreTopicRequest $request)
+    public function update($id, StoreTopicRequest $request, Mention $mentionParser)
     {
         $topic = Topic::findOrFail($id);
         $this->authorize('update', $topic);
 
         $data = $request->only('title', 'body', 'category_id');
+
+        $data['body'] = $mentionParser->parse($data['body']);
 
         $markdown = new Markdown;
         $data['body_original'] = $data['body'];
@@ -157,11 +160,12 @@ class TopicsController extends Controller implements CreatorListener
 
         if ($topic->isArticle() && $request->subject == 'publish' && $topic->is_draft == 'yes') {
             $data['is_draft'] = 'no';
-            Auth::user()->decrement('draft_count', 1);
-            Auth::user()->increment('article_count', 1);
 
             // Topic Published
-            app('Phphub\Notification\Notifier')->newTopicNotify(Auth::user(), $this->mentionParser, $topic);
+            app('Phphub\Notification\Notifier')->newTopicNotify(Auth::user(), $mentionParser, $topic);
+
+            Auth::user()->decrement('draft_count', 1);
+            Auth::user()->increment('article_count', 1);
         }
 
         $topic->update($data);
