@@ -12,6 +12,11 @@ use Redirect;
 
 class AttentionsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function createOrDelete($id)
     {
         $topic = Topic::find($id);
