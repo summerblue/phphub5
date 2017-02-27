@@ -152,7 +152,7 @@
 
 <div class="panel panel-default corner-radius" style="color:#a5a5a5">
   <div class="panel-body text-center">
-      <a href="https://laravel-china.org/messages/to/1" style="color:#a5a5a5">
+      <a href="{{ Auth::check() ? 'https://laravel-china.org/messages/to/1' : 'mailto:summer@yousails.com'}}" style="color:#a5a5a5">
           <span style="margin-top: 7px;display: inline-block;">
               <i class="fa fa-heart" aria-hidden="true" style="color: rgba(232, 146, 136, 0.89);"></i> 建议反馈？请私信 Summer
           </span>
