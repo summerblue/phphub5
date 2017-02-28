@@ -25,7 +25,7 @@ class MessagesController extends Controller
 
     public function index()
     {
-        $threads = Thread::for(Auth::id());
+        $threads = Thread::participateBy(Auth::id());
         if (Auth::user()->newThreadsCount() == 0) {
             Auth::user()->message_count = 0;
             Auth::user()->save();
