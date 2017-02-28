@@ -12,7 +12,7 @@ class Thread extends MessengerThread
         return $this->participants()->where('user_id', '!=', Auth::id())->first()->user;
     }
 
-    public static function for($user_id)
+    public static function participateBy($user_id)
     {
         $user_id = Auth::id();
         $thread_ids = array_unique(Participant::byWhom($user_id)->lists('thread_id')->toArray());
