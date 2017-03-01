@@ -582,19 +582,39 @@ span.CodeMirror-selectedtext {
   background: #d9d9d9; }
 
 .CodeMirror .CodeMirror-code .cm-header-1 {
-  font-size: 200%;
+  font-size: 110%;
+  font-weight: bold;
+  color: #0aa4d8;
   line-height: 200%; }
 
 .CodeMirror .CodeMirror-code .cm-header-2 {
-  font-size: 140%;
-  line-height: 160%; }
+  line-height: 160%;
+  font-size: 110%;
+  font-weight: bold;
+  color: #0aa4d8; }
 
 .CodeMirror .CodeMirror-code .cm-header-3 {
-  font-size: 125%;
+  font-size: 105%;
+  font-weight: bold;
+  color: #0aa4d8;
   line-height: 125%; }
 
 .CodeMirror .CodeMirror-code .cm-header-4 {
-  font-size: 110%;
+  font-size: 102%;
+  font-weight: bold;
+  color: #0aa4d8;
+  line-height: 110%; }
+
+.CodeMirror .CodeMirror-code .cm-header-5 {
+  font-size: 100%;
+  font-weight: bold;
+  color: #0aa4d8;
+  line-height: 110%; }
+
+.CodeMirror .CodeMirror-code .cm-header-6 {
+  font-size: 100%;
+  font-weight: bold;
+  color: #0aa4d8;
   line-height: 110%; }
 
 .CodeMirror .CodeMirror-code .cm-comment {
