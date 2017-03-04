@@ -16,6 +16,9 @@
               <br>
               <span style="font-size:0.9em">
                   Powered by <a href="https://github.com/summerblue/phphub5" target="_blank" style="color:inherit">PHPHub</a>
+              </span><br>
+              <span style="font-size:0.9em">
+                  Designed by <span style="color: #e27575;font-size: 14px;">❤</span> <a href="https://github.com/summerblue" target="_blank" style="color:inherit">Summer</a>
               </span>
           </div>
 
