@@ -7503,7 +7503,9 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
         },
 
         initSticky: function(){
-            $("#sticker").sticky({topSpacing:20});
+            if ($(window).width() > 991) {
+                $("#sticker").sticky({topSpacing:20});
+            }
         },
 
         initIinfiniteScroll: function(){
