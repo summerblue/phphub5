@@ -82,7 +82,9 @@
         },
 
         initSticky: function(){
-            $("#sticker").sticky({topSpacing:20});
+            if ($(window).width() > 991) {
+                $("#sticker").sticky({topSpacing:20});
+            }
         },
 
         initIinfiniteScroll: function(){
