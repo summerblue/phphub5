@@ -4,6 +4,10 @@
 {{ $topic->title }} | @parent
 @stop
 
+@section('wechat_icon')
+<img src="{{ img_crop($blog->cover, 512, 512) }}" alt="">
+@stop
+
 @section('content')
 
 <div class="blog-pages">
