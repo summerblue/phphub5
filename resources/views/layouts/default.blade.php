@@ -64,7 +64,10 @@ ______                            _              _                              
         {{-- Wechat share cover --}}
         <div style="display: none;"
         　　document.getElementById("typediv1").style.display="none";>
-            <img src="https://dn-phphub.qbox.me/uploads/images/201701/29/1/pQimFCe1r5.png" >
+            @section('wechat_icon')
+            <img src="https://dn-phphub.qbox.me/uploads/images/201701/29/1/pQimFCe1r5.png">
+            @show
+
         </div>
 
 		<div id="wrap">
