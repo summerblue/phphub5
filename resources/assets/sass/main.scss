@@ -2077,7 +2077,6 @@ a.anchorific, a.anchorjs-link  {
 
 
 @media (max-width: 767px) {
-
     .projects-card {
         padding-left: 5px;
         padding-right: 5px;
@@ -2145,8 +2144,9 @@ a.anchorific, a.anchorjs-link  {
     margin-top: 50px;
 
     h1 {
-        margin: 1.3em auto .9em;
+        margin: 1.1em auto 1.6em;
         font-size: 28px;
+        line-height: 38px;
     }
 
 
@@ -2316,6 +2316,14 @@ hr {
 }
 
 @media (max-width: 767px) {
+
+
+    .blog-container.container h1 {
+        margin: 0em auto 1em;
+        font-size: 28px;
+        line-height: 38px;
+    }
+
 
     .blog-pages {
         .left-col {
