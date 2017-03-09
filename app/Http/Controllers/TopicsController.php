@@ -247,7 +247,7 @@ class TopicsController extends Controller implements CreatorListener
 
         if ($topic->isArticle() && $topic->is_draft == 'yes') {
             Auth::user()->decrement('draft_count', 1);
-        } elseif ($topic->isArticle() && $topic->is_draft == 'no') {
+        } elseif ($topic->isArticle()) {
             Auth::user()->decrement('article_count', 1);
         } else {
             Auth::user()->decrement('topic_count', 1);
