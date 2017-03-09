@@ -46,7 +46,7 @@ class TopicCreator
 
         if ($topic->isArticle() && $topic->is_draft == 'yes') {
             Auth::user()->increment('draft_count', 1);
-        } elseif ($topic->isArticle() && $topic->is_draft == 'no') {
+        } elseif ($topic->isArticle()) {
             Auth::user()->increment('article_count', 1);
         } else {
             Auth::user()->increment('topic_count', 1);
