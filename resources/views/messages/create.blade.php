@@ -52,7 +52,7 @@
                               </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i> 发送</button>
+                        <button type="submit" class="btn btn-primary loading-on-clicked"><i class="fa fa-paper-plane" aria-hidden="true"></i> 发送</button>
 
                 </form>
             </div>

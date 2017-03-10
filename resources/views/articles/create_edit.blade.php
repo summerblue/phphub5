@@ -28,7 +28,7 @@
                 <input name="category_id" type="hidden" value="{{ config('phphub.blog_category_id') }}">
 
                 <div class="form-group">
-                    <input class="form-control" id="topic-title" placeholder="{{ lang('Please write down a topic') }}" name="title" type="text" value="{{ old('title') ?: $topic->title }}" required="require">
+                    <input class="form-control" id="article-title" placeholder="{{ lang('Please write down a topic') }}" name="title" type="text" value="{{ old('title') ?: $topic->title }}" required="require">
                 </div>
 
                 @include('topics.partials.composing_help_block', ['without_box' => false])
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="form-group status-post-submit">
-                  <button class="btn btn-primary" type="submit" name="subject" value="publish" id="{{ $topic->is_draft == 'yes' ? 'publish-hint' : '' }}">{{ lang('Publish') }}</button>
+                  <button class="btn btn-primary submit-btn" type="submit" name="subject" value="publish" id="{{ $topic->is_draft == 'yes' ? 'publish-hint' : '' }}">{{ lang('Publish') }}</button>
 
                     @if($topic->is_draft == 'yes' || empty($topic->id))
                         &nbsp;&nbsp;or&nbsp;&nbsp;
@@ -66,6 +66,17 @@
 
     $(document).ready(function()
     {
+        @if (empty($topic->id))
+            localforage.getItem('article-title', function(err, value) {
+                if ($('#article-title').val() == '' && !err) {
+                    $('#article-title').val(value);
+                };
+            });
+            $('#article-title').keyup(function(){
+                localforage.setItem('article-title', $(this).val());
+            });
+        @endif
+
         $('#publish-hint').click(function(event) {
             event.preventDefault();
             swal({
@@ -93,9 +104,9 @@
         var simplemde = new SimpleMDE({
             spellChecker: false,
             autosave: {
-                enabled: {{ isset($topic) ? 'false' : 'true' }},
+                enabled: {{ $topic->id ? 'false' : 'true' }},
                 delay: 5000,
-                unique_id: "article_content{{ isset($topic) ? $topic->id : '' }}"
+                unique_id: "article_content{{ $topic->id ?: '' }}"
             },
             forceSync: true
         });
