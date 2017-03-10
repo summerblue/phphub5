@@ -59,7 +59,7 @@
         </div>
 
         <div class="form-group status-post-submit">
-            <button class="btn btn-primary" id="topic-submit" type="submit">{{ lang('Publish') }}</button>
+            <button class="btn btn-primary submit-btn" id="topic-submit" type="submit">{{ lang('Publish') }}</button>
         </div>
 
     </form>
@@ -115,6 +115,17 @@
 
     $(document).ready(function()
     {
+        @if ( ! isset($topic))
+            localforage.getItem('topic-title', function(err, value) {
+                if ($('#topic-title').val() == '' && !err) {
+                    $('#topic-title').val(value);
+                };
+            });
+            $('#topic-title').keyup(function(){
+                localforage.setItem('topic-title', $(this).val());
+            });
+        @endif
+
         $('#category-select').on('change', function() {
             var current_cid = $(this).val();
             $('.category-hint').hide();

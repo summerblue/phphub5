@@ -7497,7 +7497,7 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
         },
 
         initSubmitBtn: function(){
-            $('button[type="submit"]').click(function() {
+            $('button.loading-on-clicked[type="submit"]').click(function() {
                 $(this).button('loading');
             });
         },
@@ -7885,23 +7885,23 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
             // Clear Local Storage on submit
             $("#article-create-form").submit(function(event){
                 localStorage.removeItem('smde_article_content');
-                localStorage.removeItem('article-title');
-                $("#article-create-submit").val('提交中...').addClass('disabled').prop('disabled', true);
+                localforage.removeItem('article-title');
+                $(".submit-btn").text('提交中...').addClass('disabled').prop('disabled', true);
             });
             $("#topic-create-form").submit(function(event){
                 localStorage.removeItem('smde_topic_content');
-                localStorage.removeItem('topic-title');
-                $("#topic-create-submit").val('提交中...').addClass('disabled').prop('disabled', true);
+                localforage.removeItem('topic-title');
+                $(".submit-btn").text('提交中...').addClass('disabled').prop('disabled', true);
             });
 
             $("#article-edit-form").submit(function(event){
                 localStorage.removeItem('smde_article_content'+Config.article_id);
-                $("#article-edit-submit").val('提交中...').addClass('disabled').prop('disabled', true);
+                $(".submit-btn").text('提交中...').addClass('disabled').prop('disabled', true);
             });
             $("#topic-edit-form").submit(function(event){
                 localStorage.removeItem('smde_topic_content'+Config.topic_id);
                 console.log('smde_topic_content'+Config.topic_id);
-                $("#topic-submit").val('提交中...').addClass('disabled').prop('disabled', true);
+                $(".submit-btn").text('提交中...').addClass('disabled').prop('disabled', true);
             });
 
             var allow_submit = false;
