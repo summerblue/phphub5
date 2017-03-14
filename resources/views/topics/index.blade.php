@@ -10,7 +10,7 @@
 
     @if (isset($category) && $category->id == config('phphub.qa_category_id'))
         <div class="alert alert-info">
-            在 LC，我们不提倡 <a href="{{ route('topics.show', 535) }}" style="text-decoration: underline;">新手提问</a> ，如果你编程遇到难题，请先 <a href="{{ route('topics.show', 3656) }}">搜索</a> 再 <a href="{{ route('topics.create', ['category_id' => config('phphub.qa_category_id')]) }}" class="btn btn-warning">提问</a>
+            在 LC，我们不提倡 <a href="{{ route('topics.show', 535) }}" style="text-decoration: underline;">新手提问</a> ，如果你编程遇到难题，请先 <a href="{{ route('topics.show', 3656) }}" style="text-decoration: underline;">搜索</a> 再 <a href="{{ route('topics.create', ['category_id' => config('phphub.qa_category_id')]) }}" class="btn btn-warning">提问</a>
         </div>
     @endif
     <div class="panel panel-default">
