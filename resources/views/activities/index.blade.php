@@ -54,7 +54,13 @@
 
         @else
             <div class="panel-body">
-                <div class="empty-block">{{ lang('Dont have any data Yet') }}~~</div>
+                <div class="empty-block">
+                    @if (if_query('view', null))
+                        (=￣ω￣=)··· 关注用户或订阅专栏这里才会有内容哦。
+                    @elseif (if_query('view', 'all'))
+                        (=￣ω￣=)···  不活跃度啊你，动态数据为空！记得评论、点赞可产生动态。
+                    @endif
+                </div>
             </div>
         @endif
 
