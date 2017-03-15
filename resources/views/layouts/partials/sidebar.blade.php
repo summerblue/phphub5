@@ -70,8 +70,10 @@
 </div>
 
 @if (Route::currentRouteName() == 'topics.index')
-@include('layouts.partials._resources_panel')
+    @include('layouts.partials._resources_panel')
+@endif
 
+@if (isset($active_users) && count($active_users))
     <div class="panel panel-default corner-radius panel-active-users">
       <div class="panel-heading text-center">
         <h3 class="panel-title">{{ lang('Active Users') }}（<a href="{{ route('hall_of_fames') }}"><i class="fa fa-star" aria-hidden="true"></i> {{ lang('Hall of Fame') }}</a>）</h3>
@@ -80,7 +82,9 @@
         @include('topics.partials.active_users')
       </div>
     </div>
+@endif
 
+@if (isset($hot_topics) && count($hot_topics))
 <div class="panel panel-default corner-radius panel-hot-topics">
   <div class="panel-heading text-center">
     <h3 class="panel-title">{{ lang('Hot Topics') }}</h3>
@@ -89,7 +93,6 @@
     @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $hot_topics])
   </div>
 </div>
-
 @endif
 
 
@@ -105,6 +108,7 @@
   </div>
   </div>
 
+@if (Route::currentRouteName() != 'home')
   @if (isset($links) && count($links))
     <div class="panel panel-default corner-radius">
       <div class="panel-heading text-center">
@@ -119,6 +123,7 @@
       </div>
     </div>
   @endif
+@endif
 
 @if (Route::currentRouteName() == 'topics.index')
 
