@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{ lang('Topic List') }} @parent
+最新动态 | @parent
 @stop
 
 @section('content')

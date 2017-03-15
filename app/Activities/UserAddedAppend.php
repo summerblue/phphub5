@@ -12,9 +12,4 @@ class UserAddedAppend extends BaseActivity
             'body' => $append->content
         ]);
     }
-
-    public function remove($user, $topic)
-    {
-        $this->removeBy("u$user->id", "t$topic->id");
-    }
 }
