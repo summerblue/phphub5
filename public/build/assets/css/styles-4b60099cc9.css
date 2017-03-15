@@ -13018,4 +13018,30 @@ hr {
   font-size: 14px;
   color: #a0a0a0; }
 
+.feed-list {
+  color: #8b8a8a; }
+  .feed-list a {
+    color: #3c3939; }
+  .feed-list a:hover {
+    color: #1b1a1a; }
+  .feed-list .nav-tabs > li > a {
+    color: #8b8a8a; }
+  .feed-list .panel .panel-heading {
+    border-bottom: none;
+    padding: 24px 20px 14px; }
+  .feed-list .list-group .list-group-item {
+    padding: 5px 15px;
+    border: none;
+    margin-bottom: 0px;
+    border-bottom: 1px dashed #eae7e7;
+    margin-top: 0px; }
+    .feed-list .list-group .list-group-item .media-heading {
+      margin-bottom: 5px; }
+    .feed-list .list-group .list-group-item .media-object.img-thumbnail.avatar {
+      width: 50px; }
+    .feed-list .list-group .list-group-item .meta {
+      padding-right: 8px; }
+    .feed-list .list-group .list-group-item .content-body {
+      padding: 12px 0px; }
+
 /*# sourceMappingURL=styles.css.map */
