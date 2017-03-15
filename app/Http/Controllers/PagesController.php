@@ -11,14 +11,20 @@ use Rss;
 use Purifier;
 use Phphub\Handler\EmailHandler;
 use Jrean\UserVerification\Facades\UserVerification;
+use Auth;
 
 class PagesController extends Controller
 {
     public function home(Topic $topic)
     {
-        $topics = $topic->getTopicsWithFilter('excellent');
-        $banners = Banner::allByPosition();
-        return view('pages.home', compact('topics', 'banners'));
+        if (Auth::check()) {
+            $activities = Auth::user()->subscribedActivityFeeds();
+            return view('pages.activities', compact('activities'));
+        } else {
+            $topics = $topic->getTopicsWithFilter('excellent');
+            $banners = Banner::allByPosition();
+            return view('pages.home', compact('topics', 'banners'));
+        }
     }
 
     public function about()
