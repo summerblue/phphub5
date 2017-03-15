@@ -22,12 +22,12 @@ class BaseActivity
         $causer      = 'u' . $user->id;
         $indentifier = $indentifier ?: 't' . $topic->id;
         $data = array_merge([
-                'topic_type' => $topic->isArticle() ? 'article' : 'topic',
-                'topic_link' => $topic->link(),
-                'topic_title' => $topic->title,
-                'topic_category_id' => $topic->category->id,
-                'topic_category_name' => $topic->category->name,
-            ], $extra_data);
+            'topic_type' => $topic->isArticle() ? 'article' : 'topic',
+            'topic_link' => $topic->link(),
+            'topic_title' => $topic->title,
+            'topic_category_id' => $topic->category->id,
+            'topic_category_name' => $topic->category->name,
+        ], $extra_data);
 
         $this->addActivity($causer, $user, $indentifier, $data);
     }
@@ -47,6 +47,5 @@ class BaseActivity
         ];
 
         Activity::insert($activities);
-
     }
 }

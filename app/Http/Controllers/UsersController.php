@@ -14,6 +14,7 @@ use App\Http\Requests\UpdateUserRequest;
 use App\Http\Requests\ResetPasswordRequest;
 use App\Jobs\SendActivateMail;
 use Phphub\Handler\Exception\ImageUploadException;
+use App\Activities\UserFollowedUser;
 
 class UsersController extends Controller
 {
@@ -243,9 +244,12 @@ class UsersController extends Controller
 
         if (Auth::user()->isFollowing($id)) {
             Auth::user()->unfollow($id);
+            app(UserFollowedUser::class)->remove(Auth::user(), $user);
         } else {
             Auth::user()->follow($id);
             app('Phphub\Notification\Notifier')->newFollowNotify(Auth::user(), $user);
+            app(UserFollowedUser::class)->generate(Auth::user(), $user);
+
         }
 
         $user->update(['follower_count' => $user->followers()->count()]);
