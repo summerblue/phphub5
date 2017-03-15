@@ -26,7 +26,7 @@
 
         @if ( ! $activities->isEmpty())
 
-            <div class="jscrolxxl">
+            <div class="jscroll">
                 <div class="panel-body remove-padding-horizontal">
                     <ul class="list-group row feed-list">
                         <?php
@@ -46,10 +46,20 @@
 
                 </div>
 
-                <div class="panel-footer text-right remove-padding-horizontal pager-footer">
-                    <!-- Pager -->
-                    {!! $activities->appends(Request::except('page', '_pjax'))->render() !!}
-                </div>
+
+                @if (($activities->total() / $activities->perPage() ) > 1)
+                    <div class="panel-footer text-right remove-padding-horizontal pager-footer">
+                        {!! $activities->appends(Request::except('page', '_pjax'))->render() !!}
+                    </div>
+                @else
+                <div class="panel-footer text-center remove-padding-horizontal pager-footer">
+                        <div class="pagination" style="color: #ccc;">
+                            加载完毕~~
+                        </div>
+                    </div>
+                @endif
+
+
             </div>
 
         @else
