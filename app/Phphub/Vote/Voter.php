@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Notification;
 use Carbon\Carbon;
 use Auth;
+use App\Activities\UserUpvotedTopic;
 
 class Voter
 {
@@ -18,16 +19,18 @@ class Voter
             // click twice for remove upvote
             $topic->votes()->ByWhom(Auth::id())->WithType('upvote')->delete();
             $topic->decrement('vote_count', 1);
+            app(UserUpvotedTopic::class)->remove(Auth::user(), $topic);
         } elseif ($topic->votes()->ByWhom(Auth::id())->WithType('downvote')->count()) {
             // user already clicked downvote once
             $topic->votes()->ByWhom(Auth::id())->WithType('downvote')->delete();
             $topic->votes()->create(['user_id' => Auth::id(), 'is' => 'upvote']);
             $topic->increment('vote_count', 2);
+            app(UserUpvotedTopic::class)->generate(Auth::user(), $topic);
         } else {
             // first time click
             $topic->votes()->create(['user_id' => Auth::id(), 'is' => 'upvote']);
             $topic->increment('vote_count', 1);
-
+            app(UserUpvotedTopic::class)->generate(Auth::user(), $topic);
             Notification::notify('topic_upvote', Auth::user(), $topic->user, $topic);
         }
     }
