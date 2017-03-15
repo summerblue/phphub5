@@ -28,6 +28,8 @@ class Kernel extends ConsoleKernel
 
         Commands\CalculateMaintainerWorks::class,
         Commands\SendMaintainerWorksMail::class,
+
+        Commands\TopicImagesRecollect::class,
     ];
 
     /**
