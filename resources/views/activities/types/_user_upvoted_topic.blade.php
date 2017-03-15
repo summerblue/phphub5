@@ -14,7 +14,7 @@
             @else
                 赞了话题
             @endif
-            <a href="{{ $activity->data['topic_link'] }}" title="{{ $activity->data['topic_title'] }}">
+             <a href="{{ $activity->data['topic_link'] }}" title="{{ $activity->data['topic_title'] }}">
                 {{ str_limit($activity->data['topic_title'], '100') }}
             </a>
             <span class="meta">

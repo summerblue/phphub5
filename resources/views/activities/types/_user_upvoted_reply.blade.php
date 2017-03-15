@@ -9,17 +9,15 @@
             <a href="{{ route('users.show', [$activity->user->id]) }}">
                 {{ $activity->user->name }}
             </a>
-
             @if ($activity->data['topic_type'] == 'article')
-                评论了文章
+                赞了文章
             @else
-                评论了话题
+                赞了话题
             @endif
-
-            <a href="{{ $activity->data['topic_link'] }}#reply{{ $activity->data['reply_id'] }}" title="{{ $activity->data['topic_title'] }}">
+             <a href="{{ $activity->data['topic_link'] }}#reply{{ $activity->data['reply_id'] }}" title="{{ $activity->data['topic_title'] }}">
                 {{ str_limit($activity->data['topic_title'], '100') }}
-            </a>：
-
+            </a>
+            下的 <a href="{{ $activity->data['topic_link'] }}#reply{{ $activity->data['reply_id'] }}">评论</a>：
             <span class="meta">
                 • {{ lang('at') }} • <span class="timeago">{{ $activity->created_at }}</span>
             </span>

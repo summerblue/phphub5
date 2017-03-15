@@ -6,13 +6,16 @@ use App\Models\Activity;
 
 class UserUpvotedReply extends BaseActivity
 {
-    public function generate($user, $topic)
+    public function generate($user, $reply)
     {
-        $this->addActivity($user, $topic);
+        $this->addActivity($user, $reply->topic, [
+            'body' => $reply->body,
+            'reply_id' => $reply->id,
+        ], "r$reply->id");
     }
 
-    public function remove($user, $topic)
+    public function remove($user, $reply)
     {
-        $this->removeBy("u$user->id", "t$topic->id");
+        $this->removeBy("u$user->id", "r$reply->id");
     }
 }
