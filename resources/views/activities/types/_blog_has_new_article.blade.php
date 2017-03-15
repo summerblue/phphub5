@@ -7,7 +7,7 @@
     <div class="infos">
         <div class="media-heading">
 
-            <i class="fa fa-file-text-o" aria-hidden="true"></i>
+            <i class="fa fa-book" aria-hidden="true"></i>
 
             <a href="{{ route('users.show', [$activity->user->id]) }}">
                 {{ $activity->user->name }}
