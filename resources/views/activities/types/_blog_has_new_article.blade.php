@@ -1,7 +1,7 @@
 <li class="list-group-item media" style="margin-top: 0px;">
     <div class="avatar pull-left">
-        <a href="{{ route('users.show', [$activity->user->id]) }}">
-            <img class="media-object img-thumbnail avatar" alt="{{ $activity->user->name }}" src="{{ $activity->user->present()->gravatar }}"  style="width:38px;height:38px;"/>
+        <a href="{{ $activity->data['blog_link'] }}">
+            <img class="media-object img-thumbnail avatar" alt="{{ $activity->data['blog_name'] }}" src="{{ img_crop($activity->data['blog_cover'], 224, 224) }}"  style="width:38px;height:38px;"/>
         </a>
     </div>
     <div class="infos">

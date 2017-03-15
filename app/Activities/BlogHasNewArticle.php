@@ -11,6 +11,7 @@ class BlogHasNewArticle extends BaseActivity
         $this->addTopicActivity($user, $topic, [
             'blog_link' => $blog->link(),
             'blog_name' => $blog->name,
+            'blog_cover' => $blog->cover,
         ]);
     }
 
