@@ -8,6 +8,7 @@ use Auth;
 use Carbon\Carbon;
 use Phphub\Markdown\Markdown;
 use Illuminate\Support\MessageBag;
+use App\Activities\UserPublishedNewTopic;
 
 class TopicCreator
 {
@@ -54,6 +55,7 @@ class TopicCreator
 
         if ($topic->is_draft != 'yes' && $topic->category_id != config('phphub.admin_board_cid')) {
             app('Phphub\Notification\Notifier')->newTopicNotify(Auth::user(), $this->mentionParser, $topic);
+            app(UserPublishedNewTopic::class)->generate(Auth::user(), $topic);
         }
 
         return $observer->creatorSucceed($topic);

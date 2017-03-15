@@ -20,6 +20,7 @@ use Flash;
 use Image;
 use Request as UserRequest;
 use Phphub\Notification\Mention;
+use App\Activities\UserPublishedNewTopic;
 
 class TopicsController extends Controller implements CreatorListener
 {
@@ -164,6 +165,9 @@ class TopicsController extends Controller implements CreatorListener
             // Topic Published
             app('Phphub\Notification\Notifier')->newTopicNotify(Auth::user(), $mentionParser, $topic);
 
+            // User activity
+            app(UserPublishedNewTopic::class)->generate(Auth::user(), $topic);
+
             Auth::user()->decrement('draft_count', 1);
             Auth::user()->increment('article_count', 1);
         }
@@ -252,6 +256,7 @@ class TopicsController extends Controller implements CreatorListener
         } else {
             Auth::user()->decrement('topic_count', 1);
         }
+        app(UserPublishedNewTopic::class)->remove(Auth::user(), $topic);
 
         return redirect()->route('topics.index');
     }

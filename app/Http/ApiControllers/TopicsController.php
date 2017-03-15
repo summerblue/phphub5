@@ -14,6 +14,7 @@ use App\Models\User;
 use App\Models\Vote;
 use Gate;
 use Auth;
+use App\Activities\UserPublishedNewTopic;
 
 class TopicsController extends Controller implements CreatorListener
 {
@@ -84,6 +85,7 @@ class TopicsController extends Controller implements CreatorListener
         }
 
         $topic->delete();
+        app(UserPublishedNewTopic::class)->remove(Auth::user(), $topic);
         return ['status' => 'ok'];
     }
 

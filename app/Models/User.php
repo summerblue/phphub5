@@ -12,9 +12,6 @@ use Laracasts\Presenter\PresentableTrait;
 use Venturecraft\Revisionable\RevisionableTrait;
 use Overtrue\LaravelFollow\FollowTrait;
 use App\Jobs\SendActivateMail;
-use App\Models\Traits\UserRememberTokenHelper;
-use App\Models\Traits\UserSocialiteHelper;
-use App\Models\Traits\UserAvatarHelper;
 use Carbon\Carbon;
 use Cache;
 use Nicolaslopezj\Searchable\SearchableTrait;
@@ -23,7 +20,11 @@ use Cmgmyr\Messenger\Traits\Messagable;
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract
 {
-    use UserRememberTokenHelper,UserSocialiteHelper,UserAvatarHelper;
+    use Traits\UserRememberTokenHelper;
+    use Traits\UserSocialiteHelper;
+    use Traits\UserAvatarHelper;
+    use Traits\UserActivityHelper;
+
     use Messagable;
 
     use PresentableTrait;
