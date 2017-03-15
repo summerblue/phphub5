@@ -21,6 +21,7 @@ use Image;
 use Request as UserRequest;
 use Phphub\Notification\Mention;
 use App\Activities\UserPublishedNewTopic;
+use App\Activities\UserAddedAppend;
 
 class TopicsController extends Controller implements CreatorListener
 {
@@ -137,6 +138,7 @@ class TopicsController extends Controller implements CreatorListener
         $append = Append::create(['topic_id' => $topic->id, 'content' => $content]);
 
         app('Phphub\Notification\Notifier')->newAppendNotify(Auth::user(), $topic, $append);
+        app(UserAddedAppend::class)->generate(Auth::user(), $topic, $append);
 
         return response([
                     'status'  => 200,
