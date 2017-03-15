@@ -13,8 +13,8 @@
              <a href="{{ $activity->data['topic_link'] }}" title="{{ $activity->data['topic_title'] }}">
                 {{ str_limit($activity->data['topic_title'], '100') }}
             </a>
-            中增加了附言：
-            <span class="meta">
+            中增加了附言
+             <span class="meta">
                 • {{ lang('at') }} • <span class="timeago">{{ $activity->created_at }}</span>
             </span>
         </div>

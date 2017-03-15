@@ -8,6 +8,7 @@ use App\Models\Notification;
 use Carbon\Carbon;
 use Auth;
 use App\Activities\UserUpvotedTopic;
+use App\Activities\UserUpvotedReply;
 
 class Voter
 {
@@ -65,12 +66,14 @@ class Voter
             $reply->votes()->ByWhom(Auth::id())->WithType('upvote')->delete();
             $reply->decrement('vote_count', 1);
             $return['action_type'] = 'sub';
+            app(UserUpvotedReply::class)->remove(Auth::user(), $reply);
         } elseif ($reply->votes()->ByWhom(Auth::id())->WithType('downvote')->count()) {
             // user already clicked downvote once
             $reply->votes()->ByWhom(Auth::id())->WithType('downvote')->delete();
             $reply->votes()->create(['user_id' => Auth::id(), 'is' => 'upvote']);
             $reply->increment('vote_count', 2);
             $return['action_type'] = 'add';
+            app(UserUpvotedReply::class)->generate(Auth::user(), $reply);
         } else {
             // first time click
             $reply->votes()->create(['user_id' => Auth::id(), 'is' => 'upvote']);
@@ -78,6 +81,7 @@ class Voter
             $return['action_type'] = 'add';
 
             Notification::notify('reply_upvote', Auth::user(), $reply->user, $reply->topic, $reply);
+            app(UserUpvotedReply::class)->generate(Auth::user(), $reply);
         }
         return $return;
     }

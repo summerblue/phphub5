@@ -9,7 +9,8 @@ class UserRepliedTopic extends BaseActivity
     public function generate($user, $topic, $reply)
     {
         $this->addActivity($user, $topic, [
-            'body' => $reply->body
+            'body' => $reply->body,
+            'reply_id' => $reply->id,
         ], "r$reply->id");
     }
 
