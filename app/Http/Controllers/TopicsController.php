@@ -182,6 +182,8 @@ class TopicsController extends Controller implements CreatorListener
 
         $route = $topic->isArticle() ? 'articles.show' : 'topics.show';
 
+        $topic->collectImages();
+
         return redirect()->route($route, $topic->id);
     }
 

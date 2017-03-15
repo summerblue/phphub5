@@ -1,4 +1,6 @@
-<?php namespace App\Models\Traits;
+<?php
+
+namespace App\Models\Traits;
 
 use Carbon\Carbon;
 use App\Models\Category;

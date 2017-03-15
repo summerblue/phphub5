@@ -127,3 +127,28 @@ function is_route($name)
 {
     return Request::route()->getName() == $name;
 }
+
+function get_image_links($html)
+{
+    $image_links = get_images_from_html($html);
+    $result = [];
+    foreach ($image_links as $url) {
+        if (strpos($url, config('app.url_static')) !== false) {
+            $result[] = strtok($url, '?');
+        }
+    }
+    return $result;
+}
+
+function get_images_from_html($html)
+{
+    $doc = new DOMDocument();
+    @$doc->loadHTML($html);
+
+    $img_tags = $doc->getElementsByTagName('img');
+    $result = [];
+    foreach ($img_tags as $img) {
+        $result[] = $img->getAttribute('src');
+    }
+    return $result;
+}

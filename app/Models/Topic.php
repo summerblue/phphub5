@@ -16,6 +16,7 @@ class Topic extends Model
 {
     use Traits\TopicFilterable;
     use Traits\TopicApiHelper;
+    use Traits\TopicImageHelper;
 
     // manually maintian
     public $timestamps = false;
