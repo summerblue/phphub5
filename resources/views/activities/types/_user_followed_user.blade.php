@@ -6,6 +6,9 @@
     </div>
     <div class="infos">
         <div class="media-heading">
+
+            <i class="fa fa-heart-o" aria-hidden="true"></i>
+
             <a href="{{ route('users.show', [$activity->user->id]) }}">
                 {{ $activity->user->name }}
             </a>
