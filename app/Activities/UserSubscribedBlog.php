@@ -6,13 +6,20 @@ use App\Models\Activity;
 
 class UserSubscribedBlog extends BaseActivity
 {
-    public function generate($user, $topic)
+    public function generate($user, $blog)
     {
-        $this->addTopicActivity($user, $topic);
+        $causer      = 'u' . $user->id;
+        $indentifier = 'b' . $blog->id;
+        $data = array_merge([
+            'blog_name' => $blog->name,
+            'blog_link' => $blog->link(),
+        ]);
+
+        $this->addActivity($causer, $user, $indentifier, $data);
     }
 
-    public function remove($user, $topic)
+    public function remove($user, $blog)
     {
-        $this->removeBy("u$user->id", "t$topic->id");
+        $this->removeBy("u$user->id", "b$blog->id");
     }
 }
