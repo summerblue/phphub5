@@ -79,7 +79,7 @@ class BlogsController extends Controller
         Auth::user()->subscribes()->attach($blog->id);
         $blog->increment('subscriber_count', 1);
         Flash::success("订阅成功");
-        app(UserSubscribedBlog::class)->generate(Auth::user(), Auth::user()->blogs()->first());
+        app(UserSubscribedBlog::class)->generate(Auth::user(), $blog);
         return redirect()->back();
     }
 
@@ -89,7 +89,7 @@ class BlogsController extends Controller
         Auth::user()->subscribes()->detach($blog->id);
         $blog->decrement('subscriber_count', 1);
         Flash::success("成功取消订阅");
-        app(UserSubscribedBlog::class)->remove(Auth::user(), Auth::user()->blogs()->first());
+        app(UserSubscribedBlog::class)->remove(Auth::user(), $blog);
         return redirect()->back();
     }
 }
