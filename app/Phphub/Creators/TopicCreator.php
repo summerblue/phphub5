@@ -60,6 +60,8 @@ class TopicCreator
             Auth::user()->increment('topic_count', 1);
         }
 
+        $topic->collectImages();
+
         return $observer->creatorSucceed($topic);
     }
 
