@@ -11,6 +11,8 @@ class UserUpvotedReply extends BaseActivity
         $this->addTopicActivity($user, $reply->topic, [
             'body' => $reply->body,
             'reply_id' => $reply->id,
+            'reply_user_id' => $reply->user->id,
+            'reply_user_name' => $reply->user->name,
         ], "r$reply->id");
     }
 

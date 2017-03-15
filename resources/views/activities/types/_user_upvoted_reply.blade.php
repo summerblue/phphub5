@@ -17,7 +17,12 @@
              <a href="{{ $activity->data['topic_link'] }}#reply{{ $activity->data['reply_id'] }}" title="{{ $activity->data['topic_title'] }}">
                 {{ str_limit($activity->data['topic_title'], '100') }}
             </a>
-            下的 <a href="{{ $activity->data['topic_link'] }}#reply{{ $activity->data['reply_id'] }}">评论</a>：
+            @if (isset($activity->data['reply_user_name']))
+                下 <a href="{{ $activity->data['topic_link'] }}#reply{{ $activity->data['reply_id'] }}">{{ '@'.$activity->data['reply_user_name'] }} 的评论</a>：
+            @else
+                下的 <a href="{{ $activity->data['topic_link'] }}#reply{{ $activity->data['reply_id'] }}">评论</a>：
+            @endif
+
              <span class="meta pull-right">
                  <span class="timeago">{{ $activity->created_at }}</span>
             </span>
