@@ -28,7 +28,6 @@ class ActivityController extends Controller
                 break;
         }
 
-
         $links  = Link::allFromCache();
         $banners = Banner::allByPosition();
 
