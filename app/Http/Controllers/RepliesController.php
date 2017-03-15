@@ -8,6 +8,7 @@ use Flash;
 use Auth;
 use Redirect;
 use Request;
+use App\Activities\UserRepliedTopic;
 
 class RepliesController extends Controller implements CreatorListener
 {
@@ -40,8 +41,9 @@ class RepliesController extends Controller implements CreatorListener
         $reply->delete();
 
         $reply->topic->decrement('reply_count', 1);
-
         $reply->topic->generateLastReplyUserInfo();
+
+        app(UserRepliedTopic::class)->remove(Auth::user(), $reply);
 
         return response(['status' => 200, 'message' => lang('Operation succeeded.')]);
     }

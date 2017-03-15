@@ -12,6 +12,7 @@ use App;
 use Phphub\Markdown\Markdown;
 use App\Jobs\SendReplyNotifyMail;
 use Illuminate\Support\MessageBag;
+use App\Activities\UserRepliedTopic;
 
 class ReplyCreator
 {
@@ -55,6 +56,8 @@ class ReplyCreator
         Auth::user()->increment('reply_count', 1);
 
         app('Phphub\Notification\Notifier')->newReplyNotify(Auth::user(), $this->mentionParser, $topic, $reply);
+
+        app(UserRepliedTopic::class)->generate(Auth::user(), $topic, $reply);
 
         return $observer->creatorSucceed($reply);
     }

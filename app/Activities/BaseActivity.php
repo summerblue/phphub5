@@ -17,15 +17,15 @@ class BaseActivity
                 ->delete();
     }
 
-    public function addActivity(User $user, Topic $topic, $extra_data = [])
+    public function addActivity(User $user, Topic $topic, $extra_data = [], $indentifier = null)
     {
         $type = class_basename(get_class($this));
-
+        $indentifier = $indentifier ?: 't' . $topic->id;
         $activities[] = [
             'causer'   => 'u' . $user->id,
             'user_id'     => $user->id,
             'type'        => $type,
-            'indentifier' => 't' . $topic->id,
+            'indentifier' => $indentifier,
             'data'        => serialize(array_merge([
                 'topic_type' => $topic->isArticle() ? 'article' : 'topic',
                 'topic_link' => $topic->link(),
