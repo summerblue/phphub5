@@ -2,7 +2,7 @@
 
 namespace App\Models\Traits;
 
-use App\Models\Activiy;
+use App\Models\Activity;
 
 trait UserActivityHelper
 {
@@ -32,7 +32,7 @@ trait UserActivityHelper
 
     public function activitiesByCausers($causers)
     {
-        return Feed::whereIn('causer_id', $causers)
+        return Activity::whereIn('causer', $causers)
                     ->recent()
                     ->paginate(50);
     }

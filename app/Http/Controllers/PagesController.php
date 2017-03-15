@@ -15,11 +15,10 @@ use Auth;
 
 class PagesController extends Controller
 {
-    public function home(Topic $topic)
+    public function home(Topic $topic, Request $request)
     {
         if (Auth::check()) {
-            $activities = Auth::user()->subscribedActivityFeeds();
-            return view('pages.activities', compact('activities'));
+            return app(ActivityController::class)->index($request);
         } else {
             $topics = $topic->getTopicsWithFilter('excellent');
             $banners = Banner::allByPosition();
