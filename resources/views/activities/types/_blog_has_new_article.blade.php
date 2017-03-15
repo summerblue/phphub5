@@ -6,6 +6,9 @@
     </div>
     <div class="infos">
         <div class="media-heading">
+
+            <i class="fa fa-file-text-o" aria-hidden="true"></i>
+
             <a href="{{ route('users.show', [$activity->user->id]) }}">
                 {{ $activity->user->name }}
             </a>
@@ -13,7 +16,7 @@
 
             中发表了文章
              <a href="{{ $activity->data['topic_link'] }}" title="{{ $activity->data['topic_title'] }}">
-                {{ str_limit($activity->data['topic_title'], '100') }}
+                《{{ str_limit($activity->data['topic_title'], '100') }}》
             </a>
              <span class="meta pull-right">
                  <span class="timeago">{{ $activity->created_at }}</span>
