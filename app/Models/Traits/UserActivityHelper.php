@@ -27,7 +27,7 @@ trait UserActivityHelper
             return 'b' . $blog->id;
         })->toArray();
 
-        return array_merge($followings, $subscribed_blogs);
+        return array_merge(['u' . $this->id], $followings, $subscribed_blogs);
     }
 
     public function activitiesByCausers($causers)
