@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Flash;
 use App\Http\Requests\BlogStoreRequest;
+use App\Activities\UserSubscribedBlog;
 
 class BlogsController extends Controller
 {
@@ -78,6 +79,7 @@ class BlogsController extends Controller
         Auth::user()->subscribes()->attach($blog->id);
         $blog->increment('subscriber_count', 1);
         Flash::success("订阅成功");
+        app(UserSubscribedBlog::class)->generate(Auth::user(), Auth::user()->blogs()->first());
         return redirect()->back();
     }
 
@@ -87,6 +89,7 @@ class BlogsController extends Controller
         Auth::user()->subscribes()->detach($blog->id);
         $blog->decrement('subscriber_count', 1);
         Flash::success("成功取消订阅");
+        app(UserSubscribedBlog::class)->remove(Auth::user(), Auth::user()->blogs()->first());
         return redirect()->back();
     }
 }
