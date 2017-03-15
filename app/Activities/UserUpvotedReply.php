@@ -8,7 +8,7 @@ class UserUpvotedReply extends BaseActivity
 {
     public function generate($user, $reply)
     {
-        $this->addActivity($user, $reply->topic, [
+        $this->addTopicActivity($user, $reply->topic, [
             'body' => $reply->body,
             'reply_id' => $reply->id,
         ], "r$reply->id");

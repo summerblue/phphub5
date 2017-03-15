@@ -8,7 +8,7 @@ class BlogHasNewArticle extends BaseActivity
 {
     public function generate($user, $topic, $blog)
     {
-        $this->addActivity($user, $topic, [
+        $this->addTopicActivity($user, $topic, [
             'blog_link' => $blog->link(),
             'blog_name' => $blog->name,
         ]);

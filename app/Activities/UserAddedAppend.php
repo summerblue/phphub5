@@ -8,7 +8,7 @@ class UserAddedAppend extends BaseActivity
 {
     public function generate($user, $topic, $append)
     {
-        $this->addActivity($user, $topic, [
+        $this->addTopicActivity($user, $topic, [
             'body' => $append->content
         ]);
     }

@@ -8,7 +8,7 @@ class UserAttendedTopic extends BaseActivity
 {
     public function generate($user, $topic)
     {
-        $this->addActivity($user, $topic);
+        $this->addTopicActivity($user, $topic);
     }
 
     public function remove($user, $topic)
