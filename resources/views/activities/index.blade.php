@@ -27,10 +27,19 @@
 
             <div class="jscrolxxl">
                 <div class="panel-body remove-padding-horizontal">
-
                     <ul class="list-group row">
+                        <?php
+                             $indentifiers = [];
+                        ?>
                         @foreach ($activities as $activity)
-                            @include('activities.types._' . snake_case(class_basename($activity->type)))
+                            @unless($activity->type == 'UserPublishedNewTopic' && in_array($activity->indentifier, $indentifiers))
+                                @include('activities.types._' . snake_case(class_basename($activity->type)))
+                            @endunless
+                            <?php
+                                if ($activity->type == 'BlogHasNewArticle') {
+                                    $indentifiers[] = $activity->indentifier;
+                                }
+                            ?>
                         @endforeach
                     </ul>
 

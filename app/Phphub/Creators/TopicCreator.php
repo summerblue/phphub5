@@ -46,6 +46,11 @@ class TopicCreator
             return $observer->creatorFailed($topic->getErrors());
         }
 
+        if ($topic->is_draft != 'yes' && $topic->category_id != config('phphub.admin_board_cid')) {
+            app('Phphub\Notification\Notifier')->newTopicNotify(Auth::user(), $this->mentionParser, $topic);
+            app(UserPublishedNewTopic::class)->generate(Auth::user(), $topic);
+        }
+
         if ($topic->isArticle() && $topic->is_draft == 'yes') {
             Auth::user()->increment('draft_count', 1);
         } elseif ($topic->isArticle()) {
@@ -53,11 +58,6 @@ class TopicCreator
             app(BlogHasNewArticle::class)->generate(Auth::user(), $topic, Auth::user()->blogs()->first());
         } else {
             Auth::user()->increment('topic_count', 1);
-        }
-
-        if ($topic->is_draft != 'yes' && $topic->category_id != config('phphub.admin_board_cid')) {
-            app('Phphub\Notification\Notifier')->newTopicNotify(Auth::user(), $this->mentionParser, $topic);
-            app(UserPublishedNewTopic::class)->generate(Auth::user(), $topic);
         }
 
         return $observer->creatorSucceed($topic);
