@@ -1,7 +1,13 @@
 @extends('layouts.default')
 
 @section('title')
-最新动态 | @parent
+@if (if_query('view', null))
+我关注的动态 | @parent
+@elseif (if_query('view', 'all'))
+所有动态 | @parent
+@elseif (if_query('view', 'mine'))
+我的动态 | @parent
+@endif
 @stop
 
 @section('content')
@@ -12,9 +18,9 @@
 
         <div class="panel-heading">
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a href="#">关注动态</a></li>
-                <li role="presentation"><a href="#">所有动态</a></li>
-                <li role="presentation"><a href="#">我的动态</a></li>
+                <li role="presentation" class="{{ active_class(if_query('view', null)) }}"><a href="{{ route('home') }}"><i class="fa fa-eye" aria-hidden="true"></i> 我的关注</a></li>
+                <li role="presentation" class="{{ active_class(if_query('view', 'all')) }}"><a href="{{ route('home', ['view' => 'all']) }}"><i class="fa fa-rss" aria-hidden="true"></i> 所有动态</a></li>
+                <li role="presentation" class="{{ active_class(if_query('view', 'mine')) }}"><a href="{{ route('home', ['view' => 'mine']) }}"><i class="fa fa-calendar-minus-o" aria-hidden="true"></i> 我的动态</a></li>
             </ul>
         </div>
 
