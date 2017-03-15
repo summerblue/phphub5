@@ -17,4 +17,9 @@ class Blog extends Model
     {
         return $this->belongsToMany(User::class, 'blog_subscribers');
     }
+
+    public function link($params = [])
+    {
+        return route('wildcard', array_merge([$this->slug], $params));
+    }
 }

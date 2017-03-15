@@ -6,9 +6,12 @@ use App\Models\Activity;
 
 class BlogHasNewArticle extends BaseActivity
 {
-    public function generate($user, $topic)
+    public function generate($user, $topic, $blog)
     {
-        $this->addActivity($user, $topic);
+        $this->addActivity($user, $topic, [
+            'blog_link' => $blog->link(),
+            'blog_name' => $blog->name,
+        ]);
     }
 
     public function remove($user, $topic)
