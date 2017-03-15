@@ -14,8 +14,21 @@ class ActivityController extends Controller
 {
 	public function index(Request $request)
 	{
-        // $activities = Auth::user()->subscribedActivityFeeds();
-        $activities = Activity::recent()->paginate();
+        switch ($request->view) {
+            case 'all':
+                $activities = Activity::recent()->paginate(50);
+                break;
+
+            case 'mine':
+                $activities = Auth::user()->activities();
+                break;
+
+            default:
+                $activities = Auth::user()->subscribedActivityFeeds();
+                break;
+        }
+
+
         $links  = Link::allFromCache();
         $banners = Banner::allByPosition();
 
