@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Phphub\Markdown\Markdown;
 use Illuminate\Support\MessageBag;
 use App\Activities\UserPublishedNewTopic;
+use App\Activities\BlogHasNewArticle;
 
 class TopicCreator
 {
@@ -49,6 +50,7 @@ class TopicCreator
             Auth::user()->increment('draft_count', 1);
         } elseif ($topic->isArticle()) {
             Auth::user()->increment('article_count', 1);
+            app(BlogHasNewArticle::class)->generate(Auth::user(), $topic, Auth::user()->blogs()->first());
         } else {
             Auth::user()->increment('topic_count', 1);
         }
