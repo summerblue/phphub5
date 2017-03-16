@@ -47,6 +47,7 @@ class Topic extends Model
     // Don't forget to fill this array
     protected $fillable = [
         'title',
+        'slug',
         'body',
         'excerpt',
         'is_draft',
@@ -55,7 +56,7 @@ class Topic extends Model
         'user_id',
         'category_id',
         'created_at',
-        'updated_at'
+        'updated_at',
     ];
 
     public static function boot()

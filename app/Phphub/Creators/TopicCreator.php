@@ -41,6 +41,8 @@ class TopicCreator
 
         $data['source'] = get_platform();
 
+        $data['slug'] = slug_trans($data['title']);
+
         $topic = Topic::create($data);
         if (! $topic) {
             return $observer->creatorFailed($topic->getErrors());
