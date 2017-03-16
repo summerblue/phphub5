@@ -198,7 +198,7 @@ class Topic extends Model
 
     public function link($params = [])
     {
-        $params = array_merge([$this->id], $params);
+        $params = array_merge([$this->id, $this->slug], $params);
         $name = $this->isArticle() ? 'articles.show' : 'topics.show';
         return route($name, $params);
     }
