@@ -19,7 +19,8 @@ trait TopicImageHelper
 
         $links = get_image_links($this->body);
 
-        foreach ($links as $link) {
+        if (count($links)) {
+            $link = array_shift($links);
             $data = [
                 'topic_id' => $this->id,
                 'link' => $link,
