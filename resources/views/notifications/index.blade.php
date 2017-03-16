@@ -45,13 +45,13 @@
                                  •
                                  @if ($notification->type != 'follow' && $notification->topic->isArticle())
                                      {{ str_replace('话题', '文章', $notification->present()->lableUp) }}
-                                     <a href="{{ route('articles.show', [$notification->topic->id]) }}{{{ !empty($notification->reply_id) ? '#reply' . $notification->reply_id : '' }}}" title="{{{ $notification->topic->title }}}">
+                                     <a href="{{ $notification->topic->link() }}{{{ !empty($notification->reply_id) ? '#reply' . $notification->reply_id : '' }}}" title="{{{ $notification->topic->title }}}">
                                          {{{ str_limit($notification->topic->title, '100') }}}
                                      </a>
                                  @else
                                     {{ $notification->present()->lableUp }}
                                     @if($notification->type != 'follow')
-                                        <a href="{{ route('topics.show', [$notification->topic->id]) }}{{{ !empty($notification->reply_id) ? '#reply' . $notification->reply_id : '' }}}" title="{{{ $notification->topic->title }}}">
+                                        <a href="{{ $notification->topic->link() }}{{{ !empty($notification->reply_id) ? '#reply' . $notification->reply_id : '' }}}" title="{{{ $notification->topic->title }}}">
                                             {{{ str_limit($notification->topic->title, '100') }}}
                                         </a>
                                     @endif

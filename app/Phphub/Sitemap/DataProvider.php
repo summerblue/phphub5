@@ -60,7 +60,7 @@ class DataProvider
      */
     public function getTopicUrl($topic)
     {
-        return $this->url->route('topics.show', $topic->id);
+        return $topic->link();
     }
 
     /**

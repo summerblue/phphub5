@@ -57,7 +57,7 @@ class ArticlesController extends Controller implements CreatorListener
             'category_id' => config('phphub.blog_category_id')
         ]);
         Flash::success(lang('Operation succeeded.'));
-        return redirect()->route('articles.show', [$topic->id]);
+        return redirect()->to($topic->link());
 	}
 
 	public function show($id)
@@ -91,6 +91,6 @@ class ArticlesController extends Controller implements CreatorListener
     public function creatorSucceed($topic)
     {
         Flash::success(lang('Operation succeeded.'));
-        return redirect()->route('articles.show', [$topic->id]);
+        return redirect()->to($topic->link());
     }
 }

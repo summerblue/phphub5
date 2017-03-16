@@ -110,49 +110,49 @@ class EmailHandler
     {
         if (!$this->reply) return false;
 
-        $action = " 回复了你的主题: <a href='" . url(route('topics.show', $this->reply->topic_id)) . "' target='_blank'>{$this->reply->topic->title}</a><br /><br />内容如下：<br />";
+        $action = " 回复了你的主题: <a href='" . $this->reply->topic->link() . "' target='_blank'>{$this->reply->topic->title}</a><br /><br />内容如下：<br />";
         $this->_send($this->topic, $this->fromUser, '你的主题有新评论', $action, $this->reply->body, $this->reply->body);
     }
 
     protected function sendAtNotifyMail()
     {
         if (!$this->reply) return false;
-        $action = " 在主题: <a href='" . url(route('topics.show', [$this->reply->topic_id, '#reply' . $this->reply->id])) . "' target='_blank'>{$this->reply->topic->title}</a> 的评论中提及了你<br /><br />内容如下：<br />";
+        $action = " 在主题: <a href='" . $this->topic->link(['#reply' . $this->reply->id]) . "' target='_blank'>{$this->reply->topic->title}</a> 的评论中提及了你<br /><br />内容如下：<br />";
         $this->_send($this->topic, $this->fromUser, '有用户在评论中提及你', $action, $this->reply->body, $this->reply->body);
     }
 
     protected function sendAttentionNotifyMail()
     {
         if (!$this->reply) return false;
-        $action = " 评论了你关注的主题: <a href='" . url(route('topics.show', [$this->reply->topic_id, '#reply' . $this->reply->id])) . "' target='_blank'>{$this->reply->topic->title}</a><br /><br />评论内容如下：<br />";
+        $action = " 评论了你关注的主题: <a href='" . $this->topic->link(['#reply' . $this->reply->id]) . "' target='_blank'>{$this->reply->topic->title}</a><br /><br />评论内容如下：<br />";
         $this->_send($this->topic, $this->fromUser, '有用户评论了你关注的主题', $action, $this->reply->body, $this->reply->body);
     }
 
     protected function sendVoteAppendNotifyMail()
     {
         if (!$this->body || !$this->topic) return false;
-        $action = " 你点过赞的话题: <a href='" . url(route('topics.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a> 有新附言<br /><br />附言内容如下：<br />";
+        $action = " 你点过赞的话题: <a href='" . $this->topic->link() . "' target='_blank'>{$this->topic->title}</a> 有新附言<br /><br />附言内容如下：<br />";
         $this->_send($this->topic, '', '你点过赞的话题有新附言', $action, $this->body, $this->body);
     }
 
     protected function sendCommentAppendNotifyMail()
     {
         if (!$this->body || !$this->topic) return false;
-        $action = " 你评论过的话题: <a href='" . url(route('topics.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a> 有新附言<br /><br />附言内容如下：<br />";
+        $action = " 你评论过的话题: <a href='" . $this->topic->link() . "' target='_blank'>{$this->topic->title}</a> 有新附言<br /><br />附言内容如下：<br />";
         $this->_send($this->topic, '', '你评论过的话题有新附言', $action, $this->body, $this->body);
     }
 
     protected function sendAttendAppendNotifyMail()
     {
         if (!$this->body || !$this->topic) return false;
-        $action = " 你关注的话题: <a href='" . url(route('topics.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a> 有新附言<br /><br />附言内容如下：<br />";
+        $action = " 你关注的话题: <a href='" . $this->topic->link() . "' target='_blank'>{$this->topic->title}</a> 有新附言<br /><br />附言内容如下：<br />";
         $this->_send($this->topic, '', '你关注的话题有新附言', $action, $this->body, $this->body);
     }
 
     protected function sendMentionedInTopicNotifyMail()
     {
         if (!$this->topic) return false;
-        $action = " 在主题: <a href='" . url(route('topics.show', $this->topic->id)) . "' target='_blank'>{$this->topic->title}</a> 中提及了你。<br />";
+        $action = " 在主题: <a href='" . $this->topic->link() . "' target='_blank'>{$this->topic->title}</a> 中提及了你。<br />";
         $this->_send($this->topic, $this->fromUser, '有用户在主题中提及你', $action, '', '');
     }
 

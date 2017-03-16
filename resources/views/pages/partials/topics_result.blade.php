@@ -1,11 +1,7 @@
 <div class="result">
 <h2 class="title">
 
-    @if ($topic->category->id == config('phphub.blog_category_id'))
-        <a href="{{ route('articles.show', [$topic->id]) }}">{{ $topic->title }}</a>
-    @else
-        <a href="{{ route('topics.show', [$topic->id]) }}">{{ $topic->title }}</a>
-    @endif
+    <a href="{{ $topic->link() }}">{{ $topic->title }}</a>
 
     <small>by</small>
 
@@ -17,11 +13,7 @@
 </h2>
 <div class="info">
   <span class="url">
-      @if ($topic->category->id == config('phphub.blog_category_id'))
-          <a href="{{ route('articles.show', [$topic->id]) }}">{{ route('articles.show', [$topic->id]) }}</a>
-      @else
-          <a href="{{ route('topics.show', [$topic->id]) }}">{{ route('topics.show', [$topic->id]) }}</a>
-      @endif
+        <a href="{{ $topic->link() }}">{{ $topic->link() }}</a>
   </span>
   <span class="date" title="Last Updated At">
       {{ Carbon\Carbon::parse($topic->created_at)->format('Y-m-d') }}

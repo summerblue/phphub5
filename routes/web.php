@@ -90,7 +90,7 @@ Route::delete('replies/delete/{id}', 'RepliesController@destroy')->name('replies
 Route::get('/topics', 'TopicsController@index')->name('topics.index');
 Route::get('/topics/create', 'TopicsController@create')->name('topics.create')->middleware('verified_email');
 Route::post('/topics', 'TopicsController@store')->name('topics.store')->middleware('verified_email');
-Route::get('/topics/{id}/{slug}', 'TopicsController@show')->name('topics.show');
+Route::get('/topics/{id}/{slug?}', 'TopicsController@show')->name('topics.show');
 Route::get('/topics/{id}/edit', 'TopicsController@edit')->name('topics.edit');
 Route::patch('/topics/{id}', 'TopicsController@update')->name('topics.update');
 Route::delete('/topics/{id}', 'TopicsController@destroy')->name('topics.destroy');
@@ -147,6 +147,6 @@ Route::patch("/topics/{id}/transform", "ArticlesController@transform")->name('ar
 Route::post("/articles", "ArticlesController@store")->name('articles.store')->middleware('verified_email');
 Route::get("/articles/{id}/edit", "ArticlesController@edit")->name('articles.edit');
 
-Route::get('/articles/{id}/{slug}', "TopicsController@show")->name('articles.show');
+Route::get('/articles/{id}/{slug?}', "TopicsController@show")->name('articles.show');
 
 Route::get('{name}', 'PagesController@wildcard')->name('wildcard');
