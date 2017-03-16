@@ -4,7 +4,7 @@
       @foreach ($articles as $index => $article)
        <li class="list-group-item" >
 
-          <a href="{{ route('articles.show', [$article->id]) }}" title="{{{ $article->title }}}">
+          <a href="{{ $article->link() }}" title="{{{ $article->title }}}">
             {{{ str_limit($article->title, '100') }}}
           </a>
 

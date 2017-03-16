@@ -7,7 +7,7 @@
 
          <li class="list-group-item ">
 
-             <a class="reply_count_area hidden-xs pull-right" href="{{ route('topics.show', [$topic->id]) }}">
+             <a class="reply_count_area hidden-xs pull-right" href="{{ $topic->link() }}">
                  <div class="count_set">
                      <span class="count_of_votes" title="投票数">
                        {{ $topic->vote_count }}
@@ -49,15 +49,9 @@
                     {{-- @endif --}}
                 @endif
 
-                @if ($topic->category->id == config('phphub.blog_category_id'))
-                    <a href="{{ route('articles.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
-                        {{{ $topic->title }}}
-                    </a>
-                @else
-                    <a href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
-                        {{{ $topic->title }}}
-                    </a>
-                @endif
+                <a href="{{ $topic->link() }}" title="{{{ $topic->title }}}">
+                    {{{ $topic->title }}}
+                </a>
 
               </div>
 

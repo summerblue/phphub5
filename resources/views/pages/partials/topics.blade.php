@@ -6,7 +6,7 @@
     @foreach ($topics as $topic)
         <li class="list-group-item media col-md-6" style="margin-top: 0px;">
 
-             <a class="reply_last_time hidden-xs meta" href="{{route('topics.show', [$topic->id])}}">
+             <a class="reply_last_time hidden-xs meta" href="{{ $topic->link() }}">
                  {{ $topic->vote_count }} {{ lang('Up Votes') }}
                  <span> ⋅ </span>
                  {{ $topic->reply_count }} {{ lang('Replies') }}
@@ -28,7 +28,7 @@
                     <span class="hidden-xs label label-{{ ($topic->is_excellent == 'yes' && Route::currentRouteName() != 'home') ? 'success' : 'default' }}">{{{ $topic->category->name }}}</span>
                 @endif
 
-                <a href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
+                <a href="{{ $topic->link() }}" title="{{ $topic->title }}">
                     {{{ $topic->title }}}
                 </a>
               </div>

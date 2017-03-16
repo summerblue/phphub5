@@ -19,7 +19,7 @@
     @if (count($topics))
       <div class="list-group">
         @foreach ($topics as $topic)
-          <a class="list-group-item {{ count($topics) <= 14 ?: 'col-md-6' }}" href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
+          <a class="list-group-item {{ count($topics) <= 14 ?: 'col-md-6' }}" href="{{ $topic->link() }}" title="{{{ $topic->title }}}">
             {{{ str_limit($topic->title, '100') }}}
           </a>
         @endforeach

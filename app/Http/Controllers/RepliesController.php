@@ -80,7 +80,7 @@ class RepliesController extends Controller implements CreatorListener
                     ]);
         } else {
             Flash::success(lang('Operation succeeded.'));
-            return Redirect::route('topics.show', array(Request::get('topic_id'), '#last-reply'));
+            return Redirect::to($reply->topic->link(['#last-reply']));
         }
     }
 }

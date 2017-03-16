@@ -94,7 +94,7 @@ class TopicsController extends Controller implements CreatorListener
         if ($topic->isArticle()) {
 
             if (UserRequest::is('topics*')) {
-                return redirect()->route('articles.show', [$topic->id]);
+                return redirect()->to($topic->link());
             }
 
             $user = $topic->user;
@@ -179,11 +179,9 @@ class TopicsController extends Controller implements CreatorListener
 
         Flash::success(lang('Operation succeeded.'));
 
-        $route = $topic->isArticle() ? 'articles.show' : 'topics.show';
-
         $topic->collectImages();
 
-        return redirect()->route($route, $topic->id);
+        return redirect()->to($topic->link());
     }
 
     /**
@@ -302,6 +300,6 @@ class TopicsController extends Controller implements CreatorListener
     public function creatorSucceed($topic)
     {
         Flash::success(lang('Operation succeeded.'));
-        return redirect(route('topics.show', array($topic->id)));
+        return redirect()->to($topic->link());
     }
 }
