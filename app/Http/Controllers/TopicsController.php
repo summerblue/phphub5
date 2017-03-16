@@ -245,6 +245,9 @@ class TopicsController extends Controller implements CreatorListener
         $topic->order = $topic->order >= 0 ? -1 : 0;
         $topic->save();
 
+        app(UserPublishedNewTopic::class)->remove(Auth::user(), $topic);
+        app(BlogHasNewArticle::class)->remove(Auth::user(), $topic, $topic->user->blogs()->first());
+
         return response(['status' => 200, 'message' => lang('Operation succeeded.')]);
     }
 
