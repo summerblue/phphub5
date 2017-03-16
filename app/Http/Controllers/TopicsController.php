@@ -60,7 +60,6 @@ class TopicsController extends Controller implements CreatorListener
     public function show($id, Request $request)
     {
         $topic = Topic::where('id', $id)->with('user', 'lastReplyUser')->firstOrFail();
-
         if ($topic->isArticle() && $topic->is_draft == 'yes') {
             $this->authorize('show_draft', $topic);
         }
