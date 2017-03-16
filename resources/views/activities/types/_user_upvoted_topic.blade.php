@@ -32,6 +32,7 @@
             <span class="meta pull-right">
                  <span class="timeago">{{ $activity->created_at }}</span>
             </span>
+            @include("activities._topic_images")
         </div>
     </div>
 </li>

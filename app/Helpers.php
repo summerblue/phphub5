@@ -104,9 +104,10 @@ function route_class()
     return str_replace('.', '-', Route::currentRouteName());
 }
 
-function img_crop($filepath, $width = 0, $height = 0)
+// 见：https://developer.qiniu.com/dora/api/basic-processing-images-imageview2
+function img_crop($filepath, $width = 0, $height = 0, $mode = 1)
 {
-    return $filepath . "?imageView2/1/w/{$width}/h/{$height}";
+    return $filepath . "?imageView2/$mode/w/{$width}/h/{$height}";
 }
 
 
