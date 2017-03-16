@@ -13043,5 +13043,8 @@ hr {
       padding-right: 8px; }
     .feed-list .list-group .list-group-item .content-body {
       padding: 12px 0px; }
+    .feed-list .list-group .list-group-item .feed-image {
+      border: 3px solid #dcdcdc;
+      margin: 3px; }
 
 /*# sourceMappingURL=styles.css.map */
