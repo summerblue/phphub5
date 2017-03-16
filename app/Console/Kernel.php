@@ -30,6 +30,7 @@ class Kernel extends ConsoleKernel
         Commands\SendMaintainerWorksMail::class,
 
         Commands\TopicImagesRecollect::class,
+        Commands\TopicSlugMigration::class,
     ];
 
     /**
