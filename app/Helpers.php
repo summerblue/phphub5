@@ -153,3 +153,8 @@ function get_images_from_html($html)
     }
     return $result;
 }
+
+function slug_trans($word)
+{
+    return Phphub\Handler\SlugTranslate::translate($word);
+}
