@@ -180,6 +180,7 @@ return [
         Jrean\UserVerification\UserVerificationServiceProvider::class,
         Naux\Mail\SendCloudServiceProvider::class,
         Cmgmyr\Messenger\MessengerServiceProvider::class,
+        Overtrue\LaravelFilesystem\Qiniu\QiniuStorageServiceProvider::class,
 
         // API
         Dingo\Api\Provider\LaravelServiceProvider::class,
