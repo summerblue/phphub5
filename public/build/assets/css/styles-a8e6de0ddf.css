@@ -12795,7 +12795,8 @@ a.anchorific, a.anchorjs-link {
     background-color: #fff; }
   .blog-container.container .panel .panel-footer {
     background-color: #fff;
-    padding-right: 0px; }
+    padding-right: 0px;
+    padding-left: 0px; }
   .blog-container.container .article-body {
     padding: 1em 30px 0; }
 
