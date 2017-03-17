@@ -13047,4 +13047,10 @@ hr {
       border: 3px solid #dcdcdc;
       margin: 3px; }
 
+.recommended-wrap {
+  padding-top: 25px; }
+
+.blog-container.container #sticker .panel {
+  margin-bottom: 0px; }
+
 /*# sourceMappingURL=styles.css.map */
