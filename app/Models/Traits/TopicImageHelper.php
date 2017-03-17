@@ -7,6 +7,11 @@ use App\Models\Image;
 
 trait TopicImageHelper
 {
+    public function cover()
+    {
+        return $this->images->first();
+    }
+
     public function images()
     {
         return $this->hasMany(Image::class);

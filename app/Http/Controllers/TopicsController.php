@@ -91,6 +91,8 @@ class TopicsController extends Controller implements CreatorListener
 
         $banners  = Banner::allByPosition();
 
+        $cover = $topic->cover();
+
         if ($topic->isArticle()) {
 
             if (UserRequest::is('topics*')) {
@@ -103,14 +105,14 @@ class TopicsController extends Controller implements CreatorListener
 
             return view('articles.show', compact(
                                 'blog', 'user','topic', 'replies', 'categoryTopics',
-                                'category', 'banners',
+                                'category', 'banners', 'cover',
                                 'votedUsers', 'userTopics', 'revisionHistory'));
         } else {
             $userTopics = $topic->byWhom($topic->user_id)->withoutDraft()->withoutBoardTopics()->recent()->limit(3)->get();
 
             return view('topics.show', compact(
                                 'topic', 'replies', 'categoryTopics',
-                                'category', 'banners',
+                                'category', 'banners', 'cover',
                                 'votedUsers', 'userTopics', 'revisionHistory'));
         }
     }
