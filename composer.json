@@ -41,7 +41,8 @@
         "pda/pheanstalk": "^3.1",
         "nicolaslopezj/searchable": "1.*",
         "hieu-le/active": "^3.4",
-        "cmgmyr/messenger": "^2.13"
+        "cmgmyr/messenger": "^2.13",
+        "overtrue/laravel-filesystem-qiniu": "^0.0.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

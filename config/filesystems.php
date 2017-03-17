@@ -84,6 +84,14 @@ return [
             'region'    => 'IAD',
             'url_type'  => 'publicURL',
         ],
+
+        'qiniu' => [
+            'driver'     => 'qiniu',
+            'access_key' => env('QINIU_ACCESS_KEY'),
+            'secret_key' => env('QINIU_SECRET_KEY'),
+            'bucket'     => env('QINIU_BACKUP_BUCKET'),
+            'domain'     => env('QINIU_BACKUP_DOMAIN'),
+        ],
     ],
 
 ];
