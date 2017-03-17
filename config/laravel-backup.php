@@ -54,6 +54,7 @@ return [
              */
             'disks' => [
                 'backup',
+                'qiniu',
             ],
         ],
     ],
