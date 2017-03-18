@@ -90,7 +90,7 @@
     <h3 class="panel-title">{{ lang('Hot Topics') }}</h3>
   </div>
   <div class="panel-body">
-    @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $hot_topics])
+    @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $hot_topics, 'numbered' => true])
   </div>
 </div>
 @endif
