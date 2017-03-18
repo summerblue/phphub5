@@ -109,8 +109,8 @@ return [
      */
     'monitorBackups' => [
         [
-            'name'                                   => env('APP_URL'),
-            'disks'                                  => ['local'],
+            'name'                                   => 'phphub.org',
+            'disks'                                  => ['backup', 'qiniu'],
             'newestBackupsShouldNotBeOlderThanDays'  => 1,
             'storageUsedMayNotBeHigherThanMegabytes' => 5000,
         ],
