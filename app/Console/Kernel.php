@@ -44,8 +44,11 @@ class Kernel extends ConsoleKernel
         $schedule->command('inspire')
                  ->hourly();
 
+        // 数据库备份
         $schedule->command('backup:run --only-db')->cron('0 */4 * * * *');
         $schedule->command('backup:clean')->daily()->at('00:10');
+        $schedule->command('backup:monitor')->daily()->at('10:00');
+
         $schedule->command('phphub:calculate-maintainer-works --send-mail=yes')->mondays()->at('00:05');
 
         $schedule->command('phphub:calculate-active-user')->everyTenMinutes();
