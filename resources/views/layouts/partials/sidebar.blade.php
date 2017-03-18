@@ -52,7 +52,7 @@
   @if (isset($categoryTopics) && count($categoryTopics))
   <div class="panel panel-default corner-radius">
     <div class="panel-heading text-center">
-      <h3 class="panel-title">七天内最热</h3>
+      <h3 class="panel-title">{{ lang('Same Category Topics') }}</h3>
     </div>
     <div class="panel-body">
       @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $categoryTopics])
@@ -87,7 +87,7 @@
 @if (isset($hot_topics) && count($hot_topics))
 <div class="panel panel-default corner-radius panel-hot-topics">
   <div class="panel-heading text-center">
-    <h3 class="panel-title">{{ lang('Hot Topics') }}</h3>
+    <h3 class="panel-title">七天内最热</h3>
   </div>
   <div class="panel-body">
     @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $hot_topics, 'numbered' => true])
