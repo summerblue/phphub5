@@ -142,9 +142,9 @@ return [
             'whenBackupWasSuccessful'     => ['log'],
             'whenCleanupWasSuccessful'    => ['log'],
             'whenHealthyBackupWasFound'   => ['log'],
-            'whenBackupHasFailed'         => ['log', 'mail'],
-            'whenCleanupHasFailed'        => ['log', 'mail'],
-            'whenUnhealthyBackupWasFound' => ['log', 'mail'],
+            'whenBackupHasFailed'         => ['log', 'mail', Phphub\Handler\BackupHandler::class],
+            'whenCleanupHasFailed'        => ['log', 'mail', Phphub\Handler\BackupHandler::class],
+            'whenUnhealthyBackupWasFound' => ['log', 'mail', Phphub\Handler\BackupHandler::class],
         ],
 
         /*

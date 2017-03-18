@@ -46,6 +46,10 @@ return [
         'key'   => env('BAIDU_TRANSLATE_KEY'),
     ],
 
+    'bearychat' => [
+        'hook' => env('BEARYCHAT_HOOK'),
+    ],
+
     'weixin' => [
         'client_id'     => env('WEIXIN_KEY'),
         'client_secret' => env('WEIXIN_SECRET'),
