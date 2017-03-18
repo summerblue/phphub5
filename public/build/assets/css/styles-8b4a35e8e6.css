@@ -11364,7 +11364,8 @@ embed {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 100%; }
+    width: 100%;
+    font-size: 13px; }
 
 .topics-show .panel .panel-heading, .blog-pages .panel .panel-heading {
   padding-bottom: 12px;
