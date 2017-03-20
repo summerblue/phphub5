@@ -49,7 +49,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('backup:clean')->daily()->at('00:10');
         $schedule->command('backup:monitor')->daily()->at('10:00');
 
-        $schedule->command('phphub:calculate-maintainer-works --send-mail=yes')->mondays()->at('00:05');
+        // $schedule->command('phphub:calculate-maintainer-works --send-mail=yes')->mondays()->at('00:05');
 
         $schedule->command('phphub:calculate-active-user')->everyTenMinutes();
         $schedule->command('phphub:calculate-hot-topic')->everyTenMinutes();
