@@ -33,7 +33,7 @@ class ArticlesController extends Controller implements CreatorListener
         $topic = new Topic;
 
         $blog = $request->blog_id ? Blog::findOrFail($request->blog_id) : Auth::user()->blogs()->first();
-        $this->authorize('manage', $blog);
+        $this->authorize('create-article', $blog);
 
 		return view('articles.create_edit', compact('topic', 'user', 'blog'));
 	}
