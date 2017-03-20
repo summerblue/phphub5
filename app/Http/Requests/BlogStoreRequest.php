@@ -37,7 +37,7 @@ class BlogStoreRequest extends Request
             case 'PUT':
             case 'PATCH':
             {
-                $blog = Auth::user()->blogs()->first();
+                $blog = Blog::findOrFail($this->route('id'));
                 return [
                     'slug'            => 'between:2,25|regex:/^[A-Za-z0-9\-\_]+$/|required|unique:blogs,slug,' . $blog->id,
                     'name'            => 'between:2,20|alpha_dash|required|unique:blogs,name,' . $blog->id,

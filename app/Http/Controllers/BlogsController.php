@@ -50,20 +50,20 @@ class BlogsController extends Controller
             return redirect()->back()->withInput($request->input());
         }
 
-		return redirect()->route('blogs.edit');
+		return redirect()->route('blogs.edit', $blog->id);
 	}
 
-	public function edit()
+	public function edit($id)
 	{
         $user = Auth::user();
-        $blog = $user->blogs()->first();
+        $blog = Blog::findOrFail($id);
 		return view('blogs.create_edit', compact('blog', 'user'));
 	}
 
 	public function update(BlogStoreRequest $request, $id)
 	{
 		$blog = Blog::findOrFail($id);
-        $this->authorize('update', $blog);
+        // $this->authorize('update', $blog);
         try {
             $request->performUpdate($blog);
             Flash::success(lang('Operation succeeded.'));
@@ -72,7 +72,7 @@ class BlogsController extends Controller
             return redirect()->back()->withInput($request->input());
         }
 
-		return redirect()->route('blogs.edit');
+		return redirect()->route('blogs.edit', $blog->id);
 	}
 
     public function subscribe($id)
