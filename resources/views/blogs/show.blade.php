@@ -14,7 +14,13 @@
 
                   <div class="panel-body">
 
-                    <h1 class="all-articles">专栏文章</h1>
+                    <h1 class="all-articles">
+                        专栏文章
+
+                        @can('create-article', $blog)
+                            <a href="{{ route('articles.create', ['blog_id' => $blog->id]) }}" class="btn btn-primary pull-right no-pjax"> <i class="fa fa-paint-brush"></i> 创作文章</a>
+                        @endcan
+                    </h1>
 
                       @if (count($topics))
                         @include('users.partials.topics', ['is_article' => true, 'is_blog' => true])

@@ -18,6 +18,16 @@ class Blog extends Model
         return $this->belongsToMany(User::class, 'blog_subscribers');
     }
 
+    public function managers()
+    {
+        return $this->belongsToMany(User::class, 'blog_managers');
+    }
+
+    // public function editors()
+    // {
+    //     return $this->belongsToMany(User::class, 'blog_editors');
+    // }
+
     public function link($params = [])
     {
         return route('wildcard', array_merge([$this->slug], $params));
