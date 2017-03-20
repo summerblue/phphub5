@@ -4,11 +4,11 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Phphub\Core\CreatorListener;
 
-use App\Models\Blog;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Topic;
 use App\Models\Banner;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 use Auth;
 use Flash;
@@ -23,7 +23,7 @@ class ArticlesController extends Controller implements CreatorListener
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-	public function create()
+	public function create(Request $request)
 	{
         $user = Auth::user();
         if ($user->blogs()->count() <= 0) {
@@ -31,16 +31,25 @@ class ArticlesController extends Controller implements CreatorListener
             return redirect()->route('blogs.create');
         }
         $topic = new Topic;
-		return view('articles.create_edit', compact('topic', 'user'));
+
+        $blog = $request->blog_id ? Blog::findOrFail($request->blog_id) : Auth::user()->blogs()->first();
+        $this->authorize('manage', $blog);
+
+		return view('articles.create_edit', compact('topic', 'user', 'blog'));
 	}
 
 	public function store(StoreTopicRequest $request)
 	{
         $data = $request->except('_token');
+
+        $blog = Blog::findOrFail($request->blog_id);
+        $this->authorize('manage', $blog);
+        $data['blog_id'] = $blog->id;
+
         if ($request->subject == 'draft') {
             $data['is_draft'] = 'yes';
         }
-        return app('Phphub\Creators\TopicCreator')->create($this, $data);
+        return app('Phphub\Creators\TopicCreator')->create($this, $data, $blog);
 	}
 
 	public function transform($id)

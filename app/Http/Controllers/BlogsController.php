@@ -30,10 +30,12 @@ class BlogsController extends Controller
 	{
         $blog = Blog::where('slug', $name)->firstOrFail();
         $user   = $blog->user;
-        $topics = Topic::whose($user->id)->onlyArticle()->withoutDraft()->recent()->paginate(28);
+        $topics = $blog->topics()->onlyArticle()->withoutDraft()->recent()->paginate(28);
+
+        $authors = $blog->authors;
 
         $user->update(['article_count' => $topics->total()]);
-        return view('blogs.show', compact('user','blog', 'topics'));
+        return view('blogs.show', compact('user','blog', 'topics', 'authors'));
 	}
 
 	public function store(BlogStoreRequest $request)

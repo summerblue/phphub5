@@ -20,7 +20,7 @@ class TopicCreator
         $this->mentionParser = $mentionParser;
     }
 
-    public function create(CreatorListener $observer, $data)
+    public function create(CreatorListener $observer, $data, $blog = null)
     {
         // 检查是否重复发布
         if ($this->isDuplicate($data)) {
@@ -60,6 +60,14 @@ class TopicCreator
             app(BlogHasNewArticle::class)->generate(Auth::user(), $topic, Auth::user()->blogs()->first());
         } else {
             Auth::user()->increment('topic_count', 1);
+        }
+
+        if ($blog) {
+            $blog->topics()->attach($topic->id);
+            // Co-authors
+            if ( ! $blog->authors()->where('user_id', $topic->user_id)->exists()) {
+                $blog->authors()->attach($topic->user_id);
+            }
         }
 
         $topic->collectImages();
