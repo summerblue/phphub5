@@ -23,7 +23,7 @@
     @if ($currentUser && ($currentUser->id == $user->id || Entrust::can('manage_users')) )
         <hr>
       <div class="follow-box">
-          <a class="btn btn-info btn-block" href="{{ route('blogs.edit') }}">
+          <a class="btn btn-info btn-block" href="{{ route('blogs.edit', $blog->id) }}">
             <i class="fa fa-edit"></i> 编辑专栏
           </a>
       </div>

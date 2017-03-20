@@ -134,7 +134,7 @@ Route::group(['middleware' => ['auth', 'admin_auth']], function () {
 Route::get('/blogs', 'BlogsController@index')->name('blogs.index');
 Route::get('/blogs/create', 'BlogsController@create')->name('blogs.create')->middleware('verified_email');
 Route::post('/blogs', 'BlogsController@store')->name('blogs.store')->middleware('verified_email');
-Route::get('/blogs/edit', 'BlogsController@edit')->name('blogs.edit');
+Route::get('/blogs/{id}/edit', 'BlogsController@edit')->name('blogs.edit');
 Route::patch('/blogs/{id}', 'BlogsController@update')->name('blogs.update');
 
 Route::post('/blogs/{blog}/subscribe', 'BlogsController@subscribe')->name('blogs.subscribe');
