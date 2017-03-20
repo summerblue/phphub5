@@ -65,6 +65,7 @@ class TopicCreator
             Auth::user()->increment('draft_count', 1);
         } elseif ($topic->isArticle()) {
             Auth::user()->increment('article_count', 1);
+            $blog->increment('article_count', 1);
             app(BlogHasNewArticle::class)->generate(Auth::user(), $topic, $topic->blogs()->first());
         } else {
             Auth::user()->increment('topic_count', 1);
