@@ -4,9 +4,9 @@
    <li class="list-group-item" >
 
         @if (isset($is_blog))
-        <a href="{{ route('users.show', [$topic->user_id]) }}" title="{{{ $topic->user->name }}}" class="avatar-wrap">
-            <img class="avatar avatar-small" alt="{{{ $topic->user->name }}}" src="{{ $topic->user->present()->gravatar }}"/>
-        </a>
+            <a href="{{ route('users.show', [$topic->user_id]) }}" title="{{{ $topic->user->name }}}" class="avatar-wrap">
+                <img class="avatar avatar-small" alt="{{{ $topic->user->name }}}" src="{{ $topic->user->present()->gravatar }}"/>
+            </a>
         @endif
 
       <a href="{{ $topic->link() }}" title="{{{ $topic->title }}}" class="title">
@@ -14,7 +14,7 @@
       </a>
 
       <span class="meta">
-          @if (isset($is_article))
+          @if ($topic->isArticle())
 
               <a href="{{ $topic->blogs->first()->link() }}" title="{{{ $topic->blogs->first()->name }}}">
                 {{{ $topic->blogs->first()->name }}}
