@@ -34,7 +34,8 @@ class BlogsController extends Controller
 
         $authors = $blog->authors;
 
-        $user->update(['article_count' => $topics->total()]);
+        $blog->update(['article_count' => $topics->total()]);
+
         return view('blogs.show', compact('user','blog', 'topics', 'authors'));
 	}
 
