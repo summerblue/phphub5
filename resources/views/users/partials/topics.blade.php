@@ -14,10 +14,12 @@
       </a>
 
       <span class="meta">
-          @if (isset($is_article) && isset($blog) )
-            @if (!isset($is_blog))
-                {{ $blog->name }}
-            @endif
+          @if (isset($is_article))
+
+              <a href="{{ $topic->blogs->first()->link() }}" title="{{{ $topic->blogs->first()->name }}}">
+                {{{ $topic->blogs->first()->name }}}
+              </a>
+
           @else
               <a href="{{ route('categories.show', [$topic->category->id]) }}" title="{{{ $topic->category->name }}}">
                 {{{ $topic->category->name }}}

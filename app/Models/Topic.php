@@ -113,6 +113,11 @@ class Topic extends Model
         return $this->hasMany(Reply::class);
     }
 
+    public function blogs()
+    {
+        return $this->belongsToMany(Blog::class, 'blog_topics');
+    }
+
     public function appends()
     {
         return $this->hasMany(Append::class);
