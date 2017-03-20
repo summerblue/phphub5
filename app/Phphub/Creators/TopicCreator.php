@@ -48,6 +48,14 @@ class TopicCreator
             return $observer->creatorFailed($topic->getErrors());
         }
 
+        if ($blog) {
+            $blog->topics()->attach($topic->id);
+            // Co-authors
+            if ( ! $blog->authors()->where('user_id', $topic->user_id)->exists()) {
+                $blog->authors()->attach($topic->user_id);
+            }
+        }
+
         if ($topic->is_draft != 'yes' && $topic->category_id != config('phphub.admin_board_cid')) {
             app('Phphub\Notification\Notifier')->newTopicNotify(Auth::user(), $this->mentionParser, $topic);
             app(UserPublishedNewTopic::class)->generate(Auth::user(), $topic);
@@ -57,17 +65,9 @@ class TopicCreator
             Auth::user()->increment('draft_count', 1);
         } elseif ($topic->isArticle()) {
             Auth::user()->increment('article_count', 1);
-            app(BlogHasNewArticle::class)->generate(Auth::user(), $topic, Auth::user()->blogs()->first());
+            app(BlogHasNewArticle::class)->generate(Auth::user(), $topic, $topic->blogs()->first());
         } else {
             Auth::user()->increment('topic_count', 1);
-        }
-
-        if ($blog) {
-            $blog->topics()->attach($topic->id);
-            // Co-authors
-            if ( ! $blog->authors()->where('user_id', $topic->user_id)->exists()) {
-                $blog->authors()->attach($topic->user_id);
-            }
         }
 
         $topic->collectImages();

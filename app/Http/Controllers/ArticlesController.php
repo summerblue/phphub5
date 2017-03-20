@@ -43,7 +43,7 @@ class ArticlesController extends Controller implements CreatorListener
         $data = $request->except('_token');
 
         $blog = Blog::findOrFail($request->blog_id);
-        $this->authorize('manage', $blog);
+        $this->authorize('create-article', $blog);
         $data['blog_id'] = $blog->id;
 
         if ($request->subject == 'draft') {
