@@ -28,7 +28,7 @@ class BlogStoreRequest extends Request
             {
                 return [
                     'slug'            => 'between:2,25|regex:/^[A-Za-z0-9\-\_]+$/|required|unique:blogs',
-                    'name'            => 'between:2,20|alpha_dash|required|unique:blogs',
+                    'name'            => 'between:2,20|required|unique:blogs',
                     'description'     => 'max:250',
                     'cover'           => 'required|image',
                 ];
@@ -40,7 +40,7 @@ class BlogStoreRequest extends Request
                 $blog = Blog::findOrFail($this->route('id'));
                 return [
                     'slug'            => 'between:2,25|regex:/^[A-Za-z0-9\-\_]+$/|required|unique:blogs,slug,' . $blog->id,
-                    'name'            => 'between:2,20|alpha_dash|required|unique:blogs,name,' . $blog->id,
+                    'name'            => 'between:2,20|required|unique:blogs,name,' . $blog->id,
                     'description'     => 'max:250',
                     'cover'           => 'image',
                 ];
