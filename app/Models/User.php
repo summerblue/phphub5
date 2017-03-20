@@ -88,6 +88,11 @@ class User extends Model implements AuthenticatableContract,
         return $data;
     }
 
+    public function managedBlogs()
+    {
+        return $this->belongsToMany(Blog::class, 'blog_managers');
+    }
+
     /**
      * For EntrustUserTrait and SoftDeletes conflict
      */

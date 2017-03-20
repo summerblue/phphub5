@@ -26,7 +26,7 @@ class ArticlesController extends Controller implements CreatorListener
 	public function create(Request $request)
 	{
         $user = Auth::user();
-        if ($user->blogs()->count() <= 0) {
+        if ( (! $request->blog_id && $user->managedBlogs()->count() == 0) || $user->blogs()->count() <= 0) {
             Flash::info('请先创建专栏，专栏创建成功后才能发布文章。');
             return redirect()->route('blogs.create');
         }
