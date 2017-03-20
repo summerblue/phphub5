@@ -162,6 +162,11 @@ class User extends Model implements AuthenticatableContract,
         return $blog->subscribers()->where('user_id', $this->id)->count() > 0;
     }
 
+    public function isAuthorOf($model)
+    {
+        return $this->id == $model->user_id;
+    }
+
     /**
      * ----------------------------------------
      * UserInterface
