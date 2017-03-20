@@ -23,10 +23,15 @@ class Blog extends Model
         return $this->belongsToMany(User::class, 'blog_managers');
     }
 
-    // public function editors()
-    // {
-    //     return $this->belongsToMany(User::class, 'blog_editors');
-    // }
+    public function topics()
+    {
+        return $this->belongsToMany(Topic::class, 'blog_topics');
+    }
+
+    public function authors()
+    {
+        return $this->belongsToMany(User::class, 'blog_authors');
+    }
 
     public function link($params = [])
     {

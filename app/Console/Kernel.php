@@ -31,6 +31,7 @@ class Kernel extends ConsoleKernel
 
         Commands\TopicImagesRecollect::class,
         Commands\TopicSlugMigration::class,
+        Commands\MigrateBlogTopicRelationship::class,
     ];
 
     /**

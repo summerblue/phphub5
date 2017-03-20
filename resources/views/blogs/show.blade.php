@@ -40,6 +40,7 @@
 
       <div class="col-md-3 main-col pull-left">
           @include('blogs._info')
+          @include('blogs._authors')
       </div>
 
 </div>

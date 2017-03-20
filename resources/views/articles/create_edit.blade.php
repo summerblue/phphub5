@@ -27,6 +27,10 @@
 
                 <input name="category_id" type="hidden" value="{{ config('phphub.blog_category_id') }}">
 
+                @if (isset($blog))
+                    <input name="blog_id" type="hidden" value="{{ $blog->id }}">
+                @endif
+
                 <div class="form-group">
                     <input class="form-control" id="article-title" placeholder="{{ lang('Please write down a topic') }}" name="title" type="text" value="{{ old('title') ?: $topic->title }}" required="require">
                 </div>
