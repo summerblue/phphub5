@@ -87,7 +87,7 @@ class TopicsController extends Controller implements CreatorListener
 
         $topic->delete();
         app(UserPublishedNewTopic::class)->remove(Auth::user(), $topic);
-        app(BlogHasNewArticle::class)->remove(Auth::user(), $topic, Auth::user()->blogs()->first());
+        app(BlogHasNewArticle::class)->remove(Auth::user(), $topic, $topic->blogs()->first());
 
         return ['status' => 'ok'];
     }

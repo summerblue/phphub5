@@ -171,7 +171,7 @@ class TopicsController extends Controller implements CreatorListener
 
             // User activity
             app(UserPublishedNewTopic::class)->generate(Auth::user(), $topic);
-            app(BlogHasNewArticle::class)->generate(Auth::user(), $topic, Auth::user()->blogs()->first());
+            app(BlogHasNewArticle::class)->generate(Auth::user(), $topic, $topic->blogs()->first());
 
             Auth::user()->decrement('draft_count', 1);
             Auth::user()->increment('article_count', 1);
@@ -265,7 +265,7 @@ class TopicsController extends Controller implements CreatorListener
             Auth::user()->decrement('topic_count', 1);
         }
         app(UserPublishedNewTopic::class)->remove(Auth::user(), $topic);
-        app(BlogHasNewArticle::class)->remove(Auth::user(), $topic, Auth::user()->blogs()->first());
+        app(BlogHasNewArticle::class)->remove(Auth::user(), $topic, $topic->blogs()->first());
 
         return redirect()->route('topics.index');
     }
