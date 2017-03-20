@@ -17,7 +17,7 @@
     <hr>
 
     <a href="{{ route('wildcard', $blog->slug) }}" class="{{ navViewActive('users.articles') }}">
-        <li class="list-group-item"><i class="text-md fa fa-list-ul"></i> &nbsp;专栏文章（{{ $user->article_count }}）</li>
+        <li class="list-group-item"><i class="text-md fa fa-list-ul"></i> &nbsp;专栏文章（{{ $blog->article_count }}）</li>
     </a>
 
     @if ($currentUser && ($currentUser->id == $user->id || Entrust::can('manage_users')) )
