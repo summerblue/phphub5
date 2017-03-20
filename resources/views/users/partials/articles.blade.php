@@ -10,9 +10,9 @@
 
           <span class="meta">
 
-            {{-- <a href="{{ route('categories.show', [$blog->id]) }}" title="{{{ $blog->name }}}"> --}}
-              {{{ $blog->name }}}
-            {{-- </a> --}}
+            <a href="{{ $article->blogs->first()->link() }}" title="{{{ $article->blogs->first()->name }}}">
+              {{{ $article->blogs->first()->name }}}
+            </a>
             <span> ⋅ </span>
             {{ $article->vote_count }} {{ lang('Up Votes') }}
             <span> ⋅ </span>

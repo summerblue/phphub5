@@ -100,8 +100,8 @@ class TopicsController extends Controller implements CreatorListener
             }
 
             $user = $topic->user;
-            $blog = $user->blogs()->first();
-            $userTopics = $topic->byWhom($topic->user_id)->withoutDraft()->onlyArticle()->orderBy('vote_count', 'desc')->limit(5)->get();
+            $blog = $topic->blogs()->first();
+            $userTopics = $blog->topics()->withoutDraft()->onlyArticle()->orderBy('vote_count', 'desc')->limit(5)->get();
 
             return view('articles.show', compact(
                                 'blog', 'user','topic', 'replies', 'categoryTopics',
