@@ -2199,6 +2199,10 @@ hr {
     margin: 40px 0px -26px;
     color: #495057;
     font-size: 14px;
+
+    .info, .info a {
+        color: #8a8a8a;
+    }
 }
 
 .article-meta {

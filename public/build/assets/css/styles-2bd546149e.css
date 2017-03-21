@@ -12826,6 +12826,8 @@ hr {
   margin: 40px 0px -26px;
   color: #495057;
   font-size: 14px; }
+  .post-info-panel .info, .post-info-panel .info a {
+    color: #8a8a8a; }
 
 .article-meta {
   margin: 20px 0px 32px;
