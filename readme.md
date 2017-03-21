@@ -133,9 +133,9 @@ gulp watch
 
 ## 扩展包描述
 
-| 扩展包 | 一句话描述 | 在本项目中的使用案例 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-|[infyomlabs/laravel-generator](https://packagist.org/packages/infyomlabs/laravel-generator)| Laravel 代码生成器 | 开发时的 Migration、Model、Controller 都使用此扩展包生成。 |
+| 扩展包 | 一句话描述 | 在本项目中的使用案例 |  
+| --- | --- | --- |   
+|[infyomlabs/laravel-generator](https://packagist.org/packages/infyomlabs/laravel-generator)| Laravel 代码生成器 | 开发时的 Migration、Model、Controller 都使用此扩展包生成。 |  
 | [orangehill/iseed](https://github.com/orangehill/iseed) | 将数据表里的数据以 seed 的方式导出 | BannersTableSeeder, LinksTableSeeder, CategoriesTableSeeder 和 TipsTableSeeder 使用此扩展包生成。 |
 | [barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar) | 调试工具栏 | 开发时必备调试工具。 |
 |[rap2hpoutre/laravel-logviewer](https://github.com/rap2hpoutre/laravel-log-viewer)| Log 查看工具 | 生产环境下，使用此扩展包快速查看 Log，已做权限控制。 |
