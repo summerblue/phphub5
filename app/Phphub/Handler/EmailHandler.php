@@ -219,7 +219,7 @@ class EmailHandler
         $user = User::find($toUser->id);
 
         // 私信，如果已读
-        if ($type == 'new_message' || $user->message_count <= 0) {
+        if ($type == 'new_message' && $user->message_count <= 0) {
             return true;
         // 通知，如果已读
         } elseif ($user->notification_count <= 0) {
