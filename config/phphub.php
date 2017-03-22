@@ -13,5 +13,5 @@ return [
     'wiki_topic_id'          => env('WIKI_TOPIC_ID') ?:1,
     'admin_board_cid'        => env('ADMIN_BOARD_CID') ?:0,
 
-    'notify_delay'           => 60,
+    'notify_delay'           => 180,
 ];
