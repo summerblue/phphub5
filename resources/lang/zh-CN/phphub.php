@@ -181,7 +181,7 @@ return [
     'Social Account Binding' => '账号绑定',
     'Edit Email Notify' => 'Email 通知设置',
     'Apply Changes' => '应用修改',
-    'Send email when replied' => '新回复时接收邮件？',
+    'Send email when replied' => '开启邮件通知？',
     'Edit Social Binding' => '账号绑定设置',
     'Available Bindings' => '可用的绑定',
     'Register Binding' => '注册使用绑定',
