@@ -79,10 +79,12 @@ class EmailHandler
     public function sendNotifyMail($type, User $fromUser, User $toUser, Topic $topic = null, Reply $reply = null, $body = null)
     {
         if (
-            !isset($this->methodMap[$type])
-            || $toUser->email_notify_enabled != 'yes'
-            || $toUser->id == $fromUser->id
-            || !$toUser->email || $toUser->verified != 1
+            !isset($this->methodMap[$type])             // 不是运行的类型
+            || $toUser->email_notify_enabled != 'yes'   // 没开启邮件通知
+            || $toUser->id == $fromUser->id             // 发件和收件是同一个人
+            || !$toUser->email                          // 不存在邮件
+            || $toUser->verified != 1                   // 还未验证
+            || $this->_checkNecessary($type, $toUser)   // 因延迟触发的，用户可能已读过站内通知
         ) {
             return false;
         }
@@ -209,5 +211,21 @@ class EmailHandler
             $message->to($this->toUser->email);
             $this->generateMailLog($mailog);
         });
+    }
+
+    private function _checkNecessary($type, User $toUser)
+    {
+        // 从数据库中重新读取用户
+        $user = User::find($toUser->id);
+
+        // 私信，如果已读
+        if ($type == 'new_message' || $user->message_count <= 0) {
+            return true;
+        // 通知，如果已读
+        } elseif ($user->notification_count <= 0) {
+            return true;
+        }
+
+        return false;
     }
 }

@@ -73,7 +73,9 @@ class Notification extends Model
         if (count($data)) {
             Notification::insert($data);
             foreach ($users as $toUser) {
-                dispatch(new SendNotifyMail($type, $fromUser, $toUser, $topic, $reply, $content));
+                $job = (new SendNotifyMail($type, $fromUser, $toUser, $topic, $reply, $content))
+                                ->delay(config('phphub.notify_delay'));
+                dispatch($job);
             }
         }
 
@@ -114,7 +116,10 @@ class Notification extends Model
 
         Notification::insert([$data]);
 
-        dispatch(new SendNotifyMail($type, $fromUser, $toUser, $topic, $reply));
+        $job = (new SendNotifyMail($type, $fromUser, $toUser, $topic, $reply))
+                                ->delay(config('phphub.notify_delay'));
+        dispatch($job);
+
         self::pushNotification($data);
     }
 
