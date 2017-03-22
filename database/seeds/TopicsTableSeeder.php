@@ -35,5 +35,8 @@ class TopicsTableSeeder extends Seeder
             $topic->category_id = 8;
         });
         Topic::insert($admin_articles->toArray());
+
+        // Building connections
+        Artisan::call('topics:blog_topics');
     }
 }

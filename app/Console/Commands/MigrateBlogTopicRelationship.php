@@ -19,7 +19,7 @@ class MigrateBlogTopicRelationship extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = '建立文章博客多对多连接！';
 
     /**
      * Create a new command instance.
