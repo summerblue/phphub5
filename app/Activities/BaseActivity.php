@@ -19,6 +19,11 @@ class BaseActivity
 
     public function addTopicActivity(User $user, Topic $topic, $extra_data = [], $indentifier = null)
     {
+        // 站务不显示
+        if ($topic->category_id == config('phphub.admin_board_cid')) {
+            return;
+        }
+
         $causer      = 'u' . $user->id;
         $indentifier = $indentifier ?: 't' . $topic->id;
         $data = array_merge([
