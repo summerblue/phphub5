@@ -11705,13 +11705,12 @@ div#preview-box {
   background: #faf5eb; }
 
 .appends {
-  background-color: #FFFAE2;
+  border: 1px solid #F2C69A;
   border-left: 5px solid #F2C69A;
   padding: 10px;
   font-size: 12px;
   line-height: 120%;
-  text-align: left;
-  border-bottom: 1px dotted #E8E8E8; }
+  text-align: left; }
   .appends .append-content {
     padding-top: 10px;
     margin-bottom: -10px; }
