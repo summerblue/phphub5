@@ -64,6 +64,12 @@ class TopicsController extends Controller implements CreatorListener
             $this->authorize('show_draft', $topic);
         }
 
+        // URL 矫正
+        $slug = $request->route('slug');
+        if (!empty($topic->slug) && $topic->slug != $slug) {
+            return redirect($topic->link(), 301);
+        }
+
         if ($topic->user->is_banned == 'yes') {
             // 未登录，或者已登录但是没有管理员权限
             if (!Auth::check() || (Auth::check() && !Auth::user()->may('manage_topics'))) {
