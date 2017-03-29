@@ -139,7 +139,7 @@
             <hr>
         @endif
 
-        @if ($currentUser && ($currentUser->id == $user->id || (Entrust::can('manage_users') && $currentUser->roles->count() < 5)))
+        @if ($currentUser && ($currentUser->id == $user->id))
           <a class="btn btn-primary btn-block" href="{{ route('users.edit', $user->id) }}" id="user-edit-button">
             <i class="fa fa-edit"></i> {{ lang('Edit Profile') }}
           </a>
