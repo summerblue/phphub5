@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->integer('github_id')->index();
             $table->string('github_url');
             $table->string('email')->nullable()->index();
-            $table->string('name')->nullable()->index();
+            $table->string('name', 191)->nullable()->index();
             $table->string('login_token')->nullable();
             $table->string('remember_token')->nullable();
             $table->enum('is_banned', ['yes',  'no'])->default('no')->index();
