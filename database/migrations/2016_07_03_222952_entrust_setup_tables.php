@@ -14,7 +14,7 @@ class EntrustSetupTables extends Migration
         // Create table for storing roles
         Schema::create('roles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
+            $table->string('name', 191)->unique();
             $table->string('display_name')->nullable();
             $table->string('description')->nullable();
             $table->timestamps();
@@ -36,7 +36,7 @@ class EntrustSetupTables extends Migration
         // Create table for storing permissions
         Schema::create('permissions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
+            $table->string('name', 191)->unique();
             $table->string('display_name')->nullable();
             $table->string('description')->nullable();
             $table->timestamps();

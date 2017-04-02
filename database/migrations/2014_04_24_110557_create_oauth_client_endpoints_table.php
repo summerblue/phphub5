@@ -30,7 +30,7 @@ class CreateOauthClientEndpointsTable extends Migration
         Schema::create('oauth_client_endpoints', function (Blueprint $table) {
             $table->increments('id');
             $table->string('client_id', 40);
-            $table->string('redirect_uri');
+            $table->string('redirect_uri', 191);
 
             $table->timestamps();
 

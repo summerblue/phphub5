@@ -9,8 +9,8 @@ class CreateTagsTable extends Migration {
 	{
 		Schema::create(config('taggable.tags_table_name'), function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('slug', 255)->unique();
-			$table->string('name', 255)->unique();
+			$table->string('slug', 191)->unique();
+			$table->string('name', 191)->unique();
 			$table->text('description')->nullable();
 			$table->boolean('suggest')->default(false);
 			$table->integer('count')->unsigned()->default(0); // count of how many times this tag was used
@@ -30,7 +30,7 @@ class CreateTagsTable extends Migration {
 			} else {
 				$table->integer('taggable_id')->unsigned()->index();
 			}
-			$table->string('taggable_type', 255)->index();
+			$table->string('taggable_type', 191)->index();
 			$table->integer('tag_id')->unsigned()->index();
 
             $table->foreign('tag_id')
