@@ -34,7 +34,12 @@
 
 #### 2. 配置本地的 Homestead 环境
 
-1). 运行以下命令编辑 Homestead.yaml 文件：
+1). 如果是第一次运行，执行以下命令生成Homestead.yaml 文件：
+```shell
+homestead init
+```
+
+然后运行以下命令编辑 Homestead.yaml 文件：
 
 ```shell
 homestead edit
