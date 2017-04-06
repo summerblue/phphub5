@@ -34,7 +34,7 @@ class Topic extends Model
     protected $searchable = [
         'columns' => [
             'topics.title' => 10,
-            'topics.body' => 5,
+            'topics.body'  => 5,
         ]
     ];
 
@@ -145,7 +145,7 @@ class Topic extends Model
 
     public function getSameCategoryTopics()
     {
-        $data = Cache::remember('phphub_hot_topics_' . $this->category_id, 30, function(){
+        $data = Cache::remember('phphub_hot_topics_' . $this->category_id, 30, function () {
             return Topic::where('category_id', '=', $this->category_id)
                             ->recent()
                             ->with('user')
@@ -189,7 +189,7 @@ class Topic extends Model
 
     public function getRandomExcellent()
     {
-        $data = Cache::remember('phphub_random_topics', 10, function(){
+        $data = Cache::remember('phphub_random_topics', 10, function () {
             $topic = new Topic;
             return $topic->getTopicsWithFilter('random-excellent', 5);
         });
@@ -205,6 +205,6 @@ class Topic extends Model
     {
         $params = array_merge([$this->id, $this->slug], $params);
         $name = $this->isArticle() ? 'articles.show' : 'topics.show';
-        return route($name, $params);
+        return str_replace(env('API_DOMAIN'), env('API_URL'), route($name, $params));
     }
 }
