@@ -62,6 +62,7 @@
             self.initEditorPreview();
             self.initReplyOnPressKey();
             self.initDeleteForm();
+
             self.initInlineAttach();
             // self.snowing();
             self.forceImageDataType();
@@ -73,6 +74,7 @@
             self.initIinfiniteScroll();
             self.initSticky();
             self.initSubmitBtn();
+            self.initLostPass();
         },
 
         initSubmitBtn: function(){
@@ -984,6 +986,18 @@
             this.showMsg('操作成功', {
                 type: 'success',
                 timer: 8000
+            });
+        },
+
+        initLostPass: function() {
+            $('.forget-password').on('click', function(e) {
+                swal({
+                    title: "忘记密码？",
+                    text: '请使用微信和 Github 账号尝试，能够直接登录即为注册过的账号。',
+                    type: "warning",
+                    confirmButtonText: "知道了"
+                }).then(function() {
+                }).catch(swal.noop);
             });
         },
 
