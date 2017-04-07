@@ -65,6 +65,16 @@ class ArticlesController extends Controller implements CreatorListener
         $topic->update([
             'category_id' => config('phphub.blog_category_id')
         ]);
+
+        // attach blog
+        $blog = Auth::user()->blogs()->first();
+        $blog->topics()->attach($topic->id);
+        $blog->increment('article_count', 1);
+        // Co-authors
+        if ( ! $blog->authors()->where('user_id', $topic->user_id)->exists()) {
+            $blog->authors()->attach($topic->user_id);
+        }
+
         Flash::success(lang('Operation succeeded.'));
         return redirect()->to($topic->link());
 	}
