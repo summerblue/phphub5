@@ -44,56 +44,57 @@
     <li class="popover-with-html" data-content="{{ lang('Real Name') }}"><span class="org"><i class="fa fa-user"></i> {{{ $topic->user->real_name }}}</span></li>
   @endif
 
+@if ($topic->user->city)
+  <li><i class="fa fa-map-marker"></i> {{ $topic->user->city }}</li>
+@endif
+
   @if ($topic->user->github_name)
   <li>
-    <a href="https://github.com/{{ $topic->user->github_name }}" target="_blank">
-      <i class="fa fa-github-alt"></i> GitHub
+    <a href="https://github.com/{{ $topic->user->github_name }}" target="_blank" class="popover-with-html" data-content="{{ $topic->user->github_name }}">
+      <i class="fa fa-github-alt"></i>
     </a>
   </li>
   @endif
 
   @if ($topic->user->weibo_link)
   <li>
-    <a href="{{ $topic->user->weibo_link }}" rel="nofollow" class="weibo" target="_blank"><i class="fa fa-weibo"></i> WeiBo
+    <a href="{{ $topic->user->weibo_link }}" rel="nofollow" class="weibo" target="_blank"><i class="fa fa-weibo"></i>
     </a>
   </li>
   @endif
 
     @if ($topic->user->wechat_qrcode)
     <li class="popover-with-html" data-content="<img src='{{ $topic->user->wechat_qrcode }}' style='width:100%'>">
-      <i class="fa fa-wechat"></i> WeChat
+      <i class="fa fa-wechat"></i>
     </li>
     @endif
 
   @if ($topic->user->twitter_account)
   <li>
-    <a href="https://twitter.com/{{ $topic->user->twitter_account }}" rel="nofollow" class="twitter" target="_blank"><i class="fa fa-twitter"></i> Twitter
+    <a href="https://twitter.com/{{ $topic->user->twitter_account }}" data-content="{{ $topic->user->twitter_account }}" rel="nofollow" class="twitter popover-with-html" target="_blank"><i class="fa fa-twitter"></i>
     </a>
 </li>
   @endif
 
   @if ($topic->user->linkedin)
   <li class="popover-with-html" data-content="点击查看 LinkedIn 个人资料">
-    <a href="{{ $topic->user->linkedin }}" rel="nofollow" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn
+    <a href="{{ $topic->user->linkedin }}" rel="nofollow" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i>
     </a>
   </li>
   @endif
 
   @if ($topic->user->personal_website)
   <li>
-    <a href="http://{{ $topic->user->personal_website }}" rel="nofollow" target="_blank" class="url">
-      <i class="fa fa-globe"></i> Website
+    <a href="http://{{ $topic->user->personal_website }}" data-content="{{ $topic->user->personal_website }}" rel="nofollow" target="_blank" class="url popover-with-html">
+      <i class="fa fa-globe"></i>
     </a>
 </li>
   @endif
 
 @if ($topic->user->company)
-  <li class="popover-with-html" data-content="{{ $topic->user->company }}"><i class="fa fa-users"></i> {{{ lang('Company') }}}</li>
+  <li class="popover-with-html" data-content="{{ $topic->user->company }}"><i class="fa fa-users"></i></li>
 @endif
 
-@if ($topic->user->city)
-  <li class="popover-with-html" data-content="{{ $topic->user->city }}"><i class="fa fa-map-marker"></i> {{{ lang('City') }}}</li>
-@endif
 
 </ul>
 
