@@ -48,6 +48,7 @@
   <li><i class="fa fa-map-marker"></i> {{ $topic->user->city }}</li>
 @endif
 
+<br>
   @if ($topic->user->github_name)
   <li>
     <a href="https://github.com/{{ $topic->user->github_name }}" target="_blank" class="popover-with-html" data-content="{{ $topic->user->github_name }}">
