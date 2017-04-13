@@ -112,7 +112,35 @@
                 delay: 5000,
                 unique_id: "article_content{{ $topic->id ?: '' }}"
             },
-            forceSync: true
+            forceSync: true,
+            toolbar: [
+                "bold", "italic", "heading", "|", "quote", "code", "table",
+                "horizontal-rule", "unordered-list", "ordered-list", "|",
+                "link", "image", "|",  "side-by-side", 'fullscreen', "|",
+                {
+                    name: "guide",
+                    action: function customFunction(editor){
+                        var win = window.open('https://github.com/riku/Markdown-Syntax-CN/blob/master/syntax.md', '_blank');
+                        if (win) {
+                            //Browser has allowed it to be opened
+                            win.focus();
+                        } else {
+                            //Browser has blocked it
+                            alert('Please allow popups for this website');
+                        }
+                    },
+                    className: "fa fa-info-circle",
+                    title: "Markdown 语法！",
+                },
+                {
+                    name: "publish",
+                    action: function customFunction(editor){
+                        $('.submit-btn').click();
+                    },
+                    className: "fa fa-paper-plane",
+                    title: "发布文章",
+                }
+            ],
         });
 
         inlineAttachment.editors.codemirror4.attach(simplemde.codemirror, {
