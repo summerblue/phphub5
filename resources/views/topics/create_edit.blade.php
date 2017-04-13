@@ -148,7 +148,7 @@
                 {
                     name: "guide",
                     action: function customFunction(editor){
-                        var win = window.open('//tiicle.com/items/14/efficient-record-guide', '_blank');
+                        var win = window.open('https://github.com/riku/Markdown-Syntax-CN/blob/master/syntax.md', '_blank');
                         if (win) {
                             //Browser has allowed it to be opened
                             win.focus();
@@ -158,7 +158,7 @@
                         }
                     },
                     className: "fa fa-info-circle",
-                    title: "高效记录指南！",
+                    title: "Markdown 语法！",
                 },
                 {
                     name: "publish",
