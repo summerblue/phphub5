@@ -139,7 +139,36 @@
                 delay: 5000,
                 unique_id: "topic_content{{ isset($topic) ? $topic->id : '' }}"
             },
-            forceSync: true
+            forceSync: true,
+            tabSize: 4,
+            toolbar: [
+                "bold", "italic", "heading", "|", "quote", "code", "table",
+                "horizontal-rule", "unordered-list", "ordered-list", "|",
+                "link", "image", "|",  "side-by-side", 'fullscreen', "|",
+                {
+                    name: "guide",
+                    action: function customFunction(editor){
+                        var win = window.open('//tiicle.com/items/14/efficient-record-guide', '_blank');
+                        if (win) {
+                            //Browser has allowed it to be opened
+                            win.focus();
+                        } else {
+                            //Browser has blocked it
+                            alert('Please allow popups for this website');
+                        }
+                    },
+                    className: "fa fa-info-circle",
+                    title: "高效记录指南！",
+                },
+                {
+                    name: "publish",
+                    action: function customFunction(editor){
+                        $('#topic-submit').click();
+                    },
+                    className: "fa fa-paper-plane",
+                    title: "发布文章",
+                }
+            ],
         });
 
         inlineAttachment.editors.codemirror4.attach(simplemde.codemirror, {
