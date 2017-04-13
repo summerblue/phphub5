@@ -7928,6 +7928,8 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
                         text: '问答话题的标题必须带问号❓',
                         type: "error",
                         confirmButtonText: "我知道了"
+                    }).then(function() {
+                        $(".submit-btn").text('提交').removeClass('disabled').prop('disabled', false);
                     }).catch(swal.noop);
                 } else if (cid == Config.qa_category_id) {
 
