@@ -205,6 +205,6 @@ class Topic extends Model
     {
         $params = array_merge([$this->id, $this->slug], $params);
         $name = $this->isArticle() ? 'articles.show' : 'topics.show';
-        return str_replace(env('API_DOMAIN'), env('APP_URL'), route($name, $params));
+        return str_replace(env('API_DOMAIN'), env('APP_DOMAIN'), route($name, $params));
     }
 }
