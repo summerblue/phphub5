@@ -103,6 +103,7 @@
                 <a class="sidebar-sponsor-link" href="{{ $banner->link }}" target="_blank">
                     <img src="{{ $banner->image_url }}" class="popover-with-html" data-content="{{ $banner->title }}" width="100%">
                 </a>
+                <hr>
             @endforeach
         @endif
   </div>
