@@ -33,7 +33,7 @@ class PagesController extends Controller
 
     public function composer(Request $request)
     {
-        return app(TopicsController::class)->show(4484, $request);
+        return app(TopicsController::class)->show(4484, $request, true);
     }
 
     public function wildcard($name, Request $request)
@@ -43,7 +43,7 @@ class PagesController extends Controller
 
     public function wiki(Request $request)
     {
-        return app(TopicsController::class)->show(config('phphub.wiki_topic_id'), $request);
+        return app(TopicsController::class)->show(config('phphub.wiki_topic_id'), $request, true);
     }
 
     public function search(Request $request)

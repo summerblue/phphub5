@@ -57,7 +57,7 @@ class TopicsController extends Controller implements CreatorListener
         return app('Phphub\Creators\TopicCreator')->create($this, $request->except('_token'));
     }
 
-    public function show($id, Request $request)
+    public function show($id, Request $request, $fromCode = false)
     {
         $topic = Topic::where('id', $id)->with('user', 'lastReplyUser')->firstOrFail();
         if ($topic->isArticle() && $topic->is_draft == 'yes') {
@@ -66,7 +66,7 @@ class TopicsController extends Controller implements CreatorListener
 
         // URL 矫正
         $slug = $request->route('slug');
-        if (!empty($topic->slug) && $topic->slug != $slug) {
+        if (!empty($topic->slug) && $topic->slug != $slug && ! $fromCode) {
             return redirect($topic->link(), 301);
         }
 
