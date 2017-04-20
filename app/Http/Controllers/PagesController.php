@@ -31,6 +31,11 @@ class PagesController extends Controller
         return view('pages.about');
     }
 
+    public function composer()
+    {
+        return app(TopicsController::class)->show('4484', $request);
+    }
+
     public function wildcard($name, Request $request)
     {
         return app(BlogsController::class)->show($name);
