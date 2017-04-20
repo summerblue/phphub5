@@ -33,7 +33,7 @@ class PagesController extends Controller
 
     public function composer(Request $request)
     {
-        return app(TopicsController::class)->show(1, $request);
+        return app(TopicsController::class)->show(4484, $request);
     }
 
     public function wildcard($name, Request $request)
