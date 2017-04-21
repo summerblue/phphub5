@@ -266,15 +266,15 @@ class TopicsController extends Controller implements CreatorListener
         $blog = $topic->blogs()->first();
 
         if ($topic->isArticle() && $topic->is_draft == 'yes') {
-            Auth::user()->decrement('draft_count', 1);
+            $topic->user()->decrement('draft_count', 1);
         } elseif ($topic->isArticle()) {
-            Auth::user()->decrement('article_count', 1);
+            $topic->user()->decrement('article_count', 1);
             $blog->decrement('article_count', 1);
         } else {
-            Auth::user()->decrement('topic_count', 1);
+            $topic->user()->decrement('topic_count', 1);
         }
-        app(UserPublishedNewTopic::class)->remove(Auth::user(), $topic);
-        app(BlogHasNewArticle::class)->remove(Auth::user(), $topic, $blog);
+        app(UserPublishedNewTopic::class)->remove($topic->user, $topic);
+        app(BlogHasNewArticle::class)->remove($topic->user, $topic, $blog);
 
         return redirect()->route('topics.index');
     }

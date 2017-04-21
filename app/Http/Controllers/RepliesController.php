@@ -43,7 +43,7 @@ class RepliesController extends Controller implements CreatorListener
         $reply->topic->decrement('reply_count', 1);
         $reply->topic->generateLastReplyUserInfo();
 
-        app(UserRepliedTopic::class)->remove(Auth::user(), $reply);
+        app(UserRepliedTopic::class)->remove($reply->user, $reply);
 
         return response(['status' => 200, 'message' => lang('Operation succeeded.')]);
     }
