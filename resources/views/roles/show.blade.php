@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-PHPHub 名人堂 @parent
+{{ $role->display_name }} | @parent
 @stop
 
 @section('content')
