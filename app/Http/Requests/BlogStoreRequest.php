@@ -53,7 +53,7 @@ class BlogStoreRequest extends Request
     {
 		$blog->name = $this->input("name");
         $blog->slug = $this->input("slug");
-        $blog->user_id = Auth::id();
+        $blog->user_id = $blog->user_id ?: Auth::id();
         $blog->description = $this->input("description");
 
         if ($file = $this->file('cover')) {
