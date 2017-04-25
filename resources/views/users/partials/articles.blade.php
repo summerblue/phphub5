@@ -26,3 +26,11 @@
       @endforeach
 @endif
 </ul>
+
+@if ($user->article_count > count($articles))
+    <div class="panel-footer" style="margin-top: 10px">
+        <a href="{{ route('users.articles', $user->id) }}" class="btn btn-default btn-sm">
+            所有话题
+        </a>
+    </div>
+@endif
