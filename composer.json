@@ -37,7 +37,7 @@
         "lucadegasperi/oauth2-server-laravel": "~5.0",
         "jpush/jpush": "^3.2",
         "socialiteproviders/manager": "2.1.5",
-        "overtrue/laravel-follow": "dev-master",
+        "overtrue/laravel-follow": "1.0",
         "pda/pheanstalk": "^3.1",
         "nicolaslopezj/searchable": "1.*",
         "hieu-le/active": "^3.4",
