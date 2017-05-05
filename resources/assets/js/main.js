@@ -123,7 +123,7 @@
          * Open External Links In New Window
          */
         initExternalLink: function(){
-            $('.topics-show a[href^="http://"], .topics-show a[href^="https://"]').each(function() {
+            $('.content-body a[href^="http://"], .content-body a[href^="https://"]').each(function() {
                var a = new RegExp('/' + window.location.host + '/');
                if(!a.test(this.href) ) {
                    $(this).click(function(event) {
