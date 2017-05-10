@@ -30,7 +30,7 @@
 
           @if ((Request::is('users*') && isset($user)) || (Request::is('search*') && $user->id > 0))
 
-              <form method="GET" action="{{ route('search') }}" accept-charset="UTF-8" class="navbar-form navbar-left">
+              <form method="GET" action="{{ route('search') }}" accept-charset="UTF-8" class="navbar-form navbar-left hidden-sm hidden-md">
                   <div class="form-group">
                   <input class="form-control search-input mac-style" placeholder="搜索范围：{{ $user->name }}" name="q" type="text" value="{{ (Request::is('search*') && isset($query)) ? $query : '' }}">
                   <input class="form-control search-input mac-style"  name="user_id" type="hidden" value="{{ $user->id }}">
