@@ -238,12 +238,12 @@
     margin-top: 0;
     margin-bottom: 0; }
   .editor-preview-active-side li > p, .editor-preview li > p, .markdown-body li > p, .markdown-reply li > p {
-    margin-top: 16px; }
+    margin-top: 6px; }
   .editor-preview-active-side dl, .editor-preview dl, .markdown-body dl, .markdown-reply dl {
     padding: 0; }
   .editor-preview-active-side dl dt, .editor-preview dl dt, .markdown-body dl dt, .markdown-reply dl dt {
     padding: 0;
-    margin-top: 16px;
+    margin-top: 6px;
     font-size: 1em;
     font-style: italic;
     font-weight: bold; }
