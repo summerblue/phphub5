@@ -215,7 +215,7 @@
   .markdown-reply table,
   .markdown-reply pre {
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     line-height: 30px; }
   .editor-preview-active-side hr, .editor-preview hr, .markdown-body hr, .markdown-reply hr {
     border: 2px dashed #F0F4F6;
