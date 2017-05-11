@@ -1,9 +1,9 @@
 @charset "UTF-8";
 .editor-preview-active-side, .editor-preview, .markdown-body, .markdown-reply {
-  font-size: 16px;
+  font-size: 15px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  line-height: 1.4;
+  line-height: 1.3;
   overflow: hidden;
   line-height: 1.6;
   word-wrap: break-word; }
@@ -325,8 +325,7 @@
     font-size: 100%;
     white-space: pre;
     background: transparent;
-    border: 0;
-    color: #E6E8D3; }
+    border: 0; }
   .editor-preview-active-side .highlight, .editor-preview .highlight, .markdown-body .highlight, .markdown-reply .highlight {
     margin-bottom: 16px; }
   .editor-preview-active-side .highlight pre,
@@ -601,7 +600,7 @@
   100% {
     transform: rotate(360deg); } }
 
-/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+php+php-extras */
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+abap+actionscript+ada+apacheconf+apl+applescript+asciidoc+aspnet+autoit+autohotkey+bash+basic+batch+c+brainfuck+bro+bison+csharp+cpp+coffeescript+ruby+css-extras+d+dart+django+diff+docker+eiffel+elixir+erlang+fsharp+fortran+gherkin+git+glsl+go+graphql+groovy+haml+handlebars+haskell+haxe+http+icon+inform7+ini+j+jade+java+jolie+json+julia+keyman+kotlin+latex+less+livescript+lolcode+lua+makefile+markdown+matlab+mel+mizar+monkey+nasm+nginx+nim+nix+nsis+objectivec+ocaml+oz+parigp+parser+pascal+perl+php+php-extras+powershell+processing+prolog+properties+protobuf+puppet+pure+python+q+qore+r+jsx+reason+rest+rip+roboconf+crystal+rust+sas+sass+scss+scala+scheme+smalltalk+smarty+sql+stylus+swift+tcl+textile+twig+typescript+verilog+vhdl+vim+wiki+xojo+yaml */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
@@ -609,14 +608,16 @@
  */
 code[class*="language-"],
 pre[class*="language-"] {
-  color: white;
-  text-shadow: none;
-  font-family: Consolas, Monaco, 'Andale Mono', monospace;
-  direction: ltr;
+  color: #2d2d2d;
+  background: none;
+  text-shadow: 0 1px white;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
   -moz-tab-size: 4;
   tab-size: 4;
   -webkit-hyphens: none;
@@ -640,18 +641,22 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-  padding: 10px;
+  padding: 1em;
   margin: .5em 0;
   overflow: auto; }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: #4e4e4e; }
+  background: rgba(249, 248, 247, 0.53);
+  border: 1px solid #efefef;
+  box-shadow: 0 2px 5px 0 rgba(199, 199, 199, 0.16), 0 2px 10px 0 rgba(243, 243, 243, 0.12);
+  border-radius: 3px; }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
   padding: .1em;
-  border-radius: .3em; }
+  border-radius: .3em;
+  white-space: normal; }
 
 .token.comment,
 .token.prolog,
@@ -659,17 +664,8 @@ pre[class*="language-"] {
 .token.cdata {
   color: slategray; }
 
-.token.comment {
-  color: #A5A9B0; }
-
-.token.scope {
-  color: #cc99cc; }
-
-.token.function {
-  color: white; }
-
 .token.punctuation {
-  color: #6d9693; }
+  color: #999; }
 
 .namespace {
   opacity: .7; }
@@ -679,47 +675,45 @@ pre[class*="language-"] {
 .token.boolean,
 .token.number,
 .token.constant,
-.token.symbol {
-  color: #ffcc66; }
-
-.token.number {
-  color: white; }
-
-.token.property {
-  color: #c5c5c5; }
-
-.token.tag {
-  color: #cc99cc; }
+.token.symbol,
+.token.deleted {
+  color: #905; }
 
 .token.selector,
 .token.attr-name,
 .token.string,
-.token.builtin {
-  color: #ADD2C1; }
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #690; }
 
 .token.operator,
 .token.entity,
 .token.url,
 .language-css .token.string,
-.style .token.string,
-.token.variable {
-  color: #fdb7b2;
-  /*background: hsla(0,0%,100%,.5);*/ }
+.style .token.string {
+  color: #a67f59;
+  background: rgba(255, 255, 255, 0.5); }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: #cc99cc; }
+  color: #07a; }
 
-.token.attr-value {
-  color: #c5c5c5; }
+.token.function {
+  color: #DD4A68; }
 
 .token.regex,
-.token.important {
+.token.important,
+.token.variable {
   color: #e90; }
 
-.token.important {
+.token.important,
+.token.bold {
   font-weight: bold; }
+
+.token.italic {
+  font-style: italic; }
 
 .token.entity {
   cursor: help; }
