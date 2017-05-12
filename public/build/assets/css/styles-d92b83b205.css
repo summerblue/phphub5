@@ -337,7 +337,7 @@
     overflow: auto;
     line-height: 1.45;
     border-radius: 3px;
-    color: #fff;
+    color: inherit;
     border: none; }
   .editor-preview-active-side .highlight pre, .editor-preview .highlight pre, .markdown-body .highlight pre, .markdown-reply .highlight pre {
     margin-bottom: 0; }
