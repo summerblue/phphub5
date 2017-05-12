@@ -1,5 +1,6 @@
 .editor-preview-active-side, .editor-preview, .markdown-body, .markdown-reply {
 
+
     font-size: 15px;
 
   -ms-text-size-adjust: 100%;
@@ -682,6 +683,10 @@
     color: #999;
     background-color: #EAF2F5;
   }
+
+    > p {
+        margin-bottom: 8px;
+    }
 
 }
 

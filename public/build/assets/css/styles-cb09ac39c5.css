@@ -501,6 +501,8 @@
   .editor-preview-active-side .highlight .gc, .editor-preview .highlight .gc, .markdown-body .highlight .gc, .markdown-reply .highlight .gc {
     color: #999;
     background-color: #EAF2F5; }
+  .editor-preview-active-side > p, .editor-preview > p, .markdown-body > p, .markdown-reply > p {
+    margin-bottom: 8px; }
 
 .markdown-reply h1,
 .markdown-reply h2,
