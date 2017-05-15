@@ -108,9 +108,9 @@
         var simplemde = new SimpleMDE({
             spellChecker: false,
             autosave: {
-                enabled: {{ $topic->id ? 'false' : 'true' }},
+                enabled: true,
                 delay: 5000,
-                unique_id: "article_content{{ $topic->id ?: '' }}"
+                unique_id: "article_content{{ $topic->id ? $topic->id . '_' . str_slug($topic->updated_at) : '' }}"
             },
             forceSync: true,
             toolbar: [

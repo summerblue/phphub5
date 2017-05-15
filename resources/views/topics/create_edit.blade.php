@@ -135,9 +135,9 @@
         var simplemde = new SimpleMDE({
             spellChecker: false,
             autosave: {
-                enabled: {{ isset($topic) ? 'false' : 'true' }},
+                enabled: true,
                 delay: 5000,
-                unique_id: "topic_content{{ isset($topic) ? $topic->id : '' }}"
+                unique_id: "topic_content{{ isset($topic) ? $topic->id . '_' . str_slug($topic->updated_at) : '' }}"
             },
             forceSync: true,
             tabSize: 4,
