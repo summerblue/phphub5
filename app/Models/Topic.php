@@ -11,6 +11,7 @@ use Illuminate\Pagination\Paginator;
 use Venturecraft\Revisionable\RevisionableTrait;
 use Cache;
 use Nicolaslopezj\Searchable\SearchableTrait;
+use App\Activities\UserRepliedTopic;
 
 class Topic extends Model
 {
@@ -65,6 +66,12 @@ class Topic extends Model
 
         static::created(function ($topic) {
             SiteStatus::newTopic();
+        });
+
+        static::deleted(function ($topic) {
+            foreach ($topic->replies as $reply) {
+                app(UserRepliedTopic::class)->remove($reply->user, $reply);
+            }
         });
     }
 
