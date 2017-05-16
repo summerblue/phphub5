@@ -8,6 +8,12 @@
 {{{ $topic->excerpt }}}
 @stop
 
+@section('wechat_icon')
+    @if ($cover = $topic->cover())
+        <img src="{{ img_crop($cover->link, 512, 512) }}" alt="">
+    @endif
+@stop
+
 @section('content')
 
 <div class="col-md-9 topics-show main-col">
