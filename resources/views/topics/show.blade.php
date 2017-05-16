@@ -11,6 +11,8 @@
 @section('wechat_icon')
     @if ($cover = $topic->cover())
         <img src="{{ img_crop($cover->link, 512, 512) }}" alt="">
+    @else
+        @parent
     @endif
 @stop
 
