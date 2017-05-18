@@ -161,7 +161,7 @@ class AuthController extends Controller implements UserCreatorListener
     // 数据库有用户信息, 登录用户
     public function userFound($user)
     {
-        Auth::loginUsingId($user->id);
+        Auth::login($user, true);
         Session::forget('oauthData');
 
         Flash::success(lang('Login Successfully.'));
