@@ -1,6 +1,8 @@
 <form method="POST" action="{{ route('auth.login') }}" accept-charset="UTF-8">
     {{ csrf_field() }}
 
+    <input type="hidden" name="remember" value="yes">
+
     @if (isset($login_required))
         <div class="alert alert-warning">
             你需要登录以后才能操作。
