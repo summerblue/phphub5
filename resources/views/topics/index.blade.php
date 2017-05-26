@@ -15,7 +15,7 @@
     @endif
     @if (isset($category) && $category->id === 1)
         <div class="alert alert-info">
-            发布招聘贴前必须仔细阅读 <a href="https://laravel-china.org/topics/817/laravel-china-recruitment-post-specification" style="text-decoration: underline;">Laravel China 招聘贴发布规范</a>，不按规范发帖会被管理员 <a href="https://laravel-china.org/topics/2802/description-of-shen">永久下沉</a>。<a href="{{ route('topics.create', ['category_id' => 1]) }}" class="btn btn-warning">发布招聘</a>
+            发布招聘贴前请必须仔细阅读 <a href="https://laravel-china.org/topics/817/laravel-china-recruitment-post-specification" style="text-decoration: underline;">Laravel China 招聘贴发布规范</a>，不按规范发帖会被管理员 <a href="https://laravel-china.org/topics/2802/description-of-shen" style="text-decoration: underline;">永久下沉</a>。<a href="{{ route('topics.create', ['category_id' => 1]) }}" class="btn btn-warning">发布招聘</a>
         </div>
     @endif
     <div class="panel panel-default">
