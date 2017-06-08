@@ -22,7 +22,7 @@
                     <span class="count_seperator">/</span>
 
                      <span class="count_of_visits" title="查看数">
-                       {{ $topic->view_count }}
+                       {{ number_shorten($topic->view_count) }}
                      </span>
                      <span class="count_seperator">|</span>
 
