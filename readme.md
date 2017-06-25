@@ -1,12 +1,13 @@
-![macbook](https://cloud.githubusercontent.com/assets/324764/18414545/d875e012-77ff-11e6-9249-0b56a6460cb8.png)
-
 <p align="center">
-  <b>Always inventing, Always delivering:</b>
-  <br><br>
+  <br>
+  <b>创造不息，交付不止</b>
+  <br>
   <a href="https://www.yousails.com">
     <img src="https://yousails.com/banners/brand.png" width=350>
   </a>
 </p>
+
+![macbook](https://cloud.githubusercontent.com/assets/324764/18414545/d875e012-77ff-11e6-9249-0b56a6460cb8.png)
 
 ## 项目概述
 
