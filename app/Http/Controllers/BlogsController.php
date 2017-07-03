@@ -56,15 +56,16 @@ class BlogsController extends Controller
 
 	public function edit($id)
 	{
-        $user = Auth::user();
         $blog = Blog::findOrFail($id);
+        $this->authorize('update', $blog);
+        $user = Auth::user();
 		return view('blogs.create_edit', compact('blog', 'user'));
 	}
 
 	public function update(BlogStoreRequest $request, $id)
 	{
 		$blog = Blog::findOrFail($id);
-        // $this->authorize('update', $blog);
+        $this->authorize('update', $blog);
         try {
             $request->performUpdate($blog);
             Flash::success(lang('Operation succeeded.'));
