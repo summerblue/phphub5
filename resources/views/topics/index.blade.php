@@ -8,6 +8,11 @@
 
 <div class="col-md-9 topics-index main-col">
 
+    @if (isset($category) && $category->id == config('phphub.life_category_id'))
+        <div class="alert alert-info">
+            『生活能为工作带来灵感，工作是为了更好的生活。』话题如旅行、移民、宠物等。发帖请遵守 <a style="text-decoration: underline;" href="https://laravel-china.org/topics/3022/community-posting-and-management">社区发帖和管理规范</a>。
+        </div>
+    @endif
     @if (isset($category) && $category->id == config('phphub.qa_category_id'))
         <div class="alert alert-info">
             在 LC，我们不提倡 <a href="{{ route('topics.show', 535) }}" style="text-decoration: underline;">新手提问</a> ，如果你编程遇到难题，请先 <a href="{{ route('topics.show', 3656) }}" style="text-decoration: underline;">搜索</a> 再 <a href="{{ route('topics.create', ['category_id' => config('phphub.qa_category_id')]) }}" class="btn btn-warning">提问</a>
