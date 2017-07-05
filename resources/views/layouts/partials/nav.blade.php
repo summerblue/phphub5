@@ -16,11 +16,11 @@
 
     <div id="top-navbar-collapse" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="{{ (Request::is('topics*') && !Request::is('categories*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">{{ lang('Topics') }}</a></li>
-        <li class="{{ Request::is('categories/'.config('phphub.life_category_id')) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.life_category_id')) }}">生活</a></li>
-        <li class="{{ Request::is('categories/1') ? ' active' : '' }}"><a href="{{ route('categories.show', 1) }}">{{ lang('Jobs') }}</a></li>
-        <li class="{{ Request::is('categories/'.config('phphub.qa_category_id')) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.qa_category_id')) }}">问答</a></li>
-        <li ><a href="https://laravel-china.org/news" class="no-pjax">资讯</a></li>
+        <li class="{{ (Request::is('topics') && ! Request::is('categories*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">{{ lang('Topics') }}</a></li>
+        <li class="{{ (Request::is('categories/'.config('phphub.life_category_id')) || (isset($topic) && $topic->category_id == config('phphub.life_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.life_category_id')) }}">生活</a></li>
+        <li class="{{ Request::is('categories/1') || (isset($topic) && $topic->category_id === 1) ? ' active' : '' }}"><a href="{{ route('categories.show', 1) }}">{{ lang('Jobs') }}</a></li>
+        <li class="{{ (Request::is('categories/'.config('phphub.qa_category_id')) || (isset($topic) && $topic->category_id == config('phphub.qa_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.qa_category_id')) }}">问答</a></li>
+        <li ><a href="https://laravel-china.org/news" class="no-pjax {{ (Request::is('news') ? ' active' : '') }}">资讯</a></li>
         <li class="{{ (Request::is('wiki') ? ' active' : '') }} hidden-sm"><a href="{{ route('wiki') }}">Wiki</a></li>
         <li class="nav-docs hidden-sm"><a href="http://d.laravel-china.org" class="no-pjax" target="_blank">文档</a></li>
         <li class="hidden-sm"><a href="https://fsdhub.com/books/laravel-essential-training-5.1" class="no-pjax" target="_blank">教程</a></li>
