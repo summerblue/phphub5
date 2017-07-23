@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{ lang('Topic List') }} @parent
+{{ isset($category) ? $category->name : '话题列表'  }} @parent
 @stop
 
 @section('content')
