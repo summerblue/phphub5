@@ -20,13 +20,13 @@ ______                            _              _                              
 
 		<meta charset="UTF-8">
 
-		<title>@section('title')Laravel China 社区 - 高品质的 Laravel 和 PHP 开发者社区@show - Powered by PHPHub</title>
+		<title>@section('title')Laravel China 社区 - 高品质的 Laravel 开发者社区@show - Powered by PHPHub</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
 		<meta name="keywords" content="php,laravel,php论坛,laravel论坛,php社区,laravel社区,laravel教程,php教程,laravel视频,php开源,php新手,php7,laravel5" />
 		<meta name="author" content="PHPHub" />
-		<meta name="description" content="@section('description') Laravel China 是国内最大的 Laravel 和 PHP 中文社区，致力于推动 Laravel，PHP7、php-fig 等 PHP 新技术，新理念在中国的发展，是国内最靠谱的 PHP 论坛。 @show" />
+		<meta name="description" content="@section('description') Laravel China 是国内最大的 Laravel 中文开发者社区，致力于推动 Laravel，PHP7、php-fig 等 PHP 新技术，新理念在中国的发展，是国内最靠谱的 PHP 论坛。 @show" />
         <meta name="_token" content="{{ csrf_token() }}">
 
         <link rel="stylesheet" href="{{ cdn(elixir('assets/css/styles.css')) }}">
