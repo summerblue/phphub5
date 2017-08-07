@@ -121,7 +121,7 @@ return [
     'Recent Topics' => '最近话题',
     'Reply' => '回复',
     'User Login Required for commenting.' => '需要登录后才能发表评论.',
-    'site_intro' => 'Laravel China 是高品质的 Laravel 和 PHP 开发者社区，Powered By <a class="popover-with-html" data-content="查看源代码" target="_blank" style="padding-right:8px" href="https://github.com/summerblue/phphub5" data-original-title="" title=""><i class="fa fa-github-alt text-md" aria-hidden="true"></i> PHPHub</a>',
+    'site_intro' => 'Laravel China 是高品质的 Laravel 开发者社区，Powered By <a class="popover-with-html" data-content="查看源代码" target="_blank" style="padding-right:8px" href="https://github.com/summerblue/phphub5" data-original-title="" title=""><i class="fa fa-github-alt text-md" aria-hidden="true"></i> PHPHub</a>',
     'contributing' => '功能正在完善中, 欢迎 <i class="fa fa-github" style="font-size:15px"></i> <a href="https://github.com/summerblue/phphub5" target="_blank">贡献代码</a> 或 <a href="https://github.com/summerblue/phphub5/issues" target="_blank">提交 Issue</a>.',
     'be_nice' => '我们希望 Laravel China 能够成为拥有浓厚技术氛围的开发者社区，而实现这个目标，需要我们所有人的共同努力：友善，公平，尊重知识和事实。请严格遵守 - <a href="https://laravel-china.org/topics/3022">社区发帖和管理规范</a>',
     'publish_typography' => '请注意单词拼写，以及中英文排版，<a href="https://github.com/sparanoid/chinese-copywriting-guidelines">参考此页</a>',

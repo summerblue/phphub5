@@ -4,7 +4,7 @@
 
           <div class="col-sm-5 col-lg-5">
 
-              <p class="padding-top-xsm">我们是 PHP 和 Laravel 开发者社区，致力于为 PHP 和 Laravel 开发者提供一个分享创造、结识伙伴、协同互助的平台。</p>
+              <p class="padding-top-xsm">我们是高品质的 Laravel 开发者社区，致力于为 Laravel 开发者提供一个分享创造、结识伙伴、协同互助的平台。</p>
 
               <div class="text-md " >
                   <a class="popover-with-html" data-content="反馈问题" target="_blank" style="padding-right:8px" href="mailto:summer@estgroupe.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>
