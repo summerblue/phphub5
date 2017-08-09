@@ -5,7 +5,11 @@
             <a href="{{ $sidebarTopic->link() }}" title="{{{ $sidebarTopic->title }}}">
 
                 @if (isset($numbered))
-                    {{ $index }}.
+                    @if ($index === 0)
+                        🏆
+                    @else
+                        {{ $index+1 }}.
+                    @endif
                 @endif
 
                  {{{ $sidebarTopic->title }}}
