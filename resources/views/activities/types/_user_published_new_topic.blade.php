@@ -14,21 +14,26 @@
             </a>
             @if ($activity->data['topic_type'] == 'article')
                 发布了文章
-                <?php
-                    $topic_title = "《" . str_limit($activity->data['topic_title'], '100') . "》";
-                ?>
+                 <a href="{{ $activity->data['topic_link'] }}" title="{{ $activity->data['topic_title'] }}">
+                    {{ "《" . str_limit($activity->data['topic_title'], '100') . "》" }}
+                </a>
+
+            @elseif ($activity->data['topic_type'] == 'share_link')
+                分享了链接
+
+                 <a href="{{ $activity->data['topic_link'] }}" title="{{ $activity->data['topic_title'] }}">
+                    <i class="fa fa-link"></i> {{ str_limit($activity->data['topic_title'], '100') }}
+                </a>
             @else
                 在 <a href="{{ route('categories.show', $activity->data['topic_category_id'] ) }}">{{ $activity->data['topic_category_name'] }}</a>
                 下发布了话题
 
-                <?php
-                    $topic_title = str_limit($activity->data['topic_title'], '100');
-                ?>
+                 <a href="{{ $activity->data['topic_link'] }}" title="{{ $activity->data['topic_title'] }}">
+                    {{ str_limit($activity->data['topic_title'], '100') }}
+                </a>
+
             @endif
-             <a href="{{ $activity->data['topic_link'] }}" title="{{ $activity->data['topic_title'] }}">
-                {{ $topic_title }}
-            </a>
-             <span class="meta pull-right">
+            <span class="meta pull-right">
                  <span class="timeago">{{ $activity->created_at }}</span>
             </span>
 

@@ -41,9 +41,16 @@
         <i class="fa fa-trash-o"></i>
     </a>
 
-      <a id="topic-edit-button" href="{{ isset($is_article) ?  route('articles.edit', [$topic->id]) : route('topics.edit', [$topic->id]) }}" data-content="{{ lang('Edit') }}" class="admin  popover-with-html no-pjax">
-        <i class="fa fa-pencil-square-o"></i>
-      </a>
+        @if ($topic->isShareLink())
+        <a id="topic-edit-button" href="{{ route('share_links.edit', [$topic->id]) }}" data-content="{{ lang('Edit') }}" class="admin  popover-with-html no-pjax">
+            <i class="fa fa-pencil-square-o"></i>
+          </a>
+        @else
+        <a id="topic-edit-button" href="{{ isset($is_article) ?  route('articles.edit', [$topic->id]) : route('topics.edit', [$topic->id]) }}" data-content="{{ lang('Edit') }}" class="admin  popover-with-html no-pjax">
+            <i class="fa fa-pencil-square-o"></i>
+          </a>
+        @endif
+
     @endif
 
 

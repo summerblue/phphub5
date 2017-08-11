@@ -48,6 +48,11 @@
                                      <a href="{{ $notification->topic->link() }}{{{ !empty($notification->reply_id) ? '#reply' . $notification->reply_id : '' }}}" title="{{{ $notification->topic->title }}}">
                                          {{{ str_limit($notification->topic->title, '100') }}}
                                      </a>
+                                @elseif ($notification->type != 'follow' && $notification->topic->isShareLink())
+                                     {{ str_replace('话题', '链接', $notification->present()->lableUp) }}
+                                     <a href="{{ $notification->topic->link() }}{{{ !empty($notification->reply_id) ? '#reply' . $notification->reply_id : '' }}}" title="{{{ $notification->topic->title }}}">
+                                         {{{ str_limit($notification->topic->title, '100') }}}
+                                     </a>
                                  @else
                                     {{ $notification->present()->lableUp }}
                                     @if($notification->type != 'follow')

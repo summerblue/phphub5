@@ -11338,6 +11338,12 @@ embed {
     padding: 1px 2px;
     color: #778087;
     text-decoration: none; }
+  .topics-index .topic-filter a.share-link {
+    padding: 3px 9px;
+    font-size: 12px;
+    color: #fff;
+    line-height: 19px;
+    margin-top: -6px; }
   .topics-index .topic-filter .selected {
     color: #C0C0C0; }
 
@@ -12428,6 +12434,54 @@ a {
   font-size: 12px;
   color: #bab9bb; }
 
+.hunt-index .infos .media-heading a.paw {
+  width: 18px; }
+
+.hunt-index .infos .media-heading a.paw:visited, .hunt-index .infos .media-heading a.paw:hover {
+  color: #ccc; }
+
+.hunt-index .share-link-site {
+  font-size: 12px;
+  color: #828282; }
+
+.hunt-index .vote-count {
+  color: #9e78c0;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  line-height: 34px;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  margin: 6px 2px; }
+
+.hunt-index .topic-list .reply_count_area {
+  line-height: inherit; }
+
+.hunt-index .topic-list .count_of_votes {
+  font-size: 12px;
+  margin-top: 11px;
+  color: #9e78c0;
+  margin-bottom: -3px; }
+
+.hunt-index .topic-list .count_of_replies {
+  font-size: 12px;
+  margin-top: 11px;
+  color: #bab9bb;
+  margin-bottom: -3px; }
+
+.hunt-index .topic-list .count_of_visits {
+  font-size: 12px;
+  margin-top: 11px;
+  color: #bab9bb;
+  margin-bottom: -3px; }
+
+.hunt-index .topic-list .count_set {
+  font-size: 12px;
+  color: #bab9bb; }
+
 .payment-qrcode {
   width: 250px;
   height: 250px;
@@ -12766,6 +12820,15 @@ a.anchorific, a.anchorjs-link {
 
 .reply-box .CodeMirror pre {
   font-size: 14px; }
+
+.share-link .header {
+  font-size: 24px;
+  font-weight: bold;
+  color: #727373;
+  line-height: 57px; }
+
+.share-link .reply-box .CodeMirror, .share-link .reply-box .CodeMirror-scroll {
+  min-height: 200px; }
 
 .articles-create #reply_notice, .articles-edit #reply_notice {
   margin-bottom: 15px;

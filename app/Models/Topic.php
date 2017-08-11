@@ -75,6 +75,11 @@ class Topic extends Model
         });
     }
 
+    public function share_link()
+    {
+        return $this->hasOne(ShareLink::class);
+    }
+
     public function votes()
     {
         return $this->morphMany(Vote::class, 'votable');
@@ -206,6 +211,11 @@ class Topic extends Model
     public function isArticle()
     {
         return $this->category_id == config('phphub.blog_category_id');
+    }
+
+    public function isShareLink()
+    {
+        return $this->category_id == config('phphub.hunt_category_id');
     }
 
     public function link($params = [])

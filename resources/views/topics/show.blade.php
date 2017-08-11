@@ -23,7 +23,14 @@
   <div class="topic panel panel-default">
     <div class="infos panel-heading">
 
-      <h1 class="panel-title topic-title">{{{ $topic->title }}}</h1>
+      <h1 class="panel-title topic-title">
+        @if ($topic->isShareLink())
+            <a href="{{ $topic->share_link->link }}" target="_blank">
+                <i class="fa fa-link"></i>
+            </a>
+        @endif
+        {{{ $topic->title }}}
+        </h1>
 
       @include('topics.partials.meta')
     </div>

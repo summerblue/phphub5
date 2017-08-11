@@ -148,4 +148,12 @@ Route::get("/articles/{id}/edit", "ArticlesController@edit")->name('articles.edi
 
 Route::get('/topics/{id}/{slug?}', 'TopicsController@show')->name('topics.show');
 Route::get('/articles/{id}/{slug?}', "TopicsController@show")->name('articles.show');
+
+# ------------------ ShareLinks ------------------------
+
+Route::get('/links/share', 'ShareLinksController@createLink')->name('share_links.create');
+Route::get('/share_links/{id}/edit', 'ShareLinksController@edit')->name('share_links.edit');
+
+# ------------------ Wild Card ------------------------
+
 Route::get('{name}', 'PagesController@wildcard')->name('wildcard');

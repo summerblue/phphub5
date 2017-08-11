@@ -78,7 +78,7 @@ return [
     'Pick a category' => '请选择分类',
     'Please write down a topic' => '请填写标题',
     'Writting Format Notice' => '格式说明',
-    'This kind of topic is not allowed.' => '以下类型的信息会污染我们的社区',
+    'This kind of topic is not allowed.' => '构建高品质的社区',
     'We can benefit from it.' => '在高质量优秀社区的我们',
     'Total Reply Count' => '回复数量',
 

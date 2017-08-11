@@ -14,6 +14,8 @@
             </a>
             @if ($activity->data['topic_type'] == 'article')
                 赞了文章
+            @elseif ($activity->data['topic_type'] == 'share_link')
+                赞了链接
             @else
                 赞了话题
             @endif

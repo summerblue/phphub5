@@ -106,6 +106,19 @@ class CategoriesTableSeeder extends Seeder
                 'updated_at'  => '2016-07-03 10:00:00',
                 'deleted_at'  => null,
             ),
+            7 =>
+            array(
+                'id'          => 10,
+                'parent_id'   => 0,
+                'post_count'  => 0,
+                'weight'      => 98,
+                'name'        => '头条',
+                'slug'        => 'hunt',
+                'description' => '分享生活',
+                'created_at'  => '2016-07-03 10:00:00',
+                'updated_at'  => '2016-07-03 10:00:00',
+                'deleted_at'  => null,
+            ),
         ));
     }
 }

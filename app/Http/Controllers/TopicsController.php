@@ -47,7 +47,9 @@ class TopicsController extends Controller implements CreatorListener
     public function create(Request $request)
     {
         $category = Category::find($request->input('category_id'));
-        $categories = Category::where('id', '!=', config('phphub.blog_category_id'))->get();
+        $categories = Category::where('id', '!=', config('phphub.blog_category_id'))
+                                ->where('id', '!=', config('phphub.hunt_category_id'))
+                                ->get();
 
         return view('topics.create_edit', compact('categories', 'category'));
     }
@@ -160,7 +162,7 @@ class TopicsController extends Controller implements CreatorListener
         $topic = Topic::findOrFail($id);
         $this->authorize('update', $topic);
 
-        $data = $request->only('title', 'body', 'category_id');
+        $data = $request->only('title', 'body', 'category_id', 'link');
 
         $data['body'] = $mentionParser->parse($data['body']);
 
@@ -181,6 +183,12 @@ class TopicsController extends Controller implements CreatorListener
 
             Auth::user()->decrement('draft_count', 1);
             Auth::user()->increment('article_count', 1);
+        }
+
+        if ($topic->isShareLink()) {
+            $topic->share_link->link = $data['link'];
+            $topic->share_link->site = domain_from_url($data['link']);
+            $topic->share_link->save();
         }
 
         $topic->update($data);

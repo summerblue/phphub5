@@ -368,6 +368,14 @@ embed {
       text-decoration: none;
     }
 
+    a.share-link {
+        padding: 3px 9px;
+        font-size: 12px;
+        color: #fff;
+        line-height: 19px;
+        margin-top: -6px;
+    }
+
     .selected {
       color: #C0C0C0;
     }
@@ -1715,6 +1723,63 @@ a {
     }
 }
 
+.hunt-index {
+    .infos {
+        .media-heading {
+            a.paw {
+                width: 18px;
+            }
+            a.paw:visited, a.paw:hover {
+                color: #ccc;
+            }
+        }
+    }
+    .share-link-site {
+        font-size: 12px;
+        color: #828282;
+    }
+    .vote-count {
+        color: #9e78c0;
+        font-size: 18px;
+        border: 1px solid #ccc;
+        width: 34px;
+        height: 34px;
+        text-align: center;
+        line-height: 34px;
+        border-radius: 5px;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+        background-color: #fff;
+        margin: 6px 2px;
+    }
+    .topic-list {
+        .reply_count_area {
+            line-height: inherit;
+        }
+        .count_of_votes {
+            font-size: 12px;
+            margin-top: 11px;
+            color: #9e78c0;
+            margin-bottom: -3px;
+        }
+        .count_of_replies {
+            font-size: 12px;
+            margin-top: 11px;
+            color: #bab9bb;
+            margin-bottom: -3px;
+        }
+        .count_of_visits {
+            font-size:  12px;
+            margin-top: 11px;
+            color: #bab9bb;
+            margin-bottom: -3px;
+        }
+        .count_set {
+            font-size: 12px;
+            color: #bab9bb;
+        }
+    }
+}
+
 .payment-qrcode {
     width: 250px;
     height: 250px;
@@ -2124,6 +2189,20 @@ a.anchorific, a.anchorjs-link  {
         font-size: 14px;
     }
 }
+.share-link {
+    .header {
+        font-size: 24px;
+        font-weight: bold;
+        color: #727373;
+        line-height: 57px;
+    }
+    .reply-box {
+        .CodeMirror, .CodeMirror-scroll {
+            min-height: 200px;
+        }
+    }
+}
+
 
 .articles-create,.articles-edit {
     #reply_notice {
@@ -2553,3 +2632,4 @@ hr {
         border-top: 1px solid #dde2e8;
     }
 }
+

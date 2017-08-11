@@ -76,7 +76,7 @@ trait TopicFilterable
                 break;
 
             case 'index':
-                return $query->pinAndRecentReply()->withoutQA()->withoutLIFE();
+                return $query->pinAndRecentReply()->withoutQA()->withoutShareLink()->withoutLIFE();
                 break;
 
             default:
@@ -157,6 +157,14 @@ trait TopicFilterable
     {
         if (config('phphub.qa_category_id')) {
             return $query->where('category_id', '!=', config('phphub.qa_category_id'));
+        }
+        return $query;
+    }
+
+    public function scopeWithoutShareLink($query)
+    {
+        if (config('phphub.hunt_category_id')) {
+            return $query->where('category_id', '!=', config('phphub.hunt_category_id'));
         }
         return $query;
     }

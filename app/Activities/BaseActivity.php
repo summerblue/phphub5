@@ -26,8 +26,17 @@ class BaseActivity
 
         $causer      = 'u' . $user->id;
         $indentifier = $indentifier ?: 't' . $topic->id;
+
+        if ($topic->isArticle()) {
+            $topic_type = 'article';
+        } elseif ($topic->isShareLink()) {
+            $topic_type = 'share_link';
+        } else {
+            $topic_type = 'topic';
+        }
+
         $data = array_merge([
-            'topic_type' => $topic->isArticle() ? 'article' : 'topic',
+            'topic_type' => $topic_type,
             'topic_link' => $topic->link(),
             'topic_title' => $topic->title,
             'topic_category_id' => $topic->category->id,

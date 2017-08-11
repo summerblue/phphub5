@@ -191,3 +191,9 @@ function number_shorten($number, $precision = 1, $divisors = null) {
     // Either way, use the last defined value for $divisor.
     return number_format($number / $divisor, $precision) . $shorthand;
 }
+
+function domain_from_url($url)
+{
+    $parse = parse_url($url);
+    return $parse['host'];
+}
