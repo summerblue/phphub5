@@ -808,6 +808,7 @@
                 var total = $('.replies .total b');
                 var voteCount = $('#vote-count');
                 var upVote = $('#up-vote');
+                var inShareLinkIndex = $('.share-link-index');
                 var isVote = that.is('.vote');
                 var isUpVote = that.is('#up-vote');
                 var isCommentVote= that.is('.comment-vote');
@@ -940,6 +941,10 @@
                             } else if (data.type === 'add') {
                                 commenVoteCount.html(num + 1);
                             }
+                        }
+
+                        if (inShareLinkIndex && isVote) {
+                            that.find('span').text(data.count);
                         }
                     }
                 }).fail(function() {

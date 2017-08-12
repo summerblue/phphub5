@@ -1740,6 +1740,7 @@ a {
     }
     .vote-count {
         color: #9e78c0;
+        display: block;
         font-size: 18px;
         border: 1px solid #ccc;
         width: 34px;
@@ -1750,7 +1751,26 @@ a {
         box-shadow: 0 1px 1px rgba(0,0,0,0.05);
         background-color: #fff;
         margin: 6px 2px;
+        text-decoration: none;
     }
+
+    .vote-count:hover span{
+      display: none;
+    }
+
+    .vote-count-wrap:hover .vote-count:after{
+        box-sizing: border-box;
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        // content: "\f062";
+        content: "\f164";
+        color: #9e78c0;
+    }
+
     .topic-list {
         .reply_count_area {
             line-height: inherit;

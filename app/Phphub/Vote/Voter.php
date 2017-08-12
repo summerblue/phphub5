@@ -39,6 +39,8 @@ class Voter
             $topic->updated_at = Carbon::now()->toDateTimeString();
             $topic->save();
         }
+
+        return $topic;
     }
 
     public function topicDownVote(Topic $topic)

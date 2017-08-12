@@ -209,9 +209,9 @@ class TopicsController extends Controller implements CreatorListener
     public function upvote($id)
     {
         $topic = Topic::find($id);
-        app('Phphub\Vote\Voter')->topicUpVote($topic);
+        $topic = app('Phphub\Vote\Voter')->topicUpVote($topic);
 
-        return response(['status' => 200]);
+        return response(['status' => 200, 'count' => $topic->vote_count]);
     }
 
     public function downvote($id)

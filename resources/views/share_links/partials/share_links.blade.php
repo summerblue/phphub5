@@ -24,9 +24,11 @@
                  </div>
              </a>
 
-            <div class="avatar pull-left">
-                <div class="vote-count">
-                    {{ $topic->vote_count }}
+            <div class="avatar pull-left ">
+                <div class="vote-count-wrap">
+                    <a class="vote-count vote" href="javascript:void(0);" data-url="{{ route('topics.upvote', [$topic->id]) }}" data-ajax="post">
+                        <span>{{ $topic->vote_count }}</span>
+                    </a>
                 </div>
             </div>
 

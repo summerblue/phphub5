@@ -8229,6 +8229,7 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
                 var total = $('.replies .total b');
                 var voteCount = $('#vote-count');
                 var upVote = $('#up-vote');
+                var inShareLinkIndex = $('.share-link-index');
                 var isVote = that.is('.vote');
                 var isUpVote = that.is('#up-vote');
                 var isCommentVote= that.is('.comment-vote');
@@ -8361,6 +8362,10 @@ var QRCode;!function(){function t(t){this.mode=l.MODE_8BIT_BYTE,this.data=t,this
                             } else if (data.type === 'add') {
                                 commenVoteCount.html(num + 1);
                             }
+                        }
+
+                        if (inShareLinkIndex && isVote) {
+                            that.find('span').text(data.count);
                         }
                     }
                 }).fail(function() {

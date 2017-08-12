@@ -12446,6 +12446,7 @@ a {
 
 .hunt-index .vote-count {
   color: #9e78c0;
+  display: block;
   font-size: 18px;
   border: 1px solid #ccc;
   width: 34px;
@@ -12455,7 +12456,22 @@ a {
   border-radius: 5px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   background-color: #fff;
-  margin: 6px 2px; }
+  margin: 6px 2px;
+  text-decoration: none; }
+
+.hunt-index .vote-count:hover span {
+  display: none; }
+
+.hunt-index .vote-count-wrap:hover .vote-count:after {
+  box-sizing: border-box;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f164";
+  color: #9e78c0; }
 
 .hunt-index .topic-list .reply_count_area {
   line-height: inherit; }
