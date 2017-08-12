@@ -41,10 +41,6 @@
                     <span class="hidden-xs label label-warning">{{ lang('Stick') }}</span>
                 @endif
 
-                <a class="paw hidden-sm" href="{{ $topic->share_link->link }}" target="_blank">
-                    <i class="fa fa-paw"></i>
-                </a>
-
                 <a href="{{ $topic->link() }}" title="{{{ $topic->title }}}">
                     {{{ $topic->title }}} <span class="share-link-site" data-link="{{ $topic->share_link->link }}">({{ $topic->share_link->site }})</span>
                 </a>

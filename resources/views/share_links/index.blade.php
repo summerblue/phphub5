@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="col-md-9 topics-index main-col hunt-index">
+<div class="col-md-9 topics-index main-col hunt-index share-link-index">
 
     @if (isset($category) && $category->id == config('phphub.life_category_id'))
         <div class="alert alert-info">
