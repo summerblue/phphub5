@@ -71,3 +71,28 @@
 @include('layouts.partials.sidebar')
 
 @stop
+
+@section('scripts')
+
+<script type="text/javascript">
+
+    $(document).ready(function()
+    {
+        $('.share-link-site').click(function(e) {
+            var link = $(this).data('link');
+            var win = window.open(link, '_blank');
+            if (win) {
+                win.focus();
+            } else {
+                alert('请允许此页面的弹窗！');
+            }
+
+            e.stopPropagation();
+            return false;
+        });
+    });
+
+
+
+</script>
+@stop

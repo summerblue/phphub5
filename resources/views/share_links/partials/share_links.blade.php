@@ -44,7 +44,7 @@
                 </a>
 
                 <a href="{{ $topic->link() }}" title="{{{ $topic->title }}}">
-                    {{{ $topic->title }}} <span class="share-link-site">({{ $topic->share_link->site }})</span>
+                    {{{ $topic->title }}} <span class="share-link-site" data-link="{{ $topic->share_link->link }}">({{ $topic->share_link->site }})</span>
                 </a>
 
               </div>
