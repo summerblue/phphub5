@@ -20,7 +20,7 @@
                      </span>
                      <span class="count_seperator">|</span>
 
-                    分享于 <abbr title="创建时间 {{ $topic->created_at }}" class="timeago">{{ $topic->created_at }}</abbr>
+                    于 <abbr title="创建时间 {{ $topic->created_at }}" class="timeago">{{ $topic->created_at }}</abbr>
                  </div>
              </a>
 
