@@ -40,12 +40,16 @@ trait TopicFilterable
         // 过滤站务信息
         $query = $query->withoutBoardTopics();
 
+        if ( ! if_route('categories.show')) {
+            $query->withoutShareLink();
+        }
+
         switch ($filter) {
             case 'noreply':
-                return $query->pinned()->withoutShareLink()->orderBy('reply_count', 'asc')->recent();
+                return $query->pinned()->orderBy('reply_count', 'asc')->recent();
                 break;
             case 'vote':
-                return $query->pinned()->withoutShareLink()->orderBy('vote_count', 'desc')->recent();
+                return $query->pinned()->orderBy('vote_count', 'desc')->recent();
                 break;
             case 'excellent':
                 return $query->excellent()->recent();
@@ -60,7 +64,7 @@ trait TopicFilterable
                 return $query->excellent()->fresh()->random();
                 break;
             case 'recent':
-                return $query->pinned()->withoutShareLink()->recent();
+                return $query->pinned()->recent();
                 break;
             case 'category':
                 return $query->pinned()->recentReply();
@@ -76,7 +80,7 @@ trait TopicFilterable
                 break;
 
             case 'index':
-                return $query->pinAndRecentReply()->withoutQA()->withoutShareLink()->withoutLIFE();
+                return $query->pinAndRecentReply()->withoutQA()->withoutLIFE();
                 break;
 
             default:
