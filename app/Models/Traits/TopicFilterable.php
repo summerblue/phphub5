@@ -42,10 +42,10 @@ trait TopicFilterable
 
         switch ($filter) {
             case 'noreply':
-                return $query->pinned()->orderBy('reply_count', 'asc')->recent();
+                return $query->pinned()->withoutShareLink()->orderBy('reply_count', 'asc')->recent();
                 break;
             case 'vote':
-                return $query->pinned()->orderBy('vote_count', 'desc')->recent();
+                return $query->pinned()->withoutShareLink()->orderBy('vote_count', 'desc')->recent();
                 break;
             case 'excellent':
                 return $query->excellent()->recent();
@@ -60,7 +60,7 @@ trait TopicFilterable
                 return $query->excellent()->fresh()->random();
                 break;
             case 'recent':
-                return $query->pinned()->recent();
+                return $query->pinned()->withoutShareLink()->recent();
                 break;
             case 'category':
                 return $query->pinned()->recentReply();
