@@ -98,6 +98,10 @@
 
         @include('topics.partials.composing_help_block')
 
+        <div class="alert alert-dismissable alert-info">
+            <i class="fa fa-info" aria-hidden="true"></i> &nbsp;&nbsp;请勿发布不友善或者负能量的内容。与人为善，比聪明更重要！
+        </div>
+
         <div class="form-group">
             @if ($currentUser)
                 @if ($currentUser->verified)
