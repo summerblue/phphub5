@@ -28,7 +28,7 @@ return [
             'title'    => '话题',
             'sortable' => false,
             'output'   => function ($value, $model) {
-                return admin_link(
+                return model_link(
                     $model->topic->title,
                     'topics',
                     $model->topic_id
