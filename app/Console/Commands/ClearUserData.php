@@ -8,6 +8,7 @@ use App\Models\Reply;
 use App\Models\Notification;
 use App\Models\Vote;
 use App\Models\ActiveUser;
+use App\Models\Activity;
 
 class ClearUserData extends Command
 {
@@ -34,5 +35,6 @@ class ClearUserData extends Command
         Notification::where('user_id', $user_id)->delete();
         Vote::where('user_id', $user_id)->delete();
         ActiveUser::where('user_id', $user_id)->delete();
+        Activity::where('user_id', $user_id)->delete();
     }
 }
