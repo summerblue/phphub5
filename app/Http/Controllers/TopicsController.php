@@ -23,6 +23,7 @@ use Phphub\Notification\Mention;
 use App\Activities\UserPublishedNewTopic;
 use App\Activities\BlogHasNewArticle;
 use App\Activities\UserAddedAppend;
+use Carbon\Carbon;
 
 class TopicsController extends Controller implements CreatorListener
 {
@@ -173,6 +174,7 @@ class TopicsController extends Controller implements CreatorListener
 
         if ($topic->isArticle() && $request->subject == 'publish' && $topic->is_draft == 'yes') {
             $data['is_draft'] = 'no';
+            $data['created_at'] = Carbon::now()->toDateTimeString();
 
             // Topic Published
             app('Phphub\Notification\Notifier')->newTopicNotify(Auth::user(), $mentionParser, $topic);
