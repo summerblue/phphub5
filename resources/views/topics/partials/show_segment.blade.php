@@ -1,11 +1,3 @@
-<a href="https://otcbtc.com/referrals/SUMMER" target="_blank">
-<img src="https://dn-phphub.qbox.me/uploads/images/201712/09/1/cizV7JDUtk.jpg" style="
-    width: 100%;
-    margin-bottom: 20px;
-    border: 1px solid #dde2e8;
-">
-</a>
-
 
   <div class="votes-container panel panel-default padding-md">
 
