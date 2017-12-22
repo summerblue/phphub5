@@ -39,6 +39,11 @@ class User extends Model implements AuthenticatableContract,
         ],
     ];
 
+    public function getAuthIdentifierName()
+    {
+        return 'id';
+    }
+
     // For admin log
     use RevisionableTrait;
     protected $keepRevisionOf = [
