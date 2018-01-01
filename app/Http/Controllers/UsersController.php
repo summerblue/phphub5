@@ -1,11 +1,13 @@
 <?php namespace App\Http\Controllers;
 
+use ZipArchive;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Topic;
 use App\Models\Reply;
 use Illuminate\Http\Request;
+use Storage;
 use Phphub\Github\GithubUserDataReader;
 use Cache;
 use Auth;
@@ -20,11 +22,13 @@ class UsersController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => [
+        $this->middleware('auth', [
+            'except' => [
                 'index', 'show', 'replies',
-                 'topics', 'articles', 'votes', 'following',
-                 'followers', 'githubCard', 'githubApiProxy',
-            ]]);
+                'topics', 'articles', 'votes', 'following',
+                'followers', 'githubCard', 'githubApiProxy',
+            ],
+        ]);
     }
 
     public function index()
@@ -36,12 +40,12 @@ class UsersController extends Controller
 
     public function show($id)
     {
-        $user    = User::findOrFail($id);
-        $topics  = Topic::whose($user->id)->withoutArticle()->withoutBoardTopics()->recent()->limit(20)->get();
-        $articles  = Topic::whose($user->id)->onlyArticle()->withoutDraft()->recent()->with('blogs')->limit(20)->get();
-        $blog  = $user->blogs()->first();
-        $replies = Reply::whose($user->id)->recent()->limit(20)->get();
-        return view('users.show', compact('user','blog', 'articles', 'topics', 'replies'));
+        $user     = User::findOrFail($id);
+        $topics   = Topic::whose($user->id)->withoutArticle()->withoutBoardTopics()->recent()->limit(20)->get();
+        $articles = Topic::whose($user->id)->onlyArticle()->withoutDraft()->recent()->with('blogs')->limit(20)->get();
+        $blog     = $user->blogs()->first();
+        $replies  = Reply::whose($user->id)->recent()->limit(20)->get();
+        return view('users.show', compact('user', 'blog', 'articles', 'topics', 'replies'));
     }
 
     public function edit($id)
@@ -87,7 +91,7 @@ class UsersController extends Controller
         $user   = User::findOrFail($id);
         $topics = Topic::whose($user->id)->onlyArticle()->withoutDraft()->recent()->with('blogs')->paginate(30);
         $user->update(['article_count' => $topics->total()]);
-        return view('users.articles', compact('user','blog', 'topics'));
+        return view('users.articles', compact('user', 'blog', 'topics'));
     }
 
     public function drafts()
@@ -99,7 +103,7 @@ class UsersController extends Controller
         $user->draft_count = $user->topics()->onlyArticle()->draft()->count();
         $user->save();
 
-        return view('users.articles', compact('user','blog', 'topics'));
+        return view('users.articles', compact('user', 'blog', 'topics'));
     }
 
     public function votes($id)
@@ -133,11 +137,11 @@ class UsersController extends Controller
         }
         $user     = User::findOrFail($id);
         $sessions = OAuthSession::where([
-            'owner_type' => 'user',
-            'owner_id'   => Auth::id(),
-        ])
+                                            'owner_type' => 'user',
+                                            'owner_id'   => Auth::id(),
+                                        ])
             ->with('token')
-            ->lists('id') ?: [];
+            ->lists('id') ? : [];
 
         $tokens = AccessToken::whereIn('session_id', $sessions)->get();
 
@@ -216,7 +220,7 @@ class UsersController extends Controller
     {
         $cache_name = 'github_api_proxy_user_' . $username;
 
-        return Cache::remember($cache_name, 1440, function () use ($username) {
+        return Cache::remember($cache_name, 1440, function() use ($username) {
             $result = (new GithubUserDataReader())->getDataFromUserName($username);
 
             return response()->json($result);
@@ -319,5 +323,40 @@ class UsersController extends Controller
         }
 
         return view('users.emailverificationrequired');
+    }
+
+    public function downloads(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $this->authorize('download', $user);
+
+        $disk    = Storage::disk('local');
+        $baseDir = "zip/article_$user->id";
+        $zipFile = "$baseDir.zip";
+
+        if (!$disk->exists($baseDir)) {
+            Topic::whose($user->id)
+                ->onlyArticle()
+                ->withoutDraft()
+                ->get(['title', 'body'])
+                ->each(
+                    function($article) use ($disk, $baseDir) {
+                        $disk->put("$baseDir/$article->title.md", $article->body);
+                    }
+                );
+        }
+
+        if (!$disk->exists($zipFile)) {
+
+            ($zip = new ZipArchive())->open(storage_path("app/$zipFile"), ZipArchive::CREATE);
+
+            collect($disk->files($baseDir))->each(function($item) use ($zip, $disk) {
+                $zip->addFile(storage_path("app/$item"), basename($item));
+            });
+
+            $zip->close();
+        }
+
+        return response()->download(storage_path("app/$zipFile"));
     }
 }

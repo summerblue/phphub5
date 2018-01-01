@@ -18,4 +18,9 @@ class UserPolicy
     {
         return $currentUser->may('manage_users') || $currentUser->id == $user->id;
     }
+
+    public function download(User $currentUser, User $user)
+    {
+        return $currentUser->id == $user->id;
+    }
 }

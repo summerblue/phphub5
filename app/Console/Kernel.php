@@ -24,6 +24,7 @@ class Kernel extends ConsoleKernel
         Commands\CalculateActiveUser::class,
         Commands\CalculateHotTopic::class,
         Commands\ClearUserData::class,
+        Commands\ClearDownloadDatas::class,
         Commands\SyncUserActivedTime::class,
 
         Commands\CalculateMaintainerWorks::class,
@@ -55,5 +56,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('phphub:calculate-active-user')->everyTenMinutes();
         $schedule->command('phphub:calculate-hot-topic')->everyTenMinutes();
         $schedule->command('phphub:sync-user-actived-time')->everyTenMinutes();
+
+        $schedule->command('phphub:clear-download-data')->hourly();
     }
 }
