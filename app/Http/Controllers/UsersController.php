@@ -136,12 +136,11 @@ class UsersController extends Controller
             return redirect(route('users.show', $id));
         }
         $user     = User::findOrFail($id);
+
         $sessions = OAuthSession::where([
-                                            'owner_type' => 'user',
-                                            'owner_id'   => Auth::id(),
-                                        ])
-            ->with('token')
-            ->lists('id') ? : [];
+            'owner_type' => 'user',
+            'owner_id'   => Auth::id(),
+        ])->with('token')->lists('id') ? : [];
 
         $tokens = AccessToken::whereIn('session_id', $sessions)->get();
 
@@ -338,10 +337,10 @@ class UsersController extends Controller
             Topic::whose($user->id)
                 ->onlyArticle()
                 ->withoutDraft()
-                ->get(['title', 'body'])
+                ->get(['title', 'body_original'])
                 ->each(
                     function($article) use ($disk, $baseDir) {
-                        $disk->put("$baseDir/$article->title.md", $article->body);
+                        $disk->put("$baseDir/$article->title.md", $article->body_original);
                     }
                 );
         }
