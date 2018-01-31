@@ -242,7 +242,6 @@ return [
 
         'Flash'            => Laracasts\Flash\Flash::class,
         'QrCode'           => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
-        'Rss'              => Thujohn\Rss\RssFacade::class,
         'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class,
 
         // API
