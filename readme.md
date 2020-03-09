@@ -1,10 +1,4 @@
 <p align="center">
-  <br>
-  <b>创造不息，交付不止</b>
-  <br>
-  <a href="https://www.yousails.com">
-    <img src="https://yousails.com/banners/brand.png" width=350>
-  </a>
   
   <br>
   <a href="https://laravel-china.org/topics/3383/laravel-the-first-chinese-new-book-laravel-tutorial">
@@ -20,7 +14,7 @@
 
 * 产品名称：PHPHub5
 * 项目代码：PHPHub5
-* 官方地址：https://laravel-china.org/
+* 官方地址：https://learnku.com
 
 [PHPHub](https://github.com/summerblue/phphub) Laravel 5.1 版本。
 
@@ -218,8 +212,8 @@ php artisan make:scaffold NotificationMailLogs --schema="from_user_id:integer:un
 
 ## License
 
-> 使用 PHPHub5 构建，或者基于 PHPHub5 源代码修改的站点 **必须** 在页脚加上 `Powered by PHPHub` 字样，并且必须链接到 `https://laravel-china.org` 上。**必须** 在页面的每一个标题上加上 `Powered by PHPHub` 字样。
+> 使用 PHPHub5 构建，或者基于 PHPHub5 源代码修改的站点 **必须** 在页脚加上 `Powered by PHPHub` 字样，并且必须链接到 `https://learnku.com` 上。**必须** 在页面的每一个标题上加上 `Powered by PHPHub` 字样。
 
 在遵守以上规则的情况下，你可以享受等同于 MIT 协议的授权。
 
-或者你可以联系 `aufree@yousails.com` 购买商业授权，商业授权允许移除页脚和标题的 `Powered by PHPHub` 字样。
+或者你可以联系 `summer@learnku.com` 购买商业授权，商业授权允许移除页脚和标题的 `Powered by PHPHub` 字样。
