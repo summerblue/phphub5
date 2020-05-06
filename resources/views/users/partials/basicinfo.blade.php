@@ -145,6 +145,13 @@
           </a>
         @endif
 
+        @if ($currentUser && ($currentUser->id == $user->id))
+            <br>
+            <a class="btn btn-info btn-block" target="_blank" href="{{ route('users.downloads', $user->id) }}">
+                <i class="fa fa-file-archive-o"></i> {{ lang('Download Article') }}
+            </a>
+        @endif
+
         @if(Auth::check() && $currentUser->id != $user->id)
         <!--{{$isFollowing= $currentUser && $currentUser->isFollowing($user->id) ? true : false}}-->
 
